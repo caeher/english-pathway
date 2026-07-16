@@ -1,0 +1,492 @@
+[
+  {
+    "id": "m4-ch5-svg",
+    "type": "svg-scene",
+    "title": "Señales y Órdenes",
+    "description": "Observa imperativos en la vida cotidiana.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#fef2f2",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#ef4444",
+            "label": "📣 The Imperative",
+            "labelEn": "Commands, instructions & suggestions!"
+          },
+          {
+            "id": "s1",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 200,
+            "height": 65,
+            "fill": "#fecaca",
+            "label": "🛑 STOP!",
+            "labelEn": "Command: STOP! Be quiet! Listen!"
+          },
+          {
+            "id": "s2",
+            "type": "rect",
+            "x": 250,
+            "y": 60,
+            "width": 200,
+            "height": 65,
+            "fill": "#bbf7d0",
+            "label": "➡️ Turn left",
+            "labelEn": "Instruction: Turn left. Open the book. Close the door."
+          },
+          {
+            "id": "s3",
+            "type": "rect",
+            "x": 470,
+            "y": 60,
+            "width": 200,
+            "height": 65,
+            "fill": "#fde68a",
+            "label": "⚠️ Be careful!",
+            "labelEn": "Warning: Be careful! Don't touch! Watch out!"
+          },
+          {
+            "id": "s4",
+            "type": "rect",
+            "x": 30,
+            "y": 145,
+            "width": 200,
+            "height": 65,
+            "fill": "#bfdbfe",
+            "label": "🚪 Come in!",
+            "labelEn": "Invitation: Come in! Have a seat! Help yourself!"
+          },
+          {
+            "id": "s5",
+            "type": "rect",
+            "x": 250,
+            "y": 145,
+            "width": 200,
+            "height": 65,
+            "fill": "#e0e7ff",
+            "label": "🙏 Please sit down",
+            "labelEn": "Request: Close the window, please. Please don't smoke."
+          },
+          {
+            "id": "s6",
+            "type": "rect",
+            "x": 470,
+            "y": 145,
+            "width": 200,
+            "height": 65,
+            "fill": "#fce7f3",
+            "label": "🤝 Let's go!",
+            "labelEn": "Suggestion: Let's eat! Let's go! Let's not argue."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 30,
+            "y": 240,
+            "width": 310,
+            "height": 60,
+            "fill": "#fee2e2",
+            "label": "❌ DON'T + verb",
+            "labelEn": "Don't open the door. Don't be late! Don't worry!"
+          },
+          {
+            "id": "lets",
+            "type": "rect",
+            "x": 360,
+            "y": 240,
+            "width": 310,
+            "height": 60,
+            "fill": "#ccfbf1",
+            "label": "🤝 LET'S + verb",
+            "labelEn": "Let's go! Let's try! Let's NOT argue."
+          },
+          {
+            "id": "note",
+            "type": "rect",
+            "x": 100,
+            "y": 325,
+            "width": 500,
+            "height": 50,
+            "fill": "#fef9c3",
+            "label": "💡 No subject needed!",
+            "labelEn": "The subject \"you\" is understood. \"Please\" makes it polite."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m4-ch5-flash",
+    "type": "flashcard",
+    "title": "Imperativos Comunes",
+    "description": "Aprende los imperativos más usados en inglés.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "¡Para! (orden)",
+          "back": "STOP!",
+          "example": "Stop running! Stop talking!"
+        },
+        {
+          "id": "c2",
+          "front": "Siéntate, por favor.",
+          "back": "Sit down, please.",
+          "example": "Please makes it polite."
+        },
+        {
+          "id": "c3",
+          "front": "Abre el libro.",
+          "back": "Open the book.",
+          "example": "Instruction: base verb."
+        },
+        {
+          "id": "c4",
+          "front": "¡No toques eso!",
+          "back": "Don't touch that!",
+          "example": "Negative: don't + base verb."
+        },
+        {
+          "id": "c5",
+          "front": "¡Cuidado!",
+          "back": "Be careful!",
+          "example": "Warning with \"be\"."
+        },
+        {
+          "id": "c6",
+          "front": "¡No te preocupes!",
+          "back": "Don't worry!",
+          "example": "Don't + worry."
+        },
+        {
+          "id": "c7",
+          "front": "¡Pasa! (invitación)",
+          "back": "Come in!",
+          "example": "Invitation."
+        },
+        {
+          "id": "c8",
+          "front": "¡Vamos al cine! (sugerencia)",
+          "back": "Let's go to the cinema!",
+          "example": "Let's + base verb."
+        },
+        {
+          "id": "c9",
+          "front": "¡Escucha con atención!",
+          "back": "Listen carefully!",
+          "example": "Command + adverb."
+        },
+        {
+          "id": "c10",
+          "front": "¡No llegues tarde!",
+          "back": "Don't be late!",
+          "example": "Don't be..."
+        },
+        {
+          "id": "c11",
+          "front": "Cierra la ventana, por favor.",
+          "back": "Close the window, please.",
+          "example": "Request: verb + please."
+        },
+        {
+          "id": "c12",
+          "front": "¡No discutamos!",
+          "back": "Let's not argue!",
+          "example": "Let's not + verb."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-match",
+    "type": "word-match",
+    "title": "Español → Imperativo en Inglés",
+    "description": "Empareja cada instrucción con su traducción.",
+    "props": {
+      "pairs": [
+        {
+          "left": "¡Para!",
+          "right": "Stop!"
+        },
+        {
+          "left": "Siéntate",
+          "right": "Sit down"
+        },
+        {
+          "left": "No toques",
+          "right": "Don't touch"
+        },
+        {
+          "left": "¡Cuidado!",
+          "right": "Be careful!"
+        },
+        {
+          "left": "¡Vamos!",
+          "right": "Let's go!"
+        },
+        {
+          "left": "No te preocupes",
+          "right": "Don't worry"
+        },
+        {
+          "left": "¡Escucha!",
+          "right": "Listen!"
+        },
+        {
+          "left": "¡Pasa!",
+          "right": "Come in!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Da Instrucciones",
+    "description": "Ordena las palabras para formar imperativos.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Abre la puerta:",
+          "words": [
+            "Open",
+            "the",
+            "door"
+          ],
+          "correct": "Open the door"
+        },
+        {
+          "prompt": "No corras en el pasillo:",
+          "words": [
+            "Don't",
+            "run",
+            "in",
+            "the",
+            "hall"
+          ],
+          "correct": "Don't run in the hall"
+        },
+        {
+          "prompt": "Escucha con cuidado:",
+          "words": [
+            "Listen",
+            "carefully"
+          ],
+          "correct": "Listen carefully"
+        },
+        {
+          "prompt": "Vamos a comer pizza:",
+          "words": [
+            "Let's",
+            "eat",
+            "pizza"
+          ],
+          "correct": "Let's eat pizza"
+        },
+        {
+          "prompt": "Por favor cierra la ventana:",
+          "words": [
+            "Please",
+            "close",
+            "the",
+            "window"
+          ],
+          "correct": "Please close the window"
+        },
+        {
+          "prompt": "No seas tímido:",
+          "words": [
+            "Don't",
+            "be",
+            "shy"
+          ],
+          "correct": "Don't be shy"
+        },
+        {
+          "prompt": "Ten cuidado con el perro:",
+          "words": [
+            "Be",
+            "careful",
+            "with",
+            "the",
+            "dog"
+          ],
+          "correct": "Be careful with the dog"
+        },
+        {
+          "prompt": "No discutamos:",
+          "words": [
+            "Let's",
+            "not",
+            "argue"
+          ],
+          "correct": "Let's not argue"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz: El Imperativo",
+    "description": "Demuestra tu dominio del imperativo.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "How to say \"¡Para!\" in English?",
+          "options": [
+            "You stop!",
+            "Stop!",
+            "Stopping!",
+            "To stop!"
+          ],
+          "correct": 1,
+          "explanation": "Imperative: base verb (no subject)."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"___ touch that!\" (negativo)",
+          "correct": "Don't",
+          "explanation": "Negative imperative: Don't + verb."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"___ go to the cinema!\" (sugerencia grupal)",
+          "options": [
+            "Let's",
+            "We",
+            "Don't",
+            "Shall"
+          ],
+          "correct": 0,
+          "explanation": "Let's = suggestion for group."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"___ the door, please.\" (abrir)",
+          "correct": "Open",
+          "explanation": "Imperative: Open (base verb)."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "How to make imperative polite?",
+          "options": [
+            "Add \"you\"",
+            "Add \"please\"",
+            "Add \"must\"",
+            "Add \"can\""
+          ],
+          "correct": 1,
+          "explanation": "\"Please\" makes imperatives polite."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"___ careful!\" (ten cuidado)",
+          "correct": "Be",
+          "explanation": "Be + adjective = imperative with \"be\"."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"___ be late!\" (no llegues tarde)",
+          "options": [
+            "Don't",
+            "Not",
+            "Doesn't",
+            "Won't"
+          ],
+          "correct": 0,
+          "explanation": "Don't be late!"
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"___ not argue.\" (no discutamos)",
+          "correct": "Let's",
+          "explanation": "Let's not + verb."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which is a correct imperative?",
+          "options": [
+            "You open the door.",
+            "Opening the door.",
+            "Open the door.",
+            "To open the door."
+          ],
+          "correct": 2,
+          "explanation": "Imperative = base verb only."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"Come in!\" is used for?",
+          "options": [
+            "Command",
+            "Warning",
+            "Invitation",
+            "Prohibition"
+          ],
+          "correct": 2,
+          "explanation": "\"Come in!\" = invitation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-scramble",
+    "type": "word-scramble",
+    "title": "El Imperativo",
+    "description": "Descifra verbos comunes en forma imperativa.",
+    "props": {
+      "words": [
+        {
+          "word": "STOP",
+          "hint": "Detente; orden de parar",
+          "category": "Imperative"
+        },
+        {
+          "word": "LISTEN",
+          "hint": "Escucha; orden de prestar atención",
+          "category": "Imperative"
+        },
+        {
+          "word": "WAIT",
+          "hint": "Espera; orden de permanecer",
+          "category": "Imperative"
+        },
+        {
+          "word": "COME",
+          "hint": "Ven; orden de acercarse",
+          "category": "Imperative"
+        },
+        {
+          "word": "OPEN",
+          "hint": "Abre; orden de abrir",
+          "category": "Imperative"
+        },
+        {
+          "word": "CLOSE",
+          "hint": "Cierra; orden de cerrar",
+          "category": "Imperative"
+        }
+      ]
+    }
+  }
+]

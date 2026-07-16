@@ -1,0 +1,477 @@
+[
+  {
+    "id": "m14-ch1-quiz",
+    "type": "quiz",
+    "title": "Escoge tu Aventura Corporativa",
+    "description": "Simulación narrativa: eres el manager en una crisis. Cada decisión tiene consecuencias.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "🏢 CRISIS: Your team just lost a major client. In the emergency meeting, you say:",
+          "options": [
+            "\"Whose fault is this?\"",
+            "\"Let's focus on what we can learn and how to prevent this in the future.\"",
+            "\"I'm very angry right now.\"",
+            "\"It doesn't matter.\""
+          ],
+          "correct": 1,
+          "explanation": "Focus on solutions, not blame. \"Let's focus on what we can learn\" shows leadership and forward thinking."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "🔄 TWIST: The CEO walks in unexpectedly and asks for an immediate explanation. You:",
+          "options": [
+            "Blame a colleague for the failure",
+            "Present the facts objectively and propose concrete next steps",
+            "Apologize repeatedly without offering solutions",
+            "Stay completely silent"
+          ],
+          "correct": 1,
+          "explanation": "Present facts + propose next steps. CEOs want clarity and action plans, not excuses or panic."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"I understand your concern. Let me ___ you through our action plan.\"",
+          "correct": "walk",
+          "explanation": "\"Walk you through\" = guide step by step. Professional phrase for presenting a plan."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "🏥 SCENARIO: You're at urgent care abroad. The doctor asks \"What seems to be the problem?\" You say:",
+          "options": [
+            "\"I feel bad\"",
+            "\"I've had a persistent sharp pain in my lower back for three days, and it gets worse when I move\"",
+            "\"Fix me\"",
+            "\"I don't know, you're the doctor\""
+          ],
+          "correct": 1,
+          "explanation": "Be specific: location, duration, type of pain, and triggers. This helps the doctor diagnose accurately."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "✈️ Your flight is canceled and the airline offers only a voucher. You respond:",
+          "options": [
+            "\"This is ridiculous! I'm suing you!\"",
+            "\"Okay, I'll take the voucher.\"",
+            "\"I understand the situation, but I'd like to discuss alternative options such as rebooking on the next available flight.\"",
+            "\"Whatever.\""
+          ],
+          "correct": 2,
+          "explanation": "Acknowledge the situation, then diplomatically push for what you need. Firm but polite wins."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "🎓 During your project defense, a panel member challenges your data. You say:",
+          "options": [
+            "\"You're wrong about that.\"",
+            "\"That's an excellent observation. Let me address that by showing you our methodology...\"",
+            "\"I don't know.\"",
+            "\"That's not relevant.\""
+          ],
+          "correct": 1,
+          "explanation": "Validate the challenge (\"excellent observation\") then redirect to your evidence. Professional and confident."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"I ___ your effort on this project. However, there are a few areas where we could improve.\"",
+          "correct": "appreciate",
+          "explanation": "\"I appreciate your effort\" softens negative feedback. Always start with recognition before critique."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "🤝 You're mediating between two colleagues in conflict. Your first step is:",
+          "options": [
+            "Take one side immediately",
+            "Listen to both perspectives separately first, then bring them together",
+            "Tell them to figure it out themselves",
+            "Report them to HR immediately"
+          ],
+          "correct": 1,
+          "explanation": "Good mediators listen to both sides first. Understanding each perspective is essential before seeking solutions."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Your boss asks you to do something you disagree with. The most professional response is:",
+          "options": [
+            "\"No, I won't do that.\"",
+            "\"Whatever you say, boss.\"",
+            "\"I understand the goal. Could I share a concern I have and suggest an alternative approach?\"",
+            "\"That's a terrible idea.\""
+          ],
+          "correct": 2,
+          "explanation": "Show you understand, then share your concern respectfully while offering an alternative."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "🔄 FINAL TWIST: A journalist calls asking about the crisis. You say:",
+          "options": [
+            "\"No comment!\" (hangs up)",
+            "\"Let me tell you everything off the record...\"",
+            "\"Thank you for reaching out. I'd recommend contacting our communications department for an official statement.\"",
+            "\"It was all my colleague's fault.\""
+          ],
+          "correct": 2,
+          "explanation": "Redirect to the proper channel professionally. Never give unauthorized statements to press."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Diplomacia en Acción",
+    "description": "Construye respuestas diplomáticas para situaciones delicadas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Give negative feedback diplomatically about a missed deadline",
+          "words": [
+            "I",
+            "appreciate",
+            "your",
+            "effort;",
+            "however,",
+            "we",
+            "need",
+            "to",
+            "discuss",
+            "the",
+            "timeline."
+          ],
+          "correct": "I appreciate your effort; however, we need to discuss the timeline."
+        },
+        {
+          "prompt": "Politely decline a request you cannot fulfill",
+          "words": [
+            "I'm",
+            "afraid",
+            "that",
+            "won't",
+            "be",
+            "possible,",
+            "but",
+            "I",
+            "can",
+            "suggest",
+            "an",
+            "alternative."
+          ],
+          "correct": "I'm afraid that won't be possible, but I can suggest an alternative."
+        },
+        {
+          "prompt": "Redirect a conversation professionally",
+          "words": [
+            "That's",
+            "a",
+            "valid",
+            "point.",
+            "Perhaps",
+            "we",
+            "could",
+            "discuss",
+            "this",
+            "in",
+            "more",
+            "detail",
+            "offline."
+          ],
+          "correct": "That's a valid point. Perhaps we could discuss this in more detail offline."
+        },
+        {
+          "prompt": "Address a complaint without getting defensive",
+          "words": [
+            "I",
+            "understand",
+            "your",
+            "frustration.",
+            "Let",
+            "me",
+            "look",
+            "into",
+            "this",
+            "right",
+            "away."
+          ],
+          "correct": "I understand your frustration. Let me look into this right away."
+        },
+        {
+          "prompt": "Offer constructive criticism to a colleague",
+          "words": [
+            "Your",
+            "presentation",
+            "was",
+            "strong.",
+            "One",
+            "area",
+            "that",
+            "could",
+            "be",
+            "even",
+            "better",
+            "is",
+            "the",
+            "data",
+            "section."
+          ],
+          "correct": "Your presentation was strong. One area that could be even better is the data section."
+        },
+        {
+          "prompt": "Disagree with your boss respectfully",
+          "words": [
+            "I",
+            "see",
+            "your",
+            "point.",
+            "Could",
+            "I",
+            "share",
+            "a",
+            "different",
+            "perspective",
+            "on",
+            "this?"
+          ],
+          "correct": "I see your point. Could I share a different perspective on this?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-match",
+    "type": "word-match",
+    "title": "Registro vs. Situación",
+    "description": "Empareja cada expresión con el registro y situación apropiados.",
+    "props": {
+      "pairs": [
+        {
+          "left": "\"We need to talk about this ASAP\"",
+          "right": "Informal — entre colegas 🤝"
+        },
+        {
+          "left": "\"I'd like to schedule a meeting to discuss this\"",
+          "right": "Formal — con superiores 👔"
+        },
+        {
+          "left": "\"Could we perhaps revisit this at a convenient time?\"",
+          "right": "Ultra-formal — diplomacia 🎩"
+        },
+        {
+          "left": "\"Hey, can you help me out with this?\"",
+          "right": "Casual — con amigos 😊"
+        },
+        {
+          "left": "\"I would be grateful if you could assist\"",
+          "right": "Formal escrito — emails 📧"
+        },
+        {
+          "left": "\"Let's grab coffee and talk\"",
+          "right": "Informal — networking 🤝"
+        },
+        {
+          "left": "\"I hereby request your consideration\"",
+          "right": "Muy formal — documentos legales 📜"
+        },
+        {
+          "left": "\"What do you reckon?\"",
+          "right": "Casual British — con compañeros 🇬🇧"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-flash",
+    "type": "flashcard",
+    "title": "Arsenal Diplomático",
+    "description": "Transforma frases directas en versiones diplomáticas y profesionales.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "❌ \"You're wrong about this.\"",
+          "back": "✅ \"I see your point, but I'd like to offer a different perspective.\" — Redirige sin confrontar directamente.",
+          "example": "I see your point about the budget, but I'd like to offer a different perspective on the timeline."
+        },
+        {
+          "id": "f2",
+          "front": "❌ \"That's a bad idea.\"",
+          "back": "✅ \"That's an interesting approach. Have you considered...?\" — Sugiere sin descalificar.",
+          "example": "That's an interesting approach. Have you considered the impact on our existing clients?"
+        },
+        {
+          "id": "f3",
+          "front": "❌ \"We can't do that.\"",
+          "back": "✅ \"That might be challenging, but let me see what we can do.\" — Muestra disposición.",
+          "example": "That might be challenging within the current timeline, but let me see what we can do."
+        },
+        {
+          "id": "f4",
+          "front": "❌ \"Your work isn't good enough.\"",
+          "back": "✅ \"I appreciate your effort. There are a few areas where we could improve together.\" — Feedback constructivo.",
+          "example": "I appreciate your effort on this report. There are a few areas where we could strengthen the analysis."
+        },
+        {
+          "id": "f5",
+          "front": "❌ \"That's not my problem.\"",
+          "back": "✅ \"I understand the situation. Let me connect you with the right person who can help.\" — Redirige con empatía.",
+          "example": "I understand the situation. Let me connect you with Sarah, who handles client accounts."
+        },
+        {
+          "id": "f6",
+          "front": "❌ \"You always make mistakes.\"",
+          "back": "✅ \"I've noticed a pattern we should address. How can I support you?\" — De acusación a apoyo.",
+          "example": "I've noticed a few recurring issues. How can I support you in improving this process?"
+        },
+        {
+          "id": "f7",
+          "front": "❌ \"I don't care about your opinion.\"",
+          "back": "✅ \"I appreciate your input. Let me consider all perspectives before deciding.\" — Valida sin comprometerte.",
+          "example": "I appreciate your input on the strategy. Let me consider all perspectives before we make a decision."
+        },
+        {
+          "id": "f8",
+          "front": "❌ \"You're late again.\"",
+          "back": "✅ \"I noticed we're running behind schedule. Is there anything blocking your progress?\" — De reproche a diagnóstico.",
+          "example": "I noticed we're running behind on the deliverables. Is there anything blocking your progress that I can help with?"
+        },
+        {
+          "id": "f9",
+          "front": "❌ \"No.\" (flat rejection)",
+          "back": "✅ \"I'm afraid that won't be possible at this time, but perhaps we could explore...\" — Rechazo suave con alternativa.",
+          "example": "I'm afraid that won't be possible this quarter, but perhaps we could explore this for Q2."
+        },
+        {
+          "id": "f10",
+          "front": "❌ \"This meeting is pointless.\"",
+          "back": "✅ \"I want to make sure we're making the best use of everyone's time. Could we focus on...?\" — Redirige productivamente.",
+          "example": "I want to make sure we're making the best use of everyone's time. Could we focus on the three key decisions we need to make?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-svg",
+    "type": "svg-scene",
+    "title": "Mapa de Stakeholders",
+    "description": "Explora los stakeholders de la simulación y entiende sus perspectivas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "ceo",
+            "type": "circle",
+            "cx": 300,
+            "cy": 60,
+            "r": 40,
+            "fill": "#fbbf24",
+            "label": "CEO — Quiere resultados y rapidez",
+            "labelEn": "👤 CEO — Wants results"
+          },
+          {
+            "id": "team-lead",
+            "type": "circle",
+            "cx": 100,
+            "cy": 180,
+            "r": 35,
+            "fill": "#60a5fa",
+            "label": "Team Lead — Quiere apoyo y recursos",
+            "labelEn": "👤 Team Lead — Wants support"
+          },
+          {
+            "id": "client",
+            "type": "circle",
+            "cx": 500,
+            "cy": 180,
+            "r": 35,
+            "fill": "#f87171",
+            "label": "Cliente — Quiere soluciones concretas",
+            "labelEn": "👤 Client — Wants solutions"
+          },
+          {
+            "id": "hr",
+            "type": "circle",
+            "cx": 150,
+            "cy": 330,
+            "r": 30,
+            "fill": "#34d399",
+            "label": "RRHH — Quiere proceso correcto",
+            "labelEn": "👤 HR — Wants proper process"
+          },
+          {
+            "id": "finance",
+            "type": "circle",
+            "cx": 450,
+            "cy": 330,
+            "r": 30,
+            "fill": "#a78bfa",
+            "label": "Finanzas — Quiere números claros",
+            "labelEn": "👤 Finance — Wants clear numbers"
+          },
+          {
+            "id": "you",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 220,
+            "rx": 50,
+            "ry": 30,
+            "fill": "#f9a8d4",
+            "label": "TÚ — El mediador entre todos",
+            "labelEn": "⭐ YOU — The mediator"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m14-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Juegos de Rol Avanzados",
+    "description": "Descifra vocabulario teatral.",
+    "props": {
+      "words": [
+        {
+          "word": "CHARACTER",
+          "hint": "Personaje; rol a interpretar",
+          "category": "Role-play"
+        },
+        {
+          "word": "SCENARIO",
+          "hint": "Escenario; situación",
+          "category": "Role-play"
+        },
+        {
+          "word": "DIALOGUE",
+          "hint": "Diálogo; conversación",
+          "category": "Role-play"
+        },
+        {
+          "word": "INTERACT",
+          "hint": "Interactuar; relacionarse",
+          "category": "Role-play"
+        },
+        {
+          "word": "PERFORM",
+          "hint": "Actuar; representar",
+          "category": "Role-play"
+        },
+        {
+          "word": "ADAPT",
+          "hint": "Adaptar; ajustarse",
+          "category": "Role-play"
+        }
+      ]
+    }
+  }
+]

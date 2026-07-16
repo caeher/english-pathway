@@ -1,0 +1,579 @@
+[
+  {
+    "id": "m11-ch3-quiz",
+    "type": "quiz",
+    "title": "El Consejero",
+    "description": "Lee cada dilema y elige el consejo o la regla con el modal correcto.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Your friend feels very sick. You say: \"You ___ see a doctor.\"",
+          "options": [
+            "should",
+            "might",
+            "can",
+            "mustn't"
+          ],
+          "correct": 0,
+          "explanation": "\"Should\" gives advice: \"You should see a doctor.\""
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "You ___ park here. It's a no-parking zone. (prohibition)",
+          "correct": "mustn't",
+          "explanation": "Mustn't = prohibition: \"You mustn't park here.\""
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "There's no food at home. I ___ go shopping.",
+          "options": [
+            "should",
+            "have to",
+            "might",
+            "mustn't"
+          ],
+          "correct": 1,
+          "explanation": "\"Have to\" = external obligation: \"I have to go shopping\" (there's no food)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"___ I use your pen?\" (polite request)",
+          "options": [
+            "Must",
+            "Should",
+            "May",
+            "Have to"
+          ],
+          "correct": 2,
+          "explanation": "\"May I...?\" is the polite/formal way to ask permission."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "It ___ rain later. Take an umbrella just in case.",
+          "options": [
+            "must",
+            "might",
+            "should",
+            "has to"
+          ],
+          "correct": 1,
+          "explanation": "\"Might\" expresses possibility: \"It might rain later.\""
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "You ___ ___ ___ wear a uniform. It's optional. (not necessary)",
+          "correct": "don't have to",
+          "explanation": "\"Don't have to\" = not necessary, not obligatory."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Students ___ cheat on exams. It's strictly prohibited.",
+          "options": [
+            "mustn't",
+            "don't have to",
+            "shouldn't",
+            "can't"
+          ],
+          "correct": 0,
+          "explanation": "\"Mustn't\" = strong prohibition: \"Students mustn't cheat.\""
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "She ___ speak three languages fluently.",
+          "options": [
+            "can",
+            "must",
+            "should",
+            "might"
+          ],
+          "correct": 0,
+          "explanation": "\"Can\" expresses ability: \"She can speak three languages.\""
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "You look tired. You ___ get more sleep.",
+          "options": [
+            "must",
+            "have to",
+            "should",
+            "can"
+          ],
+          "correct": 2,
+          "explanation": "\"Should\" for advice: \"You should get more sleep.\""
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "I ___ study harder. I really want to pass the exam. (personal obligation)",
+          "correct": "must",
+          "explanation": "\"Must\" for personal/internal obligation: \"I must study harder.\""
+        },
+        {
+          "id": "q11",
+          "type": "multiple-choice",
+          "question": "When I was young, I ___ run very fast.",
+          "options": [
+            "can",
+            "could",
+            "may",
+            "must"
+          ],
+          "correct": 1,
+          "explanation": "\"Could\" = past ability: \"I could run fast when I was young.\""
+        },
+        {
+          "id": "q12",
+          "type": "multiple-choice",
+          "question": "\"You ___ be quiet in the library.\" (rule)",
+          "options": [
+            "should",
+            "can",
+            "must",
+            "might"
+          ],
+          "correct": 2,
+          "explanation": "\"Must\" for strong rules: \"You must be quiet in the library.\""
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-svg",
+    "type": "svg-scene",
+    "title": "El Tablero de Decisiones",
+    "description": "Explora cada situación del tablero y descubre qué modal necesitas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 650 400",
+        "bg": "#fef2f2",
+        "items": [
+          {
+            "id": "board",
+            "type": "rect",
+            "x": 25,
+            "y": 25,
+            "width": 600,
+            "height": 350,
+            "fill": "#fff1f2",
+            "label": "Tablero de Modales",
+            "labelEn": "The Modal Board Game"
+          },
+          {
+            "id": "nosmoking",
+            "type": "rect",
+            "x": 50,
+            "y": 50,
+            "width": 120,
+            "height": 70,
+            "fill": "#fecaca",
+            "label": "🚫 Zona sin fumar",
+            "labelEn": "You mustn't smoke here — It's prohibited!"
+          },
+          {
+            "id": "advice",
+            "type": "rect",
+            "x": 190,
+            "y": 50,
+            "width": 120,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "💡 Amigo estresado",
+            "labelEn": "You should take a break — Friendly advice"
+          },
+          {
+            "id": "pool",
+            "type": "rect",
+            "x": 330,
+            "y": 50,
+            "width": 120,
+            "height": 70,
+            "fill": "#bfdbfe",
+            "label": "🏊 En la piscina",
+            "labelEn": "Can you swim? — Asking about ability"
+          },
+          {
+            "id": "rain",
+            "type": "rect",
+            "x": 470,
+            "y": 50,
+            "width": 120,
+            "height": 70,
+            "fill": "#e0e7ff",
+            "label": "🌧️ Nubes grises",
+            "labelEn": "It might rain — Expressing possibility"
+          },
+          {
+            "id": "uniform",
+            "type": "rect",
+            "x": 50,
+            "y": 160,
+            "width": 120,
+            "height": 70,
+            "fill": "#fef3c7",
+            "label": "👔 En el trabajo",
+            "labelEn": "I have to wear a uniform — External obligation"
+          },
+          {
+            "id": "phone",
+            "type": "rect",
+            "x": 190,
+            "y": 160,
+            "width": 120,
+            "height": 70,
+            "fill": "#d1fae5",
+            "label": "📱 En clase",
+            "labelEn": "You mustn't use your phone — School rule"
+          },
+          {
+            "id": "optional",
+            "type": "rect",
+            "x": 330,
+            "y": 160,
+            "width": 120,
+            "height": 70,
+            "fill": "#e0f2fe",
+            "label": "✅ Tarea opcional",
+            "labelEn": "You don't have to do it — It's not necessary"
+          },
+          {
+            "id": "exam",
+            "type": "rect",
+            "x": 470,
+            "y": 160,
+            "width": 120,
+            "height": 70,
+            "fill": "#fce7f3",
+            "label": "📝 Examen mañana",
+            "labelEn": "I must study tonight — Personal obligation"
+          },
+          {
+            "id": "permission",
+            "type": "rect",
+            "x": 50,
+            "y": 280,
+            "width": 120,
+            "height": 70,
+            "fill": "#ccfbf1",
+            "label": "🙋 Pedir permiso",
+            "labelEn": "May I go to the restroom? — Formal permission"
+          },
+          {
+            "id": "doctor",
+            "type": "rect",
+            "x": 190,
+            "y": 280,
+            "width": 120,
+            "height": 70,
+            "fill": "#fef9c3",
+            "label": "🤒 Te sientes mal",
+            "labelEn": "You should see a doctor — Advice"
+          },
+          {
+            "id": "passport",
+            "type": "rect",
+            "x": 330,
+            "y": 280,
+            "width": 120,
+            "height": 70,
+            "fill": "#f3e8ff",
+            "label": "🛂 En el aeropuerto",
+            "labelEn": "You must show your passport — Obligation"
+          },
+          {
+            "id": "languages",
+            "type": "rect",
+            "x": 470,
+            "y": 280,
+            "width": 120,
+            "height": 70,
+            "fill": "#dbeafe",
+            "label": "🗣️ Poliglota",
+            "labelEn": "She can speak four languages — Ability"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m11-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Reglas y Consejos",
+    "description": "Construye oraciones con el modal correcto para cada situación.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Regla de la biblioteca:",
+          "words": [
+            "must",
+            "quiet",
+            "be",
+            "You",
+            "the",
+            "in",
+            "library"
+          ],
+          "correct": "You must be quiet in the library"
+        },
+        {
+          "prompt": "Consejo para alguien estresado:",
+          "words": [
+            "should",
+            "a",
+            "You",
+            "take",
+            "break"
+          ],
+          "correct": "You should take a break"
+        },
+        {
+          "prompt": "Posibilidad:",
+          "words": [
+            "might",
+            "It",
+            "tomorrow",
+            "rain"
+          ],
+          "correct": "It might rain tomorrow"
+        },
+        {
+          "prompt": "Habilidad:",
+          "words": [
+            "can",
+            "She",
+            "three",
+            "speak",
+            "languages"
+          ],
+          "correct": "She can speak three languages"
+        },
+        {
+          "prompt": "Prohibición:",
+          "words": [
+            "must",
+            "You",
+            "not",
+            "here",
+            "smoke"
+          ],
+          "correct": "You must not smoke here"
+        },
+        {
+          "prompt": "Obligación externa:",
+          "words": [
+            "have",
+            "I",
+            "to",
+            "early",
+            "wake",
+            "up",
+            "tomorrow"
+          ],
+          "correct": "I have to wake up early tomorrow"
+        },
+        {
+          "prompt": "No necesario:",
+          "words": [
+            "don't",
+            "You",
+            "to",
+            "have",
+            "come",
+            "tomorrow"
+          ],
+          "correct": "You don't have to come tomorrow"
+        },
+        {
+          "prompt": "Permiso formal:",
+          "words": [
+            "May",
+            "your",
+            "I",
+            "phone?",
+            "use"
+          ],
+          "correct": "May I use your phone?"
+        },
+        {
+          "prompt": "Consejo:",
+          "words": [
+            "should",
+            "more",
+            "You",
+            "water",
+            "drink"
+          ],
+          "correct": "You should drink more water"
+        },
+        {
+          "prompt": "Habilidad pasada:",
+          "words": [
+            "could",
+            "very",
+            "He",
+            "run",
+            "fast",
+            "young",
+            "when",
+            "was",
+            "he"
+          ],
+          "correct": "He could run very fast when he was young"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-match",
+    "type": "word-match",
+    "title": "Modal → Función",
+    "description": "Empareja cada modal con su función comunicativa principal.",
+    "props": {
+      "pairs": [
+        {
+          "left": "can / could",
+          "right": "Ability 💪"
+        },
+        {
+          "left": "may / might",
+          "right": "Possibility 🎲"
+        },
+        {
+          "left": "must / have to",
+          "right": "Obligation ⚖️"
+        },
+        {
+          "left": "mustn't",
+          "right": "Prohibition 🚫"
+        },
+        {
+          "left": "should / ought to",
+          "right": "Advice 💡"
+        },
+        {
+          "left": "don't have to",
+          "right": "Not necessary ✅"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-flash",
+    "type": "flashcard",
+    "title": "Diferencias Sutiles",
+    "description": "Domina los contrastes entre modales que parecen similares.",
+    "props": {
+      "cards": [
+        {
+          "id": "m1",
+          "front": "MUST vs HAVE TO",
+          "back": "MUST = personal/internal obligation\nHAVE TO = external obligation",
+          "example": "I must study harder (my decision). I have to wear a uniform (company rule)."
+        },
+        {
+          "id": "m2",
+          "front": "MUSTN'T vs DON'T HAVE TO",
+          "back": "MUSTN'T = prohibited, forbidden\nDON'T HAVE TO = not necessary, optional",
+          "example": "You mustn't cheat (prohibited). You don't have to come (it's optional)."
+        },
+        {
+          "id": "m3",
+          "front": "CAN vs MAY (permission)",
+          "back": "CAN = informal permission\nMAY = formal/polite permission",
+          "example": "Can I sit here? (casual) May I come in? (formal)"
+        },
+        {
+          "id": "m4",
+          "front": "SHOULD vs MUST",
+          "back": "SHOULD = advice, recommendation\nMUST = strong obligation",
+          "example": "You should exercise more (advice). You must stop at a red light (obligation)."
+        },
+        {
+          "id": "m5",
+          "front": "MIGHT vs MAY (possibility)",
+          "back": "MIGHT = less likely possibility\nMAY = more likely possibility",
+          "example": "It might snow (unlikely). It may rain (more likely)."
+        },
+        {
+          "id": "m6",
+          "front": "CAN vs COULD (ability)",
+          "back": "CAN = present ability\nCOULD = past ability or polite request",
+          "example": "I can swim (now). I could swim when I was 5 (past). Could you help me? (polite)"
+        },
+        {
+          "id": "m7",
+          "front": "HAVE TO vs NEED TO",
+          "back": "Both express necessity.\nHAVE TO = stronger, more common\nNEED TO = slightly softer",
+          "example": "I have to finish this by Monday. I need to call my mom."
+        },
+        {
+          "id": "m8",
+          "front": "SHOULD vs OUGHT TO",
+          "back": "Both give advice. Same meaning.\nSHOULD = more common in speech\nOUGHT TO = slightly more formal",
+          "example": "You should/ought to apologize."
+        },
+        {
+          "id": "m9",
+          "front": "CAN'T vs MUSTN'T",
+          "back": "CAN'T = not allowed / impossible\nMUSTN'T = prohibited (stronger)",
+          "example": "You can't park here (not allowed). You mustn't touch that wire (dangerous!)."
+        },
+        {
+          "id": "m10",
+          "front": "MAY vs CAN (formal vs informal)",
+          "back": "MAY = formal contexts, writing\nCAN = everyday speech",
+          "example": "May I be excused? (formal) Can I go now? (informal)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Modales",
+    "description": "Descifra modales y conceptos relacionados.",
+    "props": {
+      "words": [
+        {
+          "word": "MIGHT",
+          "hint": "Podría; posibilidad baja",
+          "category": "Modals"
+        },
+        {
+          "word": "MUST",
+          "hint": "Debe; obligación fuerte",
+          "category": "Modals"
+        },
+        {
+          "word": "SHOULD",
+          "hint": "Debería; consejo",
+          "category": "Modals"
+        },
+        {
+          "word": "OBLIGATION",
+          "hint": "Obligación; deber",
+          "category": "Modals"
+        },
+        {
+          "word": "POSSIBILITY",
+          "hint": "Posibilidad; que puede ser",
+          "category": "Modals"
+        },
+        {
+          "word": "ADVICE",
+          "hint": "Consejo; recomendación",
+          "category": "Modals"
+        }
+      ]
+    }
+  }
+]

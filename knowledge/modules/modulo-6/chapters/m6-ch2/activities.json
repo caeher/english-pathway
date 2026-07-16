@@ -1,0 +1,419 @@
+[
+  {
+    "id": "m6-ch2-svg",
+    "type": "svg-scene",
+    "title": "Causa y Resultado Real",
+    "description": "Visualiza el primer condicional como causa-efecto real.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#3b82f6",
+            "label": "🌤️ First Conditional",
+            "labelEn": "Real & possible situations in the future"
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "📏 If + PRESENT SIMPLE, WILL + base verb",
+            "labelEn": "If it RAINS, I WILL stay home. (I'LL stay home)"
+          },
+          {
+            "id": "if-clause",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#fde68a",
+            "label": "📌 IF clause = condition",
+            "labelEn": "If it rains / If you study / If she calls"
+          },
+          {
+            "id": "result",
+            "type": "rect",
+            "x": 360,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "📌 Result = what happens",
+            "labelEn": "I'll stay home / You'll pass / I'll answer"
+          },
+          {
+            "id": "order1",
+            "type": "rect",
+            "x": 30,
+            "y": 200,
+            "width": 310,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "📝 If first → COMMA",
+            "labelEn": "IF it rains, I'll stay home."
+          },
+          {
+            "id": "order2",
+            "type": "rect",
+            "x": 360,
+            "y": 200,
+            "width": 310,
+            "height": 50,
+            "fill": "#fce7f3",
+            "label": "📝 Result first → NO comma",
+            "labelEn": "I'll stay home if it rains."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 30,
+            "y": 270,
+            "width": 310,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ Negative",
+            "labelEn": "If you DON'T study, you WON'T pass."
+          },
+          {
+            "id": "unless",
+            "type": "rect",
+            "x": 360,
+            "y": 270,
+            "width": 310,
+            "height": 50,
+            "fill": "#ccfbf1",
+            "label": "🔑 Unless = If not",
+            "labelEn": "UNLESS you study, you won't pass."
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 100,
+            "y": 340,
+            "width": 500,
+            "height": 45,
+            "fill": "#fee2e2",
+            "label": "⚠️ DON'T use WILL in the IF clause!",
+            "labelEn": "❌ If it WILL rain... ✅ If it RAINS..."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m6-ch2-flash",
+    "type": "flashcard",
+    "title": "First Conditional: Práctica",
+    "description": "Forma oraciones con el primer condicional.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "If it ___ (rain), I ___ (stay) home.",
+          "back": "If it rains, I will stay home. (I'll stay home.)",
+          "example": "If + present simple, will + base verb."
+        },
+        {
+          "id": "c2",
+          "front": "If you ___ (study) hard, you ___ (pass).",
+          "back": "If you study hard, you will pass. (you'll pass.)",
+          "example": "Real possibility."
+        },
+        {
+          "id": "c3",
+          "front": "If she ___ (not hurry), she ___ (be) late.",
+          "back": "If she doesn't hurry, she will be late.",
+          "example": "Negative if clause: doesn't + base verb."
+        },
+        {
+          "id": "c4",
+          "front": "I ___ (help) you if you ___ (ask) me.",
+          "back": "I will help you if you ask me. (I'll help you)",
+          "example": "Result first = no comma."
+        },
+        {
+          "id": "c5",
+          "front": "If they ___ (not come), we ___ (start) without them.",
+          "back": "If they don't come, we will start without them.",
+          "example": "Negative condition."
+        },
+        {
+          "id": "c6",
+          "front": "___ you study, you won't pass. (if not)",
+          "back": "Unless you study, you won't pass.",
+          "example": "Unless = if not."
+        },
+        {
+          "id": "c7",
+          "front": "If you finish early, you ___ (can / leave).",
+          "back": "If you finish early, you can leave.",
+          "example": "Can instead of will = permission."
+        },
+        {
+          "id": "c8",
+          "front": "If it rains, we ___ (might / stay) home.",
+          "back": "If it rains, we might stay home.",
+          "example": "Might = possibility, less certain than will."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch2-match",
+    "type": "word-match",
+    "title": "If Clause → Result",
+    "description": "Empareja la condición con su resultado lógico.",
+    "props": {
+      "pairs": [
+        {
+          "left": "If it rains,",
+          "right": "I'll take an umbrella."
+        },
+        {
+          "left": "If you study hard,",
+          "right": "you'll pass the exam."
+        },
+        {
+          "left": "If she calls me,",
+          "right": "I'll answer."
+        },
+        {
+          "left": "If they don't hurry,",
+          "right": "they'll be late."
+        },
+        {
+          "left": "If we win this game,",
+          "right": "we'll celebrate."
+        },
+        {
+          "left": "If he eats too much,",
+          "right": "he'll feel sick."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Construye el Condicional",
+    "description": "Ordena para formar frases con first conditional.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Si llueve, me quedaré en casa:",
+          "words": [
+            "If",
+            "it",
+            "rains,",
+            "I",
+            "will",
+            "stay",
+            "home"
+          ],
+          "correct": "If it rains, I will stay home"
+        },
+        {
+          "prompt": "Si estudias duro, aprobarás:",
+          "words": [
+            "If",
+            "you",
+            "study",
+            "hard,",
+            "you",
+            "will",
+            "pass"
+          ],
+          "correct": "If you study hard, you will pass"
+        },
+        {
+          "prompt": "Si no se apuran, llegarán tarde:",
+          "words": [
+            "If",
+            "they",
+            "don't",
+            "hurry,",
+            "they",
+            "will",
+            "be",
+            "late"
+          ],
+          "correct": "If they don't hurry, they will be late"
+        },
+        {
+          "prompt": "Te ayudaré si me lo pides:",
+          "words": [
+            "I",
+            "will",
+            "help",
+            "you",
+            "if",
+            "you",
+            "ask",
+            "me"
+          ],
+          "correct": "I will help you if you ask me"
+        },
+        {
+          "prompt": "A menos que estudies, no aprobarás:",
+          "words": [
+            "Unless",
+            "you",
+            "study,",
+            "you",
+            "won't",
+            "pass"
+          ],
+          "correct": "Unless you study, you won't pass"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch2-quiz",
+    "type": "quiz",
+    "title": "Quiz: First Conditional",
+    "description": "Demuestra tu dominio del primer condicional.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"If it ___, I'll stay home.\"",
+          "options": [
+            "will rain",
+            "rains",
+            "rained",
+            "is raining"
+          ],
+          "correct": 1,
+          "explanation": "If clause = present simple, not will."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"If you study hard, you ___ pass.\"",
+          "correct": "will",
+          "explanation": "Result clause: will + base verb."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"If she ___ hurry, she'll be late.\"",
+          "options": [
+            "doesn't",
+            "won't",
+            "didn't",
+            "isn't"
+          ],
+          "correct": 0,
+          "explanation": "If clause negative: doesn't + base verb."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"___ you study, you won't pass.\" (= If you don't study)",
+          "options": [
+            "Unless",
+            "If",
+            "When",
+            "Because"
+          ],
+          "correct": 0,
+          "explanation": "Unless = if not."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"I'll help you ___ you ask me.\"",
+          "correct": "if",
+          "explanation": "if introduces the condition."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Which is CORRECT?",
+          "options": [
+            "If it rains, I'll stay home.",
+            "If it will rain, I'll stay home.",
+            "If it rained, I will stay home.",
+            "If it rain, I'll stay home."
+          ],
+          "correct": 0,
+          "explanation": "If + present simple, will + base verb."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"If you finish early, you ___ leave.\" (permission)",
+          "options": [
+            "will",
+            "can",
+            "would",
+            "could"
+          ],
+          "correct": 1,
+          "explanation": "Can = permission in result clause."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"If it rains, we ___ stay home.\" (possibility, less sure)",
+          "correct": "might",
+          "explanation": "Might = may = less certain possibility."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch2-scramble",
+    "type": "word-scramble",
+    "title": "First Conditional",
+    "description": "Descifra palabras de condiciones reales.",
+    "props": {
+      "words": [
+        {
+          "word": "POSSIBLE",
+          "hint": "Posible; que puede ocurrir",
+          "category": "Conditionals"
+        },
+        {
+          "word": "PROBABLE",
+          "hint": "Probable; likely",
+          "category": "Conditionals"
+        },
+        {
+          "word": "FUTURE",
+          "hint": "Futuro; tiempo por venir",
+          "category": "Conditionals"
+        },
+        {
+          "word": "RESULT",
+          "hint": "Resultado; consecuencia",
+          "category": "Conditionals"
+        },
+        {
+          "word": "CONDITION",
+          "hint": "Condición; requisito",
+          "category": "Conditionals"
+        },
+        {
+          "word": "LIKELY",
+          "hint": "Probable; propenso a ocurrir",
+          "category": "Conditionals"
+        }
+      ]
+    }
+  }
+]

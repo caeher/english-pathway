@@ -1,0 +1,419 @@
+[
+  {
+    "id": "m2-ch6-svg",
+    "type": "svg-scene",
+    "title": "Presente vs Pasado",
+    "description": "Visualiza las diferencias entre ambos tiempos.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f0fdfa",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 10,
+            "width": 500,
+            "height": 45,
+            "fill": "#14b8a6",
+            "label": "⚖️ Present Simple vs Past Simple",
+            "labelEn": "When to use each one"
+          },
+          {
+            "id": "ps",
+            "type": "rect",
+            "x": 50,
+            "y": 70,
+            "width": 280,
+            "height": 70,
+            "fill": "#99f6e4",
+            "label": "🔄 Present Simple",
+            "labelEn": "Routines, habits, facts. I work. She works. Every day."
+          },
+          {
+            "id": "past",
+            "type": "rect",
+            "x": 370,
+            "y": 70,
+            "width": 280,
+            "height": 70,
+            "fill": "#5eead4",
+            "label": "📖 Past Simple",
+            "labelEn": "Completed actions. I worked. She went. Yesterday."
+          },
+          {
+            "id": "mark1",
+            "type": "rect",
+            "x": 50,
+            "y": 165,
+            "width": 280,
+            "height": 60,
+            "fill": "#ccfbf1",
+            "label": "⏰ Time markers (Present)",
+            "labelEn": "every day, always, usually, often, today (habit)"
+          },
+          {
+            "id": "mark2",
+            "type": "rect",
+            "x": 370,
+            "y": 165,
+            "width": 280,
+            "height": 60,
+            "fill": "#ccfbf1",
+            "label": "⏰ Time markers (Past)",
+            "labelEn": "yesterday, last week, ago, in 2020, when I was young"
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 50,
+            "y": 250,
+            "width": 300,
+            "height": 50,
+            "fill": "#fef9c3",
+            "label": "✅ She works here. (routine)",
+            "labelEn": "Present: she still works here."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 370,
+            "y": 250,
+            "width": 280,
+            "height": 50,
+            "fill": "#fed7aa",
+            "label": "📅 She worked here. (past)",
+            "labelEn": "Past: she worked, maybe doesn't now."
+          },
+          {
+            "id": "rule",
+            "type": "rect",
+            "x": 80,
+            "y": 320,
+            "width": 540,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "💡 Golden Rule",
+            "labelEn": "Time marker in past? → Use Past Simple. Routine/fact? → Use Present Simple."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m2-ch6-flash",
+    "type": "flashcard",
+    "title": "Presente vs Pasado",
+    "description": "Identifica cuándo usar cada tiempo.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I ___ (work) every day.",
+          "back": "I work every day. (Present — routine)",
+          "example": "every day = present simple"
+        },
+        {
+          "id": "c2",
+          "front": "I ___ (work) yesterday.",
+          "back": "I worked yesterday. (Past — completed)",
+          "example": "yesterday = past simple"
+        },
+        {
+          "id": "c3",
+          "front": "She ___ (go) to school every day.",
+          "back": "She goes to school every day.",
+          "example": "every day = present, 3rd person + s"
+        },
+        {
+          "id": "c4",
+          "front": "She ___ (go) to the party last night.",
+          "back": "She went to the party last night.",
+          "example": "last night = past, went (irregular)"
+        },
+        {
+          "id": "c5",
+          "front": "Water ___ (boil) at 100°C.",
+          "back": "Water boils at 100°C.",
+          "example": "Universal fact = present simple"
+        },
+        {
+          "id": "c6",
+          "front": "The water ___ (boil) 5 minutes ago.",
+          "back": "The water boiled 5 minutes ago.",
+          "example": "ago = past simple"
+        },
+        {
+          "id": "c7",
+          "front": "He ___ (not/like) fish. (general)",
+          "back": "He doesn't like fish.",
+          "example": "General preference = present"
+        },
+        {
+          "id": "c8",
+          "front": "He ___ (not/like) the movie. (last night)",
+          "back": "He didn't like the movie.",
+          "example": "Last night = past"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-match",
+    "type": "word-match",
+    "title": "Marcador → Tiempo",
+    "description": "Empareja el marcador temporal con el tiempo correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "every day",
+          "right": "Present Simple"
+        },
+        {
+          "left": "yesterday",
+          "right": "Past Simple"
+        },
+        {
+          "left": "last week",
+          "right": "Past Simple"
+        },
+        {
+          "left": "always",
+          "right": "Present Simple"
+        },
+        {
+          "left": "two years ago",
+          "right": "Past Simple"
+        },
+        {
+          "left": "usually",
+          "right": "Present Simple"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-sentence",
+    "type": "sentence-builder",
+    "title": "Presente o Pasado",
+    "description": "Elige el verbo correcto según el contexto.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella trabaja en un banco (hoy en día):",
+          "words": [
+            "works",
+            "She",
+            "in",
+            "a",
+            "bank"
+          ],
+          "correct": "She works in a bank"
+        },
+        {
+          "prompt": "Trabajé ayer:",
+          "words": [
+            "worked",
+            "I",
+            "yesterday"
+          ],
+          "correct": "I worked yesterday"
+        },
+        {
+          "prompt": "Ellos van al gimnasio todos los días:",
+          "words": [
+            "go",
+            "They",
+            "to",
+            "the",
+            "gym",
+            "every",
+            "day"
+          ],
+          "correct": "They go to the gym every day"
+        },
+        {
+          "prompt": "Fueron al cine la semana pasada:",
+          "words": [
+            "went",
+            "They",
+            "to",
+            "the",
+            "movies",
+            "last",
+            "week"
+          ],
+          "correct": "They went to the movies last week"
+        },
+        {
+          "prompt": "El sol sale por el este:",
+          "words": [
+            "rises",
+            "The",
+            "sun",
+            "in",
+            "the",
+            "east"
+          ],
+          "correct": "The sun rises in the east"
+        },
+        {
+          "prompt": "¿Estudiaste anoche?:",
+          "words": [
+            "you",
+            "Did",
+            "study",
+            "last",
+            "night?"
+          ],
+          "correct": "Did you study last night?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-quiz",
+    "type": "quiz",
+    "title": "Quiz: Presente vs Pasado",
+    "description": "Demuestra que eliges el tiempo correcto.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "fill-blank",
+          "question": "\"She ___ (work) every day.\"",
+          "correct": "works",
+          "explanation": "every day = present, 3rd person + s"
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"She ___ (work) yesterday.\"",
+          "correct": "worked",
+          "explanation": "yesterday = past simple"
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Which time marker goes with Present Simple?",
+          "options": [
+            "yesterday",
+            "last week",
+            "every morning",
+            "two years ago"
+          ],
+          "correct": 2,
+          "explanation": "every morning = routine = present"
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"He ___ (go) to Paris last year.\"",
+          "correct": "went",
+          "explanation": "last year = past, go → went"
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"Water ___ at 100°C.\" (universal fact)",
+          "options": [
+            "boiled",
+            "boils",
+            "boil",
+            "boiling"
+          ],
+          "correct": 1,
+          "explanation": "Universal fact = present simple, 3rd person"
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"I ___ (not/eat) breakfast this morning.\" (it's now afternoon)",
+          "correct": "didn't eat",
+          "explanation": "this morning (already past) = past simple"
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"They ___ to the beach every summer.\"",
+          "options": [
+            "went",
+            "go",
+            "goes",
+            "going"
+          ],
+          "correct": 1,
+          "explanation": "every summer = routine = present"
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"We ___ (see) a movie last night.\"",
+          "correct": "saw",
+          "explanation": "last night = past, see → saw"
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which sentence is CORRECT?",
+          "options": [
+            "I work yesterday.",
+            "I worked yesterday.",
+            "I works yesterday.",
+            "I working yesterday."
+          ],
+          "correct": 1,
+          "explanation": "yesterday requires past simple"
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"She usually ___ (drink) coffee in the morning.\"",
+          "correct": "drinks",
+          "explanation": "usually = present, 3rd person + s"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-scramble",
+    "type": "word-scramble",
+    "title": "Presente vs Pasado",
+    "description": "Descifra términos para comparar tiempos verbales.",
+    "props": {
+      "words": [
+        {
+          "word": "YESTERDAY",
+          "hint": "Ayer; marcador de pasado",
+          "category": "Time Markers"
+        },
+        {
+          "word": "ALWAYS",
+          "hint": "Siempre; marcador de presente",
+          "category": "Time Markers"
+        },
+        {
+          "word": "ROUTINE",
+          "hint": "Rutina; actividades habituales",
+          "category": "Time Markers"
+        },
+        {
+          "word": "WEEKLY",
+          "hint": "Semanal; cada semana",
+          "category": "Time Markers"
+        },
+        {
+          "word": "BEFORE",
+          "hint": "Antes; en el pasado",
+          "category": "Time Markers"
+        },
+        {
+          "word": "USUALLY",
+          "hint": "Usualmente; marcador de presente",
+          "category": "Time Markers"
+        }
+      ]
+    }
+  }
+]

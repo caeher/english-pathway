@@ -1,0 +1,473 @@
+[
+  {
+    "id": "m4-ch1-svg",
+    "type": "svg-scene",
+    "title": "Adjetivos vs. Adverbios",
+    "description": "Comprende la diferencia visual entre adjetivos y adverbios.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#3b82f6",
+            "label": "🎨 Adjectives vs. Adverbs",
+            "labelEn": "Describing nouns and actions!"
+          },
+          {
+            "id": "adj",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 75,
+            "fill": "#bfdbfe",
+            "label": "📦 Adjectives → Nouns",
+            "labelEn": "She is BEAUTIFUL. The BIG dog. A HAPPY child. He seems TIRED."
+          },
+          {
+            "id": "adv",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 75,
+            "fill": "#bbf7d0",
+            "label": "🏃 Adverbs → Verbs",
+            "labelEn": "She sings BEAUTIFULLY. He runs QUICKLY. They work HARD."
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 150,
+            "width": 310,
+            "height": 70,
+            "fill": "#fde68a",
+            "label": "📏 Formation: + ly",
+            "labelEn": "slow→slowly, quick→quickly, happy→happily, terrible→terribly"
+          },
+          {
+            "id": "irreg",
+            "type": "rect",
+            "x": 360,
+            "y": 150,
+            "width": 310,
+            "height": 70,
+            "fill": "#fce7f3",
+            "label": "⚡ Irregulars",
+            "labelEn": "good→WELL, fast→FAST, hard→HARD, late→LATE, early→EARLY"
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 240,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "✅ She is a beautiful girl.",
+            "labelEn": "BEAUTIFUL = adjective (before noun)."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 240,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "✅ She sings beautifully.",
+            "labelEn": "BEAUTIFULLY = adverb (describes verb)."
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 30,
+            "y": 315,
+            "width": 640,
+            "height": 55,
+            "fill": "#fee2e2",
+            "label": "⚠️ Good vs. Well",
+            "labelEn": "❌ She sings good. ✅ She sings WELL. ❌ He is good at swim. ✅ He is GOOD at swimming."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m4-ch1-flash",
+    "type": "flashcard",
+    "title": "Adjetivo → Adverbio",
+    "description": "Transforma adjetivos en adverbios.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "slow → ?",
+          "back": "slowly",
+          "example": "He drives slowly."
+        },
+        {
+          "id": "c2",
+          "front": "quick → ?",
+          "back": "quickly",
+          "example": "She runs quickly."
+        },
+        {
+          "id": "c3",
+          "front": "happy → ?",
+          "back": "happily",
+          "example": "y → ily: They danced happily."
+        },
+        {
+          "id": "c4",
+          "front": "easy → ?",
+          "back": "easily",
+          "example": "y → ily: She won easily."
+        },
+        {
+          "id": "c5",
+          "front": "careful → ?",
+          "back": "carefully",
+          "example": "He drives carefully."
+        },
+        {
+          "id": "c6",
+          "front": "terrible → ?",
+          "back": "terribly",
+          "example": "le → ly: She played terribly."
+        },
+        {
+          "id": "c7",
+          "front": "good → ?",
+          "back": "well",
+          "example": "IRREGULAR: She sings well."
+        },
+        {
+          "id": "c8",
+          "front": "fast → ?",
+          "back": "fast (same!)",
+          "example": "He runs fast. (NOT fastly)"
+        },
+        {
+          "id": "c9",
+          "front": "hard → ?",
+          "back": "hard (same!)",
+          "example": "She works hard. (NOT hardly — that means \"barely\")"
+        },
+        {
+          "id": "c10",
+          "front": "beautiful → ?",
+          "back": "beautifully",
+          "example": "She dances beautifully."
+        },
+        {
+          "id": "c11",
+          "front": "loud → ?",
+          "back": "loudly",
+          "example": "He speaks loudly."
+        },
+        {
+          "id": "c12",
+          "front": "late → ?",
+          "back": "late (same!)",
+          "example": "He arrived late. (NOT lately — that means \"recently\")"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-match",
+    "type": "word-match",
+    "title": "Adjetivo ↔ Adverbio",
+    "description": "Empareja cada adjetivo con su adverbio.",
+    "props": {
+      "pairs": [
+        {
+          "left": "slow",
+          "right": "slowly"
+        },
+        {
+          "left": "quick",
+          "right": "quickly"
+        },
+        {
+          "left": "happy",
+          "right": "happily"
+        },
+        {
+          "left": "good",
+          "right": "well"
+        },
+        {
+          "left": "careful",
+          "right": "carefully"
+        },
+        {
+          "left": "beautiful",
+          "right": "beautifully"
+        },
+        {
+          "left": "easy",
+          "right": "easily"
+        },
+        {
+          "left": "terrible",
+          "right": "terribly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Usa el Adjetivo o Adverbio",
+    "description": "Ordena las palabras eligiendo la forma correcta.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella canta bien:",
+          "words": [
+            "She",
+            "sings",
+            "well"
+          ],
+          "correct": "She sings well"
+        },
+        {
+          "prompt": "Él es un buen conductor:",
+          "words": [
+            "He",
+            "is",
+            "a",
+            "good",
+            "driver"
+          ],
+          "correct": "He is a good driver"
+        },
+        {
+          "prompt": "Ella habla español fluidamente:",
+          "words": [
+            "She",
+            "speaks",
+            "Spanish",
+            "fluently"
+          ],
+          "correct": "She speaks Spanish fluently"
+        },
+        {
+          "prompt": "Él corre muy rápido:",
+          "words": [
+            "He",
+            "runs",
+            "very",
+            "fast"
+          ],
+          "correct": "He runs very fast"
+        },
+        {
+          "prompt": "Es una chica hermosa:",
+          "words": [
+            "She",
+            "is",
+            "a",
+            "beautiful",
+            "girl"
+          ],
+          "correct": "She is a beautiful girl"
+        },
+        {
+          "prompt": "Trabajan muy duro:",
+          "words": [
+            "They",
+            "work",
+            "very",
+            "hard"
+          ],
+          "correct": "They work very hard"
+        },
+        {
+          "prompt": "Ella conduce cuidadosamente:",
+          "words": [
+            "She",
+            "drives",
+            "carefully"
+          ],
+          "correct": "She drives carefully"
+        },
+        {
+          "prompt": "Él llegó tarde:",
+          "words": [
+            "He",
+            "arrived",
+            "late"
+          ],
+          "correct": "He arrived late"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz: Adjetivos y Adverbios",
+    "description": "Demuestra que sabes cuándo usar adjetivos y adverbios.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She sings ___.\"",
+          "options": [
+            "beautiful",
+            "beautifully",
+            "beauty",
+            "beautifuly"
+          ],
+          "correct": 1,
+          "explanation": "Describes verb → adverb: beautifully."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"He is a ___ driver.\"",
+          "options": [
+            "carefully",
+            "careful",
+            "care",
+            "carefully"
+          ],
+          "correct": 1,
+          "explanation": "Before noun → adjective: careful."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"She speaks English ___.\" (good)",
+          "correct": "well",
+          "explanation": "good → well (adverb, irregular)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"He runs very ___.\"",
+          "options": [
+            "fastly",
+            "fast",
+            "faster",
+            "fasting"
+          ],
+          "correct": 1,
+          "explanation": "Fast stays the same as adverb (no \"fastly\")."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"She dances ___.\" (beautiful)",
+          "correct": "beautifully",
+          "explanation": "beautiful → beautifully (+ ly)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"They work very ___.\"",
+          "options": [
+            "hardly",
+            "hard",
+            "harder",
+            "harding"
+          ],
+          "correct": 1,
+          "explanation": "Hard = adverb too (hardly = \"barely\"!)."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"He arrived ___.\" (late)",
+          "correct": "late",
+          "explanation": "Late stays the same (lately = \"recently\")."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "She sings well.",
+            "She sings good.",
+            "She is a good singer.",
+            "She sings beautifully."
+          ],
+          "correct": 1,
+          "explanation": "\"She sings good\" is wrong → She sings WELL."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"The children played ___.\" (happy)",
+          "correct": "happily",
+          "explanation": "happy → happily (y → ily)."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"She is ___ at her job.\" (good/well)",
+          "options": [
+            "well",
+            "good",
+            "goodly",
+            "welling"
+          ],
+          "correct": 1,
+          "explanation": "After \"is\" → adjective: She is GOOD at her job."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Adverbios de Manera",
+    "description": "Descifra adverbios que describen cómo se hace algo.",
+    "props": {
+      "words": [
+        {
+          "word": "QUICKLY",
+          "hint": "Rápidamente; de forma rápida",
+          "category": "Adverbs"
+        },
+        {
+          "word": "SLOWLY",
+          "hint": "Lentamente; de forma lenta",
+          "category": "Adverbs"
+        },
+        {
+          "word": "CAREFULLY",
+          "hint": "Cuidadosamente; con cuidado",
+          "category": "Adverbs"
+        },
+        {
+          "word": "HAPPILY",
+          "hint": "Felizmente; con felicidad",
+          "category": "Adverbs"
+        },
+        {
+          "word": "LOUDLY",
+          "hint": "Ruidosamente; en voz alta",
+          "category": "Adverbs"
+        },
+        {
+          "word": "QUIETLY",
+          "hint": "Silenciosamente; sin ruido",
+          "category": "Adverbs"
+        }
+      ]
+    }
+  }
+]

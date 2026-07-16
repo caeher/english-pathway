@@ -1,0 +1,442 @@
+[
+  {
+    "id": "m8-ch4-svg",
+    "type": "svg-scene",
+    "title": "El Mapa de Situaciones",
+    "description": "Visita cada lugar de la ciudad y descubre qué frases se usan ahí.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "cafe",
+            "type": "rect",
+            "x": 30,
+            "y": 50,
+            "width": 120,
+            "height": 90,
+            "fill": "#92400e",
+            "label": "Café",
+            "labelEn": "☕ Café — \"I'd like a coffee, please\""
+          },
+          {
+            "id": "airport",
+            "type": "rect",
+            "x": 230,
+            "y": 50,
+            "width": 140,
+            "height": 90,
+            "fill": "#6366f1",
+            "label": "Aeropuerto",
+            "labelEn": "✈️ Airport — \"Where is gate 5?\""
+          },
+          {
+            "id": "shop",
+            "type": "rect",
+            "x": 440,
+            "y": 50,
+            "width": 120,
+            "height": 90,
+            "fill": "#16a34a",
+            "label": "Tienda",
+            "labelEn": "🛒 Shop — \"How much is this?\""
+          },
+          {
+            "id": "hospital",
+            "type": "rect",
+            "x": 30,
+            "y": 230,
+            "width": 120,
+            "height": 90,
+            "fill": "#dc2626",
+            "label": "Hospital",
+            "labelEn": "🏥 Hospital — \"I don't feel well\""
+          },
+          {
+            "id": "hotel",
+            "type": "rect",
+            "x": 230,
+            "y": 230,
+            "width": 140,
+            "height": 90,
+            "fill": "#0ea5e9",
+            "label": "Hotel",
+            "labelEn": "🏨 Hotel — \"I have a reservation\""
+          },
+          {
+            "id": "park",
+            "type": "ellipse",
+            "cx": 500,
+            "cy": 275,
+            "rx": 70,
+            "ry": 50,
+            "fill": "#4ade80",
+            "label": "Parque",
+            "labelEn": "🌳 Park — \"What a beautiful day!\""
+          },
+          {
+            "id": "road",
+            "type": "rect",
+            "x": 0,
+            "y": 170,
+            "width": 600,
+            "height": 30,
+            "fill": "#9ca3af",
+            "label": "Calle",
+            "labelEn": "🛣️ Street — \"Excuse me, where is...?\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m8-ch4-flash",
+    "type": "flashcard",
+    "title": "Flashcards de Frases Cotidianas",
+    "description": "Aprende frases esenciales para cada situación de la vida diaria.",
+    "props": {
+      "cards": [
+        {
+          "id": "lf1",
+          "front": "¿Cómo estás?",
+          "back": "How are you?",
+          "example": "Hi! How are you? — I'm fine, thanks!"
+        },
+        {
+          "id": "lf2",
+          "front": "¿Podrías ayudarme?",
+          "back": "Could you help me, please?",
+          "example": "Excuse me, could you help me, please?"
+        },
+        {
+          "id": "lf3",
+          "front": "¿Cuánto cuesta esto?",
+          "back": "How much is this?",
+          "example": "How much is this T-shirt?"
+        },
+        {
+          "id": "lf4",
+          "front": "¿Dónde está...?",
+          "back": "Where is the...?",
+          "example": "Excuse me, where is the station?"
+        },
+        {
+          "id": "lf5",
+          "front": "Quisiera un café",
+          "back": "I'd like a coffee, please",
+          "example": "I'd like a coffee with milk, please."
+        },
+        {
+          "id": "lf6",
+          "front": "¡Hasta luego!",
+          "back": "See you later!",
+          "example": "Bye! See you later!"
+        },
+        {
+          "id": "lf7",
+          "front": "No me siento bien",
+          "back": "I don't feel well",
+          "example": "I don't feel well. I have a headache."
+        },
+        {
+          "id": "lf8",
+          "front": "Tengo una reservación",
+          "back": "I have a reservation",
+          "example": "Hello, I have a reservation under Smith."
+        },
+        {
+          "id": "lf9",
+          "front": "¿Qué hermoso día!",
+          "back": "What a beautiful day!",
+          "example": "What a beautiful day! Let's go to the park."
+        },
+        {
+          "id": "lf10",
+          "front": "Disculpe...",
+          "back": "Excuse me...",
+          "example": "Excuse me, is this seat taken?"
+        },
+        {
+          "id": "lf11",
+          "front": "La cuenta, por favor",
+          "back": "Can I get the bill, please?",
+          "example": "We're ready. Can I get the bill, please?"
+        },
+        {
+          "id": "lf12",
+          "front": "Mucho gusto",
+          "back": "Nice to meet you",
+          "example": "Hi, I'm Ana. — Nice to meet you, Ana!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-match",
+    "type": "word-match",
+    "title": "Frase → Situación",
+    "description": "Empareja cada frase con la situación donde se usaría.",
+    "props": {
+      "pairs": [
+        {
+          "left": "How much is this?",
+          "right": "🛒 Shopping"
+        },
+        {
+          "left": "Where is gate 5?",
+          "right": "✈️ Airport"
+        },
+        {
+          "left": "I'd like a coffee",
+          "right": "☕ Café"
+        },
+        {
+          "left": "I don't feel well",
+          "right": "🏥 Hospital"
+        },
+        {
+          "left": "I have a reservation",
+          "right": "🏨 Hotel"
+        },
+        {
+          "left": "What a beautiful day!",
+          "right": "🌳 Park"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Reconstruye la Frase",
+    "description": "Ordena las palabras para reconstruir frases cotidianas en inglés.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Pidiendo ayuda:",
+          "words": [
+            "you",
+            "Could",
+            "please?",
+            "help",
+            "me,"
+          ],
+          "correct": "Could you help me, please?"
+        },
+        {
+          "prompt": "En un café:",
+          "words": [
+            "a",
+            "I'd",
+            "please",
+            "coffee,",
+            "like"
+          ],
+          "correct": "I'd like a coffee, please"
+        },
+        {
+          "prompt": "Preguntando precio:",
+          "words": [
+            "much",
+            "How",
+            "this?",
+            "is"
+          ],
+          "correct": "How much is this?"
+        },
+        {
+          "prompt": "Preguntando dirección:",
+          "words": [
+            "is",
+            "the",
+            "Where",
+            "station?"
+          ],
+          "correct": "Where is the station?"
+        },
+        {
+          "prompt": "En el hotel:",
+          "words": [
+            "a",
+            "have",
+            "I",
+            "reservation"
+          ],
+          "correct": "I have a reservation"
+        },
+        {
+          "prompt": "Despidiéndote:",
+          "words": [
+            "later!",
+            "See",
+            "you"
+          ],
+          "correct": "See you later!"
+        },
+        {
+          "prompt": "Pidiendo la cuenta:",
+          "words": [
+            "the",
+            "get",
+            "I",
+            "Can",
+            "bill?"
+          ],
+          "correct": "Can I get the bill?"
+        },
+        {
+          "prompt": "Saludando:",
+          "words": [
+            "are",
+            "How",
+            "you?"
+          ],
+          "correct": "How are you?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz de Comprensión",
+    "description": "Demuestra que puedes identificar la frase correcta para cada situación.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You want to buy a shirt. You ask:",
+          "options": [
+            "Where is the shirt?",
+            "How much is this shirt?",
+            "I like this shirt",
+            "Give me the shirt"
+          ],
+          "correct": 1,
+          "explanation": "\"How much is this?\" is the polite way to ask the price."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "You arrive at a hotel. You say:",
+          "options": [
+            "I want a room",
+            "I have a reservation",
+            "Where is my room?",
+            "Give me a key"
+          ],
+          "correct": 1,
+          "explanation": "\"I have a reservation\" is the standard way to check in."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Someone says \"How are you?\" The best response is:",
+          "options": [
+            "Yes, I am",
+            "I'm fine, thanks! And you?",
+            "I am John",
+            "Good morning"
+          ],
+          "correct": 1,
+          "explanation": "The standard response is \"I'm fine, thanks! And you?\""
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "To ask for the bill at a restaurant: \"Can I get the ____, please?\"",
+          "correct": "bill",
+          "explanation": "\"Can I get the bill, please?\" is the standard way to ask."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "You need directions. You start with:",
+          "options": [
+            "Hey!",
+            "Excuse me...",
+            "Help!",
+            "Listen..."
+          ],
+          "correct": 1,
+          "explanation": "\"Excuse me\" is the polite way to get someone's attention."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "At a café, you order by saying:",
+          "options": [
+            "Give me coffee",
+            "Coffee now",
+            "I'd like a coffee, please",
+            "I want coffee"
+          ],
+          "correct": 2,
+          "explanation": "\"I'd like... please\" is the polite way to order."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "When you meet someone new: \"Nice to ____ you!\"",
+          "correct": "meet",
+          "explanation": "\"Nice to meet you\" is the standard greeting when meeting someone."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "You feel sick. You say:",
+          "options": [
+            "I'm angry",
+            "I don't feel well",
+            "I'm hungry",
+            "I'm tired"
+          ],
+          "correct": 1,
+          "explanation": "\"I don't feel well\" expresses that you're sick."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-scramble",
+    "type": "word-scramble",
+    "title": "A Escuchar",
+    "description": "Descifra palabras del listening.",
+    "props": {
+      "words": [
+        {
+          "word": "LISTEN",
+          "hint": "Escuchar; prestar atención",
+          "category": "Listening"
+        },
+        {
+          "word": "HEAR",
+          "hint": "Oír; percibir sonido",
+          "category": "Listening"
+        },
+        {
+          "word": "UNDERSTAND",
+          "hint": "Entender; comprender",
+          "category": "Listening"
+        },
+        {
+          "word": "REPEAT",
+          "hint": "Repetir; decir de nuevo",
+          "category": "Listening"
+        },
+        {
+          "word": "PRACTICE",
+          "hint": "Práctica; ejercitar",
+          "category": "Listening"
+        },
+        {
+          "word": "AUDIO",
+          "hint": "Audio; sonido grabado",
+          "category": "Listening"
+        }
+      ]
+    }
+  }
+]

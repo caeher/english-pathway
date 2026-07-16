@@ -1,0 +1,497 @@
+[
+  {
+    "id": "m4-ch6-svg",
+    "type": "svg-scene",
+    "title": "El Mapa de las Preposiciones",
+    "description": "Visualiza preposiciones de lugar y tiempo.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#ecfeff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#06b6d4",
+            "label": "📍 Prepositions of Place & Time",
+            "labelEn": "In, On, At — Where & When!"
+          },
+          {
+            "id": "in-p",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#a5f3fc",
+            "label": "📦 IN (place)",
+            "labelEn": "IN the box, IN the room, IN Spain, IN the city."
+          },
+          {
+            "id": "on-p",
+            "type": "rect",
+            "x": 250,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "📋 ON (place)",
+            "labelEn": "ON the table, ON the wall, ON the floor, ON the street."
+          },
+          {
+            "id": "at-p",
+            "type": "rect",
+            "x": 470,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#fde68a",
+            "label": "📌 AT (place)",
+            "labelEn": "AT the bus stop, AT school, AT home, AT the door."
+          },
+          {
+            "id": "in-t",
+            "type": "rect",
+            "x": 30,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#bfdbfe",
+            "label": "📅 IN (time)",
+            "labelEn": "IN March, IN 2024, IN summer, IN the morning."
+          },
+          {
+            "id": "on-t",
+            "type": "rect",
+            "x": 250,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#dcfce7",
+            "label": "📆 ON (time)",
+            "labelEn": "ON Monday, ON July 4th, ON my birthday."
+          },
+          {
+            "id": "at-t",
+            "type": "rect",
+            "x": 470,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#fef9c3",
+            "label": "⏰ AT (time)",
+            "labelEn": "AT 5 PM, AT night, AT Christmas, AT noon."
+          },
+          {
+            "id": "more",
+            "type": "rect",
+            "x": 30,
+            "y": 245,
+            "width": 640,
+            "height": 60,
+            "fill": "#e0e7ff",
+            "label": "🗺️ More: next to, between, behind, in front of, under, above, near",
+            "labelEn": "The bank is NEXT TO the school. The cat is UNDER the table."
+          },
+          {
+            "id": "rule",
+            "type": "rect",
+            "x": 100,
+            "y": 325,
+            "width": 500,
+            "height": 55,
+            "fill": "#fce7f3",
+            "label": "💡 Size Rule",
+            "labelEn": "IN = big (countries, months). ON = medium (days). AT = small (times, points)."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m4-ch6-flash",
+    "type": "flashcard",
+    "title": "In, On, At — Práctica",
+    "description": "Aprende cuándo usar cada preposición.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "___ the box (dentro)",
+          "back": "IN the box",
+          "example": "The keys are in the box."
+        },
+        {
+          "id": "c2",
+          "front": "___ the table (sobre)",
+          "back": "ON the table",
+          "example": "The book is on the table."
+        },
+        {
+          "id": "c3",
+          "front": "___ the bus stop (punto)",
+          "back": "AT the bus stop",
+          "example": "I'm waiting at the bus stop."
+        },
+        {
+          "id": "c4",
+          "front": "___ March (mes)",
+          "back": "IN March",
+          "example": "My birthday is in March."
+        },
+        {
+          "id": "c5",
+          "front": "___ Monday (día)",
+          "back": "ON Monday",
+          "example": "The meeting is on Monday."
+        },
+        {
+          "id": "c6",
+          "front": "___ 5 PM (hora)",
+          "back": "AT 5 PM",
+          "example": "I finish work at 5 PM."
+        },
+        {
+          "id": "c7",
+          "front": "___ the morning (parte del día)",
+          "back": "IN the morning",
+          "example": "I exercise in the morning."
+        },
+        {
+          "id": "c8",
+          "front": "___ night (excepción)",
+          "back": "AT night",
+          "example": "AT night (not \"in the night\")."
+        },
+        {
+          "id": "c9",
+          "front": "al lado de (lugar)",
+          "back": "NEXT TO",
+          "example": "The bank is next to the school."
+        },
+        {
+          "id": "c10",
+          "front": "entre (lugar)",
+          "back": "BETWEEN",
+          "example": "The park is between the bank and the church."
+        },
+        {
+          "id": "c11",
+          "front": "debajo de (lugar)",
+          "back": "UNDER",
+          "example": "The cat is under the table."
+        },
+        {
+          "id": "c12",
+          "front": "delante de (lugar)",
+          "back": "IN FRONT OF",
+          "example": "The tree is in front of the house."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-match",
+    "type": "word-match",
+    "title": "Completa con In, On, At",
+    "description": "Empareja cada frase con la preposición correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "___ the room",
+          "right": "in"
+        },
+        {
+          "left": "___ the table",
+          "right": "on"
+        },
+        {
+          "left": "___ the bus stop",
+          "right": "at"
+        },
+        {
+          "left": "___ March",
+          "right": "in"
+        },
+        {
+          "left": "___ Monday",
+          "right": "on"
+        },
+        {
+          "left": "___ 3 PM",
+          "right": "at"
+        },
+        {
+          "left": "___ 2024",
+          "right": "in"
+        },
+        {
+          "left": "___ night",
+          "right": "at"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-sentence",
+    "type": "sentence-builder",
+    "title": "Ubica las Cosas",
+    "description": "Ordena las palabras usando la preposición correcta.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "El libro está en la mesa:",
+          "words": [
+            "The",
+            "book",
+            "is",
+            "on",
+            "the",
+            "table"
+          ],
+          "correct": "The book is on the table"
+        },
+        {
+          "prompt": "Estoy en la habitación:",
+          "words": [
+            "I",
+            "am",
+            "in",
+            "the",
+            "room"
+          ],
+          "correct": "I am in the room"
+        },
+        {
+          "prompt": "Nos vemos a las 5:",
+          "words": [
+            "See",
+            "you",
+            "at",
+            "5",
+            "PM"
+          ],
+          "correct": "See you at 5 PM"
+        },
+        {
+          "prompt": "Mi cumpleaños es en marzo:",
+          "words": [
+            "My",
+            "birthday",
+            "is",
+            "in",
+            "March"
+          ],
+          "correct": "My birthday is in March"
+        },
+        {
+          "prompt": "La reunión es el lunes:",
+          "words": [
+            "The",
+            "meeting",
+            "is",
+            "on",
+            "Monday"
+          ],
+          "correct": "The meeting is on Monday"
+        },
+        {
+          "prompt": "El gato está debajo de la mesa:",
+          "words": [
+            "The",
+            "cat",
+            "is",
+            "under",
+            "the",
+            "table"
+          ],
+          "correct": "The cat is under the table"
+        },
+        {
+          "prompt": "El banco está al lado de la escuela:",
+          "words": [
+            "The",
+            "bank",
+            "is",
+            "next",
+            "to",
+            "the",
+            "school"
+          ],
+          "correct": "The bank is next to the school"
+        },
+        {
+          "prompt": "Estudio por la mañana:",
+          "words": [
+            "I",
+            "study",
+            "in",
+            "the",
+            "morning"
+          ],
+          "correct": "I study in the morning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-quiz",
+    "type": "quiz",
+    "title": "Quiz: Preposiciones",
+    "description": "Demuestra tu dominio de las preposiciones.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"The book is ___ the table.\"",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct": 1,
+          "explanation": "On the table (surface)."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"I live ___ Spain.\"",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct": 0,
+          "explanation": "In Spain (country = big)."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"The meeting is ___ 3 PM.\"",
+          "correct": "at",
+          "explanation": "At + time."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"My birthday is ___ July.\"",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct": 0,
+          "explanation": "In + month."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"The party is ___ Saturday.\"",
+          "correct": "on",
+          "explanation": "On + day."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"I study ___ night.\"",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct": 2,
+          "explanation": "At night (exception!)."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"I'm waiting ___ the bus stop.\"",
+          "correct": "at",
+          "explanation": "At the bus stop (specific point)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"The cat is ___ the table.\"",
+          "options": [
+            "under",
+            "on",
+            "Both possible",
+            "at"
+          ],
+          "correct": 2,
+          "explanation": "Both are possible depending on context!"
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"I exercise ___ the morning.\"",
+          "correct": "in",
+          "explanation": "In the morning (part of day)."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"The bank is ___ the school.\"",
+          "options": [
+            "next to",
+            "in",
+            "at",
+            "on"
+          ],
+          "correct": 0,
+          "explanation": "Next to = al lado de."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-scramble",
+    "type": "word-scramble",
+    "title": "Preposiciones de Lugar y Tiempo",
+    "description": "Descifra preposiciones clave.",
+    "props": {
+      "words": [
+        {
+          "word": "BEHIND",
+          "hint": "Detrás de",
+          "category": "Prepositions"
+        },
+        {
+          "word": "BETWEEN",
+          "hint": "Entre; en medio de dos",
+          "category": "Prepositions"
+        },
+        {
+          "word": "ABOVE",
+          "hint": "Encima de; sobre",
+          "category": "Prepositions"
+        },
+        {
+          "word": "BELOW",
+          "hint": "Debajo de",
+          "category": "Prepositions"
+        },
+        {
+          "word": "DURING",
+          "hint": "Durante; a lo largo de",
+          "category": "Prepositions"
+        },
+        {
+          "word": "UNTIL",
+          "hint": "Hasta; hasta que",
+          "category": "Prepositions"
+        }
+      ]
+    }
+  }
+]

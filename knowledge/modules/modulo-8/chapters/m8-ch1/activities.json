@@ -1,0 +1,562 @@
+[
+  {
+    "id": "m8-ch1-svg",
+    "type": "svg-scene",
+    "title": "Explora la Habitación",
+    "description": "Haz clic en cada objeto para descubrir su nombre en inglés. ¡Encuentra todos!",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#fef3c7",
+        "items": [
+          {
+            "id": "sun",
+            "type": "circle",
+            "cx": 540,
+            "cy": 60,
+            "r": 35,
+            "fill": "#fbbf24",
+            "label": "Sol",
+            "labelEn": "Sun"
+          },
+          {
+            "id": "window",
+            "type": "rect",
+            "x": 380,
+            "y": 60,
+            "width": 80,
+            "height": 80,
+            "fill": "#93c5fd",
+            "label": "Ventana",
+            "labelEn": "Window"
+          },
+          {
+            "id": "clock",
+            "type": "circle",
+            "cx": 300,
+            "cy": 65,
+            "r": 22,
+            "fill": "#fafafa",
+            "label": "Reloj",
+            "labelEn": "Clock"
+          },
+          {
+            "id": "lamp",
+            "type": "rect",
+            "x": 50,
+            "y": 100,
+            "width": 20,
+            "height": 80,
+            "fill": "#a3a3a3",
+            "label": "Lámpara",
+            "labelEn": "Lamp"
+          },
+          {
+            "id": "lampshade",
+            "type": "polygon",
+            "points": "30,100 90,100 60,60",
+            "fill": "#fcd34d",
+            "label": "Pantalla",
+            "labelEn": "Lampshade"
+          },
+          {
+            "id": "table",
+            "type": "rect",
+            "x": 150,
+            "y": 220,
+            "width": 200,
+            "height": 15,
+            "fill": "#92400e",
+            "label": "Mesa",
+            "labelEn": "Table"
+          },
+          {
+            "id": "tableleg1",
+            "type": "rect",
+            "x": 165,
+            "y": 235,
+            "width": 10,
+            "height": 60,
+            "fill": "#78350f",
+            "label": "Pata",
+            "labelEn": "Leg"
+          },
+          {
+            "id": "tableleg2",
+            "type": "rect",
+            "x": 325,
+            "y": 235,
+            "width": 10,
+            "height": 60,
+            "fill": "#78350f",
+            "label": "Pata",
+            "labelEn": "Leg"
+          },
+          {
+            "id": "book",
+            "type": "rect",
+            "x": 200,
+            "y": 200,
+            "width": 50,
+            "height": 20,
+            "fill": "#ef4444",
+            "label": "Libro",
+            "labelEn": "Book"
+          },
+          {
+            "id": "cup",
+            "type": "rect",
+            "x": 280,
+            "y": 200,
+            "width": 25,
+            "height": 20,
+            "fill": "#6366f1",
+            "label": "Taza",
+            "labelEn": "Cup"
+          },
+          {
+            "id": "chair",
+            "type": "rect",
+            "x": 200,
+            "y": 260,
+            "width": 60,
+            "height": 50,
+            "fill": "#d97706",
+            "label": "Silla",
+            "labelEn": "Chair"
+          },
+          {
+            "id": "rug",
+            "type": "ellipse",
+            "cx": 400,
+            "cy": 350,
+            "rx": 90,
+            "ry": 30,
+            "fill": "#c084fc",
+            "label": "Alfombra",
+            "labelEn": "Rug"
+          },
+          {
+            "id": "plant",
+            "type": "circle",
+            "cx": 520,
+            "cy": 280,
+            "r": 30,
+            "fill": "#22c55e",
+            "label": "Planta",
+            "labelEn": "Plant"
+          },
+          {
+            "id": "pot",
+            "type": "rect",
+            "x": 502,
+            "y": 305,
+            "width": 36,
+            "height": 30,
+            "fill": "#b45309",
+            "label": "Maceta",
+            "labelEn": "Pot"
+          },
+          {
+            "id": "door",
+            "type": "rect",
+            "x": 20,
+            "y": 200,
+            "width": 55,
+            "height": 120,
+            "fill": "#854d0e",
+            "label": "Puerta",
+            "labelEn": "Door"
+          },
+          {
+            "id": "floor",
+            "type": "rect",
+            "x": 0,
+            "y": 370,
+            "width": 600,
+            "height": 30,
+            "fill": "#d4a373",
+            "label": "Piso",
+            "labelEn": "Floor"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m8-ch1-flash",
+    "type": "flashcard",
+    "title": "Flashcards de Vocabulario",
+    "description": "Intenta recordar la palabra en inglés antes de voltear la tarjeta.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "Mesa",
+          "back": "Table",
+          "example": "The book is on the table."
+        },
+        {
+          "id": "f2",
+          "front": "Silla",
+          "back": "Chair",
+          "example": "Please sit on the chair."
+        },
+        {
+          "id": "f3",
+          "front": "Libro",
+          "back": "Book",
+          "example": "I love this book."
+        },
+        {
+          "id": "f4",
+          "front": "Ventana",
+          "back": "Window",
+          "example": "Open the window, please."
+        },
+        {
+          "id": "f5",
+          "front": "Puerta",
+          "back": "Door",
+          "example": "Close the door."
+        },
+        {
+          "id": "f6",
+          "front": "Reloj",
+          "back": "Clock",
+          "example": "The clock is on the wall."
+        },
+        {
+          "id": "f7",
+          "front": "Lámpara",
+          "back": "Lamp",
+          "example": "Turn on the lamp."
+        },
+        {
+          "id": "f8",
+          "front": "Taza",
+          "back": "Cup",
+          "example": "A cup of coffee, please."
+        },
+        {
+          "id": "f9",
+          "front": "Alfombra",
+          "back": "Rug",
+          "example": "The rug is purple."
+        },
+        {
+          "id": "f10",
+          "front": "Planta",
+          "back": "Plant",
+          "example": "The plant needs water."
+        },
+        {
+          "id": "f11",
+          "front": "Piso",
+          "back": "Floor",
+          "example": "The floor is clean."
+        },
+        {
+          "id": "f12",
+          "front": "Sol",
+          "back": "Sun",
+          "example": "The sun is bright today."
+        },
+        {
+          "id": "f13",
+          "front": "Rojo",
+          "back": "Red",
+          "example": "The book is red."
+        },
+        {
+          "id": "f14",
+          "front": "Azul",
+          "back": "Blue",
+          "example": "The sky is blue."
+        },
+        {
+          "id": "f15",
+          "front": "Verde",
+          "back": "Green",
+          "example": "The plant is green."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-match",
+    "type": "word-match",
+    "title": "Conecta las Parejas",
+    "description": "Empareja cada palabra en inglés con su traducción. ¡Menos intentos = más estrellas!",
+    "props": {
+      "pairs": [
+        {
+          "left": "Table",
+          "right": "Mesa"
+        },
+        {
+          "left": "Chair",
+          "right": "Silla"
+        },
+        {
+          "left": "Book",
+          "right": "Libro"
+        },
+        {
+          "left": "Window",
+          "right": "Ventana"
+        },
+        {
+          "left": "Door",
+          "right": "Puerta"
+        },
+        {
+          "left": "Clock",
+          "right": "Reloj"
+        },
+        {
+          "left": "Lamp",
+          "right": "Lámpara"
+        },
+        {
+          "left": "Cup",
+          "right": "Taza"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Describe la Habitación",
+    "description": "Crea oraciones simples sobre los objetos que encontraste.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "El libro está en...",
+          "words": [
+            "The",
+            "book",
+            "is",
+            "on",
+            "the",
+            "table"
+          ],
+          "correct": "The book is on the table"
+        },
+        {
+          "prompt": "La taza está en...",
+          "words": [
+            "The",
+            "cup",
+            "is",
+            "on",
+            "the",
+            "table"
+          ],
+          "correct": "The cup is on the table"
+        },
+        {
+          "prompt": "La planta está en...",
+          "words": [
+            "The",
+            "plant",
+            "is",
+            "in",
+            "the",
+            "pot"
+          ],
+          "correct": "The plant is in the pot"
+        },
+        {
+          "prompt": "La lámpara es...",
+          "words": [
+            "The",
+            "lamp",
+            "is",
+            "yellow"
+          ],
+          "correct": "The lamp is yellow"
+        },
+        {
+          "prompt": "La alfombra es...",
+          "words": [
+            "The",
+            "rug",
+            "is",
+            "purple"
+          ],
+          "correct": "The rug is purple"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz de Vocabulario",
+    "description": "¿Puedes identificar las palabras correctas? 10 preguntas para probar tu memoria.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "What is \"mesa\" in English?",
+          "options": [
+            "Chair",
+            "Table",
+            "Door",
+            "Window"
+          ],
+          "correct": 1,
+          "explanation": "Mesa = Table. \"The book is on the table.\""
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "What is \"silla\" in English?",
+          "options": [
+            "Table",
+            "Lamp",
+            "Chair",
+            "Cup"
+          ],
+          "correct": 2,
+          "explanation": "Silla = Chair. \"Please sit on the chair.\""
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "What is \"ventana\" in English?",
+          "options": [
+            "Door",
+            "Window",
+            "Wall",
+            "Floor"
+          ],
+          "correct": 1,
+          "explanation": "Ventana = Window."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "What is \"reloj\" in English?",
+          "options": [
+            "Cup",
+            "Book",
+            "Clock",
+            "Lamp"
+          ],
+          "correct": 2,
+          "explanation": "Reloj = Clock."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "The word \"puerta\" in English is ____.",
+          "correct": "door",
+          "explanation": "Puerta = Door."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Which word means \"taza\"?",
+          "options": [
+            "Rug",
+            "Cup",
+            "Pot",
+            "Plant"
+          ],
+          "correct": 1,
+          "explanation": "Taza = Cup."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"Planta\" in English is...",
+          "options": [
+            "Floor",
+            "Plant",
+            "Pot",
+            "Rug"
+          ],
+          "correct": 1,
+          "explanation": "Planta = Plant."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "The word for \"libro\" in English is ____.",
+          "correct": "book",
+          "explanation": "Libro = Book."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "What color is \"rojo\"?",
+          "options": [
+            "Blue",
+            "Green",
+            "Red",
+            "Yellow"
+          ],
+          "correct": 2,
+          "explanation": "Rojo = Red."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"Lámpara\" in English is...",
+          "options": [
+            "Lamp",
+            "Light",
+            "Candle",
+            "Clock"
+          ],
+          "correct": 0,
+          "explanation": "Lámpara = Lamp."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Primeras Palabras",
+    "description": "Descifra palabras básicas para empezar.",
+    "props": {
+      "words": [
+        {
+          "word": "APPLE",
+          "hint": "Manzana; fruta roja o verde",
+          "category": "Basic"
+        },
+        {
+          "word": "HOUSE",
+          "hint": "Casa; donde vives",
+          "category": "Basic"
+        },
+        {
+          "word": "WATER",
+          "hint": "Agua; líquido transparente",
+          "category": "Basic"
+        },
+        {
+          "word": "FAMILY",
+          "hint": "Familia; padres, hermanos",
+          "category": "Basic"
+        },
+        {
+          "word": "SCHOOL",
+          "hint": "Escuela; donde se estudia",
+          "category": "Basic"
+        },
+        {
+          "word": "FRIEND",
+          "hint": "Amigo; persona cercana",
+          "category": "Basic"
+        }
+      ]
+    }
+  }
+]

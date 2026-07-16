@@ -1,0 +1,478 @@
+[
+  {
+    "id": "m2-ch3-svg",
+    "type": "svg-scene",
+    "title": "Regulares e Irregulares en Acción",
+    "description": "Explora el pasado simple con ambos tipos de verbos.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 25,
+            "y": 10,
+            "width": 650,
+            "height": 380,
+            "fill": "#ede9fe",
+            "label": "📖 Past Simple: Regular & Irregular",
+            "labelEn": "What did they do yesterday? Regular: -ed. Irregular: special forms!"
+          },
+          {
+            "id": "reg1",
+            "type": "rect",
+            "x": 50,
+            "y": 55,
+            "width": 180,
+            "height": 70,
+            "fill": "#fef3c7",
+            "label": "📝 Regular: -ed",
+            "labelEn": "She WALKED to school. She STUDIED. She COOKED dinner."
+          },
+          {
+            "id": "irr1",
+            "type": "rect",
+            "x": 260,
+            "y": 55,
+            "width": 180,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "🌀 Irregular",
+            "labelEn": "He WENT home. She ATE pizza. They SAW a movie."
+          },
+          {
+            "id": "mixed",
+            "type": "rect",
+            "x": 470,
+            "y": 55,
+            "width": 180,
+            "height": 70,
+            "fill": "#bfdbfe",
+            "label": "🔀 Mixed",
+            "labelEn": "She WATCHED (reg) and ATE (irr). He WORKED (reg) and WENT (irr)."
+          },
+          {
+            "id": "pron",
+            "type": "rect",
+            "x": 50,
+            "y": 155,
+            "width": 280,
+            "height": 70,
+            "fill": "#dcfce7",
+            "label": "🔊 Pronunciación -ed",
+            "labelEn": "/t/ walked, /d/ played, /ɪd/ wanted"
+          },
+          {
+            "id": "rule",
+            "type": "rect",
+            "x": 360,
+            "y": 155,
+            "width": 300,
+            "height": 70,
+            "fill": "#fef9c3",
+            "label": "📏 Negativa/Pregunta = BASE",
+            "labelEn": "Did you GO? She DIDN'T EAT. (not went/ate!)"
+          },
+          {
+            "id": "room1",
+            "type": "rect",
+            "x": 50,
+            "y": 270,
+            "width": 190,
+            "height": 70,
+            "fill": "#fecaca",
+            "label": "🚶 Movement",
+            "labelEn": "go→went, come→came, run→ran, fly→flew, drive→drove"
+          },
+          {
+            "id": "room2",
+            "type": "rect",
+            "x": 260,
+            "y": 270,
+            "width": 190,
+            "height": 70,
+            "fill": "#fce7f3",
+            "label": "🍳 Daily Life",
+            "labelEn": "eat→ate, drink→drank, sleep→slept, buy→bought"
+          },
+          {
+            "id": "room3",
+            "type": "rect",
+            "x": 470,
+            "y": 270,
+            "width": 190,
+            "height": 70,
+            "fill": "#e0e7ff",
+            "label": "💭 Mind/Communication",
+            "labelEn": "think→thought, say→said, write→wrote, read→read"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m2-ch3-flash",
+    "type": "flashcard",
+    "title": "Regulares e Irregulares",
+    "description": "Domina la forma pasada de verbos regulares e irregulares.",
+    "props": {
+      "cards": [
+        {
+          "id": "r1",
+          "front": "work → ?",
+          "back": "worked (regular)",
+          "example": "I worked all day yesterday."
+        },
+        {
+          "id": "r2",
+          "front": "go → ?",
+          "back": "went (irregular)",
+          "example": "We went to the beach."
+        },
+        {
+          "id": "r3",
+          "front": "study → ?",
+          "back": "studied (regular, y→ied)",
+          "example": "He studied for the exam."
+        },
+        {
+          "id": "r4",
+          "front": "eat → ?",
+          "back": "ate (irregular)",
+          "example": "She ate pizza last night."
+        },
+        {
+          "id": "r5",
+          "front": "stop → ?",
+          "back": "stopped (regular, double p)",
+          "example": "The bus stopped at the corner."
+        },
+        {
+          "id": "r6",
+          "front": "see → ?",
+          "back": "saw (irregular)",
+          "example": "I saw a beautiful sunset."
+        },
+        {
+          "id": "r7",
+          "front": "buy → ?",
+          "back": "bought (irregular)",
+          "example": "She bought a new dress."
+        },
+        {
+          "id": "r8",
+          "front": "want → ?",
+          "back": "wanted (regular, /ɪd/)",
+          "example": "I wanted a new phone."
+        },
+        {
+          "id": "r9",
+          "front": "think → ?",
+          "back": "thought (irregular)",
+          "example": "She thought about it."
+        },
+        {
+          "id": "r10",
+          "front": "swim → ?",
+          "back": "swam (irregular)",
+          "example": "They swam in the ocean."
+        },
+        {
+          "id": "r11",
+          "front": "read (past)",
+          "back": "read (same spelling, /rɛd/)",
+          "example": "I read a book yesterday."
+        },
+        {
+          "id": "r12",
+          "front": "Did you ___ ? (go)",
+          "back": "Did you go? (base form after Did)",
+          "example": "Never: Did you went?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-match",
+    "type": "word-match",
+    "title": "Presente → Pasado",
+    "description": "Empareja cada verbo con su forma en pasado.",
+    "props": {
+      "pairs": [
+        {
+          "left": "walk",
+          "right": "walked"
+        },
+        {
+          "left": "go",
+          "right": "went"
+        },
+        {
+          "left": "study",
+          "right": "studied"
+        },
+        {
+          "left": "eat",
+          "right": "ate"
+        },
+        {
+          "left": "buy",
+          "right": "bought"
+        },
+        {
+          "left": "think",
+          "right": "thought"
+        },
+        {
+          "left": "write",
+          "right": "wrote"
+        },
+        {
+          "left": "swim",
+          "right": "swam"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Cuenta tu Ayer",
+    "description": "Construye oraciones en pasado simple con verbos regulares e irregulares.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ayer caminé al parque:",
+          "words": [
+            "walked",
+            "I",
+            "to",
+            "the",
+            "park",
+            "yesterday"
+          ],
+          "correct": "I walked to the park yesterday"
+        },
+        {
+          "prompt": "Fui al cine:",
+          "words": [
+            "went",
+            "I",
+            "to",
+            "the",
+            "cinema"
+          ],
+          "correct": "I went to the cinema"
+        },
+        {
+          "prompt": "No dormí bien:",
+          "words": [
+            "didn't",
+            "I",
+            "sleep",
+            "well"
+          ],
+          "correct": "I didn't sleep well"
+        },
+        {
+          "prompt": "¿Fuiste a la fiesta?:",
+          "words": [
+            "you",
+            "Did",
+            "go",
+            "to",
+            "the",
+            "party?"
+          ],
+          "correct": "Did you go to the party?"
+        },
+        {
+          "prompt": "Ella compró un regalo:",
+          "words": [
+            "bought",
+            "She",
+            "a",
+            "gift"
+          ],
+          "correct": "She bought a gift"
+        },
+        {
+          "prompt": "Ellos comieron pizza:",
+          "words": [
+            "ate",
+            "They",
+            "pizza"
+          ],
+          "correct": "They ate pizza"
+        },
+        {
+          "prompt": "La película empezó a las 8:",
+          "words": [
+            "movie",
+            "The",
+            "started",
+            "at",
+            "8"
+          ],
+          "correct": "The movie started at 8"
+        },
+        {
+          "prompt": "¿Miraste el partido?:",
+          "words": [
+            "you",
+            "Did",
+            "watch",
+            "the",
+            "game?"
+          ],
+          "correct": "Did you watch the game?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz: Pasado Simple",
+    "description": "Demuestra que dominas verbos regulares e irregulares.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "fill-blank",
+          "question": "I ___ (go) to the park yesterday.",
+          "correct": "went",
+          "explanation": "Go → went (irregular)."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "She ___ (study) all night.",
+          "correct": "studied",
+          "explanation": "Study → studied (regular, y→ied)."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "What is the past of \"buy\"?",
+          "options": [
+            "buyed",
+            "bought",
+            "buyd",
+            "boughted"
+          ],
+          "correct": 1,
+          "explanation": "Buy → bought (irregular)."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "They ___ (not/play) yesterday.",
+          "correct": "didn't play",
+          "explanation": "didn't + base verb."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"Did she ___ to the party?\"",
+          "options": [
+            "went",
+            "go",
+            "goes",
+            "going"
+          ],
+          "correct": 1,
+          "explanation": "After Did: base form \"go\"."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "We ___ (eat) pizza last night.",
+          "correct": "ate",
+          "explanation": "Eat → ate (irregular)."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "What is the past of \"stop\"?",
+          "options": [
+            "stoped",
+            "stopped",
+            "stopd",
+            "stoping"
+          ],
+          "correct": 1,
+          "explanation": "Stop → stopped (double p + ed)."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "___ you watch the movie?",
+          "correct": "Did",
+          "explanation": "DID you watch...?"
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"Read\" in the past is pronounced…",
+          "options": [
+            "/riːd/",
+            "/rɛd/",
+            "/reɪd/"
+          ],
+          "correct": 1,
+          "explanation": "Read (past) = /rɛd/ like \"red\"."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "He ___ (write) a beautiful letter.",
+          "correct": "wrote",
+          "explanation": "Write → wrote (irregular)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Verbos en Pasado Simple",
+    "description": "Descifra verbos regulares en pasado.",
+    "props": {
+      "words": [
+        {
+          "word": "WALKED",
+          "hint": "Pasado de walk (caminar)",
+          "category": "Past Simple"
+        },
+        {
+          "word": "TALKED",
+          "hint": "Pasado de talk (hablar)",
+          "category": "Past Simple"
+        },
+        {
+          "word": "PLAYED",
+          "hint": "Pasado de play (jugar)",
+          "category": "Past Simple"
+        },
+        {
+          "word": "WORKED",
+          "hint": "Pasado de work (trabajar)",
+          "category": "Past Simple"
+        },
+        {
+          "word": "STUDIED",
+          "hint": "Pasado de study (estudiar)",
+          "category": "Past Simple"
+        },
+        {
+          "word": "WATCHED",
+          "hint": "Pasado de watch (mirar)",
+          "category": "Past Simple"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,485 @@
+[
+  {
+    "id": "m14-ch3-quiz",
+    "type": "quiz",
+    "title": "El Gran Test Adaptativo",
+    "description": "Evaluación integral que cubre gramática, vocabulario, lectura y pensamiento crítico.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "[A1 - Grammar] She ___ a teacher.",
+          "options": [
+            "am",
+            "is",
+            "are",
+            "be"
+          ],
+          "correct": 1,
+          "explanation": "She/He/It → is. Basic subject-verb agreement."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "[A2 - Grammar] I ___ from Mexico. (am/is/are)",
+          "correct": "am",
+          "explanation": "I → am. First person singular of \"to be\"."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "[B1 - Grammar] If I had more time, I ___ learn Japanese.",
+          "options": [
+            "will",
+            "would",
+            "can",
+            "should"
+          ],
+          "correct": 1,
+          "explanation": "Second conditional: If + past simple, would + infinitive. Hypothetical present/future."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "[B1 - Grammar] She wishes she ___ speak French. (could/can)",
+          "correct": "could",
+          "explanation": "Wish + past tense (could) for unreal present desires."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "[B2 - Grammar] Had I known earlier, I ___ have prepared better.",
+          "options": [
+            "will",
+            "would",
+            "can",
+            "must"
+          ],
+          "correct": 1,
+          "explanation": "Third conditional inverted: Had I known = If I had known. Would have + past participle."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "[B2 - Reading] The author's use of \"allegedly\" suggests that:",
+          "options": [
+            "The claim is proven fact",
+            "The author doubts or hasn't verified the claim",
+            "The source is very reliable",
+            "It's a direct quote from someone"
+          ],
+          "correct": 1,
+          "explanation": "\"Allegedly\" signals unverified information — the author maintains distance from the claim."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "[B1 - Vocabulary] \"I'm looking forward to the meeting.\" What does \"looking forward to\" mean?",
+          "options": [
+            "Dreading",
+            "Anticipating with pleasure",
+            "Avoiding",
+            "Forgetting about"
+          ],
+          "correct": 1,
+          "explanation": "\"Looking forward to\" = anticipar con gusto. Común en emails y conversación."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "[B2 - Vocabulary] \"The results were inconclusive.\" This means:",
+          "options": [
+            "The results proved the theory",
+            "The results didn't provide a clear answer",
+            "The results were positive",
+            "The results were published"
+          ],
+          "correct": 1,
+          "explanation": "Inconclusive = no clear or definitive result. Neither confirms nor denies."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "[C1 - Grammar] Not only ___ she speak English, but she also speaks Mandarin. (does/did)",
+          "correct": "does",
+          "explanation": "Inverted structure: Not only + auxiliary + subject. Present tense = does."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "[B2 - Critical Thinking] \"According to a study funded by the sugar industry, sugar is not harmful.\" The best critical response is:",
+          "options": [
+            "Sugar is definitely safe",
+            "\"The funding source creates a potential conflict of interest that may bias the results\"",
+            "All studies are wrong",
+            "Industry studies are always correct"
+          ],
+          "correct": 1,
+          "explanation": "Funding source = potential bias. Critical thinking identifies conflicts of interest in evidence."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Prueba de Producción por Niveles",
+    "description": "Construye oraciones de complejidad creciente: A1 → B2.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "[A1] Make a simple sentence about your routine",
+          "words": [
+            "I",
+            "go",
+            "to",
+            "school",
+            "every",
+            "day."
+          ],
+          "correct": "I go to school every day."
+        },
+        {
+          "prompt": "[A2] Describe something that happened yesterday",
+          "words": [
+            "Yesterday",
+            "I",
+            "went",
+            "to",
+            "the",
+            "park",
+            "with",
+            "my",
+            "friends."
+          ],
+          "correct": "Yesterday I went to the park with my friends."
+        },
+        {
+          "prompt": "[B1] Create a first conditional sentence",
+          "words": [
+            "If",
+            "it",
+            "rains",
+            "tomorrow,",
+            "I",
+            "will",
+            "stay",
+            "home."
+          ],
+          "correct": "If it rains tomorrow, I will stay home."
+        },
+        {
+          "prompt": "[B1] Use the present perfect",
+          "words": [
+            "She",
+            "has",
+            "lived",
+            "in",
+            "London",
+            "for",
+            "five",
+            "years."
+          ],
+          "correct": "She has lived in London for five years."
+        },
+        {
+          "prompt": "[B2] Build a complex sentence with a subordinate clause",
+          "words": [
+            "Although",
+            "the",
+            "evidence",
+            "was",
+            "inconclusive,",
+            "the",
+            "jury",
+            "reached",
+            "a",
+            "verdict."
+          ],
+          "correct": "Although the evidence was inconclusive, the jury reached a verdict."
+        },
+        {
+          "prompt": "[B2] Build a sentence using the passive voice",
+          "words": [
+            "The",
+            "new",
+            "policy",
+            "was",
+            "implemented",
+            "by",
+            "the",
+            "management",
+            "team."
+          ],
+          "correct": "The new policy was implemented by the management team."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-match",
+    "type": "word-match",
+    "title": "Vocabulario por Niveles CEFR",
+    "description": "Empareja cada palabra con su definición y nivel correspondiente.",
+    "props": {
+      "pairs": [
+        {
+          "left": "happy",
+          "right": "Feeling joy or pleasure (A1) 🌱"
+        },
+        {
+          "left": "struggle",
+          "right": "To fight or work hard (A2) 🌿"
+        },
+        {
+          "left": "influence",
+          "right": "The power to affect others (B1) 🌳"
+        },
+        {
+          "left": "comprehensive",
+          "right": "Including all aspects (B2) 🏔️"
+        },
+        {
+          "left": "ubiquitous",
+          "right": "Found everywhere (C1) ⭐"
+        },
+        {
+          "left": "ameliorate",
+          "right": "To make something better (C1) ⭐"
+        },
+        {
+          "left": "acknowledge",
+          "right": "To accept or recognize (B2) 🏔️"
+        },
+        {
+          "left": "resilient",
+          "right": "Able to recover quickly (B2) 🏔️"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-flash",
+    "type": "flashcard",
+    "title": "Autoevaluación Metacognitiva",
+    "description": "Evalúa si conoces cada estructura ANTES de voltear. ¿Acertaste tu autoevaluación?",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "PRESENT PERFECT CONTINUOUS — ¿Lo domino? 🤔",
+          "back": "I have been working here for 5 years. — Acción que empezó en el pasado y continúa ahora. Forma: have/has + been + -ing.",
+          "example": "She has been studying English since 2020."
+        },
+        {
+          "id": "f2",
+          "front": "SECOND CONDITIONAL — ¿Lo domino? 🤔",
+          "back": "If I had more money, I would travel the world. — Situación hipotética presente/futura. If + past simple, would + infinitive.",
+          "example": "If I were you, I would accept the offer."
+        },
+        {
+          "id": "f3",
+          "front": "THIRD CONDITIONAL — ¿Lo domino? 🤔",
+          "back": "If I had studied harder, I would have passed. — Situación hipotética pasada (arrepentimiento). If + past perfect, would have + past participle.",
+          "example": "If she had left earlier, she would have caught the train."
+        },
+        {
+          "id": "f4",
+          "front": "PASSIVE VOICE — ¿Lo domino? 🤔",
+          "back": "The report was written by the manager. — El foco está en la acción/objeto, no en quién la hizo. Forma: be + past participle.",
+          "example": "The bridge was built in 1920."
+        },
+        {
+          "id": "f5",
+          "front": "MODAL VERBS FOR DEDUCTION — ¿Lo domino? 🤔",
+          "back": "He must be tired (seguro). He might be tired (posible). He can't be tired (imposible). — Modales para deducir.",
+          "example": "She must have forgotten — her phone is still here."
+        },
+        {
+          "id": "f6",
+          "front": "REPORTED SPEECH — ¿Lo domino? 🤔",
+          "back": "She said (that) she was going to leave. — Reportar lo que alguien dijo. Los tiempos retroceden un paso.",
+          "example": "He told me he had already finished the project."
+        },
+        {
+          "id": "f7",
+          "front": "RELATIVE CLAUSES — ¿Lo domino? 🤔",
+          "back": "The man who lives next door is a doctor. — Cláusulas con who/which/that/where/whose que dan información extra.",
+          "example": "The book which I read last week was fascinating."
+        },
+        {
+          "id": "f8",
+          "front": "PHRASAL VERBS — ¿Lo domino? 🤔",
+          "back": "Look up (buscar), give up (rendirse), turn down (rechazar), figure out (resolver). — Verbos + partícula que cambian significado.",
+          "example": "I need to figure out how to solve this problem."
+        },
+        {
+          "id": "f9",
+          "front": "SUBJUNCTIVE MOOD — ¿Lo domino? 🤔",
+          "back": "If I were you... / I suggest that he be... — Modo para situaciones hipotéticas o recomendaciones formales.",
+          "example": "If I were the president, I would invest more in education."
+        },
+        {
+          "id": "f10",
+          "front": "INVERSION FOR EMPHASIS — ¿Lo domino? 🤔",
+          "back": "Not only does she speak English, but she also speaks French. — Invertir sujeto-verbo para énfasis. Nivel C1.",
+          "example": "Never have I seen such a beautiful sunset."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-svg",
+    "type": "svg-scene",
+    "title": "Mapa de Calor de Habilidades",
+    "description": "Explora tu panel de resultados: cada área muestra tu nivel estimado.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f0f9ff",
+        "items": [
+          {
+            "id": "reading",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 100,
+            "height": 120,
+            "fill": "#34d399",
+            "label": "Reading — Tu nivel de comprensión lectora",
+            "labelEn": "📖 Reading: B2"
+          },
+          {
+            "id": "writing",
+            "type": "rect",
+            "x": 150,
+            "y": 60,
+            "width": 100,
+            "height": 120,
+            "fill": "#fbbf24",
+            "label": "Writing — Tu nivel de gramática y escritura",
+            "labelEn": "✍️ Writing: B1"
+          },
+          {
+            "id": "speaking",
+            "type": "rect",
+            "x": 270,
+            "y": 60,
+            "width": 100,
+            "height": 120,
+            "fill": "#f87171",
+            "label": "Speaking — Tu nivel de pronunciación y fluidez",
+            "labelEn": "🗣️ Speaking: A2"
+          },
+          {
+            "id": "listening",
+            "type": "rect",
+            "x": 390,
+            "y": 60,
+            "width": 100,
+            "height": 120,
+            "fill": "#34d399",
+            "label": "Listening — Tu nivel de comprensión auditiva",
+            "labelEn": "👂 Listening: B2"
+          },
+          {
+            "id": "critical",
+            "type": "rect",
+            "x": 510,
+            "y": 60,
+            "width": 70,
+            "height": 120,
+            "fill": "#fbbf24",
+            "label": "Critical — Tu nivel de pensamiento crítico",
+            "labelEn": "🧠 Critical: B1"
+          },
+          {
+            "id": "overall",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 300,
+            "rx": 120,
+            "ry": 40,
+            "fill": "#c4b5fd",
+            "label": "Nivel general estimado",
+            "labelEn": "🎯 Overall Level: B1+"
+          },
+          {
+            "id": "legend-green",
+            "type": "rect",
+            "x": 30,
+            "y": 370,
+            "width": 20,
+            "height": 20,
+            "fill": "#34d399",
+            "label": "Verde = Nivel alto",
+            "labelEn": "🟢 Strong"
+          },
+          {
+            "id": "legend-yellow",
+            "type": "rect",
+            "x": 180,
+            "y": 370,
+            "width": 20,
+            "height": 20,
+            "fill": "#fbbf24",
+            "label": "Amarillo = Nivel medio",
+            "labelEn": "🟡 Developing"
+          },
+          {
+            "id": "legend-red",
+            "type": "rect",
+            "x": 330,
+            "y": 370,
+            "width": 20,
+            "height": 20,
+            "fill": "#f87171",
+            "label": "Rojo = Necesita refuerzo",
+            "labelEn": "🔴 Needs work"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m14-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Evaluación de Nivel",
+    "description": "Descifra vocabulario de evaluación.",
+    "props": {
+      "words": [
+        {
+          "word": "ASSESSMENT",
+          "hint": "Evaluación; valoración",
+          "category": "Assessment"
+        },
+        {
+          "word": "LEVEL",
+          "hint": "Nivel; grado de dominio",
+          "category": "Assessment"
+        },
+        {
+          "word": "SCORE",
+          "hint": "Puntuación; resultado",
+          "category": "Assessment"
+        },
+        {
+          "word": "PROGRESS",
+          "hint": "Progreso; avance",
+          "category": "Assessment"
+        },
+        {
+          "word": "IMPROVE",
+          "hint": "Mejorar; avanzar",
+          "category": "Assessment"
+        },
+        {
+          "word": "MEASURE",
+          "hint": "Medir; evaluar",
+          "category": "Assessment"
+        }
+      ]
+    }
+  }
+]

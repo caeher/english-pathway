@@ -1,0 +1,402 @@
+[
+  {
+    "id": "m6-ch1-svg",
+    "type": "svg-scene",
+    "title": "Zero Conditional",
+    "description": "Hechos y causa-efecto: If + present, present.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f0fdf4",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#22c55e",
+            "label": "☀️ Zero Conditional",
+            "labelEn": "If + present simple + present simple"
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "📏 If + PRESENT, PRESENT (not will!)",
+            "labelEn": "If you heat ice, it melts. If it rains, the ground gets wet."
+          },
+          {
+            "id": "use",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "🎯 Uso",
+            "labelEn": "Facts, scientific truths, general cause-effect. NOT future!"
+          },
+          {
+            "id": "vs",
+            "type": "rect",
+            "x": 360,
+            "y": 130,
+            "width": 310,
+            "height": 55,
+            "fill": "#fef9c3",
+            "label": "⚖️ vs First Conditional",
+            "labelEn": "Zero: present+present (fact). First: present+will (future possibility)"
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 205,
+            "width": 310,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "✅ If you heat water, it boils.",
+            "labelEn": "Scientific fact."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 205,
+            "width": 310,
+            "height": 50,
+            "fill": "#fce7f3",
+            "label": "✅ If I eat too much, I feel sick.",
+            "labelEn": "General cause-effect."
+          },
+          {
+            "id": "ex3",
+            "type": "rect",
+            "x": 30,
+            "y": 270,
+            "width": 310,
+            "height": 50,
+            "fill": "#ccfbf1",
+            "label": "✅ If you mix red and blue, you get purple.",
+            "labelEn": "Rule / fact."
+          },
+          {
+            "id": "when",
+            "type": "rect",
+            "x": 360,
+            "y": 270,
+            "width": 310,
+            "height": 50,
+            "fill": "#dbeafe",
+            "label": "🔑 When = If (often)",
+            "labelEn": "When you heat ice, it melts. When I'm tired, I sleep."
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 80,
+            "y": 340,
+            "width": 540,
+            "height": 45,
+            "fill": "#fee2e2",
+            "label": "⚠️ Zero = PRESENT in BOTH clauses (no will!)",
+            "labelEn": "If it rains, the ground gets wet. (NOT will get)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m6-ch1-flash",
+    "type": "flashcard",
+    "title": "Zero Conditional",
+    "description": "Practica el condicional cero con hechos y causa-efecto.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "If you heat ice, it ___.",
+          "back": "If you heat ice, it melts.",
+          "example": "Fact: present in both clauses."
+        },
+        {
+          "id": "c2",
+          "front": "If it rains, the ground ___.",
+          "back": "If it rains, the ground gets wet.",
+          "example": "Cause-effect: present + present."
+        },
+        {
+          "id": "c3",
+          "front": "If you heat water to 100°C, it ___.",
+          "back": "If you heat water to 100°C, it boils.",
+          "example": "Scientific fact."
+        },
+        {
+          "id": "c4",
+          "front": "If I eat too much, I ___ sick.",
+          "back": "If I eat too much, I feel sick.",
+          "example": "General truth: present + present."
+        },
+        {
+          "id": "c5",
+          "front": "Zero vs First: \"If it rains, the ground ___ wet.\"",
+          "back": "gets (Zero = present, not will get)",
+          "example": "Zero = fact. First = future possibility."
+        },
+        {
+          "id": "c6",
+          "front": "When = If (zero conditional)",
+          "back": "When you heat ice, it melts. = If you heat ice, it melts.",
+          "example": "When/If often interchangeable in zero."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-match",
+    "type": "word-match",
+    "title": "Causa → Efecto",
+    "description": "Empareja la causa con su efecto en zero conditional.",
+    "props": {
+      "pairs": [
+        {
+          "left": "If you heat ice,",
+          "right": "it melts."
+        },
+        {
+          "left": "If you heat water to 100°C,",
+          "right": "it boils."
+        },
+        {
+          "left": "If it rains,",
+          "right": "the ground gets wet."
+        },
+        {
+          "left": "If you mix red and blue,",
+          "right": "you get purple."
+        },
+        {
+          "left": "If you don't water plants,",
+          "right": "they die."
+        },
+        {
+          "left": "If I'm tired,",
+          "right": "I go to bed early."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Construye el Zero Conditional",
+    "description": "Ordena para formar oraciones con zero conditional.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Si calientas hielo, se derrite:",
+          "words": [
+            "If",
+            "you",
+            "heat",
+            "ice,",
+            "it",
+            "melts"
+          ],
+          "correct": "If you heat ice, it melts"
+        },
+        {
+          "prompt": "Si llueve, el suelo se moja:",
+          "words": [
+            "If",
+            "it",
+            "rains,",
+            "the",
+            "ground",
+            "gets",
+            "wet"
+          ],
+          "correct": "If it rains, the ground gets wet"
+        },
+        {
+          "prompt": "Si comes demasiado, te sientes mal:",
+          "words": [
+            "If",
+            "you",
+            "eat",
+            "too",
+            "much,",
+            "you",
+            "feel",
+            "sick"
+          ],
+          "correct": "If you eat too much, you feel sick"
+        },
+        {
+          "prompt": "Si mezclas rojo y azul, obtienes morado:",
+          "words": [
+            "If",
+            "you",
+            "mix",
+            "red",
+            "and",
+            "blue,",
+            "you",
+            "get",
+            "purple"
+          ],
+          "correct": "If you mix red and blue, you get purple"
+        },
+        {
+          "prompt": "Cuando tengo tiempo libre, leo:",
+          "words": [
+            "When",
+            "I",
+            "have",
+            "free",
+            "time,",
+            "I",
+            "read"
+          ],
+          "correct": "When I have free time, I read"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz: Zero Conditional",
+    "description": "Demuestra tu dominio del condicional cero.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "fill-blank",
+          "question": "\"If you heat ice, it ___.\"",
+          "correct": "melts",
+          "explanation": "Zero: present in result clause."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"If it rains, the ground ___ wet.\"",
+          "options": [
+            "gets",
+            "will get",
+            "got",
+            "is getting"
+          ],
+          "correct": 0,
+          "explanation": "Zero conditional: present, not will."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"If you heat water to 100°C, it ___.\"",
+          "correct": "boils",
+          "explanation": "Scientific fact: present."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Zero conditional is used for:",
+          "options": [
+            "Future possibilities",
+            "Scientific facts and general truths",
+            "Hypothetical situations",
+            "Regrets about the past"
+          ],
+          "correct": 1,
+          "explanation": "Zero = facts, cause-effect, general truths."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "Which is Zero Conditional?",
+          "options": [
+            "If it rains, I'll stay home.",
+            "If it rains, the ground gets wet.",
+            "If it rained, I would stay home.",
+            "If it had rained, I would have stayed."
+          ],
+          "correct": 1,
+          "explanation": "Zero = if + present, present."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"If you don't water plants, they ___.\"",
+          "correct": "die",
+          "explanation": "General fact: present."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"When\" can replace \"if\" in Zero Conditional?",
+          "options": [
+            "No, never.",
+            "Yes, often.",
+            "Only in questions.",
+            "Only with \"will\""
+          ],
+          "correct": 1,
+          "explanation": "When/If often interchangeable in zero."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"If I ___ (eat) too much, I ___ (feel) sick.\"",
+          "correct": "eat feel",
+          "explanation": "Both clauses in present simple."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Zero Conditional",
+    "description": "Descifra palabras de hechos y verdades.",
+    "props": {
+      "words": [
+        {
+          "word": "TRUTH",
+          "hint": "Verdad; hecho real",
+          "category": "Conditionals"
+        },
+        {
+          "word": "FACT",
+          "hint": "Hecho; realidad verificable",
+          "category": "Conditionals"
+        },
+        {
+          "word": "GENERAL",
+          "hint": "General; aplica siempre",
+          "category": "Conditionals"
+        },
+        {
+          "word": "ALWAYS",
+          "hint": "Siempre; en todo momento",
+          "category": "Conditionals"
+        },
+        {
+          "word": "WATER",
+          "hint": "Agua; líquido universal",
+          "category": "Conditionals"
+        },
+        {
+          "word": "BOIL",
+          "hint": "Hervir; ebullir",
+          "category": "Conditionals"
+        }
+      ]
+    }
+  }
+]

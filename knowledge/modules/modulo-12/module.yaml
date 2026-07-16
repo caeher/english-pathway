@@ -1,0 +1,12 @@
+id: modulo-12
+number: 12
+title: Producción y Expresión
+description: Escritura de párrafos, presentaciones, listening avanzado, reducciones nativas e improvisación.
+icon: 🎙️
+color: "#e85d3a"
+chapters:
+  - m12-ch1
+  - m12-ch2
+  - m12-ch3
+  - m12-ch4
+  - m12-ch5

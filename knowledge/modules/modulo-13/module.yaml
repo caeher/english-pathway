@@ -1,0 +1,12 @@
+id: modulo-13
+number: 13
+title: Dominio y Aplicación
+description: Inglés laboral, negociación, lectura crítica, pronunciación avanzada y proyecto final integrador.
+icon: 👑
+color: "#1e3a5f"
+chapters:
+  - m13-ch1
+  - m13-ch2
+  - m13-ch3
+  - m13-ch4
+  - m13-ch5

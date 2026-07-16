@@ -1,0 +1,473 @@
+[
+  {
+    "id": "m10-ch2-svg",
+    "type": "svg-scene",
+    "title": "Los Mundos del Vocabulario",
+    "description": "Explora cada mundo temático y descubre vocabulario nuevo en contexto.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f0fdf4",
+        "items": [
+          {
+            "id": "home",
+            "type": "rect",
+            "x": 40,
+            "y": 40,
+            "width": 120,
+            "height": 100,
+            "fill": "#86efac",
+            "label": "Hogar",
+            "labelEn": "🏠 Home World"
+          },
+          {
+            "id": "health",
+            "type": "rect",
+            "x": 240,
+            "y": 40,
+            "width": 120,
+            "height": 100,
+            "fill": "#fca5a5",
+            "label": "Salud",
+            "labelEn": "🏥 Health World"
+          },
+          {
+            "id": "work",
+            "type": "rect",
+            "x": 440,
+            "y": 40,
+            "width": 120,
+            "height": 100,
+            "fill": "#93c5fd",
+            "label": "Trabajo",
+            "labelEn": "💼 Work World"
+          },
+          {
+            "id": "shopping",
+            "type": "rect",
+            "x": 40,
+            "y": 240,
+            "width": 120,
+            "height": 100,
+            "fill": "#d8b4fe",
+            "label": "Compras",
+            "labelEn": "🛒 Shopping World"
+          },
+          {
+            "id": "tech",
+            "type": "rect",
+            "x": 240,
+            "y": 240,
+            "width": 120,
+            "height": 100,
+            "fill": "#67e8f9",
+            "label": "Tecnología",
+            "labelEn": "📱 Tech World"
+          },
+          {
+            "id": "entertainment",
+            "type": "rect",
+            "x": 440,
+            "y": 240,
+            "width": 120,
+            "height": 100,
+            "fill": "#fdba74",
+            "label": "Entretenimiento",
+            "labelEn": "🎭 Entertainment World"
+          },
+          {
+            "id": "furniture",
+            "type": "circle",
+            "cx": 100,
+            "cy": 180,
+            "r": 18,
+            "fill": "#4ade80",
+            "label": "Muebles",
+            "labelEn": "Furniture"
+          },
+          {
+            "id": "medicine",
+            "type": "circle",
+            "cx": 300,
+            "cy": 180,
+            "r": 18,
+            "fill": "#f87171",
+            "label": "Medicina",
+            "labelEn": "Medicine"
+          },
+          {
+            "id": "office",
+            "type": "circle",
+            "cx": 500,
+            "cy": 180,
+            "r": 18,
+            "fill": "#60a5fa",
+            "label": "Oficina",
+            "labelEn": "Office Supplies"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m10-ch2-flash",
+    "type": "flashcard",
+    "title": "Vocabulario en Contexto",
+    "description": "Aprende cada palabra con su definición, colocación y ejemplo de uso.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "APPOINTMENT 📅",
+          "back": "Una cita (médica, de negocios). Collocations: make / schedule / cancel an appointment",
+          "example": "I need to make an appointment with the dentist."
+        },
+        {
+          "id": "f2",
+          "front": "DEADLINE ⏰",
+          "back": "Fecha límite para entregar algo. Collocations: meet / miss the deadline",
+          "example": "We need to meet the deadline by Friday."
+        },
+        {
+          "id": "f3",
+          "front": "RECEIPT 🧾",
+          "back": "Recibo o comprobante de compra. Collocations: keep / ask for the receipt",
+          "example": "Always keep the receipt in case you need a refund."
+        },
+        {
+          "id": "f4",
+          "front": "COLLEAGUE 👥",
+          "back": "Compañero de trabajo. Collocations: a close colleague, work with colleagues",
+          "example": "My colleague helped me with the project."
+        },
+        {
+          "id": "f5",
+          "front": "SYMPTOM 🤒",
+          "back": "Síntoma de una enfermedad. Collocations: show / have symptoms",
+          "example": "What symptoms do you have?"
+        },
+        {
+          "id": "f6",
+          "front": "FURNITURE 🛋️",
+          "back": "Muebles (sustantivo incontable). Collocations: a piece of furniture",
+          "example": "We need new furniture for the living room."
+        },
+        {
+          "id": "f7",
+          "front": "DISCOUNT 💰",
+          "back": "Descuento en una compra. Collocations: get / offer / give a discount",
+          "example": "They offered me a 20% discount."
+        },
+        {
+          "id": "f8",
+          "front": "PROMOTION 📈",
+          "back": "Ascenso laboral. Collocations: get / earn a promotion",
+          "example": "She got a promotion to manager."
+        },
+        {
+          "id": "f9",
+          "front": "PRESCRIPTION 💊",
+          "back": "Receta médica. Collocations: write / fill a prescription",
+          "example": "The doctor wrote a prescription for antibiotics."
+        },
+        {
+          "id": "f10",
+          "front": "BARGAIN 🏷️",
+          "back": "Ganga, buen precio. Collocations: find / get a bargain",
+          "example": "I found a real bargain at the market."
+        },
+        {
+          "id": "f11",
+          "front": "RESIGN ✋",
+          "back": "Renunciar a un trabajo. Collocations: resign from a position",
+          "example": "He decided to resign from his job."
+        },
+        {
+          "id": "f12",
+          "front": "REFUND 💵",
+          "back": "Reembolso. Collocations: ask for / get a refund",
+          "example": "I'd like to ask for a refund, please."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-match",
+    "type": "word-match",
+    "title": "Colocaciones Correctas",
+    "description": "Empareja cada verbo con su complemento correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "make",
+          "right": "the bed / a decision"
+        },
+        {
+          "left": "do",
+          "right": "homework / the dishes"
+        },
+        {
+          "left": "take",
+          "right": "a shower / medicine"
+        },
+        {
+          "left": "have",
+          "right": "breakfast / a meeting"
+        },
+        {
+          "left": "keep",
+          "right": "the receipt"
+        },
+        {
+          "left": "meet",
+          "right": "the deadline"
+        },
+        {
+          "left": "get",
+          "right": "a promotion"
+        },
+        {
+          "left": "ask for",
+          "right": "a refund"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-quiz",
+    "type": "quiz",
+    "title": "¿Qué Palabra Necesitas?",
+    "description": "Elige la palabra correcta para cada situación cotidiana.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You have a headache. You need to take ___.",
+          "options": [
+            "medicine",
+            "furniture",
+            "a meeting",
+            "homework"
+          ],
+          "correct": 0,
+          "explanation": "Take medicine = tomar medicina. Es la colocación correcta."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "I need to ___ an appointment with the dentist.",
+          "correct": "make",
+          "explanation": "Make an appointment = hacer/agendar una cita."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Your project is due on Friday. Friday is the ___.",
+          "options": [
+            "receipt",
+            "bargain",
+            "deadline",
+            "symptom"
+          ],
+          "correct": 2,
+          "explanation": "Deadline = fecha límite."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "You want to return a shirt. You need the ___.",
+          "options": [
+            "prescription",
+            "discount",
+            "receipt",
+            "salary"
+          ],
+          "correct": 2,
+          "explanation": "Receipt = recibo. Lo necesitas para devoluciones."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "Every morning I ___ a shower before work.",
+          "correct": "take",
+          "explanation": "Take a shower = tomar una ducha (colocación con take)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "The person who works with you at the office is your ___.",
+          "options": [
+            "salary",
+            "colleague",
+            "deadline",
+            "promotion"
+          ],
+          "correct": 1,
+          "explanation": "Colleague = compañero de trabajo."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"Don't forget to ___ the bed before you leave!\"",
+          "options": [
+            "do",
+            "take",
+            "have",
+            "make"
+          ],
+          "correct": 3,
+          "explanation": "Make the bed = tender la cama."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "She got a 30% ___ on the dress. It was very cheap!",
+          "correct": "discount",
+          "explanation": "Discount = descuento."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "When you feel sick, you should describe your ___ to the doctor.",
+          "options": [
+            "receipts",
+            "deadlines",
+            "symptoms",
+            "bargains"
+          ],
+          "correct": 2,
+          "explanation": "Symptoms = síntomas. Describes lo que sientes al doctor."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "I ___ homework every evening after school.",
+          "correct": "do",
+          "explanation": "Do homework = hacer la tarea (colocación con do)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Frases del Día a Día",
+    "description": "Construye frases cotidianas usando el vocabulario nuevo.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "You feel sick. What do you tell the doctor?",
+          "words": [
+            "a",
+            "I",
+            "headache",
+            "have",
+            "terrible"
+          ],
+          "correct": "I have a terrible headache"
+        },
+        {
+          "prompt": "Ask someone to schedule a meeting",
+          "words": [
+            "need",
+            "We",
+            "a",
+            "to",
+            "make",
+            "reservation"
+          ],
+          "correct": "We need to make a reservation"
+        },
+        {
+          "prompt": "Tell your boss about the project",
+          "words": [
+            "meet",
+            "to",
+            "going",
+            "the",
+            "I'm",
+            "deadline"
+          ],
+          "correct": "I'm going to meet the deadline"
+        },
+        {
+          "prompt": "Ask for help at a store",
+          "words": [
+            "like",
+            "a",
+            "refund",
+            "I'd",
+            "to",
+            "ask",
+            "for"
+          ],
+          "correct": "I'd like to ask for a refund"
+        },
+        {
+          "prompt": "Describe your morning routine",
+          "words": [
+            "take",
+            "I",
+            "every",
+            "a",
+            "shower",
+            "morning"
+          ],
+          "correct": "I take a shower every morning"
+        },
+        {
+          "prompt": "Share good news at work",
+          "words": [
+            "got",
+            "She",
+            "promotion",
+            "a",
+            "yesterday"
+          ],
+          "correct": "She got a promotion yesterday"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario Día a Día",
+    "description": "Descifra palabras cotidianas.",
+    "props": {
+      "words": [
+        {
+          "word": "MORNING",
+          "hint": "Mañana; parte del día",
+          "category": "Daily"
+        },
+        {
+          "word": "AFTERNOON",
+          "hint": "Tarde; después del mediodía",
+          "category": "Daily"
+        },
+        {
+          "word": "EVENING",
+          "hint": "Noche temprana",
+          "category": "Daily"
+        },
+        {
+          "word": "BREAKFAST",
+          "hint": "Desayuno",
+          "category": "Daily"
+        },
+        {
+          "word": "DINNER",
+          "hint": "Cena",
+          "category": "Daily"
+        },
+        {
+          "word": "ROUTINE",
+          "hint": "Rutina; actividades habituales",
+          "category": "Daily"
+        }
+      ]
+    }
+  }
+]

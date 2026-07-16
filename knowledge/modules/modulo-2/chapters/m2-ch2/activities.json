@@ -1,0 +1,466 @@
+[
+  {
+    "id": "m2-ch2-svg",
+    "type": "svg-scene",
+    "title": "La Escalera de Frecuencia",
+    "description": "Sube la escalera de frecuencia y descubre cada adverbio.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "scale",
+            "type": "rect",
+            "x": 25,
+            "y": 10,
+            "width": 650,
+            "height": 400,
+            "fill": "#d1fae5",
+            "label": "📊 The Frequency Ladder",
+            "labelEn": "From NEVER (0%) to ALWAYS (100%)!"
+          },
+          {
+            "id": "always",
+            "type": "rect",
+            "x": 50,
+            "y": 50,
+            "width": 600,
+            "height": 45,
+            "fill": "#22c55e",
+            "label": "ALWAYS 100% ✅",
+            "labelEn": "I ALWAYS brush my teeth. (every single time, no exceptions)"
+          },
+          {
+            "id": "usually",
+            "type": "rect",
+            "x": 80,
+            "y": 105,
+            "width": 540,
+            "height": 45,
+            "fill": "#4ade80",
+            "label": "USUALLY 90% 📈",
+            "labelEn": "I USUALLY have breakfast. (almost every day, a few exceptions)"
+          },
+          {
+            "id": "often",
+            "type": "rect",
+            "x": 110,
+            "y": 160,
+            "width": 480,
+            "height": 45,
+            "fill": "#86efac",
+            "label": "OFTEN 70% 📊",
+            "labelEn": "She OFTEN reads at night. (frequently, most of the time)"
+          },
+          {
+            "id": "sometimes",
+            "type": "rect",
+            "x": 140,
+            "y": 215,
+            "width": 420,
+            "height": 45,
+            "fill": "#fde68a",
+            "label": "SOMETIMES 50% 🔄",
+            "labelEn": "We SOMETIMES eat out. (about half the time)"
+          },
+          {
+            "id": "rarely",
+            "type": "rect",
+            "x": 170,
+            "y": 270,
+            "width": 360,
+            "height": 45,
+            "fill": "#fed7aa",
+            "label": "RARELY 10% 📉",
+            "labelEn": "He RARELY watches TV. (almost never, very infrequent)"
+          },
+          {
+            "id": "never",
+            "type": "rect",
+            "x": 200,
+            "y": 325,
+            "width": 300,
+            "height": 45,
+            "fill": "#fecaca",
+            "label": "NEVER 0% ❌",
+            "labelEn": "I NEVER smoke. (not ever, at no time)"
+          },
+          {
+            "id": "position",
+            "type": "rect",
+            "x": 50,
+            "y": 385,
+            "width": 600,
+            "height": 30,
+            "fill": "#e0e7ff",
+            "label": "📐 Position: BEFORE the main verb, AFTER \"to be\"",
+            "labelEn": "I always EAT / She IS always happy"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m2-ch2-flash",
+    "type": "flashcard",
+    "title": "Adverbios y Rutinas",
+    "description": "Domina los adverbios de frecuencia y sus usos.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "ALWAYS (100%)",
+          "back": "Siempre — todo el tiempo, sin excepción",
+          "example": "I always drink water in the morning."
+        },
+        {
+          "id": "f2",
+          "front": "USUALLY (90%)",
+          "back": "Generalmente — casi siempre",
+          "example": "She usually walks to school."
+        },
+        {
+          "id": "f3",
+          "front": "OFTEN (70%)",
+          "back": "A menudo — con frecuencia",
+          "example": "We often go to the park on weekends."
+        },
+        {
+          "id": "f4",
+          "front": "SOMETIMES (50%)",
+          "back": "A veces — de vez en cuando",
+          "example": "I sometimes eat pizza for dinner."
+        },
+        {
+          "id": "f5",
+          "front": "RARELY / SELDOM (10%)",
+          "back": "Raramente — casi nunca",
+          "example": "He rarely eats fast food."
+        },
+        {
+          "id": "f6",
+          "front": "NEVER (0%)",
+          "back": "Nunca — jamás",
+          "example": "She never drinks soda."
+        },
+        {
+          "id": "f7",
+          "front": "every day",
+          "back": "cada día / todos los días",
+          "example": "I exercise every day."
+        },
+        {
+          "id": "f8",
+          "front": "once a week",
+          "back": "una vez a la semana",
+          "example": "We have a meeting once a week."
+        },
+        {
+          "id": "f9",
+          "front": "twice a month",
+          "back": "dos veces al mes",
+          "example": "I visit my grandparents twice a month."
+        },
+        {
+          "id": "f10",
+          "front": "on Mondays",
+          "back": "los lunes (cada lunes)",
+          "example": "I have English class on Mondays."
+        },
+        {
+          "id": "f11",
+          "front": "Posición: verbo principal",
+          "back": "ANTES del verbo: I always EAT",
+          "example": "I usually wake up at 7. She often reads."
+        },
+        {
+          "id": "f12",
+          "front": "Posición: verbo \"to be\"",
+          "back": "DESPUÉS de \"to be\": She IS always happy",
+          "example": "He is never late. They are usually tired."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-match",
+    "type": "word-match",
+    "title": "Frecuencia → Porcentaje",
+    "description": "Empareja cada adverbio con su porcentaje de frecuencia.",
+    "props": {
+      "pairs": [
+        {
+          "left": "always",
+          "right": "100%"
+        },
+        {
+          "left": "usually",
+          "right": "90%"
+        },
+        {
+          "left": "often",
+          "right": "70%"
+        },
+        {
+          "left": "sometimes",
+          "right": "50%"
+        },
+        {
+          "left": "rarely",
+          "right": "10%"
+        },
+        {
+          "left": "never",
+          "right": "0%"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Mi Rutina Diaria",
+    "description": "Construye oraciones sobre rutinas con adverbios de frecuencia.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Siempre me levanto temprano:",
+          "words": [
+            "always",
+            "I",
+            "wake",
+            "up",
+            "early"
+          ],
+          "correct": "I always wake up early"
+        },
+        {
+          "prompt": "Ella generalmente desayuna:",
+          "words": [
+            "usually",
+            "She",
+            "has",
+            "breakfast"
+          ],
+          "correct": "She usually has breakfast"
+        },
+        {
+          "prompt": "A veces como fuera:",
+          "words": [
+            "sometimes",
+            "I",
+            "eat",
+            "out"
+          ],
+          "correct": "I sometimes eat out"
+        },
+        {
+          "prompt": "Él nunca llega tarde:",
+          "words": [
+            "never",
+            "He",
+            "is",
+            "late"
+          ],
+          "correct": "He is never late"
+        },
+        {
+          "prompt": "Ellos a menudo viajan:",
+          "words": [
+            "often",
+            "They",
+            "travel"
+          ],
+          "correct": "They often travel"
+        },
+        {
+          "prompt": "Ella es siempre amable:",
+          "words": [
+            "is",
+            "She",
+            "always",
+            "kind"
+          ],
+          "correct": "She is always kind"
+        },
+        {
+          "prompt": "Hago ejercicio todos los días:",
+          "words": [
+            "exercise",
+            "I",
+            "every",
+            "day"
+          ],
+          "correct": "I exercise every day"
+        },
+        {
+          "prompt": "Raramente veo televisión:",
+          "words": [
+            "rarely",
+            "I",
+            "watch",
+            "TV"
+          ],
+          "correct": "I rarely watch TV"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-quiz",
+    "type": "quiz",
+    "title": "Quiz de Frecuencia",
+    "description": "Pon a prueba tu conocimiento de adverbios y rutinas.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Which adverb means 0% frequency?",
+          "options": [
+            "always",
+            "sometimes",
+            "rarely",
+            "never"
+          ],
+          "correct": 3,
+          "explanation": "Never = 0% frequency."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "I ___ brush my teeth. (100%)",
+          "correct": "always",
+          "explanation": "Always = 100% frequency."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Where does the adverb go? \"She ___ eats breakfast.\"",
+          "options": [
+            "After the verb",
+            "Before the verb",
+            "At the end",
+            "Before the subject"
+          ],
+          "correct": 1,
+          "explanation": "Adverbs go BEFORE the main verb."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"He is ___ late.\" Where goes the adverb?",
+          "options": [
+            "Before \"is\"",
+            "After \"is\"",
+            "At the beginning",
+            "At the end"
+          ],
+          "correct": 1,
+          "explanation": "Adverbs go AFTER \"to be\": He is always late."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "She ___ watches TV. She prefers reading. (10%)",
+          "correct": "rarely",
+          "explanation": "Rarely = 10% — almost never."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Which is correct?",
+          "options": [
+            "I eat always breakfast",
+            "I always eat breakfast",
+            "Always I eat breakfast",
+            "I eat breakfast always"
+          ],
+          "correct": 1,
+          "explanation": "I always eat breakfast — adverb before main verb."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "We ___ go to the beach. About half the time. (50%)",
+          "correct": "sometimes",
+          "explanation": "Sometimes = about 50% of the time."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"I exercise ___ a week.\" (two times)",
+          "options": [
+            "once",
+            "twice",
+            "three times",
+            "every"
+          ],
+          "correct": 1,
+          "explanation": "Twice a week = two times per week."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which is INCORRECT?",
+          "options": [
+            "I never smoke",
+            "I don't never smoke",
+            "I always study",
+            "She usually cooks"
+          ],
+          "correct": 1,
+          "explanation": "\"Never\" is already negative. Don't use \"don't\" with \"never\"."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "She is ___ happy. She smiles all the time. (100%)",
+          "correct": "always",
+          "explanation": "She is always happy — after \"to be\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Adverbios de Frecuencia",
+    "description": "Descifra adverbios que indican con qué frecuencia.",
+    "props": {
+      "words": [
+        {
+          "word": "ALWAYS",
+          "hint": "Siempre; 100% del tiempo",
+          "category": "Frequency"
+        },
+        {
+          "word": "USUALLY",
+          "hint": "Usualmente; la mayor parte del tiempo",
+          "category": "Frequency"
+        },
+        {
+          "word": "SOMETIMES",
+          "hint": "A veces; aproximadamente 50%",
+          "category": "Frequency"
+        },
+        {
+          "word": "RARELY",
+          "hint": "Raramente; casi nunca",
+          "category": "Frequency"
+        },
+        {
+          "word": "NEVER",
+          "hint": "Nunca; 0% del tiempo",
+          "category": "Frequency"
+        },
+        {
+          "word": "OFTEN",
+          "hint": "A menudo; con frecuencia",
+          "category": "Frequency"
+        }
+      ]
+    }
+  }
+]

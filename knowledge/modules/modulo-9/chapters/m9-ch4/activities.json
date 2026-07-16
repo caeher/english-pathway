@@ -1,0 +1,577 @@
+[
+  {
+    "id": "m9-ch4-quiz",
+    "type": "quiz",
+    "title": "La Historia Misteriosa",
+    "description": "Completa la historia eligiendo la forma correcta del verbo en pasado.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "fill-blank",
+          "question": "Yesterday, she ___ (go) to the supermarket.",
+          "correct": "went",
+          "explanation": "Go → went (irregular). \"She went to the supermarket.\""
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "He ___ a great movie last night.",
+          "options": [
+            "watch",
+            "watches",
+            "watched",
+            "watching"
+          ],
+          "correct": 2,
+          "explanation": "Past simple regular: watch → watched."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "They ___ (eat) dinner at a new restaurant.",
+          "correct": "ate",
+          "explanation": "Eat → ate (irregular). \"They ate dinner.\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "I ___ to the park yesterday morning.",
+          "options": [
+            "walk",
+            "walked",
+            "walking",
+            "walks"
+          ],
+          "correct": 1,
+          "explanation": "Past simple regular: walk → walked."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "She ___ a beautiful song at the concert.",
+          "options": [
+            "sing",
+            "sings",
+            "sang",
+            "singing"
+          ],
+          "correct": 2,
+          "explanation": "Sing → sang (irregular)."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "We ___ (see) an interesting movie on Friday.",
+          "correct": "saw",
+          "explanation": "See → saw (irregular). \"We saw an interesting movie.\""
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "He didn't ___ to work yesterday.",
+          "options": [
+            "went",
+            "go",
+            "goes",
+            "going"
+          ],
+          "correct": 1,
+          "explanation": "After \"didn't\" use the base form: \"He didn't go to work.\""
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "___ you visit the museum last week?",
+          "options": [
+            "Do",
+            "Did",
+            "Does",
+            "Was"
+          ],
+          "correct": 1,
+          "explanation": "Past simple question: \"Did you visit the museum?\""
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "She ___ (make) a delicious cake for the party.",
+          "correct": "made",
+          "explanation": "Make → made (irregular). \"She made a cake.\""
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "They ___ soccer all afternoon yesterday.",
+          "options": [
+            "play",
+            "played",
+            "playing",
+            "plays"
+          ],
+          "correct": 1,
+          "explanation": "Past simple regular: play → played."
+        },
+        {
+          "id": "q11",
+          "type": "fill-blank",
+          "question": "I ___ (have) a wonderful time at the festival.",
+          "correct": "had",
+          "explanation": "Have → had (irregular). \"I had a wonderful time.\""
+        },
+        {
+          "id": "q12",
+          "type": "multiple-choice",
+          "question": "She ___ (not / like) the food at that restaurant.",
+          "options": [
+            "didn't like",
+            "don't like",
+            "doesn't like",
+            "wasn't like"
+          ],
+          "correct": 0,
+          "explanation": "Past negative: \"She didn't like the food.\""
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Narra tu Día de Ayer",
+    "description": "Construye oraciones sobre lo que hiciste ayer.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Describe tu desayuno:",
+          "words": [
+            "breakfast",
+            "ate",
+            "I",
+            "and",
+            "coffee",
+            "drank"
+          ],
+          "correct": "I ate breakfast and drank coffee"
+        },
+        {
+          "prompt": "Cuenta lo que hiciste:",
+          "words": [
+            "went",
+            "I",
+            "to",
+            "park",
+            "the",
+            "yesterday"
+          ],
+          "correct": "I went to the park yesterday"
+        },
+        {
+          "prompt": "Oracion negativa:",
+          "words": [
+            "didn't",
+            "I",
+            "to",
+            "go",
+            "work",
+            "yesterday"
+          ],
+          "correct": "I didn't go to work yesterday"
+        },
+        {
+          "prompt": "Describe tu tarde:",
+          "words": [
+            "She",
+            "a",
+            "watched",
+            "movie",
+            "last",
+            "night"
+          ],
+          "correct": "She watched a movie last night"
+        },
+        {
+          "prompt": "Pregunta en pasado:",
+          "words": [
+            "Did",
+            "the",
+            "visit",
+            "you",
+            "museum?"
+          ],
+          "correct": "Did you visit the museum?"
+        },
+        {
+          "prompt": "Cuenta un evento:",
+          "words": [
+            "We",
+            "at",
+            "played",
+            "soccer",
+            "the",
+            "park"
+          ],
+          "correct": "We played soccer at the park"
+        },
+        {
+          "prompt": "Describe lo que pasó:",
+          "words": [
+            "made",
+            "She",
+            "cake",
+            "for",
+            "a",
+            "the",
+            "party"
+          ],
+          "correct": "She made a cake for the party"
+        },
+        {
+          "prompt": "Oracion negativa:",
+          "words": [
+            "He",
+            "like",
+            "didn't",
+            "the",
+            "food"
+          ],
+          "correct": "He didn't like the food"
+        },
+        {
+          "prompt": "Cuenta tu fin de semana:",
+          "words": [
+            "friends",
+            "met",
+            "I",
+            "my",
+            "on",
+            "Saturday"
+          ],
+          "correct": "I met my friends on Saturday"
+        },
+        {
+          "prompt": "Pregunta en pasado:",
+          "words": [
+            "she",
+            "Did",
+            "the",
+            "finish",
+            "homework?"
+          ],
+          "correct": "Did she finish the homework?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch4-match",
+    "type": "word-match",
+    "title": "Presente → Pasado",
+    "description": "Empareja cada verbo con su forma en pasado simple.",
+    "props": {
+      "pairs": [
+        {
+          "left": "go",
+          "right": "went"
+        },
+        {
+          "left": "eat",
+          "right": "ate"
+        },
+        {
+          "left": "see",
+          "right": "saw"
+        },
+        {
+          "left": "have",
+          "right": "had"
+        },
+        {
+          "left": "make",
+          "right": "made"
+        },
+        {
+          "left": "come",
+          "right": "came"
+        },
+        {
+          "left": "take",
+          "right": "took"
+        },
+        {
+          "left": "get",
+          "right": "got"
+        },
+        {
+          "left": "give",
+          "right": "gave"
+        },
+        {
+          "left": "find",
+          "right": "found"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch4-flash",
+    "type": "flashcard",
+    "title": "Verbos Irregulares",
+    "description": "Memoriza los verbos irregulares más comunes con ejemplos.",
+    "props": {
+      "cards": [
+        {
+          "id": "i1",
+          "front": "GO",
+          "back": "went (past) / gone (past participle)",
+          "example": "I went to the park yesterday."
+        },
+        {
+          "id": "i2",
+          "front": "EAT",
+          "back": "ate (past) / eaten (past participle)",
+          "example": "She ate lunch at noon."
+        },
+        {
+          "id": "i3",
+          "front": "SEE",
+          "back": "saw (past) / seen (past participle)",
+          "example": "We saw a great movie."
+        },
+        {
+          "id": "i4",
+          "front": "HAVE",
+          "back": "had (past) / had (past participle)",
+          "example": "He had a fantastic day."
+        },
+        {
+          "id": "i5",
+          "front": "MAKE",
+          "back": "made (past) / made (past participle)",
+          "example": "She made cookies for us."
+        },
+        {
+          "id": "i6",
+          "front": "COME",
+          "back": "came (past) / come (past participle)",
+          "example": "They came to the party late."
+        },
+        {
+          "id": "i7",
+          "front": "TAKE",
+          "back": "took (past) / taken (past participle)",
+          "example": "I took a taxi to the airport."
+        },
+        {
+          "id": "i8",
+          "front": "GET",
+          "back": "got (past) / got/gotten (past participle)",
+          "example": "She got a new job."
+        },
+        {
+          "id": "i9",
+          "front": "GIVE",
+          "back": "gave (past) / given (past participle)",
+          "example": "He gave me a present."
+        },
+        {
+          "id": "i10",
+          "front": "FIND",
+          "back": "found (past) / found (past participle)",
+          "example": "We found a nice restaurant."
+        },
+        {
+          "id": "i11",
+          "front": "KNOW",
+          "back": "knew (past) / known (past participle)",
+          "example": "I knew the answer."
+        },
+        {
+          "id": "i12",
+          "front": "THINK",
+          "back": "thought (past) / thought (past participle)",
+          "example": "She thought about it all day."
+        },
+        {
+          "id": "i13",
+          "front": "TELL",
+          "back": "told (past) / told (past participle)",
+          "example": "He told me a funny story."
+        },
+        {
+          "id": "i14",
+          "front": "BUY",
+          "back": "bought (past) / bought (past participle)",
+          "example": "I bought a souvenir at the market."
+        },
+        {
+          "id": "i15",
+          "front": "SING",
+          "back": "sang (past) / sung (past participle)",
+          "example": "She sang a beautiful song."
+        },
+        {
+          "id": "i16",
+          "front": "WRITE",
+          "back": "wrote (past) / written (past participle)",
+          "example": "He wrote a letter to his friend."
+        },
+        {
+          "id": "i17",
+          "front": "READ",
+          "back": "read /rɛd/ (past) / read (past participle)",
+          "example": "I read an interesting book last week."
+        },
+        {
+          "id": "i18",
+          "front": "RUN",
+          "back": "ran (past) / run (past participle)",
+          "example": "She ran five kilometers yesterday."
+        },
+        {
+          "id": "i19",
+          "front": "DRINK",
+          "back": "drank (past) / drunk (past participle)",
+          "example": "We drank coffee after dinner."
+        },
+        {
+          "id": "i20",
+          "front": "MEET",
+          "back": "met (past) / met (past participle)",
+          "example": "I met my friend at the café."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch4-svg",
+    "type": "svg-scene",
+    "title": "La Línea del Tiempo",
+    "description": "Explora los eventos del día y descubre qué pasó en cada momento.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 250",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "line",
+            "type": "rect",
+            "x": 50,
+            "y": 120,
+            "width": 600,
+            "height": 6,
+            "fill": "#8b5cf6",
+            "label": "Línea del tiempo",
+            "labelEn": "Timeline — A day in the past"
+          },
+          {
+            "id": "morning",
+            "type": "circle",
+            "cx": 100,
+            "cy": 123,
+            "r": 18,
+            "fill": "#fbbf24",
+            "label": "7:00 AM ☀️",
+            "labelEn": "I woke up early and ate breakfast."
+          },
+          {
+            "id": "school",
+            "type": "circle",
+            "cx": 220,
+            "cy": 123,
+            "r": 18,
+            "fill": "#60a5fa",
+            "label": "9:00 AM 🏫",
+            "labelEn": "I went to school and studied English."
+          },
+          {
+            "id": "lunch",
+            "type": "circle",
+            "cx": 340,
+            "cy": 123,
+            "r": 18,
+            "fill": "#f97316",
+            "label": "12:00 PM 🍽️",
+            "labelEn": "I ate lunch with my friends."
+          },
+          {
+            "id": "park",
+            "type": "circle",
+            "cx": 460,
+            "cy": 123,
+            "r": 18,
+            "fill": "#22c55e",
+            "label": "4:00 PM 🌳",
+            "labelEn": "I played soccer at the park."
+          },
+          {
+            "id": "evening",
+            "type": "circle",
+            "cx": 580,
+            "cy": 123,
+            "r": 18,
+            "fill": "#6366f1",
+            "label": "8:00 PM 🌙",
+            "labelEn": "I watched a movie and went to bed."
+          },
+          {
+            "id": "arrow-start",
+            "type": "polygon",
+            "points": "35,123 50,113 50,133",
+            "fill": "#8b5cf6",
+            "label": "Inicio",
+            "labelEn": "Start of the day"
+          },
+          {
+            "id": "arrow-end",
+            "type": "polygon",
+            "points": "665,123 650,113 650,133",
+            "fill": "#8b5cf6",
+            "label": "Fin",
+            "labelEn": "End of the day"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m9-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Narrando Eventos Pasados",
+    "description": "Descifra palabras para contar historias.",
+    "props": {
+      "words": [
+        {
+          "word": "STORY",
+          "hint": "Historia; relato",
+          "category": "Narrative"
+        },
+        {
+          "word": "EVENT",
+          "hint": "Evento; acontecimiento",
+          "category": "Narrative"
+        },
+        {
+          "word": "HAPPENED",
+          "hint": "Pasó; ocurrió",
+          "category": "Narrative"
+        },
+        {
+          "word": "MEMORY",
+          "hint": "Recuerdo; memoria",
+          "category": "Narrative"
+        },
+        {
+          "word": "RECALL",
+          "hint": "Recordar; evocar",
+          "category": "Narrative"
+        },
+        {
+          "word": "NARRATE",
+          "hint": "Narrar; contar",
+          "category": "Narrative"
+        }
+      ]
+    }
+  }
+]

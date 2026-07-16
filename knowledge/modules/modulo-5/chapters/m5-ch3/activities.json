@@ -1,0 +1,409 @@
+[
+  {
+    "id": "m5-ch3-svg",
+    "type": "svg-scene",
+    "title": "Línea Temporal del Pasado",
+    "description": "Visualiza cómo el pasado perfecto se ubica ANTES del pasado simple.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#8b5cf6",
+            "label": "⏮️ Past Perfect",
+            "labelEn": "had + past participle — what had happened BEFORE"
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "📏 Subject + HAD + past participle",
+            "labelEn": "Same for ALL subjects: I/you/he/she/it/we/they had ('d)"
+          },
+          {
+            "id": "timeline",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 640,
+            "height": 60,
+            "fill": "#fde68a",
+            "label": "📅 Timeline",
+            "labelEn": "1st: She HAD LEFT (Past Perfect) → 2nd: I arrived (Past Simple) → NOW"
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 210,
+            "width": 310,
+            "height": 55,
+            "fill": "#bbf7d0",
+            "label": "✅ When I arrived...",
+            "labelEn": "...she HAD already LEFT. (ella se fue PRIMERO)"
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 210,
+            "width": 310,
+            "height": 55,
+            "fill": "#bfdbfe",
+            "label": "✅ By the time we got there...",
+            "labelEn": "...the concert HAD STARTED. (empezó ANTES)"
+          },
+          {
+            "id": "conn",
+            "type": "rect",
+            "x": 30,
+            "y": 285,
+            "width": 310,
+            "height": 50,
+            "fill": "#fce7f3",
+            "label": "🔗 Connectors",
+            "labelEn": "when, before, after, by the time, already, never...before"
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 360,
+            "y": 285,
+            "width": 310,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ & ❓",
+            "labelEn": "I HADN'T finished. HAD you finished? Yes, I had."
+          },
+          {
+            "id": "compare",
+            "type": "rect",
+            "x": 100,
+            "y": 350,
+            "width": 500,
+            "height": 40,
+            "fill": "#ccfbf1",
+            "label": "⚖️ PS vs PP",
+            "labelEn": "He arrived and she left (seq.) vs. When he arrived, she HAD left (she left FIRST)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m5-ch3-flash",
+    "type": "flashcard",
+    "title": "Pasado Perfecto: Conjugación",
+    "description": "Practica formando el pasado perfecto correctamente.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "When I arrived, she ___ (leave).",
+          "back": "When I arrived, she had left.",
+          "example": "She left BEFORE I arrived."
+        },
+        {
+          "id": "c2",
+          "front": "They ___ (finish) dinner before the movie started.",
+          "back": "They had finished dinner before the movie started.",
+          "example": "Finished FIRST, then movie started."
+        },
+        {
+          "id": "c3",
+          "front": "I ___ never ___ (see) snow until I visited Canada.",
+          "back": "I had never seen snow until I visited Canada.",
+          "example": "First experience: never...before."
+        },
+        {
+          "id": "c4",
+          "front": "By the time we got there, the train ___ (leave).",
+          "back": "By the time we got there, the train had left.",
+          "example": "The train left BEFORE we arrived."
+        },
+        {
+          "id": "c5",
+          "front": "She ___ (not / eat) breakfast, so she was hungry.",
+          "back": "She hadn't eaten breakfast, so she was hungry.",
+          "example": "Negative: hadn't + past participle."
+        },
+        {
+          "id": "c6",
+          "front": "___ you ___ (do) your homework before class?",
+          "back": "Had you done your homework before class?",
+          "example": "Question: Had + subject + past participle?"
+        },
+        {
+          "id": "c7",
+          "front": "After he ___ (read) the book, he returned it.",
+          "back": "After he had read the book, he returned it.",
+          "example": "Read FIRST, then returned."
+        },
+        {
+          "id": "c8",
+          "front": "I ___ (already / buy) the tickets when she called.",
+          "back": "I had already bought the tickets when she called.",
+          "example": "Bought BEFORE she called."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-match",
+    "type": "word-match",
+    "title": "Conector → Ejemplo",
+    "description": "Empareja cada conector con su ejemplo correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "when",
+          "right": "When I arrived, she had left."
+        },
+        {
+          "left": "before",
+          "right": "I had finished before the deadline."
+        },
+        {
+          "left": "after",
+          "right": "After she had eaten, she left."
+        },
+        {
+          "left": "by the time",
+          "right": "By the time we got there, it had started."
+        },
+        {
+          "left": "already",
+          "right": "They had already gone home."
+        },
+        {
+          "left": "never...before",
+          "right": "I had never tried sushi before."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Secuencia de Eventos",
+    "description": "Ordena para mostrar qué pasó primero.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Cuando llegué, ella ya se había ido:",
+          "words": [
+            "When",
+            "I",
+            "arrived,",
+            "she",
+            "had",
+            "already",
+            "left"
+          ],
+          "correct": "When I arrived, she had already left"
+        },
+        {
+          "prompt": "Habían terminado antes de que la película empezara:",
+          "words": [
+            "They",
+            "had",
+            "finished",
+            "before",
+            "the",
+            "movie",
+            "started"
+          ],
+          "correct": "They had finished before the movie started"
+        },
+        {
+          "prompt": "Nunca había visto nieve antes:",
+          "words": [
+            "I",
+            "had",
+            "never",
+            "seen",
+            "snow",
+            "before"
+          ],
+          "correct": "I had never seen snow before"
+        },
+        {
+          "prompt": "Para cuando llegamos, el tren se había ido:",
+          "words": [
+            "By",
+            "the",
+            "time",
+            "we",
+            "arrived,",
+            "the",
+            "train",
+            "had",
+            "left"
+          ],
+          "correct": "By the time we arrived, the train had left"
+        },
+        {
+          "prompt": "No había desayunado, así que tenía hambre:",
+          "words": [
+            "She",
+            "hadn't",
+            "eaten",
+            "breakfast,",
+            "so",
+            "she",
+            "was",
+            "hungry"
+          ],
+          "correct": "She hadn't eaten breakfast, so she was hungry"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz: Pasado Perfecto",
+    "description": "Demuestra tu dominio del Past Perfect.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"When I arrived, she ___ (leave).\"",
+          "options": [
+            "left",
+            "had left",
+            "has left",
+            "leaves"
+          ],
+          "correct": 1,
+          "explanation": "She left BEFORE I arrived → Past Perfect."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"They ___ (finish) dinner before the movie started.\"",
+          "correct": "had finished",
+          "explanation": "Finished FIRST → had + past participle."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"I ___ never ___ snow before.\"",
+          "options": [
+            "had / seen",
+            "have / seen",
+            "was / seeing",
+            "did / see"
+          ],
+          "correct": 0,
+          "explanation": "Past Perfect with never...before."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"By the time we got there, the concert ___ (start).\"",
+          "correct": "had started",
+          "explanation": "Started BEFORE we arrived."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"She ___ eaten breakfast, so she was hungry.\"",
+          "options": [
+            "hadn't",
+            "hasn't",
+            "didn't",
+            "wasn't"
+          ],
+          "correct": 0,
+          "explanation": "Negative Past Perfect: hadn't."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"___ you done your homework before class?\"",
+          "options": [
+            "Had",
+            "Have",
+            "Did",
+            "Were"
+          ],
+          "correct": 0,
+          "explanation": "Question in Past Perfect: Had + subject."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"After he had ___ the book, he returned it.\" (read)",
+          "correct": "read",
+          "explanation": "read → read → read (irregular verb)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which sentence shows Past Perfect correctly?",
+          "options": [
+            "I had already bought the tickets when she called.",
+            "I have already bought the tickets when she called.",
+            "I already bought the tickets when she called.",
+            "I was already buying the tickets when she called."
+          ],
+          "correct": 0,
+          "explanation": "Past Perfect: had already + past participle."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Tiempos Perfectos",
+    "description": "Descifra palabras de pasados y futuros perfectos.",
+    "props": {
+      "words": [
+        {
+          "word": "BEFORE",
+          "hint": "Antes de; anterior a",
+          "category": "Perfect Tenses"
+        },
+        {
+          "word": "AFTER",
+          "hint": "Después de; posterior a",
+          "category": "Perfect Tenses"
+        },
+        {
+          "word": "COMPLETED",
+          "hint": "Completado; terminado",
+          "category": "Perfect Tenses"
+        },
+        {
+          "word": "ACHIEVED",
+          "hint": "Logrado; alcanzado",
+          "category": "Perfect Tenses"
+        },
+        {
+          "word": "EXPECTED",
+          "hint": "Esperado; anticipado",
+          "category": "Perfect Tenses"
+        },
+        {
+          "word": "PLANNED",
+          "hint": "Planeado; planificado",
+          "category": "Perfect Tenses"
+        }
+      ]
+    }
+  }
+]

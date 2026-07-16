@@ -1,0 +1,410 @@
+[
+  {
+    "id": "m14-ch5-quiz",
+    "type": "quiz",
+    "title": "¿Qué Me Detiene?",
+    "description": "Identifica tus barreras personales y recibe estrategias específicas para superarlas.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "When you stop studying English for a few days, the main reason is usually:",
+          "options": [
+            "\"I feel I'm not making progress\" (plateau)",
+            "\"I'm too busy with life\" (time barrier)",
+            "\"I switched to a new app or method\" (shiny object)",
+            "\"I feel embarrassed when I make mistakes\" (perfectionism)"
+          ],
+          "correct": 0,
+          "explanation": "The plateau effect is the #1 motivation killer. Solution: measure progress with concrete tests, not feelings."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "The most effective way to overcome the plateau effect is:",
+          "options": [
+            "Study harder and longer hours",
+            "Take a level test to see concrete, measurable progress",
+            "Start the whole course from zero",
+            "Stop studying for a month"
+          ],
+          "correct": 1,
+          "explanation": "Concrete measurement shows real progress that feelings miss. You ARE improving, even when it doesn't feel like it."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "According to the science of habits, the best way to build a daily English practice is:",
+          "options": [
+            "Set a 2-hour daily session",
+            "Study only when you feel motivated",
+            "Attach it to an existing habit and start ridiculously small",
+            "Wait for the perfect moment to begin"
+          ],
+          "correct": 2,
+          "explanation": "Habit stacking + tiny start: \"After my morning coffee, I do 1 flashcard.\" Then it grows naturally."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "A growth mindset means believing that abilities can be ___ through effort and practice.",
+          "correct": "developed",
+          "explanation": "Growth mindset = abilities are developed through effort, not fixed at birth. The key belief for learning."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"I can't speak English fluently.\" How do you transform this with a growth mindset?",
+          "options": [
+            "\"I'll never speak English.\"",
+            "\"I can't speak English fluently YET.\"",
+            "\"English is too hard for me.\"",
+            "\"I should give up.\""
+          ],
+          "correct": 1,
+          "explanation": "The word \"YET\" transforms a limitation into a process. You're on a journey, not at a dead end."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "You've been using Duolingo for 2 weeks and see a new app advertised. You should:",
+          "options": [
+            "Download the new app immediately",
+            "Delete Duolingo and try the new one",
+            "Commit to Duolingo for at least 90 days before evaluating",
+            "Use 5 apps simultaneously"
+          ],
+          "correct": 2,
+          "explanation": "Shiny object syndrome kills progress. Commit to ONE system for 90 days before judging it."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "The \"Don't Break the ___\" method means maintaining a daily streak of practice.",
+          "correct": "Chain",
+          "explanation": "Jerry Seinfeld's productivity method: mark each practice day on a calendar. Don't break the chain."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"I don't have time to study English.\" The best counter-strategy is:",
+          "options": [
+            "Wait until you have more free time",
+            "Do 10-minute micro-sessions attached to existing habits",
+            "Study only on weekends for 4 hours",
+            "Hire a full-time tutor"
+          ],
+          "correct": 1,
+          "explanation": "10 minutes daily > 0 minutes daily. Attach practice to something you already do (commute, coffee, lunch)."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "What is \"delayed gratification\" in language learning?",
+          "options": [
+            "Getting instant results",
+            "Resisting the urge to quit now for greater results later",
+            "Delaying your studies",
+            "Getting rewards immediately"
+          ],
+          "correct": 1,
+          "explanation": "Language learning is a long-term investment. The ability to keep going despite slow visible progress = delayed gratification."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "The MOST powerful thing you can do to maintain motivation is:",
+          "options": [
+            "Find the perfect app",
+            "Combine intrinsic enjoyment, external goals, and social connection",
+            "Study 8 hours a day",
+            "Only watch English movies"
+          ],
+          "correct": 1,
+          "explanation": "Combining all three motivation types creates a sustainable system. No single source of motivation is enough alone."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Mi Compromiso con el Inglés",
+    "description": "Construye declaraciones de compromiso usando If-Then planning.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build a commitment using If-Then planning",
+          "words": [
+            "If",
+            "I",
+            "feel",
+            "like",
+            "skipping",
+            "practice,",
+            "then",
+            "I",
+            "will",
+            "do",
+            "just",
+            "one",
+            "flashcard."
+          ],
+          "correct": "If I feel like skipping practice, then I will do just one flashcard."
+        },
+        {
+          "prompt": "Build a sentence about why you learn English",
+          "words": [
+            "I",
+            "am",
+            "learning",
+            "English",
+            "because",
+            "I",
+            "want",
+            "to",
+            "connect",
+            "with",
+            "people",
+            "worldwide."
+          ],
+          "correct": "I am learning English because I want to connect with people worldwide."
+        },
+        {
+          "prompt": "Build a growth mindset statement",
+          "words": [
+            "I",
+            "can't",
+            "speak",
+            "fluently",
+            "yet,",
+            "but",
+            "I",
+            "am",
+            "improving",
+            "every",
+            "day."
+          ],
+          "correct": "I can't speak fluently yet, but I am improving every day."
+        },
+        {
+          "prompt": "Build a habit-stacking commitment",
+          "words": [
+            "After",
+            "my",
+            "morning",
+            "coffee,",
+            "I",
+            "will",
+            "practice",
+            "English",
+            "for",
+            "10",
+            "minutes."
+          ],
+          "correct": "After my morning coffee, I will practice English for 10 minutes."
+        },
+        {
+          "prompt": "Build a response to the comparison trap",
+          "words": [
+            "I",
+            "only",
+            "compare",
+            "myself",
+            "with",
+            "who",
+            "I",
+            "was",
+            "three",
+            "months",
+            "ago."
+          ],
+          "correct": "I only compare myself with who I was three months ago."
+        },
+        {
+          "prompt": "Build a celebration of your progress",
+          "words": [
+            "I",
+            "have",
+            "completed",
+            "35",
+            "chapters",
+            "and",
+            "I",
+            "am",
+            "proud",
+            "of",
+            "my",
+            "progress!"
+          ],
+          "correct": "I have completed 35 chapters and I am proud of my progress!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-flash",
+    "type": "flashcard",
+    "title": "Growth Mindset Vocabulary",
+    "description": "Transforma tu vocabulario interno del fracaso al crecimiento.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "❌ \"I'm not good at English.\" (Fixed)",
+          "back": "✅ \"I'm not good at English YET.\" (Growth) — \"Yet\" transforma una limitación en un proceso de aprendizaje.",
+          "example": "I can't understand native speakers yet, but I'm improving every week."
+        },
+        {
+          "id": "f2",
+          "front": "GRIT 💪",
+          "back": "Perseverancia y pasión sostenida por metas a largo plazo. No es talento, es la decisión de no rendirse.",
+          "example": "Learning a language requires grit — the willingness to keep going when it gets hard."
+        },
+        {
+          "id": "f3",
+          "front": "DELAYED GRATIFICATION ⏳",
+          "back": "Resistir una recompensa inmediata para obtener una mayor a largo plazo.",
+          "example": "Choosing to study instead of watching TV is an act of delayed gratification."
+        },
+        {
+          "id": "f4",
+          "front": "ACCOUNTABILITY PARTNER 🤝",
+          "back": "Persona que verifica tu progreso regularmente. Te mantiene comprometido.",
+          "example": "My accountability partner and I check in every Sunday to review our English goals."
+        },
+        {
+          "id": "f5",
+          "front": "GROWTH MINDSET 🌱",
+          "back": "Creencia de que las habilidades se desarrollan con esfuerzo y práctica, no son fijas.",
+          "example": "With a growth mindset, every mistake is a learning opportunity."
+        },
+        {
+          "id": "f6",
+          "front": "RESILIENCE 🏔️",
+          "back": "Capacidad de recuperarte rápido de las dificultades. Esencial para el aprendizaje.",
+          "example": "Resilience means getting back to studying even after a frustrating day."
+        },
+        {
+          "id": "f7",
+          "front": "PLATEAU 📊",
+          "back": "Período donde parece que no hay progreso. Es temporal y normal en todo aprendizaje.",
+          "example": "I'm going through a plateau, but I know it's just part of the process."
+        },
+        {
+          "id": "f8",
+          "front": "HABIT STACKING 🔗",
+          "back": "Conectar un hábito nuevo a uno existente. \"Después de X, haré Y.\"",
+          "example": "After my morning coffee, I review 5 flashcards. That's habit stacking."
+        },
+        {
+          "id": "f9",
+          "front": "INTRINSIC MOTIVATION 🎯",
+          "back": "Motivación que viene de adentro: curiosidad, disfrute, satisfacción personal.",
+          "example": "My intrinsic motivation for English is that I genuinely enjoy watching movies without subtitles."
+        },
+        {
+          "id": "f10",
+          "front": "STREAK 🔥",
+          "back": "Racha o cadena de días consecutivos de práctica. Poderoso motivador.",
+          "example": "I have a 30-day streak! I don't want to break the chain."
+        },
+        {
+          "id": "f11",
+          "front": "❌ \"I'll never be fluent.\" (Fixed)",
+          "back": "✅ \"Fluency is a journey, and I'm making progress every day.\" (Growth) — Reframe: proceso, no destino.",
+          "example": "I couldn't order food in English 6 months ago. Now I can have full conversations."
+        },
+        {
+          "id": "f12",
+          "front": "MICRO-SESSIONS ⏱️",
+          "back": "Sesiones de estudio de 5-15 minutos. Más efectivas y sostenibles que sesiones largas irregulares.",
+          "example": "Three 10-minute micro-sessions are better than one skipped 1-hour session."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-match",
+    "type": "word-match",
+    "title": "Barrera → Estrategia",
+    "description": "Empareja cada barrera motivacional con la estrategia más efectiva.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Plateau effect (no progress feeling)",
+          "right": "Take a level test to see real progress 📊"
+        },
+        {
+          "left": "Perfectionism paralysis (fear of errors)",
+          "right": "Set a \"mistake quota\" — aim for 5 errors/day 🎯"
+        },
+        {
+          "left": "Shiny object syndrome (changing methods)",
+          "right": "Commit to one system for 90 days 📅"
+        },
+        {
+          "left": "Life gets in the way (no time)",
+          "right": "10-minute micro-sessions attached to habits ⏰"
+        },
+        {
+          "left": "Comparison trap (feeling inferior)",
+          "right": "Compare only with yourself 3 months ago 🪞"
+        },
+        {
+          "left": "Fear of speaking (anxiety)",
+          "right": "Start with low-stakes practice: self-talk, recording 🎙️"
+        },
+        {
+          "left": "Boredom with materials",
+          "right": "Switch to content you genuinely enjoy 🎬"
+        },
+        {
+          "left": "Forgetting vocabulary quickly",
+          "right": "Use spaced repetition apps like Anki 🔄"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario Motivacional",
+    "description": "Descifra palabras que te ayudan a mantener la motivación.",
+    "props": {
+      "words": [
+        {
+          "word": "ACHIEVEMENT",
+          "hint": "Logro; algo que has conseguido",
+          "category": "Motivation"
+        },
+        {
+          "word": "CONFIDENCE",
+          "hint": "Confianza; creer en tu capacidad",
+          "category": "Motivation"
+        },
+        {
+          "word": "PERSISTENCE",
+          "hint": "Persistencia; seguir intentando sin rendirte",
+          "category": "Motivation"
+        },
+        {
+          "word": "SUCCESS",
+          "hint": "Éxito; lograr tus metas",
+          "category": "Motivation"
+        },
+        {
+          "word": "FLUENT",
+          "hint": "Fluido; hablar con facilidad",
+          "category": "Motivation"
+        },
+        {
+          "word": "GOAL",
+          "hint": "Meta; objetivo que quieres alcanzar",
+          "category": "Motivation"
+        }
+      ]
+    }
+  }
+]

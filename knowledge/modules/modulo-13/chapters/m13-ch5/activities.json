@@ -1,0 +1,431 @@
+[
+  {
+    "id": "m13-ch5-quiz",
+    "type": "quiz",
+    "title": "Evaluación de Planificación",
+    "description": "Guía tu proyecto respondiendo las decisiones clave de planificación.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Which is the BEST thesis statement for a blog about social media's impact?",
+          "options": [
+            "\"Social media is bad\"",
+            "\"While social media connects people globally, its impact on mental health requires careful consideration\"",
+            "\"I like Instagram\"",
+            "\"Social media exists\""
+          ],
+          "correct": 1,
+          "explanation": "A strong thesis is specific, balanced, and arguable. It presents a clear position with nuance."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "What should come AFTER your thesis statement?",
+          "options": [
+            "The conclusion",
+            "A personal anecdote unrelated to the topic",
+            "Supporting arguments with evidence",
+            "A bibliography"
+          ],
+          "correct": 2,
+          "explanation": "After the thesis, present 2-3 supporting arguments with evidence to build your case."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "A strong conclusion should ___ your main argument and offer a final thought.",
+          "correct": "summarize",
+          "explanation": "The conclusion summarizes (restates key points) and leaves the audience with a final insight."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Your project should demonstrate skills from...",
+          "options": [
+            "Only Module 1",
+            "Only writing",
+            "Multiple modules: grammar, vocabulary, pronunciation, and critical thinking",
+            "Only pronunciation"
+          ],
+          "correct": 2,
+          "explanation": "The final project integrates ALL skills from all 6 modules (8-13)."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "Which is the FIRST phase of your project?",
+          "options": [
+            "Writing the conclusion",
+            "Research (reading sources and taking notes)",
+            "Recording the final version",
+            "Presenting to an audience"
+          ],
+          "correct": 1,
+          "explanation": "Research comes first: choose your topic, read sources, and gather information."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "In the planning phase, you should create an ___ (outline/final draft) before writing.",
+          "correct": "outline",
+          "explanation": "An outline organizes your ideas BEFORE you write. It's the blueprint of your project."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Which grammar structures should you try to include in your project?",
+          "options": [
+            "Only simple present",
+            "A variety: present perfect, modals, passive voice, conditionals",
+            "Only past simple",
+            "No grammar, just vocabulary"
+          ],
+          "correct": 1,
+          "explanation": "Grammatical variety demonstrates your full range of skills across all modules."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "The evaluation rubric gives 25% to each of 4 areas. Which is NOT one of them?",
+          "options": [
+            "Content and organization",
+            "Grammar and vocabulary",
+            "Pronunciation and fluency",
+            "Number of pages"
+          ],
+          "correct": 3,
+          "explanation": "The 4 criteria are: Content, Grammar/Vocab, Pronunciation/Fluency, and Creativity. Length is not a criterion."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"___ things considered, remote work has transformed the modern workplace.\" (All/Some)",
+          "correct": "All",
+          "explanation": "\"All things considered\" is a strong concluding phrase that signals a balanced final judgment."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "The most important quality of your project is...",
+          "options": [
+            "Being the longest",
+            "Being perfect with no mistakes",
+            "Being authentic — showing what YOU can do with English",
+            "Copying someone else's work"
+          ],
+          "correct": 2,
+          "explanation": "Authenticity matters most. Show YOUR voice, YOUR ideas, YOUR English. Progress, not perfection."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Construyendo el Outline",
+    "description": "Construye las oraciones clave de cada sección de tu proyecto.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build a thesis statement about technology",
+          "words": [
+            "Although",
+            "technology",
+            "presents",
+            "challenges,",
+            "the",
+            "benefits",
+            "outweigh",
+            "the",
+            "risks."
+          ],
+          "correct": "Although technology presents challenges, the benefits outweigh the risks."
+        },
+        {
+          "prompt": "Build a topic sentence for your first body paragraph",
+          "words": [
+            "First,",
+            "the",
+            "most",
+            "important",
+            "advantage",
+            "is",
+            "the",
+            "accessibility",
+            "of",
+            "information."
+          ],
+          "correct": "First, the most important advantage is the accessibility of information."
+        },
+        {
+          "prompt": "Build a transitional sentence to the counterargument",
+          "words": [
+            "On",
+            "the",
+            "other",
+            "hand,",
+            "critics",
+            "argue",
+            "that",
+            "technology",
+            "creates",
+            "dependency."
+          ],
+          "correct": "On the other hand, critics argue that technology creates dependency."
+        },
+        {
+          "prompt": "Build your conclusion",
+          "words": [
+            "All",
+            "things",
+            "considered,",
+            "technology",
+            "is",
+            "a",
+            "powerful",
+            "tool",
+            "when",
+            "used",
+            "responsibly."
+          ],
+          "correct": "All things considered, technology is a powerful tool when used responsibly."
+        },
+        {
+          "prompt": "Build a sentence introducing your personal opinion",
+          "words": [
+            "From",
+            "my",
+            "perspective,",
+            "the",
+            "key",
+            "is",
+            "finding",
+            "a",
+            "healthy",
+            "balance."
+          ],
+          "correct": "From my perspective, the key is finding a healthy balance."
+        },
+        {
+          "prompt": "Build a strong opening hook",
+          "words": [
+            "Have",
+            "you",
+            "ever",
+            "wondered",
+            "how",
+            "technology",
+            "is",
+            "shaping",
+            "our",
+            "future?"
+          ],
+          "correct": "Have you ever wondered how technology is shaping our future?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch5-flash",
+    "type": "flashcard",
+    "title": "Toolkit del Proyecto",
+    "description": "Herramientas lingüísticas esenciales para tu proyecto final.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "INTRODUCING YOUR OPINION 💬",
+          "back": "In my view / From my perspective / I would argue that / It seems to me that...",
+          "example": "In my view, remote work has fundamentally changed the modern workplace."
+        },
+        {
+          "id": "f2",
+          "front": "PRESENTING EVIDENCE 📊",
+          "back": "According to... / Research shows that... / The data indicates... / Studies suggest...",
+          "example": "According to a 2024 study, 70% of employees prefer hybrid work."
+        },
+        {
+          "id": "f3",
+          "front": "TRANSITIONING BETWEEN IDEAS 🔗",
+          "back": "Furthermore / Moreover / On the other hand / In contrast / Nevertheless / However...",
+          "example": "Remote work offers flexibility; however, it can also lead to isolation."
+        },
+        {
+          "id": "f4",
+          "front": "GIVING EXAMPLES 📌",
+          "back": "For instance / For example / Such as / To illustrate / A case in point is...",
+          "example": "For instance, many tech companies have adopted fully remote models."
+        },
+        {
+          "id": "f5",
+          "front": "ACKNOWLEDGING COUNTERARGUMENTS 🔄",
+          "back": "Critics argue that... / Some might say... / It could be argued that... / Admittedly...",
+          "example": "Critics argue that remote work reduces team cohesion."
+        },
+        {
+          "id": "f6",
+          "front": "CONCLUDING YOUR ARGUMENT 🏁",
+          "back": "In conclusion / To sum up / All things considered / Taking everything into account...",
+          "example": "All things considered, the benefits of remote work outweigh its drawbacks."
+        },
+        {
+          "id": "f7",
+          "front": "EMPHASIZING A KEY POINT 💡",
+          "back": "It is worth noting that... / Importantly... / Significantly... / I'd like to highlight...",
+          "example": "It is worth noting that productivity actually increased during remote work."
+        },
+        {
+          "id": "f8",
+          "front": "HEDGING (BEING CAUTIOUS) 🤔",
+          "back": "It seems that... / Perhaps... / It might be worth considering... / Arguably...",
+          "example": "It seems that the benefits vary depending on the industry."
+        },
+        {
+          "id": "f9",
+          "front": "MAKING RECOMMENDATIONS ✅",
+          "back": "I would recommend... / It would be advisable to... / Companies should consider...",
+          "example": "I would recommend a hybrid approach that combines flexibility with collaboration."
+        },
+        {
+          "id": "f10",
+          "front": "ENGAGING THE AUDIENCE 🎯",
+          "back": "Have you ever wondered...? / Imagine... / Consider this... / Think about...",
+          "example": "Have you ever wondered what the workplace will look like in 10 years?"
+        },
+        {
+          "id": "f11",
+          "front": "COMPARING AND CONTRASTING ⚖️",
+          "back": "Similarly / In contrast / Unlike / Whereas / While... / Compared to...",
+          "example": "While office work promotes collaboration, remote work enhances focus."
+        },
+        {
+          "id": "f12",
+          "front": "EXPRESSING CERTAINTY vs UNCERTAINTY 📈",
+          "back": "Certainly / Undoubtedly / It is clear that... vs Perhaps / Possibly / It remains to be seen...",
+          "example": "It is clear that technology will continue to evolve rapidly."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch5-svg",
+    "type": "svg-scene",
+    "title": "Mapa del Proyecto",
+    "description": "Explora el tablero Kanban de tu proyecto y sigue el progreso de cada tarea.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#fffbeb",
+        "items": [
+          {
+            "id": "todo",
+            "type": "rect",
+            "x": 20,
+            "y": 50,
+            "width": 100,
+            "height": 300,
+            "fill": "#fca5a5",
+            "label": "Por hacer — Tareas pendientes",
+            "labelEn": "📋 To Do"
+          },
+          {
+            "id": "research",
+            "type": "rect",
+            "x": 135,
+            "y": 50,
+            "width": 100,
+            "height": 300,
+            "fill": "#fdba74",
+            "label": "Investigación — Lee fuentes",
+            "labelEn": "🔍 Research"
+          },
+          {
+            "id": "drafting",
+            "type": "rect",
+            "x": 250,
+            "y": 50,
+            "width": 100,
+            "height": 300,
+            "fill": "#fde68a",
+            "label": "Borrador — Escribe tu contenido",
+            "labelEn": "✏️ Drafting"
+          },
+          {
+            "id": "review",
+            "type": "rect",
+            "x": 365,
+            "y": 50,
+            "width": 100,
+            "height": 300,
+            "fill": "#93c5fd",
+            "label": "Revisión — Edita y mejora",
+            "labelEn": "🔎 Review"
+          },
+          {
+            "id": "complete",
+            "type": "rect",
+            "x": 480,
+            "y": 50,
+            "width": 100,
+            "height": 300,
+            "fill": "#86efac",
+            "label": "Completado — ¡Proyecto listo!",
+            "labelEn": "✅ Complete"
+          },
+          {
+            "id": "star",
+            "type": "circle",
+            "cx": 530,
+            "cy": 380,
+            "r": 18,
+            "fill": "#fbbf24",
+            "label": "¡Felicidades! Proyecto terminado",
+            "labelEn": "⭐ Congratulations!"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m13-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de Presentaciones",
+    "description": "Descifra palabras clave para tu proyecto final.",
+    "props": {
+      "words": [
+        {
+          "word": "AUDIENCE",
+          "hint": "Audiencia; las personas que te escuchan o leen",
+          "category": "Projects"
+        },
+        {
+          "word": "RESEARCH",
+          "hint": "Investigación; buscar información",
+          "category": "Projects"
+        },
+        {
+          "word": "CONCLUSION",
+          "hint": "Conclusión; cierre de tu proyecto",
+          "category": "Projects"
+        },
+        {
+          "word": "PRESENTATION",
+          "hint": "Presentación; exponer ideas ante otros",
+          "category": "Projects"
+        },
+        {
+          "word": "PODCAST",
+          "hint": "Programa de audio episódico",
+          "category": "Projects"
+        },
+        {
+          "word": "TITLE",
+          "hint": "Título; nombre del proyecto o episodio",
+          "category": "Projects"
+        }
+      ]
+    }
+  }
+]

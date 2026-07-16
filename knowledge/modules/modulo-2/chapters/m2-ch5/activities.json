@@ -1,0 +1,476 @@
+[
+  {
+    "id": "m2-ch5-svg",
+    "type": "svg-scene",
+    "title": "La Casa de \"Have\"",
+    "description": "Explora los diferentes usos del verbo \"have\" en cada habitación.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f0f9ff",
+        "items": [
+          {
+            "id": "roof",
+            "type": "rect",
+            "x": 150,
+            "y": 10,
+            "width": 400,
+            "height": 50,
+            "fill": "#0ea5e9",
+            "label": "🏠 The House of HAVE",
+            "labelEn": "Explore every room!"
+          },
+          {
+            "id": "room1",
+            "type": "rect",
+            "x": 50,
+            "y": 80,
+            "width": 200,
+            "height": 80,
+            "fill": "#bae6fd",
+            "label": "📦 Possession",
+            "labelEn": "I have a car. She has two cats. We have a big house."
+          },
+          {
+            "id": "room2",
+            "type": "rect",
+            "x": 270,
+            "y": 80,
+            "width": 200,
+            "height": 80,
+            "fill": "#bbf7d0",
+            "label": "⏰ Past (had)",
+            "labelEn": "I had a dog. She had long hair. They had fun."
+          },
+          {
+            "id": "room3",
+            "type": "rect",
+            "x": 490,
+            "y": 80,
+            "width": 180,
+            "height": 80,
+            "fill": "#fde68a",
+            "label": "❌ Negative",
+            "labelEn": "I don't have / She doesn't have / I didn't have"
+          },
+          {
+            "id": "room4",
+            "type": "rect",
+            "x": 50,
+            "y": 185,
+            "width": 200,
+            "height": 80,
+            "fill": "#e0e7ff",
+            "label": "❓ Questions",
+            "labelEn": "Do you have…? Does she have…? Did you have…?"
+          },
+          {
+            "id": "room5",
+            "type": "rect",
+            "x": 270,
+            "y": 185,
+            "width": 200,
+            "height": 80,
+            "fill": "#fce7f3",
+            "label": "📋 Have to (obligation)",
+            "labelEn": "I have to study. She has to work. They had to leave."
+          },
+          {
+            "id": "room6",
+            "type": "rect",
+            "x": 490,
+            "y": 185,
+            "width": 180,
+            "height": 80,
+            "fill": "#ccfbf1",
+            "label": "🇬🇧 Have got",
+            "labelEn": "I've got a sister. He's got brown eyes. (British)"
+          },
+          {
+            "id": "room7",
+            "type": "rect",
+            "x": 140,
+            "y": 290,
+            "width": 420,
+            "height": 70,
+            "fill": "#fef9c3",
+            "label": "🍳 Have + activities",
+            "labelEn": "have breakfast, have a shower, have fun, have a party, have a good time"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m2-ch5-flash",
+    "type": "flashcard",
+    "title": "Usos de Have / Has / Had",
+    "description": "Repasa todas las formas y usos del verbo \"have\".",
+    "props": {
+      "cards": [
+        {
+          "id": "h1",
+          "front": "I ___ a dog. (present)",
+          "back": "I HAVE a dog.",
+          "example": "I/You/We/They → have."
+        },
+        {
+          "id": "h2",
+          "front": "She ___ blue eyes. (present)",
+          "back": "She HAS blue eyes.",
+          "example": "He/She/It → has."
+        },
+        {
+          "id": "h3",
+          "front": "I ___ a bicycle when I was 10. (past)",
+          "back": "I HAD a bicycle.",
+          "example": "All subjects use \"had\" in past."
+        },
+        {
+          "id": "h4",
+          "front": "I ___ (not/have) money. (present)",
+          "back": "I DON'T HAVE money.",
+          "example": "Negative: don't have / doesn't have."
+        },
+        {
+          "id": "h5",
+          "front": "She ___ (not/have) a car. (present)",
+          "back": "She DOESN'T HAVE a car.",
+          "example": "He/She/It → doesn't have."
+        },
+        {
+          "id": "h6",
+          "front": "They ___ (not/have) time. (past)",
+          "back": "They DIDN'T HAVE time.",
+          "example": "Past negative: didn't have."
+        },
+        {
+          "id": "h7",
+          "front": "___ you ___ a pen? (present)",
+          "back": "DO you HAVE a pen?",
+          "example": "Question: do/does + subject + have."
+        },
+        {
+          "id": "h8",
+          "front": "___ she ___ a sister? (present)",
+          "back": "DOES she HAVE a sister?",
+          "example": "He/She/It → Does + have."
+        },
+        {
+          "id": "h9",
+          "front": "I ___ study tonight. (obligation)",
+          "back": "I HAVE TO study tonight.",
+          "example": "have to = tener que (obligación)."
+        },
+        {
+          "id": "h10",
+          "front": "She ___ work on Saturdays. (obligation)",
+          "back": "She HAS TO work on Saturdays.",
+          "example": "He/She/It → has to."
+        },
+        {
+          "id": "h11",
+          "front": "I've ___ a new phone. (British)",
+          "back": "I've GOT a new phone.",
+          "example": "have got = tener (posesión, British)."
+        },
+        {
+          "id": "h12",
+          "front": "have breakfast / have a shower",
+          "back": "have + activity = HACER una actividad",
+          "example": "have breakfast = desayunar, have a shower = ducharse."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-match",
+    "type": "word-match",
+    "title": "Traduce con Have",
+    "description": "Empareja cada frase en español con su traducción en inglés.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Tengo un perro",
+          "right": "I have a dog"
+        },
+        {
+          "left": "Ella tiene ojos azules",
+          "right": "She has blue eyes"
+        },
+        {
+          "left": "Tenía un gato",
+          "right": "I had a cat"
+        },
+        {
+          "left": "No tengo dinero",
+          "right": "I don't have money"
+        },
+        {
+          "left": "Tengo que estudiar",
+          "right": "I have to study"
+        },
+        {
+          "left": "¿Tienes un bolígrafo?",
+          "right": "Do you have a pen?"
+        },
+        {
+          "left": "Ella tiene que trabajar",
+          "right": "She has to work"
+        },
+        {
+          "left": "Desayunar",
+          "right": "Have breakfast"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Construye con Have",
+    "description": "Ordena las palabras para formar oraciones con \"have\".",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Tengo dos hermanos:",
+          "words": [
+            "I",
+            "have",
+            "two",
+            "brothers"
+          ],
+          "correct": "I have two brothers"
+        },
+        {
+          "prompt": "Ella tiene pelo largo:",
+          "words": [
+            "She",
+            "has",
+            "long",
+            "hair"
+          ],
+          "correct": "She has long hair"
+        },
+        {
+          "prompt": "Tenía un perro:",
+          "words": [
+            "I",
+            "had",
+            "a",
+            "dog"
+          ],
+          "correct": "I had a dog"
+        },
+        {
+          "prompt": "No tengo coche:",
+          "words": [
+            "I",
+            "don't",
+            "have",
+            "a",
+            "car"
+          ],
+          "correct": "I don't have a car"
+        },
+        {
+          "prompt": "¿Tienes tiempo?:",
+          "words": [
+            "Do",
+            "you",
+            "have",
+            "time?"
+          ],
+          "correct": "Do you have time?"
+        },
+        {
+          "prompt": "Ella tiene que ir:",
+          "words": [
+            "She",
+            "has",
+            "to",
+            "go"
+          ],
+          "correct": "She has to go"
+        },
+        {
+          "prompt": "Desayunamos a las 8:",
+          "words": [
+            "We",
+            "have",
+            "breakfast",
+            "at",
+            "8"
+          ],
+          "correct": "We have breakfast at 8"
+        },
+        {
+          "prompt": "No tenía dinero:",
+          "words": [
+            "I",
+            "didn't",
+            "have",
+            "money"
+          ],
+          "correct": "I didn't have money"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz: Have, Has, Had",
+    "description": "Demuestra que dominas el verbo \"have\" en todas sus formas.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She ___ a beautiful house.\"",
+          "options": [
+            "have",
+            "has",
+            "having",
+            "haves"
+          ],
+          "correct": 1,
+          "explanation": "He/She/It → has."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"I ___ a bicycle when I was 10.\"",
+          "correct": "had",
+          "explanation": "Past of have = had (all subjects)."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"They ___ (not/have) a car.\"",
+          "options": [
+            "don't have",
+            "doesn't have",
+            "haven't",
+            "isn't have"
+          ],
+          "correct": 0,
+          "explanation": "They → don't have."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"___ she have a sister?\" (present)",
+          "correct": "Does",
+          "explanation": "Does she have...?"
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"I ___ study for the exam.\" (obligación)",
+          "options": [
+            "have to",
+            "has to",
+            "had to",
+            "having to"
+          ],
+          "correct": 0,
+          "explanation": "I have to = tengo que."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"She ___ work on weekends.\" (obligación)",
+          "options": [
+            "have to",
+            "has to",
+            "is to",
+            "having to"
+          ],
+          "correct": 1,
+          "explanation": "She has to = ella tiene que."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"We ___ breakfast at 7 every day.\"",
+          "correct": "have",
+          "explanation": "have breakfast = desayunar."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"He ___ (not/have) money yesterday.\"",
+          "options": [
+            "didn't have",
+            "doesn't have",
+            "hadn't have",
+            "not had"
+          ],
+          "correct": 0,
+          "explanation": "Past negative: didn't have."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"I've ___ a new phone.\" (British English)",
+          "correct": "got",
+          "explanation": "have got = tener (I've got = I have)."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which is CORRECT?",
+          "options": [
+            "She don't have a car.",
+            "She doesn't has a car.",
+            "She doesn't have a car.",
+            "She haven't a car."
+          ],
+          "correct": 2,
+          "explanation": "She doesn't have — doesn't + base form 'have'."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de To Have",
+    "description": "Descifra palabras relacionadas con tener y comidas.",
+    "props": {
+      "words": [
+        {
+          "word": "HAVE",
+          "hint": "Tener; forma base",
+          "category": "To Have"
+        },
+        {
+          "word": "HAS",
+          "hint": "Tiene; tercera persona",
+          "category": "To Have"
+        },
+        {
+          "word": "HAD",
+          "hint": "Tenía/tuvo; pasado",
+          "category": "To Have"
+        },
+        {
+          "word": "BREAKFAST",
+          "hint": "Desayuno",
+          "category": "To Have"
+        },
+        {
+          "word": "LUNCH",
+          "hint": "Almuerzo",
+          "category": "To Have"
+        },
+        {
+          "word": "DINNER",
+          "hint": "Cena",
+          "category": "To Have"
+        }
+      ]
+    }
+  }
+]

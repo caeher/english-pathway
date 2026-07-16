@@ -1,0 +1,496 @@
+[
+  {
+    "id": "m3-ch3-svg",
+    "type": "svg-scene",
+    "title": "Anoche a las 9 PM",
+    "description": "¿Qué estaba haciendo cada persona anoche a las 9?",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#1e1b4b",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 50,
+            "fill": "#4c1d95",
+            "label": "🌙 Last Night at 9 PM",
+            "labelEn": "What was everyone doing?"
+          },
+          {
+            "id": "p1",
+            "type": "rect",
+            "x": 30,
+            "y": 70,
+            "width": 200,
+            "height": 65,
+            "fill": "#7c3aed",
+            "label": "📺 Luis",
+            "labelEn": "Luis WAS WATCHING TV at 9 PM."
+          },
+          {
+            "id": "p2",
+            "type": "rect",
+            "x": 250,
+            "y": 70,
+            "width": 200,
+            "height": 65,
+            "fill": "#6366f1",
+            "label": "📖 Sara",
+            "labelEn": "Sara WAS READING a book in bed."
+          },
+          {
+            "id": "p3",
+            "type": "rect",
+            "x": 470,
+            "y": 70,
+            "width": 200,
+            "height": 65,
+            "fill": "#8b5cf6",
+            "label": "🍳 Mom & Dad",
+            "labelEn": "Mom and Dad WERE COOKING dinner."
+          },
+          {
+            "id": "p4",
+            "type": "rect",
+            "x": 30,
+            "y": 155,
+            "width": 200,
+            "height": 65,
+            "fill": "#a78bfa",
+            "label": "🎮 Carlos",
+            "labelEn": "Carlos WAS PLAYING video games."
+          },
+          {
+            "id": "p5",
+            "type": "rect",
+            "x": 250,
+            "y": 155,
+            "width": 200,
+            "height": 65,
+            "fill": "#818cf8",
+            "label": "💤 The baby",
+            "labelEn": "The baby WAS SLEEPING."
+          },
+          {
+            "id": "when",
+            "type": "rect",
+            "x": 470,
+            "y": 155,
+            "width": 200,
+            "height": 65,
+            "fill": "#fde68a",
+            "label": "⚡ WHEN",
+            "labelEn": "I was eating WHEN the phone rang. (short action interrupts)"
+          },
+          {
+            "id": "while",
+            "type": "rect",
+            "x": 30,
+            "y": 250,
+            "width": 310,
+            "height": 60,
+            "fill": "#bbf7d0",
+            "label": "⏳ WHILE",
+            "labelEn": "WHILE she was cooking, he was reading. (two long actions at same time)"
+          },
+          {
+            "id": "combo",
+            "type": "rect",
+            "x": 360,
+            "y": 250,
+            "width": 310,
+            "height": 60,
+            "fill": "#fecaca",
+            "label": "🔗 When + While",
+            "labelEn": "I was walking home WHEN it started to rain. (continuous + simple)"
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 100,
+            "y": 335,
+            "width": 500,
+            "height": 45,
+            "fill": "#e0e7ff",
+            "label": "❌ Negative & ❓ Question",
+            "labelEn": "I WASN'T working. WERE you studying? Yes, I was. / No, I wasn't."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m3-ch3-flash",
+    "type": "flashcard",
+    "title": "Pasado Continuo: Práctica",
+    "description": "Practica la formación y usos del pasado continuo.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I / watch TV / at 9 PM",
+          "back": "I was watching TV at 9 PM.",
+          "example": "I/He/She/It → was + -ing."
+        },
+        {
+          "id": "c2",
+          "front": "They / study / all night",
+          "back": "They were studying all night.",
+          "example": "You/We/They → were + -ing."
+        },
+        {
+          "id": "c3",
+          "front": "She / cook / when he arrived",
+          "back": "She was cooking when he arrived.",
+          "example": "Continuous action interrupted by simple past."
+        },
+        {
+          "id": "c4",
+          "front": "While I / walk / it started to rain",
+          "back": "While I was walking, it started to rain.",
+          "example": "while + continuous, simple interrupts."
+        },
+        {
+          "id": "c5",
+          "front": "They / play / while she / read",
+          "back": "They were playing while she was reading.",
+          "example": "Two simultaneous continuous actions."
+        },
+        {
+          "id": "c6",
+          "front": "He / not / work / yesterday afternoon",
+          "back": "He wasn't working yesterday afternoon.",
+          "example": "Negative: wasn't + -ing."
+        },
+        {
+          "id": "c7",
+          "front": "___ you / sleep / at midnight?",
+          "back": "Were you sleeping at midnight?",
+          "example": "Question: Were + subject + -ing?"
+        },
+        {
+          "id": "c8",
+          "front": "The baby / sleep / when I got home",
+          "back": "The baby was sleeping when I got home.",
+          "example": "Background action + when + past simple."
+        },
+        {
+          "id": "c9",
+          "front": "We / drive / to the airport / at 6 AM",
+          "back": "We were driving to the airport at 6 AM.",
+          "example": "We → were driving."
+        },
+        {
+          "id": "c10",
+          "front": "What / you / do / at 10 PM?",
+          "back": "What were you doing at 10 PM?",
+          "example": "Wh-question in past continuous."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-match",
+    "type": "word-match",
+    "title": "When vs. While",
+    "description": "Empareja cada oración con la conjunción correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "___ I was eating…",
+          "right": "While"
+        },
+        {
+          "left": "___ the phone rang…",
+          "right": "When"
+        },
+        {
+          "left": "___ she was sleeping…",
+          "right": "While"
+        },
+        {
+          "left": "___ he arrived…",
+          "right": "When"
+        },
+        {
+          "left": "___ they were dancing…",
+          "right": "While"
+        },
+        {
+          "left": "___ it started to rain…",
+          "right": "When"
+        },
+        {
+          "left": "___ we were studying…",
+          "right": "While"
+        },
+        {
+          "left": "___ the lights went out…",
+          "right": "When"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Cuenta qué Estaba Pasando",
+    "description": "Ordena las palabras para formar oraciones en pasado continuo.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Estaba viendo TV a las 9:",
+          "words": [
+            "I",
+            "was",
+            "watching",
+            "TV",
+            "at",
+            "9"
+          ],
+          "correct": "I was watching TV at 9"
+        },
+        {
+          "prompt": "Ella estaba cocinando cuando él llegó:",
+          "words": [
+            "She",
+            "was",
+            "cooking",
+            "when",
+            "he",
+            "arrived"
+          ],
+          "correct": "She was cooking when he arrived"
+        },
+        {
+          "prompt": "Mientras llovía, leíamos:",
+          "words": [
+            "While",
+            "it",
+            "was",
+            "raining",
+            "we",
+            "were",
+            "reading"
+          ],
+          "correct": "While it was raining we were reading"
+        },
+        {
+          "prompt": "No estaban estudiando:",
+          "words": [
+            "They",
+            "weren't",
+            "studying"
+          ],
+          "correct": "They weren't studying"
+        },
+        {
+          "prompt": "¿Estabas durmiendo a medianoche?:",
+          "words": [
+            "Were",
+            "you",
+            "sleeping",
+            "at",
+            "midnight?"
+          ],
+          "correct": "Were you sleeping at midnight?"
+        },
+        {
+          "prompt": "El bebé dormía cuando llegué:",
+          "words": [
+            "The",
+            "baby",
+            "was",
+            "sleeping",
+            "when",
+            "I",
+            "arrived"
+          ],
+          "correct": "The baby was sleeping when I arrived"
+        },
+        {
+          "prompt": "¿Qué estabas haciendo?:",
+          "words": [
+            "What",
+            "were",
+            "you",
+            "doing?"
+          ],
+          "correct": "What were you doing?"
+        },
+        {
+          "prompt": "Él estaba corriendo en el parque:",
+          "words": [
+            "He",
+            "was",
+            "running",
+            "in",
+            "the",
+            "park"
+          ],
+          "correct": "He was running in the park"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz: Pasado Continuo",
+    "description": "Demuestra que dominas el pasado continuo.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"I ___ (watch) TV at 9 PM last night.\"",
+          "options": [
+            "watched",
+            "was watching",
+            "were watching",
+            "watching"
+          ],
+          "correct": 1,
+          "explanation": "I → was watching."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"They ___ (study) when the lights went out.\"",
+          "correct": "were studying",
+          "explanation": "They → were studying."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"She was cooking ___ he arrived.\"",
+          "options": [
+            "while",
+            "when",
+            "during",
+            "before"
+          ],
+          "correct": 1,
+          "explanation": "\"when\" + short action (past simple)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"___ she was sleeping, the phone rang.\"",
+          "options": [
+            "When",
+            "While",
+            "During",
+            "After"
+          ],
+          "correct": 1,
+          "explanation": "\"while\" + continuous action."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"He ___ (not/work) yesterday afternoon.\"",
+          "correct": "wasn't working",
+          "explanation": "He wasn't working."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"___ you ___ at midnight?\"",
+          "options": [
+            "Did / sleeping",
+            "Were / sleeping",
+            "Was / sleeping",
+            "Are / sleeping"
+          ],
+          "correct": 1,
+          "explanation": "Were you sleeping? (you → were)."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"While I ___ (walk) home, it started to rain.\"",
+          "correct": "was walking",
+          "explanation": "While I was walking (continuous background)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which uses past continuous correctly?",
+          "options": [
+            "I was work yesterday.",
+            "She were cooking at 8.",
+            "They was playing.",
+            "He was reading a book."
+          ],
+          "correct": 3,
+          "explanation": "He → was reading (correct)."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"What ___ you ___ at 10 PM?\" (do)",
+          "correct": "were doing",
+          "explanation": "What were you doing? (Wh + were + -ing)."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"___ they playing while she was reading?\"",
+          "options": [
+            "Was",
+            "Were",
+            "Did",
+            "Are"
+          ],
+          "correct": 1,
+          "explanation": "They → Were they playing?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Pasado Continuo",
+    "description": "Descifra verbos en pasado continuo.",
+    "props": {
+      "words": [
+        {
+          "word": "WALKING",
+          "hint": "Caminando; was/were + walking",
+          "category": "Past Continuous"
+        },
+        {
+          "word": "TALKING",
+          "hint": "Hablando; was/were + talking",
+          "category": "Past Continuous"
+        },
+        {
+          "word": "RAINING",
+          "hint": "Lloviendo; was/were + raining",
+          "category": "Past Continuous"
+        },
+        {
+          "word": "COOKING",
+          "hint": "Cocinando; was/were + cooking",
+          "category": "Past Continuous"
+        },
+        {
+          "word": "READING",
+          "hint": "Leyendo; was/were + reading",
+          "category": "Past Continuous"
+        },
+        {
+          "word": "DRIVING",
+          "hint": "Conduciendo; was/were + driving",
+          "category": "Past Continuous"
+        }
+      ]
+    }
+  }
+]

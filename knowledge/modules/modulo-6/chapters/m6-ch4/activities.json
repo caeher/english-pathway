@@ -1,0 +1,340 @@
+[
+  {
+    "id": "m6-ch4-svg",
+    "type": "svg-scene",
+    "title": "Mixed Conditional",
+    "description": "Third conditional y mezcla de tiempos pasado-presente.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#8b5cf6",
+            "label": "🔀 Mixed Conditional",
+            "labelEn": "Third + mixed tenses"
+          },
+          {
+            "id": "third",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "📌 Third: If + HAD + pp, WOULD HAVE + pp",
+            "labelEn": "If I had studied, I'd have passed. (both in past)"
+          },
+          {
+            "id": "mixed",
+            "type": "rect",
+            "x": 30,
+            "y": 125,
+            "width": 640,
+            "height": 55,
+            "fill": "#c7d2fe",
+            "label": "📌 Mixed: Past condition → Present result",
+            "labelEn": "If I had studied medicine, I would BE a doctor now. (past if, present result)"
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 195,
+            "width": 310,
+            "height": 55,
+            "fill": "#bbf7d0",
+            "label": "✅ Third",
+            "labelEn": "If she had known, she would have come."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 195,
+            "width": 310,
+            "height": 55,
+            "fill": "#dbeafe",
+            "label": "✅ Mixed",
+            "labelEn": "If I had gone to bed earlier, I wouldn't BE tired now."
+          },
+          {
+            "id": "use",
+            "type": "rect",
+            "x": 30,
+            "y": 270,
+            "width": 640,
+            "height": 50,
+            "fill": "#fef9c3",
+            "label": "💡 Use: regrets, alternative pasts, past→present effects",
+            "labelEn": "What would have happened if...? What would be different now?"
+          },
+          {
+            "id": "summary",
+            "type": "rect",
+            "x": 80,
+            "y": 340,
+            "width": 540,
+            "height": 55,
+            "fill": "#ccfbf1",
+            "label": "📊 Summary",
+            "labelEn": "Zero: present+present. 1st: present+will. 2nd: past+would. 3rd/Mixed: past perfect+would have/would"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m6-ch4-flash",
+    "type": "flashcard",
+    "title": "Third & Mixed Conditional",
+    "description": "Practica el tercer condicional y los mixtos.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "If I ___ (study) harder, I ___ (pass).",
+          "back": "If I had studied harder, I would have passed.",
+          "example": "Third: both past."
+        },
+        {
+          "id": "c2",
+          "front": "If she ___ (know), she ___ (come).",
+          "back": "If she had known, she would have come.",
+          "example": "Third conditional."
+        },
+        {
+          "id": "c3",
+          "front": "If I ___ (go) to bed earlier, I ___ (not/be) tired now.",
+          "back": "If I had gone to bed earlier, I wouldn't be tired now.",
+          "example": "Mixed: past condition, present result."
+        },
+        {
+          "id": "c4",
+          "front": "If you ___ (listen), you ___ (know) the answer.",
+          "back": "If you had listened, you would know the answer.",
+          "example": "Mixed: past → present."
+        },
+        {
+          "id": "c5",
+          "front": "If he ___ (save) money, he ___ (buy) a car.",
+          "back": "If he had saved money, he would have bought a car.",
+          "example": "Third: unreal past."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-match",
+    "type": "word-match",
+    "title": "¿Third o Mixed?",
+    "description": "Clasifica cada oración.",
+    "props": {
+      "pairs": [
+        {
+          "left": "If I had studied, I'd have passed.",
+          "right": "Third Conditional"
+        },
+        {
+          "left": "If I had studied medicine, I'd be a doctor.",
+          "right": "Mixed Conditional"
+        },
+        {
+          "left": "If she had known, she'd have come.",
+          "right": "Third Conditional"
+        },
+        {
+          "left": "If you had listened, you'd know.",
+          "right": "Mixed Conditional"
+        },
+        {
+          "left": "If he had saved, he'd have bought.",
+          "right": "Third Conditional"
+        },
+        {
+          "left": "If I had gone earlier, I wouldn't be tired.",
+          "right": "Mixed Conditional"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Construye Third y Mixed",
+    "description": "Ordena para formar oraciones.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Si hubiera estudiado más, habría aprobado:",
+          "words": [
+            "If",
+            "I",
+            "had",
+            "studied",
+            "harder,",
+            "I",
+            "would",
+            "have",
+            "passed"
+          ],
+          "correct": "If I had studied harder, I would have passed"
+        },
+        {
+          "prompt": "Si ella hubiera sabido, habría venido:",
+          "words": [
+            "If",
+            "she",
+            "had",
+            "known,",
+            "she",
+            "would",
+            "have",
+            "come"
+          ],
+          "correct": "If she had known, she would have come"
+        },
+        {
+          "prompt": "Si hubiera ido a la cama antes, no estaría tan cansado:",
+          "words": [
+            "If",
+            "I",
+            "had",
+            "gone",
+            "to",
+            "bed",
+            "earlier,",
+            "I",
+            "wouldn't",
+            "be",
+            "so",
+            "tired"
+          ],
+          "correct": "If I had gone to bed earlier, I wouldn't be so tired"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz: Mixed Conditional",
+    "description": "Demuestra tu dominio del tercer condicional y mixtos.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"If I ___ harder, I would have passed.\"",
+          "options": [
+            "study",
+            "studied",
+            "had studied",
+            "would study"
+          ],
+          "correct": 2,
+          "explanation": "Third: past perfect in if clause."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"If she had known, she ___ ___ come.\"",
+          "correct": "would have",
+          "explanation": "Third: would have + pp."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"If I had gone to bed earlier, I ___ tired now.\"",
+          "options": [
+            "wouldn't be",
+            "wouldn't have been",
+            "won't be",
+            "wasn't"
+          ],
+          "correct": 0,
+          "explanation": "Mixed: present result (wouldn't be)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Third conditional talks about:",
+          "options": [
+            "Real future.",
+            "Unreal present.",
+            "Unreal past.",
+            "Facts."
+          ],
+          "correct": 2,
+          "explanation": "Third = unreal past."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"If he had saved, he would have ___ a car.\" (buy)",
+          "correct": "bought",
+          "explanation": "would have + past participle."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Mixed conditional mixes:",
+          "options": [
+            "Present and future",
+            "Past condition and present result",
+            "Two past actions",
+            "Fact and hypothesis"
+          ],
+          "correct": 1,
+          "explanation": "Mixed = past condition + present result."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Mixed Conditional",
+    "description": "Descifra términos de condicionales mixtos.",
+    "props": {
+      "words": [
+        {
+          "word": "REGRET",
+          "hint": "Arrepentimiento; lamentar",
+          "category": "Conditionals"
+        },
+        {
+          "word": "CONSEQUENCE",
+          "hint": "Consecuencia; resultado",
+          "category": "Conditionals"
+        },
+        {
+          "word": "OPPOSITE",
+          "hint": "Opuesto; contrario",
+          "category": "Conditionals"
+        },
+        {
+          "word": "SITUATION",
+          "hint": "Situación; circunstancia",
+          "category": "Conditionals"
+        },
+        {
+          "word": "OUTCOME",
+          "hint": "Resultado; desenlace",
+          "category": "Conditionals"
+        },
+        {
+          "word": "RESULT",
+          "hint": "Resultado; efecto",
+          "category": "Conditionals"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,601 @@
+[
+  {
+    "id": "m1-ch6-svg",
+    "type": "svg-scene",
+    "title": "El Muro de las Preguntas",
+    "description": "Explora cada Wh-word y descubre qué tipo de información busca.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 470",
+        "bg": "#fef2f2",
+        "items": [
+          {
+            "id": "wall",
+            "type": "rect",
+            "x": 25,
+            "y": 10,
+            "width": 650,
+            "height": 460,
+            "fill": "#fee2e2",
+            "label": "❓ The Question Wall",
+            "labelEn": "Master all Wh-Questions! Click each word."
+          },
+          {
+            "id": "what",
+            "type": "rect",
+            "x": 50,
+            "y": 55,
+            "width": 140,
+            "height": 80,
+            "fill": "#fecaca",
+            "label": "WHAT ¿Qué?",
+            "labelEn": "What is your name? What time is it? What color is this?"
+          },
+          {
+            "id": "where",
+            "type": "rect",
+            "x": 210,
+            "y": 55,
+            "width": 140,
+            "height": 80,
+            "fill": "#bbf7d0",
+            "label": "WHERE ¿Dónde?",
+            "labelEn": "Where are you from? Where is the library? Where do you live?"
+          },
+          {
+            "id": "when",
+            "type": "rect",
+            "x": 370,
+            "y": 55,
+            "width": 140,
+            "height": 80,
+            "fill": "#bfdbfe",
+            "label": "WHEN ¿Cuándo?",
+            "labelEn": "When is your birthday? When is the test? When do you wake up?"
+          },
+          {
+            "id": "who",
+            "type": "rect",
+            "x": 530,
+            "y": 55,
+            "width": 140,
+            "height": 80,
+            "fill": "#e0e7ff",
+            "label": "WHO ¿Quién?",
+            "labelEn": "Who is your teacher? Who is she? Who are they?"
+          },
+          {
+            "id": "why",
+            "type": "rect",
+            "x": 50,
+            "y": 170,
+            "width": 140,
+            "height": 80,
+            "fill": "#fef3c7",
+            "label": "WHY ¿Por qué?",
+            "labelEn": "Why are you sad? Why is he here? Answer: Because..."
+          },
+          {
+            "id": "how",
+            "type": "rect",
+            "x": 210,
+            "y": 170,
+            "width": 140,
+            "height": 80,
+            "fill": "#fce7f3",
+            "label": "HOW ¿Cómo?",
+            "labelEn": "How are you? How do you spell it? How is the weather?"
+          },
+          {
+            "id": "howold",
+            "type": "rect",
+            "x": 370,
+            "y": 170,
+            "width": 140,
+            "height": 80,
+            "fill": "#ccfbf1",
+            "label": "HOW OLD",
+            "labelEn": "How old are you? — I am 20 years old."
+          },
+          {
+            "id": "howmany",
+            "type": "rect",
+            "x": 530,
+            "y": 170,
+            "width": 140,
+            "height": 80,
+            "fill": "#d1fae5",
+            "label": "HOW MANY/MUCH",
+            "labelEn": "How many brothers? (countable) How much is this? (price/uncountable)"
+          },
+          {
+            "id": "yesno",
+            "type": "rect",
+            "x": 50,
+            "y": 300,
+            "width": 300,
+            "height": 80,
+            "fill": "#fed7aa",
+            "label": "✅❌ Yes/No Questions",
+            "labelEn": "Are you a student? → Yes, I am. / No, I'm not. Is she happy? → Yes, she is."
+          },
+          {
+            "id": "structure",
+            "type": "rect",
+            "x": 370,
+            "y": 300,
+            "width": 300,
+            "height": 80,
+            "fill": "#c4b5fd",
+            "label": "📐 Estructura",
+            "labelEn": "Wh-word + BE + subject? What IS your name? Where ARE you from?"
+          },
+          {
+            "id": "howextra",
+            "type": "rect",
+            "x": 50,
+            "y": 400,
+            "width": 600,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "📏 How far / How long / How tall",
+            "labelEn": "How far is the school? How long is the movie? How tall are you?"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m1-ch6-flash",
+    "type": "flashcard",
+    "title": "Preguntas Esenciales",
+    "description": "Domina las preguntas más importantes del inglés básico.",
+    "props": {
+      "cards": [
+        {
+          "id": "w1",
+          "front": "WHAT",
+          "back": "¿Qué? / ¿Cuál? — Pregunta por cosas/información",
+          "example": "What is your name? What time is it?"
+        },
+        {
+          "id": "w2",
+          "front": "WHERE",
+          "back": "¿Dónde? — Pregunta por lugares",
+          "example": "Where are you from? Where is the school?"
+        },
+        {
+          "id": "w3",
+          "front": "WHEN",
+          "back": "¿Cuándo? — Pregunta por tiempo",
+          "example": "When is your birthday? When is the class?"
+        },
+        {
+          "id": "w4",
+          "front": "WHO",
+          "back": "¿Quién? — Pregunta por personas",
+          "example": "Who is your best friend? Who are they?"
+        },
+        {
+          "id": "w5",
+          "front": "WHY",
+          "back": "¿Por qué? — Pregunta por razones",
+          "example": "Why are you late? — Because I missed the bus."
+        },
+        {
+          "id": "w6",
+          "front": "HOW",
+          "back": "¿Cómo? — Pregunta por manera/estado",
+          "example": "How are you? How do you spell your name?"
+        },
+        {
+          "id": "w7",
+          "front": "HOW OLD",
+          "back": "¿Cuántos años?",
+          "example": "How old are you? — I am 25 years old."
+        },
+        {
+          "id": "w8",
+          "front": "HOW MUCH",
+          "back": "¿Cuánto? (incontable/precio)",
+          "example": "How much is this? How much water do you want?"
+        },
+        {
+          "id": "w9",
+          "front": "HOW MANY",
+          "back": "¿Cuántos? (contable)",
+          "example": "How many brothers do you have? How many students are there?"
+        },
+        {
+          "id": "w10",
+          "front": "HOW OFTEN",
+          "back": "¿Con qué frecuencia?",
+          "example": "How often do you exercise? — Twice a week."
+        },
+        {
+          "id": "w11",
+          "front": "HOW FAR",
+          "back": "¿Qué tan lejos? (distancia)",
+          "example": "How far is the airport? — It is 10 kilometers."
+        },
+        {
+          "id": "w12",
+          "front": "HOW LONG",
+          "back": "¿Cuánto tiempo? (duración)",
+          "example": "How long is the movie? — Two hours."
+        },
+        {
+          "id": "w13",
+          "front": "HOW TALL",
+          "back": "¿Qué tan alto? (altura)",
+          "example": "How tall are you? — I am 1.75 meters."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-match",
+    "type": "word-match",
+    "title": "Pregunta → Respuesta",
+    "description": "Empareja cada pregunta con su respuesta lógica.",
+    "props": {
+      "pairs": [
+        {
+          "left": "What's your name?",
+          "right": "I'm Carlos."
+        },
+        {
+          "left": "Where are you from?",
+          "right": "I'm from Peru."
+        },
+        {
+          "left": "When is your birthday?",
+          "right": "In March."
+        },
+        {
+          "left": "Who is she?",
+          "right": "She is my sister."
+        },
+        {
+          "left": "Why are you happy?",
+          "right": "Because today is Friday!"
+        },
+        {
+          "left": "How are you?",
+          "right": "I'm fine, thanks!"
+        },
+        {
+          "left": "How old are you?",
+          "right": "I'm 15 years old."
+        },
+        {
+          "left": "How many pets do you have?",
+          "right": "I have two cats."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-dialogue-match",
+    "type": "word-match",
+    "title": "Diálogo: Encuentro",
+    "description": "Ordena el diálogo emparejando cada línea con su respuesta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Hi! How are you?",
+          "right": "I'm fine, thanks! And you?"
+        },
+        {
+          "left": "What's your name?",
+          "right": "I'm Ana. Nice to meet you!"
+        },
+        {
+          "left": "Where are you from?",
+          "right": "I'm from Mexico City."
+        },
+        {
+          "left": "How old are you?",
+          "right": "I'm 20 years old."
+        },
+        {
+          "left": "When is your birthday?",
+          "right": "In December, the 15th."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-sentence",
+    "type": "sentence-builder",
+    "title": "Construye la Pregunta",
+    "description": "Ordena las palabras para formar preguntas correctas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "¿Cómo te llamas?",
+          "words": [
+            "your",
+            "What",
+            "is",
+            "name?"
+          ],
+          "correct": "What is your name?"
+        },
+        {
+          "prompt": "¿De dónde eres?",
+          "words": [
+            "are",
+            "Where",
+            "you",
+            "from?"
+          ],
+          "correct": "Where are you from?"
+        },
+        {
+          "prompt": "¿Cuándo es tu cumpleaños?",
+          "words": [
+            "your",
+            "When",
+            "is",
+            "birthday?"
+          ],
+          "correct": "When is your birthday?"
+        },
+        {
+          "prompt": "¿Quién es tu profesor?",
+          "words": [
+            "your",
+            "Who",
+            "is",
+            "teacher?"
+          ],
+          "correct": "Who is your teacher?"
+        },
+        {
+          "prompt": "¿Por qué estás triste?",
+          "words": [
+            "are",
+            "Why",
+            "you",
+            "sad?"
+          ],
+          "correct": "Why are you sad?"
+        },
+        {
+          "prompt": "¿Cuántos años tienes?",
+          "words": [
+            "old",
+            "How",
+            "are",
+            "you?"
+          ],
+          "correct": "How old are you?"
+        },
+        {
+          "prompt": "¿Cuánto cuesta esto?",
+          "words": [
+            "much",
+            "How",
+            "is",
+            "this?"
+          ],
+          "correct": "How much is this?"
+        },
+        {
+          "prompt": "¿Eres estudiante?",
+          "words": [
+            "you",
+            "Are",
+            "a",
+            "student?"
+          ],
+          "correct": "Are you a student?"
+        },
+        {
+          "prompt": "¿Qué tan lejos está la escuela?:",
+          "words": [
+            "far",
+            "How",
+            "is",
+            "the",
+            "school?"
+          ],
+          "correct": "How far is the school?"
+        },
+        {
+          "prompt": "¿Qué tan alto eres?:",
+          "words": [
+            "tall",
+            "How",
+            "are",
+            "you?"
+          ],
+          "correct": "How tall are you?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-quiz",
+    "type": "quiz",
+    "title": "Quiz Final: Wh-Questions",
+    "description": "Demuestra tu dominio de todas las preguntas en inglés.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Which Wh-word asks about a PLACE?",
+          "options": [
+            "What",
+            "When",
+            "Where",
+            "Who"
+          ],
+          "correct": 2,
+          "explanation": "WHERE asks about places."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "___ is your favorite color? (asking for information)",
+          "correct": "What",
+          "explanation": "WHAT asks for information/things."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"___ are you late?\" — \"Because I missed the bus.\"",
+          "options": [
+            "What",
+            "When",
+            "Where",
+            "Why"
+          ],
+          "correct": 3,
+          "explanation": "WHY asks for reasons. Answer: Because…"
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "___ is she? She is my mother. (asking about a person)",
+          "correct": "Who",
+          "explanation": "WHO asks about people."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"___ old are you?\" — \"I'm 12.\"",
+          "options": [
+            "What",
+            "Where",
+            "How",
+            "When"
+          ],
+          "correct": 2,
+          "explanation": "HOW OLD asks about age."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Which is the correct answer to \"Are you happy?\"",
+          "options": [
+            "I am Carlos",
+            "Yes, I am",
+            "In March",
+            "Because yes"
+          ],
+          "correct": 1,
+          "explanation": "Yes/No question → \"Yes, I am.\" or \"No, I'm not.\""
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "___ is the test? It is on Friday. (asking about time)",
+          "correct": "When",
+          "explanation": "WHEN asks about time."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"How ___ brothers do you have?\"",
+          "options": [
+            "old",
+            "much",
+            "many",
+            "often"
+          ],
+          "correct": 2,
+          "explanation": "HOW MANY for countable nouns (brothers)."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"How ___ is this shirt?\"",
+          "options": [
+            "old",
+            "much",
+            "many",
+            "often"
+          ],
+          "correct": 1,
+          "explanation": "HOW MUCH for price/uncountable."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "___ do you spell your name? (asking about manner)",
+          "correct": "How",
+          "explanation": "HOW asks about manner/way of doing something."
+        },
+        {
+          "id": "q11",
+          "type": "multiple-choice",
+          "question": "\"___ is the airport?\" — Asking about distance.",
+          "options": [
+            "How much",
+            "How far",
+            "How long",
+            "How tall"
+          ],
+          "correct": 1,
+          "explanation": "HOW FAR asks about distance."
+        },
+        {
+          "id": "q12",
+          "type": "multiple-choice",
+          "question": "Someone asks \"How are you?\" at a party. Best response:",
+          "options": [
+            "I'm from Spain",
+            "I'm fine, thanks! And you?",
+            "My name is Pedro",
+            "Nice to meet you"
+          ],
+          "correct": 1,
+          "explanation": "Context: greeting. Respond with \"I'm fine, thanks! And you?\""
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de Preguntas",
+    "description": "Descifra palabras clave de las Wh-questions.",
+    "props": {
+      "words": [
+        {
+          "word": "WHAT",
+          "hint": "Qué; pregunta por cosas o información",
+          "category": "Questions"
+        },
+        {
+          "word": "WHERE",
+          "hint": "Dónde; pregunta por lugar",
+          "category": "Questions"
+        },
+        {
+          "word": "WHEN",
+          "hint": "Cuándo; pregunta por tiempo",
+          "category": "Questions"
+        },
+        {
+          "word": "WHICH",
+          "hint": "Cuál; pregunta por elección",
+          "category": "Questions"
+        },
+        {
+          "word": "QUESTION",
+          "hint": "Pregunta; oración interrogativa",
+          "category": "Questions"
+        },
+        {
+          "word": "ANSWER",
+          "hint": "Respuesta; lo que se dice para responder",
+          "category": "Questions"
+        }
+      ]
+    }
+  }
+]

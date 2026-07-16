@@ -1,0 +1,493 @@
+[
+  {
+    "id": "m8-ch5-svg",
+    "type": "svg-scene",
+    "title": "Elige tu Aventura Conversacional",
+    "description": "Visita diferentes escenarios y practica las frases que se usan en cada lugar.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 350",
+        "bg": "#fef9c3",
+        "items": [
+          {
+            "id": "restaurant",
+            "type": "rect",
+            "x": 30,
+            "y": 40,
+            "width": 130,
+            "height": 100,
+            "fill": "#fbbf24",
+            "label": "Restaurante",
+            "labelEn": "🍽️ Restaurant — \"I'd like the menu, please\""
+          },
+          {
+            "id": "hotel",
+            "type": "rect",
+            "x": 230,
+            "y": 40,
+            "width": 130,
+            "height": 100,
+            "fill": "#38bdf8",
+            "label": "Hotel",
+            "labelEn": "🏨 Hotel — \"Do you have a room available?\""
+          },
+          {
+            "id": "shop",
+            "type": "rect",
+            "x": 430,
+            "y": 40,
+            "width": 130,
+            "height": 100,
+            "fill": "#4ade80",
+            "label": "Tienda",
+            "labelEn": "🛒 Shop — \"Can I try this on?\""
+          },
+          {
+            "id": "office",
+            "type": "rect",
+            "x": 30,
+            "y": 210,
+            "width": 130,
+            "height": 100,
+            "fill": "#a78bfa",
+            "label": "Oficina",
+            "labelEn": "🏢 Office — \"Nice to meet you. I'm the new employee.\""
+          },
+          {
+            "id": "street",
+            "type": "rect",
+            "x": 230,
+            "y": 210,
+            "width": 130,
+            "height": 100,
+            "fill": "#fb923c",
+            "label": "Calle",
+            "labelEn": "🚶 Street — \"Excuse me, how do I get to...?\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m8-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz Conversacional — Elige la Mejor Respuesta",
+    "description": "En cada situación, elige la respuesta más natural y apropiada.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Waiter: \"Good evening! Table for two?\" — You:",
+          "options": [
+            "Yes, two.",
+            "Yes, please!",
+            "Two people.",
+            "Table."
+          ],
+          "correct": 1,
+          "explanation": "\"Yes, please!\" is natural and polite."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Shop assistant: \"Can I help you?\" — You:",
+          "options": [
+            "I'm just looking, thanks.",
+            "No.",
+            "Go away.",
+            "I don't need you."
+          ],
+          "correct": 0,
+          "explanation": "\"I'm just looking, thanks\" is the polite standard response."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Someone says: \"Nice to meet you!\" — You respond:",
+          "options": [
+            "Thank you",
+            "Nice to meet you too!",
+            "I'm happy",
+            "Yes, nice"
+          ],
+          "correct": 1,
+          "explanation": "The standard response mirrors the greeting: \"Nice to meet you too!\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "At a restaurant: \"Are you ready to order?\" — You:",
+          "options": [
+            "I'd like a hamburger, please.",
+            "Hamburger.",
+            "Give me food.",
+            "I eat hamburger."
+          ],
+          "correct": 0,
+          "explanation": "\"I'd like... please\" is the polite way to order."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"Where are you from?\" — You:",
+          "options": [
+            "I'm from Mexico.",
+            "Mexico.",
+            "I from Mexico.",
+            "My country Mexico."
+          ],
+          "correct": 0,
+          "explanation": "\"I'm from [country]\" is the correct structure."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"What's your name?\" — \"My name ____ Ana.\"",
+          "correct": "is",
+          "explanation": "My name IS Ana. (Subject + to be)"
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Cashier: \"That's $5.50.\" — You:",
+          "options": [
+            "Here you go.",
+            "Money.",
+            "Take it.",
+            "$5.50."
+          ],
+          "correct": 0,
+          "explanation": "\"Here you go\" is natural when handing over payment."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "You want to leave. You say:",
+          "options": [
+            "I go now.",
+            "Bye-bye.",
+            "It was nice talking to you. See you later!",
+            "I leave."
+          ],
+          "correct": 2,
+          "explanation": "A complete farewell is more natural and polite."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "At a hotel: \"I have a ____ under the name Smith.\"",
+          "correct": "reservation",
+          "explanation": "\"I have a reservation under [name]\" is the standard check-in phrase."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"How are you?\" — Best response:",
+          "options": [
+            "Good.",
+            "I'm fine, thanks! And you?",
+            "Yes.",
+            "I am."
+          ],
+          "correct": 1,
+          "explanation": "A complete response + asking back is the most natural."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Construye tu Respuesta",
+    "description": "El mesero o vendedor te habla — ¡ordena las palabras para responder!",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Waiter: \"Here's the menu. What would you like?\"",
+          "words": [
+            "a",
+            "I'd",
+            "please",
+            "coffee,",
+            "like"
+          ],
+          "correct": "I'd like a coffee, please"
+        },
+        {
+          "prompt": "Receptionist: \"Good morning! How can I help you?\"",
+          "words": [
+            "have",
+            "a",
+            "I",
+            "reservation"
+          ],
+          "correct": "I have a reservation"
+        },
+        {
+          "prompt": "\"What's your name?\"",
+          "words": [
+            "is",
+            "name",
+            "My",
+            "Carlos"
+          ],
+          "correct": "My name is Carlos"
+        },
+        {
+          "prompt": "\"Where are you from?\"",
+          "words": [
+            "from",
+            "I'm",
+            "Mexico"
+          ],
+          "correct": "I'm from Mexico"
+        },
+        {
+          "prompt": "Shop: \"Anything else?\"",
+          "words": [
+            "that's",
+            "No,",
+            "Thank",
+            "all.",
+            "you!"
+          ],
+          "correct": "No, that's all. Thank you!"
+        },
+        {
+          "prompt": "\"How do you get to the station?\"",
+          "words": [
+            "Go",
+            "and",
+            "straight",
+            "left",
+            "turn"
+          ],
+          "correct": "Go straight and turn left"
+        },
+        {
+          "prompt": "New colleague: \"Hi! I'm Sarah.\"",
+          "words": [
+            "meet",
+            "to",
+            "Nice",
+            "you,",
+            "Sarah!"
+          ],
+          "correct": "Nice to meet you, Sarah!"
+        },
+        {
+          "prompt": "\"Do you speak English?\"",
+          "words": [
+            "a",
+            "Yes,",
+            "little",
+            "bit"
+          ],
+          "correct": "Yes, a little bit"
+        },
+        {
+          "prompt": "Cashier: \"That will be $20, please.\"",
+          "words": [
+            "Can",
+            "I",
+            "card?",
+            "pay",
+            "by"
+          ],
+          "correct": "Can I pay by card?"
+        },
+        {
+          "prompt": "Someone thanks you:",
+          "words": [
+            "You're",
+            "welcome!"
+          ],
+          "correct": "You're welcome!"
+        },
+        {
+          "prompt": "\"Could you help me?\"",
+          "words": [
+            "Of",
+            "course!",
+            "can",
+            "How",
+            "I",
+            "help?"
+          ],
+          "correct": "Of course! How can I help?"
+        },
+        {
+          "prompt": "You bump into someone:",
+          "words": [
+            "I'm",
+            "sorry!",
+            "Excuse",
+            "me!"
+          ],
+          "correct": "I'm sorry! Excuse me!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-flash",
+    "type": "flashcard",
+    "title": "Expresiones Conversacionales",
+    "description": "Aprende expresiones útiles organizadas por función comunicativa.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "🍽️ Ordering food",
+          "back": "I'd like... / Could I have...? / I'll have the...",
+          "example": "I'd like a hamburger and fries, please."
+        },
+        {
+          "id": "c2",
+          "front": "🛒 Shopping",
+          "back": "How much is this? / Can I try this on? / Do you have a smaller size?",
+          "example": "Excuse me, how much is this T-shirt?"
+        },
+        {
+          "id": "c3",
+          "front": "👋 Greeting",
+          "back": "Hello! / Hi! / Good morning! / How are you?",
+          "example": "Hi! How are you? — I'm great, thanks!"
+        },
+        {
+          "id": "c4",
+          "front": "🤝 Introducing yourself",
+          "back": "My name is... / I'm... / I'm from... / I work as...",
+          "example": "Hi, I'm Ana. I'm from Mexico. I'm a teacher."
+        },
+        {
+          "id": "c5",
+          "front": "🙏 Thanking",
+          "back": "Thank you! / Thanks a lot! / I appreciate it!",
+          "example": "Thank you so much for your help!"
+        },
+        {
+          "id": "c6",
+          "front": "👋 Saying goodbye",
+          "back": "Goodbye! / See you later! / Have a nice day! / It was nice meeting you!",
+          "example": "It was nice meeting you! See you later!"
+        },
+        {
+          "id": "c7",
+          "front": "❓ Asking for directions",
+          "back": "Excuse me, where is...? / How do I get to...?",
+          "example": "Excuse me, how do I get to the train station?"
+        },
+        {
+          "id": "c8",
+          "front": "😅 Not understanding",
+          "back": "Sorry, could you repeat that? / I don't understand. / Could you speak slower?",
+          "example": "Sorry, I don't understand. Could you speak slower, please?"
+        },
+        {
+          "id": "c9",
+          "front": "🙋 Asking for help",
+          "back": "Excuse me, could you help me? / Can you help me with...?",
+          "example": "Excuse me, could you help me find this address?"
+        },
+        {
+          "id": "c10",
+          "front": "🙏 Responding to thanks",
+          "back": "You're welcome! / No problem! / My pleasure! / Anytime!",
+          "example": "Thank you! — You're welcome!"
+        },
+        {
+          "id": "c11",
+          "front": "💳 Paying",
+          "back": "How much is it? / Can I pay by card? / Here you go.",
+          "example": "How much is it? — $15.50. — Here you go."
+        },
+        {
+          "id": "c12",
+          "front": "😔 Apologizing",
+          "back": "I'm sorry / Excuse me / My apologies / Sorry about that",
+          "example": "I'm sorry, I'm late. — No problem!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-match",
+    "type": "word-match",
+    "title": "Pregunta → Respuesta",
+    "description": "Empareja cada pregunta con su respuesta más apropiada.",
+    "props": {
+      "pairs": [
+        {
+          "left": "How are you?",
+          "right": "I'm fine, thanks!"
+        },
+        {
+          "left": "Where are you from?",
+          "right": "I'm from Mexico."
+        },
+        {
+          "left": "What do you do?",
+          "right": "I'm a student."
+        },
+        {
+          "left": "Nice to meet you!",
+          "right": "Nice to meet you too!"
+        },
+        {
+          "left": "What's your name?",
+          "right": "My name is Carlos."
+        },
+        {
+          "left": "How much is this?",
+          "right": "It's ten dollars."
+        },
+        {
+          "left": "Can I help you?",
+          "right": "I'm just looking, thanks."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Tu Primer Diálogo",
+    "description": "Descifra palabras clave de conversaciones.",
+    "props": {
+      "words": [
+        {
+          "word": "HELLO",
+          "hint": "Hola; saludo",
+          "category": "Dialogue"
+        },
+        {
+          "word": "GOODBYE",
+          "hint": "Adiós; despedida",
+          "category": "Dialogue"
+        },
+        {
+          "word": "NAME",
+          "hint": "Nombre; cómo te llamas",
+          "category": "Dialogue"
+        },
+        {
+          "word": "NICE",
+          "hint": "Agradable; nice to meet you",
+          "category": "Dialogue"
+        },
+        {
+          "word": "MEET",
+          "hint": "Conocer; encontrarse",
+          "category": "Dialogue"
+        },
+        {
+          "word": "TODAY",
+          "hint": "Hoy; este día",
+          "category": "Dialogue"
+        }
+      ]
+    }
+  }
+]

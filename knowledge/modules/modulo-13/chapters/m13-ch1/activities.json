@@ -1,0 +1,492 @@
+[
+  {
+    "id": "m13-ch1-quiz",
+    "type": "quiz",
+    "title": "La Entrevista Simulada",
+    "description": "Simula una entrevista de trabajo completa. Elige la mejor respuesta para cada pregunta.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"Tell me about yourself.\"",
+          "options": [
+            "A professional summary focusing on relevant experience and skills",
+            "Your full life story from childhood",
+            "\"I'm a nice person who likes dogs\"",
+            "\"What do you want to know?\""
+          ],
+          "correct": 0,
+          "explanation": "Keep it professional: 60-second summary of your experience, skills, and what you bring to the role."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"What are your strengths?\"",
+          "options": [
+            "\"I'm good at everything\"",
+            "\"I'm reliable, detail-oriented, and proactive. For example, in my previous role I...\"",
+            "\"I dunno, I guess I'm okay\"",
+            "\"My mom says I'm great\""
+          ],
+          "correct": 1,
+          "explanation": "Name 2-3 specific strengths with brief examples from your experience."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"What is your biggest weakness?\"",
+          "options": [
+            "\"I don't have any weaknesses\"",
+            "\"I'm terrible at everything\"",
+            "\"I tend to be overly focused on details, but I've been working on prioritizing tasks better\"",
+            "\"My boss was always wrong, not me\""
+          ],
+          "correct": 2,
+          "explanation": "Name a real but manageable weakness + show how you're improving. Never say you have no weaknesses."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"In my ___ role, I managed a team of 10 people and increased productivity by 15%.\"",
+          "correct": "previous",
+          "explanation": "\"In my previous role\" is the standard way to reference your last job in an interview."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"Where do you see yourself in 5 years?\"",
+          "options": [
+            "\"In your chair\" (pointing at the interviewer)",
+            "\"I see myself growing within this company, taking on more leadership responsibilities\"",
+            "\"I don't plan ahead\"",
+            "\"Probably at a different company\""
+          ],
+          "correct": 1,
+          "explanation": "Show ambition aligned with the company. Demonstrate you see a future there."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"Tell me about a challenge you faced.\" Which response technique should you use?",
+          "options": [
+            "Just say \"it was hard\"",
+            "The STAR method (Situation, Task, Action, Result)",
+            "Blame your previous boss",
+            "Say you never face challenges"
+          ],
+          "correct": 1,
+          "explanation": "STAR gives a structured, complete answer that demonstrates your problem-solving ability."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"I ___ a new training program that reduced onboarding time by 40%.\"",
+          "correct": "developed",
+          "explanation": "\"Developed\" is a strong action verb for describing achievements in interviews."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"Why should we hire you?\"",
+          "options": [
+            "\"Because I need the money\"",
+            "\"I don't know, you tell me\"",
+            "\"Because I bring 5 years of relevant experience and a proven track record of results\"",
+            "\"Because I'm the best\" (no examples)"
+          ],
+          "correct": 2,
+          "explanation": "Summarize your value: experience + specific results. Always back claims with evidence."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Interviewer: \"Do you have any questions for us?\"",
+          "options": [
+            "\"No, I'm good\"",
+            "\"How much vacation do I get?\"",
+            "\"What does a typical day look like in this role, and what are the team's current priorities?\"",
+            "\"When can I start?\""
+          ],
+          "correct": 2,
+          "explanation": "Ask thoughtful questions about the role and team. It shows genuine interest and preparation."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which greeting is most appropriate when meeting your interviewer?",
+          "options": [
+            "\"Hey, what's up?\"",
+            "\"I'm pleased to meet you. Thank you for the opportunity.\"",
+            "\"Yo!\"",
+            "\"Finally, I've been waiting forever\""
+          ],
+          "correct": 1,
+          "explanation": "Professional, warm, and grateful. First impressions matter enormously."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Estructura STAR",
+    "description": "Construye respuestas STAR ordenando las partes correctamente.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build: \"Tell me about yourself\" response",
+          "words": [
+            "I'm",
+            "a",
+            "software",
+            "developer",
+            "with",
+            "5",
+            "years",
+            "of",
+            "experience",
+            "in",
+            "web",
+            "applications."
+          ],
+          "correct": "I'm a software developer with 5 years of experience in web applications."
+        },
+        {
+          "prompt": "Build the SITUATION part of a STAR response",
+          "words": [
+            "In",
+            "my",
+            "previous",
+            "role",
+            "at",
+            "a",
+            "marketing",
+            "agency,",
+            "we",
+            "faced",
+            "a",
+            "tight",
+            "deadline."
+          ],
+          "correct": "In my previous role at a marketing agency, we faced a tight deadline."
+        },
+        {
+          "prompt": "Build the ACTION part of a STAR response",
+          "words": [
+            "I",
+            "coordinated",
+            "with",
+            "the",
+            "team",
+            "and",
+            "implemented",
+            "a",
+            "new",
+            "workflow",
+            "system."
+          ],
+          "correct": "I coordinated with the team and implemented a new workflow system."
+        },
+        {
+          "prompt": "Build the RESULT part of a STAR response",
+          "words": [
+            "As",
+            "a",
+            "result,",
+            "we",
+            "delivered",
+            "the",
+            "project",
+            "on",
+            "time",
+            "and",
+            "increased",
+            "client",
+            "satisfaction."
+          ],
+          "correct": "As a result, we delivered the project on time and increased client satisfaction."
+        },
+        {
+          "prompt": "Build a response about your strengths",
+          "words": [
+            "I",
+            "am",
+            "reliable,",
+            "detail-oriented,",
+            "and",
+            "I",
+            "take",
+            "a",
+            "proactive",
+            "approach",
+            "to",
+            "problem-solving."
+          ],
+          "correct": "I am reliable, detail-oriented, and I take a proactive approach to problem-solving."
+        },
+        {
+          "prompt": "Build a closing statement",
+          "words": [
+            "Thank",
+            "you",
+            "for",
+            "the",
+            "opportunity.",
+            "I'm",
+            "very",
+            "excited",
+            "about",
+            "this",
+            "role."
+          ],
+          "correct": "Thank you for the opportunity. I'm very excited about this role."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch1-flash",
+    "type": "flashcard",
+    "title": "Power Words para el CV",
+    "description": "Domina los verbos de acción profesionales para entrevistas y currículum.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "MANAGED ⚙️",
+          "back": "Gestioné / Administré — Para describir liderazgo y gestión de equipos o proyectos.",
+          "example": "I managed a team of 15 engineers across three departments."
+        },
+        {
+          "id": "f2",
+          "front": "IMPLEMENTED ⚙️",
+          "back": "Implementé / Puse en práctica — Para describir acciones concretas que ejecutaste.",
+          "example": "I implemented a new filing system that reduced processing time by 30%."
+        },
+        {
+          "id": "f3",
+          "front": "ACHIEVED 🏆",
+          "back": "Logré / Alcancé — Para resultados medibles y metas cumplidas.",
+          "example": "I achieved a 25% increase in quarterly sales."
+        },
+        {
+          "id": "f4",
+          "front": "DEVELOPED 🔧",
+          "back": "Desarrollé / Creé — Para proyectos, programas o sistemas nuevos.",
+          "example": "I developed a training program for new employees."
+        },
+        {
+          "id": "f5",
+          "front": "COORDINATED 🤝",
+          "back": "Coordiné — Para trabajo inter-equipos y organización.",
+          "example": "I coordinated cross-department meetings to align our goals."
+        },
+        {
+          "id": "f6",
+          "front": "LED 👑",
+          "back": "Lideré / Dirigí — Más fuerte que \"managed\". Para roles de liderazgo.",
+          "example": "I led the digital transformation initiative for the entire company."
+        },
+        {
+          "id": "f7",
+          "front": "STREAMLINED 📈",
+          "back": "Optimicé / Simplifiqué — Para mejoras de eficiencia.",
+          "example": "I streamlined the onboarding process, reducing it from 2 weeks to 3 days."
+        },
+        {
+          "id": "f8",
+          "front": "NEGOTIATED 🤝",
+          "back": "Negocié — Para acuerdos, contratos, condiciones.",
+          "example": "I negotiated a partnership deal worth $2 million."
+        },
+        {
+          "id": "f9",
+          "front": "RESOLVED 🔍",
+          "back": "Resolví — Para problemas y conflictos.",
+          "example": "I resolved a critical client complaint that saved the account."
+        },
+        {
+          "id": "f10",
+          "front": "SPEARHEADED 🚀",
+          "back": "Encabecé / Lideré desde cero — Para iniciativas que tú empezaste.",
+          "example": "I spearheaded the launch of our mobile app."
+        },
+        {
+          "id": "f11",
+          "front": "RELIABLE 💎 (Adjective)",
+          "back": "Confiable — Cualidad que muestra que se puede contar contigo.",
+          "example": "I'm a reliable team member who consistently meets deadlines."
+        },
+        {
+          "id": "f12",
+          "front": "PROACTIVE 🎯 (Adjective)",
+          "back": "Proactivo — Anticipas problemas y actúas sin que te lo pidan.",
+          "example": "I take a proactive approach to identifying potential issues."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch1-match",
+    "type": "word-match",
+    "title": "Pregunta → Tipo de Respuesta",
+    "description": "Empareja cada pregunta de entrevista con la estrategia de respuesta correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Tell me about a challenge you faced",
+          "right": "STAR Response ⭐"
+        },
+        {
+          "left": "What are your strengths?",
+          "right": "3 qualities + examples 💪"
+        },
+        {
+          "left": "Where do you see yourself in 5 years?",
+          "right": "Future projection 🔮"
+        },
+        {
+          "left": "Why this company?",
+          "right": "Research-based answer 🔍"
+        },
+        {
+          "left": "Tell me about yourself",
+          "right": "60-second professional summary 🎯"
+        },
+        {
+          "left": "What is your weakness?",
+          "right": "Real weakness + improvement plan 📈"
+        },
+        {
+          "left": "Why should we hire you?",
+          "right": "Value proposition + evidence 🏆"
+        },
+        {
+          "left": "Do you have questions for us?",
+          "right": "2-3 thoughtful questions ❓"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch1-svg",
+    "type": "svg-scene",
+    "title": "La Oficina de Entrevistas",
+    "description": "Recorre la oficina y practica en cada estación: saludo, small talk, entrevista y negociación.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f8fafc",
+        "items": [
+          {
+            "id": "reception",
+            "type": "rect",
+            "x": 20,
+            "y": 30,
+            "width": 130,
+            "height": 80,
+            "fill": "#fef3c7",
+            "label": "Recepción — Saludo profesional",
+            "labelEn": "🏢 Reception"
+          },
+          {
+            "id": "waiting",
+            "type": "rect",
+            "x": 20,
+            "y": 160,
+            "width": 130,
+            "height": 80,
+            "fill": "#e2e8f0",
+            "label": "Sala de espera — Small talk",
+            "labelEn": "🪑 Waiting Area"
+          },
+          {
+            "id": "interview",
+            "type": "rect",
+            "x": 230,
+            "y": 80,
+            "width": 160,
+            "height": 120,
+            "fill": "#93c5fd",
+            "label": "Sala de entrevista — Preguntas principales",
+            "labelEn": "💼 Interview Room"
+          },
+          {
+            "id": "negotiation",
+            "type": "rect",
+            "x": 440,
+            "y": 80,
+            "width": 130,
+            "height": 120,
+            "fill": "#fbbf24",
+            "label": "Mesa de negociación — Salario y condiciones",
+            "labelEn": "🤝 Negotiation"
+          },
+          {
+            "id": "desk",
+            "type": "rect",
+            "x": 260,
+            "y": 260,
+            "width": 100,
+            "height": 50,
+            "fill": "#a3a3a3",
+            "label": "Escritorio del entrevistador",
+            "labelEn": "🪑 Interviewer Desk"
+          },
+          {
+            "id": "exit",
+            "type": "rect",
+            "x": 460,
+            "y": 300,
+            "width": 100,
+            "height": 60,
+            "fill": "#86efac",
+            "label": "Salida — Cierre y agradecimiento",
+            "labelEn": "🚪 Exit (Thank you!)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m13-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Inglés para el Trabajo",
+    "description": "Descifra vocabulario laboral.",
+    "props": {
+      "words": [
+        {
+          "word": "MEETING",
+          "hint": "Reunión; junta",
+          "category": "Work"
+        },
+        {
+          "word": "DEADLINE",
+          "hint": "Fecha límite",
+          "category": "Work"
+        },
+        {
+          "word": "PROJECT",
+          "hint": "Proyecto; trabajo asignado",
+          "category": "Work"
+        },
+        {
+          "word": "COLLEAGUE",
+          "hint": "Colega; compañero de trabajo",
+          "category": "Work"
+        },
+        {
+          "word": "MANAGER",
+          "hint": "Gerente; jefe",
+          "category": "Work"
+        },
+        {
+          "word": "REPORT",
+          "hint": "Reporte; informe",
+          "category": "Work"
+        }
+      ]
+    }
+  }
+]

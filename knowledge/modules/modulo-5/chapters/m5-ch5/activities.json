@@ -1,0 +1,497 @@
+[
+  {
+    "id": "m5-ch5-svg",
+    "type": "svg-scene",
+    "title": "Activa vs. Pasiva",
+    "description": "Visualiza cómo se transforma una oración de activa a pasiva.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#ecfeff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#06b6d4",
+            "label": "🔄 Passive Voice",
+            "labelEn": "BE + past participle — focus on the action"
+          },
+          {
+            "id": "active",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 50,
+            "fill": "#fde68a",
+            "label": "🏃 Active Voice",
+            "labelEn": "Subject DOES the action: The dog BIT the man."
+          },
+          {
+            "id": "passive",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "🎯 Passive Voice",
+            "labelEn": "Subject RECEIVES the action: The man WAS BITTEN."
+          },
+          {
+            "id": "pres",
+            "type": "rect",
+            "x": 30,
+            "y": 125,
+            "width": 310,
+            "height": 45,
+            "fill": "#bbf7d0",
+            "label": "📌 Present Simple",
+            "labelEn": "Active: They MAKE cars. → Passive: Cars ARE MADE."
+          },
+          {
+            "id": "past",
+            "type": "rect",
+            "x": 360,
+            "y": 125,
+            "width": 310,
+            "height": 45,
+            "fill": "#e0e7ff",
+            "label": "📌 Past Simple",
+            "labelEn": "Active: Someone STOLE it. → Passive: It WAS STOLEN."
+          },
+          {
+            "id": "perf",
+            "type": "rect",
+            "x": 30,
+            "y": 185,
+            "width": 310,
+            "height": 45,
+            "fill": "#fce7f3",
+            "label": "📌 Present Perfect",
+            "labelEn": "Active: They'VE REPAIRED it. → Passive: It HAS BEEN REPAIRED."
+          },
+          {
+            "id": "fut",
+            "type": "rect",
+            "x": 360,
+            "y": 185,
+            "width": 310,
+            "height": 45,
+            "fill": "#fef3c7",
+            "label": "📌 Future Simple",
+            "labelEn": "Active: They WILL BUILD it. → Passive: It WILL BE BUILT."
+          },
+          {
+            "id": "prescont",
+            "type": "rect",
+            "x": 30,
+            "y": 245,
+            "width": 310,
+            "height": 45,
+            "fill": "#ccfbf1",
+            "label": "📌 Present Continuous",
+            "labelEn": "Active: They'RE BUILDING it. → Passive: It IS BEING BUILT."
+          },
+          {
+            "id": "pastcont",
+            "type": "rect",
+            "x": 360,
+            "y": 245,
+            "width": 310,
+            "height": 45,
+            "fill": "#fecaca",
+            "label": "📌 Past Continuous",
+            "labelEn": "Active: They WERE CLEANING. → Passive: It WAS BEING CLEANED."
+          },
+          {
+            "id": "by",
+            "type": "rect",
+            "x": 30,
+            "y": 310,
+            "width": 310,
+            "height": 50,
+            "fill": "#dbeafe",
+            "label": "🔑 BY + agent",
+            "labelEn": "The book was written BY J.K. Rowling. (who did it)"
+          },
+          {
+            "id": "pattern",
+            "type": "rect",
+            "x": 360,
+            "y": 310,
+            "width": 310,
+            "height": 50,
+            "fill": "#dcfce7",
+            "label": "📏 Pattern",
+            "labelEn": "Subject + BE (conjugated) + Past Participle (+ by agent)"
+          },
+          {
+            "id": "tip",
+            "type": "rect",
+            "x": 100,
+            "y": 375,
+            "width": 500,
+            "height": 40,
+            "fill": "#fef9c3",
+            "label": "💡 When to use?",
+            "labelEn": "When receiver is important, or we don't know who did it."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m5-ch5-flash",
+    "type": "flashcard",
+    "title": "De Activa a Pasiva",
+    "description": "Transforma oraciones activas en pasivas.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "They make cars in Japan. (Present Simple)",
+          "back": "Cars are made in Japan.",
+          "example": "are + made (pp of make)."
+        },
+        {
+          "id": "c2",
+          "front": "Someone stole my bike. (Past Simple)",
+          "back": "My bike was stolen.",
+          "example": "was + stolen (pp of steal)."
+        },
+        {
+          "id": "c3",
+          "front": "They have repaired the road. (Pres. Perfect)",
+          "back": "The road has been repaired.",
+          "example": "has been + repaired."
+        },
+        {
+          "id": "c4",
+          "front": "They will build a bridge. (Future)",
+          "back": "A bridge will be built.",
+          "example": "will be + built (pp of build)."
+        },
+        {
+          "id": "c5",
+          "front": "They are building a house. (Pres. Continuous)",
+          "back": "A house is being built.",
+          "example": "is being + built."
+        },
+        {
+          "id": "c6",
+          "front": "They were cleaning the room. (Past Continuous)",
+          "back": "The room was being cleaned.",
+          "example": "was being + cleaned."
+        },
+        {
+          "id": "c7",
+          "front": "J.K. Rowling wrote the book. (Past Simple)",
+          "back": "The book was written by J.K. Rowling.",
+          "example": "was + written + by agent."
+        },
+        {
+          "id": "c8",
+          "front": "Millions of people speak English. (Pres. Simple)",
+          "back": "English is spoken by millions of people.",
+          "example": "is + spoken + by agent."
+        },
+        {
+          "id": "c9",
+          "front": "They will open the new store tomorrow. (Future)",
+          "back": "The new store will be opened tomorrow.",
+          "example": "will be + opened."
+        },
+        {
+          "id": "c10",
+          "front": "They have sold all the tickets. (Pres. Perfect)",
+          "back": "All the tickets have been sold.",
+          "example": "have been + sold."
+        },
+        {
+          "id": "c11",
+          "front": "The letter wasn't sent. (negative)",
+          "back": "The letter wasn't sent. (was + not + pp)",
+          "example": "Negative passive: be + not + pp."
+        },
+        {
+          "id": "c12",
+          "front": "Was the house built in 2020? (interrogative)",
+          "back": "Was the house built in 2020?",
+          "example": "Question: Be + subject + pp?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-match",
+    "type": "word-match",
+    "title": "Tiempo → Pasiva Pattern",
+    "description": "Empareja el tiempo con su forma pasiva.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Present Simple",
+          "right": "am/is/are + pp"
+        },
+        {
+          "left": "Past Simple",
+          "right": "was/were + pp"
+        },
+        {
+          "left": "Present Perfect",
+          "right": "has/have been + pp"
+        },
+        {
+          "left": "Future Simple",
+          "right": "will be + pp"
+        },
+        {
+          "left": "Present Continuous",
+          "right": "is/are being + pp"
+        },
+        {
+          "left": "Past Continuous",
+          "right": "was/were being + pp"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Construye la Pasiva",
+    "description": "Ordena las palabras para formar oraciones pasivas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Los coches se fabrican en Japón:",
+          "words": [
+            "Cars",
+            "are",
+            "made",
+            "in",
+            "Japan"
+          ],
+          "correct": "Cars are made in Japan"
+        },
+        {
+          "prompt": "Mi bicicleta fue robada:",
+          "words": [
+            "My",
+            "bike",
+            "was",
+            "stolen"
+          ],
+          "correct": "My bike was stolen"
+        },
+        {
+          "prompt": "La carretera ha sido reparada:",
+          "words": [
+            "The",
+            "road",
+            "has",
+            "been",
+            "repaired"
+          ],
+          "correct": "The road has been repaired"
+        },
+        {
+          "prompt": "Un puente será construido:",
+          "words": [
+            "A",
+            "bridge",
+            "will",
+            "be",
+            "built"
+          ],
+          "correct": "A bridge will be built"
+        },
+        {
+          "prompt": "El libro fue escrito por J.K. Rowling:",
+          "words": [
+            "The",
+            "book",
+            "was",
+            "written",
+            "by",
+            "J.K.",
+            "Rowling"
+          ],
+          "correct": "The book was written by J.K. Rowling"
+        },
+        {
+          "prompt": "Una casa está siendo construida:",
+          "words": [
+            "A",
+            "house",
+            "is",
+            "being",
+            "built"
+          ],
+          "correct": "A house is being built"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz: Voz Pasiva",
+    "description": "Pon a prueba tu dominio de la voz pasiva.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"They make cars in Japan.\" → Passive:",
+          "options": [
+            "Cars are making in Japan.",
+            "Cars are made in Japan.",
+            "Cars is made in Japan.",
+            "Cars were made in Japan."
+          ],
+          "correct": 1,
+          "explanation": "Present Simple passive: are + made."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"Someone stole my bike.\" → \"My bike ___ stolen.\"",
+          "correct": "was",
+          "explanation": "Past Simple passive: was + pp."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"They have repaired the road.\" → Passive:",
+          "options": [
+            "The road has been repaired.",
+            "The road was repaired.",
+            "The road is being repaired.",
+            "The road has repaired."
+          ],
+          "correct": 0,
+          "explanation": "Present Perfect passive: has been + pp."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"A bridge ___ ___ built.\" (future passive)",
+          "correct": "will be",
+          "explanation": "Future passive: will be + pp."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"A house ___ built.\" (present continuous passive)",
+          "options": [
+            "is being",
+            "was being",
+            "has been",
+            "will be"
+          ],
+          "correct": 0,
+          "explanation": "Pres. Continuous passive: is/are being + pp."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"The book was written ___ J.K. Rowling.\"",
+          "correct": "by",
+          "explanation": "\"by\" introduces the agent."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "When do we use passive?",
+          "options": [
+            "When the doer is more important.",
+            "When the receiver is more important or doer is unknown.",
+            "Always in formal writing.",
+            "When talking about the future."
+          ],
+          "correct": 1,
+          "explanation": "Passive focuses on the receiver or when doer is unknown."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"English ___ by millions.\" (present simple passive)",
+          "options": [
+            "is spoken",
+            "was spoken",
+            "speaks",
+            "spoken"
+          ],
+          "correct": 0,
+          "explanation": "Present Simple passive: is + spoken."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"The letter ___ sent yet.\" (negative, present perfect passive)",
+          "options": [
+            "hasn't been",
+            "hasn't",
+            "wasn't",
+            "isn't been"
+          ],
+          "correct": 0,
+          "explanation": "Present Perfect negative: hasn't/haven't been + pp."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"___ the house built in 2020?\" (interrogative)",
+          "correct": "Was",
+          "explanation": "Past Simple passive question: Was + subject + pp?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Voz Pasiva",
+    "description": "Descifra términos de la voz pasiva.",
+    "props": {
+      "words": [
+        {
+          "word": "PASSIVE",
+          "hint": "Pasiva; el sujeto recibe la acción",
+          "category": "Passive Voice"
+        },
+        {
+          "word": "ACTIVE",
+          "hint": "Activa; el sujeto realiza la acción",
+          "category": "Passive Voice"
+        },
+        {
+          "word": "AGENT",
+          "hint": "Agente; quien realiza la acción",
+          "category": "Passive Voice"
+        },
+        {
+          "word": "OBJECT",
+          "hint": "Objeto; lo que recibe la acción",
+          "category": "Passive Voice"
+        },
+        {
+          "word": "SUBJECT",
+          "hint": "Sujeto; tema de la oración",
+          "category": "Passive Voice"
+        },
+        {
+          "word": "ACTION",
+          "hint": "Acción; lo que se hace",
+          "category": "Passive Voice"
+        }
+      ]
+    }
+  }
+]

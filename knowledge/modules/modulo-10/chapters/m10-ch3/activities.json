@@ -1,0 +1,361 @@
+[
+  {
+    "id": "m10-ch3-quiz",
+    "type": "quiz",
+    "title": "El Constructor de Puentes",
+    "description": "Elige el conector correcto para unir las dos oraciones.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "I wanted to go out, ___ it was raining.",
+          "options": [
+            "but",
+            "and",
+            "so",
+            "because"
+          ],
+          "correct": 0,
+          "explanation": "\"But\" expresa contraste entre querer salir y la lluvia."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "She studied hard. ___, she passed the exam.",
+          "options": [
+            "However",
+            "Therefore",
+            "Although",
+            "Because"
+          ],
+          "correct": 1,
+          "explanation": "\"Therefore\" indica resultado: estudió → aprobó."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "I stayed home ___ I was feeling sick.",
+          "correct": "because",
+          "explanation": "\"Because\" indica la causa de quedarse en casa."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "___ it was expensive, she bought the dress.",
+          "options": [
+            "Although",
+            "Because",
+            "So",
+            "Therefore"
+          ],
+          "correct": 0,
+          "explanation": "\"Although\" expresa contraste: a pesar de ser caro, lo compró."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "___, preheat the oven to 180°C.",
+          "options": [
+            "Finally",
+            "However",
+            "First",
+            "Because"
+          ],
+          "correct": 2,
+          "explanation": "\"First\" indica el primer paso en una secuencia."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "The movie was long. ___, it was very entertaining.",
+          "correct": "However",
+          "explanation": "\"However\" expresa contraste formal entre largo y entretenido."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "I love chocolate, ___ I try not to eat it every day.",
+          "options": [
+            "because",
+            "so",
+            "but",
+            "therefore"
+          ],
+          "correct": 2,
+          "explanation": "\"But\" contrasta el amor por el chocolate con la restricción."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "It was raining, ___ I took an umbrella.",
+          "options": [
+            "but",
+            "although",
+            "so",
+            "however"
+          ],
+          "correct": 2,
+          "explanation": "\"So\" indica resultado: llovía → tomé paraguas."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "She speaks English. She ___ speaks French and German.",
+          "correct": "also",
+          "explanation": "\"Also\" añade información adicional."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "___ mixing all the ingredients, bake for 30 minutes.",
+          "options": [
+            "First",
+            "After",
+            "Because",
+            "However"
+          ],
+          "correct": 1,
+          "explanation": "\"After\" indica secuencia temporal."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Conecta y Crea",
+    "description": "Construye oraciones compuestas usando conectores.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Connect: 'I like coffee' + 'I don't drink it often'",
+          "words": [
+            "I",
+            "like",
+            "coffee,",
+            "however,",
+            "I",
+            "don't",
+            "drink",
+            "it",
+            "often"
+          ],
+          "correct": "I like coffee, however, I don't drink it often"
+        },
+        {
+          "prompt": "Express cause: why you stayed home",
+          "words": [
+            "stayed",
+            "because",
+            "I",
+            "was",
+            "home",
+            "I",
+            "sick"
+          ],
+          "correct": "I stayed home because I was sick"
+        },
+        {
+          "prompt": "Give a sequence: first step of a recipe",
+          "words": [
+            "First,",
+            "the",
+            "preheat",
+            "oven"
+          ],
+          "correct": "First, preheat the oven"
+        },
+        {
+          "prompt": "Express result: it was cold → wore a jacket",
+          "words": [
+            "was",
+            "so",
+            "a",
+            "It",
+            "cold,",
+            "wore",
+            "I",
+            "jacket"
+          ],
+          "correct": "It was cold, so I wore a jacket"
+        },
+        {
+          "prompt": "Add information about your skills",
+          "words": [
+            "speaks",
+            "She",
+            "also",
+            "French"
+          ],
+          "correct": "She also speaks French"
+        },
+        {
+          "prompt": "Express contrast with although",
+          "words": [
+            "Although",
+            "tired,",
+            "was",
+            "she",
+            "kept",
+            "working",
+            "she"
+          ],
+          "correct": "Although she was tired, she kept working"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-match",
+    "type": "word-match",
+    "title": "Conector → Función",
+    "description": "Empareja cada conector con su función comunicativa.",
+    "props": {
+      "pairs": [
+        {
+          "left": "however",
+          "right": "Contraste 🔄"
+        },
+        {
+          "left": "therefore",
+          "right": "Resultado ➡️"
+        },
+        {
+          "left": "moreover",
+          "right": "Adición ➕"
+        },
+        {
+          "left": "because",
+          "right": "Causa 🔍"
+        },
+        {
+          "left": "for instance",
+          "right": "Ejemplo 📌"
+        },
+        {
+          "left": "finally",
+          "right": "Secuencia 🔢"
+        },
+        {
+          "left": "although",
+          "right": "Concesión 🤝"
+        },
+        {
+          "left": "as a result",
+          "right": "Consecuencia 📊"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-flash",
+    "type": "flashcard",
+    "title": "Flashcards de Conectores",
+    "description": "Aprende cada conector con su categoría, uso y ejemplo.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "HOWEVER 🔄 (Contraste)",
+          "back": "Sin embargo / No obstante — Conecta ideas contrastantes. Más formal que \"but\".",
+          "example": "The movie was long. However, it was very entertaining."
+        },
+        {
+          "id": "f2",
+          "front": "THEREFORE ➡️ (Resultado)",
+          "back": "Por lo tanto — Indica una conclusión o resultado lógico.",
+          "example": "She studied hard. Therefore, she passed the exam."
+        },
+        {
+          "id": "f3",
+          "front": "MOREOVER ➕ (Adición)",
+          "back": "Además — Añade información con énfasis. Formal.",
+          "example": "The hotel is beautiful. Moreover, it is very affordable."
+        },
+        {
+          "id": "f4",
+          "front": "ALTHOUGH 🤝 (Concesión)",
+          "back": "Aunque — Introduce una idea contraria a lo esperado.",
+          "example": "Although it was raining, we had a great time."
+        },
+        {
+          "id": "f5",
+          "front": "BECAUSE 🔍 (Causa)",
+          "back": "Porque — Explica la razón de algo.",
+          "example": "I couldn't sleep because it was too noisy."
+        },
+        {
+          "id": "f6",
+          "front": "DESPITE 🤝 (Concesión)",
+          "back": "A pesar de — Similar a although pero seguido de noun/-ing.",
+          "example": "Despite the rain, we went to the park."
+        },
+        {
+          "id": "f7",
+          "front": "IN ADDITION ➕ (Adición)",
+          "back": "Además — Añade información extra. Formal.",
+          "example": "In addition, we offer free delivery."
+        },
+        {
+          "id": "f8",
+          "front": "AS A RESULT ➡️ (Resultado)",
+          "back": "Como resultado — Indica consecuencia. Formal.",
+          "example": "The company grew. As a result, they hired more people."
+        },
+        {
+          "id": "f9",
+          "front": "SINCE 🔍 (Causa)",
+          "back": "Ya que / Puesto que — Causa conocida. Más formal que because.",
+          "example": "Since you're already here, let's start."
+        },
+        {
+          "id": "f10",
+          "front": "FOR INSTANCE 📌 (Ejemplo)",
+          "back": "Por ejemplo — Introduce un ejemplo concreto.",
+          "example": "Many fruits are healthy. For instance, oranges have vitamin C."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Conectores en Inglés",
+    "description": "Descifra conectores que organizan ideas en conversaciones profundas.",
+    "props": {
+      "words": [
+        {
+          "word": "HOWEVER",
+          "hint": "Sin embargo; contrasta ideas",
+          "category": "Connectors"
+        },
+        {
+          "word": "ALTHOUGH",
+          "hint": "Aunque; introduce concesión",
+          "category": "Connectors"
+        },
+        {
+          "word": "THEREFORE",
+          "hint": "Por lo tanto; indica resultado",
+          "category": "Connectors"
+        },
+        {
+          "word": "MOREOVER",
+          "hint": "Además; añade información (formal)",
+          "category": "Connectors"
+        },
+        {
+          "word": "BECAUSE",
+          "hint": "Porque; explica la causa",
+          "category": "Connectors"
+        },
+        {
+          "word": "DESPITE",
+          "hint": "A pesar de; concesión",
+          "category": "Connectors"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,418 @@
+[
+  {
+    "id": "m5-ch4-svg",
+    "type": "svg-scene",
+    "title": "Participios: Presente y Pasado",
+    "description": "Visualiza la diferencia entre ambas formas y sus usos.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#eef2ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#6366f1",
+            "label": "📌 Participles: NOT verb tenses!",
+            "labelEn": "They are verb FORMS used in different structures"
+          },
+          {
+            "id": "pres",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 55,
+            "fill": "#c7d2fe",
+            "label": "📗 Present participle (-ing)",
+            "labelEn": "working, eating, running. Used in: continuous, gerund, adjectives"
+          },
+          {
+            "id": "past",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 55,
+            "fill": "#a5b4fc",
+            "label": "📘 Past participle (-ed/irregular)",
+            "labelEn": "worked, eaten, gone. Used in: perfect, passive, adjectives"
+          },
+          {
+            "id": "use1",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "🔄 Continuous: am WORKING",
+            "labelEn": "be + -ing = continuous tense"
+          },
+          {
+            "id": "use2",
+            "type": "rect",
+            "x": 360,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#dcfce7",
+            "label": "✅ Perfect: have EATEN",
+            "labelEn": "have/had + pp = perfect tense"
+          },
+          {
+            "id": "use3",
+            "type": "rect",
+            "x": 30,
+            "y": 195,
+            "width": 310,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "🎯 Passive: was STOLEN",
+            "labelEn": "be + pp = passive voice"
+          },
+          {
+            "id": "use4",
+            "type": "rect",
+            "x": 360,
+            "y": 195,
+            "width": 310,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "📝 Adjective: a BROKEN window",
+            "labelEn": "past participle as adjective"
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 30,
+            "y": 265,
+            "width": 640,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "⚠️ Common confusion",
+            "labelEn": "Many think participles ARE tenses. They are FORMS. Perfect/passive USE them."
+          },
+          {
+            "id": "tip",
+            "type": "rect",
+            "x": 80,
+            "y": 335,
+            "width": 540,
+            "height": 55,
+            "fill": "#fef9c3",
+            "label": "💡 Key",
+            "labelEn": "Participle = piece. Auxiliary = structure. have+pp (perfect), be+pp (passive), be+-ing (continuous)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m5-ch4-flash",
+    "type": "flashcard",
+    "title": "Participios: Presente vs Pasado",
+    "description": "Identifica cada forma y su uso.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "Are participles verb tenses?",
+          "back": "NO! They are verb FORMS (shapes) used in structures.",
+          "example": "Perfect = have + pp. Passive = be + pp."
+        },
+        {
+          "id": "c2",
+          "front": "Present participle form?",
+          "back": "base + -ing: working, eating, running",
+          "example": "Used in: continuous (am working), gerund (Swimming is fun)"
+        },
+        {
+          "id": "c3",
+          "front": "Past participle: regular?",
+          "back": "base + -ed: worked, played, studied",
+          "example": "Same as Past Simple for regular verbs."
+        },
+        {
+          "id": "c4",
+          "front": "go → past participle?",
+          "back": "gone (irregular: go → went → gone)",
+          "example": "I have gone. The money has gone."
+        },
+        {
+          "id": "c5",
+          "front": "eat → past participle?",
+          "back": "eaten (eat → ate → eaten)",
+          "example": "She has eaten. The food was eaten."
+        },
+        {
+          "id": "c6",
+          "front": "write → past participle?",
+          "back": "written (write → wrote → written)",
+          "example": "I have written. The book was written by her."
+        },
+        {
+          "id": "c7",
+          "front": "Continuous uses which participle?",
+          "back": "Present participle (-ing): am/is/are + -ing",
+          "example": "I am working. She was eating."
+        },
+        {
+          "id": "c8",
+          "front": "Passive uses which participle?",
+          "back": "Past participle: be + pp (was stolen, is built)",
+          "example": "The car was stolen. The house is being built."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-match",
+    "type": "word-match",
+    "title": "Verbo → Past Participle",
+    "description": "Empareja cada verbo con su pasado participio.",
+    "props": {
+      "pairs": [
+        {
+          "left": "go",
+          "right": "gone"
+        },
+        {
+          "left": "eat",
+          "right": "eaten"
+        },
+        {
+          "left": "write",
+          "right": "written"
+        },
+        {
+          "left": "break",
+          "right": "broken"
+        },
+        {
+          "left": "see",
+          "right": "seen"
+        },
+        {
+          "left": "speak",
+          "right": "spoken"
+        },
+        {
+          "left": "do",
+          "right": "done"
+        },
+        {
+          "left": "work",
+          "right": "worked"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Identifica el Participio",
+    "description": "Reconoce si es presente o pasado participio.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella ha comido (present participle or past participle?):",
+          "words": [
+            "She",
+            "has",
+            "eaten"
+          ],
+          "correct": "She has eaten"
+        },
+        {
+          "prompt": "Está trabajando (¿qué participio?):",
+          "words": [
+            "She",
+            "is",
+            "working"
+          ],
+          "correct": "She is working"
+        },
+        {
+          "prompt": "El coche fue robado:",
+          "words": [
+            "The",
+            "car",
+            "was",
+            "stolen"
+          ],
+          "correct": "The car was stolen"
+        },
+        {
+          "prompt": "Había escrito una carta:",
+          "words": [
+            "He",
+            "had",
+            "written",
+            "a",
+            "letter"
+          ],
+          "correct": "He had written a letter"
+        },
+        {
+          "prompt": "Una ventana rota:",
+          "words": [
+            "a",
+            "broken",
+            "window"
+          ],
+          "correct": "a broken window"
+        },
+        {
+          "prompt": "Un libro interesante:",
+          "words": [
+            "an",
+            "interesting",
+            "book"
+          ],
+          "correct": "an interesting book"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz: Naturaleza de los Participios",
+    "description": "Demuestra que comprendes qué son los participios.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Are participles verb tenses?",
+          "options": [
+            "Yes, they are tenses.",
+            "No, they are verb forms used in structures.",
+            "Only past participle is.",
+            "Only present participle is."
+          ],
+          "correct": 1,
+          "explanation": "Participles are forms, not tenses."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"go\" → past participle?",
+          "correct": "gone",
+          "explanation": "go → went → gone."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Which structure uses past participle?",
+          "options": [
+            "I am working (continuous)",
+            "I have eaten (perfect)",
+            "She is running (continuous)",
+            "They are playing (continuous)"
+          ],
+          "correct": 1,
+          "explanation": "Perfect = have + past participle."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"The car was ___ (steal).\"",
+          "correct": "stolen",
+          "explanation": "Passive: be + past participle."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "Present participle form?",
+          "options": [
+            "base + -ed",
+            "base + -ing",
+            "had + base",
+            "will + base"
+          ],
+          "correct": 1,
+          "explanation": "Present participle = -ing."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"write\" → past participle?",
+          "options": [
+            "wrote",
+            "written",
+            "writed",
+            "writing"
+          ],
+          "correct": 1,
+          "explanation": "write → wrote → written."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"She has ___ (do) her homework.\"",
+          "correct": "done",
+          "explanation": "do → did → done."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which uses present participle?",
+          "options": [
+            "The house was built.",
+            "I have seen it.",
+            "She is swimming.",
+            "The letter was written."
+          ],
+          "correct": 2,
+          "explanation": "Continuous: be + -ing (present participle)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Participios",
+    "description": "Descifra participios pasados irregulares.",
+    "props": {
+      "words": [
+        {
+          "word": "BROKEN",
+          "hint": "Roto; participio de break",
+          "category": "Participles"
+        },
+        {
+          "word": "WRITTEN",
+          "hint": "Escrito; participio de write",
+          "category": "Participles"
+        },
+        {
+          "word": "SPOKEN",
+          "hint": "Hablando; participio de speak",
+          "category": "Participles"
+        },
+        {
+          "word": "CHOSEN",
+          "hint": "Elegido; participio de choose",
+          "category": "Participles"
+        },
+        {
+          "word": "TAKEN",
+          "hint": "Tomado; participio de take",
+          "category": "Participles"
+        },
+        {
+          "word": "GIVEN",
+          "hint": "Dado; participio de give",
+          "category": "Participles"
+        }
+      ]
+    }
+  }
+]

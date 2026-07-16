@@ -1,0 +1,500 @@
+[
+  {
+    "id": "m3-ch1-svg",
+    "type": "svg-scene",
+    "title": "Un Día en el Parque",
+    "description": "Observa qué está haciendo cada persona en el parque ahora mismo.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "park",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 50,
+            "fill": "#10b981",
+            "label": "🌳 A Day at the Park",
+            "labelEn": "What is everyone doing RIGHT NOW?"
+          },
+          {
+            "id": "p1",
+            "type": "rect",
+            "x": 30,
+            "y": 70,
+            "width": 190,
+            "height": 65,
+            "fill": "#bbf7d0",
+            "label": "🏃 Carlos",
+            "labelEn": "Carlos IS RUNNING in the park."
+          },
+          {
+            "id": "p2",
+            "type": "rect",
+            "x": 250,
+            "y": 70,
+            "width": 190,
+            "height": 65,
+            "fill": "#bfdbfe",
+            "label": "📖 Ana",
+            "labelEn": "Ana IS READING a book under a tree."
+          },
+          {
+            "id": "p3",
+            "type": "rect",
+            "x": 470,
+            "y": 70,
+            "width": 200,
+            "height": 65,
+            "fill": "#fde68a",
+            "label": "🎸 Pedro",
+            "labelEn": "Pedro IS PLAYING the guitar."
+          },
+          {
+            "id": "p4",
+            "type": "rect",
+            "x": 30,
+            "y": 155,
+            "width": 190,
+            "height": 65,
+            "fill": "#fecaca",
+            "label": "🍦 María",
+            "labelEn": "María IS EATING ice cream. She's SITTING on a bench."
+          },
+          {
+            "id": "p5",
+            "type": "rect",
+            "x": 250,
+            "y": 155,
+            "width": 190,
+            "height": 65,
+            "fill": "#e0e7ff",
+            "label": "🐕 The kids",
+            "labelEn": "The kids ARE PLAYING with a dog."
+          },
+          {
+            "id": "p6",
+            "type": "rect",
+            "x": 470,
+            "y": 155,
+            "width": 200,
+            "height": 65,
+            "fill": "#fce7f3",
+            "label": "📸 Laura",
+            "labelEn": "Laura IS TAKING photos of the sunset."
+          },
+          {
+            "id": "spelling",
+            "type": "rect",
+            "x": 30,
+            "y": 250,
+            "width": 310,
+            "height": 60,
+            "fill": "#fef9c3",
+            "label": "📏 Spelling Rules",
+            "labelEn": "play→playing, make→making (drop e), run→running (double n), die→dying (ie→y)"
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 360,
+            "y": 250,
+            "width": 310,
+            "height": 60,
+            "fill": "#fee2e2",
+            "label": "❌ Negatives",
+            "labelEn": "I'm NOT working. She ISN'T reading. They AREN'T playing."
+          },
+          {
+            "id": "quest",
+            "type": "rect",
+            "x": 100,
+            "y": 330,
+            "width": 500,
+            "height": 50,
+            "fill": "#dbeafe",
+            "label": "❓ Questions",
+            "labelEn": "ARE you working? IS she reading? Yes, I am. / No, she isn't."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m3-ch1-flash",
+    "type": "flashcard",
+    "title": "Conjugaciones en Presente Continuo",
+    "description": "Practica la formación del presente continuo.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I / work (present continuous)",
+          "back": "I am working / I'm working",
+          "example": "I'm working from home today."
+        },
+        {
+          "id": "c2",
+          "front": "She / read (present continuous)",
+          "back": "She is reading / She's reading",
+          "example": "She's reading a novel."
+        },
+        {
+          "id": "c3",
+          "front": "They / play (present continuous)",
+          "back": "They are playing / They're playing",
+          "example": "They're playing basketball."
+        },
+        {
+          "id": "c4",
+          "front": "He / make (-e rule)",
+          "back": "He is making / He's making",
+          "example": "Drop -e + ing: make → making."
+        },
+        {
+          "id": "c5",
+          "front": "She / run (doubling rule)",
+          "back": "She is running / She's running",
+          "example": "Double consonant + ing: run → running."
+        },
+        {
+          "id": "c6",
+          "front": "I / sit (doubling rule)",
+          "back": "I am sitting / I'm sitting",
+          "example": "Double consonant + ing: sit → sitting."
+        },
+        {
+          "id": "c7",
+          "front": "My phone / die (-ie rule)",
+          "back": "dying / die → dying",
+          "example": "ie → y + ing: die → dying."
+        },
+        {
+          "id": "c8",
+          "front": "I / not / work (negativo)",
+          "back": "I'm not working",
+          "example": "I'm not working today."
+        },
+        {
+          "id": "c9",
+          "front": "She / not / eat (negativo)",
+          "back": "She isn't eating / She's not eating",
+          "example": "She isn't eating lunch."
+        },
+        {
+          "id": "c10",
+          "front": "___you / study? (pregunta)",
+          "back": "Are you studying?",
+          "example": "Are you studying for the exam?"
+        },
+        {
+          "id": "c11",
+          "front": "We / meet / tomorrow (futuro)",
+          "back": "We are meeting tomorrow",
+          "example": "We're meeting at 5 tomorrow."
+        },
+        {
+          "id": "c12",
+          "front": "Prices / rise (tendencia)",
+          "back": "Prices are rising",
+          "example": "Prices are rising this year."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-match",
+    "type": "word-match",
+    "title": "Verbo → Forma -ing",
+    "description": "Empareja cada verbo con su forma correcta en -ing.",
+    "props": {
+      "pairs": [
+        {
+          "left": "play",
+          "right": "playing"
+        },
+        {
+          "left": "make",
+          "right": "making"
+        },
+        {
+          "left": "run",
+          "right": "running"
+        },
+        {
+          "left": "write",
+          "right": "writing"
+        },
+        {
+          "left": "sit",
+          "right": "sitting"
+        },
+        {
+          "left": "die",
+          "right": "dying"
+        },
+        {
+          "left": "swim",
+          "right": "swimming"
+        },
+        {
+          "left": "eat",
+          "right": "eating"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Describe lo que Pasa Ahora",
+    "description": "Ordena las palabras para formar oraciones en presente continuo.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Estoy estudiando inglés:",
+          "words": [
+            "I",
+            "am",
+            "studying",
+            "English"
+          ],
+          "correct": "I am studying English"
+        },
+        {
+          "prompt": "Ella está cocinando la cena:",
+          "words": [
+            "She",
+            "is",
+            "cooking",
+            "dinner"
+          ],
+          "correct": "She is cooking dinner"
+        },
+        {
+          "prompt": "Ellos están jugando fútbol:",
+          "words": [
+            "They",
+            "are",
+            "playing",
+            "football"
+          ],
+          "correct": "They are playing football"
+        },
+        {
+          "prompt": "No estoy trabajando hoy:",
+          "words": [
+            "I",
+            "am",
+            "not",
+            "working",
+            "today"
+          ],
+          "correct": "I am not working today"
+        },
+        {
+          "prompt": "¿Estás escuchando música?:",
+          "words": [
+            "Are",
+            "you",
+            "listening",
+            "to",
+            "music?"
+          ],
+          "correct": "Are you listening to music?"
+        },
+        {
+          "prompt": "Él está corriendo en el parque:",
+          "words": [
+            "He",
+            "is",
+            "running",
+            "in",
+            "the",
+            "park"
+          ],
+          "correct": "He is running in the park"
+        },
+        {
+          "prompt": "Nos reunimos mañana:",
+          "words": [
+            "We",
+            "are",
+            "meeting",
+            "tomorrow"
+          ],
+          "correct": "We are meeting tomorrow"
+        },
+        {
+          "prompt": "Ella no está leyendo:",
+          "words": [
+            "She",
+            "is",
+            "not",
+            "reading"
+          ],
+          "correct": "She is not reading"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz: Presente Continuo",
+    "description": "Demuestra que dominas el presente continuo.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She ___ (read) a book right now.\"",
+          "options": [
+            "reads",
+            "is reading",
+            "reading",
+            "read"
+          ],
+          "correct": 1,
+          "explanation": "Present continuous: is + reading."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"I ___ (work) from home today.\"",
+          "correct": "am working",
+          "explanation": "I am working = I'm working."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "What is the -ing form of \"make\"?",
+          "options": [
+            "makeing",
+            "making",
+            "makking",
+            "mading"
+          ],
+          "correct": 1,
+          "explanation": "Drop the -e: make → making."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "What is the -ing form of \"run\"?",
+          "options": [
+            "runing",
+            "running",
+            "runeing",
+            "ranning"
+          ],
+          "correct": 1,
+          "explanation": "Double the consonant: run → running."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"They ___ (play) football in the garden.\"",
+          "correct": "are playing",
+          "explanation": "They are playing."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"___ you ___ (study) for the exam?\"",
+          "options": [
+            "Do / study",
+            "Are / studying",
+            "Is / studying",
+            "Does / study"
+          ],
+          "correct": 1,
+          "explanation": "Are you studying? = present continuous question."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"He ___ (not/eat) lunch right now.\"",
+          "correct": "is not eating",
+          "explanation": "He is not eating / He isn't eating."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "What is the -ing form of \"sit\"?",
+          "options": [
+            "siting",
+            "sitting",
+            "sitiing",
+            "settin"
+          ],
+          "correct": 1,
+          "explanation": "Double the consonant: sit → sitting."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"We ___ (meet) at 5 tomorrow.\" (futuro)",
+          "correct": "are meeting",
+          "explanation": "Present continuous for future plans: We are meeting."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "What is the -ing form of \"die\"?",
+          "options": [
+            "dieing",
+            "dying",
+            "diying",
+            "deing"
+          ],
+          "correct": 1,
+          "explanation": "ie → y + ing: die → dying."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Verbos en -ing",
+    "description": "Descifra verbos en presente continuo.",
+    "props": {
+      "words": [
+        {
+          "word": "RUNNING",
+          "hint": "Corriendo; run + ing",
+          "category": "Present Continuous"
+        },
+        {
+          "word": "EATING",
+          "hint": "Comiendo; eat + ing",
+          "category": "Present Continuous"
+        },
+        {
+          "word": "SLEEPING",
+          "hint": "Durmiendo; sleep + ing",
+          "category": "Present Continuous"
+        },
+        {
+          "word": "WORKING",
+          "hint": "Trabajando; work + ing",
+          "category": "Present Continuous"
+        },
+        {
+          "word": "PLAYING",
+          "hint": "Jugando; play + ing",
+          "category": "Present Continuous"
+        },
+        {
+          "word": "STUDYING",
+          "hint": "Estudiando; study + ing",
+          "category": "Present Continuous"
+        }
+      ]
+    }
+  }
+]

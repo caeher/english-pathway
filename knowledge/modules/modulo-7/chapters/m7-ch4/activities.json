@@ -1,0 +1,514 @@
+[
+  {
+    "id": "m7-ch4-svg",
+    "type": "svg-scene",
+    "title": "Galería de Idioms",
+    "description": "Visualiza los modismos más populares del inglés.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#fffbeb",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#f59e0b",
+            "label": "💬 Idiomatic Expressions",
+            "labelEn": "Phrases with non-literal meanings"
+          },
+          {
+            "id": "def",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 40,
+            "fill": "#fef3c7",
+            "label": "📏 Idiom = phrase with meaning DIFFERENT from the literal words",
+            "labelEn": ""
+          },
+          {
+            "id": "cake",
+            "type": "rect",
+            "x": 30,
+            "y": 115,
+            "width": 200,
+            "height": 55,
+            "fill": "#fde68a",
+            "label": "🍰 A piece of cake",
+            "labelEn": "= very easy. \"The test was a piece of cake.\""
+          },
+          {
+            "id": "leg",
+            "type": "rect",
+            "x": 250,
+            "y": 115,
+            "width": 200,
+            "height": 55,
+            "fill": "#bbf7d0",
+            "label": "🦵 Break a leg",
+            "labelEn": "= good luck! \"Break a leg tonight!\""
+          },
+          {
+            "id": "weather",
+            "type": "rect",
+            "x": 470,
+            "y": 115,
+            "width": 200,
+            "height": 55,
+            "fill": "#bfdbfe",
+            "label": "🌧️ Under the weather",
+            "labelEn": "= sick/unwell. \"I'm under the weather.\""
+          },
+          {
+            "id": "moon",
+            "type": "rect",
+            "x": 30,
+            "y": 185,
+            "width": 200,
+            "height": 55,
+            "fill": "#e0e7ff",
+            "label": "🌙 Once in a blue moon",
+            "labelEn": "= very rarely. \"I eat pizza once in a blue moon.\""
+          },
+          {
+            "id": "arm",
+            "type": "rect",
+            "x": 250,
+            "y": 185,
+            "width": 200,
+            "height": 55,
+            "fill": "#fce7f3",
+            "label": "💰 Cost an arm and a leg",
+            "labelEn": "= very expensive. \"It cost an arm and a leg.\""
+          },
+          {
+            "id": "cat",
+            "type": "rect",
+            "x": 470,
+            "y": 185,
+            "width": 200,
+            "height": 55,
+            "fill": "#fecaca",
+            "label": "🐱 Let the cat out of the bag",
+            "labelEn": "= reveal a secret. \"She let the cat out!\""
+          },
+          {
+            "id": "box",
+            "type": "rect",
+            "x": 30,
+            "y": 260,
+            "width": 200,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "📦 Think outside the box",
+            "labelEn": "= be creative. \"Think outside the box!\""
+          },
+          {
+            "id": "eye",
+            "type": "rect",
+            "x": 250,
+            "y": 260,
+            "width": 200,
+            "height": 55,
+            "fill": "#ccfbf1",
+            "label": "👁️ See eye to eye",
+            "labelEn": "= agree. \"We see eye to eye.\""
+          },
+          {
+            "id": "mile",
+            "type": "rect",
+            "x": 470,
+            "y": 260,
+            "width": 200,
+            "height": 55,
+            "fill": "#dbeafe",
+            "label": "🏃 Go the extra mile",
+            "labelEn": "= make extra effort. \"She goes the extra mile.\""
+          },
+          {
+            "id": "rain",
+            "type": "rect",
+            "x": 100,
+            "y": 340,
+            "width": 250,
+            "height": 55,
+            "fill": "#fde68a",
+            "label": "🐱🐶 Raining cats and dogs",
+            "labelEn": "= raining very hard. \"It's raining cats and dogs!\""
+          },
+          {
+            "id": "bird",
+            "type": "rect",
+            "x": 370,
+            "y": 340,
+            "width": 250,
+            "height": 55,
+            "fill": "#bbf7d0",
+            "label": "🐦 Kill two birds with one stone",
+            "labelEn": "= achieve 2 things at once. \"Kill two birds...\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m7-ch4-flash",
+    "type": "flashcard",
+    "title": "Idioms: Significado y Uso",
+    "description": "Aprende cada idiom con su significado y ejemplo.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "a piece of cake",
+          "back": "Muy fácil",
+          "example": "The test was a piece of cake. (= super easy)"
+        },
+        {
+          "id": "c2",
+          "front": "break a leg",
+          "back": "¡Buena suerte! (en espectáculos)",
+          "example": "You have a show? Break a leg!"
+        },
+        {
+          "id": "c3",
+          "front": "under the weather",
+          "back": "Enfermo / no sentirse bien",
+          "example": "I'm feeling under the weather today."
+        },
+        {
+          "id": "c4",
+          "front": "once in a blue moon",
+          "back": "Muy raramente",
+          "example": "I eat fast food once in a blue moon."
+        },
+        {
+          "id": "c5",
+          "front": "cost an arm and a leg",
+          "back": "Costar mucho dinero",
+          "example": "That new phone cost an arm and a leg."
+        },
+        {
+          "id": "c6",
+          "front": "let the cat out of the bag",
+          "back": "Revelar un secreto",
+          "example": "She let the cat out of the bag about the party."
+        },
+        {
+          "id": "c7",
+          "front": "think outside the box",
+          "back": "Pensar de forma creativa",
+          "example": "We need to think outside the box to solve this."
+        },
+        {
+          "id": "c8",
+          "front": "see eye to eye",
+          "back": "Estar de acuerdo",
+          "example": "We don't always see eye to eye."
+        },
+        {
+          "id": "c9",
+          "front": "go the extra mile",
+          "back": "Hacer un esfuerzo extra",
+          "example": "She always goes the extra mile."
+        },
+        {
+          "id": "c10",
+          "front": "it's raining cats and dogs",
+          "back": "Llover a cántaros",
+          "example": "Don't go out! It's raining cats and dogs."
+        },
+        {
+          "id": "c11",
+          "front": "kill two birds with one stone",
+          "back": "Matar dos pájaros de un tiro",
+          "example": "I combined the errands — kill two birds with one stone."
+        },
+        {
+          "id": "c12",
+          "front": "call it a day",
+          "back": "Dar por terminado / terminar por hoy",
+          "example": "I'm tired. Let's call it a day."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-match",
+    "type": "word-match",
+    "title": "Idiom → Significado",
+    "description": "Empareja cada idiom con su significado correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "a piece of cake",
+          "right": "very easy"
+        },
+        {
+          "left": "under the weather",
+          "right": "sick / unwell"
+        },
+        {
+          "left": "cost an arm and a leg",
+          "right": "very expensive"
+        },
+        {
+          "left": "once in a blue moon",
+          "right": "very rarely"
+        },
+        {
+          "left": "break a leg",
+          "right": "good luck!"
+        },
+        {
+          "left": "let the cat out of the bag",
+          "right": "reveal a secret"
+        },
+        {
+          "left": "see eye to eye",
+          "right": "agree with each other"
+        },
+        {
+          "left": "call it a day",
+          "right": "stop working for today"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Usa Idioms en Contexto",
+    "description": "Ordena para formar oraciones con idioms.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "El examen fue muy fácil:",
+          "words": [
+            "The",
+            "test",
+            "was",
+            "a",
+            "piece",
+            "of",
+            "cake"
+          ],
+          "correct": "The test was a piece of cake"
+        },
+        {
+          "prompt": "No me siento bien hoy:",
+          "words": [
+            "I",
+            "am",
+            "feeling",
+            "under",
+            "the",
+            "weather",
+            "today"
+          ],
+          "correct": "I am feeling under the weather today"
+        },
+        {
+          "prompt": "Ese coche costó mucho dinero:",
+          "words": [
+            "That",
+            "car",
+            "cost",
+            "an",
+            "arm",
+            "and",
+            "a",
+            "leg"
+          ],
+          "correct": "That car cost an arm and a leg"
+        },
+        {
+          "prompt": "Está lloviendo a cántaros:",
+          "words": [
+            "It",
+            "is",
+            "raining",
+            "cats",
+            "and",
+            "dogs"
+          ],
+          "correct": "It is raining cats and dogs"
+        },
+        {
+          "prompt": "Necesitamos pensar creativamente:",
+          "words": [
+            "We",
+            "need",
+            "to",
+            "think",
+            "outside",
+            "the",
+            "box"
+          ],
+          "correct": "We need to think outside the box"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz: Expresiones Idiomáticas",
+    "description": "Demuestra tu conocimiento de los idioms.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"The test was ___.\" (= very easy)",
+          "options": [
+            "a hard nut to crack",
+            "a piece of cake",
+            "a can of worms",
+            "a hot potato"
+          ],
+          "correct": 1,
+          "explanation": "a piece of cake = muy fácil."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"I'm feeling ___ the weather today.\" (= sick)",
+          "correct": "under",
+          "explanation": "under the weather = enfermo/mal."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"That car cost ___.\" (= very expensive)",
+          "options": [
+            "a piece of cake",
+            "an arm and a leg",
+            "a blue moon",
+            "the cat out of the bag"
+          ],
+          "correct": 1,
+          "explanation": "cost an arm and a leg = muy caro."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"She ___ about the surprise party.\" (= revealed a secret)",
+          "options": [
+            "broke a leg",
+            "hit the nail",
+            "let the cat out of the bag",
+            "called it a day"
+          ],
+          "correct": 2,
+          "explanation": "let the cat out of the bag = revelar secreto."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"I eat pizza once in a blue ___.\" (= very rarely)",
+          "correct": "moon",
+          "explanation": "once in a blue moon = muy raramente."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"___ a leg!\" (= Good luck!)",
+          "options": [
+            "Lose",
+            "Break",
+            "Shake",
+            "Kick"
+          ],
+          "correct": 1,
+          "explanation": "Break a leg! = ¡Buena suerte!"
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"We need to think outside the ___.\" (= be creative)",
+          "correct": "box",
+          "explanation": "think outside the box = pensar creativamente."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"We don't always ___.\" (= agree)",
+          "options": [
+            "break a leg",
+            "see eye to eye",
+            "call it a day",
+            "bite the bullet"
+          ],
+          "correct": 1,
+          "explanation": "see eye to eye = estar de acuerdo."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"Let's ___ it a day.\" (= stop working)",
+          "correct": "call",
+          "explanation": "call it a day = dar por terminado."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"It's raining ___ and ___.\" (= raining very hard)",
+          "options": [
+            "cats / dogs",
+            "birds / bees",
+            "fish / chips",
+            "thunder / lightning"
+          ],
+          "correct": 0,
+          "explanation": "It's raining cats and dogs = llueve a cántaros."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Expresiones Idiomáticas",
+    "description": "Descifra términos de modismos.",
+    "props": {
+      "words": [
+        {
+          "word": "IDIOM",
+          "hint": "Modismo; expresión fija",
+          "category": "Idioms"
+        },
+        {
+          "word": "PHRASE",
+          "hint": "Frase; grupo de palabras",
+          "category": "Idioms"
+        },
+        {
+          "word": "CULTURE",
+          "hint": "Cultura; contexto social",
+          "category": "Idioms"
+        },
+        {
+          "word": "MEANING",
+          "hint": "Significado; sentido",
+          "category": "Idioms"
+        },
+        {
+          "word": "LITERAL",
+          "hint": "Literal; palabra por palabra",
+          "category": "Idioms"
+        },
+        {
+          "word": "FIGURATIVE",
+          "hint": "Figurado; metafórico",
+          "category": "Idioms"
+        }
+      ]
+    }
+  }
+]

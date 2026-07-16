@@ -1,0 +1,533 @@
+[
+  {
+    "id": "m9-ch3-quiz",
+    "type": "quiz",
+    "title": "La Entrevista",
+    "description": "Descubre información sobre un personaje eligiendo la pregunta correcta.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You want to know your friend's job. What do you ask?",
+          "options": [
+            "What do you do?",
+            "Where do you do?",
+            "Who do you do?",
+            "How do you do?"
+          ],
+          "correct": 0,
+          "explanation": "\"What do you do?\" asks about someone's job/occupation."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "You want to know where someone lives. You ask:",
+          "options": [
+            "What do you live?",
+            "Where do you live?",
+            "Who do you live?",
+            "When do you live?"
+          ],
+          "correct": 1,
+          "explanation": "\"Where do you live?\" — Where asks about place/location."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "___ does she live? — She lives in Paris.",
+          "correct": "Where",
+          "explanation": "Where asks about location: \"Where does she live?\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "You want to know the time of a party. You ask:",
+          "options": [
+            "What is the party?",
+            "Where is the party?",
+            "When is the party?",
+            "Who is the party?"
+          ],
+          "correct": 2,
+          "explanation": "\"When is the party?\" — When asks about time."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"___ is your favorite teacher?\" — \"Mr. Johnson.\"",
+          "options": [
+            "What",
+            "Where",
+            "When",
+            "Who"
+          ],
+          "correct": 3,
+          "explanation": "\"Who is your favorite teacher?\" — Who asks about a person."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "___ are you late? — Because I missed the bus.",
+          "correct": "Why",
+          "explanation": "Why asks about reason/cause: \"Why are you late?\""
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"___ do you get to work?\" — \"By bus.\"",
+          "options": [
+            "What",
+            "Where",
+            "How",
+            "When"
+          ],
+          "correct": 2,
+          "explanation": "\"How do you get to work?\" — How asks about method/manner."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "___ you speak French?",
+          "options": [
+            "Does",
+            "Do",
+            "Is",
+            "Are"
+          ],
+          "correct": 1,
+          "explanation": "\"Do you speak French?\" — Do + I/you/we/they for yes/no questions."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "___ she like chocolate?",
+          "options": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ],
+          "correct": 1,
+          "explanation": "\"Does she like chocolate?\" — Does + he/she/it."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "___ is your name? — My name is Ana.",
+          "correct": "What",
+          "explanation": "\"What is your name?\" — What asks about things/information."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Formula la Pregunta",
+    "description": "Se te da la respuesta. ¡Construye la pregunta correcta!",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Respuesta: \"I live in Mexico City.\"",
+          "words": [
+            "do",
+            "Where",
+            "live?",
+            "you"
+          ],
+          "correct": "Where do you live?"
+        },
+        {
+          "prompt": "Respuesta: \"She is a doctor.\"",
+          "words": [
+            "is",
+            "What",
+            "job?",
+            "her"
+          ],
+          "correct": "What is her job?"
+        },
+        {
+          "prompt": "Respuesta: \"The party is on Friday.\"",
+          "words": [
+            "is",
+            "When",
+            "party?",
+            "the"
+          ],
+          "correct": "When is the party?"
+        },
+        {
+          "prompt": "Respuesta: \"He goes to work by bus.\"",
+          "words": [
+            "does",
+            "How",
+            "get",
+            "he",
+            "work?",
+            "to"
+          ],
+          "correct": "How does he get to work?"
+        },
+        {
+          "prompt": "Respuesta: \"Yes, I do.\"",
+          "words": [
+            "Do",
+            "like",
+            "you",
+            "pizza?"
+          ],
+          "correct": "Do you like pizza?"
+        },
+        {
+          "prompt": "Respuesta: \"Mr. Smith is my teacher.\"",
+          "words": [
+            "is",
+            "Who",
+            "teacher?",
+            "your"
+          ],
+          "correct": "Who is your teacher?"
+        },
+        {
+          "prompt": "Respuesta: \"Because it's fun.\"",
+          "words": [
+            "do",
+            "Why",
+            "you",
+            "it?",
+            "like"
+          ],
+          "correct": "Why do you like it?"
+        },
+        {
+          "prompt": "Respuesta: \"Yes, she does.\"",
+          "words": [
+            "Does",
+            "English?",
+            "speak",
+            "she"
+          ],
+          "correct": "Does she speak English?"
+        },
+        {
+          "prompt": "Respuesta: \"I have two brothers.\"",
+          "words": [
+            "many",
+            "How",
+            "brothers",
+            "you",
+            "have?",
+            "do"
+          ],
+          "correct": "How many brothers do you have?"
+        },
+        {
+          "prompt": "Respuesta: \"It's 3 o'clock.\"",
+          "words": [
+            "is",
+            "What",
+            "it?",
+            "time"
+          ],
+          "correct": "What time is it?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-match",
+    "type": "word-match",
+    "title": "Wh- Word → Tipo de Información",
+    "description": "Empareja cada palabra interrogativa con el tipo de información que pide.",
+    "props": {
+      "pairs": [
+        {
+          "left": "What",
+          "right": "Things / Objects"
+        },
+        {
+          "left": "Where",
+          "right": "Places / Locations"
+        },
+        {
+          "left": "When",
+          "right": "Time / Dates"
+        },
+        {
+          "left": "Who",
+          "right": "People / Persons"
+        },
+        {
+          "left": "Why",
+          "right": "Reasons / Causes"
+        },
+        {
+          "left": "How",
+          "right": "Methods / Ways"
+        },
+        {
+          "left": "How many",
+          "right": "Quantity (countable)"
+        },
+        {
+          "left": "How much",
+          "right": "Quantity (uncountable) / Price"
+        },
+        {
+          "left": "How often",
+          "right": "Frequency"
+        },
+        {
+          "left": "How old",
+          "right": "Age"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-flash",
+    "type": "flashcard",
+    "title": "Patrones de Preguntas",
+    "description": "Aprende los patrones de cada tipo de pregunta con ejemplos completos.",
+    "props": {
+      "cards": [
+        {
+          "id": "p1",
+          "front": "WHAT + do/does + subject + verb?",
+          "back": "What do you do? → I am a teacher.\nWhat does she eat? → She eats salad.",
+          "example": "What do you usually eat for breakfast?"
+        },
+        {
+          "id": "p2",
+          "front": "WHERE + do/does + subject + verb?",
+          "back": "Where do you live? → I live in Tokyo.\nWhere does he work? → He works at a hospital.",
+          "example": "Where do you usually study?"
+        },
+        {
+          "id": "p3",
+          "front": "WHEN + do/does + subject + verb?",
+          "back": "When do you wake up? → I wake up at 7.\nWhen does the class start? → It starts at 9.",
+          "example": "When does the movie start?"
+        },
+        {
+          "id": "p4",
+          "front": "WHO + is/are + complement?",
+          "back": "Who is your best friend? → Maria is.\nWho are those people? → They are my neighbors.",
+          "example": "Who is the new student?"
+        },
+        {
+          "id": "p5",
+          "front": "WHY + do/does + subject + verb?",
+          "back": "Why do you study English? → Because I need it for work.\nWhy does she cry? → Because she is sad.",
+          "example": "Why do you like this city?"
+        },
+        {
+          "id": "p6",
+          "front": "HOW + do/does + subject + verb?",
+          "back": "How do you get to school? → I take the bus.\nHow does she cook? → She cooks very well.",
+          "example": "How do you spell your name?"
+        },
+        {
+          "id": "p7",
+          "front": "DO/DOES + subject + verb? (Yes/No)",
+          "back": "Do you speak English? → Yes, I do.\nDoes she like coffee? → No, she doesn't.",
+          "example": "Do you have any brothers or sisters?"
+        },
+        {
+          "id": "p8",
+          "front": "IS/ARE + subject + complement? (Yes/No)",
+          "back": "Is he a doctor? → Yes, he is.\nAre they at home? → No, they aren't.",
+          "example": "Are you ready for the test?"
+        },
+        {
+          "id": "p9",
+          "front": "HOW MANY + plural noun + do/does...?",
+          "back": "How many books do you have? → I have ten books.\nHow many students are there? → There are 30.",
+          "example": "How many languages do you speak?"
+        },
+        {
+          "id": "p10",
+          "front": "HOW MUCH + uncountable noun...?",
+          "back": "How much water do you drink? → Two liters.\nHow much is this? → It's $10.",
+          "example": "How much time do we have?"
+        },
+        {
+          "id": "p11",
+          "front": "HOW OFTEN + do/does + subject + verb?",
+          "back": "How often do you exercise? → Three times a week.\nHow often does it rain? → Often.",
+          "example": "How often do you go to the movies?"
+        },
+        {
+          "id": "p12",
+          "front": "HOW OLD + is/are + subject?",
+          "back": "How old are you? → I'm 25 years old.\nHow old is your brother? → He's 30.",
+          "example": "How old is this building?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-svg",
+    "type": "svg-scene",
+    "title": "¿Qué Quieres Saber?",
+    "description": "Haz clic en cada elemento de la reunión y descubre qué pregunta puedes hacer.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 380",
+        "bg": "#fef3c7",
+        "items": [
+          {
+            "id": "person1",
+            "type": "ellipse",
+            "cx": 80,
+            "cy": 200,
+            "rx": 25,
+            "ry": 35,
+            "fill": "#f87171",
+            "label": "Persona 1",
+            "labelEn": "Who is that woman? — She is Sara."
+          },
+          {
+            "id": "person2",
+            "type": "ellipse",
+            "cx": 180,
+            "cy": 190,
+            "rx": 25,
+            "ry": 35,
+            "fill": "#60a5fa",
+            "label": "Persona 2",
+            "labelEn": "What does he do? — He is a doctor."
+          },
+          {
+            "id": "person3",
+            "type": "ellipse",
+            "cx": 400,
+            "cy": 200,
+            "rx": 25,
+            "ry": 35,
+            "fill": "#34d399",
+            "label": "Persona 3",
+            "labelEn": "Where does she live? — In London."
+          },
+          {
+            "id": "table",
+            "type": "rect",
+            "x": 200,
+            "y": 250,
+            "width": 200,
+            "height": 20,
+            "fill": "#92400e",
+            "label": "Mesa",
+            "labelEn": "What is on the table? — Food and drinks."
+          },
+          {
+            "id": "food",
+            "type": "ellipse",
+            "cx": 280,
+            "cy": 240,
+            "rx": 30,
+            "ry": 12,
+            "fill": "#fb923c",
+            "label": "Comida",
+            "labelEn": "What food is it? — It is pizza."
+          },
+          {
+            "id": "clock",
+            "type": "circle",
+            "cx": 520,
+            "cy": 60,
+            "r": 25,
+            "fill": "#fafafa",
+            "label": "Reloj",
+            "labelEn": "What time is it? — It is 7 PM."
+          },
+          {
+            "id": "door",
+            "type": "rect",
+            "x": 0,
+            "y": 150,
+            "width": 30,
+            "height": 80,
+            "fill": "#a3a3a3",
+            "label": "Puerta",
+            "labelEn": "Who is coming? — My friend John."
+          },
+          {
+            "id": "gift",
+            "type": "rect",
+            "x": 450,
+            "y": 270,
+            "width": 30,
+            "height": 25,
+            "fill": "#c084fc",
+            "label": "Regalo",
+            "labelEn": "What is in the box? — A surprise!"
+          },
+          {
+            "id": "music",
+            "type": "circle",
+            "cx": 550,
+            "cy": 200,
+            "r": 18,
+            "fill": "#fbbf24",
+            "label": "Música",
+            "labelEn": "What are they listening to? — Pop music."
+          },
+          {
+            "id": "window",
+            "type": "rect",
+            "x": 300,
+            "y": 40,
+            "width": 80,
+            "height": 60,
+            "fill": "#bae6fd",
+            "label": "Ventana",
+            "labelEn": "How is the weather? — It is sunny."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m9-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Preguntas y Respuestas",
+    "description": "Descifra términos de preguntas.",
+    "props": {
+      "words": [
+        {
+          "word": "QUESTION",
+          "hint": "Pregunta",
+          "category": "Questions"
+        },
+        {
+          "word": "ANSWER",
+          "hint": "Respuesta",
+          "category": "Questions"
+        },
+        {
+          "word": "ASK",
+          "hint": "Preguntar",
+          "category": "Questions"
+        },
+        {
+          "word": "REPLY",
+          "hint": "Responder",
+          "category": "Questions"
+        },
+        {
+          "word": "RESPOND",
+          "hint": "Contestar",
+          "category": "Questions"
+        },
+        {
+          "word": "INQUIRE",
+          "hint": "Inquirir; preguntar formal",
+          "category": "Questions"
+        }
+      ]
+    }
+  }
+]

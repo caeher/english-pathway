@@ -1,0 +1,458 @@
+[
+  {
+    "id": "m7-ch1-svg",
+    "type": "svg-scene",
+    "title": "Guía de Pronombres Relativos",
+    "description": "Visualiza cuándo usar cada pronombre relativo.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#3b82f6",
+            "label": "🔗 Relative Clauses",
+            "labelEn": "who, which, that, where, whose"
+          },
+          {
+            "id": "who",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 200,
+            "height": 55,
+            "fill": "#fde68a",
+            "label": "👤 WHO",
+            "labelEn": "people: The woman WHO called..."
+          },
+          {
+            "id": "which",
+            "type": "rect",
+            "x": 250,
+            "y": 60,
+            "width": 200,
+            "height": 55,
+            "fill": "#bbf7d0",
+            "label": "📦 WHICH",
+            "labelEn": "things: The car WHICH I bought..."
+          },
+          {
+            "id": "that",
+            "type": "rect",
+            "x": 470,
+            "y": 60,
+            "width": 200,
+            "height": 55,
+            "fill": "#bfdbfe",
+            "label": "🔄 THAT",
+            "labelEn": "people/things: The man THAT I met..."
+          },
+          {
+            "id": "where",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 200,
+            "height": 55,
+            "fill": "#fce7f3",
+            "label": "📍 WHERE",
+            "labelEn": "places: The city WHERE I was born..."
+          },
+          {
+            "id": "whose",
+            "type": "rect",
+            "x": 250,
+            "y": 130,
+            "width": 200,
+            "height": 55,
+            "fill": "#e0e7ff",
+            "label": "👑 WHOSE",
+            "labelEn": "possession: The girl WHOSE bag..."
+          },
+          {
+            "id": "when",
+            "type": "rect",
+            "x": 470,
+            "y": 130,
+            "width": 200,
+            "height": 55,
+            "fill": "#ccfbf1",
+            "label": "⏰ WHEN",
+            "labelEn": "time: The day WHEN I arrived..."
+          },
+          {
+            "id": "def",
+            "type": "rect",
+            "x": 30,
+            "y": 210,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "✅ Defining (essential)",
+            "labelEn": "No commas: The man WHO lives next door is kind. (can use THAT)"
+          },
+          {
+            "id": "nondef",
+            "type": "rect",
+            "x": 360,
+            "y": 210,
+            "width": 310,
+            "height": 55,
+            "fill": "#fecaca",
+            "label": "📝 Non-defining (extra)",
+            "labelEn": "COMMAS: My brother, WHO is 30, is a doctor. (NO that)"
+          },
+          {
+            "id": "omit",
+            "type": "rect",
+            "x": 30,
+            "y": 285,
+            "width": 640,
+            "height": 55,
+            "fill": "#fef3c7",
+            "label": "✂️ Omitting: only when relative pronoun is OBJECT",
+            "labelEn": "✅ The book (that) I bought. ❌ The man [who] lives next door. (who = subject)"
+          },
+          {
+            "id": "combine",
+            "type": "rect",
+            "x": 100,
+            "y": 360,
+            "width": 500,
+            "height": 50,
+            "fill": "#dbeafe",
+            "label": "🔗 Combine sentences",
+            "labelEn": "I met a woman. She speaks 5 languages. → I met a woman WHO speaks 5 languages."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m7-ch1-flash",
+    "type": "flashcard",
+    "title": "Elige el Pronombre Relativo",
+    "description": "Practica eligiendo el pronombre relativo correcto.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "The woman ___ called is my aunt. (persona)",
+          "back": "The woman WHO called is my aunt.",
+          "example": "who = for people."
+        },
+        {
+          "id": "c2",
+          "front": "The car ___ I bought is red. (cosa)",
+          "back": "The car which/that I bought is red.",
+          "example": "which/that = for things."
+        },
+        {
+          "id": "c3",
+          "front": "The city ___ I was born is small. (lugar)",
+          "back": "The city where I was born is small.",
+          "example": "where = for places."
+        },
+        {
+          "id": "c4",
+          "front": "The girl ___ bag was stolen called police. (posesión)",
+          "back": "The girl whose bag was stolen called the police.",
+          "example": "whose = possession."
+        },
+        {
+          "id": "c5",
+          "front": "I met a man + He speaks 5 languages.",
+          "back": "I met a man who speaks 5 languages.",
+          "example": "Combine with who (people)."
+        },
+        {
+          "id": "c6",
+          "front": "I read a book + It was fascinating.",
+          "back": "I read a book which/that was fascinating.",
+          "example": "Combine with which/that (thing)."
+        },
+        {
+          "id": "c7",
+          "front": "That's the restaurant + We ate there.",
+          "back": "That's the restaurant where we ate.",
+          "example": "Combine with where (place)."
+        },
+        {
+          "id": "c8",
+          "front": "My sister, ___ is 25, is a teacher. (non-defining)",
+          "back": "My sister, who is 25, is a teacher.",
+          "example": "Non-defining: commas, who (NOT that)."
+        },
+        {
+          "id": "c9",
+          "front": "The book (___) I bought is good. (can omit?)",
+          "back": "The book (that) I bought is good. ✅ Can omit!",
+          "example": "Object → can omit."
+        },
+        {
+          "id": "c10",
+          "front": "The man ___ lives next door is kind. (can omit?)",
+          "back": "The man who lives next door is kind. ❌ Cannot omit!",
+          "example": "Subject → cannot omit."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-match",
+    "type": "word-match",
+    "title": "Pronombre → Uso",
+    "description": "Empareja cada pronombre relativo con su uso.",
+    "props": {
+      "pairs": [
+        {
+          "left": "who",
+          "right": "people"
+        },
+        {
+          "left": "which",
+          "right": "things / animals"
+        },
+        {
+          "left": "where",
+          "right": "places"
+        },
+        {
+          "left": "whose",
+          "right": "possession"
+        },
+        {
+          "left": "when",
+          "right": "time"
+        },
+        {
+          "left": "that",
+          "right": "people or things (defining)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Combina Oraciones",
+    "description": "Ordena para formar oraciones con cláusulas relativas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "La mujer que llamó es mi tía:",
+          "words": [
+            "The",
+            "woman",
+            "who",
+            "called",
+            "is",
+            "my",
+            "aunt"
+          ],
+          "correct": "The woman who called is my aunt"
+        },
+        {
+          "prompt": "El coche que compré es rojo:",
+          "words": [
+            "The",
+            "car",
+            "which",
+            "I",
+            "bought",
+            "is",
+            "red"
+          ],
+          "correct": "The car which I bought is red"
+        },
+        {
+          "prompt": "La ciudad donde nací es pequeña:",
+          "words": [
+            "The",
+            "city",
+            "where",
+            "I",
+            "was",
+            "born",
+            "is",
+            "small"
+          ],
+          "correct": "The city where I was born is small"
+        },
+        {
+          "prompt": "La chica cuyo bolso fue robado llamó a la policía:",
+          "words": [
+            "The",
+            "girl",
+            "whose",
+            "bag",
+            "was",
+            "stolen",
+            "called",
+            "the",
+            "police"
+          ],
+          "correct": "The girl whose bag was stolen called the police"
+        },
+        {
+          "prompt": "Conocí a un hombre que habla 5 idiomas:",
+          "words": [
+            "I",
+            "met",
+            "a",
+            "man",
+            "who",
+            "speaks",
+            "5",
+            "languages"
+          ],
+          "correct": "I met a man who speaks 5 languages"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz: Cláusulas Relativas",
+    "description": "Demuestra tu dominio de las cláusulas relativas.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"The woman ___ called is my aunt.\" (persona)",
+          "options": [
+            "which",
+            "who",
+            "where",
+            "whose"
+          ],
+          "correct": 1,
+          "explanation": "who = for people."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"The city ___ I was born is small.\" (lugar)",
+          "correct": "where",
+          "explanation": "where = for places."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"The girl ___ bag was stolen called police.\" (posesión)",
+          "options": [
+            "who",
+            "which",
+            "whose",
+            "where"
+          ],
+          "correct": 2,
+          "explanation": "whose = possession."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which can replace \"who\" with people in defining clauses?",
+          "options": [
+            "which",
+            "where",
+            "whose",
+            "that"
+          ],
+          "correct": 3,
+          "explanation": "that can replace who/which in defining clauses."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"The car ___ I bought is red.\" (cosa)",
+          "correct": "which",
+          "explanation": "which = for things (or that)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Non-defining clause: \"My sister, ___ is 25, is a teacher.\"",
+          "options": [
+            "that",
+            "who",
+            "which",
+            "where"
+          ],
+          "correct": 1,
+          "explanation": "Non-defining: use who, NOT that."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Can you omit in: \"The book (that) I bought\"?",
+          "options": [
+            "Yes — relative is the object.",
+            "No — relative is the subject."
+          ],
+          "correct": 0,
+          "explanation": "\"I\" is the subject, \"book\" is object → can omit."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Can you omit in: \"The man who lives next door\"?",
+          "options": [
+            "Yes",
+            "No — relative is the subject."
+          ],
+          "correct": 1,
+          "explanation": "\"who\" is the subject → cannot omit."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Cláusulas Relativas",
+    "description": "Descifra pronombres y términos relativos.",
+    "props": {
+      "words": [
+        {
+          "word": "WHICH",
+          "hint": "El cual/la cual; para cosas",
+          "category": "Relative"
+        },
+        {
+          "word": "WHOSE",
+          "hint": "Cuyo/cuya; posesión",
+          "category": "Relative"
+        },
+        {
+          "word": "WHOM",
+          "hint": "A quien; objeto de persona",
+          "category": "Relative"
+        },
+        {
+          "word": "CLAUSE",
+          "hint": "Cláusula; oración subordinada",
+          "category": "Relative"
+        },
+        {
+          "word": "DEFINE",
+          "hint": "Definir; especificar",
+          "category": "Relative"
+        },
+        {
+          "word": "RELATIVE",
+          "hint": "Relativo; que relaciona",
+          "category": "Relative"
+        }
+      ]
+    }
+  }
+]

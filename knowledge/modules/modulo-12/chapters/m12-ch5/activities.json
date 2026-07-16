@@ -1,0 +1,461 @@
+[
+  {
+    "id": "m12-ch5-quiz",
+    "type": "quiz",
+    "title": "Reacción Rápida",
+    "description": "Elige la mejor reacción para cada situación sorpresa. ¡Piensa rápido!",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Your friend tells you they just got ENGAGED! You say:",
+          "options": [
+            "Congratulations! I'm so happy for you!",
+            "That's interesting.",
+            "Okay.",
+            "Whatever."
+          ],
+          "correct": 0,
+          "explanation": "An engagement is exciting news! Show genuine enthusiasm and happiness."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "You accidentally BUMP INTO someone on the street. You say:",
+          "options": [
+            "Watch where you're going!",
+            "Nothing (walk away)",
+            "Oh, I'm so sorry! Are you okay?",
+            "Your fault!"
+          ],
+          "correct": 2,
+          "explanation": "Apologize immediately and show concern. This is the polite and natural reaction."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Someone gives you an UNEXPECTED GIFT. You say:",
+          "options": [
+            "\"I don't like it.\"",
+            "\"How much did this cost?\"",
+            "\"You shouldn't have! Thank you so much!\"",
+            "\"Okay, thanks.\""
+          ],
+          "correct": 2,
+          "explanation": "\"You shouldn't have!\" is a warm, natural way to express surprise and gratitude."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "Someone sneezes. You say: \"___ you!\"",
+          "correct": "Bless",
+          "explanation": "\"Bless you!\" is the standard polite response when someone sneezes in English."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "A friend tells you they LOST THEIR JOB. You say:",
+          "options": [
+            "\"That's great!\"",
+            "\"I'm really sorry to hear that. Is there anything I can do?\"",
+            "\"Oh well.\"",
+            "\"You probably deserved it.\""
+          ],
+          "correct": 1,
+          "explanation": "Show empathy and offer support. This is the caring and appropriate reaction."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Your colleague suggests an idea you DISAGREE with. You say:",
+          "options": [
+            "\"That's stupid.\"",
+            "\"No.\"",
+            "\"I see your point, but I think we could also consider...\"",
+            "\"Whatever you say.\""
+          ],
+          "correct": 2,
+          "explanation": "Diplomatic disagreement: acknowledge their point, then offer your alternative."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "Someone thanks you for helping. You say: \"You're ___! / No ___!\"",
+          "correct": "welcome",
+          "explanation": "\"You're welcome!\" or \"No problem!\" are both natural responses to thanks."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "You run into an OLD FRIEND you haven't seen in years. You say:",
+          "options": [
+            "\"Who are you?\"",
+            "\"Oh my gosh! It's been forever! How have you been?\"",
+            "\"Hi.\" (and keep walking)",
+            "\"I remember you but I don't want to talk.\""
+          ],
+          "correct": 1,
+          "explanation": "Show excitement and genuine interest. \"It's been forever!\" is a natural expression."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Someone asks you a DIFFICULT QUESTION you need time to answer. You say:",
+          "options": [
+            "\"I dunno.\"",
+            "\"That's a great question. Let me think about that for a moment.\"",
+            "\"Ask someone else.\"",
+            "\"I refuse to answer.\""
+          ],
+          "correct": 1,
+          "explanation": "Buy time gracefully: compliment the question, then take a moment to think."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Your friend says they're NERVOUS about a presentation. You say:",
+          "options": [
+            "\"You should be nervous.\"",
+            "\"I don't care.\"",
+            "\"You'll do great! Just be yourself and speak clearly.\"",
+            "\"Cancel it.\""
+          ],
+          "correct": 2,
+          "explanation": "Encourage and support. Reassurance with practical advice is the best approach."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Yes, And...",
+    "description": "Construye respuestas que acepten y expandan la idea del interlocutor.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Friend says: \"I just booked a trip to Japan!\"",
+          "words": [
+            "That's",
+            "amazing!",
+            "We",
+            "should",
+            "try",
+            "authentic",
+            "sushi!"
+          ],
+          "correct": "That's amazing! We should try authentic sushi!"
+        },
+        {
+          "prompt": "Colleague says: \"We should organize a team dinner.\"",
+          "words": [
+            "idea!",
+            "Great",
+            "And",
+            "we",
+            "could",
+            "try",
+            "that",
+            "new",
+            "Italian",
+            "place."
+          ],
+          "correct": "Great idea! And we could try that new Italian place."
+        },
+        {
+          "prompt": "Friend says: \"I'm thinking about learning guitar.\"",
+          "words": [
+            "That's",
+            "awesome!",
+            "We",
+            "could",
+            "take",
+            "lessons",
+            "together!"
+          ],
+          "correct": "That's awesome! We could take lessons together!"
+        },
+        {
+          "prompt": "Someone says: \"The weather is beautiful today!\"",
+          "words": [
+            "right!",
+            "You're",
+            "We",
+            "should",
+            "go",
+            "for",
+            "a",
+            "walk",
+            "in",
+            "the",
+            "park."
+          ],
+          "correct": "You're right! We should go for a walk in the park."
+        },
+        {
+          "prompt": "Friend says: \"I just got a promotion at work!\"",
+          "words": [
+            "Congratulations!",
+            "You",
+            "totally",
+            "deserve",
+            "it!",
+            "We",
+            "should",
+            "celebrate!"
+          ],
+          "correct": "Congratulations! You totally deserve it! We should celebrate!"
+        },
+        {
+          "prompt": "Someone says: \"This movie looks really interesting.\"",
+          "words": [
+            "Definitely!",
+            "Let's",
+            "watch",
+            "it",
+            "this",
+            "weekend."
+          ],
+          "correct": "Definitely! Let's watch it this weekend."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch5-svg",
+    "type": "svg-scene",
+    "title": "La Ruleta de Situaciones",
+    "description": "Gira la ruleta y reacciona a la situación que te toque. ¡Practica tus reflejos!",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#fdf2f8",
+        "items": [
+          {
+            "id": "elevator",
+            "type": "polygon",
+            "points": "300,200 220,80 300,50 380,80",
+            "fill": "#f87171",
+            "label": "Charla de ascensor con tu jefe",
+            "labelEn": "🛗 Elevator Talk"
+          },
+          {
+            "id": "surprise",
+            "type": "polygon",
+            "points": "300,200 380,80 430,140 420,200",
+            "fill": "#fbbf24",
+            "label": "Encuentro sorpresa con un amigo",
+            "labelEn": "🎉 Surprise Meeting"
+          },
+          {
+            "id": "bad-news",
+            "type": "polygon",
+            "points": "300,200 420,200 430,270 380,320",
+            "fill": "#60a5fa",
+            "label": "Alguien te da una mala noticia",
+            "labelEn": "😢 Bad News"
+          },
+          {
+            "id": "compliment",
+            "type": "polygon",
+            "points": "300,200 380,320 300,350 220,320",
+            "fill": "#34d399",
+            "label": "Recibes un cumplido inesperado",
+            "labelEn": "🙌 Compliment"
+          },
+          {
+            "id": "mistake",
+            "type": "polygon",
+            "points": "300,200 220,320 170,270 180,200",
+            "fill": "#c4b5fd",
+            "label": "Momento incómodo/error social",
+            "labelEn": "😅 Awkward Moment"
+          },
+          {
+            "id": "gift",
+            "type": "polygon",
+            "points": "300,200 180,200 170,140 220,80",
+            "fill": "#f9a8d4",
+            "label": "Recibes un regalo inesperado",
+            "labelEn": "🎁 Surprise Gift"
+          },
+          {
+            "id": "center",
+            "type": "circle",
+            "cx": 300,
+            "cy": 200,
+            "r": 25,
+            "fill": "#1e1b4b",
+            "label": "Centro de la ruleta",
+            "labelEn": "🎯 Spin!"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m12-ch5-flash",
+    "type": "flashcard",
+    "title": "Reacciones Naturales",
+    "description": "Construye tu baraja de reacciones espontáneas para cualquier situación.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "NO WAY! 😱 (Sorpresa alta)",
+          "back": "¡No puede ser! / ¡De ninguna manera! — Informal, alto nivel de sorpresa. Variantes: \"You're kidding!\", \"Are you serious?\"",
+          "example": "You got the job? No way! That's incredible!"
+        },
+        {
+          "id": "f2",
+          "front": "I'M SO HAPPY FOR YOU! 😊 (Alegría)",
+          "back": "¡Me alegro mucho por ti! — Muestra alegría genuina por el éxito de otro.",
+          "example": "You're getting married? I'm so happy for you!"
+        },
+        {
+          "id": "f3",
+          "front": "I'M SORRY TO HEAR THAT. 😔 (Empatía)",
+          "back": "Lamento escuchar eso. — Muestra empatía ante malas noticias.",
+          "example": "You lost your job? I'm sorry to hear that. How can I help?"
+        },
+        {
+          "id": "f4",
+          "front": "YOU SHOULDN'T HAVE! 🎁 (Gratitud)",
+          "back": "¡No debiste (molestarte)! — Reacción a un regalo inesperado. Positiva y agradecida.",
+          "example": "You got me flowers? You shouldn't have! Thank you so much!"
+        },
+        {
+          "id": "f5",
+          "front": "BLESS YOU! 🤧 (Cortesía)",
+          "back": "¡Salud! — Se dice automáticamente cuando alguien estornuda. Cultural.",
+          "example": "*someone sneezes* \"Bless you!\" \"Thank you!\""
+        },
+        {
+          "id": "f6",
+          "front": "I SEE YOUR POINT, BUT... 🤔 (Desacuerdo diplomático)",
+          "back": "Entiendo tu punto, pero... — Desacuerdo educado que valida al otro primero.",
+          "example": "I see your point, but I think we should consider other options."
+        },
+        {
+          "id": "f7",
+          "front": "THAT'S A GREAT QUESTION. ⏳ (Ganar tiempo)",
+          "back": "Buena pregunta. — Gana tiempo para pensar. Profesional y natural.",
+          "example": "That's a great question. Let me think about that for a moment."
+        },
+        {
+          "id": "f8",
+          "front": "IT'S BEEN FOREVER! 👋 (Reencuentro)",
+          "back": "¡Ha pasado un siglo! — Para cuando ves a alguien después de mucho tiempo.",
+          "example": "Oh my gosh! It's been forever! How have you been?"
+        },
+        {
+          "id": "f9",
+          "front": "WHAT A RELIEF! 😮‍💨 (Alivio)",
+          "back": "¡Qué alivio! — Cuando una preocupación se resuelve positivamente.",
+          "example": "The exam was canceled? What a relief!"
+        },
+        {
+          "id": "f10",
+          "front": "BY THE WAY... 🔄 (Cambio de tema)",
+          "back": "A propósito... / Por cierto... — Transición natural a otro tema.",
+          "example": "By the way, have you heard about the new restaurant downtown?"
+        },
+        {
+          "id": "f11",
+          "front": "YOU'LL DO GREAT! 💪 (Ánimo)",
+          "back": "¡Lo harás genial! — Expresión de apoyo y confianza.",
+          "example": "Don't worry about the interview. You'll do great!"
+        },
+        {
+          "id": "f12",
+          "front": "HOW FRUSTRATING! 😤 (Empatía con frustración)",
+          "back": "¡Qué frustrante! — Muestra que compartes la frustración del otro.",
+          "example": "Your flight was delayed again? How frustrating!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch5-match",
+    "type": "word-match",
+    "title": "Situación → Reacción",
+    "description": "Empareja cada situación con la reacción verbal más apropiada.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Friend gets engaged",
+          "right": "Congratulations! 🎉"
+        },
+        {
+          "left": "Someone sneezes",
+          "right": "Bless you! 🤧"
+        },
+        {
+          "left": "You hear bad news",
+          "right": "I'm sorry to hear that 😔"
+        },
+        {
+          "left": "You bump into someone",
+          "right": "Sorry! Are you okay? 😅"
+        },
+        {
+          "left": "You receive a gift",
+          "right": "You shouldn't have! 🎁"
+        },
+        {
+          "left": "Someone thanks you",
+          "right": "You're welcome! 😊"
+        },
+        {
+          "left": "Friend is nervous",
+          "right": "You'll do great! 💪"
+        },
+        {
+          "left": "You meet an old friend",
+          "right": "It's been forever! 👋"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Juegos de Improvisación",
+    "description": "Descifra vocabulario de improvisación.",
+    "props": {
+      "words": [
+        {
+          "word": "IMPROVISE",
+          "hint": "Improvisar; crear al momento",
+          "category": "Improv"
+        },
+        {
+          "word": "REACT",
+          "hint": "Reaccionar; responder",
+          "category": "Improv"
+        },
+        {
+          "word": "CREATE",
+          "hint": "Crear; inventar",
+          "category": "Improv"
+        },
+        {
+          "word": "SPONTANEOUS",
+          "hint": "Espontáneo; sin plan",
+          "category": "Improv"
+        },
+        {
+          "word": "ROLE",
+          "hint": "Rol; personaje a interpretar",
+          "category": "Improv"
+        },
+        {
+          "word": "SCENE",
+          "hint": "Escena; situación dramática",
+          "category": "Improv"
+        }
+      ]
+    }
+  }
+]

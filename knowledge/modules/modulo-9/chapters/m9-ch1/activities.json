@@ -1,0 +1,658 @@
+[
+  {
+    "id": "m9-ch1-svg",
+    "type": "svg-scene",
+    "title": "Mapa del Viaje",
+    "description": "Explora las zonas de la ciudad y descubre vocabulario de viaje en cada lugar.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 650 420",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "airport",
+            "type": "polygon",
+            "points": "30,350 100,280 170,350",
+            "fill": "#94a3b8",
+            "label": "Aeropuerto",
+            "labelEn": "Airport"
+          },
+          {
+            "id": "runway",
+            "type": "rect",
+            "x": 40,
+            "y": 355,
+            "width": 120,
+            "height": 8,
+            "fill": "#475569",
+            "label": "Pista",
+            "labelEn": "Runway"
+          },
+          {
+            "id": "plane",
+            "type": "polygon",
+            "points": "85,270 95,250 105,270",
+            "fill": "#e2e8f0",
+            "label": "Avión",
+            "labelEn": "Airplane"
+          },
+          {
+            "id": "hotel",
+            "type": "rect",
+            "x": 200,
+            "y": 250,
+            "width": 80,
+            "height": 110,
+            "fill": "#fbbf24",
+            "label": "Hotel",
+            "labelEn": "Hotel"
+          },
+          {
+            "id": "reception",
+            "type": "rect",
+            "x": 215,
+            "y": 330,
+            "width": 50,
+            "height": 25,
+            "fill": "#f59e0b",
+            "label": "Recepción",
+            "labelEn": "Reception"
+          },
+          {
+            "id": "museum",
+            "type": "rect",
+            "x": 320,
+            "y": 200,
+            "width": 90,
+            "height": 70,
+            "fill": "#c4b5fd",
+            "label": "Museo",
+            "labelEn": "Museum"
+          },
+          {
+            "id": "museum-roof",
+            "type": "polygon",
+            "points": "315,200 365,160 415,200",
+            "fill": "#8b5cf6",
+            "label": "Techo",
+            "labelEn": "Roof"
+          },
+          {
+            "id": "restaurant",
+            "type": "rect",
+            "x": 450,
+            "y": 280,
+            "width": 70,
+            "height": 50,
+            "fill": "#fb923c",
+            "label": "Restaurante",
+            "labelEn": "Restaurant"
+          },
+          {
+            "id": "park",
+            "type": "ellipse",
+            "cx": 540,
+            "cy": 200,
+            "rx": 55,
+            "ry": 45,
+            "fill": "#4ade80",
+            "label": "Parque",
+            "labelEn": "Park"
+          },
+          {
+            "id": "beach",
+            "type": "ellipse",
+            "cx": 580,
+            "cy": 380,
+            "rx": 60,
+            "ry": 20,
+            "fill": "#fde68a",
+            "label": "Playa",
+            "labelEn": "Beach"
+          },
+          {
+            "id": "ocean",
+            "type": "rect",
+            "x": 520,
+            "y": 390,
+            "width": 130,
+            "height": 30,
+            "fill": "#7dd3fc",
+            "label": "Océano",
+            "labelEn": "Ocean"
+          },
+          {
+            "id": "market",
+            "type": "rect",
+            "x": 320,
+            "y": 310,
+            "width": 60,
+            "height": 40,
+            "fill": "#f87171",
+            "label": "Mercado",
+            "labelEn": "Market"
+          },
+          {
+            "id": "station",
+            "type": "rect",
+            "x": 450,
+            "y": 350,
+            "width": 70,
+            "height": 30,
+            "fill": "#a3a3a3",
+            "label": "Estación",
+            "labelEn": "Station"
+          },
+          {
+            "id": "bus",
+            "type": "rect",
+            "x": 200,
+            "y": 380,
+            "width": 45,
+            "height": 22,
+            "fill": "#60a5fa",
+            "label": "Autobús",
+            "labelEn": "Bus"
+          },
+          {
+            "id": "taxi",
+            "type": "rect",
+            "x": 260,
+            "y": 385,
+            "width": 35,
+            "height": 18,
+            "fill": "#facc15",
+            "label": "Taxi",
+            "labelEn": "Taxi"
+          },
+          {
+            "id": "bank",
+            "type": "rect",
+            "x": 450,
+            "y": 220,
+            "width": 55,
+            "height": 40,
+            "fill": "#6ee7b7",
+            "label": "Banco",
+            "labelEn": "Bank"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m9-ch1-flash",
+    "type": "flashcard",
+    "title": "Flashcards de Viaje",
+    "description": "Aprende vocabulario esencial para cada etapa del viaje.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "Aeropuerto",
+          "back": "Airport",
+          "example": "We arrived at the airport two hours early."
+        },
+        {
+          "id": "f2",
+          "front": "Vuelo",
+          "back": "Flight",
+          "example": "Our flight departs at 9 AM."
+        },
+        {
+          "id": "f3",
+          "front": "Boleto / Pasaje",
+          "back": "Ticket",
+          "example": "I need to buy a round-trip ticket."
+        },
+        {
+          "id": "f4",
+          "front": "Puerta de embarque",
+          "back": "Gate",
+          "example": "Please proceed to gate 5."
+        },
+        {
+          "id": "f5",
+          "front": "Equipaje",
+          "back": "Luggage",
+          "example": "My luggage is very heavy."
+        },
+        {
+          "id": "f6",
+          "front": "Reservación",
+          "back": "Reservation",
+          "example": "I have a reservation for tonight."
+        },
+        {
+          "id": "f7",
+          "front": "Registrarse (hotel)",
+          "back": "Check in",
+          "example": "I'd like to check in, please."
+        },
+        {
+          "id": "f8",
+          "front": "Salida (hotel)",
+          "back": "Check out",
+          "example": "Check-out is at 11 AM."
+        },
+        {
+          "id": "f9",
+          "front": "Habitación",
+          "back": "Room",
+          "example": "We booked a double room."
+        },
+        {
+          "id": "f10",
+          "front": "Llave",
+          "back": "Key",
+          "example": "Here is your room key."
+        },
+        {
+          "id": "f11",
+          "front": "Museo",
+          "back": "Museum",
+          "example": "The museum opens at 10 AM."
+        },
+        {
+          "id": "f12",
+          "front": "Playa",
+          "back": "Beach",
+          "example": "Let's go to the beach tomorrow."
+        },
+        {
+          "id": "f13",
+          "front": "Mercado",
+          "back": "Market",
+          "example": "We bought souvenirs at the market."
+        },
+        {
+          "id": "f14",
+          "front": "Estación",
+          "back": "Station",
+          "example": "The train station is nearby."
+        },
+        {
+          "id": "f15",
+          "front": "Metro",
+          "back": "Subway",
+          "example": "Take the subway to downtown."
+        },
+        {
+          "id": "f16",
+          "front": "Reservar",
+          "back": "Book / Reserve",
+          "example": "I want to book a hotel room."
+        },
+        {
+          "id": "f17",
+          "front": "Llegar",
+          "back": "Arrive",
+          "example": "We arrive at noon."
+        },
+        {
+          "id": "f18",
+          "front": "Salir / Partir",
+          "back": "Depart",
+          "example": "The train departs at 3 PM."
+        },
+        {
+          "id": "f19",
+          "front": "Explorar",
+          "back": "Explore",
+          "example": "Let's explore the old town."
+        },
+        {
+          "id": "f20",
+          "front": "Visitar",
+          "back": "Visit",
+          "example": "I want to visit the museum."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-match",
+    "type": "word-match",
+    "title": "Lugar → Actividad",
+    "description": "Empareja cada lugar con la actividad que se realiza ahí.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Airport",
+          "right": "Check in for a flight"
+        },
+        {
+          "left": "Hotel",
+          "right": "Book a room"
+        },
+        {
+          "left": "Museum",
+          "right": "See exhibitions"
+        },
+        {
+          "left": "Restaurant",
+          "right": "Have dinner"
+        },
+        {
+          "left": "Market",
+          "right": "Buy souvenirs"
+        },
+        {
+          "left": "Station",
+          "right": "Catch a train"
+        },
+        {
+          "left": "Beach",
+          "right": "Swim and relax"
+        },
+        {
+          "left": "Bank",
+          "right": "Exchange money"
+        },
+        {
+          "left": "Pharmacy",
+          "right": "Buy medicine"
+        },
+        {
+          "left": "Tourist office",
+          "right": "Get maps and information"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Planifica tu Itinerario",
+    "description": "Ordena las palabras para formar oraciones sobre tu viaje.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Describe tu plan de la mañana:",
+          "words": [
+            "visit",
+            "the",
+            "I'll",
+            "morning",
+            "museum",
+            "in",
+            "the"
+          ],
+          "correct": "I'll visit the museum in the morning"
+        },
+        {
+          "prompt": "Pregunta por la estación:",
+          "words": [
+            "is",
+            "Where",
+            "nearest",
+            "the",
+            "station?",
+            "subway"
+          ],
+          "correct": "Where is the nearest subway station?"
+        },
+        {
+          "prompt": "Registrarse en el hotel:",
+          "words": [
+            "to",
+            "like",
+            "I'd",
+            "please",
+            "in,",
+            "check"
+          ],
+          "correct": "I'd like to check in, please"
+        },
+        {
+          "prompt": "Habla sobre tu reservación:",
+          "words": [
+            "a",
+            "have",
+            "I",
+            "reservation",
+            "tonight",
+            "for"
+          ],
+          "correct": "I have a reservation for tonight"
+        },
+        {
+          "prompt": "Pregunta por el precio:",
+          "words": [
+            "much",
+            "How",
+            "a",
+            "is",
+            "to",
+            "ticket",
+            "Paris?"
+          ],
+          "correct": "How much is a ticket to Paris?"
+        },
+        {
+          "prompt": "Describe tu tarde:",
+          "words": [
+            "the",
+            "go",
+            "to",
+            "we'll",
+            "afternoon",
+            "beach",
+            "in",
+            "the"
+          ],
+          "correct": "we'll go to the beach in the afternoon"
+        },
+        {
+          "prompt": "Compra en el mercado:",
+          "words": [
+            "souvenirs",
+            "bought",
+            "We",
+            "the",
+            "at",
+            "market"
+          ],
+          "correct": "We bought souvenirs at the market"
+        },
+        {
+          "prompt": "Habla de tu vuelo:",
+          "words": [
+            "flight",
+            "Our",
+            "departs",
+            "at",
+            "9",
+            "AM"
+          ],
+          "correct": "Our flight departs at 9 AM"
+        },
+        {
+          "prompt": "Plan del día:",
+          "words": [
+            "explore",
+            "Let's",
+            "the",
+            "old",
+            "town",
+            "today"
+          ],
+          "correct": "Let's explore the old town today"
+        },
+        {
+          "prompt": "Hora de salida:",
+          "words": [
+            "is",
+            "Check-out",
+            "at",
+            "11",
+            "AM"
+          ],
+          "correct": "Check-out is at 11 AM"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz de Viaje",
+    "description": "Situaciones reales en el aeropuerto y el hotel. ¿Sabes qué decir?",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You arrive at the hotel front desk. What do you say?",
+          "options": [
+            "I'd like to check in, please",
+            "Give me room",
+            "I want sleep here",
+            "Room now please"
+          ],
+          "correct": 0,
+          "explanation": "The polite phrase is: \"I'd like to check in, please.\""
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "You need to find the subway. What do you ask?",
+          "options": [
+            "Where subway?",
+            "Subway is where?",
+            "Where is the nearest subway station?",
+            "I need subway"
+          ],
+          "correct": 2,
+          "explanation": "Proper question form: \"Where is the nearest subway station?\""
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "I have a ____ for two nights at this hotel.",
+          "correct": "reservation",
+          "explanation": "Reservation = reservación. \"I have a reservation for two nights.\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "What is \"puerta de embarque\" in English?",
+          "options": [
+            "Exit door",
+            "Gate",
+            "Entrance",
+            "Platform"
+          ],
+          "correct": 1,
+          "explanation": "Puerta de embarque = Gate (at the airport)."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "You want to buy a train ticket. You say:",
+          "options": [
+            "How much is a ticket to London?",
+            "Give me ticket London",
+            "I need go London",
+            "Ticket London how much?"
+          ],
+          "correct": 0,
+          "explanation": "\"How much is a ticket to London?\" is correct and polite."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "Our ____ departs at 3 PM from gate 7.",
+          "correct": "flight",
+          "explanation": "Flight = vuelo. \"Our flight departs at 3 PM.\""
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Where do you \"check out\"?",
+          "options": [
+            "Airport",
+            "Museum",
+            "Hotel",
+            "Market"
+          ],
+          "correct": 2,
+          "explanation": "You check out at a hotel when you leave."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "What do you do at a \"market\"?",
+          "options": [
+            "Sleep",
+            "Buy things",
+            "Swim",
+            "Study"
+          ],
+          "correct": 1,
+          "explanation": "At a market you buy things like souvenirs and food."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "Let's ____ the old town this afternoon.",
+          "correct": "explore",
+          "explanation": "Explore = explorar. \"Let's explore the old town.\""
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"Equipaje\" in English is:",
+          "options": [
+            "Equipment",
+            "Luggage",
+            "Package",
+            "Furniture"
+          ],
+          "correct": 1,
+          "explanation": "Equipaje = Luggage."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Viajes Imaginarios",
+    "description": "Descifra vocabulario de viajes.",
+    "props": {
+      "words": [
+        {
+          "word": "TRAVEL",
+          "hint": "Viajar; desplazarse",
+          "category": "Travel"
+        },
+        {
+          "word": "AIRPORT",
+          "hint": "Aeropuerto; donde vuelan aviones",
+          "category": "Travel"
+        },
+        {
+          "word": "TICKET",
+          "hint": "Boleto; entrada o pasaje",
+          "category": "Travel"
+        },
+        {
+          "word": "LUGGAGE",
+          "hint": "Equipaje; maletas",
+          "category": "Travel"
+        },
+        {
+          "word": "PASSPORT",
+          "hint": "Pasaporte; documento para viajar",
+          "category": "Travel"
+        },
+        {
+          "word": "HOTEL",
+          "hint": "Hotel; donde te alojas",
+          "category": "Travel"
+        }
+      ]
+    }
+  }
+]

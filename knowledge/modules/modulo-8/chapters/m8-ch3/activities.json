@@ -1,0 +1,352 @@
+[
+  {
+    "id": "m8-ch3-svg",
+    "type": "svg-scene",
+    "title": "El Mapa de los Sonidos",
+    "description": "Explora las zonas de la boca y descubre qué sonidos se producen en cada punto.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 500 400",
+        "bg": "#fdf4ff",
+        "items": [
+          {
+            "id": "lips",
+            "type": "ellipse",
+            "cx": 120,
+            "cy": 200,
+            "rx": 50,
+            "ry": 25,
+            "fill": "#f87171",
+            "label": "Labios",
+            "labelEn": "Lips — /p/, /b/, /m/"
+          },
+          {
+            "id": "teeth",
+            "type": "rect",
+            "x": 180,
+            "y": 175,
+            "width": 60,
+            "height": 20,
+            "fill": "#fafafa",
+            "label": "Dientes",
+            "labelEn": "Teeth — /θ/ (think), /ð/ (this)"
+          },
+          {
+            "id": "alveolar",
+            "type": "rect",
+            "x": 250,
+            "y": 150,
+            "width": 60,
+            "height": 25,
+            "fill": "#fca5a5",
+            "label": "Alvéolos",
+            "labelEn": "Alveolar ridge — /t/, /d/, /n/, /s/, /z/"
+          },
+          {
+            "id": "palate",
+            "type": "ellipse",
+            "cx": 320,
+            "cy": 120,
+            "rx": 55,
+            "ry": 20,
+            "fill": "#c4b5fd",
+            "label": "Paladar",
+            "labelEn": "Palate — /ʃ/ (ship), /tʃ/ (church)"
+          },
+          {
+            "id": "velum",
+            "type": "ellipse",
+            "cx": 400,
+            "cy": 130,
+            "rx": 45,
+            "ry": 22,
+            "fill": "#a78bfa",
+            "label": "Velo",
+            "labelEn": "Velum — /k/, /g/, /ŋ/ (sing)"
+          },
+          {
+            "id": "tongue",
+            "type": "ellipse",
+            "cx": 260,
+            "cy": 260,
+            "rx": 90,
+            "ry": 30,
+            "fill": "#fb923c",
+            "label": "Lengua",
+            "labelEn": "Tongue — moves to create sounds"
+          },
+          {
+            "id": "throat",
+            "type": "rect",
+            "x": 380,
+            "y": 250,
+            "width": 50,
+            "height": 80,
+            "fill": "#fda4af",
+            "label": "Garganta",
+            "labelEn": "Throat — /h/ (house), voice box"
+          },
+          {
+            "id": "nose",
+            "type": "ellipse",
+            "cx": 180,
+            "cy": 90,
+            "rx": 25,
+            "ry": 35,
+            "fill": "#fdba74",
+            "label": "Nariz",
+            "labelEn": "Nose — /m/, /n/, /ŋ/ (nasal sounds)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m8-ch3-flash",
+    "type": "flashcard",
+    "title": "Flashcards Fonéticas",
+    "description": "Aprende cada símbolo fonético con su ejemplo y descripción articulatoria.",
+    "props": {
+      "cards": [
+        {
+          "id": "p1",
+          "front": "/θ/ — \"th\" sorda",
+          "back": "think, three, bath",
+          "example": "Coloca la lengua entre los dientes y sopla aire suavemente."
+        },
+        {
+          "id": "p2",
+          "front": "/ð/ — \"th\" sonora",
+          "back": "this, that, mother",
+          "example": "Como /θ/ pero con vibración en la garganta."
+        },
+        {
+          "id": "p3",
+          "front": "/æ/ — \"a\" abierta",
+          "back": "cat, hat, apple",
+          "example": "Abre la boca más que para la \"e\" pero menos que para la \"a\"."
+        },
+        {
+          "id": "p4",
+          "front": "/ʌ/ — \"u\" corta",
+          "back": "cup, bus, love",
+          "example": "Una \"a\" relajada y corta. La boca apenas se abre."
+        },
+        {
+          "id": "p5",
+          "front": "/ɪ/ — \"i\" corta",
+          "back": "ship, sit, fish",
+          "example": "Una \"i\" relajada, sin tensar los labios."
+        },
+        {
+          "id": "p6",
+          "front": "/iː/ — \"i\" larga",
+          "back": "sheep, see, eat",
+          "example": "Una \"i\" larga y tensa, como sonreír."
+        },
+        {
+          "id": "p7",
+          "front": "/ɹ/ — \"r\" inglesa",
+          "back": "red, run, right",
+          "example": "La lengua NO toca nada. Se curva hacia atrás."
+        },
+        {
+          "id": "p8",
+          "front": "/h/ — aspirada",
+          "back": "house, happy, hello",
+          "example": "Solo un soplo de aire, como empañar un espejo."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch3-match",
+    "type": "word-match",
+    "title": "Sonido → Palabra",
+    "description": "Empareja cada símbolo fonético con la palabra que contiene ese sonido.",
+    "props": {
+      "pairs": [
+        {
+          "left": "/θ/",
+          "right": "think"
+        },
+        {
+          "left": "/ð/",
+          "right": "this"
+        },
+        {
+          "left": "/æ/",
+          "right": "cat"
+        },
+        {
+          "left": "/ʌ/",
+          "right": "cup"
+        },
+        {
+          "left": "/ɪ/",
+          "right": "ship"
+        },
+        {
+          "left": "/iː/",
+          "right": "sheep"
+        },
+        {
+          "left": "/ɹ/",
+          "right": "red"
+        },
+        {
+          "left": "/h/",
+          "right": "house"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz de Pares Mínimos",
+    "description": "¿Puedes distinguir entre sonidos similares? ¡Pon a prueba tu oído!",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "The sound /θ/ is found in which word?",
+          "options": [
+            "sink",
+            "think",
+            "sing",
+            "thing"
+          ],
+          "correct": 1,
+          "explanation": "/θ/ is the \"th\" in \"think\". \"Sink\" uses /s/."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"Ship\" has the vowel sound:",
+          "options": [
+            "/iː/ (long)",
+            "/ɪ/ (short)",
+            "/æ/",
+            "/ʌ/"
+          ],
+          "correct": 1,
+          "explanation": "Ship = /ʃɪp/ with short /ɪ/. Sheep = /ʃiːp/ with long /iː/."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "The vowel in \"cat\" is:",
+          "options": [
+            "/ʌ/",
+            "/æ/",
+            "/ɑː/",
+            "/e/"
+          ],
+          "correct": 1,
+          "explanation": "Cat = /kæt/. The /æ/ sound is between \"a\" and \"e\"."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "The vowel in \"cup\" is:",
+          "options": [
+            "/æ/",
+            "/uː/",
+            "/ʌ/",
+            "/ɒ/"
+          ],
+          "correct": 2,
+          "explanation": "Cup = /kʌp/. Short, relaxed \"uh\" sound."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "The word \"this\" contains the sound /____/.",
+          "correct": "ð",
+          "explanation": "\"This\" uses /ð/, the voiced \"th\"."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Which pair are minimal pairs?",
+          "options": [
+            "cat / dog",
+            "ship / sheep",
+            "book / cook",
+            "pen / paper"
+          ],
+          "correct": 1,
+          "explanation": "Ship /ʃɪp/ and sheep /ʃiːp/ differ only in one vowel sound."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "In English, \"r\" is pronounced by:",
+          "options": [
+            "Tongue touches the palate",
+            "Tongue curls back without touching",
+            "Tongue vibrates",
+            "Lips close"
+          ],
+          "correct": 1,
+          "explanation": "English /ɹ/ — the tongue curls back but does NOT touch anything."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Questions (yes/no) in English usually have:",
+          "options": [
+            "Falling intonation ↘️",
+            "Rising intonation ↗️",
+            "Flat intonation →",
+            "No pattern"
+          ],
+          "correct": 1,
+          "explanation": "Yes/no questions rise at the end: \"Do you like coffee?\" ↗️"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Palabras de Entonación",
+    "description": "Descifra palabras relacionadas con preguntas y afirmaciones en inglés.",
+    "props": {
+      "words": [
+        {
+          "word": "COFFEE",
+          "hint": "Bebida caliente que muchos toman por la mañana",
+          "category": "Intonation"
+        },
+        {
+          "word": "QUESTION",
+          "hint": "Pregunta; en inglés la voz sube al final (↗️)",
+          "category": "Intonation"
+        },
+        {
+          "word": "ANSWER",
+          "hint": "Respuesta a una pregunta",
+          "category": "Intonation"
+        },
+        {
+          "word": "STATEMENT",
+          "hint": "Afirmación; la voz baja al final (↘️)",
+          "category": "Intonation"
+        },
+        {
+          "word": "RISING",
+          "hint": "Que sube (entonación de preguntas sí/no)",
+          "category": "Intonation"
+        },
+        {
+          "word": "FALLING",
+          "hint": "Que baja (entonación de afirmaciones)",
+          "category": "Intonation"
+        }
+      ]
+    }
+  }
+]

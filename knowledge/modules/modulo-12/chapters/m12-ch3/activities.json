@@ -1,0 +1,456 @@
+[
+  {
+    "id": "m12-ch3-quiz",
+    "type": "quiz",
+    "title": "Comprensión Multinivel",
+    "description": "Responde preguntas en tres niveles: literal, inferencial y crítico.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "[Podcast about climate change] \"The speaker mentions that global temperatures have risen by 1.1°C.\" This is a ___ question.",
+          "options": [
+            "Literal (what was said)",
+            "Inferential (what was meant)",
+            "Critical (do you agree)",
+            "Irrelevant"
+          ],
+          "correct": 0,
+          "explanation": "This is a literal question — it asks about a specific fact directly stated."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "[Podcast] \"The speaker uses words like 'devastating' and 'urgent'. We can infer the speaker feels...\"",
+          "options": [
+            "Indifferent about the topic",
+            "Strongly concerned and alarmed",
+            "Happy about the situation",
+            "Confused"
+          ],
+          "correct": 1,
+          "explanation": "Inferential: word choice like \"devastating\" and \"urgent\" reveals strong concern."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "The first listening should focus on the general idea. This strategy is called listening for the ___.",
+          "correct": "gist",
+          "explanation": "Listening for the gist = capturing the general topic and main idea on first listen."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "You hear: \"To be honest, I think the plan won't work.\" The discourse marker \"to be honest\" signals...",
+          "options": [
+            "The speaker is lying",
+            "A sincere personal opinion is coming",
+            "The conversation is ending",
+            "A new topic"
+          ],
+          "correct": 1,
+          "explanation": "\"To be honest\" signals the speaker is about to share their genuine, possibly unpopular opinion."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "You hear: \"Many people think social media is harmless. However...\" What comes next?",
+          "options": [
+            "An agreement",
+            "A contrasting point",
+            "A conclusion",
+            "A greeting"
+          ],
+          "correct": 1,
+          "explanation": "\"However\" is a contrast marker — the speaker will present the opposite view."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "When you hear \"actually\" in a podcast, it often signals a ___ or emphasis. (correction/greeting)",
+          "correct": "correction",
+          "explanation": "\"Actually\" often corrects a previous assumption or adds surprising information."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Which listening strategy helps you prepare BEFORE listening?",
+          "options": [
+            "Note-taking",
+            "Inferring",
+            "Predicting",
+            "Repeating"
+          ],
+          "correct": 2,
+          "explanation": "Predicting = anticipating content before listening by reading the title, looking at images, etc."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "You hear a word you don't know. The best strategy is to...",
+          "options": [
+            "Stop and look it up immediately",
+            "Give up on the audio",
+            "Keep listening and guess from context",
+            "Rewind 20 times"
+          ],
+          "correct": 2,
+          "explanation": "Context clues: keep listening and use surrounding information to deduce meaning."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"Overall, I believe that technology has improved our lives.\" The marker \"overall\" signals...",
+          "options": [
+            "A new topic",
+            "An example",
+            "A summary or conclusion",
+            "A question"
+          ],
+          "correct": 2,
+          "explanation": "\"Overall\" indicates the speaker is wrapping up with a final conclusion."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "English uses ___ markers like \"firstly\", \"however\", and \"in fact\" to organize spoken discourse.",
+          "correct": "discourse",
+          "explanation": "Discourse markers organize and signal the structure of spoken and written English."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Reconstruye el Resumen",
+    "description": "Construye un resumen ordenando las ideas principales del audio.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Summarize the podcast about climate change",
+          "words": [
+            "The",
+            "podcast",
+            "discussed",
+            "solutions",
+            "to",
+            "climate",
+            "change."
+          ],
+          "correct": "The podcast discussed solutions to climate change."
+        },
+        {
+          "prompt": "Summarize the speaker's main argument",
+          "words": [
+            "The",
+            "speaker",
+            "argued",
+            "that",
+            "individual",
+            "action",
+            "matters."
+          ],
+          "correct": "The speaker argued that individual action matters."
+        },
+        {
+          "prompt": "Summarize the conclusion",
+          "words": [
+            "It",
+            "concluded",
+            "by",
+            "calling",
+            "for",
+            "policy",
+            "changes."
+          ],
+          "correct": "It concluded by calling for policy changes."
+        },
+        {
+          "prompt": "Summarize a podcast about education",
+          "words": [
+            "The",
+            "experts",
+            "agreed",
+            "that",
+            "technology",
+            "enhances",
+            "learning."
+          ],
+          "correct": "The experts agreed that technology enhances learning."
+        },
+        {
+          "prompt": "Build a summary about health benefits",
+          "words": [
+            "Regular",
+            "exercise",
+            "was",
+            "described",
+            "as",
+            "essential",
+            "for",
+            "mental",
+            "health."
+          ],
+          "correct": "Regular exercise was described as essential for mental health."
+        },
+        {
+          "prompt": "Summarize the key recommendation",
+          "words": [
+            "The",
+            "main",
+            "recommendation",
+            "was",
+            "to",
+            "reduce",
+            "screen",
+            "time."
+          ],
+          "correct": "The main recommendation was to reduce screen time."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-match",
+    "type": "word-match",
+    "title": "Vocabulario del Audio",
+    "description": "Empareja palabras escuchadas con sus significados contextuales.",
+    "props": {
+      "pairs": [
+        {
+          "left": "sustainable (in audio)",
+          "right": "Able to continue long-term"
+        },
+        {
+          "left": "roughly (in audio)",
+          "right": "Approximately"
+        },
+        {
+          "left": "tackle (in audio)",
+          "right": "Deal with / Address"
+        },
+        {
+          "left": "impact (in audio)",
+          "right": "Effect / Influence"
+        },
+        {
+          "left": "enhance (in audio)",
+          "right": "Improve / Make better"
+        },
+        {
+          "left": "crucial (in audio)",
+          "right": "Extremely important"
+        },
+        {
+          "left": "nevertheless (in audio)",
+          "right": "However / Despite that"
+        },
+        {
+          "left": "compelling (in audio)",
+          "right": "Convincing / Persuasive"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-flash",
+    "type": "flashcard",
+    "title": "Discourse Markers",
+    "description": "Aprende los marcadores del discurso que te ayudan a seguir lo que escuchas.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "ACTUALLY 🎯 (Discourse Marker)",
+          "back": "En realidad / De hecho — Señala corrección o información sorprendente. NO significa \"actualmente\" (= currently).",
+          "example": "I thought it was expensive, but actually it was quite affordable."
+        },
+        {
+          "id": "f2",
+          "front": "IN FACT ⚡ (Emphasis)",
+          "back": "De hecho — Refuerza o intensifica lo dicho antes. Añade peso.",
+          "example": "She's not just good at English. In fact, she's fluent in five languages."
+        },
+        {
+          "id": "f3",
+          "front": "TO BE HONEST 💭 (Sincerity)",
+          "back": "Para ser honesto — Introduce una opinión personal sincera, posiblemente controversial.",
+          "example": "To be honest, I don't think the project will succeed."
+        },
+        {
+          "id": "f4",
+          "front": "BASICALLY 📝 (Simplification)",
+          "back": "Básicamente — Simplifica o resume algo complejo.",
+          "example": "Basically, we need more time and money to finish this."
+        },
+        {
+          "id": "f5",
+          "front": "I MEAN 🔄 (Clarification)",
+          "back": "Es decir / Quiero decir — Aclara o reformula lo dicho.",
+          "example": "It was okay, I mean, it wasn't terrible, but it wasn't great either."
+        },
+        {
+          "id": "f6",
+          "front": "APPARENTLY 🤔 (Reported info)",
+          "back": "Aparentemente — Información que el hablante recibió pero no ha confirmado.",
+          "example": "Apparently, they are going to close the office next month."
+        },
+        {
+          "id": "f7",
+          "front": "ON THE OTHER HAND 🔄 (Contrast)",
+          "back": "Por otro lado — Introduce el lado opuesto de un argumento.",
+          "example": "The job pays well. On the other hand, the hours are terrible."
+        },
+        {
+          "id": "f8",
+          "front": "SO BASICALLY 🏁 (Summary)",
+          "back": "Así que básicamente — Introduce un resumen informal de lo discutido.",
+          "example": "So basically, we need to start from scratch."
+        },
+        {
+          "id": "f9",
+          "front": "THE THING IS... 💡 (Key point)",
+          "back": "El asunto es que... — Introduce el punto más importante o un obstáculo.",
+          "example": "The thing is, we don't have enough budget for that."
+        },
+        {
+          "id": "f10",
+          "front": "AS I WAS SAYING... 🔙 (Return)",
+          "back": "Como decía... — Retomar un punto interrumpido.",
+          "example": "As I was saying, the results were quite surprising."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-svg",
+    "type": "svg-scene",
+    "title": "El Estudio de Podcast",
+    "description": "Explora el estudio de podcast y practica las estaciones de escucha activa.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#1e1b4b",
+        "items": [
+          {
+            "id": "play",
+            "type": "circle",
+            "cx": 100,
+            "cy": 100,
+            "r": 45,
+            "fill": "#34d399",
+            "label": "Reproducir segmento",
+            "labelEn": "▶️ Play"
+          },
+          {
+            "id": "notes",
+            "type": "rect",
+            "x": 230,
+            "y": 50,
+            "width": 120,
+            "height": 90,
+            "fill": "#fef3c7",
+            "label": "Toma notas",
+            "labelEn": "📝 Notes"
+          },
+          {
+            "id": "analyze",
+            "type": "rect",
+            "x": 420,
+            "y": 50,
+            "width": 120,
+            "height": 90,
+            "fill": "#60a5fa",
+            "label": "Analiza el contenido",
+            "labelEn": "🔍 Analyze"
+          },
+          {
+            "id": "vocab",
+            "type": "rect",
+            "x": 60,
+            "y": 250,
+            "width": 120,
+            "height": 90,
+            "fill": "#c4b5fd",
+            "label": "Vocabulario nuevo",
+            "labelEn": "📚 Vocabulary"
+          },
+          {
+            "id": "microphone",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 280,
+            "rx": 30,
+            "ry": 50,
+            "fill": "#a3a3a3",
+            "label": "Micrófono del podcast",
+            "labelEn": "🎙️ Microphone"
+          },
+          {
+            "id": "headphones",
+            "type": "circle",
+            "cx": 480,
+            "cy": 280,
+            "r": 35,
+            "fill": "#f87171",
+            "label": "Auriculares de escucha",
+            "labelEn": "🎧 Headphones"
+          },
+          {
+            "id": "waveform",
+            "type": "rect",
+            "x": 180,
+            "y": 200,
+            "width": 200,
+            "height": 20,
+            "fill": "#34d399",
+            "label": "Forma de onda",
+            "labelEn": "〰️ Waveform"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m12-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Listening Avanzado",
+    "description": "Descifra vocabulario de comprensión auditiva.",
+    "props": {
+      "words": [
+        {
+          "word": "ACCENT",
+          "hint": "Acento; forma de pronunciar",
+          "category": "Listening"
+        },
+        {
+          "word": "DIALECT",
+          "hint": "Dialecto; variedad regional",
+          "category": "Listening"
+        },
+        {
+          "word": "NATIVE",
+          "hint": "Nativo; hablante original",
+          "category": "Listening"
+        },
+        {
+          "word": "SPEAKER",
+          "hint": "Hablante; quien habla",
+          "category": "Listening"
+        },
+        {
+          "word": "COMPREHEND",
+          "hint": "Comprender; entender",
+          "category": "Listening"
+        },
+        {
+          "word": "GRASP",
+          "hint": "Captar; entender",
+          "category": "Listening"
+        }
+      ]
+    }
+  }
+]

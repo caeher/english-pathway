@@ -1,0 +1,543 @@
+[
+  {
+    "id": "m7-ch6-svg",
+    "type": "svg-scene",
+    "title": "Mapa de Todo el Curso",
+    "description": "Visualiza todos los módulos y temas cubiertos.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#faf5ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 130,
+            "y": 5,
+            "width": 440,
+            "height": 45,
+            "fill": "#a855f7",
+            "label": "🏆 Final Review — Your Progress",
+            "labelEn": "Everything you have learned!"
+          },
+          {
+            "id": "m1",
+            "type": "rect",
+            "x": 20,
+            "y": 65,
+            "width": 210,
+            "height": 45,
+            "fill": "#bfdbfe",
+            "label": "📘 Module 1: Fundamentals",
+            "labelEn": "Alphabet, greetings, pronouns, articles"
+          },
+          {
+            "id": "m2",
+            "type": "rect",
+            "x": 245,
+            "y": 65,
+            "width": 210,
+            "height": 45,
+            "fill": "#bbf7d0",
+            "label": "📗 Module 2: Simple Tenses",
+            "labelEn": "Present & Past Simple, frequency adverbs"
+          },
+          {
+            "id": "m3",
+            "type": "rect",
+            "x": 470,
+            "y": 65,
+            "width": 210,
+            "height": 45,
+            "fill": "#fde68a",
+            "label": "📒 Module 3: Continuous & Future",
+            "labelEn": "Continuous tenses, will, going to, can"
+          },
+          {
+            "id": "m4",
+            "type": "rect",
+            "x": 20,
+            "y": 125,
+            "width": 210,
+            "height": 45,
+            "fill": "#fecaca",
+            "label": "📕 Module 4: Comparatives & Modals",
+            "labelEn": "Comparative, superlative, must, should"
+          },
+          {
+            "id": "m5",
+            "type": "rect",
+            "x": 245,
+            "y": 125,
+            "width": 210,
+            "height": 45,
+            "fill": "#e0e7ff",
+            "label": "📘 Module 5: Perfect & Passive",
+            "labelEn": "Present/Past/Future Perfect, passive voice"
+          },
+          {
+            "id": "m6",
+            "type": "rect",
+            "x": 470,
+            "y": 125,
+            "width": 210,
+            "height": 45,
+            "fill": "#ccfbf1",
+            "label": "📗 Module 6: Conditionals & RS",
+            "labelEn": "1st/2nd/3rd conditional, reported speech"
+          },
+          {
+            "id": "m7",
+            "type": "rect",
+            "x": 180,
+            "y": 185,
+            "width": 340,
+            "height": 45,
+            "fill": "#fce7f3",
+            "label": "📕 Module 7: Advanced Topics",
+            "labelEn": "Relative clauses, connectors, idioms, errors"
+          },
+          {
+            "id": "tenses",
+            "type": "rect",
+            "x": 20,
+            "y": 250,
+            "width": 155,
+            "height": 55,
+            "fill": "#dbeafe",
+            "label": "⏰ All Tenses",
+            "labelEn": "Simple, Continuous, Perfect, Future"
+          },
+          {
+            "id": "modals",
+            "type": "rect",
+            "x": 190,
+            "y": 250,
+            "width": 155,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "⚖️ Modals",
+            "labelEn": "can, could, must, should, may, might"
+          },
+          {
+            "id": "cond",
+            "type": "rect",
+            "x": 360,
+            "y": 250,
+            "width": 155,
+            "height": 55,
+            "fill": "#fef3c7",
+            "label": "🌤️ Conditionals",
+            "labelEn": "1st, 2nd, 3rd conditional"
+          },
+          {
+            "id": "passive",
+            "type": "rect",
+            "x": 530,
+            "y": 250,
+            "width": 155,
+            "height": 55,
+            "fill": "#fce7f3",
+            "label": "🔄 Passive Voice",
+            "labelEn": "be + past participle"
+          },
+          {
+            "id": "vocab",
+            "type": "rect",
+            "x": 100,
+            "y": 325,
+            "width": 220,
+            "height": 55,
+            "fill": "#e0e7ff",
+            "label": "💬 Idioms & Phrasal Verbs",
+            "labelEn": "a piece of cake, look up, give up..."
+          },
+          {
+            "id": "errors",
+            "type": "rect",
+            "x": 380,
+            "y": 325,
+            "width": 220,
+            "height": 55,
+            "fill": "#fecaca",
+            "label": "⚠️ Common Mistakes",
+            "labelEn": "Articles, S-V agreement, false friends"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m7-ch6-flash",
+    "type": "flashcard",
+    "title": "Repaso Rápido Integral",
+    "description": "Tarjetas de repaso con preguntas de todos los módulos.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "¿Cuál es la diferencia entre Present Simple y Present Continuous?",
+          "back": "Simple = hábitos/hechos (I work). Continuous = ahora/temporal (I am working).",
+          "example": "I work every day. / I am working right now."
+        },
+        {
+          "id": "c2",
+          "front": "¿Cómo se forma el Present Perfect?",
+          "back": "have/has + past participle",
+          "example": "I have visited Paris. She has finished."
+        },
+        {
+          "id": "c3",
+          "front": "¿Cuándo usar Past Simple vs Present Perfect?",
+          "back": "Past Simple = время definido (yesterday). Present Perfect = experiencia/resultado.",
+          "example": "I went yesterday. / I have been there (alguna vez)."
+        },
+        {
+          "id": "c4",
+          "front": "¿Cómo se forma el First Conditional?",
+          "back": "If + present simple, will + base verb",
+          "example": "If it rains, I will stay home."
+        },
+        {
+          "id": "c5",
+          "front": "¿Cómo se forma el Second Conditional?",
+          "back": "If + past simple, would + base verb",
+          "example": "If I had money, I would travel."
+        },
+        {
+          "id": "c6",
+          "front": "¿Cómo se forma la Voz Pasiva?",
+          "back": "be + past participle (+ by agent)",
+          "example": "The book was written by Tolkien."
+        },
+        {
+          "id": "c7",
+          "front": "¿Qué son defining vs non-defining relative clauses?",
+          "back": "Defining = essential (no commas). Non-defining = extra info (with commas).",
+          "example": "The man who called is my boss. / My boss, who is 40, called."
+        },
+        {
+          "id": "c8",
+          "front": "¿Qué significa \"under the weather\"?",
+          "back": "Sentirse enfermo/mal",
+          "example": "I'm feeling under the weather today."
+        },
+        {
+          "id": "c9",
+          "front": "❌ She have a car. → ✅ ?",
+          "back": "✅ She HAS a car.",
+          "example": "3rd person singular → has/does/is"
+        },
+        {
+          "id": "c10",
+          "front": "¿Cuál es la diferencia entre \"make\" y \"do\"?",
+          "back": "Make = crear/producir. Do = realizar/actividad.",
+          "example": "make a decision / do homework"
+        },
+        {
+          "id": "c11",
+          "front": "¿Cómo se transforma Direct → Reported Speech?",
+          "back": "Change tense back (backshift), change pronouns/time words.",
+          "example": "\"I am happy\" → He said he was happy."
+        },
+        {
+          "id": "c12",
+          "front": "¿Qué diferencia \"interesting\" de \"interested\"?",
+          "back": "-ing = what causes. -ed = how you feel.",
+          "example": "The movie is interesting. I am interested."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-match",
+    "type": "word-match",
+    "title": "Repaso Mixto: Emparejamiento",
+    "description": "Empareja conceptos de diferentes módulos.",
+    "props": {
+      "pairs": [
+        {
+          "left": "If it rains, I will stay.",
+          "right": "First Conditional"
+        },
+        {
+          "left": "The book was written by J.K.",
+          "right": "Passive Voice"
+        },
+        {
+          "left": "I have visited Paris.",
+          "right": "Present Perfect"
+        },
+        {
+          "left": "If I had money, I would travel.",
+          "right": "Second Conditional"
+        },
+        {
+          "left": "He said he was tired.",
+          "right": "Reported Speech"
+        },
+        {
+          "left": "The man who called is my dad.",
+          "right": "Relative Clause"
+        },
+        {
+          "left": "a piece of cake",
+          "right": "Idiom (= very easy)"
+        },
+        {
+          "left": "She has a car. (not \"have\")",
+          "right": "S-V Agreement"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-sentence",
+    "type": "sentence-builder",
+    "title": "Construcción Mixta Avanzada",
+    "description": "Ordena oraciones de diferentes temas gramaticales.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Present Perfect (experiencia):",
+          "words": [
+            "I",
+            "have",
+            "never",
+            "been",
+            "to",
+            "Japan"
+          ],
+          "correct": "I have never been to Japan"
+        },
+        {
+          "prompt": "First Conditional:",
+          "words": [
+            "If",
+            "you",
+            "study",
+            "hard",
+            "you",
+            "will",
+            "pass"
+          ],
+          "correct": "If you study hard you will pass"
+        },
+        {
+          "prompt": "Passive Voice:",
+          "words": [
+            "The",
+            "cake",
+            "was",
+            "made",
+            "by",
+            "my",
+            "grandmother"
+          ],
+          "correct": "The cake was made by my grandmother"
+        },
+        {
+          "prompt": "Reported Speech:",
+          "words": [
+            "She",
+            "said",
+            "she",
+            "was",
+            "coming",
+            "tomorrow"
+          ],
+          "correct": "She said she was coming tomorrow"
+        },
+        {
+          "prompt": "Relative Clause:",
+          "words": [
+            "The",
+            "teacher",
+            "who",
+            "helped",
+            "me",
+            "was",
+            "kind"
+          ],
+          "correct": "The teacher who helped me was kind"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-quiz",
+    "type": "quiz",
+    "title": "Quiz Final Integral",
+    "description": "Examen final con preguntas de todos los módulos.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She ___ to the gym every Monday.\" (Present Simple)",
+          "options": [
+            "go",
+            "goes",
+            "going",
+            "gone"
+          ],
+          "correct": 1,
+          "explanation": "3rd person singular → goes."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"I ___ already finished my homework.\" (Present Perfect)",
+          "correct": "have",
+          "explanation": "have/has + past participle. I HAVE finished."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"If I ___ rich, I would buy a yacht.\" (2nd Conditional)",
+          "options": [
+            "am",
+            "was",
+            "were",
+            "will be"
+          ],
+          "correct": 2,
+          "explanation": "2nd conditional: If + past simple (were for formal)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"The letter ___ written by my friend.\" (Passive Voice)",
+          "options": [
+            "is",
+            "was",
+            "has",
+            "did"
+          ],
+          "correct": 1,
+          "explanation": "Past passive: was + past participle."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"He said he ___ tired.\" (Reported Speech — backshift from \"is\")",
+          "correct": "was",
+          "explanation": "Backshift: is → was."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"The woman ___ lives next door is a doctor.\" (Relative Clause)",
+          "options": [
+            "which",
+            "who",
+            "whom",
+            "whose"
+          ],
+          "correct": 1,
+          "explanation": "\"Who\" for people as subject of the clause."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"It's ___ cats and dogs!\" (Idiom = raining hard)",
+          "correct": "raining",
+          "explanation": "It's raining cats and dogs = llover a cántaros."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"I ___ 30 years old.\" (Correct form)",
+          "options": [
+            "have",
+            "has",
+            "am",
+            "do"
+          ],
+          "correct": 2,
+          "explanation": "English uses \"be\" for age: I AM 30 years old."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"She ___ be at home — her car is there.\" (Modal = deduction)",
+          "options": [
+            "can",
+            "must",
+            "should",
+            "would"
+          ],
+          "correct": 1,
+          "explanation": "Must = strong deduction (90% sure)."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"If it rains, I ___ stay home.\" (1st Conditional)",
+          "correct": "will",
+          "explanation": "1st conditional: If + present, will + base verb."
+        },
+        {
+          "id": "q11",
+          "type": "multiple-choice",
+          "question": "\"I have lived here ___ 2010.\" (since/for)",
+          "options": [
+            "for",
+            "since",
+            "from",
+            "during"
+          ],
+          "correct": 1,
+          "explanation": "Since + specific point in time. For + duration."
+        },
+        {
+          "id": "q12",
+          "type": "fill-blank",
+          "question": "\"___ you ever been to London?\" (Present Perfect question)",
+          "correct": "Have",
+          "explanation": "Have + subject + ever + past participle?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-scramble",
+    "type": "word-scramble",
+    "title": "Repaso Final",
+    "description": "Descifra palabras del repaso integral.",
+    "props": {
+      "words": [
+        {
+          "word": "REVIEW",
+          "hint": "Repaso; revisión",
+          "category": "Review"
+        },
+        {
+          "word": "PRACTICE",
+          "hint": "Práctica; ejercicio",
+          "category": "Review"
+        },
+        {
+          "word": "MASTER",
+          "hint": "Dominar; controlar",
+          "category": "Review"
+        },
+        {
+          "word": "IMPROVE",
+          "hint": "Mejorar; avanzar",
+          "category": "Review"
+        },
+        {
+          "word": "PROGRESS",
+          "hint": "Progreso; avance",
+          "category": "Review"
+        },
+        {
+          "word": "ACHIEVE",
+          "hint": "Lograr; alcanzar",
+          "category": "Review"
+        }
+      ]
+    }
+  }
+]

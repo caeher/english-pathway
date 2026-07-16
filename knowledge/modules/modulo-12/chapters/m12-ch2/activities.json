@@ -1,0 +1,495 @@
+[
+  {
+    "id": "m12-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Construye tu Presentación",
+    "description": "Ordena fragmentos para construir cada fase de una presentación.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build the opening about renewable energy",
+          "words": [
+            "talk",
+            "going",
+            "Good",
+            "morning.",
+            "I'm",
+            "about",
+            "to",
+            "renewable",
+            "energy."
+          ],
+          "correct": "Good morning. I'm going to talk about renewable energy."
+        },
+        {
+          "prompt": "Build a transition to the second point",
+          "words": [
+            "on",
+            "Moving",
+            "second",
+            "to",
+            "my",
+            "point,",
+            "let's",
+            "look",
+            "at",
+            "the",
+            "data."
+          ],
+          "correct": "Moving on to my second point, let's look at the data."
+        },
+        {
+          "prompt": "Build the closing of your presentation",
+          "words": [
+            "summary,",
+            "In",
+            "the",
+            "key",
+            "takeaway",
+            "is",
+            "that",
+            "matters.",
+            "energy",
+            "renewable"
+          ],
+          "correct": "In summary, the key takeaway is that renewable energy matters."
+        },
+        {
+          "prompt": "Describe a chart to the audience",
+          "words": [
+            "can",
+            "As",
+            "see",
+            "you",
+            "in",
+            "this",
+            "chart,",
+            "sales",
+            "increased",
+            "by",
+            "20%."
+          ],
+          "correct": "As you can see in this chart, sales increased by 20%."
+        },
+        {
+          "prompt": "Open Q&A with the audience",
+          "words": [
+            "have",
+            "Does",
+            "anyone",
+            "any",
+            "questions",
+            "about",
+            "presented?",
+            "I've",
+            "what"
+          ],
+          "correct": "Does anyone have any questions about what I've presented?"
+        },
+        {
+          "prompt": "Thank the audience at the end",
+          "words": [
+            "you",
+            "Thank",
+            "for",
+            "your",
+            "attention.",
+            "happy",
+            "I'm",
+            "to",
+            "take",
+            "questions."
+          ],
+          "correct": "Thank you for your attention. I'm happy to take questions."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-quiz",
+    "type": "quiz",
+    "title": "¿Qué Viene Después?",
+    "description": "Elige la mejor continuación para cada momento de la presentación.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You've just finished your introduction. What do you say to start the first point?",
+          "options": [
+            "Goodbye everyone.",
+            "First of all, let's look at...",
+            "Any questions?",
+            "I dunno."
+          ],
+          "correct": 1,
+          "explanation": "\"First of all, let's look at...\" is the standard transition to your first main point."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "You've just finished your second point. What do you say?",
+          "options": [
+            "\"Moving on to my final point...\"",
+            "\"That's all folks!\"",
+            "\"I don't remember.\"",
+            "\"Let me start over.\""
+          ],
+          "correct": 0,
+          "explanation": "\"Moving on to...\" is a smooth transition between points."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"As you can ___ in this graph, sales increased by 20%.\"",
+          "correct": "see",
+          "explanation": "\"As you can see\" is the standard phrase for describing visuals."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Someone asks a question you don't know the answer to. You say:",
+          "options": [
+            "\"I have no idea.\"",
+            "\"That's a stupid question.\"",
+            "\"I'll look into that and get back to you.\"",
+            "\"Next question.\""
+          ],
+          "correct": 2,
+          "explanation": "\"I'll look into that and get back to you\" is professional and honest."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "What is the BEST way to start a formal presentation?",
+          "options": [
+            "\"Hey guys, so like...\"",
+            "\"Good morning. My name is... Today I'm going to talk about...\"",
+            "\"I'm gonna talk about stuff.\"",
+            "\"Whatever, let's begin.\""
+          ],
+          "correct": 1,
+          "explanation": "A formal opening includes greeting + name + topic clearly stated."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"___ on to our next topic, let's discuss the budget.\" (Moving/Jumping)",
+          "correct": "Moving",
+          "explanation": "\"Moving on to...\" is the standard transition phrase between topics."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "You want to emphasize a key finding. You say:",
+          "options": [
+            "\"By the way...\"",
+            "\"I'd like to highlight that...\"",
+            "\"I guess maybe...\"",
+            "\"Who cares about...\""
+          ],
+          "correct": 1,
+          "explanation": "\"I'd like to highlight that...\" draws attention to important information."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "What is a \"key takeaway\" in a presentation?",
+          "options": [
+            "Food from the event",
+            "The most important message",
+            "A question from the audience",
+            "The opening slide"
+          ],
+          "correct": 1,
+          "explanation": "The key takeaway is the main message you want the audience to remember."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"To ___, the three key points are: cost, quality, and speed.\" (summarize/begin)",
+          "correct": "summarize",
+          "explanation": "\"To summarize\" signals you are wrapping up the main points at the end."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which phrase is best for giving an example during a presentation?",
+          "options": [
+            "\"For instance, in 2023...\"",
+            "\"I think...\"",
+            "\"Maybe...\"",
+            "\"Someone told me...\""
+          ],
+          "correct": 0,
+          "explanation": "\"For instance\" introduces a concrete, credible example."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-flash",
+    "type": "flashcard",
+    "title": "Frases de Presentación",
+    "description": "Domina las frases esenciales para cada fase de una presentación.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "GOOD MORNING. I'M GOING TO TALK ABOUT... 🎬 (Opening)",
+          "back": "Apertura formal estándar. Saludo + tema. Nivel: Formal.",
+          "example": "Good morning. I'm going to talk about climate change."
+        },
+        {
+          "id": "f2",
+          "front": "I'D LIKE TO START BY... 🎬 (Opening)",
+          "back": "Me gustaría comenzar por... Apertura flexible y profesional.",
+          "example": "I'd like to start by sharing some interesting data."
+        },
+        {
+          "id": "f3",
+          "front": "MOVING ON TO... 🔄 (Transition)",
+          "back": "Pasando a... Transición entre puntos principales. Nivel: Semi-formal.",
+          "example": "Moving on to our second topic, let's discuss the budget."
+        },
+        {
+          "id": "f4",
+          "front": "NOW LET'S TURN TO... 🔄 (Transition)",
+          "back": "Ahora pasemos a... Alternativa a \"moving on to\". Nivel: Formal.",
+          "example": "Now let's turn to the results of our survey."
+        },
+        {
+          "id": "f5",
+          "front": "AS YOU CAN SEE IN THIS CHART... 📊 (Visual)",
+          "back": "Como pueden ver en este gráfico... Para describir apoyo visual.",
+          "example": "As you can see in this chart, sales grew by 15%."
+        },
+        {
+          "id": "f6",
+          "front": "I'D LIKE TO HIGHLIGHT... 💡 (Emphasis)",
+          "back": "Me gustaría resaltar... Para enfatizar un punto clave.",
+          "example": "I'd like to highlight that customer satisfaction increased."
+        },
+        {
+          "id": "f7",
+          "front": "THE KEY TAKEAWAY IS... 🏁 (Closing)",
+          "back": "El punto clave es... Resume la idea más importante.",
+          "example": "The key takeaway is that sustainability drives growth."
+        },
+        {
+          "id": "f8",
+          "front": "TO SUMMARIZE... 🏁 (Closing)",
+          "back": "Para resumir... Inicia el cierre formal de la presentación.",
+          "example": "To summarize, we need to invest in three key areas."
+        },
+        {
+          "id": "f9",
+          "front": "THAT'S A GREAT QUESTION. ❓ (Q&A)",
+          "back": "¡Excelente pregunta! Ganar tiempo y validar al que pregunta.",
+          "example": "That's a great question. Let me think about that for a moment."
+        },
+        {
+          "id": "f10",
+          "front": "I'LL LOOK INTO THAT AND GET BACK TO YOU. ❓ (Q&A)",
+          "back": "Lo investigaré y le responderé. Para cuando no sabes la respuesta.",
+          "example": "I'll look into that and get back to you after the meeting."
+        },
+        {
+          "id": "f11",
+          "front": "FOR INSTANCE... 📌 (Example)",
+          "back": "Por ejemplo... Introduce un ejemplo concreto durante la presentación.",
+          "example": "For instance, our Tokyo office increased sales by 30%."
+        },
+        {
+          "id": "f12",
+          "front": "THANK YOU FOR YOUR ATTENTION. 🏁 (Final)",
+          "back": "Gracias por su atención. Cierre cortés y profesional.",
+          "example": "Thank you for your attention. Any questions?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-match",
+    "type": "word-match",
+    "title": "Frase → Fase de Presentación",
+    "description": "Empareja cada frase con la fase a la que pertenece.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Good morning, today I'll talk about...",
+          "right": "🎬 Opening"
+        },
+        {
+          "left": "Moving on to...",
+          "right": "🔄 Transition"
+        },
+        {
+          "left": "For instance...",
+          "right": "📌 Example"
+        },
+        {
+          "left": "As you can see in this chart...",
+          "right": "📊 Visual Support"
+        },
+        {
+          "left": "I'd like to highlight...",
+          "right": "💡 Emphasis"
+        },
+        {
+          "left": "To summarize...",
+          "right": "🏁 Closing"
+        },
+        {
+          "left": "Any questions?",
+          "right": "❓ Q&A"
+        },
+        {
+          "left": "Thank you for your attention.",
+          "right": "👏 Final"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-svg",
+    "type": "svg-scene",
+    "title": "La Sala de Conferencias",
+    "description": "Explora la sala de conferencias y practica cada fase de la presentación.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f8fafc",
+        "items": [
+          {
+            "id": "podium",
+            "type": "rect",
+            "x": 240,
+            "y": 260,
+            "width": 120,
+            "height": 100,
+            "fill": "#92400e",
+            "label": "Podio — Practica tu opening",
+            "labelEn": "🎤 Podium"
+          },
+          {
+            "id": "screen",
+            "type": "rect",
+            "x": 150,
+            "y": 30,
+            "width": 300,
+            "height": 180,
+            "fill": "#e2e8f0",
+            "label": "Pantalla — Describe gráficos",
+            "labelEn": "📊 Screen"
+          },
+          {
+            "id": "audience1",
+            "type": "ellipse",
+            "cx": 120,
+            "cy": 340,
+            "rx": 40,
+            "ry": 25,
+            "fill": "#c4b5fd",
+            "label": "Audiencia — Practica Q&A",
+            "labelEn": "👥 Audience"
+          },
+          {
+            "id": "audience2",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 380,
+            "rx": 40,
+            "ry": 25,
+            "fill": "#d8b4fe",
+            "label": "Audiencia — Responde preguntas",
+            "labelEn": "👥 Audience"
+          },
+          {
+            "id": "audience3",
+            "type": "ellipse",
+            "cx": 480,
+            "cy": 340,
+            "rx": 40,
+            "ry": 25,
+            "fill": "#c4b5fd",
+            "label": "Audiencia — Maneja objeciones",
+            "labelEn": "👥 Audience"
+          },
+          {
+            "id": "clock",
+            "type": "circle",
+            "cx": 530,
+            "cy": 70,
+            "r": 35,
+            "fill": "#fbbf24",
+            "label": "Reloj — Controla el tiempo",
+            "labelEn": "⏰ Timer"
+          },
+          {
+            "id": "slides",
+            "type": "rect",
+            "x": 180,
+            "y": 60,
+            "width": 60,
+            "height": 45,
+            "fill": "#86efac",
+            "label": "Slides — Organiza contenido",
+            "labelEn": "🖥️ Slides"
+          },
+          {
+            "id": "notes",
+            "type": "rect",
+            "x": 500,
+            "y": 260,
+            "width": 60,
+            "height": 80,
+            "fill": "#fef3c7",
+            "label": "Notas — Prepara tu guión",
+            "labelEn": "📝 Notes"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m12-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Creando Presentaciones",
+    "description": "Descifra vocabulario de presentaciones.",
+    "props": {
+      "words": [
+        {
+          "word": "SLIDE",
+          "hint": "Diapositiva; página de presentación",
+          "category": "Presentations"
+        },
+        {
+          "word": "VISUAL",
+          "hint": "Visual; elemento gráfico",
+          "category": "Presentations"
+        },
+        {
+          "word": "AUDIENCE",
+          "hint": "Audiencia; quienes te escuchan",
+          "category": "Presentations"
+        },
+        {
+          "word": "ENGAGE",
+          "hint": "Involucrar; captar atención",
+          "category": "Presentations"
+        },
+        {
+          "word": "PRESENT",
+          "hint": "Presentar; exponer",
+          "category": "Presentations"
+        },
+        {
+          "word": "DELIVER",
+          "hint": "Entregar; pronunciar",
+          "category": "Presentations"
+        }
+      ]
+    }
+  }
+]

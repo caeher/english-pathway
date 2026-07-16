@@ -1,0 +1,614 @@
+[
+  {
+    "id": "m11-ch5-quiz",
+    "type": "quiz",
+    "title": "El Debate Interactivo",
+    "description": "Elige la mejor expresión para cada situación de debate.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You want to express a strong opinion: \"___ homework should be abolished.\"",
+          "options": [
+            "I strongly believe",
+            "Maybe",
+            "I'm not sure if",
+            "Perhaps"
+          ],
+          "correct": 0,
+          "explanation": "\"I strongly believe\" = strong opinion expression."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Someone said something you disagree with. The most polite response is:",
+          "options": [
+            "You're wrong!",
+            "I'm afraid I disagree.",
+            "That's stupid.",
+            "No way!"
+          ],
+          "correct": 1,
+          "explanation": "\"I'm afraid I disagree\" = polite disagreement."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"_____, technology has many benefits. _____, it also has drawbacks.\" (contrast)",
+          "correct": "On one hand However",
+          "explanation": "\"On one hand... However...\" sets up a balanced contrast."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which phrase adds a supporting argument?",
+          "options": [
+            "However",
+            "On the other hand",
+            "Furthermore",
+            "But"
+          ],
+          "correct": 2,
+          "explanation": "\"Furthermore\" adds a supporting argument to your point."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "You agree enthusiastically with a classmate. You say:",
+          "options": [
+            "I couldn't agree more!",
+            "I somewhat agree.",
+            "I see your point, but...",
+            "I'm not sure."
+          ],
+          "correct": 0,
+          "explanation": "\"I couldn't agree more!\" = strongest agreement."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"___ ___ ___, I think social media does more harm than good.\" (polite opinion)",
+          "correct": "In my opinion",
+          "explanation": "\"In my opinion\" is a clear, polite way to state your view."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "In the OREO structure, what comes after \"Opinion\"?",
+          "options": [
+            "Example",
+            "Restatement",
+            "Reason",
+            "Conclusion"
+          ],
+          "correct": 2,
+          "explanation": "OREO: Opinion → Reason → Example → Opinion restated."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which is the best way to acknowledge the other side before disagreeing?",
+          "options": [
+            "I see your point, but...",
+            "You don't understand.",
+            "I don't care what you think.",
+            "That's wrong."
+          ],
+          "correct": 0,
+          "explanation": "\"I see your point, but...\" acknowledges + politely disagrees."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"___ , wearing school uniforms saves families money.\" Which connector concludes an argument?",
+          "options": [
+            "Furthermore",
+            "However",
+            "In conclusion",
+            "Although"
+          ],
+          "correct": 2,
+          "explanation": "\"In conclusion\" signals you're wrapping up your argument."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"That's a very ___ ___. I hadn't thought of it that way.\" (acknowledging a good argument)",
+          "correct": "good point",
+          "explanation": "\"That's a good point\" acknowledges someone's argument respectfully."
+        },
+        {
+          "id": "q11",
+          "type": "multiple-choice",
+          "question": "Which connector introduces a reason?",
+          "options": [
+            "Nevertheless",
+            "Moreover",
+            "Due to",
+            "In contrast"
+          ],
+          "correct": 2,
+          "explanation": "\"Due to\" introduces a cause/reason for something."
+        },
+        {
+          "id": "q12",
+          "type": "multiple-choice",
+          "question": "\"_____ I respect your opinion, I have a different view.\" Which word fits?",
+          "options": [
+            "Because",
+            "Although",
+            "Furthermore",
+            "Therefore"
+          ],
+          "correct": 1,
+          "explanation": "\"Although I respect your opinion\" = polite concession before disagreeing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Argumentos OREO",
+    "description": "Construye argumentos bien estructurados usando la técnica OREO.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Opinión (O):",
+          "words": [
+            "believe",
+            "I",
+            "that",
+            "strongly",
+            "exercise",
+            "important",
+            "is"
+          ],
+          "correct": "I strongly believe that exercise is important"
+        },
+        {
+          "prompt": "Razón (R):",
+          "words": [
+            "because",
+            "This",
+            "is",
+            "it",
+            "both",
+            "mental",
+            "physical",
+            "health",
+            "and",
+            "improves"
+          ],
+          "correct": "This is because it improves both physical and mental health"
+        },
+        {
+          "prompt": "Ejemplo (E):",
+          "words": [
+            "example",
+            "For",
+            "reduces",
+            "regular",
+            "exercise",
+            "stress",
+            "levels"
+          ],
+          "correct": "For example regular exercise reduces stress levels"
+        },
+        {
+          "prompt": "Desacuerdo educado:",
+          "words": [
+            "your",
+            "see",
+            "I",
+            "point",
+            "but",
+            "disagree",
+            "I"
+          ],
+          "correct": "I see your point but I disagree"
+        },
+        {
+          "prompt": "Acuerdo total:",
+          "words": [
+            "couldn't",
+            "I",
+            "more",
+            "agree"
+          ],
+          "correct": "I couldn't agree more"
+        },
+        {
+          "prompt": "Contraste:",
+          "words": [
+            "has",
+            "However",
+            "some",
+            "technology",
+            "also",
+            "disadvantages"
+          ],
+          "correct": "However technology also has some disadvantages"
+        },
+        {
+          "prompt": "Adición:",
+          "words": [
+            "Furthermore",
+            "helps",
+            "reading",
+            "vocabulary",
+            "improve"
+          ],
+          "correct": "Furthermore reading helps improve vocabulary"
+        },
+        {
+          "prompt": "Conclusión:",
+          "words": [
+            "conclusion",
+            "In",
+            "benefits",
+            "outweigh",
+            "the",
+            "the",
+            "risks"
+          ],
+          "correct": "In conclusion the benefits outweigh the risks"
+        },
+        {
+          "prompt": "Opinión formal:",
+          "words": [
+            "my",
+            "From",
+            "perspective",
+            "is",
+            "essential",
+            "education"
+          ],
+          "correct": "From my perspective education is essential"
+        },
+        {
+          "prompt": "Concesión + desacuerdo:",
+          "words": [
+            "Although",
+            "respect",
+            "your",
+            "I",
+            "opinion",
+            "a",
+            "I",
+            "different",
+            "have",
+            "view"
+          ],
+          "correct": "Although I respect your opinion I have a different view"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-match",
+    "type": "word-match",
+    "title": "Expresión → Función",
+    "description": "Empareja cada expresión de debate con su función comunicativa.",
+    "props": {
+      "pairs": [
+        {
+          "left": "I strongly believe...",
+          "right": "Strong opinion 💪"
+        },
+        {
+          "left": "I'm afraid I disagree.",
+          "right": "Polite disagreement 🙅"
+        },
+        {
+          "left": "I couldn't agree more!",
+          "right": "Strong agreement ✅"
+        },
+        {
+          "left": "Furthermore,...",
+          "right": "Adding an argument ➕"
+        },
+        {
+          "left": "However,...",
+          "right": "Introducing contrast 🔄"
+        },
+        {
+          "left": "In conclusion,...",
+          "right": "Wrapping up 🎬"
+        },
+        {
+          "left": "I see your point, but...",
+          "right": "Acknowledging + disagreeing 🤔"
+        },
+        {
+          "left": "For example,...",
+          "right": "Giving evidence 📋"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-flash",
+    "type": "flashcard",
+    "title": "Arsenal de Debate",
+    "description": "Domina todas las expresiones que necesitas para debatir con confianza.",
+    "props": {
+      "cards": [
+        {
+          "id": "d1",
+          "front": "IN MY OPINION,...",
+          "back": "En mi opinión,...",
+          "example": "In my opinion, learning languages opens doors to new cultures."
+        },
+        {
+          "id": "d2",
+          "front": "I BELIEVE THAT...",
+          "back": "Creo que...",
+          "example": "I believe that education should be free for everyone."
+        },
+        {
+          "id": "d3",
+          "front": "FROM MY PERSPECTIVE,...",
+          "back": "Desde mi perspectiva,...",
+          "example": "From my perspective, teamwork is essential for success."
+        },
+        {
+          "id": "d4",
+          "front": "I'M CONVINCED THAT...",
+          "back": "Estoy convencido de que...",
+          "example": "I'm convinced that practice makes perfect."
+        },
+        {
+          "id": "d5",
+          "front": "AS I SEE IT,...",
+          "back": "Tal como lo veo,...",
+          "example": "As I see it, we need to focus on renewable energy."
+        },
+        {
+          "id": "d6",
+          "front": "I COULDN'T AGREE MORE.",
+          "back": "No podría estar más de acuerdo.",
+          "example": "\"School should start later.\" — \"I couldn't agree more!\""
+        },
+        {
+          "id": "d7",
+          "front": "THAT'S A GOOD POINT.",
+          "back": "Buen punto.",
+          "example": "\"Recycling saves resources.\" — \"That's a good point.\""
+        },
+        {
+          "id": "d8",
+          "front": "YOU'RE ABSOLUTELY RIGHT.",
+          "back": "Tienes toda la razón.",
+          "example": "\"Exercise is important for mental health.\" — \"You're absolutely right.\""
+        },
+        {
+          "id": "d9",
+          "front": "I'M AFRAID I DISAGREE.",
+          "back": "Me temo que no estoy de acuerdo.",
+          "example": "\"Cars should be banned.\" — \"I'm afraid I disagree. People need them.\""
+        },
+        {
+          "id": "d10",
+          "front": "I SEE YOUR POINT, BUT...",
+          "back": "Entiendo tu punto, pero...",
+          "example": "I see your point, but I think there are other solutions."
+        },
+        {
+          "id": "d11",
+          "front": "WITH ALL DUE RESPECT,...",
+          "back": "Con todo respeto,...",
+          "example": "With all due respect, I think that argument doesn't hold up."
+        },
+        {
+          "id": "d12",
+          "front": "HOWEVER,...",
+          "back": "Sin embargo,...",
+          "example": "Travel is exciting. However, it can also be stressful."
+        },
+        {
+          "id": "d13",
+          "front": "FURTHERMORE,...",
+          "back": "Además,...",
+          "example": "Furthermore, studies show that reading improves empathy."
+        },
+        {
+          "id": "d14",
+          "front": "ON THE OTHER HAND,...",
+          "back": "Por otro lado,...",
+          "example": "Cars are convenient. On the other hand, they pollute."
+        },
+        {
+          "id": "d15",
+          "front": "IN CONCLUSION,...",
+          "back": "En conclusión,...",
+          "example": "In conclusion, the evidence strongly supports my position."
+        },
+        {
+          "id": "d16",
+          "front": "NEVERTHELESS,...",
+          "back": "No obstante,...",
+          "example": "The plan has risks. Nevertheless, I think we should try it."
+        },
+        {
+          "id": "d17",
+          "front": "MOREOVER,...",
+          "back": "Es más,...",
+          "example": "Moreover, this approach has been proven effective in other countries."
+        },
+        {
+          "id": "d18",
+          "front": "ALTHOUGH...",
+          "back": "Aunque...",
+          "example": "Although some disagree, I believe this is the right choice."
+        },
+        {
+          "id": "d19",
+          "front": "OREO STRUCTURE",
+          "back": "O = Opinion\nR = Reason\nE = Example\nO = Opinion restated",
+          "example": "\"I think pets teach responsibility (O) because caring for an animal requires daily effort (R). For instance, feeding a dog every day... (E) That's why I believe pets are great for kids (O).\""
+        },
+        {
+          "id": "d20",
+          "front": "TO SUM UP,...",
+          "back": "En resumen,...",
+          "example": "To sum up, the advantages clearly outweigh the disadvantages."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-svg",
+    "type": "svg-scene",
+    "title": "La Arena del Debate",
+    "description": "Explora cada zona del debate y descubre las expresiones que necesitas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 450",
+        "bg": "#fefce8",
+        "items": [
+          {
+            "id": "arena",
+            "type": "rect",
+            "x": 20,
+            "y": 10,
+            "width": 660,
+            "height": 430,
+            "fill": "#fef9c3",
+            "label": "🏟️ La Arena del Debate",
+            "labelEn": "Welcome to the Debate Arena! Explore each zone."
+          },
+          {
+            "id": "opinion-zone",
+            "type": "rect",
+            "x": 50,
+            "y": 50,
+            "width": 180,
+            "height": 100,
+            "fill": "#bbf7d0",
+            "label": "💬 Zona de Opiniones",
+            "labelEn": "I believe... / In my opinion... / I'm convinced that... / From my perspective..."
+          },
+          {
+            "id": "agree-zone",
+            "type": "rect",
+            "x": 260,
+            "y": 50,
+            "width": 180,
+            "height": 100,
+            "fill": "#bfdbfe",
+            "label": "✅ Zona de Acuerdo",
+            "labelEn": "I couldn't agree more! / That's a good point. / You're absolutely right. / I totally agree."
+          },
+          {
+            "id": "disagree-zone",
+            "type": "rect",
+            "x": 470,
+            "y": 50,
+            "width": 180,
+            "height": 100,
+            "fill": "#fecaca",
+            "label": "🙅 Zona de Desacuerdo",
+            "labelEn": "I'm afraid I disagree. / I see your point, but... / With all due respect... / I beg to differ."
+          },
+          {
+            "id": "connector-add",
+            "type": "rect",
+            "x": 50,
+            "y": 185,
+            "width": 180,
+            "height": 100,
+            "fill": "#e0e7ff",
+            "label": "➕ Conectores: Adición",
+            "labelEn": "Furthermore... / Moreover... / In addition... / Besides..."
+          },
+          {
+            "id": "connector-contrast",
+            "type": "rect",
+            "x": 260,
+            "y": 185,
+            "width": 180,
+            "height": 100,
+            "fill": "#fef3c7",
+            "label": "🔄 Conectores: Contraste",
+            "labelEn": "However... / On the other hand... / Nevertheless... / Although..."
+          },
+          {
+            "id": "connector-cause",
+            "type": "rect",
+            "x": 470,
+            "y": 185,
+            "width": 180,
+            "height": 100,
+            "fill": "#d1fae5",
+            "label": "🔗 Conectores: Causa",
+            "labelEn": "Because... / Since... / Due to... / As a result..."
+          },
+          {
+            "id": "oreo",
+            "type": "rect",
+            "x": 50,
+            "y": 325,
+            "width": 285,
+            "height": 100,
+            "fill": "#f3e8ff",
+            "label": "🍪 Estructura OREO",
+            "labelEn": "O = Opinion → R = Reason → E = Example → O = Opinion restated. Build strong arguments!"
+          },
+          {
+            "id": "conclusion",
+            "type": "rect",
+            "x": 365,
+            "y": 325,
+            "width": 285,
+            "height": 100,
+            "fill": "#fce7f3",
+            "label": "🎬 Zona de Conclusión",
+            "labelEn": "In conclusion... / To sum up... / All in all... / Therefore..."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m11-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Debates y Discusiones",
+    "description": "Descifra vocabulario de argumentación.",
+    "props": {
+      "words": [
+        {
+          "word": "ARGUE",
+          "hint": "Argumentar; debatir",
+          "category": "Debate"
+        },
+        {
+          "word": "DEBATE",
+          "hint": "Debate; discusión formal",
+          "category": "Debate"
+        },
+        {
+          "word": "OPINION",
+          "hint": "Opinión; punto de vista",
+          "category": "Debate"
+        },
+        {
+          "word": "AGREE",
+          "hint": "Estar de acuerdo",
+          "category": "Debate"
+        },
+        {
+          "word": "DISAGREE",
+          "hint": "Discrepar; no estar de acuerdo",
+          "category": "Debate"
+        },
+        {
+          "word": "DISCUSS",
+          "hint": "Discutir; hablar sobre",
+          "category": "Debate"
+        }
+      ]
+    }
+  }
+]

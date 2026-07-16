@@ -1,0 +1,512 @@
+[
+  {
+    "id": "m14-ch4-quiz",
+    "type": "quiz",
+    "title": "Diagnóstico de Necesidades",
+    "description": "Evalúa tus fortalezas, debilidades y preferencias para generar un plan personalizado.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "How much time can you realistically dedicate to English practice daily?",
+          "options": [
+            "15 minutes",
+            "30 minutes",
+            "1 hour",
+            "More than 1 hour"
+          ],
+          "correct": 1,
+          "explanation": "30 minutes daily is a great sweet spot. Consistent short sessions beat irregular long ones."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Which activity do you enjoy the most?",
+          "options": [
+            "Watching videos and shows",
+            "Reading articles and books",
+            "Speaking with people",
+            "Doing grammar exercises"
+          ],
+          "correct": 0,
+          "explanation": "Enjoyable activities lead to consistent practice. Choose resources that match your preferences!"
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Which is the BEST resource for improving listening at B2 level?",
+          "options": [
+            "A children's show",
+            "TED Talks with subtitles",
+            "Advanced academic lectures without support",
+            "Songs with lyrics only"
+          ],
+          "correct": 1,
+          "explanation": "TED Talks with subtitles = comprehensible input at B2. Clear speech + visual support + subtitles as scaffolding."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "A SMART goal must be Specific, Measurable, ___, Relevant, and Time-bound.",
+          "correct": "Achievable",
+          "explanation": "Achievable = the goal must be realistic given your current situation and resources."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "What is \"spaced repetition\"?",
+          "options": [
+            "Studying the same thing every day",
+            "Reviewing material at increasing intervals based on memory science",
+            "Repeating sentences out loud",
+            "Spacing your desk from others"
+          ],
+          "correct": 1,
+          "explanation": "Spaced repetition reviews items at optimal intervals: 1 day, 3 days, 7 days, 14 days, etc."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Your speaking skill is your weakest area. Which resource should you prioritize?",
+          "options": [
+            "Anki flashcards",
+            "iTalki conversation practice",
+            "Grammar textbook",
+            "Reading news articles"
+          ],
+          "correct": 1,
+          "explanation": "To improve speaking, you need to SPEAK. iTalki provides real conversation practice with native speakers."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "According to Krashen's Input Hypothesis, we learn best when we receive input that is slightly ___ our current level (i+1).",
+          "correct": "above",
+          "explanation": "i+1 = comprehensible input slightly above your level. Too easy = boring. Too hard = frustrating."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which practice schedule is most effective for long-term learning?",
+          "options": [
+            "Study 5 hours every Sunday only",
+            "30 minutes every day consistently",
+            "Random sessions when you feel motivated",
+            "2 hours twice a week"
+          ],
+          "correct": 1,
+          "explanation": "Daily consistent practice builds stronger neural pathways than irregular intensive sessions."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "How can you measure your speaking progress WITHOUT a teacher?",
+          "options": [
+            "You can't",
+            "Record yourself monthly and compare with previous recordings",
+            "Count the number of words you know",
+            "Take only written tests"
+          ],
+          "correct": 1,
+          "explanation": "Self-recording is powerful: you hear your own improvement in pronunciation, fluency, and confidence."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "The \"immersion\" strategy means:",
+          "options": [
+            "Moving to an English-speaking country",
+            "Surrounding yourself with English: phone, shows, music, thinking",
+            "Only studying grammar intensively",
+            "Speaking English 24/7 with no breaks"
+          ],
+          "correct": 1,
+          "explanation": "Immersion = surrounding yourself with the language in daily life. You can create immersion anywhere."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-match",
+    "type": "word-match",
+    "title": "Recurso → Habilidad",
+    "description": "Empareja cada recurso con la habilidad que mejor desarrolla.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Anki (spaced repetition app)",
+          "right": "Vocabulary retention 📚"
+        },
+        {
+          "left": "iTalki (language exchange)",
+          "right": "Speaking practice 🗣️"
+        },
+        {
+          "left": "6 Minute English (BBC podcast)",
+          "right": "Listening comprehension 👂"
+        },
+        {
+          "left": "Grammarly (writing assistant)",
+          "right": "Writing accuracy ✍️"
+        },
+        {
+          "left": "News in Levels (graded news)",
+          "right": "Reading at your level 📖"
+        },
+        {
+          "left": "Forvo (pronunciation dictionary)",
+          "right": "Pronunciation 🔊"
+        },
+        {
+          "left": "Reddit r/EnglishLearning",
+          "right": "Community support 👥"
+        },
+        {
+          "left": "Cambridge Practice Tests",
+          "right": "Exam preparation 🏆"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-flash",
+    "type": "flashcard",
+    "title": "Vocabulario de Metacognición",
+    "description": "Aprende las palabras sobre aprendizaje para hablar sobre tu propio proceso en inglés.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "SPACED REPETITION 🔄",
+          "back": "Técnica que revisa material a intervalos crecientes. Se basa en la curva del olvido. Apps como Anki la usan.",
+          "example": "I use spaced repetition to memorize vocabulary — I review words at increasing intervals."
+        },
+        {
+          "id": "f2",
+          "front": "INPUT HYPOTHESIS (Krashen) 📥",
+          "back": "Adquirimos un idioma cuando recibimos input comprensible ligeramente por encima de nuestro nivel (i+1).",
+          "example": "Watching English shows with subtitles provides comprehensible input."
+        },
+        {
+          "id": "f3",
+          "front": "IMMERSION 🌊",
+          "back": "Rodearte del idioma: teléfono en inglés, series sin subtítulos, pensar en inglés.",
+          "example": "I created an immersion environment by changing all my devices to English."
+        },
+        {
+          "id": "f4",
+          "front": "FEEDBACK LOOP 🔁",
+          "back": "Ciclo de práctica → error → corrección → mejora. Sin feedback, no hay mejora.",
+          "example": "iTalki provides a great feedback loop — my tutor corrects me in real time."
+        },
+        {
+          "id": "f5",
+          "front": "OUTPUT PRACTICE 📤",
+          "back": "Producir el idioma activamente (hablar, escribir), no solo recibirlo (leer, escuchar).",
+          "example": "Writing a journal in English is great output practice."
+        },
+        {
+          "id": "f6",
+          "front": "SELF-ASSESSMENT 🪞",
+          "back": "Evaluar tu propio nivel y progreso. Clave para dirigir tu aprendizaje autónomo.",
+          "example": "Regular self-assessment helps me identify areas that need more practice."
+        },
+        {
+          "id": "f7",
+          "front": "SMART GOALS 🎯",
+          "back": "Metas: Specific, Measurable, Achievable, Relevant, Time-bound. Estructura para objetivos efectivos.",
+          "example": "My SMART goal: 3 conversations per week on iTalki for 2 months."
+        },
+        {
+          "id": "f8",
+          "front": "COMPREHENSIBLE INPUT 📥",
+          "back": "Material que puedes entender en su mayoría (90-95%) con algo nuevo. El \"sweet spot\" para aprender.",
+          "example": "Podcasts for intermediate learners provide comprehensible input at my level."
+        },
+        {
+          "id": "f9",
+          "front": "ACTIVE RECALL 🧠",
+          "back": "Intentar recordar información ANTES de verla. Más efectivo que simplemente releer.",
+          "example": "I practice active recall by covering the English word and trying to remember it."
+        },
+        {
+          "id": "f10",
+          "front": "ACCOUNTABILITY PARTNER 🤝",
+          "back": "Persona que verifica tu progreso regularmente. Te mantiene comprometido.",
+          "example": "My accountability partner and I check in every Sunday to review our English goals."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Mi Plan SMART",
+    "description": "Construye metas SMART de aprendizaje en inglés.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build a SMART goal for speaking practice",
+          "words": [
+            "I",
+            "will",
+            "have",
+            "three",
+            "30-minute",
+            "conversations",
+            "per",
+            "week",
+            "on",
+            "iTalki",
+            "for",
+            "two",
+            "months."
+          ],
+          "correct": "I will have three 30-minute conversations per week on iTalki for two months."
+        },
+        {
+          "prompt": "Build a sentence about your daily routine",
+          "words": [
+            "Every",
+            "morning",
+            "I",
+            "listen",
+            "to",
+            "a",
+            "podcast",
+            "during",
+            "my",
+            "commute."
+          ],
+          "correct": "Every morning I listen to a podcast during my commute."
+        },
+        {
+          "prompt": "Build a SMART goal for vocabulary",
+          "words": [
+            "I",
+            "will",
+            "learn",
+            "10",
+            "new",
+            "words",
+            "per",
+            "week",
+            "using",
+            "Anki",
+            "for",
+            "three",
+            "months."
+          ],
+          "correct": "I will learn 10 new words per week using Anki for three months."
+        },
+        {
+          "prompt": "Build a SMART goal for reading",
+          "words": [
+            "I",
+            "will",
+            "read",
+            "one",
+            "English",
+            "article",
+            "every",
+            "day",
+            "for",
+            "the",
+            "next",
+            "month."
+          ],
+          "correct": "I will read one English article every day for the next month."
+        },
+        {
+          "prompt": "Build a commitment to immersion",
+          "words": [
+            "I",
+            "will",
+            "change",
+            "my",
+            "phone",
+            "and",
+            "social",
+            "media",
+            "to",
+            "English",
+            "starting",
+            "today."
+          ],
+          "correct": "I will change my phone and social media to English starting today."
+        },
+        {
+          "prompt": "Build a sentence about measuring progress",
+          "words": [
+            "I",
+            "will",
+            "record",
+            "myself",
+            "speaking",
+            "every",
+            "month",
+            "to",
+            "track",
+            "my",
+            "progress."
+          ],
+          "correct": "I will record myself speaking every month to track my progress."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-svg",
+    "type": "svg-scene",
+    "title": "Mapa de Recursos por Nivel",
+    "description": "Explora los mejores recursos organizados por habilidad y nivel.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f0fdf4",
+        "items": [
+          {
+            "id": "reading-b1",
+            "type": "rect",
+            "x": 30,
+            "y": 40,
+            "width": 130,
+            "height": 60,
+            "fill": "#93c5fd",
+            "label": "Reading B1: News in Levels",
+            "labelEn": "📖 Reading B1"
+          },
+          {
+            "id": "reading-b2",
+            "type": "rect",
+            "x": 30,
+            "y": 120,
+            "width": 130,
+            "height": 60,
+            "fill": "#60a5fa",
+            "label": "Reading B2: The Guardian, Medium",
+            "labelEn": "📖 Reading B2"
+          },
+          {
+            "id": "listening-b1",
+            "type": "rect",
+            "x": 230,
+            "y": 40,
+            "width": 130,
+            "height": 60,
+            "fill": "#86efac",
+            "label": "Listening B1: 6 Minute English",
+            "labelEn": "👂 Listening B1"
+          },
+          {
+            "id": "listening-b2",
+            "type": "rect",
+            "x": 230,
+            "y": 120,
+            "width": 130,
+            "height": 60,
+            "fill": "#34d399",
+            "label": "Listening B2: TED Talks",
+            "labelEn": "👂 Listening B2"
+          },
+          {
+            "id": "speaking-a2",
+            "type": "rect",
+            "x": 430,
+            "y": 40,
+            "width": 140,
+            "height": 60,
+            "fill": "#fdba74",
+            "label": "Speaking A2: HelloTalk",
+            "labelEn": "🗣️ Speaking A2"
+          },
+          {
+            "id": "speaking-b1",
+            "type": "rect",
+            "x": 430,
+            "y": 120,
+            "width": 140,
+            "height": 60,
+            "fill": "#f59e0b",
+            "label": "Speaking B1+: iTalki",
+            "labelEn": "🗣️ Speaking B1+"
+          },
+          {
+            "id": "writing-b1",
+            "type": "rect",
+            "x": 130,
+            "y": 240,
+            "width": 140,
+            "height": 60,
+            "fill": "#d8b4fe",
+            "label": "Writing B1: Lang-8, journal",
+            "labelEn": "✍️ Writing B1"
+          },
+          {
+            "id": "vocab-all",
+            "type": "ellipse",
+            "cx": 430,
+            "cy": 270,
+            "rx": 80,
+            "ry": 35,
+            "fill": "#fbbf24",
+            "label": "Todos los niveles: Anki",
+            "labelEn": "📚 All Levels: Anki"
+          },
+          {
+            "id": "certs",
+            "type": "rect",
+            "x": 180,
+            "y": 340,
+            "width": 240,
+            "height": 45,
+            "fill": "#f87171",
+            "label": "Certificaciones: IELTS, TOEFL, Cambridge",
+            "labelEn": "🏆 Certifications"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m14-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Autoaprendizaje",
+    "description": "Descifra vocabulario de recursos.",
+    "props": {
+      "words": [
+        {
+          "word": "RESOURCE",
+          "hint": "Recurso; material útil",
+          "category": "Self-learning"
+        },
+        {
+          "word": "ONLINE",
+          "hint": "En línea; por internet",
+          "category": "Self-learning"
+        },
+        {
+          "word": "PRACTICE",
+          "hint": "Práctica; ejercicio",
+          "category": "Self-learning"
+        },
+        {
+          "word": "TUTORIAL",
+          "hint": "Tutorial; guía paso a paso",
+          "category": "Self-learning"
+        },
+        {
+          "word": "GUIDE",
+          "hint": "Guía; instructivo",
+          "category": "Self-learning"
+        },
+        {
+          "word": "STRATEGY",
+          "hint": "Estrategia; plan de acción",
+          "category": "Self-learning"
+        }
+      ]
+    }
+  }
+]

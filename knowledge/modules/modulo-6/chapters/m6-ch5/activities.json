@@ -1,0 +1,471 @@
+[
+  {
+    "id": "m6-ch5-svg",
+    "type": "svg-scene",
+    "title": "De Directo a Indirecto",
+    "description": "Visualiza cómo transformar afirmaciones directas en indirectas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#fffbeb",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#f59e0b",
+            "label": "🗣️ Reported Speech: Statements",
+            "labelEn": "What someone said — without quotes"
+          },
+          {
+            "id": "direct",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 50,
+            "fill": "#fde68a",
+            "label": "💬 Direct Speech",
+            "labelEn": "\"I AM happy,\" she said. (comillas, tiempo original)"
+          },
+          {
+            "id": "reported",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "📝 Reported Speech",
+            "labelEn": "She SAID she WAS happy. (sin comillas, backshift)"
+          },
+          {
+            "id": "said",
+            "type": "rect",
+            "x": 30,
+            "y": 125,
+            "width": 310,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "📌 SAID (no person)",
+            "labelEn": "She SAID (that) she was happy."
+          },
+          {
+            "id": "told",
+            "type": "rect",
+            "x": 360,
+            "y": 125,
+            "width": 310,
+            "height": 50,
+            "fill": "#fce7f3",
+            "label": "📌 TOLD + person",
+            "labelEn": "She TOLD ME (that) she was happy."
+          },
+          {
+            "id": "bs1",
+            "type": "rect",
+            "x": 30,
+            "y": 195,
+            "width": 200,
+            "height": 45,
+            "fill": "#e0e7ff",
+            "label": "am/is → was",
+            "labelEn": "\"I am\" → She said she was"
+          },
+          {
+            "id": "bs2",
+            "type": "rect",
+            "x": 250,
+            "y": 195,
+            "width": 200,
+            "height": 45,
+            "fill": "#dcfce7",
+            "label": "like → liked",
+            "labelEn": "\"I like\" → He said he liked"
+          },
+          {
+            "id": "bs3",
+            "type": "rect",
+            "x": 470,
+            "y": 195,
+            "width": 200,
+            "height": 45,
+            "fill": "#fef3c7",
+            "label": "will → would",
+            "labelEn": "\"I will\" → He said he would"
+          },
+          {
+            "id": "bs4",
+            "type": "rect",
+            "x": 30,
+            "y": 255,
+            "width": 200,
+            "height": 45,
+            "fill": "#fecaca",
+            "label": "can → could",
+            "labelEn": "\"I can\" → She said she could"
+          },
+          {
+            "id": "bs5",
+            "type": "rect",
+            "x": 250,
+            "y": 255,
+            "width": 200,
+            "height": 45,
+            "fill": "#ccfbf1",
+            "label": "went → had gone",
+            "labelEn": "\"I went\" → She said she had gone"
+          },
+          {
+            "id": "bs6",
+            "type": "rect",
+            "x": 470,
+            "y": 255,
+            "width": 200,
+            "height": 45,
+            "fill": "#dbeafe",
+            "label": "have finished → had finished",
+            "labelEn": "\"I have\" → He said he had"
+          },
+          {
+            "id": "pronouns",
+            "type": "rect",
+            "x": 30,
+            "y": 320,
+            "width": 310,
+            "height": 50,
+            "fill": "#fde68a",
+            "label": "👤 Pronoun changes",
+            "labelEn": "I→he/she, my→his/her, we→they, me→him/her"
+          },
+          {
+            "id": "time",
+            "type": "rect",
+            "x": 360,
+            "y": 320,
+            "width": 310,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "⏰ Time changes",
+            "labelEn": "today→that day, tomorrow→the next day, here→there"
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 100,
+            "y": 385,
+            "width": 500,
+            "height": 30,
+            "fill": "#fee2e2",
+            "label": "⚠️ said me ❌ → told me ✅ | told that ❌ → said that ✅",
+            "labelEn": ""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m6-ch5-flash",
+    "type": "flashcard",
+    "title": "Direct → Reported",
+    "description": "Convierte afirmaciones directas en estilo indirecto.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "\"I am happy,\" she said.",
+          "back": "She said (that) she was happy.",
+          "example": "am → was."
+        },
+        {
+          "id": "c2",
+          "front": "\"I like chocolate,\" he said.",
+          "back": "He said (that) he liked chocolate.",
+          "example": "like → liked."
+        },
+        {
+          "id": "c3",
+          "front": "\"I am working,\" she told me.",
+          "back": "She told me (that) she was working.",
+          "example": "am working → was working."
+        },
+        {
+          "id": "c4",
+          "front": "\"I have finished,\" he said.",
+          "back": "He said (that) he had finished.",
+          "example": "have finished → had finished."
+        },
+        {
+          "id": "c5",
+          "front": "\"I went to Paris,\" she said.",
+          "back": "She said (that) she had gone to Paris.",
+          "example": "went → had gone."
+        },
+        {
+          "id": "c6",
+          "front": "\"I will help you,\" he told me.",
+          "back": "He told me (that) he would help me.",
+          "example": "will → would, you → me."
+        },
+        {
+          "id": "c7",
+          "front": "\"I can swim,\" she said.",
+          "back": "She said (that) she could swim.",
+          "example": "can → could."
+        },
+        {
+          "id": "c8",
+          "front": "\"We are leaving today,\" they said.",
+          "back": "They said (that) they were leaving that day.",
+          "example": "are → were, today → that day."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-match",
+    "type": "word-match",
+    "title": "Backshift de Tiempos",
+    "description": "Empareja el tiempo directo con su forma reportada.",
+    "props": {
+      "pairs": [
+        {
+          "left": "am / is",
+          "right": "was"
+        },
+        {
+          "left": "like / play (present)",
+          "right": "liked / played (past)"
+        },
+        {
+          "left": "am working (cont.)",
+          "right": "was working"
+        },
+        {
+          "left": "have finished (perf.)",
+          "right": "had finished"
+        },
+        {
+          "left": "will",
+          "right": "would"
+        },
+        {
+          "left": "can",
+          "right": "could"
+        },
+        {
+          "left": "went (past)",
+          "right": "had gone (past perf.)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Reporta lo que Dijeron",
+    "description": "Ordena para formar oraciones en estilo indirecto.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "\"Estoy feliz\" — ella dijo:",
+          "words": [
+            "She",
+            "said",
+            "she",
+            "was",
+            "happy"
+          ],
+          "correct": "She said she was happy"
+        },
+        {
+          "prompt": "\"Me gusta el chocolate\" — él me dijo:",
+          "words": [
+            "He",
+            "told",
+            "me",
+            "he",
+            "liked",
+            "chocolate"
+          ],
+          "correct": "He told me he liked chocolate"
+        },
+        {
+          "prompt": "\"Te ayudaré\" — él dijo:",
+          "words": [
+            "He",
+            "said",
+            "he",
+            "would",
+            "help",
+            "me"
+          ],
+          "correct": "He said he would help me"
+        },
+        {
+          "prompt": "\"Puedo nadar\" — ella dijo:",
+          "words": [
+            "She",
+            "said",
+            "she",
+            "could",
+            "swim"
+          ],
+          "correct": "She said she could swim"
+        },
+        {
+          "prompt": "\"Fui a París\" — ella dijo:",
+          "words": [
+            "She",
+            "said",
+            "she",
+            "had",
+            "gone",
+            "to",
+            "Paris"
+          ],
+          "correct": "She said she had gone to Paris"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz: Reported Speech (Statements)",
+    "description": "Demuestra tu dominio del estilo indirecto.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"I am happy,\" she said. → She said she ___ happy.",
+          "options": [
+            "is",
+            "was",
+            "has been",
+            "were"
+          ],
+          "correct": 1,
+          "explanation": "am → was (backshift)."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"I like chocolate,\" he said. → He said he ___ chocolate.",
+          "correct": "liked",
+          "explanation": "like → liked."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"I will help you,\" he said. → He said he ___ help me.",
+          "options": [
+            "will",
+            "would",
+            "could",
+            "should"
+          ],
+          "correct": 1,
+          "explanation": "will → would."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"I can swim,\" she said. → She said she ___ swim.",
+          "correct": "could",
+          "explanation": "can → could."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "She ___ me she was happy. (correct verb)",
+          "options": [
+            "said",
+            "told",
+            "said to",
+            "tells"
+          ],
+          "correct": 1,
+          "explanation": "told + person (told me)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "He ___ he liked chocolate. (no person follows)",
+          "options": [
+            "told",
+            "said",
+            "told me",
+            "say"
+          ],
+          "correct": 1,
+          "explanation": "said (no person after said)."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"I went to Paris.\" → She said she ___ gone to Paris.",
+          "correct": "had",
+          "explanation": "went → had gone (past → past perfect)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"I will call you tomorrow.\" → He said he would call me ___.",
+          "options": [
+            "tomorrow",
+            "the next day",
+            "yesterday",
+            "today"
+          ],
+          "correct": 1,
+          "explanation": "tomorrow → the next day."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Reported Speech",
+    "description": "Descifra verbos de estilo indirecto.",
+    "props": {
+      "words": [
+        {
+          "word": "SAID",
+          "hint": "Dijo; sin persona después",
+          "category": "Reported Speech"
+        },
+        {
+          "word": "TOLD",
+          "hint": "Dijo a; told + persona",
+          "category": "Reported Speech"
+        },
+        {
+          "word": "EXPLAINED",
+          "hint": "Explicó",
+          "category": "Reported Speech"
+        },
+        {
+          "word": "MENTIONED",
+          "hint": "Mencionó",
+          "category": "Reported Speech"
+        },
+        {
+          "word": "STATED",
+          "hint": "Afirmó; declaró",
+          "category": "Reported Speech"
+        },
+        {
+          "word": "CLAIMED",
+          "hint": "Sostuvo; afirmó",
+          "category": "Reported Speech"
+        }
+      ]
+    }
+  }
+]

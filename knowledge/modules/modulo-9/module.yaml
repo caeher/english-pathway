@@ -1,0 +1,12 @@
+id: modulo-9
+number: 9
+title: Explorando el Mundo
+description: Viajes, presente continuo, preguntas, pasado simple y descripciones con adjetivos.
+icon: 🌍
+color: "#f59e0b"
+chapters:
+  - m9-ch1
+  - m9-ch2
+  - m9-ch3
+  - m9-ch4
+  - m9-ch5

@@ -1,0 +1,497 @@
+[
+  {
+    "id": "m5-ch1-svg",
+    "type": "svg-scene",
+    "title": "Pasaporte de Experiencias",
+    "description": "Explora el presente perfecto como un pasaporte de vida.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#3b82f6",
+            "label": "✅ Present Perfect",
+            "labelEn": "Life experiences: what you've done!"
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 70,
+            "fill": "#bfdbfe",
+            "label": "📏 have/has + past participle",
+            "labelEn": "I'VE VISITED Paris. She'S SEEN the movie. They'VE EATEN sushi."
+          },
+          {
+            "id": "part",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "📝 Past Participles",
+            "labelEn": "Regular: -ed. Irregular: go→gone, see→seen, eat→eaten, be→been"
+          },
+          {
+            "id": "ever",
+            "type": "rect",
+            "x": 30,
+            "y": 150,
+            "width": 200,
+            "height": 60,
+            "fill": "#fde68a",
+            "label": "❓ EVER",
+            "labelEn": "Have you EVER been to Japan? (alguna vez)"
+          },
+          {
+            "id": "never",
+            "type": "rect",
+            "x": 250,
+            "y": 150,
+            "width": 200,
+            "height": 60,
+            "fill": "#fecaca",
+            "label": "🚫 NEVER",
+            "labelEn": "I have NEVER eaten sushi. (nunca)"
+          },
+          {
+            "id": "already",
+            "type": "rect",
+            "x": 470,
+            "y": 150,
+            "width": 200,
+            "height": 60,
+            "fill": "#dcfce7",
+            "label": "✅ ALREADY",
+            "labelEn": "I've ALREADY finished. (ya)"
+          },
+          {
+            "id": "yet",
+            "type": "rect",
+            "x": 30,
+            "y": 230,
+            "width": 200,
+            "height": 60,
+            "fill": "#e0e7ff",
+            "label": "⏳ YET",
+            "labelEn": "I haven't finished YET. Have you done it YET? (todavía)"
+          },
+          {
+            "id": "just",
+            "type": "rect",
+            "x": 250,
+            "y": 230,
+            "width": 200,
+            "height": 60,
+            "fill": "#fce7f3",
+            "label": "⚡ JUST",
+            "labelEn": "I've JUST arrived. (acabar de)"
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 470,
+            "y": 230,
+            "width": 200,
+            "height": 60,
+            "fill": "#fee2e2",
+            "label": "⚠️ No specific time!",
+            "labelEn": "✅ I've been to Paris. ❌ I've been to Paris last year."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 100,
+            "y": 320,
+            "width": 500,
+            "height": 55,
+            "fill": "#ccfbf1",
+            "label": "❌ & ❓",
+            "labelEn": "I HAVEN'T visited Rome. HAS she seen it? Yes, I have. No, she hasn't."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m5-ch1-flash",
+    "type": "flashcard",
+    "title": "Presente Perfecto: Conjugación",
+    "description": "Practica la formación del presente perfecto.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I / visit / Paris",
+          "back": "I have visited Paris. / I've visited Paris.",
+          "example": "Regular: visit → visited."
+        },
+        {
+          "id": "c2",
+          "front": "She / see / that movie",
+          "back": "She has seen that movie. / She's seen that movie.",
+          "example": "Irregular: see → seen."
+        },
+        {
+          "id": "c3",
+          "front": "They / eat / sushi",
+          "back": "They have eaten sushi. / They've eaten sushi.",
+          "example": "Irregular: eat → eaten."
+        },
+        {
+          "id": "c4",
+          "front": "He / be / to Japan",
+          "back": "He has been to Japan. / He's been to Japan.",
+          "example": "Irregular: be → been."
+        },
+        {
+          "id": "c5",
+          "front": "I / never / fly",
+          "back": "I have never flown.",
+          "example": "Irregular: fly → flown. \"never\" before participle."
+        },
+        {
+          "id": "c6",
+          "front": "you / ever / speak / to her?",
+          "back": "Have you ever spoken to her?",
+          "example": "Irregular: speak → spoken."
+        },
+        {
+          "id": "c7",
+          "front": "I / just / arrive",
+          "back": "I have just arrived. / I've just arrived.",
+          "example": "\"just\" = acabar de."
+        },
+        {
+          "id": "c8",
+          "front": "She / already / finish",
+          "back": "She has already finished. / She's already finished.",
+          "example": "\"already\" before participle."
+        },
+        {
+          "id": "c9",
+          "front": "They / not / do / it / yet",
+          "back": "They haven't done it yet.",
+          "example": "Irregular: do → done. \"yet\" at end."
+        },
+        {
+          "id": "c10",
+          "front": "He / write / three books",
+          "back": "He has written three books.",
+          "example": "Irregular: write → written."
+        },
+        {
+          "id": "c11",
+          "front": "I / buy / a new car",
+          "back": "I have bought a new car.",
+          "example": "Irregular: buy → bought."
+        },
+        {
+          "id": "c12",
+          "front": "you / take / the exam / yet?",
+          "back": "Have you taken the exam yet?",
+          "example": "Irregular: take → taken."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-match",
+    "type": "word-match",
+    "title": "Verbo Base → Past Participle",
+    "description": "Empareja con el participio pasado correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "go",
+          "right": "gone"
+        },
+        {
+          "left": "see",
+          "right": "seen"
+        },
+        {
+          "left": "eat",
+          "right": "eaten"
+        },
+        {
+          "left": "be",
+          "right": "been"
+        },
+        {
+          "left": "write",
+          "right": "written"
+        },
+        {
+          "left": "speak",
+          "right": "spoken"
+        },
+        {
+          "left": "take",
+          "right": "taken"
+        },
+        {
+          "left": "do",
+          "right": "done"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Cuenta tus Experiencias",
+    "description": "Ordena las palabras para formar oraciones en presente perfecto.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "He visitado París:",
+          "words": [
+            "I",
+            "have",
+            "visited",
+            "Paris"
+          ],
+          "correct": "I have visited Paris"
+        },
+        {
+          "prompt": "¿Has estado alguna vez en Japón?:",
+          "words": [
+            "Have",
+            "you",
+            "ever",
+            "been",
+            "to",
+            "Japan?"
+          ],
+          "correct": "Have you ever been to Japan?"
+        },
+        {
+          "prompt": "Nunca he comido sushi:",
+          "words": [
+            "I",
+            "have",
+            "never",
+            "eaten",
+            "sushi"
+          ],
+          "correct": "I have never eaten sushi"
+        },
+        {
+          "prompt": "Ya he terminado:",
+          "words": [
+            "I",
+            "have",
+            "already",
+            "finished"
+          ],
+          "correct": "I have already finished"
+        },
+        {
+          "prompt": "Ella no ha visto la película todavía:",
+          "words": [
+            "She",
+            "hasn't",
+            "seen",
+            "the",
+            "movie",
+            "yet"
+          ],
+          "correct": "She hasn't seen the movie yet"
+        },
+        {
+          "prompt": "Acabo de llegar:",
+          "words": [
+            "I",
+            "have",
+            "just",
+            "arrived"
+          ],
+          "correct": "I have just arrived"
+        },
+        {
+          "prompt": "Él ha escrito tres libros:",
+          "words": [
+            "He",
+            "has",
+            "written",
+            "three",
+            "books"
+          ],
+          "correct": "He has written three books"
+        },
+        {
+          "prompt": "¿Has hecho la tarea?:",
+          "words": [
+            "Have",
+            "you",
+            "done",
+            "the",
+            "homework?"
+          ],
+          "correct": "Have you done the homework?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz: Presente Perfecto",
+    "description": "Demuestra tu dominio del presente perfecto.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"I ___ (visit) Paris.\" (present perfect)",
+          "options": [
+            "visited",
+            "have visited",
+            "has visited",
+            "visiting"
+          ],
+          "correct": 1,
+          "explanation": "I have visited (I/you/we/they → have)."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"She ___ (see) that movie.\" (present perfect)",
+          "correct": "has seen",
+          "explanation": "She has seen (he/she/it → has)."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"Have you ___ been to Japan?\"",
+          "options": [
+            "already",
+            "ever",
+            "yet",
+            "just"
+          ],
+          "correct": 1,
+          "explanation": "\"ever\" in questions = alguna vez."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"I have ___ eaten sushi.\" (nunca)",
+          "correct": "never",
+          "explanation": "never = nunca."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"I haven't finished ___.\"",
+          "options": [
+            "already",
+            "ever",
+            "yet",
+            "just"
+          ],
+          "correct": 2,
+          "explanation": "\"yet\" at the end of negatives/questions."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"go\" → past participle: ___",
+          "correct": "gone",
+          "explanation": "go → went → gone."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"eat\" → past participle: ___",
+          "options": [
+            "ate",
+            "eaten",
+            "eat",
+            "eating"
+          ],
+          "correct": 1,
+          "explanation": "eat → ate → eaten."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"I've ___ arrived.\" (acabar de)",
+          "correct": "just",
+          "explanation": "just = acabar de (very recently)."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "I've visited Paris.",
+            "I've visited Paris last year.",
+            "I visited Paris last year.",
+            "She's been to Japan."
+          ],
+          "correct": 1,
+          "explanation": "With specific time (last year) → Past Simple, not Present Perfect."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"She ___ already ___ .\" (finish)",
+          "correct": "has finished",
+          "explanation": "She has already finished / She's already finished."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Presente Perfecto",
+    "description": "Descifra palabras clave del presente perfecto.",
+    "props": {
+      "words": [
+        {
+          "word": "ALREADY",
+          "hint": "Ya; acción completada",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "YET",
+          "hint": "Todavía no; en preguntas y negativas",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "EVER",
+          "hint": "Alguna vez; en preguntas",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "NEVER",
+          "hint": "Nunca; experiencia negativa",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "JUST",
+          "hint": "Acabar de; recién",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "SINCE",
+          "hint": "Desde; punto en el tiempo",
+          "category": "Present Perfect"
+        }
+      ]
+    }
+  }
+]

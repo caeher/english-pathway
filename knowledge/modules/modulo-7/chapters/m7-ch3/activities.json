@@ -1,0 +1,399 @@
+[
+  {
+    "id": "m7-ch3-svg",
+    "type": "svg-scene",
+    "title": "Estructuras de Énfasis",
+    "description": "Visualiza la inversión y las oraciones hendidas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#8b5cf6",
+            "label": "🔄 Inversion & Emphasis",
+            "labelEn": "Not only… but also / It was… who"
+          },
+          {
+            "id": "rule",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "📏 Negative expression at start → INVERSION",
+            "labelEn": "Never have I… / Rarely do we… / Not only does she…"
+          },
+          {
+            "id": "never",
+            "type": "rect",
+            "x": 30,
+            "y": 125,
+            "width": 310,
+            "height": 50,
+            "fill": "#fde68a",
+            "label": "🚫 Never have I...",
+            "labelEn": "NEVER HAVE I seen such beauty. (= I have never seen)"
+          },
+          {
+            "id": "notonly",
+            "type": "rect",
+            "x": 360,
+            "y": 125,
+            "width": 310,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "➕ Not only... but also",
+            "labelEn": "NOT ONLY DOES he cook, BUT he also cleans."
+          },
+          {
+            "id": "hardly",
+            "type": "rect",
+            "x": 30,
+            "y": 190,
+            "width": 310,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "⏰ Hardly... when",
+            "labelEn": "HARDLY HAD I sat down WHEN the phone rang."
+          },
+          {
+            "id": "nosooner",
+            "type": "rect",
+            "x": 360,
+            "y": 190,
+            "width": 310,
+            "height": 50,
+            "fill": "#fce7f3",
+            "label": "⚡ No sooner... than",
+            "labelEn": "NO SOONER HAD I left THAN it started raining."
+          },
+          {
+            "id": "cleft1",
+            "type": "rect",
+            "x": 30,
+            "y": 260,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "🎯 It was… who/that",
+            "labelEn": "IT WAS JOHN WHO broke the window. (emphasis on John)"
+          },
+          {
+            "id": "cleft2",
+            "type": "rect",
+            "x": 360,
+            "y": 260,
+            "width": 310,
+            "height": 55,
+            "fill": "#fef3c7",
+            "label": "🎯 What… is",
+            "labelEn": "WHAT I NEED IS more time. (emphasis on what)"
+          },
+          {
+            "id": "note",
+            "type": "rect",
+            "x": 100,
+            "y": 340,
+            "width": 500,
+            "height": 45,
+            "fill": "#fecaca",
+            "label": "📝 Formal writing & speeches",
+            "labelEn": "These structures are for emphasis in formal contexts."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m7-ch3-flash",
+    "type": "flashcard",
+    "title": "Inversión y Énfasis",
+    "description": "Practica transformando oraciones normales en enfáticas.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I have never seen such beauty. (inversion)",
+          "back": "Never have I seen such beauty.",
+          "example": "Never + have + subject."
+        },
+        {
+          "id": "c2",
+          "front": "She not only sings but also dances. (inversion)",
+          "back": "Not only does she sing, but she also dances.",
+          "example": "Not only + does + subject."
+        },
+        {
+          "id": "c3",
+          "front": "He hardly arrived when it rained. (inversion)",
+          "back": "Hardly had he arrived when it started raining.",
+          "example": "Hardly + had + subject."
+        },
+        {
+          "id": "c4",
+          "front": "I left and it started raining. (no sooner)",
+          "back": "No sooner had I left than it started raining.",
+          "example": "No sooner + had + subject + than."
+        },
+        {
+          "id": "c5",
+          "front": "We rarely see such talent. (inversion)",
+          "back": "Rarely do we see such talent.",
+          "example": "Rarely + do + subject."
+        },
+        {
+          "id": "c6",
+          "front": "John broke the window. (emphasis on John)",
+          "back": "It was John who broke the window.",
+          "example": "It was + focus + who/that."
+        },
+        {
+          "id": "c7",
+          "front": "I need more time. (emphasis on what)",
+          "back": "What I need is more time.",
+          "example": "What + subject + verb + is."
+        },
+        {
+          "id": "c8",
+          "front": "I did not know it would rain. (little)",
+          "back": "Little did I know it would rain.",
+          "example": "Little + did + subject + verb."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-match",
+    "type": "word-match",
+    "title": "Expresión → Inversión",
+    "description": "Empareja la expresión con su construcción correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Never",
+          "right": "Never have I seen..."
+        },
+        {
+          "left": "Hardly",
+          "right": "Hardly had he arrived when..."
+        },
+        {
+          "left": "Not only",
+          "right": "Not only does she sing..."
+        },
+        {
+          "left": "No sooner",
+          "right": "No sooner had I left than..."
+        },
+        {
+          "left": "Rarely",
+          "right": "Rarely do we see..."
+        },
+        {
+          "left": "Little",
+          "right": "Little did I know..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Construye Oraciones Enfáticas",
+    "description": "Ordena para formar oraciones con inversión y énfasis.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Nunca he visto tal belleza (inversión):",
+          "words": [
+            "Never",
+            "have",
+            "I",
+            "seen",
+            "such",
+            "beauty"
+          ],
+          "correct": "Never have I seen such beauty"
+        },
+        {
+          "prompt": "No solo canta, sino también baila:",
+          "words": [
+            "Not",
+            "only",
+            "does",
+            "she",
+            "sing,",
+            "but",
+            "she",
+            "also",
+            "dances"
+          ],
+          "correct": "Not only does she sing, but she also dances"
+        },
+        {
+          "prompt": "Fue John quien rompió la ventana:",
+          "words": [
+            "It",
+            "was",
+            "John",
+            "who",
+            "broke",
+            "the",
+            "window"
+          ],
+          "correct": "It was John who broke the window"
+        },
+        {
+          "prompt": "Lo que necesito es más tiempo:",
+          "words": [
+            "What",
+            "I",
+            "need",
+            "is",
+            "more",
+            "time"
+          ],
+          "correct": "What I need is more time"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz: Inversión y Énfasis",
+    "description": "Demuestra tu dominio de las estructuras enfáticas.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"___ have I seen such beauty.\" (inversión)",
+          "options": [
+            "Not",
+            "Never",
+            "No",
+            "None"
+          ],
+          "correct": 1,
+          "explanation": "Never have I seen = inversión enfática."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"Not only ___ she sing, but she also dances.\"",
+          "correct": "does",
+          "explanation": "Not only + does + subject."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"Hardly ___ he arrived when it rained.\"",
+          "options": [
+            "did",
+            "had",
+            "has",
+            "was"
+          ],
+          "correct": 1,
+          "explanation": "Hardly had + subject + pp."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"No sooner ___ I left than it started raining.\"",
+          "correct": "had",
+          "explanation": "No sooner had + subject."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"___ was John who broke the window.\"",
+          "options": [
+            "It",
+            "That",
+            "This",
+            "What"
+          ],
+          "correct": 0,
+          "explanation": "It was + focus + who/that."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"___ I need is more time.\"",
+          "correct": "What",
+          "explanation": "What + subject + verb + is."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "These structures are mainly for:",
+          "options": [
+            "Everyday conversation.",
+            "Formal writing and speeches.",
+            "Children's stories.",
+            "Text messages."
+          ],
+          "correct": 1,
+          "explanation": "Inversion/cleft = formal emphasis."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"Little ___ I know it would rain.\"",
+          "correct": "did",
+          "explanation": "Little did + subject + base verb."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Inversión y Énfasis",
+    "description": "Descifra adverbios y términos de énfasis.",
+    "props": {
+      "words": [
+        {
+          "word": "SELDOM",
+          "hint": "Raramente; casi nunca",
+          "category": "Inversion"
+        },
+        {
+          "word": "RARELY",
+          "hint": "Raramente; pocas veces",
+          "category": "Inversion"
+        },
+        {
+          "word": "HARDLY",
+          "hint": "Apenas; difícilmente",
+          "category": "Inversion"
+        },
+        {
+          "word": "EMPHASIS",
+          "hint": "Énfasis; dar importancia",
+          "category": "Inversion"
+        },
+        {
+          "word": "INVERSION",
+          "hint": "Inversión; cambio de orden",
+          "category": "Inversion"
+        },
+        {
+          "word": "DRAMATIC",
+          "hint": "Dramático; impactante",
+          "category": "Inversion"
+        }
+      ]
+    }
+  }
+]

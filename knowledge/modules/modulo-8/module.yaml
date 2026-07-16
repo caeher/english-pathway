@@ -1,0 +1,12 @@
+id: modulo-8
+number: 8
+title: Fundamentos Lúdicos
+description: Vocabulario esencial, oraciones simples, pronunciación, comprensión auditiva y tu primer diálogo.
+icon: 🎮
+color: "#3b82f6"
+chapters:
+  - m8-ch1
+  - m8-ch2
+  - m8-ch3
+  - m8-ch4
+  - m8-ch5

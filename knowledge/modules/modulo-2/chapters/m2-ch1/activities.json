@@ -1,0 +1,499 @@
+[
+  {
+    "id": "m2-ch1-svg",
+    "type": "svg-scene",
+    "title": "Un Día Típico",
+    "description": "Sigue la rutina de Ana y descubre el presente simple en acción.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "day",
+            "type": "rect",
+            "x": 25,
+            "y": 10,
+            "width": 650,
+            "height": 400,
+            "fill": "#dbeafe",
+            "label": "🌅 Ana's Typical Day",
+            "labelEn": "Follow Ana through her daily routine in Present Simple!"
+          },
+          {
+            "id": "wake",
+            "type": "rect",
+            "x": 50,
+            "y": 55,
+            "width": 140,
+            "height": 70,
+            "fill": "#fef3c7",
+            "label": "⏰ 7:00 AM",
+            "labelEn": "She WAKES UP at seven. She GETS OUT of bed."
+          },
+          {
+            "id": "breakfast",
+            "type": "rect",
+            "x": 210,
+            "y": 55,
+            "width": 140,
+            "height": 70,
+            "fill": "#fde68a",
+            "label": "🍳 7:30 AM",
+            "labelEn": "She EATS breakfast. She DRINKS coffee."
+          },
+          {
+            "id": "work",
+            "type": "rect",
+            "x": 370,
+            "y": 55,
+            "width": 140,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "💼 9:00 AM",
+            "labelEn": "She WORKS at an office. She STARTS at nine."
+          },
+          {
+            "id": "lunch",
+            "type": "rect",
+            "x": 530,
+            "y": 55,
+            "width": 140,
+            "height": 70,
+            "fill": "#fed7aa",
+            "label": "🥗 1:00 PM",
+            "labelEn": "She HAS lunch. She EATS a salad."
+          },
+          {
+            "id": "exercise",
+            "type": "rect",
+            "x": 50,
+            "y": 160,
+            "width": 140,
+            "height": 70,
+            "fill": "#c4b5fd",
+            "label": "🏃 6:00 PM",
+            "labelEn": "She EXERCISES after work. She RUNS in the park."
+          },
+          {
+            "id": "dinner",
+            "type": "rect",
+            "x": 210,
+            "y": 160,
+            "width": 140,
+            "height": 70,
+            "fill": "#fecaca",
+            "label": "🍽️ 8:00 PM",
+            "labelEn": "She COOKS dinner. She WATCHES TV."
+          },
+          {
+            "id": "sleep",
+            "type": "rect",
+            "x": 370,
+            "y": 160,
+            "width": 140,
+            "height": 70,
+            "fill": "#e0e7ff",
+            "label": "🛏️ 10:30 PM",
+            "labelEn": "She GOES to bed. She SLEEPS eight hours."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 530,
+            "y": 160,
+            "width": 140,
+            "height": 70,
+            "fill": "#fecaca",
+            "label": "❌ Negativo",
+            "labelEn": "She DOESN'T drink tea. She DOESN'T work on weekends."
+          },
+          {
+            "id": "rule-s",
+            "type": "rect",
+            "x": 50,
+            "y": 280,
+            "width": 300,
+            "height": 70,
+            "fill": "#dcfce7",
+            "label": "📏 Regla: He/She/It + S",
+            "labelEn": "work→works, play→plays, watch→watches, study→studies, go→goes"
+          },
+          {
+            "id": "dodoes",
+            "type": "rect",
+            "x": 370,
+            "y": 280,
+            "width": 300,
+            "height": 70,
+            "fill": "#fef9c3",
+            "label": "🔧 DO / DOES",
+            "labelEn": "Do you work? Does she work? I don't work. She doesn't work."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m2-ch1-flash",
+    "type": "flashcard",
+    "title": "Verbos en Presente Simple",
+    "description": "Domina la conjugación y los usos del presente simple.",
+    "props": {
+      "cards": [
+        {
+          "id": "ps1",
+          "front": "I work / She works",
+          "back": "Trabajo / Ella trabaja\n3rd person: add -s",
+          "example": "I work at a bank. She works at a school."
+        },
+        {
+          "id": "ps2",
+          "front": "I play / He plays",
+          "back": "Juego / Él juega\nVocal + y → add -s",
+          "example": "I play tennis. He plays soccer."
+        },
+        {
+          "id": "ps3",
+          "front": "I watch / She watches",
+          "back": "Miro / Ella mira\nVerbo en -ch → add -es",
+          "example": "I watch TV. She watches movies."
+        },
+        {
+          "id": "ps4",
+          "front": "I study / He studies",
+          "back": "Estudio / Él estudia\nConsonante + y → -ies",
+          "example": "I study English. He studies math."
+        },
+        {
+          "id": "ps5",
+          "front": "I go / She goes",
+          "back": "Voy / Ella va\nVerbo en -o → add -es",
+          "example": "I go to school. She goes to work."
+        },
+        {
+          "id": "ps6",
+          "front": "I don't work",
+          "back": "No trabajo\nDO NOT + base verb",
+          "example": "I don't work on Sundays."
+        },
+        {
+          "id": "ps7",
+          "front": "She doesn't work",
+          "back": "Ella no trabaja\nDOES NOT + base verb (no -s!)",
+          "example": "She doesn't work on weekends."
+        },
+        {
+          "id": "ps8",
+          "front": "Do you work?",
+          "back": "¿Trabajas?\nDO + subject + base verb?",
+          "example": "Do you work here? — Yes, I do."
+        },
+        {
+          "id": "ps9",
+          "front": "Does she work?",
+          "back": "¿Ella trabaja?\nDOES + subject + base verb?",
+          "example": "Does she work here? — No, she doesn't."
+        },
+        {
+          "id": "ps10",
+          "front": "Uso: Hábitos",
+          "back": "Acciones que haces regularmente",
+          "example": "I brush my teeth every morning."
+        },
+        {
+          "id": "ps11",
+          "front": "Uso: Verdades",
+          "back": "Hechos universales",
+          "example": "Water boils at 100°C."
+        },
+        {
+          "id": "ps12",
+          "front": "Uso: Estados",
+          "back": "Situaciones permanentes",
+          "example": "She lives in Madrid. He speaks Spanish."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-match",
+    "type": "word-match",
+    "title": "Verbo → Tercera Persona",
+    "description": "Empareja cada verbo con su forma en tercera persona.",
+    "props": {
+      "pairs": [
+        {
+          "left": "work",
+          "right": "works"
+        },
+        {
+          "left": "watch",
+          "right": "watches"
+        },
+        {
+          "left": "study",
+          "right": "studies"
+        },
+        {
+          "left": "go",
+          "right": "goes"
+        },
+        {
+          "left": "play",
+          "right": "plays"
+        },
+        {
+          "left": "have",
+          "right": "has"
+        },
+        {
+          "left": "do",
+          "right": "does"
+        },
+        {
+          "left": "fly",
+          "right": "flies"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Oraciones en Presente Simple",
+    "description": "Construye oraciones afirmativas, negativas y preguntas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella trabaja en un hospital:",
+          "words": [
+            "works",
+            "She",
+            "in",
+            "a",
+            "hospital"
+          ],
+          "correct": "She works in a hospital"
+        },
+        {
+          "prompt": "Yo no bebo café:",
+          "words": [
+            "don't",
+            "I",
+            "drink",
+            "coffee"
+          ],
+          "correct": "I don't drink coffee"
+        },
+        {
+          "prompt": "¿Estudias inglés?:",
+          "words": [
+            "you",
+            "Do",
+            "study",
+            "English?"
+          ],
+          "correct": "Do you study English?"
+        },
+        {
+          "prompt": "Él va al gimnasio:",
+          "words": [
+            "goes",
+            "He",
+            "the",
+            "to",
+            "gym"
+          ],
+          "correct": "He goes to the gym"
+        },
+        {
+          "prompt": "Ella no vive aquí:",
+          "words": [
+            "doesn't",
+            "She",
+            "live",
+            "here"
+          ],
+          "correct": "She doesn't live here"
+        },
+        {
+          "prompt": "¿Ella habla francés?:",
+          "words": [
+            "she",
+            "Does",
+            "speak",
+            "French?"
+          ],
+          "correct": "Does she speak French?"
+        },
+        {
+          "prompt": "Me levanto temprano:",
+          "words": [
+            "wake",
+            "I",
+            "up",
+            "early"
+          ],
+          "correct": "I wake up early"
+        },
+        {
+          "prompt": "El sol sale por el este:",
+          "words": [
+            "The",
+            "rises",
+            "sun",
+            "in",
+            "the",
+            "east"
+          ],
+          "correct": "The sun rises in the east"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-quiz",
+    "type": "quiz",
+    "title": "Quiz: Presente Simple",
+    "description": "Demuestra tu dominio del presente simple.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "fill-blank",
+          "question": "She ___ (work) at a hospital.",
+          "correct": "works",
+          "explanation": "She works — add -s for 3rd person."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "He ___ (study) English every day.",
+          "correct": "studies",
+          "explanation": "Study → studies (consonant + y → ies)."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"She ___ coffee.\" (negative)",
+          "options": [
+            "don't drink",
+            "doesn't drink",
+            "doesn't drinks",
+            "not drinks"
+          ],
+          "correct": 1,
+          "explanation": "She doesn't drink — does not + base verb."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "___ you like pizza? (question)",
+          "correct": "Do",
+          "explanation": "DO you like pizza?"
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "He ___ (go) to school every day.",
+          "options": [
+            "go",
+            "goes",
+            "gos",
+            "going"
+          ],
+          "correct": 1,
+          "explanation": "Go → goes (verb ending in -o → add -es)."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "___ she speak Spanish? (question)",
+          "correct": "Does",
+          "explanation": "DOES she speak Spanish?"
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Which sentence is correct?",
+          "options": [
+            "She don't like fish",
+            "She doesn't likes fish",
+            "She doesn't like fish",
+            "She not like fish"
+          ],
+          "correct": 2,
+          "explanation": "She doesn't like — doesn't + base verb."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "I ___ (not/like) spiders.",
+          "correct": "don't like",
+          "explanation": "I don't like — do not + base verb."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "The present simple is used for…",
+          "options": [
+            "Actions happening now",
+            "Past events",
+            "Habits and routines",
+            "Future plans"
+          ],
+          "correct": 2,
+          "explanation": "Present simple = habits, routines, facts."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "Water ___ (boil) at 100°C.",
+          "correct": "boils",
+          "explanation": "Water boils — universal truth in present simple."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario del Presente Simple",
+    "description": "Descifra palabras clave de rutinas y hábitos.",
+    "props": {
+      "words": [
+        {
+          "word": "WORK",
+          "hint": "Trabajar",
+          "category": "Present Simple"
+        },
+        {
+          "word": "PLAY",
+          "hint": "Jugar",
+          "category": "Present Simple"
+        },
+        {
+          "word": "STUDY",
+          "hint": "Estudiar",
+          "category": "Present Simple"
+        },
+        {
+          "word": "EVERY",
+          "hint": "Cada; every day",
+          "category": "Present Simple"
+        },
+        {
+          "word": "DAILY",
+          "hint": "Diario; cada día",
+          "category": "Present Simple"
+        },
+        {
+          "word": "ROUTINE",
+          "hint": "Rutina; actividades habituales",
+          "category": "Present Simple"
+        }
+      ]
+    }
+  }
+]

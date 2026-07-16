@@ -1,0 +1,463 @@
+[
+  {
+    "id": "m13-ch3-quiz",
+    "type": "quiz",
+    "title": "El Crítico Literario",
+    "description": "Analiza el artículo en 4 niveles: comprensión, análisis, evaluación y respuesta personal.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "[Comprensión] What is the author's main argument?",
+          "options": [
+            "Social media is completely bad",
+            "Social media is always positive",
+            "Excessive social media use correlates with loneliness; moderation is key",
+            "Everyone should delete social media"
+          ],
+          "correct": 2,
+          "explanation": "The main argument is balanced: social media has benefits, but excessive use is linked to loneliness."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "[Análisis] Which rhetorical technique does the author use when citing \"a 2023 study by the APA\"?",
+          "options": [
+            "Appeal to emotion",
+            "Statistical evidence + appeal to authority",
+            "Personal anecdote",
+            "Generalization"
+          ],
+          "correct": 1,
+          "explanation": "Citing a specific study from a reputable institution combines statistical evidence with authority."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "[Comprensión] The author says heavy social media users report higher levels of ___.",
+          "correct": "loneliness",
+          "explanation": "The text states: \"heavy social media users report significantly higher levels of loneliness.\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "[Análisis] The phrase \"Critics argue that...\" signals that the author is...",
+          "options": [
+            "Sharing their personal opinion",
+            "Presenting a counterargument from others",
+            "Making a factual statement",
+            "Telling a joke"
+          ],
+          "correct": 1,
+          "explanation": "\"Critics argue\" attributes the claim to others, showing the author is presenting multiple viewpoints."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "[Evaluación] What is the STRONGEST piece of evidence in the article?",
+          "options": [
+            "The researcher's quote at the end",
+            "The APA study with specific data on loneliness levels",
+            "\"Everyone knows social media is bad\"",
+            "The author's personal opinion"
+          ],
+          "correct": 1,
+          "explanation": "The APA study is the strongest because it's from a credible institution with measurable data."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "[Evaluación] What is a potential WEAKNESS of this article?",
+          "options": [
+            "It cites a study",
+            "It presents both sides",
+            "It only cites one study — more research would strengthen the argument",
+            "It has a conclusion"
+          ],
+          "correct": 2,
+          "explanation": "Relying on a single study is a limitation. More diverse evidence would be more convincing."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "[Análisis] \"The author ___ that social media may be increasing loneliness.\" (argues/jokes)",
+          "correct": "argues",
+          "explanation": "\"Argues\" is the academic verb for presenting someone's position. \"Suggests\" also works."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "[Análisis] The LGBTQ+ youth example is used as...",
+          "options": [
+            "Statistical evidence",
+            "A counterargument showing social media's benefits",
+            "The main thesis",
+            "A weakness of the argument"
+          ],
+          "correct": 1,
+          "explanation": "The example supports the \"on the other hand\" section — showing that social media also has real benefits."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "[Respuesta] Which is the best example of a critical response to this text?",
+          "options": [
+            "\"I agree because I don't like social media\"",
+            "\"The article makes a balanced argument, but would benefit from discussing age-specific impacts\"",
+            "\"Whatever\"",
+            "\"Social media is just bad, end of story\""
+          ],
+          "correct": 1,
+          "explanation": "A good critical response acknowledges the argument and suggests how it could be improved."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"One ___ of this article is that it relies on only one major study.\" (strength/limitation)",
+          "correct": "limitation",
+          "explanation": "\"Limitation\" identifies a weakness in the argument's evidence base."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Construye tu Análisis",
+    "description": "Construye oraciones analíticas usando vocabulario académico.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Write about the author's main claim",
+          "words": [
+            "The",
+            "author",
+            "argues",
+            "that",
+            "excessive",
+            "social",
+            "media",
+            "use",
+            "increases",
+            "loneliness."
+          ],
+          "correct": "The author argues that excessive social media use increases loneliness."
+        },
+        {
+          "prompt": "Evaluate the evidence in the article",
+          "words": [
+            "The",
+            "author",
+            "supports",
+            "their",
+            "claim",
+            "with",
+            "statistical",
+            "evidence."
+          ],
+          "correct": "The author supports their claim with statistical evidence."
+        },
+        {
+          "prompt": "Identify a limitation of the text",
+          "words": [
+            "One",
+            "limitation",
+            "is",
+            "that",
+            "the",
+            "article",
+            "relies",
+            "on",
+            "a",
+            "single",
+            "study."
+          ],
+          "correct": "One limitation is that the article relies on a single study."
+        },
+        {
+          "prompt": "Express your own response to the text",
+          "words": [
+            "From",
+            "my",
+            "perspective,",
+            "the",
+            "argument",
+            "is",
+            "balanced",
+            "but",
+            "could",
+            "be",
+            "stronger."
+          ],
+          "correct": "From my perspective, the argument is balanced but could be stronger."
+        },
+        {
+          "prompt": "Describe a rhetorical technique used",
+          "words": [
+            "The",
+            "author",
+            "uses",
+            "an",
+            "appeal",
+            "to",
+            "authority",
+            "by",
+            "citing",
+            "the",
+            "APA."
+          ],
+          "correct": "The author uses an appeal to authority by citing the APA."
+        },
+        {
+          "prompt": "Build an evaluative statement",
+          "words": [
+            "This",
+            "is",
+            "a",
+            "strong",
+            "argument",
+            "because",
+            "it",
+            "presents",
+            "both",
+            "sides."
+          ],
+          "correct": "This is a strong argument because it presents both sides."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-match",
+    "type": "word-match",
+    "title": "Técnica Retórica → Ejemplo",
+    "description": "Empareja cada técnica retórica con su ejemplo del texto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "\"9 out of 10 doctors agree\"",
+          "right": "Appeal to authority 👨‍⚕️"
+        },
+        {
+          "left": "\"Think of the children!\"",
+          "right": "Appeal to emotion 😢"
+        },
+        {
+          "left": "\"Studies show a 40% increase\"",
+          "right": "Statistical evidence 📊"
+        },
+        {
+          "left": "\"Everyone knows that...\"",
+          "right": "Generalization ⚠️"
+        },
+        {
+          "left": "\"As a mother, I feel...\"",
+          "right": "Personal anecdote 📖"
+        },
+        {
+          "left": "\"outrageous\", \"shocking\"",
+          "right": "Loaded language 🔥"
+        },
+        {
+          "left": "\"According to the APA study...\"",
+          "right": "Credible source citation 🏛️"
+        },
+        {
+          "left": "\"On the other hand...\"",
+          "right": "Counterargument 🔄"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-flash",
+    "type": "flashcard",
+    "title": "Vocabulario Académico de Análisis",
+    "description": "Domina las expresiones académicas para el análisis crítico de textos.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "THE AUTHOR ARGUES THAT... 📝",
+          "back": "El autor argumenta que... — Presenta objetivamente la posición de un escritor. Variantes: claims, suggests, maintains, contends.",
+          "example": "The author argues that social media has fundamentally changed communication."
+        },
+        {
+          "id": "f2",
+          "front": "THE EVIDENCE SUPPORTS... ✅",
+          "back": "La evidencia apoya... — Para cuando la evidencia refuerza una posición.",
+          "example": "The evidence supports the claim that exercise improves mental health."
+        },
+        {
+          "id": "f3",
+          "front": "ONE LIMITATION IS... ⚠️",
+          "back": "Una limitación es... — Señala debilidades del argumento de forma académica.",
+          "example": "One limitation is that the study only included participants from one country."
+        },
+        {
+          "id": "f4",
+          "front": "FROM MY PERSPECTIVE... 💭",
+          "back": "Desde mi perspectiva... — Introduce tu opinión personal fundamentada.",
+          "example": "From my perspective, the argument would be stronger with more diverse evidence."
+        },
+        {
+          "id": "f5",
+          "front": "THIS IS A STRONG ARGUMENT BECAUSE... 💪",
+          "back": "Este es un argumento fuerte porque... — Evaluación positiva con justificación.",
+          "example": "This is a strong argument because it cites peer-reviewed research."
+        },
+        {
+          "id": "f6",
+          "front": "HOWEVER, THE AUTHOR FAILS TO... ❌",
+          "back": "Sin embargo, el autor no logra... — Crítica constructiva de una omisión.",
+          "example": "However, the author fails to address the economic implications."
+        },
+        {
+          "id": "f7",
+          "front": "I WOULD ARGUE THAT... 🎯",
+          "back": "Yo argumentaría que... — Tu posición personal presentada formalmente.",
+          "example": "I would argue that moderation, not abstinence, is the best approach."
+        },
+        {
+          "id": "f8",
+          "front": "THE TEXT REVEALS A BIAS TOWARD... 🔎",
+          "back": "El texto revela un sesgo hacia... — Identifica parcialidad del autor.",
+          "example": "The text reveals a bias toward negative coverage of social media."
+        },
+        {
+          "id": "f9",
+          "front": "ACCORDING TO... 📚",
+          "back": "Según... — Atribuye información a una fuente. Neutral y objetivo.",
+          "example": "According to the World Health Organization, air pollution causes 7 million deaths annually."
+        },
+        {
+          "id": "f10",
+          "front": "IN CONTRAST... 🔄",
+          "back": "En contraste... — Presenta información opuesta para comparación.",
+          "example": "In contrast, a European study found no significant correlation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-svg",
+    "type": "svg-scene",
+    "title": "Mapa del Argumento",
+    "description": "Explora la estructura del argumento del artículo: tesis, evidencia y conclusión.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#faf5ff",
+        "items": [
+          {
+            "id": "thesis",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 55,
+            "rx": 130,
+            "ry": 35,
+            "fill": "#fbbf24",
+            "label": "Tesis principal del autor",
+            "labelEn": "📌 Main Thesis"
+          },
+          {
+            "id": "evidence-for",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 160,
+            "height": 70,
+            "fill": "#86efac",
+            "label": "Evidencia a favor (estudio APA)",
+            "labelEn": "✅ Supporting Evidence"
+          },
+          {
+            "id": "evidence-against",
+            "type": "rect",
+            "x": 410,
+            "y": 130,
+            "width": 160,
+            "height": 70,
+            "fill": "#fca5a5",
+            "label": "Contraargumento (beneficios sociales)",
+            "labelEn": "❌ Counter Evidence"
+          },
+          {
+            "id": "technique",
+            "type": "rect",
+            "x": 220,
+            "y": 140,
+            "width": 160,
+            "height": 50,
+            "fill": "#c4b5fd",
+            "label": "Técnicas retóricas usadas",
+            "labelEn": "🔬 Rhetorical Techniques"
+          },
+          {
+            "id": "conclusion",
+            "type": "rect",
+            "x": 170,
+            "y": 260,
+            "width": 260,
+            "height": 55,
+            "fill": "#93c5fd",
+            "label": "Conclusión del autor",
+            "labelEn": "🏁 Conclusion"
+          },
+          {
+            "id": "my-opinion",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 365,
+            "rx": 120,
+            "ry": 30,
+            "fill": "#f9a8d4",
+            "label": "Tu respuesta personal",
+            "labelEn": "💭 My Response"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m13-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Lectura Crítica",
+    "description": "Descifra vocabulario de análisis.",
+    "props": {
+      "words": [
+        {
+          "word": "ANALYZE",
+          "hint": "Analizar; examinar",
+          "category": "Critical Reading"
+        },
+        {
+          "word": "EVALUATE",
+          "hint": "Evaluar; valorar",
+          "category": "Critical Reading"
+        },
+        {
+          "word": "INTERPRET",
+          "hint": "Interpretar; dar significado",
+          "category": "Critical Reading"
+        },
+        {
+          "word": "EVIDENCE",
+          "hint": "Evidencia; prueba",
+          "category": "Critical Reading"
+        },
+        {
+          "word": "ARGUMENT",
+          "hint": "Argumento; razonamiento",
+          "category": "Critical Reading"
+        },
+        {
+          "word": "BIAS",
+          "hint": "Sesgo; parcialidad",
+          "category": "Critical Reading"
+        }
+      ]
+    }
+  }
+]

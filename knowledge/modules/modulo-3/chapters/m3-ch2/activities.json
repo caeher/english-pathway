@@ -1,0 +1,497 @@
+[
+  {
+    "id": "m3-ch2-svg",
+    "type": "svg-scene",
+    "title": "Simple vs. Continuo — Infografía",
+    "description": "Comprende la diferencia visual entre ambos tiempos.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f0fdf4",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 125,
+            "y": 5,
+            "width": 450,
+            "height": 45,
+            "fill": "#10b981",
+            "label": "⚖️ Simple vs. Continuous",
+            "labelEn": "When to use each one?"
+          },
+          {
+            "id": "simple",
+            "type": "rect",
+            "x": 30,
+            "y": 65,
+            "width": 310,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "📅 Present Simple",
+            "labelEn": "Habits, routines, facts, permanent situations. Keywords: always, usually, every day."
+          },
+          {
+            "id": "cont",
+            "type": "rect",
+            "x": 360,
+            "y": 65,
+            "width": 310,
+            "height": 70,
+            "fill": "#bfdbfe",
+            "label": "⏳ Present Continuous",
+            "labelEn": "NOW, temporary situations, future plans. Keywords: now, right now, at the moment."
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 150,
+            "width": 310,
+            "height": 50,
+            "fill": "#dcfce7",
+            "label": "✅ I drink coffee every day.",
+            "labelEn": "Routine → Present Simple."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 150,
+            "width": 310,
+            "height": 50,
+            "fill": "#dbeafe",
+            "label": "✅ I'm drinking tea right now.",
+            "labelEn": "Happening now → Present Continuous."
+          },
+          {
+            "id": "ex3",
+            "type": "rect",
+            "x": 30,
+            "y": 210,
+            "width": 310,
+            "height": 50,
+            "fill": "#dcfce7",
+            "label": "✅ She works at a bank.",
+            "labelEn": "Permanent job → Present Simple."
+          },
+          {
+            "id": "ex4",
+            "type": "rect",
+            "x": 360,
+            "y": 210,
+            "width": 310,
+            "height": 50,
+            "fill": "#dbeafe",
+            "label": "✅ She's working from home today.",
+            "labelEn": "Temporary → Present Continuous."
+          },
+          {
+            "id": "stative",
+            "type": "rect",
+            "x": 30,
+            "y": 280,
+            "width": 640,
+            "height": 50,
+            "fill": "#fef9c3",
+            "label": "⚠️ Stative Verbs: NO continuous!",
+            "labelEn": "know, love, want, need, like, hate, believe, own, see, hear → I KNOW (not I'm knowing)."
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 100,
+            "y": 345,
+            "width": 500,
+            "height": 40,
+            "fill": "#fee2e2",
+            "label": "❌ Common Mistakes",
+            "labelEn": "WRONG: I am knowing. She is wanting. RIGHT: I know. She wants."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m3-ch2-flash",
+    "type": "flashcard",
+    "title": "¿Simple o Continuo?",
+    "description": "Decide cuál tiempo verbal usar en cada situación.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I ___ coffee every morning. (drink)",
+          "back": "I DRINK coffee every morning.",
+          "example": "Routine → Present Simple."
+        },
+        {
+          "id": "c2",
+          "front": "I ___ tea right now. (drink)",
+          "back": "I'M DRINKING tea right now.",
+          "example": "Happening now → Present Continuous."
+        },
+        {
+          "id": "c3",
+          "front": "She ___ French and German. (speak)",
+          "back": "She SPEAKS French and German.",
+          "example": "Ability/fact → Present Simple."
+        },
+        {
+          "id": "c4",
+          "front": "She ___ on the phone now. (speak)",
+          "back": "She'S SPEAKING on the phone now.",
+          "example": "Action in progress → Present Continuous."
+        },
+        {
+          "id": "c5",
+          "front": "I ___ this movie. (love)",
+          "back": "I LOVE this movie.",
+          "example": "Stative verb → ALWAYS Simple (not: I'm loving)."
+        },
+        {
+          "id": "c6",
+          "front": "He ___ a car. (have = poseer)",
+          "back": "He HAS a car.",
+          "example": "Stative (possession) → Simple."
+        },
+        {
+          "id": "c7",
+          "front": "He ___ lunch now. (have = comer)",
+          "back": "He'S HAVING lunch now.",
+          "example": "\"Have\" as activity → Continuous is OK!"
+        },
+        {
+          "id": "c8",
+          "front": "Water ___ at 100°C. (boil)",
+          "back": "Water BOILS at 100°C.",
+          "example": "Scientific fact → Present Simple."
+        },
+        {
+          "id": "c9",
+          "front": "The water ___. Turn it off! (boil)",
+          "back": "The water IS BOILING.",
+          "example": "Happening right now → Present Continuous."
+        },
+        {
+          "id": "c10",
+          "front": "They ___ tennis on Sundays. (play)",
+          "back": "They PLAY tennis on Sundays.",
+          "example": "Every Sunday = habit → Simple."
+        },
+        {
+          "id": "c11",
+          "front": "They ___ tennis now. (play)",
+          "back": "They'RE PLAYING tennis now.",
+          "example": "Now = in progress → Continuous."
+        },
+        {
+          "id": "c12",
+          "front": "I ___ the answer. (know)",
+          "back": "I KNOW the answer.",
+          "example": "Stative verb → ALWAYS Simple."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-match",
+    "type": "word-match",
+    "title": "Keyword → Tiempo Verbal",
+    "description": "Empareja cada palabra clave con el tiempo verbal que indica.",
+    "props": {
+      "pairs": [
+        {
+          "left": "always",
+          "right": "Present Simple"
+        },
+        {
+          "left": "right now",
+          "right": "Present Continuous"
+        },
+        {
+          "left": "every day",
+          "right": "Present Simple"
+        },
+        {
+          "left": "at the moment",
+          "right": "Present Continuous"
+        },
+        {
+          "left": "usually",
+          "right": "Present Simple"
+        },
+        {
+          "left": "currently",
+          "right": "Present Continuous"
+        },
+        {
+          "left": "sometimes",
+          "right": "Present Simple"
+        },
+        {
+          "left": "today (temporary)",
+          "right": "Present Continuous"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Elige el Tiempo Correcto",
+    "description": "Ordena las palabras y elige el tiempo correcto.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Bebo café cada mañana (rutina):",
+          "words": [
+            "I",
+            "drink",
+            "coffee",
+            "every",
+            "morning"
+          ],
+          "correct": "I drink coffee every morning"
+        },
+        {
+          "prompt": "Estoy bebiendo té ahora (ahora):",
+          "words": [
+            "I",
+            "am",
+            "drinking",
+            "tea",
+            "now"
+          ],
+          "correct": "I am drinking tea now"
+        },
+        {
+          "prompt": "Ella trabaja en un banco (permanente):",
+          "words": [
+            "She",
+            "works",
+            "at",
+            "a",
+            "bank"
+          ],
+          "correct": "She works at a bank"
+        },
+        {
+          "prompt": "Él está cocinando ahora (en progreso):",
+          "words": [
+            "He",
+            "is",
+            "cooking",
+            "right",
+            "now"
+          ],
+          "correct": "He is cooking right now"
+        },
+        {
+          "prompt": "Siempre camino al trabajo (hábito):",
+          "words": [
+            "I",
+            "always",
+            "walk",
+            "to",
+            "work"
+          ],
+          "correct": "I always walk to work"
+        },
+        {
+          "prompt": "Están jugando fútbol ahora:",
+          "words": [
+            "They",
+            "are",
+            "playing",
+            "football",
+            "now"
+          ],
+          "correct": "They are playing football now"
+        },
+        {
+          "prompt": "Sé la respuesta (verbo estático):",
+          "words": [
+            "I",
+            "know",
+            "the",
+            "answer"
+          ],
+          "correct": "I know the answer"
+        },
+        {
+          "prompt": "El agua está hirviendo (ahora):",
+          "words": [
+            "The",
+            "water",
+            "is",
+            "boiling"
+          ],
+          "correct": "The water is boiling"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-quiz",
+    "type": "quiz",
+    "title": "Quiz: Simple vs. Continuo",
+    "description": "Pon a prueba tu comprensión de ambos tiempos.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"I ___ coffee every morning.\"",
+          "options": [
+            "am drinking",
+            "drink",
+            "drinks",
+            "drinking"
+          ],
+          "correct": 1,
+          "explanation": "Every morning = habit → Present Simple."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"She ___ a book right now.\"",
+          "options": [
+            "reads",
+            "read",
+            "is reading",
+            "reading"
+          ],
+          "correct": 2,
+          "explanation": "Right now → Present Continuous."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"I ___ you.\" (love — stative)",
+          "options": [
+            "am loving",
+            "love",
+            "loves",
+            "loving"
+          ],
+          "correct": 1,
+          "explanation": "Love is stative → Present Simple only."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"They always ___ (play) tennis on Sundays.\"",
+          "correct": "play",
+          "explanation": "Always + on Sundays = habit → play."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"Look! It ___ (rain) outside!\"",
+          "correct": "is raining",
+          "explanation": "Look! = happening now → is raining."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Which sentence is WRONG?",
+          "options": [
+            "I know the answer.",
+            "I'm knowing the answer.",
+            "She knows the answer.",
+            "Do you know the answer?"
+          ],
+          "correct": 1,
+          "explanation": "\"Know\" is stative — cannot use continuous."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"He ___ (work) from home today.\" (temporary)",
+          "correct": "is working",
+          "explanation": "Today (temporary) → Present Continuous."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"Water ___ at 100°C.\"",
+          "options": [
+            "is boiling",
+            "boils",
+            "boiling",
+            "boiled"
+          ],
+          "correct": 1,
+          "explanation": "Scientific fact → Present Simple."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"He ___ a car.\" (have = posesión)",
+          "options": [
+            "has",
+            "is having",
+            "having",
+            "have"
+          ],
+          "correct": 0,
+          "explanation": "Have (possession) is stative → has."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"He ___ lunch now.\" (have = comer)",
+          "options": [
+            "has",
+            "is having",
+            "having",
+            "have"
+          ],
+          "correct": 1,
+          "explanation": "\"Have\" as action (eating) → is having is OK!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Simple vs Continuo",
+    "description": "Descifra términos para distinguir usos.",
+    "props": {
+      "words": [
+        {
+          "word": "ACTION",
+          "hint": "Acción; algo que ocurre",
+          "category": "Tenses"
+        },
+        {
+          "word": "HABIT",
+          "hint": "Hábito; costumbre regular",
+          "category": "Tenses"
+        },
+        {
+          "word": "MOMENT",
+          "hint": "Momento; instante actual",
+          "category": "Tenses"
+        },
+        {
+          "word": "ROUTINE",
+          "hint": "Rutina; actividades habituales",
+          "category": "Tenses"
+        },
+        {
+          "word": "PROGRESS",
+          "hint": "Progreso; en curso",
+          "category": "Tenses"
+        },
+        {
+          "word": "STATE",
+          "hint": "Estado; condición estática",
+          "category": "Tenses"
+        }
+      ]
+    }
+  }
+]

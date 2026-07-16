@@ -1,0 +1,496 @@
+[
+  {
+    "id": "m4-ch2-svg",
+    "type": "svg-scene",
+    "title": "El Mundo de los Comparativos",
+    "description": "Visualiza cómo se forman los comparativos.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#10b981",
+            "label": "📊 Comparatives",
+            "labelEn": "Compare two things!"
+          },
+          {
+            "id": "short",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 75,
+            "fill": "#bbf7d0",
+            "label": "📏 Short adjectives: + er",
+            "labelEn": "tall→taller, big→bigger, happy→happier, nice→nicer"
+          },
+          {
+            "id": "long",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 75,
+            "fill": "#bfdbfe",
+            "label": "📐 Long adjectives: more +",
+            "labelEn": "beautiful→more beautiful, expensive→more expensive"
+          },
+          {
+            "id": "irreg",
+            "type": "rect",
+            "x": 30,
+            "y": 155,
+            "width": 640,
+            "height": 60,
+            "fill": "#fde68a",
+            "label": "⚡ Irregular",
+            "labelEn": "good→BETTER, bad→WORSE, far→FARTHER, much→MORE, little→LESS"
+          },
+          {
+            "id": "than",
+            "type": "rect",
+            "x": 30,
+            "y": 235,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "🔗 + THAN",
+            "labelEn": "She is taller THAN me. This is more expensive THAN that."
+          },
+          {
+            "id": "spell",
+            "type": "rect",
+            "x": 360,
+            "y": 235,
+            "width": 310,
+            "height": 55,
+            "fill": "#fce7f3",
+            "label": "📝 Spelling",
+            "labelEn": "CVC: big→bigger (double). -y: happy→happier. -e: nice→nicer."
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 310,
+            "width": 200,
+            "height": 60,
+            "fill": "#e0e7ff",
+            "label": "🏠 bigger",
+            "labelEn": "My house is BIGGER THAN yours."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 250,
+            "y": 310,
+            "width": 200,
+            "height": 60,
+            "fill": "#e0e7ff",
+            "label": "📚 more interesting",
+            "labelEn": "This book is MORE INTERESTING THAN the movie."
+          },
+          {
+            "id": "ex3",
+            "type": "rect",
+            "x": 470,
+            "y": 310,
+            "width": 200,
+            "height": 60,
+            "fill": "#e0e7ff",
+            "label": "⭐ better",
+            "labelEn": "She's BETTER THAN me at chess."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m4-ch2-flash",
+    "type": "flashcard",
+    "title": "Forma el Comparativo",
+    "description": "Practica convirtiendo adjetivos en comparativos.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "tall → ?",
+          "back": "taller",
+          "example": "She is taller than him."
+        },
+        {
+          "id": "c2",
+          "front": "big → ?",
+          "back": "bigger",
+          "example": "CVC → double: bigger."
+        },
+        {
+          "id": "c3",
+          "front": "happy → ?",
+          "back": "happier",
+          "example": "y → ier: happier."
+        },
+        {
+          "id": "c4",
+          "front": "nice → ?",
+          "back": "nicer",
+          "example": "-e → +r: nicer."
+        },
+        {
+          "id": "c5",
+          "front": "beautiful → ?",
+          "back": "more beautiful",
+          "example": "Long adj → more + adj."
+        },
+        {
+          "id": "c6",
+          "front": "expensive → ?",
+          "back": "more expensive",
+          "example": "Long adj → more expensive."
+        },
+        {
+          "id": "c7",
+          "front": "good → ?",
+          "back": "better",
+          "example": "Irregular! better (not gooder)."
+        },
+        {
+          "id": "c8",
+          "front": "bad → ?",
+          "back": "worse",
+          "example": "Irregular! worse (not badder)."
+        },
+        {
+          "id": "c9",
+          "front": "far → ?",
+          "back": "farther / further",
+          "example": "Both forms accepted."
+        },
+        {
+          "id": "c10",
+          "front": "hot → ?",
+          "back": "hotter",
+          "example": "CVC → double: hotter."
+        },
+        {
+          "id": "c11",
+          "front": "easy → ?",
+          "back": "easier",
+          "example": "y → ier: easier."
+        },
+        {
+          "id": "c12",
+          "front": "interesting → ?",
+          "back": "more interesting",
+          "example": "Long adj → more interesting."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-match",
+    "type": "word-match",
+    "title": "Adjetivo → Comparativo",
+    "description": "Empareja cada adjetivo con su comparativo.",
+    "props": {
+      "pairs": [
+        {
+          "left": "tall",
+          "right": "taller"
+        },
+        {
+          "left": "big",
+          "right": "bigger"
+        },
+        {
+          "left": "happy",
+          "right": "happier"
+        },
+        {
+          "left": "good",
+          "right": "better"
+        },
+        {
+          "left": "bad",
+          "right": "worse"
+        },
+        {
+          "left": "beautiful",
+          "right": "more beautiful"
+        },
+        {
+          "left": "expensive",
+          "right": "more expensive"
+        },
+        {
+          "left": "far",
+          "right": "farther"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Compara Dos Cosas",
+    "description": "Ordena las palabras para formar comparaciones.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella es más alta que él:",
+          "words": [
+            "She",
+            "is",
+            "taller",
+            "than",
+            "him"
+          ],
+          "correct": "She is taller than him"
+        },
+        {
+          "prompt": "Este libro es más interesante:",
+          "words": [
+            "This",
+            "book",
+            "is",
+            "more",
+            "interesting",
+            "than",
+            "that",
+            "one"
+          ],
+          "correct": "This book is more interesting than that one"
+        },
+        {
+          "prompt": "Mi casa es más grande:",
+          "words": [
+            "My",
+            "house",
+            "is",
+            "bigger",
+            "than",
+            "yours"
+          ],
+          "correct": "My house is bigger than yours"
+        },
+        {
+          "prompt": "Ella es mejor que yo en matemáticas:",
+          "words": [
+            "She",
+            "is",
+            "better",
+            "than",
+            "me",
+            "at",
+            "math"
+          ],
+          "correct": "She is better than me at math"
+        },
+        {
+          "prompt": "Este examen es más fácil:",
+          "words": [
+            "This",
+            "exam",
+            "is",
+            "easier",
+            "than",
+            "the",
+            "last",
+            "one"
+          ],
+          "correct": "This exam is easier than the last one"
+        },
+        {
+          "prompt": "El coche rojo es más caro:",
+          "words": [
+            "The",
+            "red",
+            "car",
+            "is",
+            "more",
+            "expensive"
+          ],
+          "correct": "The red car is more expensive"
+        },
+        {
+          "prompt": "Hoy hace más calor que ayer:",
+          "words": [
+            "Today",
+            "is",
+            "hotter",
+            "than",
+            "yesterday"
+          ],
+          "correct": "Today is hotter than yesterday"
+        },
+        {
+          "prompt": "Ella es más feliz ahora:",
+          "words": [
+            "She",
+            "is",
+            "happier",
+            "now"
+          ],
+          "correct": "She is happier now"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-quiz",
+    "type": "quiz",
+    "title": "Quiz: Comparativos",
+    "description": "Demuestra tu dominio de los comparativos.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She is ___ than her sister.\"",
+          "options": [
+            "taller",
+            "more tall",
+            "tallest",
+            "most tall"
+          ],
+          "correct": 0,
+          "explanation": "Short adj → taller (not more tall)."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"big\" → comparative: ___",
+          "correct": "bigger",
+          "explanation": "CVC → double: bigger."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"This is ___ than that.\" (expensive)",
+          "options": [
+            "expensiver",
+            "more expensive",
+            "most expensive",
+            "expensiveer"
+          ],
+          "correct": 1,
+          "explanation": "Long adj → more expensive."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"good\" → comparative: ___",
+          "correct": "better",
+          "explanation": "Irregular: good → better."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"bad\" → comparative: ___",
+          "options": [
+            "badder",
+            "more bad",
+            "worse",
+            "baddest"
+          ],
+          "correct": 2,
+          "explanation": "Irregular: bad → worse."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"happy\" → comparative: ___",
+          "correct": "happier",
+          "explanation": "y → ier: happier."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"She is taller ___ him.\"",
+          "options": [
+            "then",
+            "than",
+            "that",
+            "then"
+          ],
+          "correct": 1,
+          "explanation": "Comparisons use \"than\" (not then)."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"hot\" → comparative: ___",
+          "correct": "hotter",
+          "explanation": "CVC → double consonant: hotter."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "She is taller than me.",
+            "He is more tall than me.",
+            "This is more expensive.",
+            "It is better."
+          ],
+          "correct": 1,
+          "explanation": "\"More tall\" is wrong → taller."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"interesting\" → comparative: ___",
+          "correct": "more interesting",
+          "explanation": "Long adj → more interesting."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Comparativos",
+    "description": "Descifra formas comparativas de adjetivos.",
+    "props": {
+      "words": [
+        {
+          "word": "BIGGER",
+          "hint": "Más grande; comparative de big",
+          "category": "Comparative"
+        },
+        {
+          "word": "SMALLER",
+          "hint": "Más pequeño; comparative de small",
+          "category": "Comparative"
+        },
+        {
+          "word": "FASTER",
+          "hint": "Más rápido; comparative de fast",
+          "category": "Comparative"
+        },
+        {
+          "word": "SLOWER",
+          "hint": "Más lento; comparative de slow",
+          "category": "Comparative"
+        },
+        {
+          "word": "BETTER",
+          "hint": "Mejor; comparative de good",
+          "category": "Comparative"
+        },
+        {
+          "word": "WORSE",
+          "hint": "Peor; comparative de bad",
+          "category": "Comparative"
+        }
+      ]
+    }
+  }
+]

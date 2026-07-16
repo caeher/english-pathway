@@ -1,0 +1,463 @@
+[
+  {
+    "id": "m13-ch2-quiz",
+    "type": "quiz",
+    "title": "El Negociador",
+    "description": "Simula una negociación de negocios. Encuentra el balance entre firmeza y diplomacia.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "The client asks for a 50% discount. You respond:",
+          "options": [
+            "\"I understand your concern about budget. Perhaps we could offer a phased payment plan instead?\"",
+            "\"No way, that's ridiculous\"",
+            "\"Okay, 50% off, no problem\"",
+            "\"Take it or leave it\""
+          ],
+          "correct": 0,
+          "explanation": "Acknowledge their concern, then offer a creative alternative. This keeps the negotiation alive."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"Could we perhaps ___ a middle ground on this issue?\"",
+          "correct": "find",
+          "explanation": "\"Find a middle ground\" = encontrar un punto medio. Classic compromise phrase."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Your partner proposes terms you can't accept. The most diplomatic response is:",
+          "options": [
+            "\"That's the worst idea I've ever heard\"",
+            "\"No\"",
+            "\"I appreciate the proposal. However, we'd need to adjust the timeline to make this work\"",
+            "\"Whatever you say\""
+          ],
+          "correct": 2,
+          "explanation": "Acknowledge positively, then redirect with \"however\" + your counter-proposal."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "You want to persuade your boss to approve a project. Which technique is strongest?",
+          "options": [
+            "\"I really feel like we should do this\" (emotion only)",
+            "\"Trust me, it will work\" (no evidence)",
+            "\"The data shows a 30% ROI, and three similar companies have succeeded with this approach\"",
+            "\"Everyone else is doing it\""
+          ],
+          "correct": 2,
+          "explanation": "Logos (data + evidence) is the most persuasive in business contexts."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"I'm ___ that won't be possible, but perhaps we could explore alternatives.\"",
+          "correct": "afraid",
+          "explanation": "\"I'm afraid that won't be possible\" is the standard diplomatic rejection in business English."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Both sides have been negotiating for an hour with no progress. You say:",
+          "options": [
+            "\"This is a waste of time\"",
+            "\"Let's see if there's a solution that works for both of us\"",
+            "\"You're being unreasonable\"",
+            "\"I give up\""
+          ],
+          "correct": 1,
+          "explanation": "Collaborative language (\"both of us\") resets the tone and signals willingness to compromise."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "The negotiation is successful. You close by saying:",
+          "options": [
+            "\"Finally!\"",
+            "\"Let me summarize what we've agreed: the deadline is March 15 and the budget is $50K. Shall we put this in writing?\"",
+            "\"Okay bye\"",
+            "\"I won\""
+          ],
+          "correct": 1,
+          "explanation": "Always summarize the agreement clearly and suggest the next step (written confirmation)."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"Based on our experience, this approach ___ the best results.\" (delivers/destroys)",
+          "correct": "delivers",
+          "explanation": "Ethos technique: citing experience + positive outcome language."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"That's not quite what we had in mind\" is an example of...",
+          "options": [
+            "Aggressive rejection",
+            "Diplomatic rejection (hedging)",
+            "Full agreement",
+            "A question"
+          ],
+          "correct": 1,
+          "explanation": "\"Not quite what we had in mind\" softens the rejection. It's a textbook hedging phrase."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which phrase best \"hedges\" the direct statement \"You need to lower your price\"?",
+          "options": [
+            "\"Lower your price NOW\"",
+            "\"It might be worth considering a price adjustment\"",
+            "\"Your price is terrible\"",
+            "\"We demand a lower price\""
+          ],
+          "correct": 1,
+          "explanation": "\"It might be worth considering...\" transforms a demand into a gentle suggestion."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Reformula con Diplomacia",
+    "description": "Reconstruye frases directas usando lenguaje diplomático y profesional.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Diplomatically reject: \"No, we can't do that.\"",
+          "words": [
+            "I'm",
+            "afraid",
+            "that",
+            "won't",
+            "be",
+            "possible,",
+            "but",
+            "perhaps",
+            "we",
+            "could",
+            "explore",
+            "alternatives."
+          ],
+          "correct": "I'm afraid that won't be possible, but perhaps we could explore alternatives."
+        },
+        {
+          "prompt": "Propose a compromise diplomatically",
+          "words": [
+            "Could",
+            "we",
+            "perhaps",
+            "meet",
+            "halfway",
+            "on",
+            "the",
+            "pricing?"
+          ],
+          "correct": "Could we perhaps meet halfway on the pricing?"
+        },
+        {
+          "prompt": "Summarize the agreement at the end",
+          "words": [
+            "So",
+            "we've",
+            "agreed",
+            "on",
+            "a",
+            "March",
+            "deadline",
+            "and",
+            "a",
+            "revised",
+            "budget."
+          ],
+          "correct": "So we've agreed on a March deadline and a revised budget."
+        },
+        {
+          "prompt": "Soften: \"You need to change the deadline\"",
+          "words": [
+            "It",
+            "might",
+            "be",
+            "worth",
+            "considering",
+            "an",
+            "extension",
+            "to",
+            "the",
+            "deadline."
+          ],
+          "correct": "It might be worth considering an extension to the deadline."
+        },
+        {
+          "prompt": "Acknowledge and redirect: \"I disagree with your plan\"",
+          "words": [
+            "I",
+            "appreciate",
+            "your",
+            "perspective;",
+            "however,",
+            "I",
+            "think",
+            "we",
+            "could",
+            "improve",
+            "the",
+            "approach."
+          ],
+          "correct": "I appreciate your perspective; however, I think we could improve the approach."
+        },
+        {
+          "prompt": "Persuade with data",
+          "words": [
+            "The",
+            "data",
+            "clearly",
+            "shows",
+            "a",
+            "30%",
+            "improvement",
+            "in",
+            "efficiency."
+          ],
+          "correct": "The data clearly shows a 30% improvement in efficiency."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch2-match",
+    "type": "word-match",
+    "title": "Directo → Diplomático",
+    "description": "Empareja frases directas con sus equivalentes diplomáticos.",
+    "props": {
+      "pairs": [
+        {
+          "left": "That's wrong",
+          "right": "I see it slightly differently"
+        },
+        {
+          "left": "We can't do that",
+          "right": "That might be challenging"
+        },
+        {
+          "left": "You need to...",
+          "right": "It might be worth considering..."
+        },
+        {
+          "left": "I disagree",
+          "right": "I appreciate your perspective, however..."
+        },
+        {
+          "left": "That idea is bad",
+          "right": "That's not quite what we had in mind"
+        },
+        {
+          "left": "Give us a discount",
+          "right": "Could we discuss the pricing?"
+        },
+        {
+          "left": "You're late",
+          "right": "I noticed we're slightly behind schedule"
+        },
+        {
+          "left": "Do it now",
+          "right": "Would it be possible to prioritize this?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch2-flash",
+    "type": "flashcard",
+    "title": "Arsenal del Negociador",
+    "description": "Domina las expresiones esenciales para cada fase de una negociación.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "I'D LIKE TO SUGGEST... 📋 (Proponer)",
+          "back": "Me gustaría sugerir... — Abre una propuesta de forma educada y profesional.",
+          "example": "I'd like to suggest we extend the deadline by two weeks."
+        },
+        {
+          "id": "f2",
+          "front": "COULD WE MEET HALFWAY? 🤝 (Compromiso)",
+          "back": "¿Podríamos encontrar un punto medio? — Para cuando ambas partes están lejos.",
+          "example": "We're asking for 20%, you're offering 5%. Could we meet halfway at 12%?"
+        },
+        {
+          "id": "f3",
+          "front": "I'M AFRAID THAT WON'T WORK ❌ (Rechazo diplomático)",
+          "back": "Me temo que eso no funcionará — Rechazo suave y profesional.",
+          "example": "I'm afraid that won't work for our timeline, but we could consider an alternative."
+        },
+        {
+          "id": "f4",
+          "front": "THAT SOUNDS FAIR ✅ (Aceptar)",
+          "back": "Eso suena justo — Aceptación neutral y profesional.",
+          "example": "That sounds fair. We can agree to those terms."
+        },
+        {
+          "id": "f5",
+          "front": "LET ME SUMMARIZE... 📝 (Cerrar)",
+          "back": "Permítanme resumir... — Para cerrar y confirmar lo acordado.",
+          "example": "Let me summarize what we've discussed today."
+        },
+        {
+          "id": "f6",
+          "front": "WITH ALL DUE RESPECT... 🙏 (Diplomacia)",
+          "back": "Con todo respeto... — Precede un desacuerdo educado.",
+          "example": "With all due respect, I think we need more data before deciding."
+        },
+        {
+          "id": "f7",
+          "front": "IF I UNDERSTAND CORRECTLY... 👂 (Escucha activa)",
+          "back": "Si entiendo correctamente... — Demuestra que estás escuchando activamente.",
+          "example": "If I understand correctly, you're suggesting we reduce the scope?"
+        },
+        {
+          "id": "f8",
+          "front": "THE DATA CLEARLY SHOWS... 📊 (Logos)",
+          "back": "Los datos muestran claramente... — Persuasión basada en evidencia.",
+          "example": "The data clearly shows that this approach reduces costs by 25%."
+        },
+        {
+          "id": "f9",
+          "front": "IMAGINE HOW THIS COULD... 💭 (Pathos)",
+          "back": "Imagina cómo esto podría... — Persuasión emocional.",
+          "example": "Imagine how this could improve your team's productivity and morale."
+        },
+        {
+          "id": "f10",
+          "front": "SHALL WE PUT THIS IN WRITING? 📄 (Siguiente paso)",
+          "back": "¿Lo ponemos por escrito? — Formaliza el acuerdo alcanzado.",
+          "example": "Shall we put this in writing and share it with both teams?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch2-svg",
+    "type": "svg-scene",
+    "title": "La Mesa de Negociaciones",
+    "description": "Explora la mesa de negociación y descubre las posiciones de cada parte.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#f1f5f9",
+        "items": [
+          {
+            "id": "party-a",
+            "type": "ellipse",
+            "cx": 120,
+            "cy": 100,
+            "rx": 70,
+            "ry": 45,
+            "fill": "#3b82f6",
+            "label": "Tu empresa — Propón y defiende",
+            "labelEn": "🏢 Your Company"
+          },
+          {
+            "id": "party-b",
+            "type": "ellipse",
+            "cx": 480,
+            "cy": 100,
+            "rx": 70,
+            "ry": 45,
+            "fill": "#ef4444",
+            "label": "Cliente — Entiende su posición",
+            "labelEn": "🏢 Client"
+          },
+          {
+            "id": "table",
+            "type": "rect",
+            "x": 150,
+            "y": 170,
+            "width": 300,
+            "height": 80,
+            "fill": "#92400e",
+            "label": "Mesa de negociación",
+            "labelEn": "📋 Negotiation Table"
+          },
+          {
+            "id": "agreement",
+            "type": "rect",
+            "x": 230,
+            "y": 185,
+            "width": 140,
+            "height": 50,
+            "fill": "#fef3c7",
+            "label": "Documento — El acuerdo escrito",
+            "labelEn": "📄 Agreement"
+          },
+          {
+            "id": "gauge",
+            "type": "rect",
+            "x": 200,
+            "y": 300,
+            "width": 200,
+            "height": 30,
+            "fill": "#34d399",
+            "label": "Indicador de acuerdo — ¡Hazlo subir!",
+            "labelEn": "📊 Deal Meter"
+          },
+          {
+            "id": "handshake",
+            "type": "circle",
+            "cx": 300,
+            "cy": 370,
+            "r": 25,
+            "fill": "#fbbf24",
+            "label": "Apretón de manos — Acuerdo cerrado",
+            "labelEn": "🤝 Handshake"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m13-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Negociación y Persuasión",
+    "description": "Descifra vocabulario de negocios.",
+    "props": {
+      "words": [
+        {
+          "word": "NEGOTIATE",
+          "hint": "Negociar; llegar a acuerdo",
+          "category": "Negotiation"
+        },
+        {
+          "word": "PERSUADE",
+          "hint": "Persuadir; convencer",
+          "category": "Negotiation"
+        },
+        {
+          "word": "CONVINCE",
+          "hint": "Convencer; hacer creer",
+          "category": "Negotiation"
+        },
+        {
+          "word": "COMPROMISE",
+          "hint": "Acuerdo; cedencia mutua",
+          "category": "Negotiation"
+        },
+        {
+          "word": "OFFER",
+          "hint": "Oferta; propuesta",
+          "category": "Negotiation"
+        },
+        {
+          "word": "ACCEPT",
+          "hint": "Aceptar; aprobar",
+          "category": "Negotiation"
+        }
+      ]
+    }
+  }
+]

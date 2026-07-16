@@ -1,0 +1,578 @@
+[
+  {
+    "id": "m11-ch1-svg",
+    "type": "svg-scene",
+    "title": "Mi Línea del Tiempo",
+    "description": "Explora los hitos de vida y descubre el presente perfecto en cada experiencia.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 750 260",
+        "bg": "#f0f9ff",
+        "items": [
+          {
+            "id": "timeline",
+            "type": "rect",
+            "x": 60,
+            "y": 125,
+            "width": 630,
+            "height": 6,
+            "fill": "#0ea5e9",
+            "label": "Línea del tiempo",
+            "labelEn": "Timeline — From past to present"
+          },
+          {
+            "id": "birth",
+            "type": "circle",
+            "cx": 90,
+            "cy": 128,
+            "r": 16,
+            "fill": "#fbbf24",
+            "label": "Nacimiento 👶",
+            "labelEn": "Born — This is where life started"
+          },
+          {
+            "id": "school",
+            "type": "circle",
+            "cx": 200,
+            "cy": 128,
+            "r": 16,
+            "fill": "#34d399",
+            "label": "Escuela 🏫",
+            "labelEn": "I have studied at three different schools"
+          },
+          {
+            "id": "travel",
+            "type": "circle",
+            "cx": 310,
+            "cy": 128,
+            "r": 16,
+            "fill": "#60a5fa",
+            "label": "Viaje ✈️",
+            "labelEn": "I have traveled to five countries"
+          },
+          {
+            "id": "book",
+            "type": "circle",
+            "cx": 420,
+            "cy": 128,
+            "r": 16,
+            "fill": "#a78bfa",
+            "label": "Libros 📚",
+            "labelEn": "I have read over 100 books"
+          },
+          {
+            "id": "cook",
+            "type": "circle",
+            "cx": 530,
+            "cy": 128,
+            "r": 16,
+            "fill": "#f97316",
+            "label": "Cocina 🍳",
+            "labelEn": "I have cooked many different dishes"
+          },
+          {
+            "id": "now",
+            "type": "circle",
+            "cx": 660,
+            "cy": 128,
+            "r": 20,
+            "fill": "#ef4444",
+            "label": "Ahora ⭐",
+            "labelEn": "Now — All these experiences are part of who I am"
+          },
+          {
+            "id": "arrow",
+            "type": "polygon",
+            "points": "700,128 690,118 690,138",
+            "fill": "#0ea5e9",
+            "label": "Continúa...",
+            "labelEn": "Life continues... What will you do next?"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m11-ch1-quiz",
+    "type": "quiz",
+    "title": "¿Pasado Simple o Presente Perfecto?",
+    "description": "Elige el tiempo verbal correcto según el contexto. ¡Cuidado con los marcadores temporales!",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "I ___ (live) in this city for 10 years.",
+          "options": [
+            "lived",
+            "have lived",
+            "am living",
+            "was living"
+          ],
+          "correct": 1,
+          "explanation": "\"For 10 years\" (hasta ahora) → present perfect: \"I have lived here for 10 years.\""
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "She ___ (visit) Rome last summer.",
+          "options": [
+            "has visited",
+            "visited",
+            "have visited",
+            "visits"
+          ],
+          "correct": 1,
+          "explanation": "\"Last summer\" = tiempo específico → past simple: \"She visited Rome last summer.\""
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "They have ___ (eat) at that restaurant many times.",
+          "correct": "eaten",
+          "explanation": "Eat → ate → eaten. Present perfect: \"They have eaten there many times.\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Have you ever ___ to Japan?",
+          "options": [
+            "went",
+            "go",
+            "been",
+            "going"
+          ],
+          "correct": 2,
+          "explanation": "\"Have you ever been to...?\" is the correct form for asking about travel experiences."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "She has ___ (write) three books so far.",
+          "correct": "written",
+          "explanation": "Write → wrote → written. \"She has written three books so far.\""
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "I ___ that movie yesterday.",
+          "options": [
+            "have seen",
+            "saw",
+            "have saw",
+            "seeing"
+          ],
+          "correct": 1,
+          "explanation": "\"Yesterday\" = specific time → past simple: \"I saw that movie yesterday.\""
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "He has ___ finished his homework.",
+          "options": [
+            "yet",
+            "already",
+            "ever",
+            "ago"
+          ],
+          "correct": 1,
+          "explanation": "\"Already\" goes with present perfect for completed actions: \"He has already finished.\""
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "We have known each other ___ 2015.",
+          "correct": "since",
+          "explanation": "\"Since\" + specific point in time: \"We have known each other since 2015.\""
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "I have ___ been to Africa. I want to go someday.",
+          "options": [
+            "ever",
+            "never",
+            "already",
+            "just"
+          ],
+          "correct": 1,
+          "explanation": "\"Never\" = not at any time: \"I have never been to Africa.\""
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "___ you finished the report yet?",
+          "options": [
+            "Did",
+            "Have",
+            "Do",
+            "Are"
+          ],
+          "correct": 1,
+          "explanation": "\"Yet\" → present perfect question: \"Have you finished the report yet?\""
+        },
+        {
+          "id": "q11",
+          "type": "fill-blank",
+          "question": "She has ___ (see) that movie three times.",
+          "correct": "seen",
+          "explanation": "See → saw → seen. \"She has seen that movie three times.\""
+        },
+        {
+          "id": "q12",
+          "type": "multiple-choice",
+          "question": "They ___ to London in 2019.",
+          "options": [
+            "have gone",
+            "went",
+            "have went",
+            "go"
+          ],
+          "correct": 1,
+          "explanation": "\"In 2019\" = specific time → past simple: \"They went to London in 2019.\""
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Have You Ever...?",
+    "description": "Construye preguntas y oraciones en presente perfecto sobre experiencias de vida.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Pregunta sobre viajes:",
+          "words": [
+            "you",
+            "Have",
+            "to",
+            "been",
+            "Japan?",
+            "ever"
+          ],
+          "correct": "Have you ever been to Japan?"
+        },
+        {
+          "prompt": "Habla de un logro:",
+          "words": [
+            "has",
+            "She",
+            "finished",
+            "just",
+            "homework",
+            "her"
+          ],
+          "correct": "She has just finished her homework"
+        },
+        {
+          "prompt": "Habla de experiencia:",
+          "words": [
+            "have",
+            "I",
+            "sushi",
+            "tried",
+            "never"
+          ],
+          "correct": "I have never tried sushi"
+        },
+        {
+          "prompt": "Describe duración:",
+          "words": [
+            "have",
+            "We",
+            "here",
+            "lived",
+            "for",
+            "years",
+            "five"
+          ],
+          "correct": "We have lived here for five years"
+        },
+        {
+          "prompt": "Pregunta sobre experiencia:",
+          "words": [
+            "Has",
+            "he",
+            "a",
+            "ever",
+            "horse?",
+            "ridden"
+          ],
+          "correct": "Has he ever ridden a horse?"
+        },
+        {
+          "prompt": "Habla de logro:",
+          "words": [
+            "have",
+            "They",
+            "already",
+            "eaten",
+            "lunch"
+          ],
+          "correct": "They have already eaten lunch"
+        },
+        {
+          "prompt": "Duración con since:",
+          "words": [
+            "has",
+            "She",
+            "worked",
+            "here",
+            "since",
+            "2018"
+          ],
+          "correct": "She has worked here since 2018"
+        },
+        {
+          "prompt": "Negativa:",
+          "words": [
+            "not",
+            "have",
+            "I",
+            "the",
+            "seen",
+            "movie",
+            "yet"
+          ],
+          "correct": "I have not seen the movie yet"
+        },
+        {
+          "prompt": "Pregunta con ever:",
+          "words": [
+            "you",
+            "Have",
+            "a",
+            "ever",
+            "broken",
+            "bone?"
+          ],
+          "correct": "Have you ever broken a bone?"
+        },
+        {
+          "prompt": "Logro reciente:",
+          "words": [
+            "has",
+            "He",
+            "just",
+            "arrived",
+            "home"
+          ],
+          "correct": "He has just arrived home"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-flash",
+    "type": "flashcard",
+    "title": "Participios Irregulares",
+    "description": "Domina las tres formas de los verbos irregulares más importantes.",
+    "props": {
+      "cards": [
+        {
+          "id": "pp1",
+          "front": "GO 🚶",
+          "back": "go → went → gone",
+          "example": "I have gone to that restaurant many times."
+        },
+        {
+          "id": "pp2",
+          "front": "SEE 👀",
+          "back": "see → saw → seen",
+          "example": "She has seen that movie before."
+        },
+        {
+          "id": "pp3",
+          "front": "EAT 🍽️",
+          "back": "eat → ate → eaten",
+          "example": "Have you ever eaten Thai food?"
+        },
+        {
+          "id": "pp4",
+          "front": "WRITE ✍️",
+          "back": "write → wrote → written",
+          "example": "He has written three novels."
+        },
+        {
+          "id": "pp5",
+          "front": "TAKE 🤲",
+          "back": "take → took → taken",
+          "example": "I have taken this class before."
+        },
+        {
+          "id": "pp6",
+          "front": "GIVE 🎁",
+          "back": "give → gave → given",
+          "example": "She has given a speech at the conference."
+        },
+        {
+          "id": "pp7",
+          "front": "SPEAK 🗣️",
+          "back": "speak → spoke → spoken",
+          "example": "Have you ever spoken in public?"
+        },
+        {
+          "id": "pp8",
+          "front": "BREAK 💔",
+          "back": "break → broke → broken",
+          "example": "He has broken his arm twice."
+        },
+        {
+          "id": "pp9",
+          "front": "DRIVE 🚗",
+          "back": "drive → drove → driven",
+          "example": "She has driven across the country."
+        },
+        {
+          "id": "pp10",
+          "front": "SWIM 🏊",
+          "back": "swim → swam → swum",
+          "example": "I have swum in the ocean many times."
+        },
+        {
+          "id": "pp11",
+          "front": "RIDE 🐴",
+          "back": "ride → rode → ridden",
+          "example": "Have you ever ridden a horse?"
+        },
+        {
+          "id": "pp12",
+          "front": "CHOOSE 🤔",
+          "back": "choose → chose → chosen",
+          "example": "They have chosen a new leader."
+        },
+        {
+          "id": "pp13",
+          "front": "FORGET 🤦",
+          "back": "forget → forgot → forgotten",
+          "example": "I have forgotten her name."
+        },
+        {
+          "id": "pp14",
+          "front": "FLY ✈️",
+          "back": "fly → flew → flown",
+          "example": "She has flown to Europe several times."
+        },
+        {
+          "id": "pp15",
+          "front": "GROW 🌱",
+          "back": "grow → grew → grown",
+          "example": "The city has grown a lot recently."
+        },
+        {
+          "id": "pp16",
+          "front": "KNOW 🧠",
+          "back": "know → knew → known",
+          "example": "I have known him since childhood."
+        },
+        {
+          "id": "pp17",
+          "front": "SING 🎤",
+          "back": "sing → sang → sung",
+          "example": "She has sung at many concerts."
+        },
+        {
+          "id": "pp18",
+          "front": "DRINK 🥤",
+          "back": "drink → drank → drunk",
+          "example": "Have you ever drunk green tea?"
+        },
+        {
+          "id": "pp19",
+          "front": "BEGIN 🏁",
+          "back": "begin → began → begun",
+          "example": "The meeting has already begun."
+        },
+        {
+          "id": "pp20",
+          "front": "WEAR 👗",
+          "back": "wear → wore → worn",
+          "example": "She has worn that dress three times."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-match",
+    "type": "word-match",
+    "title": "Marcador → Tiempo Verbal",
+    "description": "Empareja cada marcador temporal con el tiempo verbal correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "yesterday",
+          "right": "Past Simple"
+        },
+        {
+          "left": "ever / never",
+          "right": "Present Perfect"
+        },
+        {
+          "left": "last week",
+          "right": "Past Simple"
+        },
+        {
+          "left": "already / yet",
+          "right": "Present Perfect"
+        },
+        {
+          "left": "in 2019",
+          "right": "Past Simple"
+        },
+        {
+          "left": "just / recently",
+          "right": "Present Perfect"
+        },
+        {
+          "left": "two days ago",
+          "right": "Past Simple"
+        },
+        {
+          "left": "for / since",
+          "right": "Present Perfect"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Presente Perfecto",
+    "description": "Descifra vocabulario del presente perfecto.",
+    "props": {
+      "words": [
+        {
+          "word": "EXPERIENCE",
+          "hint": "Experiencia; lo vivido",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "ACHIEVEMENT",
+          "hint": "Logro; algo alcanzado",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "RESULT",
+          "hint": "Resultado; consecuencia",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "RECENT",
+          "hint": "Reciente; hace poco",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "EVER",
+          "hint": "Alguna vez; en preguntas",
+          "category": "Present Perfect"
+        },
+        {
+          "word": "NEVER",
+          "hint": "Nunca; experiencia negativa",
+          "category": "Present Perfect"
+        }
+      ]
+    }
+  }
+]

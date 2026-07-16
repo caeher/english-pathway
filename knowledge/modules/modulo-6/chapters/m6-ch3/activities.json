@@ -1,0 +1,397 @@
+[
+  {
+    "id": "m6-ch3-svg",
+    "type": "svg-scene",
+    "title": "Situaciones Hipotéticas",
+    "description": "Visualiza el segundo condicional para escenarios irreales.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#10b981",
+            "label": "💭 Second Conditional",
+            "labelEn": "Unreal & hypothetical situations"
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 640,
+            "height": 50,
+            "fill": "#a7f3d0",
+            "label": "📏 If + PAST SIMPLE, WOULD + base verb",
+            "labelEn": "If I HAD money, I WOULD buy a house. (I'd buy)"
+          },
+          {
+            "id": "use",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#d1fae5",
+            "label": "🎯 Uso",
+            "labelEn": "Unreal now. If I were rich... (I am NOT rich)"
+          },
+          {
+            "id": "were",
+            "type": "rect",
+            "x": 360,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#fef9c3",
+            "label": "📌 If I WERE you",
+            "labelEn": "Use WERE not WAS: If I were, If she were"
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 200,
+            "width": 310,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "✅ If I had wings, I'd fly.",
+            "labelEn": "Hypothetical: I do not have wings."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 200,
+            "width": 310,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "✅ If she knew, she'd tell us.",
+            "labelEn": "Unreal: she does not know."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 30,
+            "y": 270,
+            "width": 310,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ Negative",
+            "labelEn": "If I didn't have to work, I'd sleep all day."
+          },
+          {
+            "id": "vs1",
+            "type": "rect",
+            "x": 360,
+            "y": 270,
+            "width": 310,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "⚖️ vs First",
+            "labelEn": "First: If it rains, I'll go. Second: If it rained, I'd go."
+          },
+          {
+            "id": "tip",
+            "type": "rect",
+            "x": 80,
+            "y": 340,
+            "width": 540,
+            "height": 45,
+            "fill": "#fef3c7",
+            "label": "💡 Second = imaginar algo que NO es real ahora",
+            "labelEn": "What would you do if you won the lottery?"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m6-ch3-flash",
+    "type": "flashcard",
+    "title": "Second Conditional: Práctica",
+    "description": "Forma oraciones hipotéticas con would.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "If I ___ (have) more money, I ___ (buy) a house.",
+          "back": "If I had more money, I would buy a house.",
+          "example": "Unreal: I don't have more money."
+        },
+        {
+          "id": "c2",
+          "front": "If I ___ you, I would study more.",
+          "back": "If I were you, I would study more.",
+          "example": "Were for all subjects (not was)."
+        },
+        {
+          "id": "c3",
+          "front": "If she ___ (know) the answer, she ___ (tell) us.",
+          "back": "If she knew the answer, she would tell us.",
+          "example": "Past in if, would + base in result."
+        },
+        {
+          "id": "c4",
+          "front": "If I ___ (have) wings, I ___ (fly).",
+          "back": "If I had wings, I would fly.",
+          "example": "Hypothetical: I don't have wings."
+        },
+        {
+          "id": "c5",
+          "front": "If I ___ (not/have) to work, I ___ (sleep) all day.",
+          "back": "If I didn't have to work, I would sleep all day.",
+          "example": "Negative: didn't + base."
+        },
+        {
+          "id": "c6",
+          "front": "What ___ you ___ (do) if you won the lottery?",
+          "back": "What would you do if you won the lottery?",
+          "example": "Question: would + subject + base verb."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch3-match",
+    "type": "word-match",
+    "title": "Condicional Correcto",
+    "description": "Empareja la oración con su tipo de condicional.",
+    "props": {
+      "pairs": [
+        {
+          "left": "If it rains, I'll stay home.",
+          "right": "First Conditional"
+        },
+        {
+          "left": "If I had wings, I'd fly.",
+          "right": "Second Conditional"
+        },
+        {
+          "left": "If you study, you'll pass.",
+          "right": "First Conditional"
+        },
+        {
+          "left": "If I were rich, I'd travel.",
+          "right": "Second Conditional"
+        },
+        {
+          "left": "If you heat ice, it melts.",
+          "right": "Zero Conditional"
+        },
+        {
+          "left": "If I had time, I'd go.",
+          "right": "Second Conditional"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Construye el Segundo Condicional",
+    "description": "Ordena para formar oraciones hipotéticas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Si tuviera más dinero, compraría una casa:",
+          "words": [
+            "If",
+            "I",
+            "had",
+            "more",
+            "money,",
+            "I",
+            "would",
+            "buy",
+            "a",
+            "house"
+          ],
+          "correct": "If I had more money, I would buy a house"
+        },
+        {
+          "prompt": "Si fuera tú, estudiaría más:",
+          "words": [
+            "If",
+            "I",
+            "were",
+            "you,",
+            "I",
+            "would",
+            "study",
+            "more"
+          ],
+          "correct": "If I were you, I would study more"
+        },
+        {
+          "prompt": "Si ella supiera la respuesta, nos lo diría:",
+          "words": [
+            "If",
+            "she",
+            "knew",
+            "the",
+            "answer,",
+            "she",
+            "would",
+            "tell",
+            "us"
+          ],
+          "correct": "If she knew the answer, she would tell us"
+        },
+        {
+          "prompt": "Si no tuviera que trabajar, dormiría todo el día:",
+          "words": [
+            "If",
+            "I",
+            "didn't",
+            "have",
+            "to",
+            "work,",
+            "I",
+            "would",
+            "sleep",
+            "all",
+            "day"
+          ],
+          "correct": "If I didn't have to work, I would sleep all day"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz: Second Conditional",
+    "description": "Demuestra tu dominio del segundo condicional.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "fill-blank",
+          "question": "\"If I ___ more money, I would buy a car.\"",
+          "correct": "had",
+          "explanation": "If clause: past simple."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"If I ___ you, I would study more.\"",
+          "options": [
+            "was",
+            "were",
+            "am",
+            "be"
+          ],
+          "correct": 1,
+          "explanation": "Use \"were\" for all subjects in conditionals."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"If she knew, she ___ tell us.\"",
+          "correct": "would",
+          "explanation": "Result: would + base verb."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Second conditional is used for:",
+          "options": [
+            "Real future possibilities",
+            "Unreal or hypothetical situations",
+            "Scientific facts",
+            "Past regrets"
+          ],
+          "correct": 1,
+          "explanation": "Second = unreal, hypothetical."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "Which is Second Conditional?",
+          "options": [
+            "If it rains, I'll stay.",
+            "If it rained, I'd stay.",
+            "If it rain, I stay.",
+            "If it had rained, I'd have stayed."
+          ],
+          "correct": 1,
+          "explanation": "If + past, would + base."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"If I ___ (not/have) to work, I would travel.\"",
+          "correct": "didn't have",
+          "explanation": "Negative: didn't + base verb."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"What would you do if you ___ the lottery?\"",
+          "options": [
+            "win",
+            "won",
+            "will win",
+            "had won"
+          ],
+          "correct": 1,
+          "explanation": "If clause: past simple."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"If she ___ here, she would help.\"",
+          "correct": "were",
+          "explanation": "Were for hypothetical (not was)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Second Conditional",
+    "description": "Descifra palabras de situaciones hipotéticas.",
+    "props": {
+      "words": [
+        {
+          "word": "IMAGINE",
+          "hint": "Imaginar; suponer",
+          "category": "Conditionals"
+        },
+        {
+          "word": "HYPOTHETICAL",
+          "hint": "Hipotético; no real",
+          "category": "Conditionals"
+        },
+        {
+          "word": "UNREAL",
+          "hint": "Irreal; no actual",
+          "category": "Conditionals"
+        },
+        {
+          "word": "WOULD",
+          "hint": "Haría; condicional",
+          "category": "Conditionals"
+        },
+        {
+          "word": "WISH",
+          "hint": "Desear; querer que fuera",
+          "category": "Conditionals"
+        },
+        {
+          "word": "DREAM",
+          "hint": "Sueño; fantasía",
+          "category": "Conditionals"
+        }
+      ]
+    }
+  }
+]

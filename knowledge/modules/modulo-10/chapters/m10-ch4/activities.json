@@ -1,0 +1,338 @@
+[
+  {
+    "id": "m10-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de Stress y Entonación",
+    "description": "Descifra palabras relacionadas con patrones de énfasis y melodía.",
+    "props": {
+      "words": [
+        {
+          "word": "STRESS",
+          "hint": "Acento o énfasis en una sílaba",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "RISING",
+          "hint": "Que sube; entonación de preguntas",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "FALLING",
+          "hint": "Que baja; entonación de afirmaciones",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "SYLLABLE",
+          "hint": "Sílaba; unidad de sonido",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "EMPHASIS",
+          "hint": "Énfasis; dar importancia a una palabra",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "MELODY",
+          "hint": "Melodía; patrón de subidas y bajadas",
+          "category": "Pronunciation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch4-quiz",
+    "type": "quiz",
+    "title": "¿Qué Emoción / Intención?",
+    "description": "Identifica la intención o emoción según la entonación descrita.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "The intonation goes UP at the end: \"You're coming?\" — The speaker is...",
+          "options": [
+            "Making a statement",
+            "Asking a yes/no question",
+            "Giving an order",
+            "Making a list"
+          ],
+          "correct": 1,
+          "explanation": "Entonación ascendente al final = pregunta yes/no."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "The intonation goes DOWN at the end: \"I like chocolate.\" — This is a...",
+          "options": [
+            "Question",
+            "Statement",
+            "Request",
+            "Surprise"
+          ],
+          "correct": 1,
+          "explanation": "Entonación descendente = afirmación."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Which syllable is stressed in \"photograph\"?",
+          "options": [
+            "PHO (1st)",
+            "to (2nd)",
+            "graph (3rd)"
+          ],
+          "correct": 0,
+          "explanation": "PHO-to-graph: el acento cae en la primera sílaba."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which syllable is stressed in \"photography\"?",
+          "options": [
+            "pho (1st)",
+            "TO (2nd)",
+            "gra (3rd)",
+            "phy (4th)"
+          ],
+          "correct": 1,
+          "explanation": "pho-TO-gra-phy: el acento se mueve a la segunda sílaba."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "In the word \"information\", the stress falls on the ___ syllable. (first/second/third)",
+          "correct": "third",
+          "explanation": "in-for-MA-tion: la tercera sílaba lleva el acento (regla: -tion)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"I bought apples↗️, oranges↗️, and bananas↘️\" — This pattern is used for...",
+          "options": [
+            "Questions",
+            "Statements",
+            "Lists",
+            "Surprises"
+          ],
+          "correct": 2,
+          "explanation": "Patrón ascendente-ascendente-descendente = enumeración/lista."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "In \"I WANT to GO to the PARK\", which words are stressed?",
+          "options": [
+            "I, to, the",
+            "WANT, GO, PARK",
+            "want, to, park",
+            "All words equally"
+          ],
+          "correct": 1,
+          "explanation": "Se acentúan las palabras de contenido: WANT, GO, PARK."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "The intonation falls then rises: \"I'm not sure...\" — The speaker feels...",
+          "options": [
+            "Certain",
+            "Angry",
+            "Uncertain / polite",
+            "Happy"
+          ],
+          "correct": 2,
+          "explanation": "Fall-rise = incertidumbre o cortesía."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "English is a ___-timed language. (stress/syllable)",
+          "correct": "stress",
+          "explanation": "El inglés es stress-timed: el tiempo entre acentos es regular."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Where is the stress in \"airport\" (compound noun)?",
+          "options": [
+            "AIR-port",
+            "air-PORT"
+          ],
+          "correct": 0,
+          "explanation": "Compound nouns: acento en el primer elemento → AIR-port."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch4-svg",
+    "type": "svg-scene",
+    "title": "El Panel de Patrones",
+    "description": "Explora los patrones de entonación y descubre cómo cambian el significado.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#fdf2f8",
+        "items": [
+          {
+            "id": "falling",
+            "type": "polygon",
+            "points": "30,100 130,100 130,180 30,130",
+            "fill": "#f87171",
+            "label": "Afirmaciones",
+            "labelEn": "↘️ Falling (Statements)"
+          },
+          {
+            "id": "rising",
+            "type": "polygon",
+            "points": "180,180 280,180 280,100 180,130",
+            "fill": "#60a5fa",
+            "label": "Preguntas Yes/No",
+            "labelEn": "↗️ Rising (Yes/No Questions)"
+          },
+          {
+            "id": "fall-rise",
+            "type": "polygon",
+            "points": "330,100 380,160 430,120 480,100",
+            "fill": "#a78bfa",
+            "label": "Duda/Cortesía",
+            "labelEn": "↘️↗️ Fall-Rise (Uncertainty)"
+          },
+          {
+            "id": "list-pattern",
+            "type": "polygon",
+            "points": "30,260 80,240 130,250 180,230 230,280",
+            "fill": "#34d399",
+            "label": "Enumeración",
+            "labelEn": "↗️↗️↘️ List Pattern"
+          },
+          {
+            "id": "word-stress",
+            "type": "circle",
+            "cx": 400,
+            "cy": 280,
+            "r": 50,
+            "fill": "#fbbf24",
+            "label": "Acento de palabra",
+            "labelEn": "Word Stress (PHO-to-graph)"
+          },
+          {
+            "id": "sentence-stress",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 350,
+            "rx": 100,
+            "ry": 25,
+            "fill": "#f9a8d4",
+            "label": "Acento de oración",
+            "labelEn": "Sentence Stress (I WANT to GO)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m10-ch4-flash",
+    "type": "flashcard",
+    "title": "Reglas de Acento",
+    "description": "Aprende las reglas de acentuación con ejemplos claros.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "pho-TO-gra-phy 📸",
+          "back": "Acento en la 2ª sílaba. Regla: palabras en -phy → acento en sílaba anterior.",
+          "example": "She studied photography at university."
+        },
+        {
+          "id": "f2",
+          "front": "in-for-MA-tion ℹ️",
+          "back": "Acento en la 3ª sílaba. Regla: palabras en -tion → acento en sílaba anterior.",
+          "example": "I need some information about the course."
+        },
+        {
+          "id": "f3",
+          "front": "fan-TAS-tic ⭐",
+          "back": "Acento en la 2ª sílaba. Regla: palabras en -ic → acento en sílaba anterior.",
+          "example": "The concert was fantastic!"
+        },
+        {
+          "id": "f4",
+          "front": "AIR-port ✈️",
+          "back": "Acento en la 1ª sílaba. Regla: compound nouns → acento en primer elemento.",
+          "example": "We arrived at the airport early."
+        },
+        {
+          "id": "f5",
+          "front": "e-co-NO-mic 💰",
+          "back": "Acento en la 3ª sílaba. Regla: palabras en -ic → acento en sílaba anterior.",
+          "example": "The economic situation is improving."
+        },
+        {
+          "id": "f6",
+          "front": "u-ni-VER-si-ty 🎓",
+          "back": "Acento en la 3ª sílaba. Patrón: ooOoo.",
+          "example": "She goes to university every day."
+        },
+        {
+          "id": "f7",
+          "front": "FOOT-ball ⚽",
+          "back": "Acento en la 1ª sílaba. Regla: compound nouns → acento en primer elemento.",
+          "example": "Do you want to play football?"
+        },
+        {
+          "id": "f8",
+          "front": "com-PU-ter 💻",
+          "back": "Acento en la 2ª sílaba. Patrón: oOo.",
+          "example": "I use my computer every day."
+        },
+        {
+          "id": "f9",
+          "front": "te-le-VI-sion 📺",
+          "back": "Acento en la 3ª sílaba. Regla: palabras en -sion → acento en sílaba anterior.",
+          "example": "There's nothing good on television."
+        },
+        {
+          "id": "f10",
+          "front": "PHO-to-graph 📷",
+          "back": "Acento en la 1ª sílaba. Patrón: Ooo. Nota: cambia en photography y photographic.",
+          "example": "This is a beautiful photograph."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch4-match",
+    "type": "word-match",
+    "title": "Palabra → Patrón de Acento",
+    "description": "Empareja cada palabra con su patrón de acentuación.",
+    "props": {
+      "pairs": [
+        {
+          "left": "computer",
+          "right": "oOo (com-PU-ter)"
+        },
+        {
+          "left": "information",
+          "right": "ooOo (in-for-MA-tion)"
+        },
+        {
+          "left": "photograph",
+          "right": "Ooo (PHO-to-graph)"
+        },
+        {
+          "left": "Japanese",
+          "right": "ooO (ja-pa-NESE)"
+        },
+        {
+          "left": "fantastic",
+          "right": "oOo (fan-TAS-tic)"
+        },
+        {
+          "left": "university",
+          "right": "ooOoo (u-ni-VER-si-ty)"
+        }
+      ]
+    }
+  }
+]

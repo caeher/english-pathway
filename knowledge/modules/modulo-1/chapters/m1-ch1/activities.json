@@ -1,0 +1,801 @@
+[
+  {
+    "id": "m1-ch1-svg",
+    "type": "svg-scene",
+    "title": "El Mural del Alfabeto",
+    "description": "Explora cada letra y descubre su pronunciación y una palabra ejemplo.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 450",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 150,
+            "y": 10,
+            "width": 400,
+            "height": 40,
+            "fill": "#3b82f6",
+            "label": "🔤 The English Alphabet",
+            "labelEn": "26 letters: 5 vowels + 21 consonants"
+          },
+          {
+            "id": "a",
+            "type": "rect",
+            "x": 20,
+            "y": 70,
+            "width": 70,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "A /eɪ/",
+            "labelEn": "A = /eɪ/ — Apple 🍎, Cat 🐱"
+          },
+          {
+            "id": "b",
+            "type": "rect",
+            "x": 100,
+            "y": 70,
+            "width": 70,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "B /biː/",
+            "labelEn": "B = /biː/ — Book 📖, Ball ⚽"
+          },
+          {
+            "id": "c",
+            "type": "rect",
+            "x": 180,
+            "y": 70,
+            "width": 70,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "C /siː/",
+            "labelEn": "C = /siː/ — Cat 🐱, Car 🚗"
+          },
+          {
+            "id": "d",
+            "type": "rect",
+            "x": 260,
+            "y": 70,
+            "width": 70,
+            "height": 50,
+            "fill": "#fde68a",
+            "label": "D /diː/",
+            "labelEn": "D = /diː/ — Dog 🐕, Door 🚪"
+          },
+          {
+            "id": "e",
+            "type": "rect",
+            "x": 340,
+            "y": 70,
+            "width": 70,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "E /iː/",
+            "labelEn": "E = /iː/ — Egg 🥚, Elephant 🐘"
+          },
+          {
+            "id": "vowels",
+            "type": "rect",
+            "x": 420,
+            "y": 70,
+            "width": 260,
+            "height": 50,
+            "fill": "#e0e7ff",
+            "label": "🎵 Las 5 Vocales",
+            "labelEn": "Vowels: A, E, I, O, U — They make the \"music\" of English!"
+          },
+          {
+            "id": "h",
+            "type": "rect",
+            "x": 20,
+            "y": 140,
+            "width": 100,
+            "height": 50,
+            "fill": "#fed7aa",
+            "label": "H /eɪtʃ/",
+            "labelEn": "H = always pronounced! House, Hello, Happy (NOT silent like Spanish)"
+          },
+          {
+            "id": "j",
+            "type": "rect",
+            "x": 130,
+            "y": 140,
+            "width": 100,
+            "height": 50,
+            "fill": "#c4b5fd",
+            "label": "J /dʒeɪ/",
+            "labelEn": "J = /dʒ/ sound — Juice, Job, Jump (different from Spanish J!)"
+          },
+          {
+            "id": "v",
+            "type": "rect",
+            "x": 240,
+            "y": 140,
+            "width": 100,
+            "height": 50,
+            "fill": "#a7f3d0",
+            "label": "V /viː/",
+            "labelEn": "V = lip + teeth vibration — Very, Voice, Video (NOT like B!)"
+          },
+          {
+            "id": "w",
+            "type": "rect",
+            "x": 350,
+            "y": 140,
+            "width": 100,
+            "height": 50,
+            "fill": "#fca5a5",
+            "label": "W /dʌbljuː/",
+            "labelEn": "W = round lips — Water, Window, World"
+          },
+          {
+            "id": "th",
+            "type": "rect",
+            "x": 460,
+            "y": 140,
+            "width": 100,
+            "height": 50,
+            "fill": "#93c5fd",
+            "label": "TH /θ/ /ð/",
+            "labelEn": "TH = tongue between teeth! Think (θ), The (ð)"
+          },
+          {
+            "id": "short",
+            "type": "rect",
+            "x": 20,
+            "y": 220,
+            "width": 320,
+            "height": 60,
+            "fill": "#dcfce7",
+            "label": "📢 Sonidos Cortos",
+            "labelEn": "Short vowels: /æ/ cat, /ɛ/ bed, /ɪ/ sit, /ɒ/ hot, /ʌ/ cup"
+          },
+          {
+            "id": "long",
+            "type": "rect",
+            "x": 360,
+            "y": 220,
+            "width": 320,
+            "height": 60,
+            "fill": "#fef9c3",
+            "label": "📢 Sonidos Largos",
+            "labelEn": "Long vowels: /eɪ/ cake, /iː/ tree, /aɪ/ bike, /oʊ/ home, /juː/ use"
+          },
+          {
+            "id": "spell",
+            "type": "rect",
+            "x": 20,
+            "y": 310,
+            "width": 660,
+            "height": 50,
+            "fill": "#f3e8ff",
+            "label": "✏️ Spelling — Deletrear",
+            "labelEn": "How do you spell your name? M-A-R-I-A. Practice spelling words letter by letter!"
+          },
+          {
+            "id": "minimal",
+            "type": "rect",
+            "x": 20,
+            "y": 380,
+            "width": 660,
+            "height": 50,
+            "fill": "#fef3c7",
+            "label": "🎯 Minimal Pairs",
+            "labelEn": "berry/very (b/v), ship/chip (sh/ch), ice/eyes (s/z), seat/sit (long/short i)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m1-ch1-flash",
+    "type": "flashcard",
+    "title": "Letras y Sonidos",
+    "description": "Aprende cada letra con su pronunciación y palabras ejemplo.",
+    "props": {
+      "cards": [
+        {
+          "id": "l1",
+          "front": "A",
+          "back": "Pronunciación: /eɪ/",
+          "example": "Apple, Ant, Airplane"
+        },
+        {
+          "id": "l2",
+          "front": "B",
+          "back": "Pronunciación: /biː/",
+          "example": "Book, Ball, Bird"
+        },
+        {
+          "id": "l3",
+          "front": "C",
+          "back": "Pronunciación: /siː/",
+          "example": "Cat, Car, Cup"
+        },
+        {
+          "id": "l4",
+          "front": "D",
+          "back": "Pronunciación: /diː/",
+          "example": "Dog, Door, Desk"
+        },
+        {
+          "id": "l5",
+          "front": "E",
+          "back": "Pronunciación: /iː/",
+          "example": "Egg, Elephant, Eye"
+        },
+        {
+          "id": "l6",
+          "front": "F",
+          "back": "Pronunciación: /ɛf/",
+          "example": "Fish, Food, Friend"
+        },
+        {
+          "id": "l7",
+          "front": "G",
+          "back": "Pronunciación: /dʒiː/",
+          "example": "Girl, Game, Green"
+        },
+        {
+          "id": "l8",
+          "front": "H",
+          "back": "Pronunciación: /eɪtʃ/ — ¡Siempre se pronuncia!",
+          "example": "House, Hello, Happy"
+        },
+        {
+          "id": "l9",
+          "front": "I",
+          "back": "Pronunciación: /aɪ/",
+          "example": "Ice, Island, Idea"
+        },
+        {
+          "id": "l10",
+          "front": "J",
+          "back": "Pronunciación: /dʒeɪ/ — Suena como \"Y\" + \"EI\"",
+          "example": "Juice, Job, Jump"
+        },
+        {
+          "id": "l11",
+          "front": "K",
+          "back": "Pronunciación: /keɪ/",
+          "example": "Key, King, Kitchen"
+        },
+        {
+          "id": "l12",
+          "front": "L",
+          "back": "Pronunciación: /ɛl/",
+          "example": "Lion, Light, Love"
+        },
+        {
+          "id": "l13",
+          "front": "M",
+          "back": "Pronunciación: /ɛm/",
+          "example": "Mom, Moon, Music"
+        },
+        {
+          "id": "l14",
+          "front": "N",
+          "back": "Pronunciación: /ɛn/",
+          "example": "Night, Name, Number"
+        },
+        {
+          "id": "l15",
+          "front": "O",
+          "back": "Pronunciación: /oʊ/",
+          "example": "Orange, Open, Office"
+        },
+        {
+          "id": "l16",
+          "front": "P",
+          "back": "Pronunciación: /piː/",
+          "example": "Pen, Phone, Pizza"
+        },
+        {
+          "id": "l17",
+          "front": "Q",
+          "back": "Pronunciación: /kjuː/ — Siempre va con U",
+          "example": "Queen, Question, Quiet"
+        },
+        {
+          "id": "l18",
+          "front": "R",
+          "back": "Pronunciación: /ɑːr/",
+          "example": "Red, Rain, Room"
+        },
+        {
+          "id": "l19",
+          "front": "S",
+          "back": "Pronunciación: /ɛs/",
+          "example": "Sun, School, Star"
+        },
+        {
+          "id": "l20",
+          "front": "T",
+          "back": "Pronunciación: /tiː/",
+          "example": "Tree, Table, Time"
+        },
+        {
+          "id": "l21",
+          "front": "U",
+          "back": "Pronunciación: /juː/",
+          "example": "Umbrella, Uncle, Use"
+        },
+        {
+          "id": "l22",
+          "front": "V",
+          "back": "Pronunciación: /viː/ — ¡No es B!",
+          "example": "Very, Voice, Video"
+        },
+        {
+          "id": "l23",
+          "front": "W",
+          "back": "Pronunciación: /dʌbljuː/ — Labios redondeados",
+          "example": "Water, Window, World"
+        },
+        {
+          "id": "l24",
+          "front": "X",
+          "back": "Pronunciación: /ɛks/",
+          "example": "Box, Fox, Six"
+        },
+        {
+          "id": "l25",
+          "front": "Y",
+          "back": "Pronunciación: /waɪ/",
+          "example": "Yellow, Yes, Year"
+        },
+        {
+          "id": "l26",
+          "front": "Z",
+          "back": "Pronunciación: /ziː/",
+          "example": "Zoo, Zero, Zebra"
+        },
+        {
+          "id": "mp1",
+          "front": "berry vs very",
+          "back": "/b/ vs /v/ — B = labios. V = labio inferior + dientes",
+          "example": "I like very fresh berries."
+        },
+        {
+          "id": "mp2",
+          "front": "ship vs chip",
+          "back": "/ʃ/ vs /tʃ/ — Ship = barco. Chip = ficha",
+          "example": "The ship has a computer chip."
+        },
+        {
+          "id": "mp3",
+          "front": "ice vs eyes",
+          "back": "/s/ vs /z/ — Ice = hielo. Eyes = ojos",
+          "example": "Her eyes are cold like ice."
+        },
+        {
+          "id": "mp4",
+          "front": "seat vs sit",
+          "back": "/iː/ vs /ɪ/ — Seat = asiento. Sit = sentarse",
+          "example": "Please sit in this seat."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-match",
+    "type": "word-match",
+    "title": "Letra → Palabra",
+    "description": "Empareja cada letra con la palabra que empieza con ella.",
+    "props": {
+      "pairs": [
+        {
+          "left": "A",
+          "right": "Apple 🍎"
+        },
+        {
+          "left": "B",
+          "right": "Book 📖"
+        },
+        {
+          "left": "D",
+          "right": "Dog 🐕"
+        },
+        {
+          "left": "F",
+          "right": "Fish 🐟"
+        },
+        {
+          "left": "H",
+          "right": "House 🏠"
+        },
+        {
+          "left": "S",
+          "right": "Sun ☀️"
+        },
+        {
+          "left": "T",
+          "right": "Tree 🌳"
+        },
+        {
+          "left": "W",
+          "right": "Water 💧"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-quiz",
+    "type": "quiz",
+    "title": "Desafío del Alfabeto",
+    "description": "Demuestra que conoces las letras, sus sonidos y el spelling.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "How many letters does the English alphabet have?",
+          "options": [
+            "24",
+            "25",
+            "26",
+            "27"
+          ],
+          "correct": 2,
+          "explanation": "The English alphabet has 26 letters."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Which of these are vowels?",
+          "options": [
+            "A, B, C, D, E",
+            "A, E, I, O, U",
+            "A, E, I, O, Y",
+            "B, C, D, F, G"
+          ],
+          "correct": 1,
+          "explanation": "The 5 vowels are A, E, I, O, U."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "How do you spell \"cat\"? C - ___ - T",
+          "correct": "A",
+          "explanation": "CAT is spelled C-A-T."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which letter is always silent in Spanish but pronounced in English?",
+          "options": [
+            "A",
+            "H",
+            "E",
+            "O"
+          ],
+          "correct": 1,
+          "explanation": "H is always pronounced in English: House, Hello, Happy."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "The \"J\" in English sounds like…",
+          "options": [
+            "/x/ (Spanish J)",
+            "/dʒ/ (like \"dch\")",
+            "/j/ (like \"y\")",
+            "/g/ (like \"go\")"
+          ],
+          "correct": 1,
+          "explanation": "English J = /dʒ/: Juice, Job, Jump."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "The word \"dog\" starts with the letter ___",
+          "correct": "D",
+          "explanation": "Dog starts with D."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "How do you pronounce \"V\" in English?",
+          "options": [
+            "Like B",
+            "Like F",
+            "Lower lip touches upper teeth",
+            "Like W"
+          ],
+          "correct": 2,
+          "explanation": "V: lower lip touches upper teeth with vibration. It is NOT like B."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which word has the short \"a\" sound /æ/?",
+          "options": [
+            "cake",
+            "cat",
+            "car",
+            "call"
+          ],
+          "correct": 1,
+          "explanation": "Cat has the short /æ/ sound."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "How many vowels are in the English alphabet? ___",
+          "correct": "5",
+          "explanation": "There are 5 vowels: A, E, I, O, U."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which letter always appears with \"U\"?",
+          "options": [
+            "P",
+            "Q",
+            "R",
+            "S"
+          ],
+          "correct": 1,
+          "explanation": "Q is always followed by U: Queen, Question, Quiet."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Deletrea la Palabra",
+    "description": "Ordena las letras para formar palabras básicas en inglés.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Un animal que dice \"meow\":",
+          "words": [
+            "C",
+            "A",
+            "T"
+          ],
+          "correct": "C A T"
+        },
+        {
+          "prompt": "Un animal que dice \"woof\":",
+          "words": [
+            "D",
+            "O",
+            "G"
+          ],
+          "correct": "D O G"
+        },
+        {
+          "prompt": "La estrella que nos da luz:",
+          "words": [
+            "S",
+            "U",
+            "N"
+          ],
+          "correct": "S U N"
+        },
+        {
+          "prompt": "Lo usas para escribir:",
+          "words": [
+            "P",
+            "E",
+            "N"
+          ],
+          "correct": "P E N"
+        },
+        {
+          "prompt": "Objeto rojo que crece en un árbol:",
+          "words": [
+            "A",
+            "P",
+            "P",
+            "L",
+            "E"
+          ],
+          "correct": "A P P L E"
+        },
+        {
+          "prompt": "Donde vives:",
+          "words": [
+            "H",
+            "O",
+            "U",
+            "S",
+            "E"
+          ],
+          "correct": "H O U S E"
+        },
+        {
+          "prompt": "Lo lees para aprender:",
+          "words": [
+            "B",
+            "O",
+            "O",
+            "K"
+          ],
+          "correct": "B O O K"
+        },
+        {
+          "prompt": "Líquido transparente que bebes:",
+          "words": [
+            "W",
+            "A",
+            "T",
+            "E",
+            "R"
+          ],
+          "correct": "W A T E R"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario del Alfabeto",
+    "description": "Descifra palabras clave sobre letras y sonidos.",
+    "props": {
+      "words": [
+        {
+          "word": "ALPHABET",
+          "hint": "Conjunto de letras de un idioma",
+          "category": "Alphabet"
+        },
+        {
+          "word": "VOWEL",
+          "hint": "Vocal; A, E, I, O, U en inglés",
+          "category": "Alphabet"
+        },
+        {
+          "word": "CONSONANT",
+          "hint": "Consonante; el resto de las letras",
+          "category": "Alphabet"
+        },
+        {
+          "word": "LETTER",
+          "hint": "Letra del alfabeto",
+          "category": "Alphabet"
+        },
+        {
+          "word": "SPELLING",
+          "hint": "Deletreo; escribir palabra letra por letra",
+          "category": "Alphabet"
+        },
+        {
+          "word": "SOUND",
+          "hint": "Sonido; cómo se pronuncia una letra",
+          "category": "Alphabet"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-listening",
+    "type": "listening",
+    "title": "Escucha y Elige",
+    "description": "Escucha la pronunciación y elige la letra o palabra correcta.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "A",
+          "question": "¿Qué letra escuchaste?",
+          "options": [
+            "A",
+            "E",
+            "I",
+            "O"
+          ],
+          "correct": 0,
+          "explanation": "A se pronuncia /eɪ/ en inglés."
+        },
+        {
+          "id": "l2",
+          "audioText": "cat",
+          "question": "¿Qué palabra escuchaste?",
+          "options": [
+            "cat",
+            "cut",
+            "cot",
+            "kit"
+          ],
+          "correct": 0,
+          "explanation": "Cat tiene el sonido corto /æ/."
+        },
+        {
+          "id": "l3",
+          "audioText": "hello",
+          "question": "¿Qué palabra escuchaste?",
+          "options": [
+            "hello",
+            "yellow",
+            "follow",
+            "hollow"
+          ],
+          "correct": 0,
+          "explanation": "Hello empieza con H aspirada."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictado Básico",
+    "description": "Escucha y escribe la letra o palabra que oyes.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "B",
+          "hint": "Segunda letra del alfabeto"
+        },
+        {
+          "id": "d2",
+          "audioText": "dog",
+          "hint": "Animal que dice woof"
+        },
+        {
+          "id": "d3",
+          "audioText": "sun",
+          "hint": "La estrella que nos da luz"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Practica la Pronunciación",
+    "description": "Escucha y repite las letras y palabras básicas.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "A",
+          "hint": "Pronunciación: /eɪ/"
+        },
+        {
+          "id": "p2",
+          "phrase": "hello",
+          "hint": "Saludo común en inglés"
+        },
+        {
+          "id": "p3",
+          "phrase": "thank you",
+          "hint": "Expresión de gratitud"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Arrastra y Empareja",
+    "description": "Arrastra las traducciones a las palabras en inglés.",
+    "props": {
+      "mode": "match",
+      "pairs": [
+        {
+          "left": "Apple",
+          "right": "Manzana 🍎"
+        },
+        {
+          "left": "Book",
+          "right": "Libro 📖"
+        },
+        {
+          "left": "Cat",
+          "right": "Gato 🐱"
+        },
+        {
+          "left": "Dog",
+          "right": "Perro 🐕"
+        }
+      ]
+    }
+  }
+]

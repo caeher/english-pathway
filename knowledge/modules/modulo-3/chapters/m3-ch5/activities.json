@@ -1,0 +1,488 @@
+[
+  {
+    "id": "m3-ch5-svg",
+    "type": "svg-scene",
+    "title": "Superpoderes: Can & Could",
+    "description": "Descubre qué pueden y podían hacer estas personas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#ecfeff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 150,
+            "y": 5,
+            "width": 400,
+            "height": 45,
+            "fill": "#06b6d4",
+            "label": "💪 Can & Could",
+            "labelEn": "Abilities, permissions & polite requests!"
+          },
+          {
+            "id": "can1",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#a5f3fc",
+            "label": "🏊 Ability (present)",
+            "labelEn": "I CAN swim. She CAN speak French. He CAN drive."
+          },
+          {
+            "id": "can2",
+            "type": "rect",
+            "x": 250,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "🙋 Permission",
+            "labelEn": "CAN I use your phone? You CAN sit here. CAN we go?"
+          },
+          {
+            "id": "could1",
+            "type": "rect",
+            "x": 470,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#e0e7ff",
+            "label": "👶 Past ability",
+            "labelEn": "I COULD swim when I was 5. She COULD read at 4."
+          },
+          {
+            "id": "could2",
+            "type": "rect",
+            "x": 30,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#fce7f3",
+            "label": "🎩 Polite requests",
+            "labelEn": "COULD you help me, please? COULD you open the door?"
+          },
+          {
+            "id": "cant",
+            "type": "rect",
+            "x": 250,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#fecaca",
+            "label": "❌ Can't / Couldn't",
+            "labelEn": "I CAN'T drive. She COULDN'T swim when she was 3."
+          },
+          {
+            "id": "quest",
+            "type": "rect",
+            "x": 470,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#fde68a",
+            "label": "❓ Questions",
+            "labelEn": "CAN you swim? COULD she read? Yes, I can. No, I couldn't."
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 50,
+            "y": 250,
+            "width": 600,
+            "height": 50,
+            "fill": "#fee2e2",
+            "label": "⚠️ No \"TO\" after can/could!",
+            "labelEn": "✅ I can swim. ❌ I can to swim. ✅ Could you help? ❌ Could you to help?"
+          },
+          {
+            "id": "table",
+            "type": "rect",
+            "x": 50,
+            "y": 320,
+            "width": 600,
+            "height": 60,
+            "fill": "#f0f9ff",
+            "label": "📊 Summary",
+            "labelEn": "CAN = present ability/permission. COULD = past ability + polite request. Both: NO \"to\"!"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m3-ch5-flash",
+    "type": "flashcard",
+    "title": "Can y Could en Acción",
+    "description": "Practica todos los usos de can y could.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "I / swim (habilidad presente)",
+          "back": "I CAN swim.",
+          "example": "Can + base verb (no \"to\")."
+        },
+        {
+          "id": "c2",
+          "front": "She / speak French (habilidad)",
+          "back": "She CAN speak French.",
+          "example": "Can para habilidades presentes."
+        },
+        {
+          "id": "c3",
+          "front": "I / not / drive (negativo)",
+          "back": "I CAN'T drive.",
+          "example": "can't = cannot."
+        },
+        {
+          "id": "c4",
+          "front": "___ I use your phone? (permiso)",
+          "back": "CAN I use your phone?",
+          "example": "Can para pedir permiso."
+        },
+        {
+          "id": "c5",
+          "front": "I / swim / when I was 5 (pasado)",
+          "back": "I COULD swim when I was 5.",
+          "example": "Could = habilidad en el pasado."
+        },
+        {
+          "id": "c6",
+          "front": "She / not / read / at age 3 (pasado)",
+          "back": "She COULDN'T read at age 3.",
+          "example": "couldn't = could not."
+        },
+        {
+          "id": "c7",
+          "front": "___ you help me, please? (cortesía)",
+          "back": "COULD you help me, please?",
+          "example": "Could para peticiones educadas."
+        },
+        {
+          "id": "c8",
+          "front": "It ___ rain later (posibilidad)",
+          "back": "It COULD rain later.",
+          "example": "Could = posibilidad incierta."
+        },
+        {
+          "id": "c9",
+          "front": "___ you swim? (pregunta presente)",
+          "back": "CAN you swim?",
+          "example": "Can + subject + base verb?"
+        },
+        {
+          "id": "c10",
+          "front": "Yes, I ___. / No, I ___.",
+          "back": "Yes, I CAN. / No, I CAN'T.",
+          "example": "Respuestas cortas con can."
+        },
+        {
+          "id": "c11",
+          "front": "___ he ride a bike when he was 4?",
+          "back": "COULD he ride a bike?",
+          "example": "Could para preguntas sobre el pasado."
+        },
+        {
+          "id": "c12",
+          "front": "We ___ go tomorrow. (posibilidad)",
+          "back": "We CAN go tomorrow.",
+          "example": "Can = posibilidad."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-match",
+    "type": "word-match",
+    "title": "Can vs. Could",
+    "description": "Empareja cada situación con can o could.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Present ability",
+          "right": "can"
+        },
+        {
+          "left": "Past ability",
+          "right": "could"
+        },
+        {
+          "left": "Asking permission",
+          "right": "can"
+        },
+        {
+          "left": "Polite request",
+          "right": "could"
+        },
+        {
+          "left": "Ability right now",
+          "right": "can"
+        },
+        {
+          "left": "Ability in the past",
+          "right": "could"
+        },
+        {
+          "left": "Offer to help",
+          "right": "Can"
+        },
+        {
+          "left": "Polite \"please\" request",
+          "right": "Could"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Expresa Habilidades",
+    "description": "Ordena las palabras para expresar habilidades y peticiones.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Puedo nadar:",
+          "words": [
+            "I",
+            "can",
+            "swim"
+          ],
+          "correct": "I can swim"
+        },
+        {
+          "prompt": "Ella no puede conducir:",
+          "words": [
+            "She",
+            "can't",
+            "drive"
+          ],
+          "correct": "She can't drive"
+        },
+        {
+          "prompt": "¿Puedo usar tu teléfono?:",
+          "words": [
+            "Can",
+            "I",
+            "use",
+            "your",
+            "phone?"
+          ],
+          "correct": "Can I use your phone?"
+        },
+        {
+          "prompt": "Podía leer a los 4 años:",
+          "words": [
+            "I",
+            "could",
+            "read",
+            "at",
+            "age",
+            "4"
+          ],
+          "correct": "I could read at age 4"
+        },
+        {
+          "prompt": "¿Podrías ayudarme?:",
+          "words": [
+            "Could",
+            "you",
+            "help",
+            "me?"
+          ],
+          "correct": "Could you help me?"
+        },
+        {
+          "prompt": "No podía nadar de niño:",
+          "words": [
+            "I",
+            "couldn't",
+            "swim",
+            "as",
+            "a",
+            "child"
+          ],
+          "correct": "I couldn't swim as a child"
+        },
+        {
+          "prompt": "¿Sabes hablar inglés?:",
+          "words": [
+            "Can",
+            "you",
+            "speak",
+            "English?"
+          ],
+          "correct": "Can you speak English?"
+        },
+        {
+          "prompt": "Podría llover más tarde:",
+          "words": [
+            "It",
+            "could",
+            "rain",
+            "later"
+          ],
+          "correct": "It could rain later"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz: Can & Could",
+    "description": "Pon a prueba tu dominio de can y could.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She ___ speak three languages.\"",
+          "options": [
+            "cans",
+            "can",
+            "could to",
+            "can to"
+          ],
+          "correct": 1,
+          "explanation": "Can + base verb (no \"to\")."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"I ___ swim when I was 5.\"",
+          "correct": "could",
+          "explanation": "Past ability → could."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"___ you help me, please?\" (polite)",
+          "options": [
+            "Can",
+            "Could",
+            "Do",
+            "Will"
+          ],
+          "correct": 1,
+          "explanation": "Could = más educado que can."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"He ___ (not/can) drive.\"",
+          "correct": "can't",
+          "explanation": "can + not = can't."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"___ I use your computer?\" (permiso)",
+          "options": [
+            "Could I to",
+            "Can I",
+            "Do I can",
+            "Am I can"
+          ],
+          "correct": 1,
+          "explanation": "Can I...? para pedir permiso."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"She ___ (not/could) read at age 3.\"",
+          "correct": "couldn't",
+          "explanation": "could + not = couldn't."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "I can swim.",
+            "She can to drive.",
+            "Can you help?",
+            "I could read at 4."
+          ],
+          "correct": 1,
+          "explanation": "No \"to\" after can: She can drive (not can to drive)."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"___ you swim?\" — \"Yes, I can.\"",
+          "correct": "Can",
+          "explanation": "Can you swim? Yes, I can."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"It ___ rain later.\" (uncertain possibility)",
+          "options": [
+            "can",
+            "could",
+            "cans",
+            "coulds"
+          ],
+          "correct": 1,
+          "explanation": "Could = uncertain possibility."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"He ___ ride a bike when he was 4.\"",
+          "options": [
+            "can",
+            "could",
+            "can to",
+            "could to"
+          ],
+          "correct": 1,
+          "explanation": "Past ability → could."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Can, Could y Habilidades",
+    "description": "Descifra términos de capacidad y permiso.",
+    "props": {
+      "words": [
+        {
+          "word": "ABILITY",
+          "hint": "Habilidad; capacidad de hacer algo",
+          "category": "Modals"
+        },
+        {
+          "word": "SKILL",
+          "hint": "Destreza; habilidad desarrollada",
+          "category": "Modals"
+        },
+        {
+          "word": "TALENT",
+          "hint": "Talento; don natural",
+          "category": "Modals"
+        },
+        {
+          "word": "CAPABLE",
+          "hint": "Capaz; con habilidad",
+          "category": "Modals"
+        },
+        {
+          "word": "POSSIBLE",
+          "hint": "Posible; que puede ocurrir",
+          "category": "Modals"
+        },
+        {
+          "word": "PERMIT",
+          "hint": "Permitir; dar permiso",
+          "category": "Modals"
+        }
+      ]
+    }
+  }
+]

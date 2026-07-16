@@ -1,0 +1,405 @@
+[
+  {
+    "id": "m12-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Construye el Párrafo Perfecto",
+    "description": "Ordena las oraciones para formar un párrafo coherente con topic sentence, supporting details y conclusión.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Arrange into a paragraph about exercise benefits",
+          "words": [
+            "In conclusion, regular exercise is essential for a healthy life.",
+            "First, it improves cardiovascular health.",
+            "Exercise has many benefits for our body and mind.",
+            "Additionally, it reduces stress and anxiety."
+          ],
+          "correct": "Exercise has many benefits for our body and mind. First, it improves cardiovascular health. Additionally, it reduces stress and anxiety. In conclusion, regular exercise is essential for a healthy life."
+        },
+        {
+          "prompt": "Arrange into a paragraph about reading",
+          "words": [
+            "For example, it improves vocabulary and critical thinking.",
+            "Reading is one of the best habits you can develop.",
+            "Therefore, everyone should try to read at least 20 minutes a day.",
+            "It also helps reduce stress and improve concentration."
+          ],
+          "correct": "Reading is one of the best habits you can develop. For example, it improves vocabulary and critical thinking. It also helps reduce stress and improve concentration. Therefore, everyone should try to read at least 20 minutes a day."
+        },
+        {
+          "prompt": "Arrange into a paragraph about learning languages",
+          "words": [
+            "All in all, learning a new language is a rewarding experience.",
+            "Learning a new language opens many doors in life.",
+            "Moreover, it helps you understand different cultures.",
+            "First, it can improve your career opportunities."
+          ],
+          "correct": "Learning a new language opens many doors in life. First, it can improve your career opportunities. Moreover, it helps you understand different cultures. All in all, learning a new language is a rewarding experience."
+        },
+        {
+          "prompt": "Arrange into a paragraph about technology",
+          "words": [
+            "However, we need to use it responsibly.",
+            "In short, technology is a powerful tool when used wisely.",
+            "Technology has transformed the way we communicate.",
+            "For instance, social media can be addictive if not controlled."
+          ],
+          "correct": "Technology has transformed the way we communicate. However, we need to use it responsibly. For instance, social media can be addictive if not controlled. In short, technology is a powerful tool when used wisely."
+        },
+        {
+          "prompt": "Arrange into a paragraph about traveling",
+          "words": [
+            "In addition, it reduces stress and gives you a fresh perspective.",
+            "To sum up, traveling is an investment in personal growth.",
+            "Traveling is one of the most enriching experiences.",
+            "It allows you to meet new people and learn about different cultures."
+          ],
+          "correct": "Traveling is one of the most enriching experiences. It allows you to meet new people and learn about different cultures. In addition, it reduces stress and gives you a fresh perspective. To sum up, traveling is an investment in personal growth."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-quiz",
+    "type": "quiz",
+    "title": "Identifica la Estructura",
+    "description": "Identifica las partes de un párrafo: topic sentence, supporting details y concluding sentence.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "In a well-structured paragraph, the TOPIC SENTENCE should be placed...",
+          "options": [
+            "At the end",
+            "In the middle",
+            "At the beginning",
+            "Anywhere"
+          ],
+          "correct": 2,
+          "explanation": "The topic sentence introduces the main idea and goes at the beginning of the paragraph."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Which of these is the best TOPIC SENTENCE?\n\n\"___ First, it keeps our body strong. Second, it improves our mood.\"",
+          "options": [
+            "I like running.",
+            "Exercise is important for many reasons.",
+            "Let me tell you something.",
+            "Running is fast."
+          ],
+          "correct": 1,
+          "explanation": "\"Exercise is important for many reasons\" introduces the main idea that the supporting details expand on."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "The three parts of a well-structured paragraph are: Topic Sentence, Supporting Details, and ___ Sentence.",
+          "correct": "Concluding",
+          "explanation": "The Concluding Sentence wraps up the paragraph and connects back to the topic sentence."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which connector is best for ADDING information in writing?",
+          "options": [
+            "However",
+            "Furthermore",
+            "In conclusion",
+            "Because"
+          ],
+          "correct": 1,
+          "explanation": "\"Furthermore\" is a formal addition connector, perfect for written English."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"My city is beautiful. The parks are green. The people are friendly. The food is delicious.\" What is MISSING?",
+          "options": [
+            "More details",
+            "A topic sentence is fine",
+            "Connectors and a concluding sentence",
+            "Nothing, it is perfect"
+          ],
+          "correct": 2,
+          "explanation": "The paragraph lacks connectors between ideas and a concluding sentence to wrap up."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"___, regular exercise is essential for a healthy life.\" This is a ___ sentence. (topic/concluding)",
+          "correct": "concluding",
+          "explanation": "\"In conclusion\" signals that this is the concluding sentence of the paragraph."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Which sentence is a SUPPORTING DETAIL for \"Dogs make great pets\"?",
+          "options": [
+            "In conclusion, get a dog.",
+            "Dogs make great pets.",
+            "For example, they are loyal and provide companionship.",
+            "Cats are also nice."
+          ],
+          "correct": 2,
+          "explanation": "\"For example, they are loyal...\" gives a specific reason that supports the topic sentence."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "What type of text would start with \"Dear Emma, How are you? I wanted to tell you about my trip...\"?",
+          "options": [
+            "Formal essay",
+            "Informal email",
+            "Academic report",
+            "News article"
+          ],
+          "correct": 1,
+          "explanation": "The greeting \"Dear Emma\" and casual tone indicate an informal email."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "In the \"Hamburger Model\", the buns (🍞) represent...",
+          "options": [
+            "Supporting details",
+            "Examples only",
+            "Topic sentence and concluding sentence",
+            "Connectors"
+          ],
+          "correct": 2,
+          "explanation": "The buns = Topic Sentence (top) + Concluding Sentence (bottom). The filling = Supporting Details."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "Before writing your first draft, you should do ___ to organize your ideas. (brainstorming/editing)",
+          "correct": "brainstorming",
+          "explanation": "Brainstorming is the pre-writing phase where you generate and organize ideas before drafting."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de Escritura",
+    "description": "Descifra palabras clave para organizar ideas antes de escribir.",
+    "props": {
+      "words": [
+        {
+          "word": "PARAGRAPH",
+          "hint": "Párrafo; bloque de texto con una idea",
+          "category": "Writing"
+        },
+        {
+          "word": "THESIS",
+          "hint": "Tesis; idea principal o argumento central",
+          "category": "Writing"
+        },
+        {
+          "word": "CONCLUSION",
+          "hint": "Conclusión; cierre del texto",
+          "category": "Writing"
+        },
+        {
+          "word": "DRAFT",
+          "hint": "Borrador; primera versión del texto",
+          "category": "Writing"
+        },
+        {
+          "word": "OUTLINE",
+          "hint": "Esquema; estructura de ideas antes de escribir",
+          "category": "Writing"
+        },
+        {
+          "word": "TOPIC",
+          "hint": "Tema; asunto del que se escribe",
+          "category": "Writing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-flash",
+    "type": "flashcard",
+    "title": "Conectores para la Escritura",
+    "description": "Domina los conectores y transiciones esenciales para textos escritos.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "FURTHERMORE ➕ (Adición formal)",
+          "back": "Además / Es más — Para añadir un punto adicional importante. Más formal que \"also\".",
+          "example": "The hotel was beautiful. Furthermore, it was very affordable."
+        },
+        {
+          "id": "f2",
+          "front": "NEVERTHELESS 🔄 (Contraste formal)",
+          "back": "Sin embargo / No obstante — Contraste fuerte y formal. Más enfático que \"however\".",
+          "example": "The project was difficult. Nevertheless, the team completed it on time."
+        },
+        {
+          "id": "f3",
+          "front": "IN ADDITION ➕ (Adición)",
+          "back": "Además — Para sumar información. Se usa al inicio de oración.",
+          "example": "The course is free. In addition, you receive a certificate."
+        },
+        {
+          "id": "f4",
+          "front": "ON THE OTHER HAND 🔄 (Contraste)",
+          "back": "Por otro lado — Presenta el lado opuesto de un argumento.",
+          "example": "City life is exciting. On the other hand, it can be stressful."
+        },
+        {
+          "id": "f5",
+          "front": "FOR INSTANCE 📌 (Ejemplo)",
+          "back": "Por ejemplo — Introduce un ejemplo concreto. Igual que \"for example\".",
+          "example": "Many countries have beautiful beaches. For instance, Thailand is famous for its coast."
+        },
+        {
+          "id": "f6",
+          "front": "IN CONCLUSION 🏁 (Cierre)",
+          "back": "En conclusión — Señala el cierre del texto o párrafo.",
+          "example": "In conclusion, learning English opens many doors."
+        },
+        {
+          "id": "f7",
+          "front": "TO SUM UP 🏁 (Resumen)",
+          "back": "En resumen — Para sintetizar los puntos principales al final.",
+          "example": "To sum up, exercise benefits both body and mind."
+        },
+        {
+          "id": "f8",
+          "front": "ALL IN ALL 🏁 (Cierre informal)",
+          "back": "En general / En definitiva — Cierre menos formal.",
+          "example": "All in all, it was a wonderful experience."
+        },
+        {
+          "id": "f9",
+          "front": "FIRST / SECOND / FINALLY 🔢 (Secuencia)",
+          "back": "Primero / Segundo / Finalmente — Para enumerar puntos en orden.",
+          "example": "First, prepare the ingredients. Second, mix them together. Finally, bake for 30 minutes."
+        },
+        {
+          "id": "f10",
+          "front": "SUCH AS 📌 (Ejemplo)",
+          "back": "Tales como / Como — Para dar ejemplos dentro de una oración.",
+          "example": "Fruits such as apples, oranges, and bananas are very healthy."
+        },
+        {
+          "id": "f11",
+          "front": "AS A RESULT ➡️ (Resultado)",
+          "back": "Como resultado — Indica la consecuencia de algo mencionado antes.",
+          "example": "She studied every day. As a result, she passed the exam."
+        },
+        {
+          "id": "f12",
+          "front": "IN SHORT 🏁 (Resumen breve)",
+          "back": "En pocas palabras — Resumen conciso al final.",
+          "example": "In short, technology has changed our lives forever."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-svg",
+    "type": "svg-scene",
+    "title": "El Taller del Escritor",
+    "description": "Explora las fases del proceso de escritura en el taller interactivo.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#fef9ef",
+        "items": [
+          {
+            "id": "brainstorm",
+            "type": "ellipse",
+            "cx": 100,
+            "cy": 80,
+            "rx": 70,
+            "ry": 40,
+            "fill": "#fbbf24",
+            "label": "Lluvia de ideas",
+            "labelEn": "💡 Brainstorm"
+          },
+          {
+            "id": "outline",
+            "type": "rect",
+            "x": 230,
+            "y": 40,
+            "width": 130,
+            "height": 80,
+            "fill": "#93c5fd",
+            "label": "Esquema",
+            "labelEn": "📝 Outline"
+          },
+          {
+            "id": "draft",
+            "type": "rect",
+            "x": 420,
+            "y": 40,
+            "width": 130,
+            "height": 80,
+            "fill": "#86efac",
+            "label": "Borrador",
+            "labelEn": "✏️ Write Draft"
+          },
+          {
+            "id": "revise",
+            "type": "rect",
+            "x": 80,
+            "y": 220,
+            "width": 130,
+            "height": 80,
+            "fill": "#d8b4fe",
+            "label": "Revisar",
+            "labelEn": "🔍 Revise"
+          },
+          {
+            "id": "edit",
+            "type": "rect",
+            "x": 270,
+            "y": 220,
+            "width": 130,
+            "height": 80,
+            "fill": "#fca5a5",
+            "label": "Editar",
+            "labelEn": "✅ Edit"
+          },
+          {
+            "id": "publish",
+            "type": "rect",
+            "x": 460,
+            "y": 220,
+            "width": 110,
+            "height": 80,
+            "fill": "#f87171",
+            "label": "Publicar",
+            "labelEn": "📤 Publish"
+          },
+          {
+            "id": "pencil",
+            "type": "polygon",
+            "points": "300,160 310,140 320,160",
+            "fill": "#a3a3a3",
+            "label": "Lápiz",
+            "labelEn": "Pencil (Your tool!)"
+          },
+          {
+            "id": "notebook",
+            "type": "rect",
+            "x": 340,
+            "y": 150,
+            "width": 40,
+            "height": 50,
+            "fill": "#fef3c7",
+            "label": "Cuaderno",
+            "labelEn": "Notebook"
+          }
+        ]
+      }
+    }
+  }
+]

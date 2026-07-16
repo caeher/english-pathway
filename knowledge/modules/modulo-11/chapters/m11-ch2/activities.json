@@ -1,0 +1,557 @@
+[
+  {
+    "id": "m11-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Transforma la Oración",
+    "description": "Convierte oraciones activas en pasivas y viceversa.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Activa → Pasiva: \"The chef cooks the meal.\"",
+          "words": [
+            "The",
+            "meal",
+            "is",
+            "cooked",
+            "by",
+            "the",
+            "chef"
+          ],
+          "correct": "The meal is cooked by the chef"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"They built the bridge in 1950.\"",
+          "words": [
+            "The",
+            "bridge",
+            "was",
+            "built",
+            "in",
+            "1950"
+          ],
+          "correct": "The bridge was built in 1950"
+        },
+        {
+          "prompt": "Pasiva → Activa: \"The book was written by J.K. Rowling.\"",
+          "words": [
+            "J.K.",
+            "Rowling",
+            "wrote",
+            "the",
+            "book"
+          ],
+          "correct": "J.K. Rowling wrote the book"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"People speak English worldwide.\"",
+          "words": [
+            "English",
+            "is",
+            "spoken",
+            "worldwide"
+          ],
+          "correct": "English is spoken worldwide"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"They have sent the email.\"",
+          "words": [
+            "The",
+            "email",
+            "has",
+            "been",
+            "sent"
+          ],
+          "correct": "The email has been sent"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"Someone stole my bike.\"",
+          "words": [
+            "My",
+            "bike",
+            "was",
+            "stolen"
+          ],
+          "correct": "My bike was stolen"
+        },
+        {
+          "prompt": "Pasiva → Activa: \"The cake was made by my mother.\"",
+          "words": [
+            "My",
+            "mother",
+            "made",
+            "the",
+            "cake"
+          ],
+          "correct": "My mother made the cake"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"They will complete the project.\"",
+          "words": [
+            "The",
+            "project",
+            "will",
+            "be",
+            "completed"
+          ],
+          "correct": "The project will be completed"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"You can fix this problem.\"",
+          "words": [
+            "This",
+            "problem",
+            "can",
+            "be",
+            "fixed"
+          ],
+          "correct": "This problem can be fixed"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"They teach Spanish in this school.\"",
+          "words": [
+            "Spanish",
+            "is",
+            "taught",
+            "in",
+            "this",
+            "school"
+          ],
+          "correct": "Spanish is taught in this school"
+        },
+        {
+          "prompt": "Pasiva → Activa: \"The window was broken by the children.\"",
+          "words": [
+            "The",
+            "children",
+            "broke",
+            "the",
+            "window"
+          ],
+          "correct": "The children broke the window"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"Leonardo painted the Mona Lisa.\"",
+          "words": [
+            "The",
+            "Mona",
+            "Lisa",
+            "was",
+            "painted",
+            "by",
+            "Leonardo"
+          ],
+          "correct": "The Mona Lisa was painted by Leonardo"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-quiz",
+    "type": "quiz",
+    "title": "Activa, Pasiva o Ambas",
+    "description": "Elige la forma correcta según el contexto. ¿Cuándo es mejor la pasiva?",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "The email ___ yesterday.",
+          "options": [
+            "sent",
+            "was sent",
+            "is sent",
+            "has sent"
+          ],
+          "correct": 1,
+          "explanation": "Past passive: \"The email was sent yesterday.\""
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "The bridge ___ ___ (build) in 1920.",
+          "correct": "was built",
+          "explanation": "Past passive: \"The bridge was built in 1920.\""
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "In a science report, which is more appropriate?",
+          "options": [
+            "The experiment was conducted carefully.",
+            "We conducted the experiment carefully.",
+            "Someone did the experiment.",
+            "The experiment conducted."
+          ],
+          "correct": 0,
+          "explanation": "Scientific writing prefers passive voice: \"The experiment was conducted...\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "English ___ in many countries around the world.",
+          "options": [
+            "speaks",
+            "is speaking",
+            "is spoken",
+            "spoke"
+          ],
+          "correct": 2,
+          "explanation": "Present passive for general facts: \"English is spoken in many countries.\""
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "The project will ___ ___ (complete) by next Friday.",
+          "correct": "be completed",
+          "explanation": "Future passive: \"will be completed.\""
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "My wallet ___! I can't find it anywhere.",
+          "options": [
+            "has been stolen",
+            "has stolen",
+            "is stolen",
+            "stole"
+          ],
+          "correct": 0,
+          "explanation": "Present perfect passive: \"My wallet has been stolen.\""
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"Hamlet\" ___ by Shakespeare.",
+          "options": [
+            "wrote",
+            "was written",
+            "written",
+            "has written"
+          ],
+          "correct": 1,
+          "explanation": "Past passive with \"by\" agent: \"Hamlet was written by Shakespeare.\""
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "This problem can ___ ___ (solve) easily.",
+          "correct": "be solved",
+          "explanation": "Modal passive: \"can be solved.\""
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "The new hospital ___ last year.",
+          "options": [
+            "was opened",
+            "opened",
+            "is opened",
+            "has opened"
+          ],
+          "correct": 0,
+          "explanation": "Past passive: \"The new hospital was opened last year.\""
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which sentence uses passive voice correctly?",
+          "options": [
+            "The cake was baked by Maria.",
+            "The cake baked by Maria.",
+            "The cake has baking by Maria.",
+            "The cake is bake by Maria."
+          ],
+          "correct": 0,
+          "explanation": "Correct passive: Object + was + past participle + by agent."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-match",
+    "type": "word-match",
+    "title": "Tiempo Verbal → Forma Pasiva",
+    "description": "Empareja cada tiempo verbal con su estructura en voz pasiva.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Present Simple",
+          "right": "am/is/are + done"
+        },
+        {
+          "left": "Past Simple",
+          "right": "was/were + done"
+        },
+        {
+          "left": "Present Perfect",
+          "right": "has/have been + done"
+        },
+        {
+          "left": "Future (will)",
+          "right": "will be + done"
+        },
+        {
+          "left": "Modal (can/must)",
+          "right": "can/must be + done"
+        },
+        {
+          "left": "Past Perfect",
+          "right": "had been + done"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-flash",
+    "type": "flashcard",
+    "title": "Transformaciones Activa ↔ Pasiva",
+    "description": "Practica la transformación mental antes de voltear la tarjeta.",
+    "props": {
+      "cards": [
+        {
+          "id": "t1",
+          "front": "Active: People speak English worldwide.",
+          "back": "Passive: English is spoken worldwide.",
+          "example": "\"By people\" is omitted because it's obvious."
+        },
+        {
+          "id": "t2",
+          "front": "Active: Shakespeare wrote Hamlet.",
+          "back": "Passive: Hamlet was written by Shakespeare.",
+          "example": "\"By Shakespeare\" is included because the agent matters."
+        },
+        {
+          "id": "t3",
+          "front": "Active: They have sent the invitation.",
+          "back": "Passive: The invitation has been sent.",
+          "example": "Present perfect passive: has/have been + past participle."
+        },
+        {
+          "id": "t4",
+          "front": "Active: Someone stole my phone.",
+          "back": "Passive: My phone was stolen.",
+          "example": "\"By someone\" is omitted because the agent is unknown."
+        },
+        {
+          "id": "t5",
+          "front": "Active: They will finish the project tomorrow.",
+          "back": "Passive: The project will be finished tomorrow.",
+          "example": "Future passive: will be + past participle."
+        },
+        {
+          "id": "t6",
+          "front": "Active: You must wear a helmet.",
+          "back": "Passive: A helmet must be worn.",
+          "example": "Modal passive: modal + be + past participle."
+        },
+        {
+          "id": "t7",
+          "front": "Active: The company manufactures cars.",
+          "back": "Passive: Cars are manufactured by the company.",
+          "example": "Present simple passive: am/is/are + past participle."
+        },
+        {
+          "id": "t8",
+          "front": "Active: They are building a new hospital.",
+          "back": "Passive: A new hospital is being built.",
+          "example": "Present continuous passive: am/is/are being + past participle."
+        },
+        {
+          "id": "t9",
+          "front": "Active: Columbus discovered America.",
+          "back": "Passive: America was discovered by Columbus.",
+          "example": "Past passive with important agent."
+        },
+        {
+          "id": "t10",
+          "front": "Active: They grow rice in Asia.",
+          "back": "Passive: Rice is grown in Asia.",
+          "example": "\"By them\" omitted — the focus is on rice, not the farmers."
+        },
+        {
+          "id": "t11",
+          "front": "Active: A famous architect designed this building.",
+          "back": "Passive: This building was designed by a famous architect.",
+          "example": "The agent is included because it adds important information."
+        },
+        {
+          "id": "t12",
+          "front": "Active: You can download the app for free.",
+          "back": "Passive: The app can be downloaded for free.",
+          "example": "Modal passive with \"can.\""
+        },
+        {
+          "id": "t13",
+          "front": "Active: They have not found the solution yet.",
+          "back": "Passive: The solution has not been found yet.",
+          "example": "Negative present perfect passive."
+        },
+        {
+          "id": "t14",
+          "front": "Active: Scientists conducted the experiment.",
+          "back": "Passive: The experiment was conducted by scientists.",
+          "example": "Common in academic and scientific writing."
+        },
+        {
+          "id": "t15",
+          "front": "Active: Someone broke the window.",
+          "back": "Passive: The window was broken.",
+          "example": "Agent omitted because it's unknown."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-svg",
+    "type": "svg-scene",
+    "title": "El Periódico Interactivo",
+    "description": "Explora los titulares del periódico y descubre la voz pasiva en las noticias.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 420",
+        "bg": "#fefce8",
+        "items": [
+          {
+            "id": "header",
+            "type": "rect",
+            "x": 50,
+            "y": 10,
+            "width": 500,
+            "height": 45,
+            "fill": "#1e293b",
+            "label": "THE DAILY NEWS",
+            "labelEn": "The Daily News — A newspaper full of passive voice"
+          },
+          {
+            "id": "headline1",
+            "type": "rect",
+            "x": 50,
+            "y": 70,
+            "width": 240,
+            "height": 60,
+            "fill": "#f5f5dc",
+            "label": "📰 Puente inaugurado",
+            "labelEn": "New Bridge Was Opened Yesterday"
+          },
+          {
+            "id": "headline2",
+            "type": "rect",
+            "x": 310,
+            "y": 70,
+            "width": 240,
+            "height": 60,
+            "fill": "#f5f5dc",
+            "label": "📰 Premio científico",
+            "labelEn": "Award Was Given to Young Scientist"
+          },
+          {
+            "id": "headline3",
+            "type": "rect",
+            "x": 50,
+            "y": 150,
+            "width": 240,
+            "height": 60,
+            "fill": "#f5f5dc",
+            "label": "📰 Pintura encontrada",
+            "labelEn": "Lost Painting Has Been Found in Attic"
+          },
+          {
+            "id": "headline4",
+            "type": "rect",
+            "x": 310,
+            "y": 150,
+            "width": 240,
+            "height": 60,
+            "fill": "#f5f5dc",
+            "label": "📰 Ley aprobada",
+            "labelEn": "New Law Will Be Approved Next Month"
+          },
+          {
+            "id": "headline5",
+            "type": "rect",
+            "x": 50,
+            "y": 230,
+            "width": 240,
+            "height": 60,
+            "fill": "#f5f5dc",
+            "label": "📰 Hospital construido",
+            "labelEn": "Hospital Was Built in Record Time"
+          },
+          {
+            "id": "headline6",
+            "type": "rect",
+            "x": 310,
+            "y": 230,
+            "width": 240,
+            "height": 60,
+            "fill": "#f5f5dc",
+            "label": "📰 Ladrón atrapado",
+            "labelEn": "Thief Was Caught by Security Cameras"
+          },
+          {
+            "id": "headline7",
+            "type": "rect",
+            "x": 50,
+            "y": 310,
+            "width": 500,
+            "height": 50,
+            "fill": "#e2e8f0",
+            "label": "📰 Vacuna desarrollada",
+            "labelEn": "New Vaccine Has Been Developed by International Team"
+          },
+          {
+            "id": "editorial",
+            "type": "rect",
+            "x": 50,
+            "y": 375,
+            "width": 500,
+            "height": 35,
+            "fill": "#dbeafe",
+            "label": "✏️ Editorial",
+            "labelEn": "Passive voice is used in news because the event matters more than the agent"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m11-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Voz Pasiva",
+    "description": "Descifra términos de la voz pasiva.",
+    "props": {
+      "words": [
+        {
+          "word": "PASSIVE",
+          "hint": "Pasiva; el sujeto recibe",
+          "category": "Passive"
+        },
+        {
+          "word": "AGENT",
+          "hint": "Agente; quien hace la acción",
+          "category": "Passive"
+        },
+        {
+          "word": "OBJECT",
+          "hint": "Objeto; lo que recibe",
+          "category": "Passive"
+        },
+        {
+          "word": "TRANSFORM",
+          "hint": "Transformar; cambiar forma",
+          "category": "Passive"
+        },
+        {
+          "word": "STRUCTURE",
+          "hint": "Estructura; organización",
+          "category": "Passive"
+        },
+        {
+          "word": "FORM",
+          "hint": "Forma; estructura verbal",
+          "category": "Passive"
+        }
+      ]
+    }
+  }
+]

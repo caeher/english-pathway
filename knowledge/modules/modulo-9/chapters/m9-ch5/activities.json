@@ -1,0 +1,641 @@
+[
+  {
+    "id": "m9-ch5-svg",
+    "type": "svg-scene",
+    "title": "Galería de Personajes",
+    "description": "Observa cada personaje y descubre cómo describirlo en inglés.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 650 400",
+        "bg": "#fdf2f8",
+        "items": [
+          {
+            "id": "char1-body",
+            "type": "rect",
+            "x": 40,
+            "y": 150,
+            "width": 40,
+            "height": 70,
+            "fill": "#f87171",
+            "label": "Chica con lentes",
+            "labelEn": "She is a young, tall girl with glasses"
+          },
+          {
+            "id": "char1-head",
+            "type": "circle",
+            "cx": 60,
+            "cy": 135,
+            "r": 20,
+            "fill": "#fecaca",
+            "label": "Cabeza",
+            "labelEn": "She has long brown hair"
+          },
+          {
+            "id": "char2-body",
+            "type": "rect",
+            "x": 150,
+            "y": 130,
+            "width": 45,
+            "height": 90,
+            "fill": "#3b82f6",
+            "label": "Hombre alto",
+            "labelEn": "He is a tall, strong man"
+          },
+          {
+            "id": "char2-head",
+            "type": "circle",
+            "cx": 172,
+            "cy": 112,
+            "r": 22,
+            "fill": "#fed7aa",
+            "label": "Cabeza",
+            "labelEn": "He has short black hair"
+          },
+          {
+            "id": "char3-body",
+            "type": "rect",
+            "x": 270,
+            "y": 170,
+            "width": 35,
+            "height": 55,
+            "fill": "#a78bfa",
+            "label": "Niño pequeño",
+            "labelEn": "He is a small, funny boy"
+          },
+          {
+            "id": "char3-head",
+            "type": "circle",
+            "cx": 287,
+            "cy": 158,
+            "r": 16,
+            "fill": "#fef3c7",
+            "label": "Cabeza",
+            "labelEn": "He has curly red hair"
+          },
+          {
+            "id": "char4-body",
+            "type": "rect",
+            "x": 370,
+            "y": 145,
+            "width": 42,
+            "height": 75,
+            "fill": "#34d399",
+            "label": "Mujer amable",
+            "labelEn": "She is a kind, friendly woman"
+          },
+          {
+            "id": "char4-head",
+            "type": "circle",
+            "cx": 391,
+            "cy": 128,
+            "r": 20,
+            "fill": "#fde68a",
+            "label": "Cabeza",
+            "labelEn": "She has blonde hair and blue eyes"
+          },
+          {
+            "id": "char5-body",
+            "type": "rect",
+            "x": 480,
+            "y": 155,
+            "width": 50,
+            "height": 65,
+            "fill": "#f97316",
+            "label": "Anciano sabio",
+            "labelEn": "He is an old, wise man"
+          },
+          {
+            "id": "char5-head",
+            "type": "circle",
+            "cx": 505,
+            "cy": 138,
+            "r": 21,
+            "fill": "#e5e7eb",
+            "label": "Cabeza",
+            "labelEn": "He has white hair and glasses"
+          },
+          {
+            "id": "frame1",
+            "type": "rect",
+            "x": 25,
+            "y": 100,
+            "width": 70,
+            "height": 140,
+            "fill": "none",
+            "label": "Marco 1",
+            "labelEn": "Portrait 1: Young woman"
+          },
+          {
+            "id": "frame2",
+            "type": "rect",
+            "x": 135,
+            "y": 85,
+            "width": 75,
+            "height": 155,
+            "fill": "none",
+            "label": "Marco 2",
+            "labelEn": "Portrait 2: Tall man"
+          },
+          {
+            "id": "frame3",
+            "type": "rect",
+            "x": 255,
+            "y": 130,
+            "width": 65,
+            "height": 115,
+            "fill": "none",
+            "label": "Marco 3",
+            "labelEn": "Portrait 3: Little boy"
+          },
+          {
+            "id": "frame4",
+            "type": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 72,
+            "height": 140,
+            "fill": "none",
+            "label": "Marco 4",
+            "labelEn": "Portrait 4: Friendly woman"
+          },
+          {
+            "id": "frame5",
+            "type": "rect",
+            "x": 465,
+            "y": 110,
+            "width": 80,
+            "height": 130,
+            "fill": "none",
+            "label": "Marco 5",
+            "labelEn": "Portrait 5: Old man"
+          },
+          {
+            "id": "floor",
+            "type": "rect",
+            "x": 0,
+            "y": 370,
+            "width": 650,
+            "height": 30,
+            "fill": "#d4a373",
+            "label": "Piso",
+            "labelEn": "Floor of the gallery"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m9-ch5-quiz",
+    "type": "quiz",
+    "title": "¿Quién es Quién?",
+    "description": "Lee la descripción y elige la respuesta correcta. ¡Estilo Guess Who!",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "Which adjective means \"alto\" (for a person)?",
+          "options": [
+            "Short",
+            "Tall",
+            "Small",
+            "Wide"
+          ],
+          "correct": 1,
+          "explanation": "Tall = alto (for people). \"He is a tall man.\""
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"She is a ___, ___ woman.\" (amable, joven)",
+          "options": [
+            "kind, young",
+            "young, kind",
+            "big, old",
+            "small, new"
+          ],
+          "correct": 0,
+          "explanation": "Opinion (kind) before age (young): \"She is a kind, young woman.\""
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "The opposite of \"tall\" is ___.",
+          "correct": "short",
+          "explanation": "Tall ↔ short. \"He is short.\""
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which is the correct order? \"A ___ bag\"",
+          "options": [
+            "red small",
+            "small red",
+            "bag small red",
+            "red bag small"
+          ],
+          "correct": 1,
+          "explanation": "Size before color: \"a small red bag.\""
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"Viejo\" as an adjective for people is:",
+          "options": [
+            "Ancient",
+            "Old",
+            "New",
+            "Antique"
+          ],
+          "correct": 1,
+          "explanation": "Old = viejo (for people). \"He is an old man.\""
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "The opposite of \"big\" is ___.",
+          "correct": "small",
+          "explanation": "Big ↔ small."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Choose the correct order: \"A ___ house\"",
+          "options": [
+            "French old beautiful",
+            "beautiful old French",
+            "old beautiful French",
+            "beautiful French old"
+          ],
+          "correct": 1,
+          "explanation": "OSASCOMP: Opinion (beautiful) → Age (old) → Origin (French)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"Friendly\" describes someone's:",
+          "options": [
+            "Size",
+            "Color",
+            "Personality",
+            "Age"
+          ],
+          "correct": 2,
+          "explanation": "Friendly = amigable, describes personality."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "The opposite of \"happy\" is ___.",
+          "correct": "sad",
+          "explanation": "Happy ↔ sad."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"A wooden table\" — \"wooden\" describes the:",
+          "options": [
+            "Color",
+            "Size",
+            "Material",
+            "Shape"
+          ],
+          "correct": 2,
+          "explanation": "Wooden = de madera. It describes the material."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Ordena los Adjetivos",
+    "description": "Coloca los adjetivos en el orden correcto según la regla OSASCOMP.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Describe el carro:",
+          "words": [
+            "red",
+            "a",
+            "car",
+            "big",
+            "beautiful"
+          ],
+          "correct": "a beautiful big red car"
+        },
+        {
+          "prompt": "Describe la casa:",
+          "words": [
+            "house",
+            "a",
+            "French",
+            "old",
+            "lovely"
+          ],
+          "correct": "a lovely old French house"
+        },
+        {
+          "prompt": "Describe la mesa:",
+          "words": [
+            "wooden",
+            "table",
+            "round",
+            "a",
+            "small"
+          ],
+          "correct": "a small round wooden table"
+        },
+        {
+          "prompt": "Describe la bolsa:",
+          "words": [
+            "Italian",
+            "a",
+            "bag",
+            "leather",
+            "beautiful"
+          ],
+          "correct": "a beautiful Italian leather bag"
+        },
+        {
+          "prompt": "Describe a la persona:",
+          "words": [
+            "is",
+            "She",
+            "tall",
+            "and",
+            "young"
+          ],
+          "correct": "She is tall and young"
+        },
+        {
+          "prompt": "Describe el libro:",
+          "words": [
+            "old",
+            "an",
+            "interesting",
+            "book"
+          ],
+          "correct": "an interesting old book"
+        },
+        {
+          "prompt": "Describe la flor:",
+          "words": [
+            "flower",
+            "red",
+            "a",
+            "small",
+            "beautiful"
+          ],
+          "correct": "a beautiful small red flower"
+        },
+        {
+          "prompt": "Describe al gato:",
+          "words": [
+            "cat",
+            "black",
+            "The",
+            "is",
+            "small"
+          ],
+          "correct": "The cat is small black"
+        },
+        {
+          "prompt": "Describe la camisa:",
+          "words": [
+            "cotton",
+            "blue",
+            "a",
+            "nice",
+            "shirt"
+          ],
+          "correct": "a nice blue cotton shirt"
+        },
+        {
+          "prompt": "Describe al hombre:",
+          "words": [
+            "is",
+            "He",
+            "friendly",
+            "man",
+            "a",
+            "old"
+          ],
+          "correct": "He is a friendly old man"
+        },
+        {
+          "prompt": "Describe el edificio:",
+          "words": [
+            "building",
+            "modern",
+            "a",
+            "tall",
+            "glass"
+          ],
+          "correct": "a tall modern glass building"
+        },
+        {
+          "prompt": "Describe el perro:",
+          "words": [
+            "The",
+            "dog",
+            "friendly",
+            "is",
+            "very"
+          ],
+          "correct": "The dog is very friendly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-match",
+    "type": "word-match",
+    "title": "Adjetivo → Categoría",
+    "description": "Clasifica cada adjetivo en su categoría correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "beautiful",
+          "right": "Opinion 💭"
+        },
+        {
+          "left": "large",
+          "right": "Size 📏"
+        },
+        {
+          "left": "ancient",
+          "right": "Age ⏰"
+        },
+        {
+          "left": "round",
+          "right": "Shape 🔵"
+        },
+        {
+          "left": "blue",
+          "right": "Color 🎨"
+        },
+        {
+          "left": "French",
+          "right": "Origin 🌍"
+        },
+        {
+          "left": "wooden",
+          "right": "Material 🪵"
+        },
+        {
+          "left": "sleeping",
+          "right": "Purpose 🎯"
+        },
+        {
+          "left": "tiny",
+          "right": "Size 📏"
+        },
+        {
+          "left": "modern",
+          "right": "Age ⏰"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-flash",
+    "type": "flashcard",
+    "title": "Adjetivos y sus Opuestos",
+    "description": "Aprende pares de adjetivos opuestos con ejemplos.",
+    "props": {
+      "cards": [
+        {
+          "id": "a1",
+          "front": "TALL ↕️",
+          "back": "tall ↔ short",
+          "example": "The tall building is next to the short house."
+        },
+        {
+          "id": "a2",
+          "front": "BIG 🔺",
+          "back": "big ↔ small",
+          "example": "The big dog played with the small cat."
+        },
+        {
+          "id": "a3",
+          "front": "OLD 👴",
+          "back": "old ↔ young (people) / new (things)",
+          "example": "The old man sat on a new chair."
+        },
+        {
+          "id": "a4",
+          "front": "HOT 🔥",
+          "back": "hot ↔ cold",
+          "example": "I like hot coffee, not cold water."
+        },
+        {
+          "id": "a5",
+          "front": "HAPPY 😊",
+          "back": "happy ↔ sad",
+          "example": "She was happy, but her friend was sad."
+        },
+        {
+          "id": "a6",
+          "front": "FAST 🏃",
+          "back": "fast ↔ slow",
+          "example": "The fast car passed the slow bus."
+        },
+        {
+          "id": "a7",
+          "front": "BEAUTIFUL 🌸",
+          "back": "beautiful ↔ ugly",
+          "example": "What a beautiful garden! That one is ugly."
+        },
+        {
+          "id": "a8",
+          "front": "LONG ↔️",
+          "back": "long ↔ short",
+          "example": "She has long hair. He has short hair."
+        },
+        {
+          "id": "a9",
+          "front": "HEAVY ⚖️",
+          "back": "heavy ↔ light",
+          "example": "This bag is heavy, but that one is light."
+        },
+        {
+          "id": "a10",
+          "front": "CLEAN ✨",
+          "back": "clean ↔ dirty",
+          "example": "The kitchen is clean, but the garage is dirty."
+        },
+        {
+          "id": "a11",
+          "front": "FRIENDLY 🤝",
+          "back": "friendly ↔ unfriendly",
+          "example": "The neighbors are very friendly."
+        },
+        {
+          "id": "a12",
+          "front": "SMART 🧠",
+          "back": "smart ↔ foolish",
+          "example": "She is a smart student."
+        },
+        {
+          "id": "a13",
+          "front": "STRONG 💪",
+          "back": "strong ↔ weak",
+          "example": "He is a strong, muscular man."
+        },
+        {
+          "id": "a14",
+          "front": "QUIET 🤫",
+          "back": "quiet ↔ loud (noisy)",
+          "example": "The library is quiet. The street is loud."
+        },
+        {
+          "id": "a15",
+          "front": "RICH 💰",
+          "back": "rich ↔ poor",
+          "example": "The rich man helped the poor family."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Adjetivos Descriptivos",
+    "description": "Descifra adjetivos que usas para describir personas y objetos.",
+    "props": {
+      "words": [
+        {
+          "word": "SMALL",
+          "hint": "Pequeño; opuesto de big",
+          "category": "Adjectives"
+        },
+        {
+          "word": "ROUND",
+          "hint": "Redondo, circular",
+          "category": "Adjectives"
+        },
+        {
+          "word": "TALL",
+          "hint": "Alto (personas); opuesto de short",
+          "category": "Adjectives"
+        },
+        {
+          "word": "THIN",
+          "hint": "Delgado, fino",
+          "category": "Adjectives"
+        },
+        {
+          "word": "SQUARE",
+          "hint": "Cuadrado",
+          "category": "Adjectives"
+        },
+        {
+          "word": "BEAUTIFUL",
+          "hint": "Hermoso, bello",
+          "category": "Adjectives"
+        }
+      ]
+    }
+  }
+]

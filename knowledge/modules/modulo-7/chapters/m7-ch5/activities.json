@@ -1,0 +1,474 @@
+[
+  {
+    "id": "m7-ch5-svg",
+    "type": "svg-scene",
+    "title": "Mapa de Errores Frecuentes",
+    "description": "Visualiza los errores más comunes y sus correcciones.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#fef2f2",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 110,
+            "y": 5,
+            "width": 480,
+            "height": 45,
+            "fill": "#ef4444",
+            "label": "⚠️ Common Grammar Mistakes",
+            "labelEn": "Errors Spanish speakers often make"
+          },
+          {
+            "id": "e1",
+            "type": "rect",
+            "x": 20,
+            "y": 65,
+            "width": 320,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ She have a dog.",
+            "labelEn": "✅ She HAS a dog. (3rd person -s)"
+          },
+          {
+            "id": "e2",
+            "type": "rect",
+            "x": 360,
+            "y": 65,
+            "width": 320,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "❌ I have 25 years.",
+            "labelEn": "✅ I AM 25 years old."
+          },
+          {
+            "id": "e3",
+            "type": "rect",
+            "x": 20,
+            "y": 130,
+            "width": 320,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ I like the music. (general)",
+            "labelEn": "✅ I like Ø music. (no article)"
+          },
+          {
+            "id": "e4",
+            "type": "rect",
+            "x": 360,
+            "y": 130,
+            "width": 320,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "❌ I am agree.",
+            "labelEn": "✅ I agree. (no \"am\")"
+          },
+          {
+            "id": "e5",
+            "type": "rect",
+            "x": 20,
+            "y": 195,
+            "width": 320,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ He don't like it.",
+            "labelEn": "✅ He DOESN'T like it."
+          },
+          {
+            "id": "e6",
+            "type": "rect",
+            "x": 360,
+            "y": 195,
+            "width": 320,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "❌ It depends of you.",
+            "labelEn": "✅ It depends ON you."
+          },
+          {
+            "id": "e7",
+            "type": "rect",
+            "x": 20,
+            "y": 260,
+            "width": 320,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ I go always to the gym.",
+            "labelEn": "✅ I ALWAYS GO to the gym."
+          },
+          {
+            "id": "e8",
+            "type": "rect",
+            "x": 360,
+            "y": 260,
+            "width": 320,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "❌ I'm interesting in art.",
+            "labelEn": "✅ I'm INTERESTED in art."
+          },
+          {
+            "id": "e9",
+            "type": "rect",
+            "x": 20,
+            "y": 325,
+            "width": 320,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "❌ There is many people.",
+            "labelEn": "✅ There ARE many people."
+          },
+          {
+            "id": "e10",
+            "type": "rect",
+            "x": 360,
+            "y": 325,
+            "width": 320,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "❌ She is teacher.",
+            "labelEn": "✅ She is A teacher."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m7-ch5-flash",
+    "type": "flashcard",
+    "title": "Error → Corrección",
+    "description": "Aprende la forma correcta de cada error común.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "❌ She have a car.",
+          "back": "✅ She HAS a car.",
+          "example": "3rd person singular → has/does/is"
+        },
+        {
+          "id": "c2",
+          "front": "❌ I have 25 years.",
+          "back": "✅ I AM 25 years old.",
+          "example": "Age uses \"be\", not \"have\"."
+        },
+        {
+          "id": "c3",
+          "front": "❌ I am agree.",
+          "back": "✅ I agree.",
+          "example": "\"Agree\" is a verb — no need for \"am\"."
+        },
+        {
+          "id": "c4",
+          "front": "❌ I like the music. (general)",
+          "back": "✅ I like music.",
+          "example": "No article for general/abstract nouns."
+        },
+        {
+          "id": "c5",
+          "front": "❌ It depends of you.",
+          "back": "✅ It depends ON you.",
+          "example": "\"Depend\" + ON (not \"of\")."
+        },
+        {
+          "id": "c6",
+          "front": "❌ I'm interesting in art.",
+          "back": "✅ I'm INTERESTED in art.",
+          "example": "-ed = how you feel / -ing = what causes the feeling"
+        },
+        {
+          "id": "c7",
+          "front": "❌ I go always to the gym.",
+          "back": "✅ I always go to the gym.",
+          "example": "Adverb of frequency goes BEFORE main verb."
+        },
+        {
+          "id": "c8",
+          "front": "❌ She is teacher.",
+          "back": "✅ She is A teacher.",
+          "example": "Always use a/an with professions after \"be\"."
+        },
+        {
+          "id": "c9",
+          "front": "❌ There is many people.",
+          "back": "✅ There ARE many people.",
+          "example": "Plural subject → \"are\"."
+        },
+        {
+          "id": "c10",
+          "front": "❌ He don't like it.",
+          "back": "✅ He DOESN'T like it.",
+          "example": "3rd person singular → does/doesn't."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-match",
+    "type": "word-match",
+    "title": "Error ↔ Corrección",
+    "description": "Empareja cada error con su forma correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "She have a car.",
+          "right": "She has a car."
+        },
+        {
+          "left": "I have 25 years.",
+          "right": "I am 25 years old."
+        },
+        {
+          "left": "I am agree.",
+          "right": "I agree."
+        },
+        {
+          "left": "It depends of you.",
+          "right": "It depends on you."
+        },
+        {
+          "left": "I'm interesting in art.",
+          "right": "I'm interested in art."
+        },
+        {
+          "left": "There is many people.",
+          "right": "There are many people."
+        },
+        {
+          "left": "She is teacher.",
+          "right": "She is a teacher."
+        },
+        {
+          "left": "He don't like it.",
+          "right": "He doesn't like it."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Forma la Oración Correcta",
+    "description": "Ordena para construir la versión correcta.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella tiene un carro (correcto):",
+          "words": [
+            "She",
+            "has",
+            "a",
+            "car"
+          ],
+          "correct": "She has a car"
+        },
+        {
+          "prompt": "Tengo 25 años (correcto):",
+          "words": [
+            "I",
+            "am",
+            "25",
+            "years",
+            "old"
+          ],
+          "correct": "I am 25 years old"
+        },
+        {
+          "prompt": "Siempre voy al gimnasio (correcto):",
+          "words": [
+            "I",
+            "always",
+            "go",
+            "to",
+            "the",
+            "gym"
+          ],
+          "correct": "I always go to the gym"
+        },
+        {
+          "prompt": "Depende de ti (correcto):",
+          "words": [
+            "It",
+            "depends",
+            "on",
+            "you"
+          ],
+          "correct": "It depends on you"
+        },
+        {
+          "prompt": "A él no le gusta (correcto):",
+          "words": [
+            "He",
+            "doesn't",
+            "like",
+            "it"
+          ],
+          "correct": "He doesn't like it"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-quiz",
+    "type": "quiz",
+    "title": "Quiz: Corrige el Error",
+    "description": "Elige la opción correcta en cada oración.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She ___ a beautiful house.\"",
+          "options": [
+            "have",
+            "has",
+            "haves",
+            "having"
+          ],
+          "correct": 1,
+          "explanation": "3rd person singular → HAS."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"I ___ 30 years old.\"",
+          "options": [
+            "have",
+            "has",
+            "am",
+            "is"
+          ],
+          "correct": 2,
+          "explanation": "Age in English uses \"be\": I AM 30 years old."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"I like ___ music.\" (general — no specific genre)",
+          "correct": "",
+          "explanation": "No article needed for general concepts. Leave blank / zero article."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"It depends ___ the weather.\"",
+          "options": [
+            "of",
+            "on",
+            "in",
+            "at"
+          ],
+          "correct": 1,
+          "explanation": "depend + ON (not \"of\")."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"I'm very ___ in history.\"",
+          "options": [
+            "interesting",
+            "interested",
+            "interest",
+            "interests"
+          ],
+          "correct": 1,
+          "explanation": "-ed for how you feel; -ing for what causes the feeling."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"He ___ like spicy food.\" (negative)",
+          "correct": "doesn't",
+          "explanation": "3rd person singular negative → doesn't."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"I ___ with you.\" (= estoy de acuerdo)",
+          "options": [
+            "am agree",
+            "agree",
+            "am agreed",
+            "agreeing"
+          ],
+          "correct": 1,
+          "explanation": "\"Agree\" is a verb — I agree. No \"am\" needed."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"There ___ many students in the class.\"",
+          "options": [
+            "is",
+            "are",
+            "has",
+            "have"
+          ],
+          "correct": 1,
+          "explanation": "there + plural → ARE."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"I ___ go to the gym.\" (= siempre)",
+          "correct": "always",
+          "explanation": "Adverb of frequency before the main verb: I ALWAYS go."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"She is ___ teacher.\"",
+          "options": [
+            "the",
+            "a",
+            "(nothing)",
+            "one"
+          ],
+          "correct": 1,
+          "explanation": "Professions need a/an: She is A teacher."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-scramble",
+    "type": "word-scramble",
+    "title": "Errores Comunes",
+    "description": "Descifra términos de corrección gramatical.",
+    "props": {
+      "words": [
+        {
+          "word": "MISTAKE",
+          "hint": "Error; equivocación",
+          "category": "Grammar"
+        },
+        {
+          "word": "ERROR",
+          "hint": "Error; fallo",
+          "category": "Grammar"
+        },
+        {
+          "word": "CORRECT",
+          "hint": "Correcto; adecuado",
+          "category": "Grammar"
+        },
+        {
+          "word": "WRONG",
+          "hint": "Incorrecto; erróneo",
+          "category": "Grammar"
+        },
+        {
+          "word": "COMMON",
+          "hint": "Común; frecuente",
+          "category": "Grammar"
+        },
+        {
+          "word": "AVOID",
+          "hint": "Evitar; prevenir",
+          "category": "Grammar"
+        }
+      ]
+    }
+  }
+]

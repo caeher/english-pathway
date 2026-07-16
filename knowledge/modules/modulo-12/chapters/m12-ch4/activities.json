@@ -1,0 +1,460 @@
+[
+  {
+    "id": "m12-ch4-quiz",
+    "type": "quiz",
+    "title": "¿Qué Dijo Realmente?",
+    "description": "Identifica la forma completa de cada reducción. Decodifica el habla natural.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "You hear: \"I'm gonna go.\" What is the full form?",
+          "options": [
+            "I am going to go",
+            "I am gone go",
+            "I gone to go",
+            "I will go now"
+          ],
+          "correct": 0,
+          "explanation": "gonna = going to. \"I'm gonna go\" = \"I am going to go.\""
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "Informal: \"I ___ leave now.\" (= I have got to leave now)",
+          "correct": "gotta",
+          "explanation": "gotta = got to / have got to. Expresa obligación informal."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "Which is appropriate for a JOB INTERVIEW?",
+          "options": [
+            "\"I wanna talk about my experience.\"",
+            "\"I would like to discuss my experience.\"",
+            "\"I'm gonna tell you stuff.\"",
+            "\"Lemme explain.\""
+          ],
+          "correct": 1,
+          "explanation": "Job interviews require formal language. \"I would like to...\" is the appropriate choice."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "You hear: \"I dunno what to do.\" \"Dunno\" means...",
+          "options": [
+            "do not",
+            "don't know",
+            "dinner",
+            "done"
+          ],
+          "correct": 1,
+          "explanation": "dunno = don't know. Very common in casual speech."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"___ see that movie!\" (= Let me see that movie!)",
+          "correct": "Lemme",
+          "explanation": "lemme = let me. Used in very casual speech."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"I'm kinda hungry.\" What does \"kinda\" mean?",
+          "options": [
+            "very",
+            "kind of / somewhat",
+            "not at all",
+            "kindergarten"
+          ],
+          "correct": 1,
+          "explanation": "kinda = kind of = algo, un poco. \"I'm kinda hungry\" = \"Tengo algo de hambre.\""
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"She hafta go now.\" \"Hafta\" is the reduction of...",
+          "options": [
+            "half to",
+            "has to",
+            "have to",
+            "happen to"
+          ],
+          "correct": 2,
+          "explanation": "hafta = have to. Expresa obligación."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"I ___ a pizza, please.\" (= I want to have a pizza — casual)",
+          "correct": "wanna",
+          "explanation": "wanna = want to. \"I wanna a pizza\" = \"Quiero una pizza\" (informal)."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "In \"turn it off\", how does this sound in connected speech?",
+          "options": [
+            "Turn. It. Off. (separate)",
+            "\"tur-ni-toff\" (linked together)",
+            "\"turn off it\"",
+            "\"turning off\""
+          ],
+          "correct": 1,
+          "explanation": "Linking: the words connect smoothly. \"turn it off\" → \"tur-ni-toff\"."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"Gimme a break!\" What is the full form?",
+          "options": [
+            "Gym me a break",
+            "Give me a break",
+            "Got me a break",
+            "Game me a break"
+          ],
+          "correct": 1,
+          "explanation": "gimme = give me. Very casual/informal expression."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-match",
+    "type": "word-match",
+    "title": "Forma Reducida → Forma Completa",
+    "description": "Empareja cada reducción con su equivalente completo.",
+    "props": {
+      "pairs": [
+        {
+          "left": "gonna",
+          "right": "going to"
+        },
+        {
+          "left": "wanna",
+          "right": "want to"
+        },
+        {
+          "left": "gotta",
+          "right": "got to / have to"
+        },
+        {
+          "left": "kinda",
+          "right": "kind of"
+        },
+        {
+          "left": "lemme",
+          "right": "let me"
+        },
+        {
+          "left": "dunno",
+          "right": "don't know"
+        },
+        {
+          "left": "gimme",
+          "right": "give me"
+        },
+        {
+          "left": "hafta",
+          "right": "have to"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-flash",
+    "type": "flashcard",
+    "title": "Reducciones Esenciales",
+    "description": "Aprende cada reducción con su forma completa, regla y contexto de uso.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "GONNA 🗣️",
+          "back": "= going to. Solo habla informal y casual. NUNCA en escritura formal.",
+          "example": "I'm gonna call you later. (= I'm going to call you later.)"
+        },
+        {
+          "id": "f2",
+          "front": "WANNA 🗣️",
+          "back": "= want to. Informal. Se usa con \"I\", \"you\", \"we\", \"they\". NO con \"he/she/it\".",
+          "example": "I wanna go home. (= I want to go home.)"
+        },
+        {
+          "id": "f3",
+          "front": "GOTTA 🗣️",
+          "back": "= got to / have got to. Obligación informal. Muy común en EE.UU.",
+          "example": "I gotta leave now. (= I have got to leave now.)"
+        },
+        {
+          "id": "f4",
+          "front": "HAFTA 🗣️",
+          "back": "= have to. Obligación informal. Alternativa a \"gotta\".",
+          "example": "You hafta try this restaurant. (= You have to try this restaurant.)"
+        },
+        {
+          "id": "f5",
+          "front": "LEMME 🗣️",
+          "back": "= let me. Muy casual. Petición informal.",
+          "example": "Lemme think about it. (= Let me think about it.)"
+        },
+        {
+          "id": "f6",
+          "front": "KINDA 🗣️",
+          "back": "= kind of. Significa \"algo, un poco\". Suaviza lo que dices.",
+          "example": "I'm kinda tired. (= I'm kind of tired.)"
+        },
+        {
+          "id": "f7",
+          "front": "DUNNO 🗣️",
+          "back": "= don't know. Muy informal. A veces se escribe 'I dunno'.",
+          "example": "I dunno what happened. (= I don't know what happened.)"
+        },
+        {
+          "id": "f8",
+          "front": "GIMME 🗣️",
+          "back": "= give me. Muy casual/informal. Puede sonar demandante.",
+          "example": "Gimme a break! (= Give me a break!)"
+        },
+        {
+          "id": "f9",
+          "front": "A LOTTA 🗣️",
+          "back": "= a lot of. Informal. Cantidad grande.",
+          "example": "There are a lotta people here. (= There are a lot of people here.)"
+        },
+        {
+          "id": "f10",
+          "front": "DON'TCHU / DONTCHA 🗣️",
+          "back": "= don't you. Assimilation: la /t/ + /y/ se fusionan en /tʃ/ (\"ch\").",
+          "example": "Don'tchu think so? (= Don't you think so?)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "De Formal a Natural",
+    "description": "Reconstruye la oración usando contracciones y reducciones naturales.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Make natural: \"I do not know what I am going to do.\"",
+          "words": [
+            "I",
+            "dunno",
+            "what",
+            "I'm",
+            "gonna",
+            "do."
+          ],
+          "correct": "I dunno what I'm gonna do."
+        },
+        {
+          "prompt": "Make natural: \"I want to go to the movies.\"",
+          "words": [
+            "I",
+            "wanna",
+            "go",
+            "to",
+            "the",
+            "movies."
+          ],
+          "correct": "I wanna go to the movies."
+        },
+        {
+          "prompt": "Make natural: \"I have got to leave right now.\"",
+          "words": [
+            "I",
+            "gotta",
+            "leave",
+            "right",
+            "now."
+          ],
+          "correct": "I gotta leave right now."
+        },
+        {
+          "prompt": "Make natural: \"Let me see what I can do.\"",
+          "words": [
+            "Lemme",
+            "see",
+            "what",
+            "I",
+            "can",
+            "do."
+          ],
+          "correct": "Lemme see what I can do."
+        },
+        {
+          "prompt": "Make natural: \"She is kind of busy today.\"",
+          "words": [
+            "She's",
+            "kinda",
+            "busy",
+            "today."
+          ],
+          "correct": "She's kinda busy today."
+        },
+        {
+          "prompt": "Make natural: \"Give me a minute, I am going to help you.\"",
+          "words": [
+            "Gimme",
+            "a",
+            "minute,",
+            "I'm",
+            "gonna",
+            "help",
+            "you."
+          ],
+          "correct": "Gimme a minute, I'm gonna help you."
+        },
+        {
+          "prompt": "Make natural: \"You have to try this restaurant.\"",
+          "words": [
+            "You",
+            "hafta",
+            "try",
+            "this",
+            "restaurant."
+          ],
+          "correct": "You hafta try this restaurant."
+        },
+        {
+          "prompt": "Make natural: \"I do not know, I want to think about it.\"",
+          "words": [
+            "I",
+            "dunno,",
+            "I",
+            "wanna",
+            "think",
+            "about",
+            "it."
+          ],
+          "correct": "I dunno, I wanna think about it."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-svg",
+    "type": "svg-scene",
+    "title": "El Espectro de Formalidad",
+    "description": "Explora el espectro de formal a informal y descubre cómo cambia el lenguaje.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#fffbeb",
+        "items": [
+          {
+            "id": "very-formal",
+            "type": "rect",
+            "x": 20,
+            "y": 100,
+            "width": 100,
+            "height": 200,
+            "fill": "#1e3a5f",
+            "label": "Muy formal: \"I would like to...\"",
+            "labelEn": "📜 Very Formal"
+          },
+          {
+            "id": "formal",
+            "type": "rect",
+            "x": 130,
+            "y": 100,
+            "width": 100,
+            "height": 200,
+            "fill": "#3b82f6",
+            "label": "Formal: \"I'd like to...\"",
+            "labelEn": "👔 Formal"
+          },
+          {
+            "id": "neutral",
+            "type": "rect",
+            "x": 240,
+            "y": 100,
+            "width": 100,
+            "height": 200,
+            "fill": "#22c55e",
+            "label": "Neutral: \"I want to...\"",
+            "labelEn": "🤝 Neutral"
+          },
+          {
+            "id": "informal",
+            "type": "rect",
+            "x": 350,
+            "y": 100,
+            "width": 100,
+            "height": 200,
+            "fill": "#f59e0b",
+            "label": "Informal: \"I wanna...\"",
+            "labelEn": "😊 Informal"
+          },
+          {
+            "id": "very-casual",
+            "type": "rect",
+            "x": 460,
+            "y": 100,
+            "width": 120,
+            "height": 200,
+            "fill": "#ef4444",
+            "label": "Muy casual: \"Wanna...?\"",
+            "labelEn": "🤙 Very Casual"
+          },
+          {
+            "id": "arrow",
+            "type": "rect",
+            "x": 20,
+            "y": 60,
+            "width": 560,
+            "height": 8,
+            "fill": "#a3a3a3",
+            "label": "Espectro de formalidad",
+            "labelEn": "← Formal ————— Casual →"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m12-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Hablando como Nativo",
+    "description": "Descifra vocabulario de habla natural.",
+    "props": {
+      "words": [
+        {
+          "word": "FLUENT",
+          "hint": "Fluido; hablar con facilidad",
+          "category": "Speaking"
+        },
+        {
+          "word": "NATURAL",
+          "hint": "Natural; auténtico",
+          "category": "Speaking"
+        },
+        {
+          "word": "IDIOM",
+          "hint": "Modismo; expresión fija",
+          "category": "Speaking"
+        },
+        {
+          "word": "SLANG",
+          "hint": "Jerga; lenguaje informal",
+          "category": "Speaking"
+        },
+        {
+          "word": "CASUAL",
+          "hint": "Casual; informal",
+          "category": "Speaking"
+        },
+        {
+          "word": "FORMAL",
+          "hint": "Formal; educado",
+          "category": "Speaking"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,451 @@
+[
+  {
+    "id": "m10-ch5-quiz",
+    "type": "quiz",
+    "title": "Comprensión del Texto",
+    "description": "Responde preguntas sobre el artículo \"The Benefits of Regular Exercise\".",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "According to the article, what is the most important thing about exercise?",
+          "options": [
+            "Intensity",
+            "Consistency",
+            "Duration",
+            "Equipment"
+          ],
+          "correct": 1,
+          "explanation": "El artículo dice: \"consistency — exercising regularly is more important than exercising intensely.\""
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "How long does the article say a walk should be to make a difference?",
+          "options": [
+            "10 minutes",
+            "20 minutes",
+            "30 minutes",
+            "60 minutes"
+          ],
+          "correct": 2,
+          "explanation": "\"Even a 30-minute walk can make a significant difference.\""
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "What social benefit of exercise does the article mention?",
+          "options": [
+            "Earning money",
+            "Meeting new people",
+            "Learning languages",
+            "Getting famous"
+          ],
+          "correct": 1,
+          "explanation": "\"Joining a sports team or a fitness class is a great way to meet new people.\""
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "The article says that \"highlights\" means to ___ something. (emphasize/ignore)",
+          "correct": "emphasize",
+          "explanation": "Highlights = emphasizes, draws attention to (resalta, enfatiza)."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "What do experts suggest for people who don't have time?",
+          "options": [
+            "Skip exercise entirely",
+            "Exercise only on weekends",
+            "Make small changes like taking stairs",
+            "Hire a personal trainer"
+          ],
+          "correct": 2,
+          "explanation": "\"Even small changes — like taking the stairs instead of the elevator — can address this issue.\""
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "What can we INFER about the author's opinion?",
+          "options": [
+            "Exercise is only for athletes",
+            "The author strongly supports regular exercise",
+            "The author thinks exercise is overrated",
+            "Only gym workouts count"
+          ],
+          "correct": 1,
+          "explanation": "El tono del artículo es claramente positivo hacia el ejercicio regular."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "In the text, \"address\" means to ___ a problem. (deal with/create)",
+          "correct": "deal with",
+          "explanation": "Address (en este contexto) = abordar, atender un problema."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "What results does the article mention from regular exercise?",
+          "options": [
+            "Better sleep, more energy, improved mood",
+            "Weight loss only",
+            "Bigger muscles",
+            "Higher salary"
+          ],
+          "correct": 0,
+          "explanation": "\"People often report better sleep, more energy, and improved mood.\""
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "The word \"issue\" in the text most likely means...",
+          "options": [
+            "Magazine edition",
+            "Problem / challenge",
+            "Publication",
+            "Argument"
+          ],
+          "correct": 1,
+          "explanation": "Issue (en contexto) = problema/desafío que la gente enfrenta."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "The article uses the connector \"___\" to add extra information about social benefits.",
+          "correct": "Moreover",
+          "explanation": "\"Moreover, exercise has social benefits.\" — Moreover = además (adición formal)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch5-sentence",
+    "type": "sentence-builder",
+    "title": "Resume el Texto",
+    "description": "Construye oraciones que resumen las ideas principales del artículo.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Summarize the main topic of the article",
+          "words": [
+            "discusses",
+            "The",
+            "article",
+            "benefits",
+            "regular",
+            "the",
+            "of",
+            "exercise"
+          ],
+          "correct": "The article discusses the benefits of regular exercise"
+        },
+        {
+          "prompt": "What is more important than intensity?",
+          "words": [
+            "is",
+            "important",
+            "Consistency",
+            "than",
+            "more",
+            "intensity"
+          ],
+          "correct": "Consistency is more important than intensity"
+        },
+        {
+          "prompt": "What social benefit does exercise offer?",
+          "words": [
+            "can",
+            "you",
+            "Exercise",
+            "new",
+            "help",
+            "people",
+            "meet"
+          ],
+          "correct": "Exercise can help you meet new people"
+        },
+        {
+          "prompt": "What do experts recommend?",
+          "words": [
+            "small",
+            "make",
+            "Experts",
+            "suggest",
+            "changes",
+            "to"
+          ],
+          "correct": "Experts suggest to make small changes"
+        },
+        {
+          "prompt": "What results does exercise bring?",
+          "words": [
+            "leads",
+            "exercise",
+            "sleep",
+            "Regular",
+            "to",
+            "better"
+          ],
+          "correct": "Regular exercise leads to better sleep"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch5-flash",
+    "type": "flashcard",
+    "title": "Vocabulario en Contexto",
+    "description": "Aprende palabras del artículo con su significado contextual.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "\"The research HIGHLIGHTS the importance of sleep.\"",
+          "back": "Highlights = emphasizes, draws attention to (Resalta, enfatiza). Not \"the bright parts of hair\"!",
+          "example": "The report highlights several key findings."
+        },
+        {
+          "id": "f2",
+          "front": "\"The key is CONSISTENCY.\"",
+          "back": "Consistency = doing something regularly without stopping (Constancia, regularidad).",
+          "example": "Consistency is the key to success."
+        },
+        {
+          "id": "f3",
+          "front": "\"Small changes can ADDRESS this ISSUE.\"",
+          "back": "Address = to deal with, to discuss (Abordar, atender). Issue = problem, topic (Problema, tema).",
+          "example": "We need to address this issue immediately."
+        },
+        {
+          "id": "f4",
+          "front": "\"A SIGNIFICANT difference\"",
+          "back": "Significant = important, meaningful, notable (Significativo, importante).",
+          "example": "There was a significant improvement in her grades."
+        },
+        {
+          "id": "f5",
+          "front": "\"DESPITE the well-known benefits...\"",
+          "back": "Despite = in spite of, even though (A pesar de). Followed by noun or -ing.",
+          "example": "Despite the rain, we had a wonderful time."
+        },
+        {
+          "id": "f6",
+          "front": "\"People STRUGGLE to find time.\"",
+          "back": "Struggle = to try hard but with difficulty (Esforzarse con dificultad, luchar).",
+          "example": "Many students struggle with math."
+        },
+        {
+          "id": "f7",
+          "front": "\"Stay MOTIVATED\"",
+          "back": "Motivated = having enthusiasm and determination (Motivado/a).",
+          "example": "Working with friends helps you stay motivated."
+        },
+        {
+          "id": "f8",
+          "front": "\"REDUCE the risk of disease\"",
+          "back": "Reduce = to make smaller or less (Reducir, disminuir).",
+          "example": "Exercise can reduce stress levels."
+        },
+        {
+          "id": "f9",
+          "front": "\"The CURRENT situation\"",
+          "back": "Current = present, existing now (Actual, presente). NOT \"corriente\" (electricity).",
+          "example": "What is the current status of the project?"
+        },
+        {
+          "id": "f10",
+          "front": "\"Make a ROUTINE\"",
+          "back": "Routine = a regular series of actions (Rutina). Collocations: daily routine, follow a routine.",
+          "example": "I follow the same routine every morning."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch5-match",
+    "type": "word-match",
+    "title": "Palabra → Definición en Contexto",
+    "description": "Empareja cada palabra con su significado según el artículo.",
+    "props": {
+      "pairs": [
+        {
+          "left": "highlights (in text)",
+          "right": "Emphasizes / Points out"
+        },
+        {
+          "left": "address (in text)",
+          "right": "To deal with / To discuss"
+        },
+        {
+          "left": "current (in text)",
+          "right": "Present / Existing now"
+        },
+        {
+          "left": "issue (in text)",
+          "right": "Problem / Topic"
+        },
+        {
+          "left": "significant",
+          "right": "Important / Meaningful"
+        },
+        {
+          "left": "consistency",
+          "right": "Doing regularly / Constancy"
+        },
+        {
+          "left": "struggle",
+          "right": "Try with difficulty"
+        },
+        {
+          "left": "motivated",
+          "right": "Enthusiastic / Determined"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch5-svg",
+    "type": "svg-scene",
+    "title": "Mapa de Ideas del Texto",
+    "description": "Explora el organizador gráfico y descubre la estructura del artículo.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#eff6ff",
+        "items": [
+          {
+            "id": "main-idea",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 60,
+            "rx": 120,
+            "ry": 35,
+            "fill": "#fbbf24",
+            "label": "Idea principal",
+            "labelEn": "Main Idea: Benefits of Exercise"
+          },
+          {
+            "id": "physical",
+            "type": "rect",
+            "x": 30,
+            "y": 140,
+            "width": 140,
+            "height": 60,
+            "fill": "#86efac",
+            "label": "Beneficios físicos",
+            "labelEn": "Physical Benefits"
+          },
+          {
+            "id": "mental",
+            "type": "rect",
+            "x": 230,
+            "y": 140,
+            "width": 140,
+            "height": 60,
+            "fill": "#93c5fd",
+            "label": "Beneficios mentales",
+            "labelEn": "Mental Benefits"
+          },
+          {
+            "id": "social",
+            "type": "rect",
+            "x": 430,
+            "y": 140,
+            "width": 140,
+            "height": 60,
+            "fill": "#f9a8d4",
+            "label": "Beneficios sociales",
+            "labelEn": "Social Benefits"
+          },
+          {
+            "id": "detail1",
+            "type": "rect",
+            "x": 30,
+            "y": 250,
+            "width": 140,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "Reduce riesgo",
+            "labelEn": "Reduces disease risk"
+          },
+          {
+            "id": "detail2",
+            "type": "rect",
+            "x": 230,
+            "y": 250,
+            "width": 140,
+            "height": 50,
+            "fill": "#bfdbfe",
+            "label": "Mejora el ánimo",
+            "labelEn": "Improves mood & sleep"
+          },
+          {
+            "id": "detail3",
+            "type": "rect",
+            "x": 430,
+            "y": 250,
+            "width": 140,
+            "height": 50,
+            "fill": "#fbcfe8",
+            "label": "Conocer personas",
+            "labelEn": "Meet new people"
+          },
+          {
+            "id": "conclusion",
+            "type": "ellipse",
+            "cx": 300,
+            "cy": 360,
+            "rx": 150,
+            "ry": 30,
+            "fill": "#c4b5fd",
+            "label": "Conclusión",
+            "labelEn": "Conclusion: Make it a daily routine"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m10-ch5-scramble",
+    "type": "word-scramble",
+    "title": "A Leer se ha Dicho",
+    "description": "Descifra vocabulario de lectura.",
+    "props": {
+      "words": [
+        {
+          "word": "READ",
+          "hint": "Leer",
+          "category": "Reading"
+        },
+        {
+          "word": "BOOK",
+          "hint": "Libro",
+          "category": "Reading"
+        },
+        {
+          "word": "STORY",
+          "hint": "Historia; relato",
+          "category": "Reading"
+        },
+        {
+          "word": "CHAPTER",
+          "hint": "Capítulo; sección de libro",
+          "category": "Reading"
+        },
+        {
+          "word": "PARAGRAPH",
+          "hint": "Párrafo; bloque de texto",
+          "category": "Reading"
+        },
+        {
+          "word": "SENTENCE",
+          "hint": "Oración; frase completa",
+          "category": "Reading"
+        }
+      ]
+    }
+  }
+]

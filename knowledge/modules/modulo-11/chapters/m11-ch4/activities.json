@@ -1,0 +1,636 @@
+[
+  {
+    "id": "m11-ch4-quiz",
+    "type": "quiz",
+    "title": "Detective de Phrasal Verbs",
+    "description": "Descubre el significado correcto de cada Phrasal Verb según el contexto.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"I need to find out what happened.\" — What does \"find out\" mean?",
+          "options": [
+            "Discover",
+            "Lose",
+            "Forget",
+            "Ignore"
+          ],
+          "correct": 0,
+          "explanation": "\"Find out\" = discover, learn about something."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"Can you turn off the TV?\" — What does \"turn off\" mean?",
+          "options": [
+            "Break",
+            "Switch off",
+            "Watch",
+            "Buy"
+          ],
+          "correct": 1,
+          "explanation": "\"Turn off\" = switch off, stop a device."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "The meeting was ___ ___ because of the storm. (postponed/cancelled)",
+          "correct": "called off",
+          "explanation": "\"Call off\" = cancel something."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"She takes after her mother.\" — What does \"take after\" mean?",
+          "options": [
+            "Follow",
+            "Resemble",
+            "Criticize",
+            "Help"
+          ],
+          "correct": 1,
+          "explanation": "\"Take after\" = resemble, look or act like a family member."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"I can't put up with this noise!\" — What does \"put up with\" mean?",
+          "options": [
+            "Enjoy",
+            "Create",
+            "Tolerate",
+            "Increase"
+          ],
+          "correct": 2,
+          "explanation": "\"Put up with\" = tolerate, endure."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "We need to ___ ___ a solution. (invent/think of)",
+          "correct": "come up with",
+          "explanation": "\"Come up with\" = think of, invent an idea or solution."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"He grew up in Mexico.\" — What does \"grow up\" mean?",
+          "options": [
+            "Get taller",
+            "Spend childhood",
+            "Travel to",
+            "Move away from"
+          ],
+          "correct": 1,
+          "explanation": "\"Grow up\" = spend one's childhood, mature."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"Let's go over the plan one more time.\" — What does \"go over\" mean?",
+          "options": [
+            "Skip",
+            "Review",
+            "Create",
+            "Destroy"
+          ],
+          "correct": 1,
+          "explanation": "\"Go over\" = review, examine carefully."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"She looks after her grandmother.\" — What does \"look after\" mean?",
+          "options": [
+            "Search for",
+            "Take care of",
+            "Watch",
+            "Admire"
+          ],
+          "correct": 1,
+          "explanation": "\"Look after\" = take care of someone."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "I need to ___ ___ this word in the dictionary. (search for)",
+          "correct": "look up",
+          "explanation": "\"Look up\" = search for information in a reference source."
+        },
+        {
+          "id": "q11",
+          "type": "multiple-choice",
+          "question": "\"They broke up last month.\" — What does \"break up\" mean?",
+          "options": [
+            "Damaged something",
+            "Ended a relationship",
+            "Started fighting",
+            "Moved houses"
+          ],
+          "correct": 1,
+          "explanation": "\"Break up\" = end a romantic relationship."
+        },
+        {
+          "id": "q12",
+          "type": "multiple-choice",
+          "question": "\"Please hand in your homework.\" — What does \"hand in\" mean?",
+          "options": [
+            "Write",
+            "Submit",
+            "Copy",
+            "Throw away"
+          ],
+          "correct": 1,
+          "explanation": "\"Hand in\" = submit, give to a teacher or authority."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch4-match",
+    "type": "word-match",
+    "title": "Phrasal Verb → Significado",
+    "description": "Empareja cada Phrasal Verb con su definición.",
+    "props": {
+      "pairs": [
+        {
+          "left": "give up",
+          "right": "Stop trying / Quit 🏳️"
+        },
+        {
+          "left": "figure out",
+          "right": "Understand / Solve 🧠"
+        },
+        {
+          "left": "run out of",
+          "right": "Have no more left 📭"
+        },
+        {
+          "left": "look forward to",
+          "right": "Anticipate with pleasure 😊"
+        },
+        {
+          "left": "get along with",
+          "right": "Have a good relationship 🤝"
+        },
+        {
+          "left": "set up",
+          "right": "Establish / Arrange 🔧"
+        },
+        {
+          "left": "throw away",
+          "right": "Discard / Put in trash 🗑️"
+        },
+        {
+          "left": "put off",
+          "right": "Postpone / Delay ⏰"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Formal → Phrasal Verb",
+    "description": "Reescribe cada oración formal usando el Phrasal Verb natural.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "I discovered the truth. →",
+          "words": [
+            "found",
+            "out",
+            "I",
+            "the",
+            "truth"
+          ],
+          "correct": "I found out the truth"
+        },
+        {
+          "prompt": "She tolerates his bad habits. →",
+          "words": [
+            "puts",
+            "up",
+            "with",
+            "She",
+            "his",
+            "bad",
+            "habits"
+          ],
+          "correct": "She puts up with his bad habits"
+        },
+        {
+          "prompt": "We postponed the meeting. →",
+          "words": [
+            "put",
+            "off",
+            "We",
+            "the",
+            "meeting"
+          ],
+          "correct": "We put off the meeting"
+        },
+        {
+          "prompt": "They cancelled the concert. →",
+          "words": [
+            "called",
+            "off",
+            "They",
+            "the",
+            "concert"
+          ],
+          "correct": "They called off the concert"
+        },
+        {
+          "prompt": "Please continue working. →",
+          "words": [
+            "on",
+            "Please",
+            "carry",
+            "working"
+          ],
+          "correct": "Please carry on working"
+        },
+        {
+          "prompt": "She resembles her father. →",
+          "words": [
+            "takes",
+            "after",
+            "She",
+            "her",
+            "father"
+          ],
+          "correct": "She takes after her father"
+        },
+        {
+          "prompt": "He raised three children. →",
+          "words": [
+            "brought",
+            "up",
+            "He",
+            "three",
+            "children"
+          ],
+          "correct": "He brought up three children"
+        },
+        {
+          "prompt": "I submitted my report. →",
+          "words": [
+            "handed",
+            "in",
+            "I",
+            "my",
+            "report"
+          ],
+          "correct": "I handed in my report"
+        },
+        {
+          "prompt": "Let's review the notes. →",
+          "words": [
+            "go",
+            "over",
+            "Let's",
+            "the",
+            "notes"
+          ],
+          "correct": "Let's go over the notes"
+        },
+        {
+          "prompt": "She invented a great idea. →",
+          "words": [
+            "came",
+            "up",
+            "with",
+            "She",
+            "a",
+            "great",
+            "idea"
+          ],
+          "correct": "She came up with a great idea"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch4-flash",
+    "type": "flashcard",
+    "title": "Los 30 Phrasal Verbs Esenciales",
+    "description": "Tarjetas agrupadas por contexto para dominar los Phrasal Verbs más importantes.",
+    "props": {
+      "cards": [
+        {
+          "id": "pv1",
+          "front": "WAKE UP",
+          "back": "Despertarse",
+          "example": "I wake up at 7 a.m. every day."
+        },
+        {
+          "id": "pv2",
+          "front": "TURN ON / TURN OFF",
+          "back": "Encender / Apagar",
+          "example": "Turn on the lights. Turn off the TV."
+        },
+        {
+          "id": "pv3",
+          "front": "TIDY UP",
+          "back": "Ordenar, recoger",
+          "example": "Please tidy up your room before dinner."
+        },
+        {
+          "id": "pv4",
+          "front": "THROW AWAY",
+          "back": "Tirar a la basura",
+          "example": "Don't throw away those papers — I need them."
+        },
+        {
+          "id": "pv5",
+          "front": "PUT AWAY",
+          "back": "Guardar en su sitio",
+          "example": "Put away your toys after playing."
+        },
+        {
+          "id": "pv6",
+          "front": "CARRY OUT",
+          "back": "Realizar, ejecutar",
+          "example": "We need to carry out the plan carefully."
+        },
+        {
+          "id": "pv7",
+          "front": "SET UP",
+          "back": "Establecer, montar, configurar",
+          "example": "She set up her own business last year."
+        },
+        {
+          "id": "pv8",
+          "front": "COME UP WITH",
+          "back": "Inventar, idear",
+          "example": "He came up with a brilliant marketing plan."
+        },
+        {
+          "id": "pv9",
+          "front": "DEAL WITH",
+          "back": "Encargarse de, lidiar con",
+          "example": "I'll deal with this problem tomorrow."
+        },
+        {
+          "id": "pv10",
+          "front": "FIGURE OUT",
+          "back": "Descifrar, entender, resolver",
+          "example": "I can't figure out how this works."
+        },
+        {
+          "id": "pv11",
+          "front": "GET ALONG WITH",
+          "back": "Llevarse bien con",
+          "example": "I get along well with my coworkers."
+        },
+        {
+          "id": "pv12",
+          "front": "BREAK UP (WITH)",
+          "back": "Terminar una relación",
+          "example": "They broke up after two years together."
+        },
+        {
+          "id": "pv13",
+          "front": "MAKE UP",
+          "back": "Reconciliarse / inventar",
+          "example": "They argued but made up the next day."
+        },
+        {
+          "id": "pv14",
+          "front": "LOOK AFTER",
+          "back": "Cuidar de",
+          "example": "She looks after her elderly parents."
+        },
+        {
+          "id": "pv15",
+          "front": "GROW UP",
+          "back": "Crecer, criarse",
+          "example": "I grew up in a small town in Colombia."
+        },
+        {
+          "id": "pv16",
+          "front": "FIND OUT",
+          "back": "Descubrir, enterarse",
+          "example": "I just found out that the exam is tomorrow!"
+        },
+        {
+          "id": "pv17",
+          "front": "LOOK UP",
+          "back": "Buscar (en un diccionario, internet)",
+          "example": "Look up the word in the dictionary."
+        },
+        {
+          "id": "pv18",
+          "front": "GO OVER",
+          "back": "Revisar, repasar",
+          "example": "Let's go over chapter 3 one more time."
+        },
+        {
+          "id": "pv19",
+          "front": "HAND IN",
+          "back": "Entregar (tarea, informe)",
+          "example": "Please hand in your essays by Friday."
+        },
+        {
+          "id": "pv20",
+          "front": "DROP OUT (OF)",
+          "back": "Abandonar (estudios, programa)",
+          "example": "He dropped out of university in his second year."
+        },
+        {
+          "id": "pv21",
+          "front": "GIVE UP",
+          "back": "Rendirse, dejar de intentar",
+          "example": "Don't give up! You can do it!"
+        },
+        {
+          "id": "pv22",
+          "front": "PUT UP WITH",
+          "back": "Tolerar, aguantar",
+          "example": "I can't put up with his attitude anymore."
+        },
+        {
+          "id": "pv23",
+          "front": "RUN OUT OF",
+          "back": "Quedarse sin",
+          "example": "We've run out of milk. Can you buy some?"
+        },
+        {
+          "id": "pv24",
+          "front": "LOOK FORWARD TO",
+          "back": "Esperar con ganas",
+          "example": "I'm looking forward to the holidays!"
+        },
+        {
+          "id": "pv25",
+          "front": "TAKE AFTER",
+          "back": "Parecerse a (familiar)",
+          "example": "She takes after her grandmother."
+        },
+        {
+          "id": "pv26",
+          "front": "BRING UP",
+          "back": "Criar / mencionar un tema",
+          "example": "She was brought up in London. / He brought up an interesting topic."
+        },
+        {
+          "id": "pv27",
+          "front": "CALL OFF",
+          "back": "Cancelar",
+          "example": "They called off the wedding at the last minute."
+        },
+        {
+          "id": "pv28",
+          "front": "PUT OFF",
+          "back": "Posponer, aplazar",
+          "example": "Don't put off your homework until Sunday night."
+        },
+        {
+          "id": "pv29",
+          "front": "PICK UP",
+          "back": "Recoger / aprender informalmente",
+          "example": "I picked up some Spanish while in Mexico."
+        },
+        {
+          "id": "pv30",
+          "front": "WORK OUT",
+          "back": "Hacer ejercicio / resolver",
+          "example": "I work out three times a week. / Everything worked out in the end."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch4-svg2",
+    "type": "svg-scene",
+    "title": "La Casa de los Phrasal Verbs",
+    "description": "Recorre cada habitación y descubre los Phrasal Verbs que se usan en cada espacio.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#ecfdf5",
+        "items": [
+          {
+            "id": "house",
+            "type": "rect",
+            "x": 50,
+            "y": 30,
+            "width": 600,
+            "height": 360,
+            "fill": "#d1fae5",
+            "label": "🏠 La Casa de los Phrasal Verbs",
+            "labelEn": "Welcome! Explore each room."
+          },
+          {
+            "id": "bedroom",
+            "type": "rect",
+            "x": 80,
+            "y": 60,
+            "width": 160,
+            "height": 130,
+            "fill": "#c4b5fd",
+            "label": "🛏️ Dormitorio",
+            "labelEn": "WAKE UP = get out of bed\nTIDY UP = make it neat\nPUT AWAY = store your things"
+          },
+          {
+            "id": "kitchen",
+            "type": "rect",
+            "x": 270,
+            "y": 60,
+            "width": 160,
+            "height": 130,
+            "fill": "#fde68a",
+            "label": "🍳 Cocina",
+            "labelEn": "RUN OUT OF = no more left\nTHROW AWAY = put in trash\nWASH UP = clean the dishes"
+          },
+          {
+            "id": "office",
+            "type": "rect",
+            "x": 460,
+            "y": 60,
+            "width": 160,
+            "height": 130,
+            "fill": "#93c5fd",
+            "label": "💻 Oficina",
+            "labelEn": "SET UP = configure equipment\nFIGURE OUT = solve a problem\nCARRY OUT = complete a task"
+          },
+          {
+            "id": "living",
+            "type": "rect",
+            "x": 80,
+            "y": 230,
+            "width": 160,
+            "height": 130,
+            "fill": "#a7f3d0",
+            "label": "🛋️ Sala",
+            "labelEn": "TURN ON/OFF = switch devices\nCHILL OUT = relax\nPUT UP WITH = tolerate noise"
+          },
+          {
+            "id": "garden",
+            "type": "rect",
+            "x": 270,
+            "y": 230,
+            "width": 160,
+            "height": 130,
+            "fill": "#86efac",
+            "label": "🌿 Jardín",
+            "labelEn": "LOOK AFTER = care for plants\nGROW UP = where kids play\nWORK OUT = exercise outside"
+          },
+          {
+            "id": "studyroom",
+            "type": "rect",
+            "x": 460,
+            "y": 230,
+            "width": 160,
+            "height": 130,
+            "fill": "#fca5a5",
+            "label": "📚 Cuarto de estudio",
+            "labelEn": "LOOK UP = find in dictionary\nGO OVER = review notes\nGIVE UP = never do this! 💪"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m11-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Phrasal Verbs",
+    "description": "Descifra verbos que forman phrasal verbs.",
+    "props": {
+      "words": [
+        {
+          "word": "LOOK",
+          "hint": "Mirar; look up, look for",
+          "category": "Phrasal Verbs"
+        },
+        {
+          "word": "GET",
+          "hint": "Obtener; get up, get on",
+          "category": "Phrasal Verbs"
+        },
+        {
+          "word": "TAKE",
+          "hint": "Tomar; take off, take care",
+          "category": "Phrasal Verbs"
+        },
+        {
+          "word": "COME",
+          "hint": "Venir; come in, come back",
+          "category": "Phrasal Verbs"
+        },
+        {
+          "word": "GIVE",
+          "hint": "Dar; give up, give back",
+          "category": "Phrasal Verbs"
+        },
+        {
+          "word": "BREAK",
+          "hint": "Romper; break down, break up",
+          "category": "Phrasal Verbs"
+        }
+      ]
+    }
+  }
+]

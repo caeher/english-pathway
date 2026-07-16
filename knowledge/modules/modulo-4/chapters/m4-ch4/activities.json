@@ -1,0 +1,464 @@
+[
+  {
+    "id": "m4-ch4-svg",
+    "type": "svg-scene",
+    "title": "El Panel de los Modales",
+    "description": "Comprende cada modal con ejemplos y niveles de fuerza.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#fffbeb",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#f59e0b",
+            "label": "⚖️ Modal Verbs",
+            "labelEn": "Must, Should, May, Might — different levels!"
+          },
+          {
+            "id": "must",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 75,
+            "fill": "#fecaca",
+            "label": "💪💪💪 MUST",
+            "labelEn": "OBLIGATION: You MUST wear a seatbelt. PROHIBITION: You MUSTN'T smoke."
+          },
+          {
+            "id": "should",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 75,
+            "fill": "#bbf7d0",
+            "label": "💪💪 SHOULD",
+            "labelEn": "ADVICE: You SHOULD study more. You SHOULDN'T eat junk food."
+          },
+          {
+            "id": "may",
+            "type": "rect",
+            "x": 30,
+            "y": 155,
+            "width": 310,
+            "height": 75,
+            "fill": "#bfdbfe",
+            "label": "💪 MAY (~50%)",
+            "labelEn": "POSSIBILITY: It MAY rain. PERMISSION: MAY I come in? (formal)"
+          },
+          {
+            "id": "might",
+            "type": "rect",
+            "x": 360,
+            "y": 155,
+            "width": 310,
+            "height": 75,
+            "fill": "#e0e7ff",
+            "label": "😐 MIGHT (~30%)",
+            "labelEn": "LOWER POSSIBILITY: He MIGHT be at home. They MIGHT NOT come."
+          },
+          {
+            "id": "rule1",
+            "type": "rect",
+            "x": 30,
+            "y": 255,
+            "width": 640,
+            "height": 55,
+            "fill": "#fef9c3",
+            "label": "📏 Rules for ALL modals",
+            "labelEn": "No 'to' after: must go (not must to go). No 's': she must (not she musts). No 'do': Must I? (not Do I must?)"
+          },
+          {
+            "id": "deduc",
+            "type": "rect",
+            "x": 100,
+            "y": 330,
+            "width": 500,
+            "height": 50,
+            "fill": "#fce7f3",
+            "label": "🧠 Deduction with MUST",
+            "labelEn": "She's studying a lot. She MUST be tired. (logical conclusion)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m4-ch4-flash",
+    "type": "flashcard",
+    "title": "Modales en Contexto",
+    "description": "Practica los modales en diferentes situaciones.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "Debes usar cinturón. (obligación)",
+          "back": "You MUST wear a seatbelt.",
+          "example": "Must = obligation (strong)."
+        },
+        {
+          "id": "c2",
+          "front": "No debes fumar aquí. (prohibición)",
+          "back": "You MUSTN'T smoke here.",
+          "example": "mustn't = prohibition."
+        },
+        {
+          "id": "c3",
+          "front": "Deberías estudiar más. (consejo)",
+          "back": "You SHOULD study more.",
+          "example": "Should = advice."
+        },
+        {
+          "id": "c4",
+          "front": "No deberías comer tanto azúcar.",
+          "back": "You SHOULDN'T eat so much sugar.",
+          "example": "shouldn't = not recommended."
+        },
+        {
+          "id": "c5",
+          "front": "Puede que llueva. (~50%)",
+          "back": "It MAY rain.",
+          "example": "May = possibility (~50%)."
+        },
+        {
+          "id": "c6",
+          "front": "¿Puedo pasar? (formal)",
+          "back": "MAY I come in?",
+          "example": "May I...? = formal permission."
+        },
+        {
+          "id": "c7",
+          "front": "Podría llover. (~30%)",
+          "back": "It MIGHT rain.",
+          "example": "Might = lower possibility."
+        },
+        {
+          "id": "c8",
+          "front": "Quizás no vengan.",
+          "back": "They MIGHT NOT come.",
+          "example": "might not = quizás no."
+        },
+        {
+          "id": "c9",
+          "front": "Debe de estar cansada. (deducción)",
+          "back": "She MUST be tired.",
+          "example": "Must = logical deduction."
+        },
+        {
+          "id": "c10",
+          "front": "¿Debería llamar al doctor?",
+          "back": "SHOULD I call the doctor?",
+          "example": "Should I...? = seeking advice."
+        },
+        {
+          "id": "c11",
+          "front": "Quizás esté en casa. (~30%)",
+          "back": "He MIGHT be at home.",
+          "example": "Might = uncertain possibility."
+        },
+        {
+          "id": "c12",
+          "front": "Puede que no venga hoy. (~50%)",
+          "back": "She MAY NOT come today.",
+          "example": "May not = maybe not."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-match",
+    "type": "word-match",
+    "title": "Situación → Modal",
+    "description": "Empareja cada situación con el modal correcto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Strong obligation",
+          "right": "must"
+        },
+        {
+          "left": "Advice",
+          "right": "should"
+        },
+        {
+          "left": "Possibility (~50%)",
+          "right": "may"
+        },
+        {
+          "left": "Lower possibility (~30%)",
+          "right": "might"
+        },
+        {
+          "left": "Prohibition",
+          "right": "mustn't"
+        },
+        {
+          "left": "Not recommended",
+          "right": "shouldn't"
+        },
+        {
+          "left": "Formal permission",
+          "right": "May I...?"
+        },
+        {
+          "left": "Logical deduction",
+          "right": "must (be)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Usa el Modal Correcto",
+    "description": "Ordena las palabras eligiendo el modal apropiado.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Debes usar cinturón (obligación):",
+          "words": [
+            "You",
+            "must",
+            "wear",
+            "a",
+            "seatbelt"
+          ],
+          "correct": "You must wear a seatbelt"
+        },
+        {
+          "prompt": "Deberías estudiar más (consejo):",
+          "words": [
+            "You",
+            "should",
+            "study",
+            "more"
+          ],
+          "correct": "You should study more"
+        },
+        {
+          "prompt": "Puede que llueva (posibilidad):",
+          "words": [
+            "It",
+            "may",
+            "rain",
+            "later"
+          ],
+          "correct": "It may rain later"
+        },
+        {
+          "prompt": "No debes fumar aquí (prohibición):",
+          "words": [
+            "You",
+            "mustn't",
+            "smoke",
+            "here"
+          ],
+          "correct": "You mustn't smoke here"
+        },
+        {
+          "prompt": "¿Puedo sentarme? (formal):",
+          "words": [
+            "May",
+            "I",
+            "sit",
+            "down?"
+          ],
+          "correct": "May I sit down?"
+        },
+        {
+          "prompt": "Quizás no vengan:",
+          "words": [
+            "They",
+            "might",
+            "not",
+            "come"
+          ],
+          "correct": "They might not come"
+        },
+        {
+          "prompt": "Debe estar cansada (deducción):",
+          "words": [
+            "She",
+            "must",
+            "be",
+            "tired"
+          ],
+          "correct": "She must be tired"
+        },
+        {
+          "prompt": "No deberías comer eso:",
+          "words": [
+            "You",
+            "shouldn't",
+            "eat",
+            "that"
+          ],
+          "correct": "You shouldn't eat that"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz: Modales",
+    "description": "Pon a prueba tu dominio de los modales.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"You ___ wear a seatbelt.\" (obligación fuerte)",
+          "options": [
+            "should",
+            "might",
+            "must",
+            "can"
+          ],
+          "correct": 2,
+          "explanation": "Must = strong obligation."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"You ___ study more.\" (consejo)",
+          "options": [
+            "must",
+            "should",
+            "might",
+            "may"
+          ],
+          "correct": 1,
+          "explanation": "Should = advice."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"It ___ rain later.\" (posibilidad ~50%)",
+          "correct": "may",
+          "explanation": "May = possibility (~50%)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"He ___ be at home.\" (posibilidad ~30%)",
+          "options": [
+            "must",
+            "should",
+            "might",
+            "can"
+          ],
+          "correct": 2,
+          "explanation": "Might = lower possibility."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"You ___ smoke here.\" (prohibición)",
+          "correct": "mustn't",
+          "explanation": "mustn't = prohibition (not allowed)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"___ I come in?\" (formal permission)",
+          "options": [
+            "Can",
+            "May",
+            "Must",
+            "Should"
+          ],
+          "correct": 1,
+          "explanation": "May I...? = formal permission."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "She must go.",
+            "She musts go.",
+            "Must she go?",
+            "She must not go."
+          ],
+          "correct": 1,
+          "explanation": "Modals never add -s: She must (not musts)."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"She's working very hard. She ___ be tired.\" (deducción)",
+          "correct": "must",
+          "explanation": "Must = logical deduction (must be)."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "You must go.",
+            "You must to go.",
+            "Must I go?",
+            "You mustn't go."
+          ],
+          "correct": 1,
+          "explanation": "No \"to\" after modals: must go (not must to go)."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"You ___ eat so much junk food.\" (no recomendado)",
+          "correct": "shouldn't",
+          "explanation": "shouldn't = not recommended."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Verbos Modales",
+    "description": "Descifra verbos modales clave.",
+    "props": {
+      "words": [
+        {
+          "word": "MUST",
+          "hint": "Deber; obligación fuerte",
+          "category": "Modals"
+        },
+        {
+          "word": "SHOULD",
+          "hint": "Debería; consejo o recomendación",
+          "category": "Modals"
+        },
+        {
+          "word": "MIGHT",
+          "hint": "Podría; posibilidad baja",
+          "category": "Modals"
+        },
+        {
+          "word": "COULD",
+          "hint": "Podría; capacidad o posibilidad",
+          "category": "Modals"
+        },
+        {
+          "word": "WOULD",
+          "hint": "Haría; condicional o cortesía",
+          "category": "Modals"
+        },
+        {
+          "word": "OUGHT",
+          "hint": "Debería; ought to",
+          "category": "Modals"
+        }
+      ]
+    }
+  }
+]

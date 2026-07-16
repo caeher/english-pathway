@@ -1,0 +1,443 @@
+[
+  {
+    "id": "m10-ch1-quiz",
+    "type": "quiz",
+    "title": "¿Will o Going To?",
+    "description": "Elige la estructura correcta según el contexto de cada situación.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"The phone is ringing.\" — \"I ___ answer it.\"",
+          "options": [
+            "am going to",
+            "will",
+            "going to",
+            "am will"
+          ],
+          "correct": 1,
+          "explanation": "Decisión espontánea → will. No lo habías planeado antes."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"Look at those dark clouds!\" — \"It ___ rain.\"",
+          "options": [
+            "will",
+            "is going to",
+            "shall",
+            "does"
+          ],
+          "correct": 1,
+          "explanation": "Hay evidencia presente (nubes oscuras) → going to."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"What are your plans for the weekend?\" — \"I ___ visit my grandmother.\"",
+          "options": [
+            "will",
+            "am going to",
+            "shall",
+            "would"
+          ],
+          "correct": 1,
+          "explanation": "Plan ya decidido → going to."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"I think the exam ___ be difficult.\" (will/is going to)",
+          "correct": "will",
+          "explanation": "Predicción basada en opinión → will."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"Don't worry about the dishes.\" — \"I ___ do them later.\"",
+          "options": [
+            "am going to",
+            "will",
+            "going",
+            "shall to"
+          ],
+          "correct": 1,
+          "explanation": "Oferta/promesa espontánea → will."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"She has been studying very hard.\" — \"She ___ pass the exam.\"",
+          "options": [
+            "will",
+            "is going to",
+            "shall",
+            "would"
+          ],
+          "correct": 1,
+          "explanation": "Hay evidencia (ha estudiado mucho) → going to."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"We have bought the tickets. We ___ travel to Paris next month.\" (will/are going to)",
+          "correct": "are going to",
+          "explanation": "Plan ya decidido (ya compraron los boletos) → going to."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"Would you like tea or coffee?\" — \"I ___ have coffee, please.\"",
+          "options": [
+            "am going to",
+            "will",
+            "going to",
+            "am will"
+          ],
+          "correct": 1,
+          "explanation": "Decisión tomada en el momento → will."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"I promise I ___ be on time tomorrow.\"",
+          "options": [
+            "am going to",
+            "will",
+            "going to",
+            "shall going to"
+          ],
+          "correct": 1,
+          "explanation": "Promesa → will."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"She ___ have a baby in March.\" (will/is going to)",
+          "correct": "is going to",
+          "explanation": "Plan/hecho ya decidido → going to."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch1-sentence",
+    "type": "sentence-builder",
+    "title": "Planes y Promesas",
+    "description": "Construye oraciones de futuro ordenando las palabras correctamente.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Express your plan for the weekend",
+          "words": [
+            "going",
+            "I'm",
+            "the",
+            "to",
+            "visit",
+            "museum"
+          ],
+          "correct": "I'm going to visit the museum"
+        },
+        {
+          "prompt": "Make a promise to your friend",
+          "words": [
+            "will",
+            "I",
+            "you",
+            "help",
+            "tomorrow"
+          ],
+          "correct": "I will help you tomorrow"
+        },
+        {
+          "prompt": "Predict the weather based on dark clouds",
+          "words": [
+            "to",
+            "going",
+            "is",
+            "rain",
+            "It"
+          ],
+          "correct": "It is going to rain"
+        },
+        {
+          "prompt": "Make a spontaneous decision at a restaurant",
+          "words": [
+            "the",
+            "have",
+            "pasta",
+            "I'll"
+          ],
+          "correct": "I'll have the pasta"
+        },
+        {
+          "prompt": "Talk about your study plans",
+          "words": [
+            "going",
+            "She",
+            "to",
+            "is",
+            "study",
+            "tonight"
+          ],
+          "correct": "She is going to study tonight"
+        },
+        {
+          "prompt": "Make a prediction about the future",
+          "words": [
+            "think",
+            "will",
+            "I",
+            "win",
+            "they"
+          ],
+          "correct": "I think they will win"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch1-svg",
+    "type": "svg-scene",
+    "title": "La Bola de Cristal",
+    "description": "Haz clic en las visiones del futuro para descubrir qué predicción corresponde.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 600 400",
+        "bg": "#1e1b4b",
+        "items": [
+          {
+            "id": "crystal",
+            "type": "circle",
+            "cx": 300,
+            "cy": 200,
+            "r": 120,
+            "fill": "#c4b5fd",
+            "label": "Bola de cristal",
+            "labelEn": "Crystal Ball"
+          },
+          {
+            "id": "clouds",
+            "type": "ellipse",
+            "cx": 150,
+            "cy": 80,
+            "rx": 60,
+            "ry": 30,
+            "fill": "#6b7280",
+            "label": "Nubes oscuras → going to rain",
+            "labelEn": "Dark Clouds"
+          },
+          {
+            "id": "trophy",
+            "type": "polygon",
+            "points": "470,60 490,100 510,60 530,100 550,60",
+            "fill": "#fbbf24",
+            "label": "Trofeo → will win",
+            "labelEn": "Trophy"
+          },
+          {
+            "id": "calendar",
+            "type": "rect",
+            "x": 60,
+            "y": 280,
+            "width": 70,
+            "height": 70,
+            "fill": "#f87171",
+            "label": "Calendario → going to (plan)",
+            "labelEn": "Calendar"
+          },
+          {
+            "id": "lightbulb",
+            "type": "circle",
+            "cx": 500,
+            "cy": 300,
+            "r": 30,
+            "fill": "#fde68a",
+            "label": "Idea espontánea → will",
+            "labelEn": "Light Bulb"
+          },
+          {
+            "id": "airplane",
+            "type": "polygon",
+            "points": "280,320 320,310 310,340",
+            "fill": "#60a5fa",
+            "label": "Viaje planeado → going to travel",
+            "labelEn": "Airplane"
+          },
+          {
+            "id": "ring",
+            "type": "circle",
+            "cx": 200,
+            "cy": 180,
+            "r": 15,
+            "fill": "#f9a8d4",
+            "label": "Promesa → will always love",
+            "labelEn": "Ring"
+          },
+          {
+            "id": "star",
+            "type": "polygon",
+            "points": "400,180 410,210 440,210 415,230 425,260 400,240 375,260 385,230 360,210 390,210",
+            "fill": "#a78bfa",
+            "label": "Predicción → will be famous",
+            "labelEn": "Star"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m10-ch1-flash",
+    "type": "flashcard",
+    "title": "Señales de Futuro",
+    "description": "Identifica si la señal requiere \"will\" o \"going to\" antes de voltear.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "📅 Calendar with \"Gym\" written on Monday",
+          "back": "GOING TO — I'm going to go to the gym on Monday. (Plan already decided)",
+          "example": "I'm going to go to the gym on Monday."
+        },
+        {
+          "id": "f2",
+          "front": "📞 Phone ringing on the table",
+          "back": "WILL — I'll answer it. (Spontaneous decision)",
+          "example": "I'll answer it!"
+        },
+        {
+          "id": "f3",
+          "front": "⛈️ Very dark clouds in the sky",
+          "back": "GOING TO — It's going to rain. (Evidence in present)",
+          "example": "Look! It's going to rain."
+        },
+        {
+          "id": "f4",
+          "front": "🤔 \"What do you think about the match?\"",
+          "back": "WILL — I think they will win. (Prediction/opinion)",
+          "example": "I think they will win the match."
+        },
+        {
+          "id": "f5",
+          "front": "🤝 Friend struggling with heavy boxes",
+          "back": "WILL — I'll help you. (Spontaneous offer)",
+          "example": "I'll help you carry those boxes."
+        },
+        {
+          "id": "f6",
+          "front": "✈️ Printed boarding pass for next week",
+          "back": "GOING TO — We are going to fly to London. (Plan already made)",
+          "example": "We are going to fly to London next week."
+        },
+        {
+          "id": "f7",
+          "front": "💍 \"I promise...\"",
+          "back": "WILL — I will always be there for you. (Promise)",
+          "example": "I will always be there for you."
+        },
+        {
+          "id": "f8",
+          "front": "🍽️ Waiter asks: \"What would you like?\"",
+          "back": "WILL — I'll have the steak, please. (Spontaneous decision)",
+          "example": "I'll have the steak, please."
+        },
+        {
+          "id": "f9",
+          "front": "🎓 Student with books and study plan",
+          "back": "GOING TO — She is going to study medicine. (Planned intention)",
+          "example": "She is going to study medicine."
+        },
+        {
+          "id": "f10",
+          "front": "🌡️ Baby has a high fever",
+          "back": "GOING TO — He's going to need a doctor. (Evidence present)",
+          "example": "He's going to need a doctor."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch1-match",
+    "type": "word-match",
+    "title": "Situación → Estructura",
+    "description": "Empareja cada situación con la forma de futuro correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Spontaneous decision",
+          "right": "WILL"
+        },
+        {
+          "left": "Plan already made",
+          "right": "GOING TO"
+        },
+        {
+          "left": "Promise",
+          "right": "WILL"
+        },
+        {
+          "left": "Evidence in present",
+          "right": "GOING TO"
+        },
+        {
+          "left": "Prediction (opinion)",
+          "right": "WILL"
+        },
+        {
+          "left": "Planned intention",
+          "right": "GOING TO"
+        },
+        {
+          "left": "Offer to help",
+          "right": "WILL"
+        },
+        {
+          "left": "Visible signs",
+          "right": "GOING TO"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch1-scramble",
+    "type": "word-scramble",
+    "title": "El Futuro te Espera",
+    "description": "Descifra palabras del futuro y planes.",
+    "props": {
+      "words": [
+        {
+          "word": "FUTURE",
+          "hint": "Futuro; tiempo por venir",
+          "category": "Future"
+        },
+        {
+          "word": "DREAM",
+          "hint": "Sueño; aspiración",
+          "category": "Future"
+        },
+        {
+          "word": "GOAL",
+          "hint": "Meta; objetivo",
+          "category": "Future"
+        },
+        {
+          "word": "PLAN",
+          "hint": "Plan; intención organizada",
+          "category": "Future"
+        },
+        {
+          "word": "HOPE",
+          "hint": "Esperanza; deseo",
+          "category": "Future"
+        },
+        {
+          "word": "EXPECT",
+          "hint": "Esperar; anticipar",
+          "category": "Future"
+        }
+      ]
+    }
+  }
+]

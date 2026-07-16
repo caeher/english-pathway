@@ -1,0 +1,492 @@
+[
+  {
+    "id": "m2-ch4-svg",
+    "type": "svg-scene",
+    "title": "La Máquina del Tiempo",
+    "description": "Explora cómo transformar oraciones afirmativas en negativas y preguntas.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#faf5ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 150,
+            "y": 10,
+            "width": 400,
+            "height": 45,
+            "fill": "#e9d5ff",
+            "label": "⏰ The Time Machine",
+            "labelEn": "Transform affirmative sentences!"
+          },
+          {
+            "id": "aff",
+            "type": "rect",
+            "x": 50,
+            "y": 70,
+            "width": 180,
+            "height": 60,
+            "fill": "#bbf7d0",
+            "label": "✅ Affirmative",
+            "labelEn": "He went to school."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 260,
+            "y": 70,
+            "width": 180,
+            "height": 60,
+            "fill": "#fecaca",
+            "label": "❌ Negative",
+            "labelEn": "He didn't GO to school."
+          },
+          {
+            "id": "quest",
+            "type": "rect",
+            "x": 470,
+            "y": 70,
+            "width": 200,
+            "height": 60,
+            "fill": "#bfdbfe",
+            "label": "❓ Question",
+            "labelEn": "Did he GO to school?"
+          },
+          {
+            "id": "rule1",
+            "type": "rect",
+            "x": 50,
+            "y": 150,
+            "width": 280,
+            "height": 60,
+            "fill": "#fef9c3",
+            "label": "📏 Rule: Negatives",
+            "labelEn": "Subject + didn't + BASE VERB (she didn't eat, NOT she didn't ate)"
+          },
+          {
+            "id": "rule2",
+            "type": "rect",
+            "x": 370,
+            "y": 150,
+            "width": 280,
+            "height": 60,
+            "fill": "#fef9c3",
+            "label": "📏 Rule: Questions",
+            "labelEn": "Did + Subject + BASE VERB? (Did they go? NOT Did they went?)"
+          },
+          {
+            "id": "was1",
+            "type": "rect",
+            "x": 50,
+            "y": 230,
+            "width": 290,
+            "height": 60,
+            "fill": "#dbeafe",
+            "label": "🔹 Was/Were: Different!",
+            "labelEn": "Was/Were don't use 'did'. I wasn't there. Were you there?"
+          },
+          {
+            "id": "short",
+            "type": "rect",
+            "x": 370,
+            "y": 230,
+            "width": 290,
+            "height": 60,
+            "fill": "#dcfce7",
+            "label": "✅ Short Answers",
+            "labelEn": "Yes, I did. / No, I didn't. Yes, she was. / No, they weren't."
+          },
+          {
+            "id": "warn",
+            "type": "rect",
+            "x": 100,
+            "y": 320,
+            "width": 500,
+            "height": 50,
+            "fill": "#fee2e2",
+            "label": "⚠️ Common Mistake",
+            "labelEn": "WRONG: Did he went? / She didn't ate. RIGHT: Did he go? / She didn't eat."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m2-ch4-flash",
+    "type": "flashcard",
+    "title": "Transformaciones en Pasado",
+    "description": "Practica convirtiendo afirmativas en negativas y preguntas.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "She went to the store. (negativa)",
+          "back": "She didn't go to the store.",
+          "example": "Usamos didn't + go (base form)."
+        },
+        {
+          "id": "c2",
+          "front": "He ate lunch. (pregunta)",
+          "back": "Did he eat lunch?",
+          "example": "Did + he + eat (base form)."
+        },
+        {
+          "id": "c3",
+          "front": "They saw the movie. (negativa)",
+          "back": "They didn't see the movie.",
+          "example": "didn't + see (NOT saw)."
+        },
+        {
+          "id": "c4",
+          "front": "You bought a car. (pregunta)",
+          "back": "Did you buy a car?",
+          "example": "Did + you + buy (base form)."
+        },
+        {
+          "id": "c5",
+          "front": "I was at home. (negativa)",
+          "back": "I wasn't at home.",
+          "example": "was → wasn't (no 'did' needed)."
+        },
+        {
+          "id": "c6",
+          "front": "They were happy. (pregunta)",
+          "back": "Were they happy?",
+          "example": "were → Were they? (no 'did')."
+        },
+        {
+          "id": "c7",
+          "front": "She wrote a letter. (negativa)",
+          "back": "She didn't write a letter.",
+          "example": "didn't + write."
+        },
+        {
+          "id": "c8",
+          "front": "We flew to Madrid. (pregunta)",
+          "back": "Did we fly to Madrid?",
+          "example": "Did + we + fly."
+        },
+        {
+          "id": "c9",
+          "front": "He drove to work. (negativa)",
+          "back": "He didn't drive to work.",
+          "example": "didn't + drive."
+        },
+        {
+          "id": "c10",
+          "front": "Did you sleep well? (respuesta corta sí)",
+          "back": "Yes, I did.",
+          "example": "Short answer: Yes, + subject + did."
+        },
+        {
+          "id": "c11",
+          "front": "Was she there? (respuesta corta no)",
+          "back": "No, she wasn't.",
+          "example": "Short answer: No, + subject + wasn't."
+        },
+        {
+          "id": "c12",
+          "front": "Did they come? (respuesta corta no)",
+          "back": "No, they didn't.",
+          "example": "Short answer: No, + subject + didn't."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-match",
+    "type": "word-match",
+    "title": "Afirmativa → Negativa",
+    "description": "Empareja cada oración afirmativa con su forma negativa correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "She went",
+          "right": "She didn't go"
+        },
+        {
+          "left": "He ate pizza",
+          "right": "He didn't eat pizza"
+        },
+        {
+          "left": "They saw it",
+          "right": "They didn't see it"
+        },
+        {
+          "left": "I was happy",
+          "right": "I wasn't happy"
+        },
+        {
+          "left": "We were there",
+          "right": "We weren't there"
+        },
+        {
+          "left": "He bought it",
+          "right": "He didn't buy it"
+        },
+        {
+          "left": "She spoke",
+          "right": "She didn't speak"
+        },
+        {
+          "left": "They flew",
+          "right": "They didn't fly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Forma Preguntas y Negaciones",
+    "description": "Ordena las palabras para formar preguntas y negaciones en pasado.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "¿Fuiste al cine?:",
+          "words": [
+            "Did",
+            "you",
+            "go",
+            "to",
+            "the",
+            "cinema?"
+          ],
+          "correct": "Did you go to the cinema?"
+        },
+        {
+          "prompt": "Ella no comió nada:",
+          "words": [
+            "She",
+            "didn't",
+            "eat",
+            "anything"
+          ],
+          "correct": "She didn't eat anything"
+        },
+        {
+          "prompt": "¿Él habló con ella?:",
+          "words": [
+            "Did",
+            "he",
+            "speak",
+            "to",
+            "her?"
+          ],
+          "correct": "Did he speak to her?"
+        },
+        {
+          "prompt": "No fueron a la fiesta:",
+          "words": [
+            "They",
+            "didn't",
+            "go",
+            "to",
+            "the",
+            "party"
+          ],
+          "correct": "They didn't go to the party"
+        },
+        {
+          "prompt": "¿Estuviste en casa?:",
+          "words": [
+            "Were",
+            "you",
+            "at",
+            "home?"
+          ],
+          "correct": "Were you at home?"
+        },
+        {
+          "prompt": "Él no estaba contento:",
+          "words": [
+            "He",
+            "wasn't",
+            "happy"
+          ],
+          "correct": "He wasn't happy"
+        },
+        {
+          "prompt": "¿Compraron el libro?:",
+          "words": [
+            "Did",
+            "they",
+            "buy",
+            "the",
+            "book?"
+          ],
+          "correct": "Did they buy the book?"
+        },
+        {
+          "prompt": "No dormí bien anoche:",
+          "words": [
+            "I",
+            "didn't",
+            "sleep",
+            "well",
+            "last",
+            "night"
+          ],
+          "correct": "I didn't sleep well last night"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz: Negaciones y Preguntas",
+    "description": "Demuestra que dominas las negaciones y preguntas en pasado.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She ___ (not/go) to the party.\"",
+          "options": [
+            "didn't go",
+            "didn't went",
+            "not went",
+            "doesn't go"
+          ],
+          "correct": 0,
+          "explanation": "didn't + base verb: didn't go."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"___ you eat breakfast?\"",
+          "options": [
+            "Do",
+            "Did",
+            "Was",
+            "Were"
+          ],
+          "correct": 1,
+          "explanation": "Past question with Did + base verb."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"___ he happy?\" (was)",
+          "correct": "Was",
+          "explanation": "Was he happy? — 'was' inverts with subject."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "\"They ___ (not/see) the movie.\"",
+          "options": [
+            "didn't see",
+            "didn't saw",
+            "not saw",
+            "weren't see"
+          ],
+          "correct": 0,
+          "explanation": "didn't + see (base form)."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"Did she ___ (buy) a new phone?\"",
+          "correct": "buy",
+          "explanation": "After Did, use base form: buy (not bought)."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "Correct short answer for \"Did you sleep well?\"",
+          "options": [
+            "Yes, I slept.",
+            "Yes, I did.",
+            "Yes, I do.",
+            "Yes, I was."
+          ],
+          "correct": 1,
+          "explanation": "Short answer: Yes, I did. / No, I didn't."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"We ___ (not/be) at the meeting.\"",
+          "correct": "weren't",
+          "explanation": "were + not = weren't (no 'did' with was/were)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "Did she go?",
+            "She didn't go.",
+            "Did she went?",
+            "She went."
+          ],
+          "correct": 2,
+          "explanation": "\"Did she went?\" is wrong. Correct: Did she GO?"
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"___ they at the park yesterday?\"",
+          "correct": "Were",
+          "explanation": "Were they at the park? — question with were."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "\"He ___ (not/drive) to work yesterday.\"",
+          "options": [
+            "didn't drove",
+            "didn't drive",
+            "wasn't drove",
+            "not drive"
+          ],
+          "correct": 1,
+          "explanation": "didn't + base form: didn't drive."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Marcadores de Tiempo Pasado",
+    "description": "Descifra palabras que indican tiempo pasado.",
+    "props": {
+      "words": [
+        {
+          "word": "YESTERDAY",
+          "hint": "Ayer",
+          "category": "Past"
+        },
+        {
+          "word": "LAST",
+          "hint": "Último; last week",
+          "category": "Past"
+        },
+        {
+          "word": "AGO",
+          "hint": "Hace; two days ago",
+          "category": "Past"
+        },
+        {
+          "word": "BEFORE",
+          "hint": "Antes",
+          "category": "Past"
+        },
+        {
+          "word": "DURING",
+          "hint": "Durante",
+          "category": "Past"
+        },
+        {
+          "word": "WHILE",
+          "hint": "Mientras",
+          "category": "Past"
+        }
+      ]
+    }
+  }
+]

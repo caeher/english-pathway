@@ -1,0 +1,502 @@
+[
+  {
+    "id": "m4-ch3-svg",
+    "type": "svg-scene",
+    "title": "Records Mundiales",
+    "description": "Descubre superlativos en records mundiales.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#f5f3ff",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#8b5cf6",
+            "label": "🏆 Superlatives — World Records",
+            "labelEn": "The best, the biggest, the most amazing!"
+          },
+          {
+            "id": "r1",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#ddd6fe",
+            "label": "🏔️ Everest",
+            "labelEn": "The TALLEST mountain in the world."
+          },
+          {
+            "id": "r2",
+            "type": "rect",
+            "x": 250,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "🐋 Blue Whale",
+            "labelEn": "The BIGGEST animal in the world."
+          },
+          {
+            "id": "r3",
+            "type": "rect",
+            "x": 470,
+            "y": 60,
+            "width": 200,
+            "height": 70,
+            "fill": "#fde68a",
+            "label": "🏙️ Tokyo",
+            "labelEn": "The MOST POPULATED city."
+          },
+          {
+            "id": "r4",
+            "type": "rect",
+            "x": 30,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#fecaca",
+            "label": "🐆 Cheetah",
+            "labelEn": "The FASTEST animal on land."
+          },
+          {
+            "id": "r5",
+            "type": "rect",
+            "x": 250,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#bfdbfe",
+            "label": "🌊 Pacific",
+            "labelEn": "The DEEPEST ocean."
+          },
+          {
+            "id": "r6",
+            "type": "rect",
+            "x": 470,
+            "y": 150,
+            "width": 200,
+            "height": 70,
+            "fill": "#fce7f3",
+            "label": "❄️ Antarctica",
+            "labelEn": "The COLDEST continent."
+          },
+          {
+            "id": "form",
+            "type": "rect",
+            "x": 30,
+            "y": 245,
+            "width": 310,
+            "height": 60,
+            "fill": "#e0e7ff",
+            "label": "📏 Short: the + -est",
+            "labelEn": "tall→the tallest, big→the biggest, happy→the happiest"
+          },
+          {
+            "id": "long",
+            "type": "rect",
+            "x": 360,
+            "y": 245,
+            "width": 310,
+            "height": 60,
+            "fill": "#ccfbf1",
+            "label": "📐 Long: the most +",
+            "labelEn": "beautiful→the most beautiful, expensive→the most expensive"
+          },
+          {
+            "id": "irreg",
+            "type": "rect",
+            "x": 100,
+            "y": 325,
+            "width": 500,
+            "height": 55,
+            "fill": "#fef9c3",
+            "label": "⚡ Irregular Superlatives",
+            "labelEn": "good→THE BEST, bad→THE WORST, far→THE FARTHEST"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m4-ch3-flash",
+    "type": "flashcard",
+    "title": "Forma el Superlativo",
+    "description": "Practica formando superlativos.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "tall → superlative",
+          "back": "the tallest",
+          "example": "She is the tallest in the class."
+        },
+        {
+          "id": "c2",
+          "front": "big → superlative",
+          "back": "the biggest",
+          "example": "CVC → double: the biggest."
+        },
+        {
+          "id": "c3",
+          "front": "happy → superlative",
+          "back": "the happiest",
+          "example": "y → iest: the happiest."
+        },
+        {
+          "id": "c4",
+          "front": "beautiful → superlative",
+          "back": "the most beautiful",
+          "example": "Long adj → the most beautiful."
+        },
+        {
+          "id": "c5",
+          "front": "expensive → superlative",
+          "back": "the most expensive",
+          "example": "Long adj → the most expensive."
+        },
+        {
+          "id": "c6",
+          "front": "good → superlative",
+          "back": "the best",
+          "example": "Irregular! the best."
+        },
+        {
+          "id": "c7",
+          "front": "bad → superlative",
+          "back": "the worst",
+          "example": "Irregular! the worst."
+        },
+        {
+          "id": "c8",
+          "front": "far → superlative",
+          "back": "the farthest",
+          "example": "Irregular! the farthest."
+        },
+        {
+          "id": "c9",
+          "front": "fast → superlative",
+          "back": "the fastest",
+          "example": "The cheetah is the fastest animal."
+        },
+        {
+          "id": "c10",
+          "front": "cold → superlative",
+          "back": "the coldest",
+          "example": "Antarctica is the coldest continent."
+        },
+        {
+          "id": "c11",
+          "front": "interesting → superlative",
+          "back": "the most interesting",
+          "example": "Long adj → the most interesting."
+        },
+        {
+          "id": "c12",
+          "front": "easy → superlative",
+          "back": "the easiest",
+          "example": "y → iest: the easiest."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-match",
+    "type": "word-match",
+    "title": "Adjetivo → Superlativo",
+    "description": "Empareja cada adjetivo con su superlativo.",
+    "props": {
+      "pairs": [
+        {
+          "left": "tall",
+          "right": "the tallest"
+        },
+        {
+          "left": "big",
+          "right": "the biggest"
+        },
+        {
+          "left": "good",
+          "right": "the best"
+        },
+        {
+          "left": "bad",
+          "right": "the worst"
+        },
+        {
+          "left": "beautiful",
+          "right": "the most beautiful"
+        },
+        {
+          "left": "fast",
+          "right": "the fastest"
+        },
+        {
+          "left": "happy",
+          "right": "the happiest"
+        },
+        {
+          "left": "expensive",
+          "right": "the most expensive"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-sentence",
+    "type": "sentence-builder",
+    "title": "Records y Superlativos",
+    "description": "Ordena las palabras para crear oraciones superlativas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Ella es la más alta de la clase:",
+          "words": [
+            "She",
+            "is",
+            "the",
+            "tallest",
+            "in",
+            "the",
+            "class"
+          ],
+          "correct": "She is the tallest in the class"
+        },
+        {
+          "prompt": "Es el mejor libro que he leído:",
+          "words": [
+            "It",
+            "is",
+            "the",
+            "best",
+            "book"
+          ],
+          "correct": "It is the best book"
+        },
+        {
+          "prompt": "El Everest es la montaña más alta:",
+          "words": [
+            "Everest",
+            "is",
+            "the",
+            "tallest",
+            "mountain"
+          ],
+          "correct": "Everest is the tallest mountain"
+        },
+        {
+          "prompt": "Es el coche más caro:",
+          "words": [
+            "It",
+            "is",
+            "the",
+            "most",
+            "expensive",
+            "car"
+          ],
+          "correct": "It is the most expensive car"
+        },
+        {
+          "prompt": "Ella es la más feliz:",
+          "words": [
+            "She",
+            "is",
+            "the",
+            "happiest"
+          ],
+          "correct": "She is the happiest"
+        },
+        {
+          "prompt": "Es la peor película:",
+          "words": [
+            "It",
+            "is",
+            "the",
+            "worst",
+            "movie"
+          ],
+          "correct": "It is the worst movie"
+        },
+        {
+          "prompt": "El guepardo es el animal más rápido:",
+          "words": [
+            "The",
+            "cheetah",
+            "is",
+            "the",
+            "fastest",
+            "animal"
+          ],
+          "correct": "The cheetah is the fastest animal"
+        },
+        {
+          "prompt": "Es el lugar más bonito:",
+          "words": [
+            "It",
+            "is",
+            "the",
+            "most",
+            "beautiful",
+            "place"
+          ],
+          "correct": "It is the most beautiful place"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-quiz",
+    "type": "quiz",
+    "title": "Quiz: Superlativos",
+    "description": "Demuestra tu dominio de los superlativos.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"She is ___ in the class.\"",
+          "options": [
+            "tallest",
+            "the tallest",
+            "the most tall",
+            "the taller"
+          ],
+          "correct": 1,
+          "explanation": "Superlative needs THE: the tallest."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"big\" → superlative: ___",
+          "correct": "the biggest",
+          "explanation": "CVC → double: the biggest."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"This is ___ car.\" (expensive)",
+          "options": [
+            "the expensivest",
+            "the most expensive",
+            "most expensive",
+            "expensiver"
+          ],
+          "correct": 1,
+          "explanation": "Long adj → the most expensive."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"good\" → superlative: ___",
+          "correct": "the best",
+          "explanation": "Irregular: good → the best."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"bad\" → superlative: ___",
+          "options": [
+            "the baddest",
+            "the most bad",
+            "the worst",
+            "the worser"
+          ],
+          "correct": 2,
+          "explanation": "Irregular: bad → the worst."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"happy\" → superlative: ___",
+          "correct": "the happiest",
+          "explanation": "y → iest: the happiest."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "Compare 2 things or 3+?",
+          "options": [
+            "taller = 2, tallest = 3+",
+            "taller = 3+, tallest = 2",
+            "both for 2",
+            "both for 3+"
+          ],
+          "correct": 0,
+          "explanation": "Comparative (2 things) vs. Superlative (3+)."
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"fast\" → superlative: ___",
+          "correct": "the fastest",
+          "explanation": "fast → the fastest."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "She is the tallest.",
+            "This is the most beautiful.",
+            "He is the goodest.",
+            "It is the worst."
+          ],
+          "correct": 2,
+          "explanation": "\"The goodest\" is wrong → the best."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "\"interesting\" → superlative: ___",
+          "correct": "the most interesting",
+          "explanation": "Long adj → the most interesting."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-scramble",
+    "type": "word-scramble",
+    "title": "Superlativos",
+    "description": "Descifra formas superlativas de adjetivos.",
+    "props": {
+      "words": [
+        {
+          "word": "BIGGEST",
+          "hint": "El más grande; superlative de big",
+          "category": "Superlative"
+        },
+        {
+          "word": "SMALLEST",
+          "hint": "El más pequeño; superlative de small",
+          "category": "Superlative"
+        },
+        {
+          "word": "FASTEST",
+          "hint": "El más rápido; superlative de fast",
+          "category": "Superlative"
+        },
+        {
+          "word": "SLOWEST",
+          "hint": "El más lento; superlative de slow",
+          "category": "Superlative"
+        },
+        {
+          "word": "BEST",
+          "hint": "El mejor; superlative de good",
+          "category": "Superlative"
+        },
+        {
+          "word": "WORST",
+          "hint": "El peor; superlative de bad",
+          "category": "Superlative"
+        }
+      ]
+    }
+  }
+]

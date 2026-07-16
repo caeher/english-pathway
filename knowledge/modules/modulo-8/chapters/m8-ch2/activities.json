@@ -1,0 +1,382 @@
+[
+  {
+    "id": "m8-ch2-flash",
+    "type": "flashcard",
+    "title": "Flashcards de Conjugación",
+    "description": "Practica la conjugación de verbos en presente simple.",
+    "props": {
+      "cards": [
+        {
+          "id": "v1",
+          "front": "to eat",
+          "back": "I eat / He eats / They eat",
+          "example": "She eats lunch at noon."
+        },
+        {
+          "id": "v2",
+          "front": "to work",
+          "back": "I work / She works / We work",
+          "example": "He works in an office."
+        },
+        {
+          "id": "v3",
+          "front": "to play",
+          "back": "I play / He plays / They play",
+          "example": "They play soccer on weekends."
+        },
+        {
+          "id": "v4",
+          "front": "to study",
+          "back": "I study / She studies / We study",
+          "example": "She studies English every day."
+        },
+        {
+          "id": "v5",
+          "front": "to live",
+          "back": "I live / He lives / They live",
+          "example": "He lives in Mexico City."
+        },
+        {
+          "id": "v6",
+          "front": "to go",
+          "back": "I go / She goes / We go",
+          "example": "She goes to school by bus."
+        },
+        {
+          "id": "v7",
+          "front": "to watch",
+          "back": "I watch / He watches / They watch",
+          "example": "He watches TV at night."
+        },
+        {
+          "id": "v8",
+          "front": "to like",
+          "back": "I like / She likes / We like",
+          "example": "She likes chocolate."
+        },
+        {
+          "id": "v9",
+          "front": "to have",
+          "back": "I have / He has / They have",
+          "example": "He has a big house."
+        },
+        {
+          "id": "v10",
+          "front": "to do",
+          "back": "I do / She does / We do",
+          "example": "She does her homework."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch2-match",
+    "type": "word-match",
+    "title": "Sujeto + Verbo",
+    "description": "Empareja cada sujeto con la forma verbal correcta.",
+    "props": {
+      "pairs": [
+        {
+          "left": "She",
+          "right": "works"
+        },
+        {
+          "left": "They",
+          "right": "work"
+        },
+        {
+          "left": "He",
+          "right": "plays"
+        },
+        {
+          "left": "We",
+          "right": "play"
+        },
+        {
+          "left": "It",
+          "right": "rains"
+        },
+        {
+          "left": "I",
+          "right": "study"
+        },
+        {
+          "left": "You",
+          "right": "like"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "Arma la Oración",
+    "description": "Ordena las palabras para formar oraciones correctas en presente simple.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Forma una oración afirmativa:",
+          "words": [
+            "breakfast",
+            "eats",
+            "She"
+          ],
+          "correct": "She eats breakfast"
+        },
+        {
+          "prompt": "Forma una oración afirmativa:",
+          "words": [
+            "to",
+            "go",
+            "school",
+            "They"
+          ],
+          "correct": "They go to school"
+        },
+        {
+          "prompt": "Forma una oración negativa:",
+          "words": [
+            "like",
+            "not",
+            "does",
+            "He",
+            "coffee"
+          ],
+          "correct": "He does not like coffee"
+        },
+        {
+          "prompt": "Forma una pregunta:",
+          "words": [
+            "you",
+            "Do",
+            "English?",
+            "speak"
+          ],
+          "correct": "Do you speak English?"
+        },
+        {
+          "prompt": "Forma una oración afirmativa:",
+          "words": [
+            "every",
+            "works",
+            "She",
+            "day"
+          ],
+          "correct": "She works every day"
+        },
+        {
+          "prompt": "Forma una oración afirmativa:",
+          "words": [
+            "play",
+            "We",
+            "on",
+            "soccer",
+            "weekends"
+          ],
+          "correct": "We play soccer on weekends"
+        },
+        {
+          "prompt": "Forma una pregunta:",
+          "words": [
+            "he",
+            "Does",
+            "here?",
+            "live"
+          ],
+          "correct": "Does he live here?"
+        },
+        {
+          "prompt": "Forma una oración negativa:",
+          "words": [
+            "don't",
+            "I",
+            "TV",
+            "watch"
+          ],
+          "correct": "I don't watch TV"
+        },
+        {
+          "prompt": "Forma una oración afirmativa:",
+          "words": [
+            "studies",
+            "night",
+            "at",
+            "He"
+          ],
+          "correct": "He studies at night"
+        },
+        {
+          "prompt": "Forma una oración afirmativa:",
+          "words": [
+            "like",
+            "I",
+            "music"
+          ],
+          "correct": "I like music"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch2-quiz",
+    "type": "quiz",
+    "title": "Quiz Gramatical",
+    "description": "Elige la forma correcta del verbo. ¡Cuidado con la tercera persona!",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "He ___ to school every day.",
+          "options": [
+            "go",
+            "goes",
+            "going",
+            "gone"
+          ],
+          "correct": 1,
+          "explanation": "He/She/It + goes (tercera persona singular)."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "They ___ soccer on weekends.",
+          "options": [
+            "plays",
+            "playing",
+            "play",
+            "played"
+          ],
+          "correct": 2,
+          "explanation": "They + play (sin -s para I/you/we/they)."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "She ___ (study) English every day.",
+          "correct": "studies",
+          "explanation": "Study → studies con he/she/it (y → ies)."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "I ___ coffee in the morning.",
+          "options": [
+            "drinks",
+            "drink",
+            "drinking",
+            "drank"
+          ],
+          "correct": 1,
+          "explanation": "I + drink (forma base)."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "___ she like chocolate?",
+          "options": [
+            "Do",
+            "Does",
+            "Is",
+            "Has"
+          ],
+          "correct": 1,
+          "explanation": "Does + he/she/it para preguntas en presente simple."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "He ___ (not like) fish.",
+          "correct": "doesn't like",
+          "explanation": "Negativo: He doesn't like (does + not + verbo base)."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "We ___ in a big city.",
+          "options": [
+            "lives",
+            "live",
+            "living",
+            "lived"
+          ],
+          "correct": 1,
+          "explanation": "We + live (forma base)."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "She ___ TV every night.",
+          "options": [
+            "watch",
+            "watchs",
+            "watches",
+            "watching"
+          ],
+          "correct": 2,
+          "explanation": "Watch → watches con he/she/it (-ch + es)."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "___ you speak Spanish?",
+          "options": [
+            "Does",
+            "Do",
+            "Are",
+            "Is"
+          ],
+          "correct": 1,
+          "explanation": "Do + I/you/we/they para preguntas."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "The cat ___ (sleep) on the sofa.",
+          "correct": "sleeps",
+          "explanation": "The cat (= it) + sleeps."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Oraciones Simples",
+    "description": "Descifra términos gramaticales básicos.",
+    "props": {
+      "words": [
+        {
+          "word": "SUBJECT",
+          "hint": "Sujeto; quien realiza la acción",
+          "category": "Grammar"
+        },
+        {
+          "word": "VERB",
+          "hint": "Verbo; acción o estado",
+          "category": "Grammar"
+        },
+        {
+          "word": "OBJECT",
+          "hint": "Objeto; lo que recibe la acción",
+          "category": "Grammar"
+        },
+        {
+          "word": "SIMPLE",
+          "hint": "Simple; básico",
+          "category": "Grammar"
+        },
+        {
+          "word": "BASIC",
+          "hint": "Básico; fundamental",
+          "category": "Grammar"
+        },
+        {
+          "word": "BUILD",
+          "hint": "Construir; armar",
+          "category": "Grammar"
+        }
+      ]
+    }
+  }
+]

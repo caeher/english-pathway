@@ -1,0 +1,396 @@
+[
+  {
+    "id": "m14-ch2-quiz",
+    "type": "quiz",
+    "title": "¿Qué Tipo de Creador Eres?",
+    "description": "Descubre qué formato de contenido se adapta mejor a tus fortalezas.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "When you want to share an idea, you prefer to:",
+          "options": [
+            "Write it down carefully and edit it",
+            "Talk about it on camera with visuals",
+            "Record yourself explaining it verbally",
+            "Create a detailed presentation"
+          ],
+          "correct": 0,
+          "explanation": "If you prefer writing, a blog might be your ideal format. Writing allows careful editing and precision."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "Which opening hook is MOST effective for a blog post about climate change?",
+          "options": [
+            "\"Climate change is bad.\"",
+            "\"Did you know that 2023 was the hottest year in recorded history?\"",
+            "\"Hi, today I'll write about climate.\"",
+            "\"Wikipedia says climate change is real.\""
+          ],
+          "correct": 1,
+          "explanation": "A surprising statistic grabs attention immediately and establishes credibility."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "A strong Call to Action should tell your audience exactly what to ___ next.",
+          "correct": "do",
+          "explanation": "A CTA must be clear and actionable: \"Subscribe\", \"Share this post\", \"Leave a comment\", etc."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "What is a \"niche\" in content creation?",
+          "options": [
+            "A type of video format",
+            "Your specific topic or area of expertise",
+            "A social media platform",
+            "A type of thumbnail"
+          ],
+          "correct": 1,
+          "explanation": "Your niche is the specific area you focus on. Example: \"sustainable fashion for young professionals.\""
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"What if everything you knew about productivity was wrong?\" This hook uses:",
+          "options": [
+            "A surprising statistic",
+            "A personal anecdote",
+            "A rhetorical question",
+            "A famous quote"
+          ],
+          "correct": 2,
+          "explanation": "Rhetorical questions make the audience curious and engage their thinking immediately."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"___ refers to the likes, comments, and shares your audience gives your content.\"",
+          "correct": "Engagement",
+          "explanation": "Engagement = audience interaction. High engagement means your content resonates."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "What should come AFTER your hook in a blog post?",
+          "options": [
+            "The conclusion",
+            "Your thesis statement or main point",
+            "A list of references",
+            "Another hook"
+          ],
+          "correct": 1,
+          "explanation": "After hooking attention, immediately present your main point or thesis to set expectations."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which is the BEST Call to Action for the end of a podcast episode?",
+          "options": [
+            "\"Bye.\"",
+            "\"If you enjoyed this episode, subscribe and leave a review — it really helps!\"",
+            "\"That's all.\"",
+            "\"I guess this is the end.\""
+          ],
+          "correct": 1,
+          "explanation": "Specific, friendly, and explains WHY they should act. \"It really helps\" adds motivation."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "The first step in content creation is:",
+          "options": [
+            "Recording immediately",
+            "Publishing on social media",
+            "Brainstorming ideas and choosing your topic",
+            "Designing the thumbnail"
+          ],
+          "correct": 2,
+          "explanation": "Always start with brainstorming. A clear topic and plan prevent wasted time and weak content."
+        },
+        {
+          "id": "q10",
+          "type": "fill-blank",
+          "question": "Your ___ audience is the specific group of people you create content for.",
+          "correct": "target",
+          "explanation": "Target audience = the specific group you aim to reach. Knowing them shapes your tone, topics, and style."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-sentence",
+    "type": "sentence-builder",
+    "title": "El Hook Perfecto",
+    "description": "Construye hooks atrapantes usando diferentes técnicas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build a hook using a rhetorical question about productivity",
+          "words": [
+            "What",
+            "if",
+            "everything",
+            "you",
+            "knew",
+            "about",
+            "productivity",
+            "was",
+            "wrong?"
+          ],
+          "correct": "What if everything you knew about productivity was wrong?"
+        },
+        {
+          "prompt": "Build a hook using a surprising statistic",
+          "words": [
+            "According",
+            "to",
+            "recent",
+            "studies,",
+            "we",
+            "spend",
+            "7",
+            "hours",
+            "daily",
+            "on",
+            "screens."
+          ],
+          "correct": "According to recent studies, we spend 7 hours daily on screens."
+        },
+        {
+          "prompt": "Build a hook using a hypothetical scenario",
+          "words": [
+            "Imagine",
+            "a",
+            "world",
+            "where",
+            "you",
+            "could",
+            "learn",
+            "any",
+            "language",
+            "in",
+            "30",
+            "days."
+          ],
+          "correct": "Imagine a world where you could learn any language in 30 days."
+        },
+        {
+          "prompt": "Build a strong Call to Action for a podcast",
+          "words": [
+            "If",
+            "you",
+            "enjoyed",
+            "this",
+            "episode,",
+            "please",
+            "subscribe",
+            "and",
+            "leave",
+            "a",
+            "review!"
+          ],
+          "correct": "If you enjoyed this episode, please subscribe and leave a review!"
+        },
+        {
+          "prompt": "Build a hook using a personal anecdote",
+          "words": [
+            "Last",
+            "Tuesday,",
+            "something",
+            "happened",
+            "that",
+            "completely",
+            "changed",
+            "my",
+            "perspective."
+          ],
+          "correct": "Last Tuesday, something happened that completely changed my perspective."
+        },
+        {
+          "prompt": "Build a CTA for a blog post",
+          "words": [
+            "Share",
+            "this",
+            "article",
+            "with",
+            "someone",
+            "who",
+            "needs",
+            "to",
+            "hear",
+            "this!"
+          ],
+          "correct": "Share this article with someone who needs to hear this!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-flash",
+    "type": "flashcard",
+    "title": "Vocabulario de Content Creator",
+    "description": "Domina la terminología profesional del mundo de creación de contenido.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "ENGAGEMENT 💬",
+          "back": "La interacción que tu audiencia tiene con tu contenido: likes, comments, shares. Alto engagement = contenido que conecta.",
+          "example": "Our latest post had incredible engagement — over 500 comments!"
+        },
+        {
+          "id": "f2",
+          "front": "CALL TO ACTION (CTA) 📢",
+          "back": "Instrucción clara para que la audiencia haga algo: suscribirse, comentar, compartir, visitar un link.",
+          "example": "If you enjoyed this episode, please subscribe and leave a review!"
+        },
+        {
+          "id": "f3",
+          "front": "NICHE 🎯",
+          "back": "Tu tema o área de especialización como creador. Un nicho específico atrae audiencia fiel.",
+          "example": "My niche is sustainable fashion for young professionals."
+        },
+        {
+          "id": "f4",
+          "front": "TARGET AUDIENCE 👥",
+          "back": "El grupo específico de personas al que diriges tu contenido. Definirlo mejora tu comunicación.",
+          "example": "My target audience is English learners aged 20-35."
+        },
+        {
+          "id": "f5",
+          "front": "THUMBNAIL 🖼️",
+          "back": "Imagen miniatura que representa tu video/contenido. Es lo primero que la gente ve.",
+          "example": "A good thumbnail can increase your click-through rate by 30%."
+        },
+        {
+          "id": "f6",
+          "front": "SEO 🔍",
+          "back": "Search Engine Optimization — optimizar tu contenido para que aparezca en búsquedas de Google/YouTube.",
+          "example": "Good SEO helps your blog appear on the first page of Google results."
+        },
+        {
+          "id": "f7",
+          "front": "CONTENT CALENDAR 📅",
+          "back": "Plan de publicación organizado por fechas. Te mantiene consistente.",
+          "example": "I use a content calendar to plan my posts two weeks in advance."
+        },
+        {
+          "id": "f8",
+          "front": "HOOK 🪝",
+          "back": "La primera frase o imagen que atrapa la atención. Sin un buen hook, nadie se queda.",
+          "example": "The hook of my video was: 'What if I told you that you're learning English wrong?'"
+        },
+        {
+          "id": "f9",
+          "front": "MONETIZATION 💰",
+          "back": "Generar ingresos con tu contenido: ads, sponsors, membresías, productos.",
+          "example": "She started monetizing her channel after reaching 10K subscribers."
+        },
+        {
+          "id": "f10",
+          "front": "ANALYTICS 📊",
+          "back": "Datos sobre el rendimiento de tu contenido: views, watch time, demographics.",
+          "example": "According to my analytics, most of my audience watches from mobile devices."
+        },
+        {
+          "id": "f11",
+          "front": "SUBSCRIBER / FOLLOWER 👤",
+          "back": "Persona que sigue tu canal/cuenta para recibir tu contenido nuevo.",
+          "example": "We just reached 10,000 subscribers! Thank you all!"
+        },
+        {
+          "id": "f12",
+          "front": "VIRAL 🚀",
+          "back": "Contenido que se comparte masivamente en poco tiempo.",
+          "example": "My video about language learning went viral — 2 million views in one week!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-match",
+    "type": "word-match",
+    "title": "Técnica de Hook → Ejemplo",
+    "description": "Empareja cada tipo de hook con su ejemplo concreto.",
+    "props": {
+      "pairs": [
+        {
+          "left": "\"Did you know that 80% of people...\"",
+          "right": "Surprising Statistic 📊"
+        },
+        {
+          "left": "\"Last Tuesday, I was walking home when...\"",
+          "right": "Personal Anecdote 📖"
+        },
+        {
+          "left": "\"Have you ever wondered why...\"",
+          "right": "Rhetorical Question ❓"
+        },
+        {
+          "left": "\"As Steve Jobs once said...\"",
+          "right": "Famous Quote 💬"
+        },
+        {
+          "left": "\"Imagine a world where...\"",
+          "right": "Hypothetical Scenario 🌍"
+        },
+        {
+          "left": "\"Three things you're doing wrong with...\"",
+          "right": "Listicle / Direct Challenge 📋"
+        },
+        {
+          "left": "\"I used to believe... until...\"",
+          "right": "Transformation Story 🔄"
+        },
+        {
+          "left": "\"Warning: this will change how you...\"",
+          "right": "Bold Promise ⚡"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de Creación de Contenido",
+    "description": "Descifra términos para crear tu propio contenido.",
+    "props": {
+      "words": [
+        {
+          "word": "SCRIPT",
+          "hint": "Guion; texto escrito antes de grabar",
+          "category": "Content"
+        },
+        {
+          "word": "FOOTAGE",
+          "hint": "Material grabado; vídeo o audio crudo",
+          "category": "Content"
+        },
+        {
+          "word": "CAPTION",
+          "hint": "Leyenda o subtítulo para una imagen o vídeo",
+          "category": "Content"
+        },
+        {
+          "word": "STORYBOARD",
+          "hint": "Guion visual; dibujos de cada escena",
+          "category": "Content"
+        },
+        {
+          "word": "HOOK",
+          "hint": "Gancho; algo que capta la atención al inicio",
+          "category": "Content"
+        },
+        {
+          "word": "EDITING",
+          "hint": "Edición; proceso de cortar y montar",
+          "category": "Content"
+        }
+      ]
+    }
+  }
+]

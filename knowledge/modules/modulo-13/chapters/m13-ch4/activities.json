@@ -1,0 +1,366 @@
+[
+  {
+    "id": "m13-ch4-quiz",
+    "type": "quiz",
+    "title": "El Significado Oculto del Stress",
+    "description": "Identifica el significado implícito según qué palabra se acentúa.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"I didn't say HE stole the money.\" — What does the speaker imply?",
+          "options": [
+            "The money wasn't stolen",
+            "Someone ELSE stole it, not \"he\"",
+            "I said it indirectly",
+            "The amount was different"
+          ],
+          "correct": 1,
+          "explanation": "Stressing \"HE\" implies: I said someone else did it, not him specifically."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"I didn't say he STOLE the money.\" — What does the speaker imply?",
+          "options": [
+            "He didn't take any money",
+            "He took it, but in a different way (borrowed, found, etc.)",
+            "Someone else stole it",
+            "The speaker is lying"
+          ],
+          "correct": 1,
+          "explanation": "Stressing \"STOLE\" implies: he took the money, but maybe borrowed or found it — not necessarily stole."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"I didn't say he stole the MONEY.\" — What does the speaker imply?",
+          "options": [
+            "He stole something else, not money",
+            "Nobody stole anything",
+            "The money doesn't exist",
+            "I never said anything"
+          ],
+          "correct": 0,
+          "explanation": "Stressing \"MONEY\" implies: he stole something, but it wasn't the money — it was something else."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "The speaker says \"Really?\" with RISING intonation. They are expressing ___.",
+          "correct": "surprise",
+          "explanation": "Rising intonation on \"Really?\" signals genuine surprise or disbelief."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"We MUST act NOW.\" — This persuasive pattern uses...",
+          "options": [
+            "Falling intonation throughout",
+            "Rising stress on key words for emphasis",
+            "Monotone delivery",
+            "Whispering"
+          ],
+          "correct": 1,
+          "explanation": "Persuasive speech uses strong stress on action words (MUST, NOW) to create urgency."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"I woulda helped\" is the reduced form of \"I ___ have helped.\"",
+          "correct": "would",
+          "explanation": "woulda = would have. Very common in casual American English."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"You shoulda told me earlier.\" \"Shoulda\" is the reduction of...",
+          "options": [
+            "should to",
+            "shall have",
+            "should have",
+            "should be"
+          ],
+          "correct": 2,
+          "explanation": "shoulda = should have. Used in informal speech to express regret."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "Which English variety is known for NOT pronouncing the final \"r\" in \"car\"?",
+          "options": [
+            "American General",
+            "British RP",
+            "Indian English",
+            "Canadian English"
+          ],
+          "correct": 1,
+          "explanation": "British RP is non-rhotic: \"car\" = /kɑː/ without the final /r/ sound."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "Australian English is known for...",
+          "options": [
+            "Very formal pronunciation",
+            "Rising intonation at the end of statements (sounds like questions)",
+            "Retroflex consonants",
+            "French influence"
+          ],
+          "correct": 1,
+          "explanation": "Australian English often uses rising intonation on statements, which can sound like questions to others."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "The principle of \"intelligibility\" means...",
+          "options": [
+            "You must have a perfect American accent",
+            "Your goal is to be clearly understood, not accent-free",
+            "Only native speakers sound correct",
+            "Accents should be eliminated"
+          ],
+          "correct": 1,
+          "explanation": "Intelligibility = being understood clearly. Your accent is part of your identity."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-flash",
+    "type": "flashcard",
+    "title": "Reducciones Avanzadas",
+    "description": "Reconoce las reducciones avanzadas del habla natural conectada.",
+    "props": {
+      "cards": [
+        {
+          "id": "f1",
+          "front": "WOULDA /wʊdə/ 🔊",
+          "back": "= would have. Reducción de auxiliar + have. Se pronuncia como una sola palabra.",
+          "example": "I woulda helped if I'd known. (= I would have helped if I had known.)"
+        },
+        {
+          "id": "f2",
+          "front": "SHOULDA /ʃʊdə/ 🔊",
+          "back": "= should have. Expresa arrepentimiento. Muy común en habla informal.",
+          "example": "You shoulda told me earlier. (= You should have told me earlier.)"
+        },
+        {
+          "id": "f3",
+          "front": "COULDA /kʊdə/ 🔊",
+          "back": "= could have. Posibilidad no realizada en el pasado.",
+          "example": "We coulda won the game. (= We could have won the game.)"
+        },
+        {
+          "id": "f4",
+          "front": "MUSTA /mʌstə/ 🔊",
+          "back": "= must have. Deducción sobre el pasado.",
+          "example": "He musta forgotten about the meeting. (= He must have forgotten.)"
+        },
+        {
+          "id": "f5",
+          "front": "MIGHTA /maɪtə/ 🔊",
+          "back": "= might have. Posibilidad incierta sobre el pasado.",
+          "example": "She mighta left already. (= She might have left already.)"
+        },
+        {
+          "id": "f6",
+          "front": "WOULDN'TA /wʊdntə/ 🔊",
+          "back": "= wouldn't have. Negativo de would have.",
+          "example": "I wouldn'ta done that. (= I wouldn't have done that.)"
+        },
+        {
+          "id": "f7",
+          "front": "OUGHTA /ɔːtə/ 🔊",
+          "back": "= ought to. Consejo o expectativa.",
+          "example": "You oughta see a doctor. (= You ought to see a doctor.)"
+        },
+        {
+          "id": "f8",
+          "front": "SUPPOSTA /səpoʊstə/ 🔊",
+          "back": "= supposed to. Lo que se espera o debería pasar.",
+          "example": "You're supposta be here at 9. (= You're supposed to be here at 9.)"
+        },
+        {
+          "id": "f9",
+          "front": "USETA /juːstə/ 🔊",
+          "back": "= used to. Hábito pasado.",
+          "example": "I useta live in New York. (= I used to live in New York.)"
+        },
+        {
+          "id": "f10",
+          "front": "LOTSA /lɒtsə/ 🔊",
+          "back": "= lots of. Cantidad grande informal.",
+          "example": "There's lotsa things to do here. (= There are lots of things to do.)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-match",
+    "type": "word-match",
+    "title": "Acento Global",
+    "description": "Empareja cada característica de pronunciación con la variante del inglés.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Non-rhotic 'r' (car → /kɑː/)",
+          "right": "British RP 🇬🇧"
+        },
+        {
+          "left": "Rhotic 'r' (car → /kɑːr/)",
+          "right": "American General 🇺🇸"
+        },
+        {
+          "left": "Rising intonation on statements",
+          "right": "Australian English 🇦🇺"
+        },
+        {
+          "left": "Retroflex consonants /ʈ, ɖ/",
+          "right": "Indian English 🇮🇳"
+        },
+        {
+          "left": "Distinctive vowel shift /æ/ → /e/",
+          "right": "South African English 🇿🇦"
+        },
+        {
+          "left": "T-flapping (water → \"wader\")",
+          "right": "American English 🇺🇸"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Entonación Persuasiva",
+    "description": "Construye oraciones persuasivas con las palabras clave de énfasis.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Build a persuasive statement about climate action",
+          "words": [
+            "We",
+            "MUST",
+            "act",
+            "NOW",
+            "to",
+            "protect",
+            "our",
+            "future."
+          ],
+          "correct": "We MUST act NOW to protect our future."
+        },
+        {
+          "prompt": "Build an emphatic statement about teamwork",
+          "words": [
+            "TOGETHER,",
+            "we",
+            "can",
+            "achieve",
+            "ANYTHING."
+          ],
+          "correct": "TOGETHER, we can achieve ANYTHING."
+        },
+        {
+          "prompt": "Build a persuasive call to action",
+          "words": [
+            "The",
+            "TIME",
+            "for",
+            "change",
+            "is",
+            "NOW,",
+            "not",
+            "tomorrow."
+          ],
+          "correct": "The TIME for change is NOW, not tomorrow."
+        },
+        {
+          "prompt": "Build an emphatic disagreement",
+          "words": [
+            "I",
+            "did",
+            "NOT",
+            "say",
+            "that",
+            "we",
+            "should",
+            "give",
+            "up."
+          ],
+          "correct": "I did NOT say that we should give up."
+        },
+        {
+          "prompt": "Build a statement stressing the subject",
+          "words": [
+            "SHE",
+            "was",
+            "the",
+            "one",
+            "who",
+            "solved",
+            "the",
+            "problem."
+          ],
+          "correct": "SHE was the one who solved the problem."
+        },
+        {
+          "prompt": "Build a diplomatic hedged statement",
+          "words": [
+            "Well...",
+            "I'm",
+            "not",
+            "entirely",
+            "sure",
+            "about",
+            "that",
+            "approach."
+          ],
+          "correct": "Well... I'm not entirely sure about that approach."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario de Pronunciación Avanzada",
+    "description": "Descifra términos sobre entonación, énfasis y ritmo.",
+    "props": {
+      "words": [
+        {
+          "word": "INTONATION",
+          "hint": "Entonación; subidas y bajadas de la voz",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "EMPHASIS",
+          "hint": "Énfasis; dar importancia a una palabra",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "RHYTHM",
+          "hint": "Ritmo; patrón de acentos al hablar",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "PEAK",
+          "hint": "Pico; punto más alto de entonación",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "TAG",
+          "hint": "Etiqueta; como en \"tag question\" (¿verdad?)",
+          "category": "Pronunciation"
+        },
+        {
+          "word": "PERSUASIVE",
+          "hint": "Persuasivo; que convence o influye",
+          "category": "Pronunciation"
+        }
+      ]
+    }
+  }
+]

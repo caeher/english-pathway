@@ -1,0 +1,505 @@
+[
+  {
+    "id": "m3-ch4-svg",
+    "type": "svg-scene",
+    "title": "Will vs. Going To",
+    "description": "Visualiza las diferencias entre will y going to.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 400",
+        "bg": "#fffbeb",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 150,
+            "y": 5,
+            "width": 400,
+            "height": 45,
+            "fill": "#f59e0b",
+            "label": "🔮 Future: Will vs. Going To",
+            "labelEn": "Two ways to talk about the future!"
+          },
+          {
+            "id": "will",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 70,
+            "fill": "#fde68a",
+            "label": "⚡ WILL",
+            "labelEn": "Spontaneous decisions, predictions (opinion), promises. I'LL help you!"
+          },
+          {
+            "id": "going",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 70,
+            "fill": "#bbf7d0",
+            "label": "🎯 GOING TO",
+            "labelEn": "Plans already made, predictions (evidence), intentions. I'M GOING TO study."
+          },
+          {
+            "id": "ex1",
+            "type": "rect",
+            "x": 30,
+            "y": 145,
+            "width": 310,
+            "height": 55,
+            "fill": "#fef9c3",
+            "label": "💬 I'll have the pizza.",
+            "labelEn": "Decision made RIGHT NOW (spontaneous)."
+          },
+          {
+            "id": "ex2",
+            "type": "rect",
+            "x": 360,
+            "y": 145,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "🗓️ I'm going to visit Paris.",
+            "labelEn": "Plan ALREADY DECIDED (I bought tickets)."
+          },
+          {
+            "id": "ex3",
+            "type": "rect",
+            "x": 30,
+            "y": 210,
+            "width": 310,
+            "height": 55,
+            "fill": "#fef9c3",
+            "label": "🤔 I think it will rain.",
+            "labelEn": "Prediction based on OPINION/BELIEF."
+          },
+          {
+            "id": "ex4",
+            "type": "rect",
+            "x": 360,
+            "y": 210,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "🌧️ It's going to rain!",
+            "labelEn": "Prediction based on EVIDENCE (dark clouds!)."
+          },
+          {
+            "id": "neg",
+            "type": "rect",
+            "x": 30,
+            "y": 285,
+            "width": 310,
+            "height": 55,
+            "fill": "#fee2e2",
+            "label": "❌ Won't / Isn't going to",
+            "labelEn": "She WON'T come. He ISN'T GOING TO study."
+          },
+          {
+            "id": "quest",
+            "type": "rect",
+            "x": 360,
+            "y": 285,
+            "width": 310,
+            "height": 55,
+            "fill": "#dbeafe",
+            "label": "❓ Will you? / Are you going to?",
+            "labelEn": "WILL you come? ARE you GOING TO come?"
+          },
+          {
+            "id": "shall",
+            "type": "rect",
+            "x": 150,
+            "y": 352,
+            "width": 400,
+            "height": 38,
+            "fill": "#e0e7ff",
+            "label": "🇬🇧 Shall I/we…?",
+            "labelEn": "Shall I open the window? = ¿Abro la ventana? (suggestion)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m3-ch4-flash",
+    "type": "flashcard",
+    "title": "Will vs. Going To",
+    "description": "Practica eligiendo la forma correcta del futuro.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "\"The phone is ringing.\" → I ___ answer it.",
+          "back": "I'LL answer it.",
+          "example": "Spontaneous decision → will."
+        },
+        {
+          "id": "c2",
+          "front": "\"What are your plans?\" → I ___ visit Paris.",
+          "back": "I'M GOING TO visit Paris.",
+          "example": "Already planned → going to."
+        },
+        {
+          "id": "c3",
+          "front": "\"I think it ___ (rain) tomorrow.\"",
+          "back": "I think it WILL rain.",
+          "example": "Prediction (opinion) → will."
+        },
+        {
+          "id": "c4",
+          "front": "\"Look at those clouds!\" → It ___ rain!",
+          "back": "It'S GOING TO rain!",
+          "example": "Prediction (evidence) → going to."
+        },
+        {
+          "id": "c5",
+          "front": "\"Don't worry.\" → I ___ help you.",
+          "back": "I'LL help you.",
+          "example": "Offer/promise → will."
+        },
+        {
+          "id": "c6",
+          "front": "\"Tomorrow\" → She ___ start a new job.",
+          "back": "She'S GOING TO start a new job.",
+          "example": "Plan already decided → going to."
+        },
+        {
+          "id": "c7",
+          "front": "\"I'm sure\" → He ___ pass the exam.",
+          "back": "He'LL pass the exam.",
+          "example": "Belief/opinion → will."
+        },
+        {
+          "id": "c8",
+          "front": "\"She ___ (not/come) to the party.\"",
+          "back": "She WON'T come to the party.",
+          "example": "Negative with will → won't + base verb."
+        },
+        {
+          "id": "c9",
+          "front": "\"They ___ (not/travel) this summer.\"",
+          "back": "They AREN'T GOING TO travel.",
+          "example": "Negative with going to."
+        },
+        {
+          "id": "c10",
+          "front": "\"___ you ___ (be) at the meeting?\"",
+          "back": "Will you BE at the meeting?",
+          "example": "Question with will."
+        },
+        {
+          "id": "c11",
+          "front": "\"___ he ___ (study) tonight?\"",
+          "back": "Is he GOING TO study tonight?",
+          "example": "Question with going to."
+        },
+        {
+          "id": "c12",
+          "front": "\"___ I open the window?\" (sugerencia)",
+          "back": "SHALL I open the window?",
+          "example": "Shall I...? = ¿Quieres que...? (sugerencia)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-match",
+    "type": "word-match",
+    "title": "Will o Going To",
+    "description": "Empareja cada situación con la forma correcta del futuro.",
+    "props": {
+      "pairs": [
+        {
+          "left": "Spontaneous decision",
+          "right": "will"
+        },
+        {
+          "left": "Already planned",
+          "right": "going to"
+        },
+        {
+          "left": "Prediction (opinion)",
+          "right": "will"
+        },
+        {
+          "left": "Prediction (evidence)",
+          "right": "going to"
+        },
+        {
+          "left": "Promise",
+          "right": "will"
+        },
+        {
+          "left": "Intention",
+          "right": "going to"
+        },
+        {
+          "left": "Offer to help",
+          "right": "will"
+        },
+        {
+          "left": "Future plans",
+          "right": "going to"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-sentence",
+    "type": "sentence-builder",
+    "title": "Habla del Futuro",
+    "description": "Ordena las palabras para formar oraciones sobre el futuro.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "Te ayudaré (oferta):",
+          "words": [
+            "I",
+            "will",
+            "help",
+            "you"
+          ],
+          "correct": "I will help you"
+        },
+        {
+          "prompt": "Voy a estudiar esta noche (plan):",
+          "words": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "study",
+            "tonight"
+          ],
+          "correct": "I am going to study tonight"
+        },
+        {
+          "prompt": "Creo que lloverá:",
+          "words": [
+            "I",
+            "think",
+            "it",
+            "will",
+            "rain"
+          ],
+          "correct": "I think it will rain"
+        },
+        {
+          "prompt": "Ella no va a venir:",
+          "words": [
+            "She",
+            "is",
+            "not",
+            "going",
+            "to",
+            "come"
+          ],
+          "correct": "She is not going to come"
+        },
+        {
+          "prompt": "¿Estarás en casa?:",
+          "words": [
+            "Will",
+            "you",
+            "be",
+            "at",
+            "home?"
+          ],
+          "correct": "Will you be at home?"
+        },
+        {
+          "prompt": "Ellos no vendrán:",
+          "words": [
+            "They",
+            "won't",
+            "come"
+          ],
+          "correct": "They won't come"
+        },
+        {
+          "prompt": "¿Van a viajar este verano?:",
+          "words": [
+            "Are",
+            "they",
+            "going",
+            "to",
+            "travel",
+            "this",
+            "summer?"
+          ],
+          "correct": "Are they going to travel this summer?"
+        },
+        {
+          "prompt": "Te llamaré mañana (promesa):",
+          "words": [
+            "I",
+            "will",
+            "call",
+            "you",
+            "tomorrow"
+          ],
+          "correct": "I will call you tomorrow"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-quiz",
+    "type": "quiz",
+    "title": "Quiz: Futuro con Will y Going To",
+    "description": "Pon a prueba tu dominio del futuro.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"The phone's ringing!\" — \"I ___ get it.\" (spontaneous)",
+          "options": [
+            "'m going to",
+            "'ll",
+            "going to",
+            "shall"
+          ],
+          "correct": 1,
+          "explanation": "Spontaneous decision → I'll."
+        },
+        {
+          "id": "q2",
+          "type": "multiple-choice",
+          "question": "\"We ___ visit Paris next month.\" (already planned)",
+          "options": [
+            "will",
+            "'re going to",
+            "won't",
+            "shall"
+          ],
+          "correct": 1,
+          "explanation": "Already planned → we're going to."
+        },
+        {
+          "id": "q3",
+          "type": "fill-blank",
+          "question": "\"I think she ___ (pass) the exam.\" (opinion)",
+          "correct": "will pass",
+          "explanation": "Opinion/belief → will pass."
+        },
+        {
+          "id": "q4",
+          "type": "fill-blank",
+          "question": "\"Look at those clouds! It ___ (rain)!\" (evidence)",
+          "correct": "is going to rain",
+          "explanation": "Evidence → is going to rain."
+        },
+        {
+          "id": "q5",
+          "type": "multiple-choice",
+          "question": "\"Don't worry, I ___ help you.\" (promise)",
+          "options": [
+            "'m going to",
+            "'ll",
+            "going to",
+            "am"
+          ],
+          "correct": 1,
+          "explanation": "Promise → I'll."
+        },
+        {
+          "id": "q6",
+          "type": "fill-blank",
+          "question": "\"She ___ (not/come) to the party.\" (won't)",
+          "correct": "won't come",
+          "explanation": "Won't + base verb."
+        },
+        {
+          "id": "q7",
+          "type": "multiple-choice",
+          "question": "\"___ you be at the meeting tomorrow?\"",
+          "options": [
+            "Are",
+            "Will",
+            "Do",
+            "Going"
+          ],
+          "correct": 1,
+          "explanation": "Will you be...?"
+        },
+        {
+          "id": "q8",
+          "type": "fill-blank",
+          "question": "\"He ___ travel this summer.\" (negativo con going to)",
+          "correct": "isn't going to",
+          "explanation": "He isn't going to travel."
+        },
+        {
+          "id": "q9",
+          "type": "multiple-choice",
+          "question": "\"___ I close the door?\" (suggestion)",
+          "options": [
+            "Will",
+            "Going to",
+            "Shall",
+            "Do"
+          ],
+          "correct": 2,
+          "explanation": "Shall I...? = suggestion."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which sentence is correct?",
+          "options": [
+            "They're going to travel.",
+            "They will to travel.",
+            "They going to travel.",
+            "They're going travel."
+          ],
+          "correct": 0,
+          "explanation": "They're going to travel — correct form. (Not: will to, They going without 'are', or missing 'to')"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-scramble",
+    "type": "word-scramble",
+    "title": "Vocabulario del Futuro",
+    "description": "Descifra palabras de planes y predicciones.",
+    "props": {
+      "words": [
+        {
+          "word": "TOMORROW",
+          "hint": "Mañana; día siguiente",
+          "category": "Future"
+        },
+        {
+          "word": "FUTURE",
+          "hint": "Futuro; tiempo por venir",
+          "category": "Future"
+        },
+        {
+          "word": "PLAN",
+          "hint": "Plan; intención organizada",
+          "category": "Future"
+        },
+        {
+          "word": "PROMISE",
+          "hint": "Promesa; compromiso",
+          "category": "Future"
+        },
+        {
+          "word": "PREDICT",
+          "hint": "Predecir; anticipar",
+          "category": "Future"
+        },
+        {
+          "word": "DECIDE",
+          "hint": "Decidir; tomar decisión",
+          "category": "Future"
+        }
+      ]
+    }
+  }
+]

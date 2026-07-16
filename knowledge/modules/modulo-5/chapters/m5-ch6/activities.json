@@ -1,0 +1,454 @@
+[
+  {
+    "id": "m5-ch6-svg",
+    "type": "svg-scene",
+    "title": "Pasiva Avanzada",
+    "description": "Casos especiales y errores comunes con la voz pasiva.",
+    "props": {
+      "scene": {
+        "viewBox": "0 0 700 420",
+        "bg": "#fdf2f8",
+        "items": [
+          {
+            "id": "title",
+            "type": "rect",
+            "x": 100,
+            "y": 5,
+            "width": 500,
+            "height": 45,
+            "fill": "#ec4899",
+            "label": "🎯 Advanced Passive",
+            "labelEn": "Complex transformations & special cases"
+          },
+          {
+            "id": "ditrans",
+            "type": "rect",
+            "x": 30,
+            "y": 60,
+            "width": 310,
+            "height": 55,
+            "fill": "#fce7f3",
+            "label": "🎁 Two objects",
+            "labelEn": "They gave ME a present → I WAS GIVEN a present."
+          },
+          {
+            "id": "modals",
+            "type": "rect",
+            "x": 360,
+            "y": 60,
+            "width": 310,
+            "height": 55,
+            "fill": "#e0e7ff",
+            "label": "⚙️ Modal + passive",
+            "labelEn": "must do → MUST BE DONE. can fix → CAN BE FIXED."
+          },
+          {
+            "id": "should",
+            "type": "rect",
+            "x": 30,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#bbf7d0",
+            "label": "✅ should clean",
+            "labelEn": "The room SHOULD BE CLEANED."
+          },
+          {
+            "id": "might",
+            "type": "rect",
+            "x": 360,
+            "y": 130,
+            "width": 310,
+            "height": 50,
+            "fill": "#fef3c7",
+            "label": "✅ might cancel",
+            "labelEn": "The event MIGHT BE CANCELLED."
+          },
+          {
+            "id": "no-passive",
+            "type": "rect",
+            "x": 30,
+            "y": 200,
+            "width": 640,
+            "height": 50,
+            "fill": "#fecaca",
+            "label": "🚫 NO passive with intransitive verbs",
+            "labelEn": "❌ The accident was happened. ✅ The accident happened. (happen, arrive, die, sleep)"
+          },
+          {
+            "id": "impersonal",
+            "type": "rect",
+            "x": 30,
+            "y": 270,
+            "width": 310,
+            "height": 55,
+            "fill": "#dbeafe",
+            "label": "👥 Impersonal passive",
+            "labelEn": "People say... → IT IS SAID that... / He IS SAID to be..."
+          },
+          {
+            "id": "colloc",
+            "type": "rect",
+            "x": 360,
+            "y": 270,
+            "width": 310,
+            "height": 55,
+            "fill": "#dcfce7",
+            "label": "📝 Common collocations",
+            "labelEn": "be BORN, be MADE of, be KNOWN for, be INTERESTED in"
+          },
+          {
+            "id": "born",
+            "type": "rect",
+            "x": 100,
+            "y": 345,
+            "width": 500,
+            "height": 55,
+            "fill": "#fde68a",
+            "label": "🎂 I was born in 1990.",
+            "labelEn": "be born = nacer (siempre pasiva). This table IS MADE OF wood."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "m5-ch6-flash",
+    "type": "flashcard",
+    "title": "Transformaciones Complejas",
+    "description": "Practica la voz pasiva en contextos avanzados.",
+    "props": {
+      "cards": [
+        {
+          "id": "c1",
+          "front": "They gave me a present. (pasiva)",
+          "back": "I was given a present. / A present was given to me.",
+          "example": "Two objects: person or thing as subject."
+        },
+        {
+          "id": "c2",
+          "front": "You must do the homework. (pasiva)",
+          "back": "The homework must be done.",
+          "example": "Modal passive: modal + be + pp."
+        },
+        {
+          "id": "c3",
+          "front": "They can fix the problem. (pasiva)",
+          "back": "The problem can be fixed.",
+          "example": "can + be + fixed."
+        },
+        {
+          "id": "c4",
+          "front": "We should clean the room. (pasiva)",
+          "back": "The room should be cleaned.",
+          "example": "should + be + cleaned."
+        },
+        {
+          "id": "c5",
+          "front": "People say he is rich. (pasiva impersonal)",
+          "back": "It is said that he is rich. / He is said to be rich.",
+          "example": "Impersonal: It is said/believed/known that..."
+        },
+        {
+          "id": "c6",
+          "front": "¿Se puede? \"The accident was happened.\"",
+          "back": "❌ INCORRECTO. \"The accident happened.\"",
+          "example": "\"happen\" is intransitive — cannot be passive."
+        },
+        {
+          "id": "c7",
+          "front": "This table / make / wood",
+          "back": "This table is made of wood.",
+          "example": "\"be made of\" = material."
+        },
+        {
+          "id": "c8",
+          "front": "I / born / 1990",
+          "back": "I was born in 1990.",
+          "example": "\"be born\" = nacer (always passive)."
+        },
+        {
+          "id": "c9",
+          "front": "She / know / for her kindness",
+          "back": "She is known for her kindness.",
+          "example": "\"be known for\" = ser conocida por."
+        },
+        {
+          "id": "c10",
+          "front": "They might cancel the event. (pasiva)",
+          "back": "The event might be cancelled.",
+          "example": "might + be + cancelled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch6-match",
+    "type": "word-match",
+    "title": "Modal Activa → Modal Pasiva",
+    "description": "Empareja la forma activa con su pasiva.",
+    "props": {
+      "pairs": [
+        {
+          "left": "must do",
+          "right": "must be done"
+        },
+        {
+          "left": "can fix",
+          "right": "can be fixed"
+        },
+        {
+          "left": "should clean",
+          "right": "should be cleaned"
+        },
+        {
+          "left": "might cancel",
+          "right": "might be cancelled"
+        },
+        {
+          "left": "could solve",
+          "right": "could be solved"
+        },
+        {
+          "left": "will send",
+          "right": "will be sent"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch6-sentence",
+    "type": "sentence-builder",
+    "title": "Construye Pasivas Avanzadas",
+    "description": "Ordena para formar pasivas complejas.",
+    "props": {
+      "sentences": [
+        {
+          "prompt": "La tarea debe ser hecha:",
+          "words": [
+            "The",
+            "homework",
+            "must",
+            "be",
+            "done"
+          ],
+          "correct": "The homework must be done"
+        },
+        {
+          "prompt": "Me dieron un regalo:",
+          "words": [
+            "I",
+            "was",
+            "given",
+            "a",
+            "present"
+          ],
+          "correct": "I was given a present"
+        },
+        {
+          "prompt": "Se dice que él es rico:",
+          "words": [
+            "It",
+            "is",
+            "said",
+            "that",
+            "he",
+            "is",
+            "rich"
+          ],
+          "correct": "It is said that he is rich"
+        },
+        {
+          "prompt": "Esta mesa está hecha de madera:",
+          "words": [
+            "This",
+            "table",
+            "is",
+            "made",
+            "of",
+            "wood"
+          ],
+          "correct": "This table is made of wood"
+        },
+        {
+          "prompt": "Yo nací en 1990:",
+          "words": [
+            "I",
+            "was",
+            "born",
+            "in",
+            "1990"
+          ],
+          "correct": "I was born in 1990"
+        },
+        {
+          "prompt": "El evento podría ser cancelado:",
+          "words": [
+            "The",
+            "event",
+            "might",
+            "be",
+            "cancelled"
+          ],
+          "correct": "The event might be cancelled"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch6-quiz",
+    "type": "quiz",
+    "title": "Quiz: Pasiva Avanzada",
+    "description": "Demuestra tu dominio de la voz pasiva avanzada.",
+    "props": {
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple-choice",
+          "question": "\"They gave me a present.\" → Passive:",
+          "options": [
+            "I was given a present.",
+            "A present was gave to me.",
+            "Me was given a present.",
+            "I have given a present."
+          ],
+          "correct": 0,
+          "explanation": "Person as subject: I was given a present."
+        },
+        {
+          "id": "q2",
+          "type": "fill-blank",
+          "question": "\"You must do the homework.\" → \"The homework ___ ___ done.\"",
+          "correct": "must be",
+          "explanation": "Modal passive: must be + pp."
+        },
+        {
+          "id": "q3",
+          "type": "multiple-choice",
+          "question": "\"The problem ___ fixed.\" (can)",
+          "options": [
+            "can be",
+            "can been",
+            "can is",
+            "could been"
+          ],
+          "correct": 0,
+          "explanation": "can + be + pp."
+        },
+        {
+          "id": "q4",
+          "type": "multiple-choice",
+          "question": "Which is WRONG?",
+          "options": [
+            "The room should be cleaned.",
+            "The accident was happened.",
+            "I was born in 1990.",
+            "It is said that he is rich."
+          ],
+          "correct": 1,
+          "explanation": "\"happen\" is intransitive — cannot be passive."
+        },
+        {
+          "id": "q5",
+          "type": "fill-blank",
+          "question": "\"I ___ born in 1990.\"",
+          "correct": "was",
+          "explanation": "be born = was/were born."
+        },
+        {
+          "id": "q6",
+          "type": "multiple-choice",
+          "question": "\"People say he is rich.\" → Impersonal passive:",
+          "options": [
+            "He says to be rich.",
+            "It is said that he is rich.",
+            "It says he is rich.",
+            "He is saying to be rich."
+          ],
+          "correct": 1,
+          "explanation": "It is said that... = impersonal passive."
+        },
+        {
+          "id": "q7",
+          "type": "fill-blank",
+          "question": "\"This table is ___ of wood.\"",
+          "correct": "made",
+          "explanation": "be made of + material."
+        },
+        {
+          "id": "q8",
+          "type": "multiple-choice",
+          "question": "\"The event ___ cancelled.\" (might)",
+          "options": [
+            "might be",
+            "might is",
+            "might been",
+            "might being"
+          ],
+          "correct": 0,
+          "explanation": "might + be + pp."
+        },
+        {
+          "id": "q9",
+          "type": "fill-blank",
+          "question": "\"She is ___ for her kindness.\"",
+          "correct": "known",
+          "explanation": "be known for = ser conocido por."
+        },
+        {
+          "id": "q10",
+          "type": "multiple-choice",
+          "question": "Which verb CANNOT be used in passive?",
+          "options": [
+            "make",
+            "eat",
+            "arrive",
+            "build"
+          ],
+          "correct": 2,
+          "explanation": "\"arrive\" is intransitive — no object."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch6-scramble",
+    "type": "word-scramble",
+    "title": "Voz Pasiva Avanzada",
+    "description": "Descifra verbos comunes en pasiva.",
+    "props": {
+      "words": [
+        {
+          "word": "REPORTED",
+          "hint": "Reportado; se dice que",
+          "category": "Passive"
+        },
+        {
+          "word": "BELIEVED",
+          "hint": "Creído; se cree que",
+          "category": "Passive"
+        },
+        {
+          "word": "CONSIDERED",
+          "hint": "Considerado; tenido en cuenta",
+          "category": "Passive"
+        },
+        {
+          "word": "EXPECTED",
+          "hint": "Esperado; anticipado",
+          "category": "Passive"
+        },
+        {
+          "word": "KNOWN",
+          "hint": "Conocido; reconocido",
+          "category": "Passive"
+        },
+        {
+          "word": "SAID",
+          "hint": "Dicho; afirmado",
+          "category": "Passive"
+        }
+      ]
+    }
+  }
+]
