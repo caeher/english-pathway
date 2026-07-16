@@ -1,0 +1,32 @@
+project_id = "english-pathway"
+
+[api]
+enabled = true
+port = 54321
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+port = 54323
+
+[inbucket]
+port = 54324
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = [
+  "http://localhost:3000/auth/callback",
+  "http://localhost:3000/auth/callback?next=/reset-password",
+  "http://localhost:3000/auth/confirm",
+  "http://localhost:3000/reset-password",
+]
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+
+[analytics]
+enabled = false

@@ -1,0 +1,1 @@
+-- SQL seed is optional. App data is seeded via: pnpm db:seed
