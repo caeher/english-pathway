@@ -1,0 +1,128 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react'
+import type { FlashcardData } from '../../types'
+import { SpeakButton } from '@/components/ui/SpeakButton'
+import ActivityResult from './ActivityResult'
+import { flashcardCoverage } from '@/lib/games/scoring'
+
+interface FlashcardProps {
+  cards: FlashcardData[]
+  onComplete?: (result: { score: number; total: number; known: number }) => void
+}
+
+export default function Flashcard({ cards, onComplete }: FlashcardProps) {
+  const [current, setCurrent] = useState(0)
+  const [flipped, setFlipped] = useState(false)
+  const [known, setKnown] = useState<Set<string>>(new Set())
+  const [finished, setFinished] = useState(false)
+
+  const card = cards[current]
+
+  const handleNext = () => {
+    setFlipped(false)
+    if (current + 1 >= cards.length) {
+      setFinished(true)
+      const pct = flashcardCoverage(known.size, cards.length)
+      onComplete?.({ score: pct, total: 100, known: known.size })
+    } else {
+      setCurrent((c) => c + 1)
+    }
+  }
+
+  const handlePrev = () => {
+    setFlipped(false)
+    setCurrent((c) => Math.max(c - 1, 0))
+  }
+
+  const handleMarkKnown = () => {
+    setKnown((prev) => new Set([...prev, card.id]))
+    handleNext()
+  }
+
+  const handleReset = () => {
+    setCurrent(0)
+    setFlipped(false)
+    setKnown(new Set())
+    setFinished(false)
+  }
+
+  if (finished) {
+    const pct = flashcardCoverage(known.size, cards.length)
+    return (
+      <ActivityResult
+        percent={pct}
+        score={known.size}
+        total={cards.length}
+        subtitle={`You marked ${known.size} of ${cards.length} cards as known`}
+        onRetry={handleReset}
+      />
+    )
+  }
+
+  return (
+    <div className="max-w-md mx-auto space-y-5" role="region" aria-label="Vocabulary flashcards">
+      <div className="flex items-center justify-between text-sm">
+        <span className="font-display font-bold text-(--text-muted)">{current + 1} / {cards.length}</span>
+        <span className="font-display font-bold" style={{ color: 'var(--success)' }}>{known.size} known</span>
+      </div>
+
+      <div style={{ perspective: '1000px' }}>
+        <motion.div
+          onClick={() => setFlipped((f) => !f)}
+          onKeyDown={(e) => e.key === 'Enter' && setFlipped((f) => !f)}
+          tabIndex={0}
+          role="button"
+          aria-label={flipped ? 'Flip to front' : 'Flip to back'}
+          animate={{ rotateY: flipped ? 180 : 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative w-full h-56 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          <div className="absolute inset-0 rounded-3xl bg-(--bg-card) border-2 border-(--border-primary) shadow-lg flex flex-col items-center justify-center p-8"
+            style={{ backfaceVisibility: 'hidden' }}>
+            <p className="text-[10px] font-display font-bold text-(--text-muted) mb-3 uppercase tracking-widest">Front</p>
+            <div className="flex items-center gap-2">
+              <p className="text-2xl font-display font-black text-(--text-primary) text-center">{card.front}</p>
+              <SpeakButton text={card.front} label={`Pronounce ${card.front}`} />
+            </div>
+            <p className="text-xs text-(--text-muted) mt-5">Tap to flip</p>
+          </div>
+          <div className="absolute inset-0 rounded-3xl bg-(--secondary-soft) border-2 border-(--secondary)/20 shadow-lg flex flex-col items-center justify-center p-8"
+            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+            <p className="text-[10px] font-display font-bold uppercase tracking-widest" style={{ color: 'var(--secondary)' }}>Back</p>
+            <p className="text-xl font-display font-bold text-(--text-primary) text-center mt-3">{card.back}</p>
+            {card.example && (
+              <p className="text-sm text-(--text-secondary) mt-4 italic text-center flex items-center gap-2 justify-center">
+                &quot;{card.example}&quot;
+                <SpeakButton text={card.example} size="sm" />
+              </p>
+            )}
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <button onClick={handlePrev} disabled={current === 0} aria-label="Previous"
+          className="p-2.5 rounded-xl hover:bg-(--bg-tertiary) disabled:opacity-30 cursor-pointer disabled:cursor-default transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)">
+          <ArrowLeft className="w-5 h-5 text-(--text-secondary)" />
+        </button>
+        <div className="flex gap-2">
+          <button onClick={handleMarkKnown}
+            className="px-4 py-2 rounded-xl border-2 text-sm font-display font-bold cursor-pointer hover:opacity-80 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--success)"
+            style={{ borderColor: 'var(--success)', color: 'var(--success)' }}>
+            ✓ I know it
+          </button>
+          <button onClick={handleReset} aria-label="Reset"
+            className="p-2.5 rounded-xl hover:bg-(--bg-tertiary) cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)">
+            <RotateCcw className="w-4 h-4 text-(--text-muted)" />
+          </button>
+        </div>
+        <button onClick={handleNext} disabled={current >= cards.length - 1} aria-label="Next"
+          className="p-2.5 rounded-xl hover:bg-(--bg-tertiary) disabled:opacity-30 cursor-pointer disabled:cursor-default transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)">
+          <ArrowRight className="w-5 h-5 text-(--text-secondary)" />
+        </button>
+      </div>
+    </div>
+  )
+}
