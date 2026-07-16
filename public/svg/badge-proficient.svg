@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="proficientGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9B51E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B2CBF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Badge circle -->
+  <circle cx="50" cy="50" r="40" fill="url(#proficientGradient)" stroke="#6A1B9A" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="50" cy="50" r="35" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Crown points -->
+  <path d="M 30 25 L 35 35 L 40 25 L 45 35 L 50 20 L 55 35 L 60 25 L 65 35 L 70 25 L 70 40 L 30 40 Z" fill="gold" stroke="#D4A700" stroke-width="1.5" filter="url(#glow)"/>
+  
+  <!-- Gems on crown -->
+  <circle cx="40" cy="32" r="2" fill="#E74C3C"/>
+  <circle cx="50" cy="28" r="2.5" fill="#3498DB"/>
+  <circle cx="60" cy="32" r="2" fill="#2ECC71"/>
+  
+  <!-- Ribbon -->
+  <path d="M 50 85 L 40 95 L 50 90 L 60 95 Z" fill="#6A1B9A" stroke="#4A148C" stroke-width="1.5"/>
+  
+  <!-- Crown icon -->
+  <text x="50" y="70" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">👑</text>
+  
+  <!-- Level text -->
+  <text x="50" y="25" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">C2</text>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">PROFICIENT</text>
+</svg>

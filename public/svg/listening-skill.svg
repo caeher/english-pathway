@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="listeningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27AE60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#229954;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Headphone band -->
+  <path d="M 30 30 Q 30 15 50 15 Q 70 15 70 30" stroke="url(#listeningGradient)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Left ear cup -->
+  <ellipse cx="30" cy="45" rx="12" ry="20" fill="url(#listeningGradient)" stroke="#1E8449" stroke-width="2"/>
+  <ellipse cx="30" cy="45" rx="8" ry="15" fill="#34495E" opacity="0.7"/>
+  
+  <!-- Right ear cup -->
+  <ellipse cx="70" cy="45" rx="12" ry="20" fill="url(#listeningGradient)" stroke="#1E8449" stroke-width="2"/>
+  <ellipse cx="70" cy="45" rx="8" ry="15" fill="#34495E" opacity="0.7"/>
+  
+  <!-- Band details -->
+  <rect x="48" y="13" width="4" height="6" rx="1" fill="#34495E"/>
+  
+  <!-- Sound waves (left) -->
+  <path d="M 15 35 Q 10 40 10 45 Q 10 50 15 55" stroke="#95A5A6" stroke-width="2" fill="none" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 8 30 Q 2 40 2 45 Q 2 50 8 60" stroke="#95A5A6" stroke-width="2" fill="none" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Sound waves (right) -->
+  <path d="M 85 35 Q 90 40 90 45 Q 90 50 85 55" stroke="#95A5A6" stroke-width="2" fill="none" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 92 30 Q 98 40 98 45 Q 98 50 92 60" stroke="#95A5A6" stroke-width="2" fill="none" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Listening icon -->
+  <text x="50" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2C3E50" text-anchor="middle">👂</text>
+</svg>

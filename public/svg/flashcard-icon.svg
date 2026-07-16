@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Front card -->
+  <rect x="15" y="25" width="50" height="60" rx="5" fill="url(#cardGradient)" stroke="#2C5F8D" stroke-width="2"/>
+  <text x="40" y="60" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">A</text>
+  <!-- Back card (flipped) -->
+  <rect x="35" y="15" width="50" height="60" rx="5" fill="#F5A623" stroke="#D68910" stroke-width="2" opacity="0.9"/>
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">?</text>
+  <!-- Flip arrow -->
+  <path d="M 45 85 Q 50 90 55 85" stroke="#666" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

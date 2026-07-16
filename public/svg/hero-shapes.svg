@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <!-- Large blurred circles -->
+  <circle cx="80" cy="60" r="100" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="720" cy="420" r="120" fill="#8b5cf6" opacity="0.07"/>
+  <circle cx="650" cy="80" r="70" fill="#10b981" opacity="0.06"/>
+  <circle cx="150" cy="400" r="90" fill="#f59e0b" opacity="0.06"/>
+
+  <!-- Geometric shapes -->
+  <rect x="500" y="30" width="60" height="60" rx="12" fill="#3b82f6" opacity="0.1" transform="rotate(20 530 60)"/>
+  <rect x="60" y="300" width="45" height="45" rx="8" fill="#10b981" opacity="0.08" transform="rotate(-15 82 322)"/>
+  <rect x="400" y="380" width="35" height="35" rx="6" fill="#ec4899" opacity="0.08" transform="rotate(35 417 397)"/>
+
+  <!-- Triangles -->
+  <polygon points="300,40 330,90 270,90" fill="#f59e0b" opacity="0.1"/>
+  <polygon points="680,280 710,330 650,330" fill="#6366f1" opacity="0.08"/>
+
+  <!-- Small dots -->
+  <circle cx="200" cy="150" r="5" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="580" cy="200" r="4" fill="#10b981" opacity="0.12"/>
+  <circle cx="350" cy="450" r="6" fill="#8b5cf6" opacity="0.1"/>
+  <circle cx="450" cy="100" r="3" fill="#ef4444" opacity="0.15"/>
+  <circle cx="120" cy="220" r="4" fill="#f59e0b" opacity="0.12"/>
+  <circle cx="690" cy="160" r="5" fill="#ec4899" opacity="0.1"/>
+
+  <!-- Rings -->
+  <circle cx="550" cy="350" r="25" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.08"/>
+  <circle cx="250" cy="250" r="18" stroke="#10b981" stroke-width="2" fill="none" opacity="0.08"/>
+</svg>
