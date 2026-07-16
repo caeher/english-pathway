@@ -1,0 +1,382 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── "Playground Notebook" Design System ─── */
+
+:root {
+  /* Warm cream paper palette */
+  --bg-primary: #faf7f2;
+  --bg-secondary: #f5f0e8;
+  --bg-tertiary: #ede8de;
+  --bg-card: #fffdf9;
+  --text-primary: #2c2416;
+  --text-secondary: #594c3d; /* Adjusted for WCAG AA contrast (5.0:1) on #faf7f2 */
+  --text-muted: #635546; /* Adjusted for WCAG AA contrast (4.5:1) on #faf7f2 */
+  --border-primary: #e2dace;
+  --border-secondary: #d4c9b8;
+  /* Coral-orange dominant accent */
+  --accent: #e85d3a;
+  --accent-hover: #d14e2d;
+  --accent-soft: #fef0ec;
+  --accent-muted: #f4a58e;
+  /* Teal secondary */
+  --secondary: #1a9e8f;
+  --secondary-soft: #e6f7f5;
+  /* Reward amber */
+  --reward: #e5a411;
+  --reward-soft: #fef9e7;
+  /* Success */
+  --success: #3d9e6e;
+  --success-soft: #edf8f2;
+  /* Fonts (next/font variables set on html) */
+  --font-display: var(--font-outfit), sans-serif;
+  --font-body: var(--font-nunito), sans-serif;
+  /* Dot grid */
+  --dot-color: rgba(44, 36, 22, 0.06);
+  --dot-size: 1px;
+  --dot-gap: 24px;
+}
+
+.dark {
+  --bg-primary: #1a1714;
+  --bg-secondary: #211e1a;
+  --bg-tertiary: #2e2a24;
+  --bg-card: #262220;
+  --text-primary: #f0ebe4;
+  --text-secondary: #b5a998;
+  --text-muted: #9a8e80;
+  --border-primary: #3a342c;
+  --border-secondary: #4d453b;
+  --accent: #f07a5c;
+  --accent-hover: #f4917a;
+  --accent-soft: #3a2520;
+  --accent-muted: #8b4a38;
+  --secondary: #3dbdae;
+  --secondary-soft: #1e2f2d;
+  --reward: #f0b840;
+  --reward-soft: #332c1a;
+  --success: #5cba8a;
+  --success-soft: #1e2e24;
+  --dot-color: rgba(240, 235, 228, 0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.35s ease, color 0.35s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible focus ring for interactive elements */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Dot grid paper texture */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--dot-gap) var(--dot-gap);
+}
+
+/* Display font for headings */
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Stagger animation keyframes */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+/* Ink splash decoration */
+.ink-splash {
+  position: relative;
+}
+.ink-splash::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(ellipse at 30% 40%, var(--accent) 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px -8px rgba(44, 36, 22, 0.12);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  mix-blend-mode: multiply;
+}
+.dark .noise-overlay::after {
+  mix-blend-mode: soft-light;
+  opacity: 0.06;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* ─── Radix UI animations ─── */
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@keyframes overlay-show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlay-hide {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes content-show {
+  from { opacity: 0; transform: translate(-50%, -48%) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes content-hide {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -48%) scale(0.96); }
+}
+
+@keyframes popover-show {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popover-hide {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.96); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toast-show {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toast-hide {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.animate-overlay-show {
+  animation: overlay-show 0.2s ease-out;
+}
+
+.animate-overlay-hide {
+  animation: overlay-hide 0.15s ease-in;
+}
+
+.animate-content-show {
+  animation: content-show 0.2s ease-out;
+}
+
+.animate-content-hide {
+  animation: content-hide 0.15s ease-in;
+}
+
+.animate-popover-show {
+  animation: popover-show 0.15s ease-out;
+}
+
+.animate-popover-hide {
+  animation: popover-hide 0.1s ease-in;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.15s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.15s ease-out;
+}
+
+.animate-toast-show {
+  animation: toast-show 0.3s ease-out;
+}
+
+.animate-toast-hide {
+  animation: toast-hide 0.2s ease-in;
+}
+
+/* Legal document prose */
+.legal-content h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.legal-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.legal-content p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.legal-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Memory card 3D flip */
+.memory-card-scene {
+  perspective: 800px;
+}
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+.memory-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+.memory-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.memory-card-back {
+  transform: rotateY(180deg);
+}
