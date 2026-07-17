@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, GraduationCap, Star, Zap, MessageCircle, Sparkles } from 'lucide-react'
+import { ArrowRight, BookOpen, GraduationCap, Star, Zap, MessageCircle, Sparkles } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics/events'
 
 const TESTIMONIALS = [
@@ -85,6 +85,14 @@ export default function Landing() {
               >
                 Start learning
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/curriculum"
+                onClick={() => trackEvent('landing_cta_click', { cta: 'curriculum' })}
+                className="group inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-white/15 backdrop-blur-sm text-white font-display font-bold text-base no-underline border border-white/20 hover:bg-white/25 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Browse curriculum
+                <BookOpen className="w-5 h-5" />
               </Link>
               <Link
                 href="/register"
@@ -175,6 +183,7 @@ export default function Landing() {
           <nav className="flex flex-wrap gap-4 text-xs text-(--text-muted)">
             <Link href="/how-it-works" className="hover:text-(--accent) no-underline">How it works</Link>
             <Link href="/learn" className="hover:text-(--accent) no-underline">Learn</Link>
+            <Link href="/curriculum" className="hover:text-(--accent) no-underline">Curriculum</Link>
             <Link href="/faq" className="hover:text-(--accent) no-underline">FAQ</Link>
             <Link href="/legal/privacy" className="hover:text-(--accent) no-underline">Privacy</Link>
           </nav>

@@ -10,7 +10,7 @@ function EnglishWord({ word }: { word: string }) {
   return (
     <span className="inline-flex items-center gap-1 align-middle">
       <em className="text-(--text-secondary) italic not-italic font-medium text-(--text-primary)">{word}</em>
-      <SpeakButton text={word} size="sm" label={`Pronunciar ${word}`} />
+      <SpeakButton text={word} size="sm" label={`Pronounce ${word}`} />
     </span>
   )
 }
