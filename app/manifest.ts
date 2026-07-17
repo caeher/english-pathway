@@ -4,9 +4,13 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'English Pathway',
     short_name: 'IE English',
+    id: '/',
+    lang: 'en',
     description: 'Learn English in a fun way with gamified lessons and games.',
     start_url: '/',
     display: 'standalone',
+    orientation: 'portrait-primary',
+    scope: '/',
     background_color: '#faf7f2',
     theme_color: '#e85d3a',
     icons: [

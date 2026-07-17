@@ -1,4 +1,4 @@
-const CACHE_NAME = 'english-pathway-v1';
+const CACHE_NAME = 'english-pathway-v2';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to precache immediately on install
@@ -7,15 +7,18 @@ const PRECACHE_ASSETS = [
   '/manifest.webmanifest',
   '/icon-192.png',
   '/icon-512.png',
-  '/favicon.ico',
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(PRECACHE_ASSETS);
-    }).then(() => self.skipWaiting())
+    })
   );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
@@ -38,16 +41,22 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // Exclude Supabase API, hot reloading (webpack-hmr), browser-sync, and api endpoints
+  // Do not cache authenticated or mutating API responses in a shared browser cache.
   if (
     url.hostname.includes('supabase.co') ||
     url.pathname.startsWith('/_next/webpack-hmr') ||
     url.pathname.startsWith('/api/')
   ) {
+    if (url.pathname.startsWith('/api/')) {
+      event.respondWith(fetch(event.request).catch(() => new Response(JSON.stringify({ error: 'Offline' }), {
+        status: 503,
+        headers: { 'Content-Type': 'application/json' },
+      })));
+    }
     return;
   }
 
-  // 1. Static Assets (CSS, JS, Fonts, Images) -> StaleWhileRevalidate
+  // 1. Static assets -> cache first, then refresh the cache in the background.
   const isStaticAsset =
     url.pathname.startsWith('/_next/static/') ||
     url.pathname.startsWith('/svg/') ||
@@ -72,8 +81,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 2. Navigation Requests & Pages (HTML) -> NetworkFirst
+  // 2. Navigation requests -> network first with an offline fallback.
   if (event.request.mode === 'navigate' || event.request.headers.get('accept')?.includes('text/html')) {
+    const privatePath = ['/settings', '/onboarding', '/review'].some((path) => url.pathname.startsWith(path));
+    if (privatePath) return;
     event.respondWith(
       fetch(event.request)
         .then((networkResponse) => {
