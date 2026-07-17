@@ -93,8 +93,7 @@ export async function signUpAction(
     await recordUserConsents(data.user.id)
 
     revalidatePath('/', 'layout')
-    const destination = explicitRedirectTo ?? '/settings'
-    redirect(resolvePostAuthDestination(destination))
+    redirect(resolvePostAuthDestination(explicitRedirectTo))
   }
 
   return {
