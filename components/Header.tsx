@@ -1,11 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { Moon, Sun, BookOpen, GraduationCap } from 'lucide-react'
+import { Moon, Sun, BookOpen, GraduationCap, RotateCcw } from 'lucide-react'
 import { motion } from 'framer-motion'
 import useThemeStore from '@/stores/useThemeStore'
 import { Switch } from '@/components/ui/switch'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { SrsBadge } from '@/components/layouts/_parts/srs-badge'
 
 export default function Header() {
   const { dark, toggle } = useThemeStore()
@@ -39,6 +40,12 @@ export default function Header() {
             className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
           >
             <GraduationCap className="w-4 h-4" /> Learn
+          </Link>
+          <Link
+            href="/review"
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
+          >
+            <RotateCcw className="w-4 h-4" /> Review <SrsBadge />
           </Link>
           <Link
             href="/login"

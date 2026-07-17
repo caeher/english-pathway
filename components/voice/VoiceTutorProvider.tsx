@@ -8,6 +8,9 @@ import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
 import { Button } from '@/components/ui/button'
 import type { ActivityCompleteResult } from '@/components/learn/ActivityRenderer'
 import { trackEvent } from '@/lib/analytics/events'
+import { enqueueSrsItems } from '@/lib/srs/client'
+import { fetchActivityById } from '@/lib/learn/client-tools'
+import { getReviewContentRefs } from '@/lib/srs/refs'
 
 interface SessionConfig {
   agentId?: string
@@ -42,7 +45,17 @@ function TutorControls({ textOnly }: { textOnly: boolean }) {
       activity_type: result.activityType,
       score_percent: pct,
     })
+    void enqueueSrsItems(result.reviewContentRefs ?? [])
   }, [sendUserMessage])
+
+  const handleActivityDifficult = useCallback(async (activityId: string) => {
+    try {
+      const { activity } = await fetchActivityById(activityId)
+      await enqueueSrsItems(getReviewContentRefs(activity))
+    } catch {
+      // SRS is an enhancement; learning remains usable when it is unavailable.
+    }
+  }, [])
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault()
@@ -109,6 +122,7 @@ function TutorControls({ textOnly }: { textOnly: boolean }) {
         </div>
       }
       onActivityComplete={handleActivityComplete}
+      onActivityDifficult={handleActivityDifficult}
     />
   )
 }
