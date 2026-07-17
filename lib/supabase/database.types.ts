@@ -23,6 +23,24 @@ export type LegalDocumentType = 'terms' | 'privacy' | 'cookies'
 export interface Database {
   public: {
     Tables: {
+      chapter_completions: {
+        Row: {
+          user_id: string
+          chapter_id: string
+          completed_at: string
+        }
+        Insert: {
+          user_id: string
+          chapter_id: string
+          completed_at?: string
+        }
+        Update: {
+          user_id?: string
+          chapter_id?: string
+          completed_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           id: string

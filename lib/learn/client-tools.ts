@@ -1,4 +1,5 @@
 import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { curriculumChapterHref } from '@/lib/curriculum/href'
 import type { ChapterActivity } from '@/types'
 
 export async function fetchCurriculumContext(params: {
@@ -39,7 +40,11 @@ export function showGrammar(markdown: string, title?: string) {
 export async function showActivity(activityId: string) {
   const data = await fetchActivityById(activityId)
   useLearnSessionStore.getState().setActivity(data.activity, data.chapterId, data.moduleId)
-  return { success: true, title: data.activity.title }
+  return {
+    success: true,
+    title: data.activity.title,
+    curriculumUrl: curriculumChapterHref(data.moduleId, data.chapterId),
+  }
 }
 
 export function showQuestion(prompt: string, options?: string[], correctIndex?: number) {
