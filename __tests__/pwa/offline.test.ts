@@ -13,7 +13,7 @@ describe('PWA offline support', () => {
 
   it('precache references only files that exist in public', () => {
     const serviceWorker = readFileSync(resolve(publicDir, 'sw.js'), 'utf8')
-    const precache = serviceWorker.match(/const PRECACHE_ASSETS = \[(.*?)\]/s)?.[1] ?? ''
+    const precache = serviceWorker.match(/const PRECACHE_ASSETS = \[([\s\S]*?)\]/)?.[1] ?? ''
     const assets = [...precache.matchAll(/['"](\/[^'"]+)['"]/g)].map((match) => match[1])
       .filter((asset) => asset !== '/manifest.webmanifest' && asset !== '/offline.html')
     expect(assets.every((asset) => existsSync(resolve(publicDir, asset.slice(1))))).toBe(true)
