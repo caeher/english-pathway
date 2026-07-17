@@ -23,12 +23,33 @@ export type LegalDocumentType = 'terms' | 'privacy' | 'cookies'
 export interface Database {
   public: {
     Tables: {
+      chapter_completions: {
+        Row: {
+          user_id: string
+          chapter_id: string
+          completed_at: string
+        }
+        Insert: {
+          user_id: string
+          chapter_id: string
+          completed_at?: string
+        }
+        Update: {
+          user_id?: string
+          chapter_id?: string
+          completed_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           id: string
           username: string | null
           full_name: string | null
           avatar_url: string | null
+          onboarding_completed_at: string | null
+          daily_goal_minutes: number | null
+          level: 'beginner' | 'intermediate' | 'advanced' | null
           created_at: string
           updated_at: string
         }
@@ -37,6 +58,9 @@ export interface Database {
           username?: string | null
           full_name?: string | null
           avatar_url?: string | null
+          onboarding_completed_at?: string | null
+          daily_goal_minutes?: number | null
+          level?: 'beginner' | 'intermediate' | 'advanced' | null
           created_at?: string
           updated_at?: string
         }
@@ -45,6 +69,9 @@ export interface Database {
           username?: string | null
           full_name?: string | null
           avatar_url?: string | null
+          onboarding_completed_at?: string | null
+          daily_goal_minutes?: number | null
+          level?: 'beginner' | 'intermediate' | 'advanced' | null
           created_at?: string
           updated_at?: string
         }

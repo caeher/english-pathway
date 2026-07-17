@@ -27,12 +27,13 @@ function TutorControls({ textOnly }: { textOnly: boolean }) {
     const res = await fetch('/api/tutor/session')
     if (!res.ok) return
     const config = (await res.json()) as SessionConfig
+    const sessionTextOnly = textOnly || config.textOnly
     if (config.signedUrl) {
-      startSession({ signedUrl: config.signedUrl, textOnly: config.textOnly })
+      startSession({ signedUrl: config.signedUrl, textOnly: sessionTextOnly })
     } else if (config.agentId) {
-      startSession({ agentId: config.agentId, textOnly: config.textOnly })
+      startSession({ agentId: config.agentId, textOnly: sessionTextOnly })
     }
-  }, [startSession])
+  }, [startSession, textOnly])
 
   const handleActivityComplete = useCallback((result: ActivityCompleteResult) => {
     const pct = result.scorePercent ?? Math.round((result.score / result.total) * 100)
@@ -135,7 +136,42 @@ export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps
 
   useEffect(() => {
     const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID
-    setTextOnly(!agentId)
+    if (!agentId || !navigator.mediaDevices?.getUserMedia) {
+      setTextOnly(true)
+      return
+    }
+
+    let cancelled = false
+    let permissionStatus: PermissionStatus | undefined
+    const handlePermissionChange = () => {
+      if (permissionStatus) updatePermission(permissionStatus.state)
+    }
+
+    const updatePermission = (state: PermissionState) => {
+      if (!cancelled) setTextOnly(state !== 'granted')
+    }
+
+    if (!navigator.permissions?.query) {
+      setTextOnly(true)
+      return () => {
+        cancelled = true
+      }
+    }
+
+    void navigator.permissions
+      .query({ name: 'microphone' as PermissionName })
+      .then((status) => {
+        if (cancelled) return
+        permissionStatus = status
+        updatePermission(status.state)
+        status.addEventListener('change', handlePermissionChange)
+      })
+      .catch(() => setTextOnly(true))
+
+    return () => {
+      cancelled = true
+      permissionStatus?.removeEventListener('change', handlePermissionChange)
+    }
   }, [])
 
   return (

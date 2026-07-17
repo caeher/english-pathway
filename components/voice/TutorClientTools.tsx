@@ -8,6 +8,7 @@ import {
   showGrammar,
   showQuestion,
 } from '@/lib/learn/client-tools'
+import { curriculumChapterHref } from '@/lib/curriculum/href'
 
 export default function TutorClientTools() {
   useConversationClientTool('showGrammar', async (params) => {
@@ -19,7 +20,7 @@ export default function TutorClientTools() {
   useConversationClientTool('showActivity', async (params) => {
     const { activityId } = params as { activityId: string }
     const result = await showActivity(activityId)
-    return `Activity "${result.title}" is now visible.`
+    return `Activity "${result.title}" is now visible. Its chapter is available at ${result.curriculumUrl}.`
   })
 
   useConversationClientTool('showQuestion', async (params) => {
@@ -46,7 +47,12 @@ export default function TutorClientTools() {
     const matches = await fetchCurriculumContext({ query, moduleId, chapterId })
     if (matches.length === 0) return 'No relevant curriculum content found.'
     return matches
-      .map((m, i) => `[${i + 1}] (similarity ${m.similarity.toFixed(2)})\n${m.content}`)
+      .map((m, i) => {
+        const moduleId = typeof m.metadata.moduleId === 'string' ? m.metadata.moduleId : undefined
+        const chapterId = typeof m.metadata.chapterId === 'string' ? m.metadata.chapterId : undefined
+        const source = moduleId && chapterId ? `\nSource: ${curriculumChapterHref(moduleId, chapterId)}` : ''
+        return `[${i + 1}] (similarity ${m.similarity.toFixed(2)})${source}\n${m.content}`
+      })
       .join('\n\n---\n\n')
   })
 

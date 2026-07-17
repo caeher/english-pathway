@@ -44,7 +44,8 @@ export async function updateSession(request: NextRequest) {
 
   const isAccountRoute = pathname.startsWith('/settings')
   const isReviewRoute = pathname.startsWith('/review')
-  const requiresAuth = isAccountRoute || isReviewRoute
+  const isOnboardingRoute = pathname.startsWith('/onboarding')
+  const requiresAuth = isAccountRoute || isReviewRoute || isOnboardingRoute
 
   if (!user && requiresAuth) {
     const url = request.nextUrl.clone()

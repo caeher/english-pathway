@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Settings } from 'lucide-react'
+import { Settings, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { updateSettingsAction } from '@/lib/auth/actions'
@@ -61,6 +61,36 @@ export default function SettingsPage({ profile }: SettingsPageProps) {
             onChange={(e) => setFullName(e.target.value)}
             className="mt-1 w-full rounded-xl border border-(--border-primary) bg-(--bg-primary) px-4 py-2.5 text-sm"
           />
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6 space-y-4">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h2 className="flex items-center gap-2 font-display font-bold text-(--text-primary)">
+              <Sparkles className="h-4 w-4 text-(--accent)" /> Learning preferences
+            </h2>
+            <p className="mt-1 text-sm text-(--text-secondary)">
+              {profile.onboarding_completed_at
+                ? 'These preferences help your tutor tailor your practice.'
+                : 'Complete onboarding to personalize your tutor.'}
+            </p>
+          </div>
+          <Button asChild variant="outline" size="sm">
+            <Link href="/onboarding?review=1">Review onboarding</Link>
+          </Button>
+        </div>
+        <div className="grid gap-3 text-sm sm:grid-cols-2">
+          <div className="rounded-xl bg-(--bg-secondary)/50 p-4">
+            <p className="text-(--text-muted)">English level</p>
+            <p className="mt-1 font-bold capitalize text-(--text-primary)">{profile.level ?? 'Not set'}</p>
+          </div>
+          <div className="rounded-xl bg-(--bg-secondary)/50 p-4">
+            <p className="text-(--text-muted)">Daily goal</p>
+            <p className="mt-1 font-bold text-(--text-primary)">
+              {profile.daily_goal_minutes ? `${profile.daily_goal_minutes} minutes` : 'Not set'}
+            </p>
+          </div>
         </div>
       </section>
 

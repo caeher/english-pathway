@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Moon, Sun, GraduationCap, RotateCcw } from 'lucide-react'
+import { Moon, Sun, BookOpen, GraduationCap, RotateCcw } from 'lucide-react'
 import { motion } from 'framer-motion'
 import useThemeStore from '@/stores/useThemeStore'
 import { Switch } from '@/components/ui/switch'
@@ -29,6 +29,12 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-3">
+          <Link
+            href="/curriculum"
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
+          >
+            <BookOpen className="w-4 h-4" /> Curriculum
+          </Link>
           <Link
             href="/learn"
             className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
