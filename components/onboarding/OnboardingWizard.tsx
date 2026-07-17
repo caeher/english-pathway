@@ -120,9 +120,13 @@ export default function OnboardingWizard({
       setMicState('granted')
       trackEvent('onboarding_step', { step: 'microphone', microphone_permission: 'granted' })
     } catch (error) {
-      const denied =
-        error instanceof DOMException &&
-        ['NotAllowedError', 'PermissionDeniedError', 'SecurityError'].includes(error.name)
+      const errorName =
+        error instanceof DOMException
+          ? error.name
+          : error && typeof error === 'object' && 'name' in error
+            ? String(error.name)
+            : ''
+      const denied = ['NotAllowedError', 'PermissionDeniedError', 'SecurityError'].includes(errorName)
       const nextState = denied ? 'denied' : 'unavailable'
       setMicState(nextState)
       trackEvent('onboarding_step', { step: 'microphone', microphone_permission: nextState })
@@ -133,8 +137,8 @@ export default function OnboardingWizard({
     setPending(true)
     setState({})
     const result = await completeOnboardingAction({
-      level,
-      dailyGoalMinutes,
+      level: level ?? undefined,
+      dailyGoalMinutes: dailyGoalMinutes ?? undefined,
       skipped,
     })
     setPending(false)
