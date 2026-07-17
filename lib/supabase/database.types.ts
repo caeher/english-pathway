@@ -476,6 +476,141 @@ export interface Database {
         }
         Relationships: []
       }
+      user_engagement: {
+        Row: {
+          user_id: string
+          total_xp: number
+          current_streak: number
+          longest_streak: number
+          last_study_date: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          total_xp?: number
+          current_streak?: number
+          longest_streak?: number
+          last_study_date?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          total_xp?: number
+          current_streak?: number
+          longest_streak?: number
+          last_study_date?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      daily_sessions: {
+        Row: {
+          user_id: string
+          session_date: string
+          minutes_studied: number
+          xp_earned: number
+          activities_completed: number
+          goal_met: boolean
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          session_date: string
+          minutes_studied?: number
+          xp_earned?: number
+          activities_completed?: number
+          goal_met?: boolean
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          session_date?: string
+          minutes_studied?: number
+          xp_earned?: number
+          activities_completed?: number
+          goal_met?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      achievements: {
+        Row: {
+          id: string
+          title: string
+          description: string
+          icon: string
+          category: string
+          xp_reward: number
+          rule_key: string
+          rule_value: number
+          created_at: string
+        }
+        Insert: {
+          id: string
+          title: string
+          description: string
+          icon?: string
+          category?: string
+          xp_reward?: number
+          rule_key: string
+          rule_value?: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string
+          icon?: string
+          category?: string
+          xp_reward?: number
+          rule_key?: string
+          rule_value?: number
+          created_at?: string
+        }
+        Relationships: []
+      }
+      user_achievements: {
+        Row: {
+          user_id: string
+          achievement_id: string
+          earned_at: string
+        }
+        Insert: {
+          user_id: string
+          achievement_id: string
+          earned_at?: string
+        }
+        Update: {
+          user_id?: string
+          achievement_id?: string
+          earned_at?: string
+        }
+        Relationships: []
+      }
+      engagement_activity_awards: {
+        Row: {
+          user_id: string
+          activity_id: string
+          xp_awarded: number
+          awarded_at: string
+        }
+        Insert: {
+          user_id: string
+          activity_id: string
+          xp_awarded: number
+          awarded_at?: string
+        }
+        Update: {
+          user_id?: string
+          activity_id?: string
+          xp_awarded?: number
+          awarded_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: Record<string, never>
     Functions: {
@@ -491,6 +626,16 @@ export interface Database {
           metadata: Json
           similarity: number
         }>
+      }
+      record_engagement_session: {
+        Args: {
+          p_activity_id: string
+          p_xp: number
+          p_minutes: number
+          p_local_date: string
+          p_score: number
+        }
+        Returns: Json
       }
     }
     Enums: {

@@ -11,6 +11,9 @@ import { trackEvent } from '@/lib/analytics/events'
 import { enqueueSrsItems } from '@/lib/srs/client'
 import { fetchActivityById } from '@/lib/learn/client-tools'
 import { getReviewContentRefs } from '@/lib/srs/refs'
+import { recordEngagementSession } from '@/lib/engagement/client'
+import EngagementSummary from '@/components/engagement/EngagementSummary'
+import type { ActivityType } from '@/types'
 import { saveActivityProgress } from '@/lib/progress/client'
 import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
 import ProgressSync from '@/components/progress/ProgressSync'
@@ -59,6 +62,11 @@ function TutorControls({ textOnly }: { textOnly: boolean }) {
         attempts: 1,
       })
     }
+    void recordEngagementSession({
+      activityId: result.activityId,
+      activityType: result.activityType as ActivityType,
+      scorePercent: pct,
+    })
     void enqueueSrsItems(result.reviewContentRefs ?? [])
   }, [sendUserMessage])
 
@@ -190,6 +198,7 @@ export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps
 
   return (
     <ConversationProvider textOnly={textOnly}>
+      <EngagementSummary />
       <ProgressSync />
       <ContinueLearningPrompt />
       <TutorClientTools />
