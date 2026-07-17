@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Check, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { saveChapterProgress } from '@/lib/progress/client'
 
 interface CompleteChapterButtonProps {
   chapterId: string
@@ -19,12 +20,8 @@ export function CompleteChapterButton({ chapterId, initialCompleted }: CompleteC
     setSubmitting(true)
     setError(null)
     try {
-      const response = await fetch('/api/curriculum/progress', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chapterId }),
-      })
-      if (!response.ok) throw new Error('Unable to save your chapter completion.')
+      const saved = await saveChapterProgress({ chapterId, status: 'completed' })
+      if (!saved) throw new Error('Unable to save your chapter completion.')
       setCompleted(true)
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'Unable to save your chapter completion.')

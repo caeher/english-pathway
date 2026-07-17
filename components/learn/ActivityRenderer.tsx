@@ -36,6 +36,8 @@ export interface ActivityCompleteResult {
   scorePercent?: number
   details?: Record<string, unknown>
   reviewContentRefs?: string[]
+  chapterId?: string
+  moduleId?: string
 }
 
 interface ActivityRendererProps {
