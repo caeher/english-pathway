@@ -7,6 +7,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/toaster'
 import { AnalyticsProvider } from '@/lib/analytics/provider'
 import { migratePersistKeys } from '@/lib/storage/migrate-persist'
+import PwaProvider from '@/components/PwaProvider'
 
 function ThemeInit() {
   const { dark } = useThemeStore()
@@ -36,23 +37,6 @@ function PersistMigration() {
   return null
 }
 
-function ServiceWorkerRegister() {
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope)
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error)
-        })
-    }
-  }, [])
-
-  return null
-}
-
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <TooltipProvider delayDuration={300}>
@@ -60,7 +44,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       <ThemeInit />
       <PersistMigration />
       <ScrollToTop />
-      <ServiceWorkerRegister />
+      <PwaProvider />
       {children}
       <Toaster />
     </TooltipProvider>
