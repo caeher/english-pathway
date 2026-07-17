@@ -15,6 +15,7 @@ import {
 } from '@/components/games'
 import type { ActivityTypeKey } from '@/lib/content/schemas'
 import { validateActivityProps } from '@/lib/content/schemas'
+import { getReviewContentRefs } from '@/lib/srs/refs'
 import type {
   DictationItem,
   FlashcardData,
@@ -34,6 +35,7 @@ export interface ActivityCompleteResult {
   total: number
   scorePercent?: number
   details?: Record<string, unknown>
+  reviewContentRefs?: string[]
 }
 
 interface ActivityRendererProps {
@@ -72,6 +74,7 @@ export default function ActivityRenderer({ activity, onComplete }: ActivityRende
       total: result.total,
       scorePercent,
       details: result,
+      reviewContentRefs: scorePercent < 100 ? getReviewContentRefs(activity) : [],
     })
   }
 

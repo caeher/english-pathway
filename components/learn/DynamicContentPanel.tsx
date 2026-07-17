@@ -7,9 +7,10 @@ import { Button } from '@/components/ui/button'
 
 interface DynamicContentPanelProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
+  onActivityDifficult?: (activityId: string) => void
 }
 
-export default function DynamicContentPanel({ onActivityComplete }: DynamicContentPanelProps) {
+export default function DynamicContentPanel({ onActivityComplete, onActivityDifficult }: DynamicContentPanelProps) {
   const panel = useLearnSessionStore((s) => s.panel)
   const clearPanel = useLearnSessionStore((s) => s.clearPanel)
 
@@ -32,9 +33,16 @@ export default function DynamicContentPanel({ onActivityComplete }: DynamicConte
           {panel.kind === 'activity' && panel.activity.title}
           {panel.kind === 'question' && 'Quick check'}
         </h2>
-        <Button variant="ghost" size="sm" onClick={clearPanel}>
-          Close
-        </Button>
+        <div className="flex items-center gap-1">
+          {panel.kind === 'activity' && onActivityDifficult && (
+            <Button variant="ghost" size="sm" onClick={() => onActivityDifficult(panel.activity.id)}>
+              Difficult
+            </Button>
+          )}
+          <Button variant="ghost" size="sm" onClick={clearPanel}>
+            Close
+          </Button>
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 sm:p-6">
