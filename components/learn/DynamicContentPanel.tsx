@@ -58,7 +58,14 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
             {panel.activity.description && (
               <p className="text-sm text-(--text-secondary) mb-4">{panel.activity.description}</p>
             )}
-            <ActivityRenderer activity={panel.activity} onComplete={onActivityComplete} />
+            <ActivityRenderer
+              activity={panel.activity}
+              onComplete={(result) => onActivityComplete?.({
+                ...result,
+                chapterId: panel.chapterId,
+                moduleId: panel.moduleId,
+              })}
+            />
           </div>
         )}
 

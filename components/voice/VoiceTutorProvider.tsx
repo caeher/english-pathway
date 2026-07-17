@@ -11,6 +11,9 @@ import { trackEvent } from '@/lib/analytics/events'
 import { enqueueSrsItems } from '@/lib/srs/client'
 import { fetchActivityById } from '@/lib/learn/client-tools'
 import { getReviewContentRefs } from '@/lib/srs/refs'
+import { saveActivityProgress } from '@/lib/progress/client'
+import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
+import ProgressSync from '@/components/progress/ProgressSync'
 
 interface SessionConfig {
   agentId?: string
@@ -45,6 +48,17 @@ function TutorControls({ textOnly }: { textOnly: boolean }) {
       activity_type: result.activityType,
       score_percent: pct,
     })
+    if (result.chapterId && result.moduleId) {
+      void saveActivityProgress({
+        activityId: result.activityId,
+        activityType: result.activityType,
+        chapterId: result.chapterId,
+        moduleId: result.moduleId,
+        status: 'completed',
+        score: pct,
+        attempts: 1,
+      })
+    }
     void enqueueSrsItems(result.reviewContentRefs ?? [])
   }, [sendUserMessage])
 
@@ -176,6 +190,8 @@ export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps
 
   return (
     <ConversationProvider textOnly={textOnly}>
+      <ProgressSync />
+      <ContinueLearningPrompt />
       <TutorClientTools />
       {children ?? <TutorControls textOnly={textOnly} />}
     </ConversationProvider>

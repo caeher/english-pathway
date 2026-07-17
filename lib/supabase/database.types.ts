@@ -41,6 +41,66 @@ export interface Database {
         }
         Relationships: []
       }
+      user_progress: {
+        Row: {
+          user_id: string
+          last_module_id: string | null
+          last_chapter_id: string | null
+          last_activity_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          last_module_id?: string | null
+          last_chapter_id?: string | null
+          last_activity_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          last_module_id?: string | null
+          last_chapter_id?: string | null
+          last_activity_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      activity_completions: {
+        Row: {
+          user_id: string
+          activity_id: string
+          chapter_id: string
+          activity_type: string | null
+          status: 'not_started' | 'in_progress' | 'completed'
+          score: number | null
+          attempts: number
+          completed_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          activity_id: string
+          chapter_id: string
+          activity_type?: string | null
+          status?: 'not_started' | 'in_progress' | 'completed'
+          score?: number | null
+          attempts?: number
+          completed_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          activity_id?: string
+          chapter_id?: string
+          activity_type?: string | null
+          status?: 'not_started' | 'in_progress' | 'completed'
+          score?: number | null
+          attempts?: number
+          completed_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           id: string
