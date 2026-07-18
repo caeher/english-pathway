@@ -39,8 +39,6 @@ const nextConfig: NextConfig = {
     return [
       { source: '/como-funciona', destination: '/how-it-works', permanent: true },
       { source: '/para-profesores', destination: '/', permanent: true },
-      { source: '/dashboard', destination: '/', permanent: true },
-      { source: '/dashboard/:path*', destination: '/', permanent: true },
       { source: '/games', destination: '/learn', permanent: true },
       { source: '/games/:path*', destination: '/learn', permanent: true },
       { source: '/admin', destination: '/', permanent: true },
