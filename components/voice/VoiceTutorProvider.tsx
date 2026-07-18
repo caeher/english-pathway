@@ -18,6 +18,7 @@ import type { ActivityType } from '@/types'
 import { saveActivityProgress } from '@/lib/progress/client'
 import { stopMediaStream } from '@/lib/audio/microphone'
 import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { saveTutorMemory } from '@/lib/tutor/client'
 import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
 import ProgressSync from '@/components/progress/ProgressSync'
 
@@ -28,6 +29,7 @@ interface SessionConfig {
   agentId?: string
   signedUrl?: string
   textOnly: boolean
+  orchestration?: { sessionId?: string }
 }
 
 interface TutorControlsProps {
@@ -37,6 +39,7 @@ interface TutorControlsProps {
   microphoneStream: MediaStream | null
   onModeChange: (mode: SessionMode) => void
   onCheckMicrophone: () => Promise<boolean>
+  onSessionStarted: (sessionId: string) => void
   onSessionEnded: () => void
 }
 
@@ -47,6 +50,7 @@ function TutorControls({
   microphoneStream,
   onModeChange,
   onCheckMicrophone,
+  onSessionStarted,
   onSessionEnded,
 }: TutorControlsProps) {
   const { startSession, endSession, status, isMuted, setMuted, sendUserMessage } = useConversation()
@@ -91,12 +95,13 @@ function TutorControls({
     }
 
     const sessionTextOnly = mode === 'text' || config.textOnly
+    onSessionStarted(config.orchestration?.sessionId ?? crypto.randomUUID())
     if (config.signedUrl) {
       startSession({ signedUrl: config.signedUrl, textOnly: sessionTextOnly })
     } else if (config.agentId) {
       startSession({ agentId: config.agentId, textOnly: sessionTextOnly })
     }
-  }, [mode, onCheckMicrophone, startSession])
+  }, [mode, onCheckMicrophone, onSessionStarted, startSession])
 
   const handleModeChange = (nextMode: SessionMode) => {
     setError(null)
@@ -130,6 +135,12 @@ function TutorControls({
       scorePercent: pct,
     })
     void enqueueSrsItems(result.reviewContentRefs ?? [])
+    void saveTutorMemory({
+      type: 'learner_memory',
+      memoryKey: `activity:${result.activityId}`,
+      content: `Activity ${result.activityId} completed with a score of ${pct} percent.`,
+      source: 'activity_result',
+    })
   }, [sendUserMessage])
 
   const handleActivityDifficult = useCallback(async (activityId: string) => {
@@ -138,6 +149,7 @@ function TutorControls({
       await enqueueSrsItems(getReviewContentRefs(activity))
       useLearnSessionStore.getState().requestHelp()
       sendUserMessage('I need a graduated hint for the current activity. Do not reveal the answer yet.')
+      void saveTutorMemory({ type: 'learner_memory', memoryKey: `help:${activityId}`, content: 'Learner requested a graduated hint for this activity.', source: 'help_request' })
     } catch {
       // SRS is an enhancement; learning remains usable when it is unavailable.
     }
@@ -231,6 +243,7 @@ export default function VoiceTutorProvider({ children, initialActivityId }: Voic
   const [microphoneState, setMicrophoneState] = useState<MicrophoneState>('idle')
   const [microphoneStream, setMicrophoneStream] = useState<MediaStream | null>(null)
   const streamRef = useRef<MediaStream | null>(null)
+  const sessionIdRef = useRef<string | null>(null)
 
   const stopMicrophone = useCallback(() => {
     stopMediaStream(streamRef.current)
@@ -274,6 +287,23 @@ export default function VoiceTutorProvider({ children, initialActivityId }: Voic
     if (nextMode === 'text') stopMicrophone()
   }, [stopMicrophone])
 
+  const handleSessionStarted = useCallback((sessionId: string) => {
+    sessionIdRef.current = sessionId
+  }, [])
+
+  const handleSessionEnded = useCallback(() => {
+    if (sessionIdRef.current) {
+      void saveTutorMemory({
+        type: 'session_summary',
+        correlationId: sessionIdRef.current,
+        state: 'closed',
+        summary: 'Tutor session ended; only the compact session state was retained.',
+      })
+    }
+    sessionIdRef.current = null
+    stopMicrophone()
+  }, [stopMicrophone])
+
   useEffect(() => {
     if (!initialActivityId) return
     void showActivity(initialActivityId).catch(() => {
@@ -287,7 +317,7 @@ export default function VoiceTutorProvider({ children, initialActivityId }: Voic
       <ProgressSync />
       <ContinueLearningPrompt />
       <TutorClientTools />
-      {children ?? <TutorControls mode={mode} voiceAvailable={voiceAvailable} microphoneState={microphoneState} microphoneStream={microphoneStream} onModeChange={handleModeChange} onCheckMicrophone={checkMicrophone} onSessionEnded={stopMicrophone} />}
+      {children ?? <TutorControls mode={mode} voiceAvailable={voiceAvailable} microphoneState={microphoneState} microphoneStream={microphoneStream} onModeChange={handleModeChange} onCheckMicrophone={checkMicrophone} onSessionStarted={handleSessionStarted} onSessionEnded={handleSessionEnded} />}
     </ConversationProvider>
   )
 }

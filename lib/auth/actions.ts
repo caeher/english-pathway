@@ -18,6 +18,7 @@ import {
   settingsSchema,
 } from '@/lib/auth/schemas'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
+import { savePrivateTutorMemory } from '@/lib/dal/tutor-memory'
 
 export type AuthActionState = {
   status?: 'error' | 'success' | 'needs_email_confirmation'
@@ -279,6 +280,17 @@ export async function updateSettingsAction(
     .eq('id', user.id)
 
   if (error) return { error: 'Could not save settings.' }
+
+  try {
+    await savePrivateTutorMemory(supabase, user.id, {
+      type: 'learner_memory',
+      memoryKey: 'preference:mode',
+      content: `Preferred tutor mode is ${parsed.data.preferredMode}. Daily practice goal is ${parsed.data.dailyGoalMinutes} minutes.`,
+      source: 'preference_update',
+    })
+  } catch (memoryError) {
+    console.error('[settings] private preference memory update failed', memoryError)
+  }
 
   revalidatePath('/settings')
   revalidatePath('/', 'layout')
