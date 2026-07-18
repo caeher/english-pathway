@@ -65,6 +65,78 @@ export interface Database {
         }
         Relationships: []
       }
+      tutor_session_summaries: {
+        Row: {
+          id: string
+          user_id: string
+          correlation_id: string
+          state: 'preparing' | 'context' | 'explaining' | 'activity_presented' | 'waiting_response' | 'evaluating' | 'help' | 'reinforcing' | 'next_step' | 'closed'
+          summary: string
+          last_activity_id: string | null
+          strategy_version: string
+          expires_at: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          correlation_id: string
+          state: 'preparing' | 'context' | 'explaining' | 'activity_presented' | 'waiting_response' | 'evaluating' | 'help' | 'reinforcing' | 'next_step' | 'closed'
+          summary: string
+          last_activity_id?: string | null
+          strategy_version?: string
+          expires_at?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          correlation_id?: string
+          state?: 'preparing' | 'context' | 'explaining' | 'activity_presented' | 'waiting_response' | 'evaluating' | 'help' | 'reinforcing' | 'next_step' | 'closed'
+          summary?: string
+          last_activity_id?: string | null
+          strategy_version?: string
+          expires_at?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      learner_memory: {
+        Row: {
+          id: string
+          user_id: string
+          memory_key: string
+          content: string
+          source: 'activity_result' | 'help_request' | 'session_end' | 'preference_update'
+          strategy_version: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          memory_key: string
+          content: string
+          source: 'activity_result' | 'help_request' | 'session_end' | 'preference_update'
+          strategy_version?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          memory_key?: string
+          content?: string
+          source?: 'activity_result' | 'help_request' | 'session_end' | 'preference_update'
+          strategy_version?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       activity_completions: {
         Row: {
           user_id: string

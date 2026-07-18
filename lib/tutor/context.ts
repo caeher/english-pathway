@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { matchKnowledge, type KnowledgeMatch } from '@/lib/dal/knowledge'
 import { loadAllModules } from '@/lib/knowledge/load-all'
+import { getPrivateTutorMemory } from '@/lib/dal/tutor-memory'
 import type { Database } from '@/lib/supabase/database.types'
 
 type Client = SupabaseClient<Database>
@@ -15,7 +16,7 @@ export interface TutorContextRequest {
 export interface TutorContextMatch {
   content: string
   similarity: number
-  citation: { moduleId: string; chapterId?: string; heading?: string }
+  citation: { source: 'curriculum' | 'personal'; moduleId?: string; chapterId?: string; heading?: string; memoryKey?: string }
 }
 
 export interface TutorContext {
@@ -30,7 +31,7 @@ export interface TutorContext {
     recentActivityIds: string[]
   } | null
   retrieval: {
-    source: 'rag' | 'local' | 'none'
+    source: 'rag' | 'local' | 'personal' | 'composed' | 'none'
     fallbackUsed: boolean
     matches: TutorContextMatch[]
   }
@@ -39,6 +40,7 @@ export interface TutorContext {
 function toCitation(metadata: Record<string, unknown>): TutorContextMatch['citation'] | null {
   if (typeof metadata.moduleId !== 'string') return null
   return {
+    source: 'curriculum',
     moduleId: metadata.moduleId,
     ...(typeof metadata.chapterId === 'string' ? { chapterId: metadata.chapterId } : {}),
     ...(typeof metadata.heading === 'string' ? { heading: metadata.heading } : {}),
@@ -65,7 +67,7 @@ export function getLocalTutorMatches(query: string, moduleId?: string, chapterId
       return sections.map((content) => {
         const lower = content.toLowerCase()
         const score = terms.filter((term) => lower.includes(term)).length
-        return { content: `${chapter.title}\n\n${content}`.slice(0, 1800), score, citation: { moduleId: module.id, chapterId: chapter.id } }
+        return { content: `${chapter.title}\n\n${content}`.slice(0, 1800), score, citation: { source: 'curriculum' as const, moduleId: module.id, chapterId: chapter.id } }
       })
     })
     .filter((match) => match.score > 0)
@@ -103,6 +105,20 @@ export async function buildTutorContext(
     fallbackUsed = true
   }
 
+  const privateMemory = userId ? await getPrivateTutorMemory(supabase, userId) : []
+  const terms = request.query.toLowerCase().split(/\s+/).filter((term) => term.length > 2).slice(0, 12)
+  const privateMatches = privateMemory
+    .filter((memory) => terms.some((term) => memory.content.toLowerCase().includes(term)))
+    .slice(0, 3)
+    .map((memory) => ({
+      content: `[Private learner memory]\n${memory.content}`,
+      similarity: 1,
+      citation: { source: 'personal' as const, memoryKey: memory.memory_key },
+    }))
+  const combinedMatches = [...privateMatches, ...matches].slice(0, 8)
+  if (privateMatches.length > 0 && matches.length > 0) source = 'composed'
+  else if (privateMatches.length > 0) source = 'personal'
+
   return {
     learner: profile.data ? { level: profile.data.level, dailyGoalMinutes: profile.data.daily_goal_minutes, preferredMode: profile.data.preferred_mode } : null,
     progress: userId ? {
@@ -110,6 +126,6 @@ export async function buildTutorContext(
       lastActivityId: progress.data?.last_activity_id ?? null,
       recentActivityIds: (recentActivities.data ?? []).map((item) => item.activity_id),
     } : null,
-    retrieval: { source, fallbackUsed, matches },
+    retrieval: { source, fallbackUsed, matches: combinedMatches },
   }
 }

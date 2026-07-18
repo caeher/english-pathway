@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Database, LogOut, Settings, ShieldCheck, Sparkles, Volume2, Type } from 'lucide-react'
+import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
@@ -27,6 +27,8 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
   const [pending, setPending] = useState(false)
+  const [dataPending, setDataPending] = useState(false)
+  const [dataMessage, setDataMessage] = useState<string | null>(null)
 
   const initialValues = useMemo(() => ({
     fullName: profile.full_name ?? '',
@@ -45,6 +47,42 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
     setPending(false)
     if (result.error) setError(result.error)
     else setSuccess(true)
+  }
+
+  const exportTutorData = async () => {
+    setDataPending(true)
+    setDataMessage(null)
+    try {
+      const response = await fetch('/api/tutor/memory')
+      if (!response.ok) throw new Error('Could not export private tutor data.')
+      const blob = new Blob([JSON.stringify(await response.json(), null, 2)], { type: 'application/json' })
+      const url = URL.createObjectURL(blob)
+      const anchor = document.createElement('a')
+      anchor.href = url
+      anchor.download = 'english-pathway-tutor-data.json'
+      anchor.click()
+      URL.revokeObjectURL(url)
+      setDataMessage('Private tutor data exported.')
+    } catch (exportError) {
+      setDataMessage(exportError instanceof Error ? exportError.message : 'Could not export private tutor data.')
+    } finally {
+      setDataPending(false)
+    }
+  }
+
+  const deleteTutorData = async () => {
+    if (!window.confirm('Delete your private tutor summaries and memory notes? This cannot be undone.')) return
+    setDataPending(true)
+    setDataMessage(null)
+    try {
+      const response = await fetch('/api/tutor/memory', { method: 'DELETE' })
+      if (!response.ok) throw new Error('Could not delete private tutor data.')
+      setDataMessage('Private tutor data deleted.')
+    } catch (deleteError) {
+      setDataMessage(deleteError instanceof Error ? deleteError.message : 'Could not delete private tutor data.')
+    } finally {
+      setDataPending(false)
+    }
   }
 
   return (
@@ -128,7 +166,9 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
 
       <section className="space-y-4 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><Database className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Privacy and data</h2>
-        <p className="text-sm leading-relaxed text-(--text-secondary)">English Pathway uses your profile preferences and learning activity to personalize sessions and show progress. Export and deletion controls are not available in this version; contact support before making a legal data request.</p>
+        <p className="text-sm leading-relaxed text-(--text-secondary)">English Pathway uses your profile preferences and learning activity to personalize sessions and show progress. Audio and full transcripts are not stored as tutor memory.</p>
+        <div className="flex flex-wrap gap-3"><Button type="button" variant="outline" onClick={() => void exportTutorData()} disabled={dataPending}><Download className="h-4 w-4" aria-hidden="true" /> Export tutor data</Button><Button type="button" variant="outline" onClick={() => void deleteTutorData()} disabled={dataPending}><Trash2 className="h-4 w-4" aria-hidden="true" /> Delete tutor memory</Button></div>
+        {dataMessage && <p role="status" className="text-sm text-(--text-secondary)">{dataMessage}</p>}
         <div className="flex flex-wrap gap-4 text-sm font-bold text-(--accent)"><Link href="/legal/privacy">Privacy policy</Link><Link href="/legal/terms">Terms</Link><Link href="/legal/cookies">Cookies</Link></div>
       </section>
 

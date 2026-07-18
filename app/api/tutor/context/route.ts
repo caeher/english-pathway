@@ -27,7 +27,9 @@ export async function POST(request: Request) {
   try {
     const context = await buildTutorContext(supabase, user?.id ?? null, body)
     const matches = context.retrieval.matches.map((match, index) => ({
-      id: `${match.citation.moduleId}:${match.citation.chapterId ?? 'module'}:${index}`,
+      id: match.citation.source === 'personal'
+        ? `personal:${match.citation.memoryKey ?? index}`
+        : `${match.citation.moduleId ?? 'module'}:${match.citation.chapterId ?? 'module'}:${index}`,
       content: match.content,
       similarity: match.similarity,
       metadata: match.citation,
