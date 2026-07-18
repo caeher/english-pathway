@@ -16,11 +16,17 @@ const initialState: AuthActionState = {}
 const URL_ERROR_MESSAGES: Record<string, string> = {
   auth_callback_error: 'Authentication could not be completed. Please try again.',
   confirmation_error: 'The confirmation link expired or is invalid.',
+  oauth_start_error: 'Could not start sign-in with that provider. Please try again.',
 }
 
 function getUrlErrorMessage(errorParam: string | null): string | undefined {
   if (!errorParam) return undefined
-  return URL_ERROR_MESSAGES[errorParam] ?? decodeURIComponent(errorParam)
+  if (URL_ERROR_MESSAGES[errorParam]) return URL_ERROR_MESSAGES[errorParam]
+  try {
+    return decodeURIComponent(errorParam)
+  } catch {
+    return URL_ERROR_MESSAGES.auth_callback_error
+  }
 }
 
 export function LoginForm() {
@@ -52,7 +58,7 @@ export function LoginForm() {
       </div>
 
       {displayError && (
-        <div className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+        <div role="alert" aria-live="polite" className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {displayError}
         </div>
       )}

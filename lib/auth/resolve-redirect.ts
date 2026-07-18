@@ -1,10 +1,12 @@
 import { getAuthenticatedHomePath, isSafeRedirectPath } from '@/lib/auth/safe-redirect'
 
 export function resolvePostAuthDestination(
-  redirectTo: string | null | undefined
+  redirectTo: string | null | undefined,
+  onboardingCompleted = false,
 ): string {
   const explicit = redirectTo?.trim()
-  if (explicit && isSafeRedirectPath(explicit)) {
+  if (!onboardingCompleted) return '/onboarding'
+  if (onboardingCompleted && explicit && isSafeRedirectPath(explicit)) {
     return explicit
   }
   return getAuthenticatedHomePath()

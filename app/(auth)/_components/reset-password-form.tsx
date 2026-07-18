@@ -8,7 +8,11 @@ import { resetPasswordAction, type AuthActionState } from '@/lib/auth/actions'
 
 const initialState: AuthActionState = {}
 
-export function ResetPasswordForm() {
+interface ResetPasswordFormProps {
+  redirectTo?: string | null
+}
+
+export function ResetPasswordForm({ redirectTo }: ResetPasswordFormProps) {
   const [state, formAction, pending] = useActionState(resetPasswordAction, initialState)
 
   const { values, errors, handleChange } = useForm({
@@ -20,18 +24,17 @@ export function ResetPasswordForm() {
     <div className="space-y-6">
       <div>
         <h1 className="font-display font-black text-2xl text-(--text-primary)">New password</h1>
-        <p className="text-sm text-(--text-secondary) mt-1">
-          Enter your new password.
-        </p>
+        <p className="text-sm text-(--text-secondary) mt-1">Enter your new password.</p>
       </div>
 
       {state.error && (
-        <div className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+        <div role="alert" aria-live="polite" className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {state.error}
         </div>
       )}
 
       <form action={formAction} className="space-y-4">
+        {redirectTo && <input type="hidden" name="redirectTo" value={redirectTo} />}
         <PasswordField
           name="password"
           label="New password"
@@ -41,7 +44,6 @@ export function ResetPasswordForm() {
           error={errors.password}
           required
         />
-
         <PasswordField
           name="confirmPassword"
           label="Confirm password"
@@ -51,7 +53,6 @@ export function ResetPasswordForm() {
           error={errors.confirmPassword}
           required
         />
-
         <Button type="submit" className="w-full" disabled={pending}>
           {pending ? 'Saving...' : 'Save password'}
         </Button>

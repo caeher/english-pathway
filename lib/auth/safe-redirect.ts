@@ -25,5 +25,5 @@ export function getSafeRedirectPath(path: string | null, fallback = '/settings')
 }
 
 export function getAuthenticatedHomePath(): string {
-  return '/onboarding'
+  return '/settings'
 }

@@ -62,7 +62,15 @@ export async function updateSession(request: NextRequest) {
     const explicitRedirectTo = getExplicitRedirectParam(
       request.nextUrl.searchParams.get('redirectTo')
     )
-    let destination = resolvePostAuthDestination(explicitRedirectTo)
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('onboarding_completed_at')
+      .eq('id', user.id)
+      .maybeSingle()
+    let destination = resolvePostAuthDestination(
+      explicitRedirectTo,
+      Boolean(profile?.onboarding_completed_at),
+    )
 
     const destinationPathname = destination.split('?')[0]
     if (destinationPathname === pathname) {
