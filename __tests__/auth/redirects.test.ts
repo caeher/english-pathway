@@ -5,7 +5,8 @@ import {
   resolvePostAuthDestination,
 } from '@/lib/auth/resolve-redirect'
 import { isSafeRedirectPath } from '@/lib/auth/safe-redirect'
-import { getHeaderNavItems, type NavigationContext } from '@/lib/navigation'
+import { getHeaderNavItems } from '@/lib/navigation-model'
+import type { NavigationContext } from '@/lib/navigation'
 
 describe('authentication redirects', () => {
   it('accepts internal destinations and rejects external or auth destinations', () => {

@@ -9,7 +9,8 @@ import { Switch } from '@/components/ui/switch'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { NavUser } from '@/components/layouts/_parts/nav-user'
 import { SrsBadge } from '@/components/layouts/_parts/srs-badge'
-import { getHeaderNavItems, type NavigationContext } from '@/lib/navigation'
+import { getHeaderNavItems } from '@/lib/navigation-model'
+import type { NavigationContext } from '@/lib/navigation'
 
 interface HeaderProps {
   navigation?: NavigationContext
