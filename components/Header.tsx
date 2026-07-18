@@ -1,69 +1,70 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
-import { Moon, Sun, BookOpen, GraduationCap, RotateCcw } from 'lucide-react'
+import { Moon, Sun, BookOpen, GraduationCap, RotateCcw, Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import useThemeStore from '@/stores/useThemeStore'
 import { Switch } from '@/components/ui/switch'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { SrsBadge } from '@/components/layouts/_parts/srs-badge'
 
-export default function Header() {
+interface HeaderProps {
+  isAuthenticated?: boolean
+}
+
+export default function Header({ isAuthenticated = false }: HeaderProps) {
   const { dark, toggle } = useThemeStore()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const navItems = [
+    { href: '/curriculum', label: 'Curriculum', icon: BookOpen },
+    { href: '/learn', label: isAuthenticated ? 'Continue learning' : 'Learn', icon: GraduationCap },
+    { href: '/review', label: 'Review', icon: RotateCcw },
+  ]
 
   return (
     <header className="sticky top-0 z-40 border-b border-(--border-primary)/60 bg-(--bg-primary)/70 backdrop-blur-2xl">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 no-underline group">
-          <div className="relative w-9 h-9">
-            <div className="absolute inset-0 rounded-xl bg-(--accent) rotate-3 group-hover:rotate-6 transition-transform duration-300" />
-            <div className="relative w-full h-full rounded-xl bg-(--accent) flex items-center justify-center shadow-sm">
-              <span className="text-white font-display font-black text-sm tracking-tight">ie</span>
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <Link href="/" className="group flex items-center gap-3 no-underline">
+          <div className="relative h-9 w-9">
+            <div className="absolute inset-0 rotate-3 rounded-xl bg-(--accent) transition-transform duration-300 group-hover:rotate-6" />
+            <div className="relative flex h-full w-full items-center justify-center rounded-xl bg-(--accent) shadow-sm">
+              <span className="font-display text-sm font-black tracking-tight text-white">ie</span>
             </div>
           </div>
-          <div className="hidden sm:block">
-            <span className="font-display font-bold text-(--text-primary) text-[15px] tracking-tight group-hover:text-(--accent) transition-colors">
-              English Pathway
-            </span>
-          </div>
+          <span className="hidden font-display text-[15px] font-bold tracking-tight text-(--text-primary) transition-colors group-hover:text-(--accent) sm:block">
+            English Pathway
+          </span>
         </Link>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/curriculum"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
-          >
-            <BookOpen className="w-4 h-4" /> Curriculum
-          </Link>
-          <Link
-            href="/learn"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
-          >
-            <GraduationCap className="w-4 h-4" /> Learn
-          </Link>
-          <Link
-            href="/review"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
-          >
-            <RotateCcw className="w-4 h-4" /> Review <SrsBadge />
-          </Link>
-          <Link
-            href="/login"
-            className="inline-flex text-sm font-medium text-(--text-secondary) hover:text-(--accent) no-underline transition-colors"
-          >
-            <span className="hidden sm:inline">Sign In</span>
-            <span className="sm:hidden">Login</span>
-          </Link>
-          <Link
-            href="/register"
-            className="inline-flex px-3 py-1.5 rounded-lg text-sm font-bold bg-(--accent) text-white hover:bg-(--accent-hover) no-underline transition-colors"
-          >
-            Register
-          </Link>
+          <nav className="hidden items-center gap-3 sm:flex" aria-label="Main navigation">
+            {navItems.map(({ href, label, icon: Icon }) => (
+              <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) no-underline transition-colors hover:text-(--accent)">
+                <Icon className="h-4 w-4" aria-hidden="true" /> {label} {href === '/review' && <SrsBadge />}
+              </Link>
+            ))}
+          </nav>
+
+          {isAuthenticated ? (
+            <Link href="/settings" className="inline-flex rounded-lg bg-(--accent) px-3 py-1.5 text-sm font-bold text-white no-underline transition-colors hover:bg-(--accent-hover)">
+              Settings
+            </Link>
+          ) : (
+            <>
+              <Link href="/login" className="inline-flex text-sm font-medium text-(--text-secondary) no-underline transition-colors hover:text-(--accent)">
+                <span className="hidden sm:inline">Sign In</span>
+                <span className="sm:hidden">Login</span>
+              </Link>
+              <Link href="/register?redirectTo=%2Fonboarding" className="inline-flex rounded-lg bg-(--accent) px-3 py-1.5 text-sm font-bold text-white no-underline transition-colors hover:bg-(--accent-hover)">
+                Register
+              </Link>
+            </>
+          )}
 
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="flex items-center gap-2 px-2 py-1.5 rounded-xl bg-(--bg-tertiary)/80 border border-(--border-primary)">
+              <div className="flex items-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-tertiary)/80 px-2 py-1.5">
                 <motion.div
                   key={dark ? 'sun' : 'moon'}
                   initial={{ y: 8, opacity: 0, rotate: -20 }}
@@ -71,23 +72,38 @@ export default function Header() {
                   transition={{ duration: 0.2 }}
                 >
                   {dark
-                    ? <Sun className="w-4 h-4" style={{ color: 'var(--reward)' }} />
-                    : <Moon className="w-4 h-4 text-(--text-muted)" />
-                  }
+                    ? <Sun className="h-4 w-4" style={{ color: 'var(--reward)' }} />
+                    : <Moon className="h-4 w-4 text-(--text-muted)" />}
                 </motion.div>
-                <Switch
-                  checked={dark}
-                  onCheckedChange={toggle}
-                  aria-label="Toggle dark mode"
-                />
+                <Switch checked={dark} onCheckedChange={toggle} aria-label="Toggle dark mode" />
               </div>
             </TooltipTrigger>
-            <TooltipContent>
-              {dark ? 'Light mode' : 'Dark mode'}
-            </TooltipContent>
+            <TooltipContent>{dark ? 'Light mode' : 'Dark mode'}</TooltipContent>
           </Tooltip>
+
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-(--border-primary) text-(--text-primary) sm:hidden"
+            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((open) => !open)}
+          >
+            {mobileOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+          </button>
         </div>
       </div>
+
+      {mobileOpen && (
+        <nav className="border-t border-(--border-primary)/60 bg-(--bg-primary) px-6 py-3 sm:hidden" aria-label="Mobile navigation">
+          <div className="mx-auto flex max-w-6xl flex-col gap-1">
+            {navItems.map(({ href, label, icon: Icon }) => (
+              <Link key={href} href={href} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 font-medium text-(--text-secondary) no-underline hover:bg-(--bg-tertiary) hover:text-(--accent)">
+                <Icon className="h-4 w-4" aria-hidden="true" /> {label} {href === '/review' && <SrsBadge />}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      )}
     </header>
   )
 }

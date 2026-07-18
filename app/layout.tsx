@@ -19,8 +19,26 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
-  title: 'English Pathway — Learn the Fun Way',
-  description: 'Interactive English learning games. Vocabulary, grammar, pronunciation, and more.',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'),
+  title: {
+    default: 'English Pathway — Learn English with guided practice',
+    template: '%s | English Pathway',
+  },
+  description: 'Practice English with an AI tutor, a structured curriculum, and interactive activities.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'English Pathway — Learn English with guided practice',
+    description: 'Practice English with an AI tutor, a structured curriculum, and interactive activities.',
+    url: '/',
+    siteName: 'English Pathway',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'English Pathway — Learn English with guided practice',
+    description: 'Practice English with an AI tutor, a structured curriculum, and interactive activities.',
+  },
 }
 
 export const viewport: Viewport = {
