@@ -17,6 +17,7 @@ import EngagementSummary from '@/components/engagement/EngagementSummary'
 import type { ActivityType } from '@/types'
 import { saveActivityProgress } from '@/lib/progress/client'
 import { stopMediaStream } from '@/lib/audio/microphone'
+import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
 import ProgressSync from '@/components/progress/ProgressSync'
 
@@ -105,6 +106,7 @@ function TutorControls({
 
   const handleActivityComplete = useCallback((result: ActivityCompleteResult) => {
     const pct = result.scorePercent ?? Math.round((result.score / result.total) * 100)
+    useLearnSessionStore.getState().recordActivityResult({ activityId: result.activityId, scorePercent: pct, completedAt: new Date().toISOString() })
     sendUserMessage(`I finished activity ${result.activityId} (${result.activityType}) with ${pct}% score.`)
     trackEvent('activity_complete', {
       activity_id: result.activityId,
@@ -134,10 +136,12 @@ function TutorControls({
     try {
       const { activity } = await fetchActivityById(activityId)
       await enqueueSrsItems(getReviewContentRefs(activity))
+      useLearnSessionStore.getState().requestHelp()
+      sendUserMessage('I need a graduated hint for the current activity. Do not reveal the answer yet.')
     } catch {
       // SRS is an enhancement; learning remains usable when it is unavailable.
     }
-  }, [])
+  }, [sendUserMessage])
 
   const statusLabel = connecting ? 'Connecting to your tutor' : active ? mode === 'voice' ? 'Voice session active' : 'Text session active' : status === 'disconnected' ? 'Ready to start' : status
   const microphoneMessage = microphoneState === 'checking'

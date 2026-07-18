@@ -35,8 +35,8 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
         </h2>
         <div className="flex items-center gap-1">
           {panel.kind === 'activity' && onActivityDifficult && (
-            <Button variant="ghost" size="sm" onClick={() => onActivityDifficult(panel.activity.id)}>
-              Difficult
+              <Button variant="ghost" size="sm" onClick={() => onActivityDifficult(panel.activity.id)}>
+              Need help
             </Button>
           )}
           <Button variant="ghost" size="sm" onClick={clearPanel}>
