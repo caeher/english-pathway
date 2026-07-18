@@ -9,27 +9,27 @@ import {
   showQuestion,
 } from '@/lib/learn/client-tools'
 import { curriculumChapterHref } from '@/lib/curriculum/href'
+import { curriculumContextActionSchema, showActivityActionSchema, showGrammarActionSchema, showQuestionActionSchema } from '@/lib/tutor/schemas'
 
 export default function TutorClientTools() {
   useConversationClientTool('showGrammar', async (params) => {
-    const { markdown, title } = params as { markdown: string; title?: string }
-    showGrammar(markdown, title)
+    const parsed = showGrammarActionSchema.safeParse(params)
+    if (!parsed.success) return 'Grammar content was rejected because it was invalid or unsafe.'
+    showGrammar(parsed.data.markdown, parsed.data.title)
     return 'Grammar content displayed.'
   })
 
   useConversationClientTool('showActivity', async (params) => {
-    const { activityId } = params as { activityId: string }
-    const result = await showActivity(activityId)
+    const parsed = showActivityActionSchema.safeParse(params)
+    if (!parsed.success) return 'Activity request was rejected because its ID was invalid.'
+    const result = await showActivity(parsed.data.activityId)
     return `Activity "${result.title}" is now visible. Its chapter is available at ${result.curriculumUrl}.`
   })
 
   useConversationClientTool('showQuestion', async (params) => {
-    const { prompt, options, correctIndex } = params as {
-      prompt: string
-      options?: string[]
-      correctIndex?: number
-    }
-    showQuestion(prompt, options, correctIndex)
+    const parsed = showQuestionActionSchema.safeParse(params)
+    if (!parsed.success) return 'Question request was rejected because its payload was invalid.'
+    showQuestion(parsed.data.prompt, parsed.data.options, parsed.data.correctIndex)
     return 'Question displayed.'
   })
 
@@ -39,12 +39,9 @@ export default function TutorClientTools() {
   })
 
   useConversationClientTool('fetchCurriculumContext', async (params) => {
-    const { query, moduleId, chapterId } = params as {
-      query: string
-      moduleId?: string
-      chapterId?: string
-    }
-    const matches = await fetchCurriculumContext({ query, moduleId, chapterId })
+    const parsed = curriculumContextActionSchema.safeParse(params)
+    if (!parsed.success) return 'Curriculum lookup was rejected because its payload was invalid.'
+    const matches = await fetchCurriculumContext(parsed.data)
     if (matches.length === 0) return 'No relevant curriculum content found.'
     return matches
       .map((m, i) => {
