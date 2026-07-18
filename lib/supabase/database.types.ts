@@ -460,18 +460,24 @@ export interface Database {
           id: string
           user_id: string
           legal_document_id: string
+          document_version: string
+          consent_method: 'registration' | 'settings' | 'explicit_reconsent'
           accepted_at: string
         }
         Insert: {
           id?: string
           user_id: string
           legal_document_id: string
+          document_version: string
+          consent_method?: 'registration' | 'settings' | 'explicit_reconsent'
           accepted_at?: string
         }
         Update: {
           id?: string
           user_id?: string
           legal_document_id?: string
+          document_version?: string
+          consent_method?: 'registration' | 'settings' | 'explicit_reconsent'
           accepted_at?: string
         }
         Relationships: []

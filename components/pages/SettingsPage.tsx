@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label'
 import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 import type { Database as DatabaseTypes } from '@/lib/supabase/database.types'
+import { clearCookieConsent } from '@/lib/consent/client'
 
 type Profile = DatabaseTypes['public']['Tables']['profiles']['Row']
 
@@ -167,7 +168,7 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
       <section className="space-y-4 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><Database className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Privacy and data</h2>
         <p className="text-sm leading-relaxed text-(--text-secondary)">English Pathway uses your profile preferences and learning activity to personalize sessions and show progress. Audio and full transcripts are not stored as tutor memory.</p>
-        <div className="flex flex-wrap gap-3"><Button type="button" variant="outline" onClick={() => void exportTutorData()} disabled={dataPending}><Download className="h-4 w-4" aria-hidden="true" /> Export tutor data</Button><Button type="button" variant="outline" onClick={() => void deleteTutorData()} disabled={dataPending}><Trash2 className="h-4 w-4" aria-hidden="true" /> Delete tutor memory</Button></div>
+        <div className="flex flex-wrap gap-3"><Button type="button" variant="outline" onClick={() => void exportTutorData()} disabled={dataPending}><Download className="h-4 w-4" aria-hidden="true" /> Export tutor data</Button><Button type="button" variant="outline" onClick={() => void deleteTutorData()} disabled={dataPending}><Trash2 className="h-4 w-4" aria-hidden="true" /> Delete tutor memory</Button><Button type="button" variant="ghost" onClick={clearCookieConsent}>Change analytics choice</Button></div>
         {dataMessage && <p role="status" className="text-sm text-(--text-secondary)">{dataMessage}</p>}
         <div className="flex flex-wrap gap-4 text-sm font-bold text-(--accent)"><Link href="/legal/privacy">Privacy policy</Link><Link href="/legal/terms">Terms</Link><Link href="/legal/cookies">Cookies</Link></div>
       </section>
