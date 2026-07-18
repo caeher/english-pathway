@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { ActivityProgressInput, ChapterProgressInput } from '@/lib/api/progress-schemas'
 import type { Database } from '@/lib/supabase/database.types'
+import type { CurriculumProgressSnapshot } from '@/lib/curriculum/progress'
 
 type Client = SupabaseClient<Database>
 type ActivityRow = Database['public']['Tables']['activity_completions']['Row']
@@ -56,6 +57,30 @@ export async function getLastProgress(supabase: Client, userId: string): Promise
     .maybeSingle()
   if (error) throw new Error(`Failed to load learning progress: ${error.message}`)
   return data
+}
+
+export async function getCurriculumProgressSnapshot(
+  supabase: Client,
+  userId: string,
+): Promise<CurriculumProgressSnapshot> {
+  const [chapters, activities, lastProgress] = await Promise.all([
+    supabase.from('chapter_completions').select('chapter_id').eq('user_id', userId),
+    supabase
+      .from('activity_completions')
+      .select('activity_id, chapter_id, status, score, updated_at')
+      .eq('user_id', userId),
+    getLastProgress(supabase, userId),
+  ])
+
+  if (chapters.error) throw new Error(`Failed to load chapter completions: ${chapters.error.message}`)
+  if (activities.error) throw new Error(`Failed to load activity progress: ${activities.error.message}`)
+
+  return {
+    completedChapterIds: new Set((chapters.data ?? []).map((row) => row.chapter_id)),
+    activities: activities.data ?? [],
+    lastChapterId: lastProgress?.last_chapter_id ?? null,
+    lastActivityId: lastProgress?.last_activity_id ?? null,
+  }
 }
 
 export async function recordActivityProgress(

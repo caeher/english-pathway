@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, CheckCircle2, Flame, RotateCcw, Sparkles, Trophy } from 'lucide-react'
 import { getLevelProgress } from '@/lib/engagement/xp'
+import { learnHref } from '@/lib/curriculum/href'
 
 interface DashboardData {
   profile: { full_name: string | null; daily_goal_minutes: number | null } | null
@@ -20,7 +21,11 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
   const dailyPct = data.daily.goalMinutes > 0 ? Math.min(100, Math.round((data.daily.minutes / data.daily.goalMinutes) * 100)) : 0
   const firstName = data.profile?.full_name?.split(' ')[0] ?? 'Learner'
   const continueHref = data.lastChapter
-    ? `/learn?chapterId=${encodeURIComponent(data.lastChapter.chapter.id)}`
+    ? learnHref({
+      moduleId: data.lastChapter.module.id,
+      chapterId: data.lastChapter.chapter.id,
+      activityId: data.progress?.last_activity_id,
+    })
     : '/learn'
 
   return (

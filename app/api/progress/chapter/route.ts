@@ -3,6 +3,8 @@ import { chapterProgressSchema } from '@/lib/api/progress-schemas'
 import { recordChapterProgress } from '@/lib/dal/learning-progress'
 import { completeChapter } from '@/lib/dal/chapter-completions'
 import { resolveChapter } from '@/lib/content/resolve'
+import { getChapterProgress } from '@/lib/curriculum/progress'
+import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
 import { createClient } from '@/lib/supabase/server'
 
 export async function POST(request: Request) {
@@ -19,6 +21,13 @@ export async function POST(request: Request) {
   }
 
   try {
+    if (payload.data.status === 'completed') {
+      const snapshot = await getCurriculumProgressSnapshot(supabase, user.id)
+      const summary = getChapterProgress(resolved.chapter, snapshot)
+      if (!summary.canComplete && !snapshot.completedChapterIds.has(resolved.chapter.id)) {
+        return NextResponse.json({ error: 'Complete the chapter activities before finishing this chapter.' }, { status: 409 })
+      }
+    }
     const progress = await recordChapterProgress(supabase, user.id, {
       ...payload.data,
       moduleId: resolved.module.id,

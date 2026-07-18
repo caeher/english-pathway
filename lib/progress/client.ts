@@ -59,28 +59,36 @@ export function saveGuestChapterProgress(progress: ChapterProgressInput) {
 }
 
 export async function saveActivityProgress(progress: ActivityProgressInput) {
-  saveGuestActivityProgress(progress)
   try {
     const response = await fetch('/api/progress/activity', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(progress),
     })
-    return response.ok
+    if (response.ok) return true
+    if (response.status === 401) {
+      saveGuestActivityProgress(progress)
+      return true
+    }
+    return false
   } catch {
     return false
   }
 }
 
 export async function saveChapterProgress(progress: ChapterProgressInput) {
-  saveGuestChapterProgress(progress)
   try {
     const response = await fetch('/api/progress/chapter', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(progress),
     })
-    return response.ok
+    if (response.ok) return true
+    if (response.status === 401) {
+      saveGuestChapterProgress(progress)
+      return true
+    }
+    return false
   } catch {
     return false
   }

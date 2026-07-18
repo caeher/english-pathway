@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import type { ActivityCompleteResult } from '@/components/learn/ActivityRenderer'
 import { trackEvent } from '@/lib/analytics/events'
 import { enqueueSrsItems } from '@/lib/srs/client'
-import { fetchActivityById } from '@/lib/learn/client-tools'
+import { fetchActivityById, showActivity } from '@/lib/learn/client-tools'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { recordEngagementSession } from '@/lib/engagement/client'
 import EngagementSummary from '@/components/engagement/EngagementSummary'
@@ -151,9 +151,10 @@ function TutorControls({ textOnly }: { textOnly: boolean }) {
 
 interface VoiceTutorProviderProps {
   children?: React.ReactNode
+  initialActivityId?: string
 }
 
-export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps) {
+export default function VoiceTutorProvider({ children, initialActivityId }: VoiceTutorProviderProps) {
   const [textOnly, setTextOnly] = useState(true)
 
   useEffect(() => {
@@ -195,6 +196,13 @@ export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps
       permissionStatus?.removeEventListener('change', handlePermissionChange)
     }
   }, [])
+
+  useEffect(() => {
+    if (!initialActivityId) return
+    void showActivity(initialActivityId).catch(() => {
+      // A stale activity link should leave the tutor usable without a panel.
+    })
+  }, [initialActivityId])
 
   return (
     <ConversationProvider textOnly={textOnly}>
