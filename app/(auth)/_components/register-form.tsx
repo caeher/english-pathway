@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useEffect } from 'react'
 import Link from 'next/link'
 import { Mail, User } from 'lucide-react'
 import { TextField, PasswordField, CheckboxField, useForm } from '@/components/forms'
@@ -19,7 +19,7 @@ export function RegisterForm() {
   const referralCode = searchParams.get('ref')
   const [state, formAction, pending] = useActionState(signUpAction, initialState)
 
-  const { values, errors, handleChange } = useForm({
+  const { values, errors, handleChange, reset: resetForm } = useForm({
     initialValues: {
       fullName: '',
       email: '',
@@ -29,6 +29,10 @@ export function RegisterForm() {
     },
     schema: registerSchema,
   })
+
+  useEffect(() => {
+    if (state.status === 'needs_email_confirmation') resetForm()
+  }, [resetForm, state.status])
 
   return (
     <div className="space-y-6">
@@ -46,13 +50,13 @@ export function RegisterForm() {
       </div>
 
       {state.error && (
-        <div className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+        <div role="alert" aria-live="polite" className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {state.error}
         </div>
       )}
 
       {state.success && (
-        <div className="rounded-xl bg-(--success-soft) border border-(--success)/30 px-4 py-3 text-sm text-(--success)">
+        <div role="status" aria-live="polite" className="rounded-xl bg-(--success-soft) border border-(--success)/30 px-4 py-3 text-sm text-(--success)">
           {state.success}
         </div>
       )}
@@ -128,8 +132,8 @@ export function RegisterForm() {
           </Link>
         </p>
 
-        <Button type="submit" className="w-full" disabled={pending}>
-          {pending ? 'Creating account...' : 'Create account'}
+        <Button type="submit" className="w-full" disabled={pending || state.status === 'needs_email_confirmation'}>
+          {pending ? 'Creating account...' : state.status === 'needs_email_confirmation' ? 'Check your email' : 'Create account'}
         </Button>
       </form>
 

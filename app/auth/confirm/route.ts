@@ -12,6 +12,7 @@ export async function GET(request: Request) {
   const token_hash = searchParams.get('token_hash')
   const type = searchParams.get('type')
   const explicitNext = getExplicitRedirectParam(searchParams.get('next'))
+  const resetRedirect = getExplicitRedirectParam(searchParams.get('redirectTo'))
 
   if (token_hash && type) {
     const cookieStore = await cookies()
@@ -32,13 +33,28 @@ export async function GET(request: Request) {
       }
     )
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { data, error } = await supabase.auth.verifyOtp({
       token_hash,
       type: type as 'email' | 'recovery' | 'signup' | 'invite' | 'magiclink' | 'email_change',
     })
 
-    if (!error) {
-      const destination = resolvePostAuthDestination(explicitNext)
+    if (!error && data.user) {
+      if (type === 'recovery') {
+        const resetPath = resetRedirect
+          ? `/reset-password?redirectTo=${encodeURIComponent(resetRedirect)}`
+          : '/reset-password'
+        return temporaryRedirect(`${origin}${resetPath}`)
+      }
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('onboarding_completed_at')
+        .eq('id', data.user.id)
+        .maybeSingle()
+      const destination = resolvePostAuthDestination(
+        explicitNext,
+        Boolean(profile?.onboarding_completed_at),
+      )
       return temporaryRedirect(`${origin}${destination}`)
     }
   }

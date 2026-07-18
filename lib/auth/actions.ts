@@ -20,8 +20,39 @@ import {
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 
 export type AuthActionState = {
+  status?: 'error' | 'success' | 'needs_email_confirmation'
   error?: string
   success?: string
+}
+
+const GENERIC_AUTH_ERROR = 'Authentication could not be completed. Please try again.'
+
+function getSafeAuthError(fallback = GENERIC_AUTH_ERROR): string {
+  return fallback
+}
+
+async function hasCompletedOnboarding(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  userId: string,
+): Promise<boolean> {
+  const { data } = await supabase
+    .from('profiles')
+    .select('onboarding_completed_at')
+    .eq('id', userId)
+    .maybeSingle()
+
+  return Boolean(data?.onboarding_completed_at)
+}
+
+async function getDestination(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  userId: string,
+  redirectTo: string | null,
+): Promise<string> {
+  return resolvePostAuthDestination(
+    redirectTo,
+    await hasCompletedOnboarding(supabase, userId),
+  )
 }
 
 export async function signInAction(
@@ -33,7 +64,7 @@ export async function signInAction(
     password: formData.get('password'),
   })
   if (!parsed.success) {
-    return { error: parsed.error.issues[0]?.message ?? 'Invalid data' }
+    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
   }
 
   const { email, password } = parsed.data
@@ -42,14 +73,14 @@ export async function signInAction(
   )
 
   const supabase = await createClient()
-  const { error } = await supabase.auth.signInWithPassword({ email, password })
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password })
 
   if (error) {
-    return { error: 'Invalid credentials. Check your email and password.' }
+    return { status: 'error', error: 'Invalid credentials. Check your email and password.' }
   }
 
   revalidatePath('/', 'layout')
-  redirect(resolvePostAuthDestination(explicitRedirectTo))
+  redirect(await getDestination(supabase, data.user.id, explicitRedirectTo))
 }
 
 export async function signUpAction(
@@ -64,7 +95,7 @@ export async function signUpAction(
     acceptTerms: formData.get('acceptTerms') === 'on',
   })
   if (!parsed.success) {
-    return { error: parsed.error.issues[0]?.message ?? 'Invalid data' }
+    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
   }
 
   const { email, password, fullName } = parsed.data
@@ -86,17 +117,19 @@ export async function signUpAction(
   })
 
   if (error) {
-    return { error: error.message }
+    console.error('[auth] sign up failed', error)
+    return { status: 'error', error: getSafeAuthError('Could not create your account. Please try again.') }
   }
 
   if (data.user && data.session) {
     await recordUserConsents(data.user.id)
 
     revalidatePath('/', 'layout')
-    redirect(resolvePostAuthDestination(explicitRedirectTo))
+    redirect(await getDestination(supabase, data.user.id, explicitRedirectTo))
   }
 
   return {
+    status: 'needs_email_confirmation',
     success: 'Account created. Check your email to confirm your account.',
   }
 }
@@ -114,19 +147,26 @@ export async function forgotPasswordAction(
 ): Promise<AuthActionState> {
   const parsed = forgotPasswordSchema.safeParse({ email: formData.get('email') })
   if (!parsed.success) {
-    return { error: parsed.error.issues[0]?.message ?? 'Invalid data' }
+    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
   }
+
+  const explicitRedirectTo = getExplicitRedirectParam(
+    formData.get('redirectTo') as string | null
+  )
+  const callbackParams = new URLSearchParams({ next: '/reset-password' })
+  if (explicitRedirectTo) callbackParams.set('redirectTo', explicitRedirectTo)
 
   const supabase = await createClient()
   const { error } = await supabase.auth.resetPasswordForEmail(parsed.data.email, {
-    redirectTo: `${getAppUrl()}/auth/callback?next=/reset-password`,
+    redirectTo: `${getAppUrl()}/auth/callback?${callbackParams.toString()}`,
   })
 
   if (error) {
-    return { error: error.message }
+    console.error('[auth] password reset request failed', error)
+    return { status: 'error', error: getSafeAuthError('Could not send the reset link. Please try again.') }
   }
 
-  return { success: 'We sent you a link to reset your password.' }
+  return { status: 'success', success: 'If an account matches that email, we sent a password reset link.' }
 }
 
 export async function resetPasswordAction(
@@ -138,18 +178,23 @@ export async function resetPasswordAction(
     confirmPassword: formData.get('confirmPassword'),
   })
   if (!parsed.success) {
-    return { error: parsed.error.issues[0]?.message ?? 'Invalid data' }
+    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
   }
 
+  const explicitRedirectTo = getExplicitRedirectParam(
+    formData.get('redirectTo') as string | null
+  )
+
   const supabase = await createClient()
-  const { error } = await supabase.auth.updateUser({ password: parsed.data.password })
+  const { data: { user }, error } = await supabase.auth.updateUser({ password: parsed.data.password })
 
   if (error) {
-    return { error: error.message }
+    console.error('[auth] password update failed', error)
+    return { status: 'error', error: getSafeAuthError('Could not save your password. Please request a new link.') }
   }
 
   revalidatePath('/', 'layout')
-  redirect(resolvePostAuthDestination(null))
+  redirect(user ? await getDestination(supabase, user.id, explicitRedirectTo) : '/login')
 }
 
 export async function signInWithOAuthAction(
@@ -170,7 +215,8 @@ export async function signInWithOAuthAction(
   })
 
   if (error) {
-    redirect(`/login?error=${encodeURIComponent(error.message)}`)
+    console.error('[auth] OAuth start failed', error)
+    redirect('/login?error=oauth_start_error')
   }
 
   if (data.url) {

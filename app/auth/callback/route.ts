@@ -11,7 +11,9 @@ import { temporaryRedirect } from '@/lib/supabase/redirect-with-session'
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
-  const explicitNext = getExplicitRedirectParam(searchParams.get('next'))
+  const requestedNext = searchParams.get('next')
+  const explicitNext = getExplicitRedirectParam(requestedNext)
+  const resetRedirect = getExplicitRedirectParam(searchParams.get('redirectTo'))
 
   if (code) {
     const cookieStore = await cookies()
@@ -39,7 +41,22 @@ export async function GET(request: Request) {
         await recordUserConsents(data.user.id)
       }
 
-      const destination = resolvePostAuthDestination(explicitNext)
+      if (requestedNext === '/reset-password') {
+        const resetPath = resetRedirect
+          ? `/reset-password?redirectTo=${encodeURIComponent(resetRedirect)}`
+          : '/reset-password'
+        return temporaryRedirect(`${origin}${resetPath}`)
+      }
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('onboarding_completed_at')
+        .eq('id', data.user.id)
+        .maybeSingle()
+      const destination = resolvePostAuthDestination(
+        explicitNext,
+        Boolean(profile?.onboarding_completed_at),
+      )
       return temporaryRedirect(`${origin}${destination}`)
     }
   }
