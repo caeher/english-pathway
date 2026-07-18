@@ -273,11 +273,14 @@ export async function updateSettingsAction(
     .from('profiles')
     .update({
       full_name: parsed.data.fullName,
+      daily_goal_minutes: parsed.data.dailyGoalMinutes,
+      preferred_mode: parsed.data.preferredMode,
     })
     .eq('id', user.id)
 
   if (error) return { error: 'Could not save settings.' }
 
   revalidatePath('/settings')
+  revalidatePath('/', 'layout')
   return { success: true }
 }

@@ -19,7 +19,7 @@ import {
   completeOnboardingAction,
   type OnboardingActionState,
 } from '@/lib/onboarding/actions'
-import type { DailyGoalMinutes, OnboardingLevel } from '@/lib/onboarding/schemas'
+import type { DailyGoalMinutes, OnboardingLevel, PreferredMode } from '@/lib/onboarding/schemas'
 
 const LEVELS: Array<{ value: OnboardingLevel; title: string; description: string }> = [
   { value: 'beginner', title: 'Beginner', description: 'I am starting from the basics.' },
@@ -38,6 +38,7 @@ type MicState = 'idle' | 'checking' | 'granted' | 'denied' | 'unavailable'
 interface OnboardingWizardProps {
   initialLevel: OnboardingLevel | null
   initialDailyGoalMinutes: number | null
+  initialPreferredMode: PreferredMode | null
   destination: string
   reviewing?: boolean
 }
@@ -82,6 +83,7 @@ function ChoiceCard({
 export default function OnboardingWizard({
   initialLevel,
   initialDailyGoalMinutes,
+  initialPreferredMode,
   destination,
   reviewing = false,
 }: OnboardingWizardProps) {
@@ -93,6 +95,7 @@ export default function OnboardingWizard({
       ? initialDailyGoalMinutes
       : null
   )
+  const [preferredMode, setPreferredMode] = useState<PreferredMode>(initialPreferredMode ?? 'text')
   const [micState, setMicState] = useState<MicState>('idle')
   const [state, setState] = useState<OnboardingActionState>({})
   const [pending, setPending] = useState(false)
@@ -103,8 +106,9 @@ export default function OnboardingWizard({
     trackEvent('onboarding_step', {
       step: stepName,
       selection: step === 1 ? level : step === 2 ? dailyGoalMinutes : step === 3 ? micState : null,
+      preferred_mode: step === 3 ? preferredMode : null,
     })
-  }, [dailyGoalMinutes, level, micState, step, stepName])
+  }, [dailyGoalMinutes, level, micState, preferredMode, step, stepName])
 
   const requestMicrophone = async () => {
     if (!navigator.mediaDevices?.getUserMedia) {
@@ -151,6 +155,7 @@ export default function OnboardingWizard({
     trackEvent('onboarding_complete', {
       level,
       daily_goal_minutes: dailyGoalMinutes,
+      preferred_mode: preferredMode,
       skipped,
       microphone_permission: micState,
     })
@@ -283,6 +288,20 @@ export default function OnboardingWizard({
                 </Button>
               )}
               {micState === 'checking' && <p className="mt-4 text-sm text-(--text-muted)">Waiting for your browser...</p>}
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <ChoiceCard
+                selected={preferredMode === 'voice'}
+                title="Voice first"
+                description="Prioritize speaking practice when voice is available."
+                onClick={() => setPreferredMode('voice')}
+              />
+              <ChoiceCard
+                selected={preferredMode === 'text'}
+                title="Text first"
+                description="Start with quiet text practice and on-screen guidance."
+                onClick={() => setPreferredMode('text')}
+              />
             </div>
           </div>
         )}

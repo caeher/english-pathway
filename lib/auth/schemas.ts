@@ -41,6 +41,8 @@ export type ResetPasswordFormValues = z.infer<typeof resetPasswordSchema>
 
 export const settingsSchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
+  dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(20)]),
+  preferredMode: z.enum(['voice', 'text']),
 })
 
 export type SettingsFormValues = z.infer<typeof settingsSchema>

@@ -34,6 +34,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
       <OnboardingWizard
         initialLevel={profile.level}
         initialDailyGoalMinutes={profile.daily_goal_minutes}
+        initialPreferredMode={profile.preferred_mode}
         destination={destination}
         reviewing={review}
       />

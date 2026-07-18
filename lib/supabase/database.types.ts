@@ -109,6 +109,7 @@ export interface Database {
           avatar_url: string | null
           onboarding_completed_at: string | null
           daily_goal_minutes: number | null
+          preferred_mode: 'voice' | 'text'
           level: 'beginner' | 'intermediate' | 'advanced' | null
           created_at: string
           updated_at: string
@@ -120,6 +121,7 @@ export interface Database {
           avatar_url?: string | null
           onboarding_completed_at?: string | null
           daily_goal_minutes?: number | null
+          preferred_mode?: 'voice' | 'text'
           level?: 'beginner' | 'intermediate' | 'advanced' | null
           created_at?: string
           updated_at?: string
@@ -131,6 +133,7 @@ export interface Database {
           avatar_url?: string | null
           onboarding_completed_at?: string | null
           daily_goal_minutes?: number | null
+          preferred_mode?: 'voice' | 'text'
           level?: 'beginner' | 'intermediate' | 'advanced' | null
           created_at?: string
           updated_at?: string
