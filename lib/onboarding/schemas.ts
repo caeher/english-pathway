@@ -2,11 +2,13 @@ import { z } from 'zod'
 
 export const onboardingLevelSchema = z.enum(['beginner', 'intermediate', 'advanced'])
 export const dailyGoalMinutesSchema = z.union([z.literal(5), z.literal(10), z.literal(20)])
+export const preferredModeSchema = z.enum(['voice', 'text'])
 
 export const onboardingCompletionSchema = z
   .object({
     level: onboardingLevelSchema.nullish(),
     dailyGoalMinutes: dailyGoalMinutesSchema.nullish(),
+    preferredMode: preferredModeSchema.nullish(),
     skipped: z.boolean().default(false),
   })
   .superRefine((value, context) => {
@@ -31,4 +33,5 @@ export const onboardingCompletionSchema = z
 
 export type OnboardingLevel = z.infer<typeof onboardingLevelSchema>
 export type DailyGoalMinutes = z.infer<typeof dailyGoalMinutesSchema>
+export type PreferredMode = z.infer<typeof preferredModeSchema>
 export type OnboardingCompletionInput = z.input<typeof onboardingCompletionSchema>
