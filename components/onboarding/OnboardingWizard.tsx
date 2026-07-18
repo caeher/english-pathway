@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {
   ArrowLeft,
@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/button'
 import { trackEvent } from '@/lib/analytics/events'
 import {
   completeOnboardingAction,
+  saveOnboardingDraftAction,
   type OnboardingActionState,
 } from '@/lib/onboarding/actions'
 import type { DailyGoalMinutes, OnboardingLevel, PreferredMode } from '@/lib/onboarding/schemas'
@@ -39,6 +40,7 @@ interface OnboardingWizardProps {
   initialLevel: OnboardingLevel | null
   initialDailyGoalMinutes: number | null
   initialPreferredMode: PreferredMode | null
+  initialStep: number
   destination: string
   reviewing?: boolean
 }
@@ -84,11 +86,12 @@ export default function OnboardingWizard({
   initialLevel,
   initialDailyGoalMinutes,
   initialPreferredMode,
+  initialStep,
   destination,
   reviewing = false,
 }: OnboardingWizardProps) {
   const router = useRouter()
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(Math.max(0, Math.min(3, initialStep)))
   const [level, setLevel] = useState<OnboardingLevel | null>(initialLevel)
   const [dailyGoalMinutes, setDailyGoalMinutes] = useState<DailyGoalMinutes | null>(
     initialDailyGoalMinutes === 5 || initialDailyGoalMinutes === 10 || initialDailyGoalMinutes === 20
@@ -99,8 +102,21 @@ export default function OnboardingWizard({
   const [micState, setMicState] = useState<MicState>('idle')
   const [state, setState] = useState<OnboardingActionState>({})
   const [pending, setPending] = useState(false)
+  const completedRef = useRef(false)
+  const stepRef = useRef(step)
 
   const stepName = useMemo(() => ['welcome', 'level', 'daily_goal', 'microphone'][step], [step])
+
+  useEffect(() => {
+    stepRef.current = step
+  }, [step])
+
+  useEffect(() => {
+    trackEvent('onboarding_view', { reviewing })
+    return () => {
+      if (!completedRef.current) trackEvent('onboarding_abandon', { step: stepRef.current, reviewing })
+    }
+  }, [reviewing])
 
   useEffect(() => {
     trackEvent('onboarding_step', {
@@ -143,6 +159,8 @@ export default function OnboardingWizard({
     const result = await completeOnboardingAction({
       level: level ?? undefined,
       dailyGoalMinutes: dailyGoalMinutes ?? undefined,
+      preferredMode,
+      step,
       skipped,
     })
     setPending(false)
@@ -152,14 +170,31 @@ export default function OnboardingWizard({
       return
     }
 
-    trackEvent('onboarding_complete', {
-      level,
-      daily_goal_minutes: dailyGoalMinutes,
-      preferred_mode: preferredMode,
-      skipped,
-      microphone_permission: micState,
-    })
+    completedRef.current = true
+    if (skipped) {
+      trackEvent('onboarding_skip', { step, reviewing })
+    } else {
+      trackEvent('onboarding_complete', { step, microphone_permission: micState })
+    }
     router.replace(destination)
+  }
+
+  const advance = async () => {
+    const nextStep = Math.min(3, step + 1)
+    setPending(true)
+    setState({})
+    const result = await saveOnboardingDraftAction({
+      step: nextStep,
+      level: level ?? undefined,
+      dailyGoalMinutes: dailyGoalMinutes ?? undefined,
+      preferredMode,
+    })
+    setPending(false)
+    if (result.error) {
+      setState(result)
+      return
+    }
+    setStep(nextStep)
   }
 
   const canAdvance = step === 0 || (step === 1 ? !!level : step === 2 ? !!dailyGoalMinutes : true)
@@ -259,7 +294,7 @@ export default function OnboardingWizard({
               </p>
             </div>
             <div className="rounded-2xl border border-(--border-primary) bg-(--bg-secondary)/50 p-5">
-              <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3" aria-live="polite">
                 {micState === 'granted' ? (
                   <Mic className="mt-0.5 h-5 w-5 text-(--success)" />
                 ) : micState === 'denied' ? (
@@ -307,7 +342,7 @@ export default function OnboardingWizard({
         )}
 
         {state.error && (
-          <p className="mt-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
+          <p role="alert" className="mt-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
             {state.error}
           </p>
         )}
@@ -329,7 +364,7 @@ export default function OnboardingWizard({
             {step < 3 ? (
               <Button
                 type="button"
-                onClick={() => setStep((current) => Math.min(3, current + 1))}
+                onClick={advance}
                 disabled={!canAdvance || pending}
               >
                 Next <ArrowRight className="h-4 w-4" />

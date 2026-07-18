@@ -6,7 +6,7 @@ export default async function LearnPage() {
   const user = await getCurrentUser()
   if (user) {
     const profile = await getCurrentProfile()
-    if (!profile?.onboarding_completed_at) {
+    if (!profile?.onboarding_completed_at && profile?.onboarding_status !== 'skipped') {
       redirect('/onboarding?next=%2Flearn')
     }
   }

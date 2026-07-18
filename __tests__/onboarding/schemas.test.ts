@@ -41,9 +41,11 @@ describe('onboarding completion persistence', () => {
   it('persists preferences and a completion timestamp for a completed wizard', async () => {
     const eq = vi.fn().mockResolvedValue({ error: null })
     const update = vi.fn().mockReturnValue({ eq })
+    const maybeSingle = vi.fn().mockResolvedValue({ data: null })
+    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
     createClientMock.mockResolvedValue({
       auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-1' } } }) },
-      from: vi.fn().mockReturnValue({ update }),
+      from: vi.fn().mockReturnValue({ select, update }),
     } as never)
 
     const result = await completeOnboardingAction({
@@ -58,6 +60,8 @@ describe('onboarding completion persistence', () => {
         level: 'intermediate',
         daily_goal_minutes: 10,
         onboarding_completed_at: expect.any(String),
+        onboarding_status: 'completed',
+        onboarding_step: 4,
       })
     )
     expect(eq).toHaveBeenCalledWith('id', 'user-1')
@@ -66,14 +70,16 @@ describe('onboarding completion persistence', () => {
   it('persists completion when the user skips', async () => {
     const eq = vi.fn().mockResolvedValue({ error: null })
     const update = vi.fn().mockReturnValue({ eq })
+    const maybeSingle = vi.fn().mockResolvedValue({ data: null })
+    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
     createClientMock.mockResolvedValue({
       auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-2' } } }) },
-      from: vi.fn().mockReturnValue({ update }),
+      from: vi.fn().mockReturnValue({ select, update }),
     } as never)
 
     const result = await completeOnboardingAction({ skipped: true })
 
     expect(result).toEqual({ success: true })
-    expect(update).toHaveBeenCalledWith({ onboarding_completed_at: expect.any(String) })
+    expect(update).toHaveBeenCalledWith({ onboarding_completed_at: null, onboarding_status: 'skipped', onboarding_step: 0 })
   })
 })
