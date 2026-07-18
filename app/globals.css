@@ -342,6 +342,51 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Legal document prose */
+.markdown-content {
+  max-width: 72ch;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.markdown-content > :first-child { margin-top: 0; }
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  scroll-margin-top: 6rem;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.2;
+}
+.markdown-content h1 { margin: 2.25rem 0 1rem; font-size: 2rem; }
+.markdown-content h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
+.markdown-content h3 { margin: 1.5rem 0 0.6rem; font-size: 1.25rem; }
+.markdown-content h4 { margin: 1.25rem 0 0.5rem; font-size: 1.05rem; }
+.markdown-content p { margin: 1rem 0; }
+.markdown-content a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
+.markdown-content ul, .markdown-content ol { margin: 1rem 0; padding-left: 1.5rem; }
+.markdown-content ul { list-style: disc; }
+.markdown-content ol { list-style: decimal; }
+.markdown-content li { margin: 0.45rem 0; padding-left: 0.25rem; }
+.markdown-content strong { color: var(--text-primary); font-weight: 800; }
+.markdown-content em { color: var(--text-primary); }
+.markdown-content hr { margin: 2rem 0; border-color: var(--border-primary); }
+.markdown-content code { border-radius: 0.35rem; background: var(--bg-tertiary); padding: 0.15rem 0.35rem; color: var(--text-primary); font-size: 0.9em; }
+.markdown-content pre { overflow-x: auto; margin: 1.25rem 0; border-radius: 0.85rem; background: var(--bg-tertiary); padding: 1rem; }
+.markdown-content pre code { padding: 0; background: transparent; }
+.markdown-blockquote, .markdown-callout { margin: 1.5rem 0; border-left: 4px solid var(--accent); border-radius: 0 0.85rem 0.85rem 0; background: var(--accent-soft); padding: 0.75rem 1rem; color: var(--text-primary); }
+.markdown-callout-tip { border-left-color: var(--secondary); }
+.markdown-callout-important { border-left-color: var(--reward); }
+.markdown-callout-example { border-left-color: var(--accent); }
+.markdown-callout-remember { border-left-color: var(--success); }
+.markdown-content table { width: 100%; min-width: 34rem; border-collapse: collapse; text-align: left; }
+.markdown-table-wrap { overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border-primary); border-radius: 0.85rem; outline: none; }
+.markdown-table-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.markdown-content th, .markdown-content td { border-bottom: 1px solid var(--border-primary); padding: 0.7rem 0.85rem; vertical-align: top; }
+.markdown-content th { background: var(--bg-tertiary); color: var(--text-primary); font-weight: 800; }
+.markdown-content tr:last-child td { border-bottom: 0; }
+.markdown-word .speak-button { flex-shrink: 0; }
+
 .legal-content h1 {
   font-family: var(--font-display);
   font-size: 1.75rem;
