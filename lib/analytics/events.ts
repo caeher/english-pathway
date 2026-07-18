@@ -18,6 +18,11 @@ export type AnalyticsEventName =
   | 'game_complete'
   | 'guest_signup_prompt_shown'
   | 'guest_signup_prompt_click'
+  | 'learn_mode_select'
+  | 'learn_microphone'
+  | 'learn_session_start'
+  | 'learn_session_end'
+  | 'learn_session_error'
 
 export interface AnalyticsEventProperties {
   [key: string]: string | number | boolean | null | undefined
