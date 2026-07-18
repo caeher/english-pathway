@@ -9,6 +9,7 @@ interface LastProgress {
   chapterTitle: string | null
   moduleTitle: string | null
   curriculumUrl: string | null
+  learnUrl: string | null
 }
 
 export default function ContinueLearningPrompt() {
@@ -25,7 +26,7 @@ export default function ContinueLearningPrompt() {
       .catch(() => {})
   }, [])
 
-  if (!progress?.curriculumUrl) return null
+  if (!progress?.learnUrl) return null
 
   return (
     <aside className="mx-auto w-full max-w-6xl px-4 pt-4 sm:px-6" aria-label="Continue learning">
@@ -37,7 +38,7 @@ export default function ContinueLearningPrompt() {
             {progress.moduleTitle ? ` in ${progress.moduleTitle}` : ''}
           </p>
         </div>
-        <Link href={progress.curriculumUrl} className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-(--accent) no-underline hover:underline">
+        <Link href={progress.learnUrl} className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-(--accent) no-underline hover:underline">
           Resume <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

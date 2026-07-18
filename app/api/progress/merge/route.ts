@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server'
 import { mergeProgressSchema } from '@/lib/api/progress-schemas'
+import { completeChapter } from '@/lib/dal/chapter-completions'
 import { mergeLearningProgress } from '@/lib/dal/learning-progress'
+import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
 import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
 import { resolveChapter } from '@/lib/content/resolve'
+import { getChapterProgress } from '@/lib/curriculum/progress'
 import { createClient } from '@/lib/supabase/server'
 
 export async function POST(request: Request) {
@@ -48,7 +51,33 @@ export async function POST(request: Request) {
   }
 
   try {
+    const existing = await getCurriculumProgressSnapshot(supabase, user.id)
+    for (const chapter of chapters.filter((item) => item.status === 'completed')) {
+      const resolved = await resolveChapter(chapter.chapterId)
+      if (!resolved) continue
+      const candidateActivities = [
+        ...existing.activities,
+        ...activities
+          .filter((item) => item.chapterId === resolved.chapter.id)
+          .map((item) => ({
+            activity_id: item.activityId,
+            chapter_id: item.chapterId,
+            status: item.status,
+            score: item.score,
+          })),
+      ]
+      const summary = getChapterProgress(resolved.chapter, {
+        ...existing,
+        activities: candidateActivities,
+      })
+      if (!summary.canComplete && !existing.completedChapterIds.has(resolved.chapter.id)) {
+        return NextResponse.json({ error: `Complete the chapter activities before finishing: ${resolved.chapter.id}` }, { status: 409 })
+      }
+    }
     const result = await mergeLearningProgress(supabase, user.id, activities, chapters, lastActivity)
+    for (const chapter of chapters.filter((item) => item.status === 'completed')) {
+      await completeChapter(supabase, user.id, chapter.chapterId)
+    }
     return NextResponse.json({ ok: true, ...result })
   } catch (error) {
     console.error(error)

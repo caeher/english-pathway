@@ -39,15 +39,12 @@ export function getChapter(chapterId: string): { module: Module; chapter: Chapte
 }
 
 export function getChapterNav(chapterId: string) {
-  for (const mod of loadAllModules()) {
-    const idx = mod.chapters.findIndex((c) => c.id === chapterId)
-    if (idx === -1) continue
+  const entries = loadAllModules().flatMap((module) => module.chapters.map((chapter) => ({ module, chapter })))
+  const index = entries.findIndex((entry) => entry.chapter.id === chapterId)
+  if (index !== -1) {
     return {
-      prev: idx > 0 ? { module: mod, chapter: mod.chapters[idx - 1] } : null,
-      next:
-        idx < mod.chapters.length - 1
-          ? { module: mod, chapter: mod.chapters[idx + 1] }
-          : null,
+      prev: entries[index - 1] ?? null,
+      next: entries[index + 1] ?? null,
     }
   }
   return { prev: null, next: null }

@@ -1,9 +1,30 @@
 import { NextResponse } from 'next/server'
 import { completeChapterSchema } from '@/lib/api/curriculum-schemas'
 import { completeChapter } from '@/lib/dal/chapter-completions'
+import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
 import { recordChapterProgress } from '@/lib/dal/learning-progress'
-import { resolveChapter } from '@/lib/content/resolve'
+import { resolveAllModules, resolveChapter } from '@/lib/content/resolve'
+import { getChapterProgress, getLearningTarget, getModuleProgress } from '@/lib/curriculum/progress'
 import { createClient } from '@/lib/supabase/server'
+
+export async function GET() {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return NextResponse.json({ authenticated: false, modules: [], resume: null })
+
+  try {
+    const modules = await resolveAllModules()
+    const snapshot = await getCurriculumProgressSnapshot(supabase, user.id)
+    return NextResponse.json({
+      authenticated: true,
+      modules: modules.map((curriculumModule) => getModuleProgress(curriculumModule, snapshot)),
+      resume: getLearningTarget(modules, snapshot),
+    })
+  } catch (error) {
+    console.error(error)
+    return NextResponse.json({ error: 'Unable to load curriculum progress' }, { status: 500 })
+  }
+}
 
 export async function POST(request: Request) {
   const payload = completeChapterSchema.safeParse(await request.json().catch(() => null))
@@ -17,6 +38,11 @@ export async function POST(request: Request) {
   if (!user) return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
 
   try {
+    const snapshot = await getCurriculumProgressSnapshot(supabase, user.id)
+    const summary = getChapterProgress(resolved.chapter, snapshot)
+    if (!summary.canComplete && !snapshot.completedChapterIds.has(resolved.chapter.id)) {
+      return NextResponse.json({ error: 'Complete the chapter activities before finishing this chapter.' }, { status: 409 })
+    }
     await recordChapterProgress(supabase, user.id, {
       chapterId: resolved.chapter.id,
       moduleId: resolved.module.id,

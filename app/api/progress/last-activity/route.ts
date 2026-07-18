@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getLastProgress } from '@/lib/dal/learning-progress'
 import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
 import { resolveChapter } from '@/lib/content/resolve'
-import { curriculumChapterHref } from '@/lib/curriculum/href'
+import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
 import { createClient } from '@/lib/supabase/server'
 
 export async function GET() {
@@ -30,6 +30,11 @@ export async function GET() {
         chapterTitle: chapter?.title ?? null,
         moduleTitle: resolvedModule?.title ?? null,
         curriculumUrl: resolvedModule && chapter ? curriculumChapterHref(resolvedModule.id, chapter.id) : null,
+        learnUrl: resolvedModule && chapter ? learnHref({
+          moduleId: resolvedModule.id,
+          chapterId: chapter.id,
+          activityId: resolvedActivity?.activity.id ?? null,
+        }) : null,
       },
     })
   } catch (error) {

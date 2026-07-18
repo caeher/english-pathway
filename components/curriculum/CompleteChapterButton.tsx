@@ -8,9 +8,10 @@ import { saveChapterProgress } from '@/lib/progress/client'
 interface CompleteChapterButtonProps {
   chapterId: string
   initialCompleted: boolean
+  canComplete: boolean
 }
 
-export function CompleteChapterButton({ chapterId, initialCompleted }: CompleteChapterButtonProps) {
+export function CompleteChapterButton({ chapterId, initialCompleted, canComplete }: CompleteChapterButtonProps) {
   const [completed, setCompleted] = useState(initialCompleted)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -32,10 +33,11 @@ export function CompleteChapterButton({ chapterId, initialCompleted }: CompleteC
 
   return (
     <div>
-      <Button onClick={markCompleted} disabled={completed || submitting} variant={completed ? 'reward' : 'accent'}>
+      <Button onClick={markCompleted} disabled={completed || submitting || !canComplete} variant={completed ? 'reward' : 'accent'}>
         {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
-        {completed ? 'Completed' : 'Mark as completed'}
+        {completed ? 'Completed' : canComplete ? 'Complete chapter' : 'Complete activities first'}
       </Button>
+      {!completed && !canComplete && <p className="mt-2 text-sm text-(--text-secondary)">Finish every activity in this chapter before marking it complete.</p>}
       {error && <p role="alert" className="mt-2 text-sm text-red-600">{error}</p>}
     </div>
   )
