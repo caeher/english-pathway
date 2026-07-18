@@ -8,6 +8,7 @@ import { Toaster } from '@/components/ui/toaster'
 import { AnalyticsProvider } from '@/lib/analytics/provider'
 import { migratePersistKeys } from '@/lib/storage/migrate-persist'
 import PwaProvider from '@/components/PwaProvider'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
 
 function ThemeInit() {
   const { dark } = useThemeStore()
@@ -45,6 +46,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       <PersistMigration />
       <ScrollToTop />
       <PwaProvider />
+      <CookieConsentBanner />
       {children}
       <Toaster />
     </TooltipProvider>

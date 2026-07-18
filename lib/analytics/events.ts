@@ -1,3 +1,5 @@
+import { hasAnalyticsConsent } from '@/lib/consent/client'
+
 export type AnalyticsEventName =
   | 'landing_cta_click'
   | 'demo_activity_complete'
@@ -44,6 +46,7 @@ export function trackEvent(
   properties: AnalyticsEventProperties = {}
 ) {
   if (typeof window === 'undefined') return
+  if (!hasAnalyticsConsent()) return
 
   const payload = {
     event_name: eventName,

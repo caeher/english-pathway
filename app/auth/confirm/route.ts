@@ -6,6 +6,7 @@ import {
   resolvePostAuthDestination,
 } from '@/lib/auth/resolve-redirect'
 import { temporaryRedirect } from '@/lib/supabase/redirect-with-session'
+import { recordUserConsents } from '@/lib/auth/consent'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -39,6 +40,9 @@ export async function GET(request: Request) {
     })
 
     if (!error && data.user) {
+      if (data.user.user_metadata?.accepted_terms === true) {
+        await recordUserConsents(data.user.id)
+      }
       if (type === 'recovery') {
         const resetPath = resetRedirect
           ? `/reset-password?redirectTo=${encodeURIComponent(resetRedirect)}`
