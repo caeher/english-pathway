@@ -38,6 +38,18 @@ jobs:
       - name: Run ESLint
         run: pnpm lint
 
+      - name: Run critical tests
+        run: pnpm test:critical
+
+      - name: Run full test suite
+        run: pnpm test
+
+      - name: Verify quality-gate configuration
+        run: pnpm quality:check
+
+      - name: Audit production dependencies
+        run: pnpm security:audit
+
       - name: Run Typecheck
         run: pnpm exec tsc --noEmit
 
