@@ -18,9 +18,11 @@ interface NavUserProps {
   fullName?: string | null
   avatarUrl?: string | null
   collapsed?: boolean
+  compact?: boolean
+  showDashboard?: boolean
 }
 
-export function NavUser({ email, fullName, avatarUrl, collapsed }: NavUserProps) {
+export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false, showDashboard = true }: NavUserProps) {
   const initials = (fullName || email || 'U')
     .split(' ')
     .map((n) => n[0])
@@ -32,7 +34,9 @@ export function NavUser({ email, fullName, avatarUrl, collapsed }: NavUserProps)
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          'flex w-full items-center gap-3 rounded-xl p-2 hover:bg-(--bg-tertiary) transition-colors outline-none',
+          'flex items-center gap-3 rounded-xl p-2 hover:bg-(--bg-tertiary) transition-colors outline-none',
+          !compact && 'w-full',
+          compact && 'max-w-48',
           collapsed && 'justify-center'
         )}
       >
@@ -57,6 +61,14 @@ export function NavUser({ email, fullName, avatarUrl, collapsed }: NavUserProps)
           {email}
         </DropdownMenuItem>
         <DropdownMenuSeparator />
+        {showDashboard && (
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard" className="flex items-center cursor-pointer">
+              <User className="mr-2 h-4 w-4" />
+              Dashboard
+            </Link>
+          </DropdownMenuItem>
+        )}
         <DropdownMenuItem asChild>
           <Link href="/settings" className="flex items-center cursor-pointer">
             <Settings className="mr-2 h-4 w-4" />

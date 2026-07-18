@@ -5,6 +5,7 @@ import {
   resolvePostAuthDestination,
 } from '@/lib/auth/resolve-redirect'
 import { isSafeRedirectPath } from '@/lib/auth/safe-redirect'
+import { getHeaderNavItems, type NavigationContext } from '@/lib/navigation'
 
 describe('authentication redirects', () => {
   it('accepts internal destinations and rejects external or auth destinations', () => {
@@ -30,5 +31,20 @@ describe('authentication redirects', () => {
   it('only appends safe redirect parameters to auth links', () => {
     expect(appendRedirectTo('/login', '/learn')).toBe('/login?redirectTo=%2Flearn')
     expect(appendRedirectTo('/login', 'https://example.com')).toBe('/login')
+  })
+
+  it('shows contextual navigation for guest, setup, and ready sessions', () => {
+    const context = (overrides: Partial<NavigationContext>): NavigationContext => ({
+      isAuthenticated: false,
+      onboardingCompleted: false,
+      email: null,
+      fullName: null,
+      avatarUrl: null,
+      ...overrides,
+    })
+
+    expect(getHeaderNavItems(context({})).map((item) => item.label)).toEqual(['Curriculum', 'Learn'])
+    expect(getHeaderNavItems(context({ isAuthenticated: true })).map((item) => item.label)).toEqual(['Curriculum', 'Continue setup'])
+    expect(getHeaderNavItems(context({ isAuthenticated: true, onboardingCompleted: true })).map((item) => item.label)).toEqual(['Curriculum', 'Learn', 'Review', 'Dashboard'])
   })
 })
