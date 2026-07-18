@@ -3,42 +3,40 @@ import { BookOpen, GraduationCap, MessageCircle, Sparkles } from 'lucide-react'
 
 export const metadata = {
   title: 'How It Works — English Pathway',
-  description: 'Learn how English Pathway helps you practice English with an AI tutor and interactive activities.',
+  description: 'Learn how English Pathway combines an AI tutor, a structured curriculum, and interactive practice.',
 }
 
 const STEPS = [
   { icon: MessageCircle, title: 'Talk with your tutor', desc: 'Start a voice or text session with the AI English tutor.' },
   { icon: BookOpen, title: 'Learn with context', desc: 'Grammar explanations and lesson content appear alongside the conversation.' },
   { icon: Sparkles, title: 'Practice interactively', desc: 'Quizzes, flashcards, and games launch when you are ready to practice.' },
-  { icon: GraduationCap, title: 'Create an account', desc: 'Sign up to manage your profile and settings.' },
+  { icon: GraduationCap, title: 'Build a habit', desc: 'Keep your next lesson close and continue at a pace that fits your day.' },
 ]
 
 export default function HowItWorksPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="font-display font-black text-4xl text-(--text-primary) mb-4">How it works</h1>
-      <p className="text-(--text-secondary) text-lg mb-12">
+    <div className="mx-auto max-w-3xl px-6 py-16">
+      <p className="font-display text-sm font-bold uppercase tracking-widest text-(--accent)">How it works</p>
+      <h1 className="mt-3 font-display text-4xl font-black text-(--text-primary)">A simple path to more confident English.</h1>
+      <p className="mt-4 text-lg text-(--text-secondary)">
         English Pathway pairs an AI tutor with a structured curriculum and interactive practice activities.
       </p>
-      <div className="space-y-6 mb-12">
+      <div className="mb-12 mt-12 space-y-6">
         {STEPS.map((step, i) => (
-          <div key={step.title} className="flex gap-4 p-5 rounded-2xl border border-(--border-primary) bg-(--bg-card)">
-            <div className="w-10 h-10 rounded-xl bg-(--accent-soft) flex items-center justify-center shrink-0">
-              <step.icon className="w-5 h-5 text-(--accent)" />
+          <article key={step.title} className="flex gap-4 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-5">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-(--accent-soft)">
+              <step.icon className="h-5 w-5 text-(--accent)" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-xs font-bold text-(--text-muted) mb-1">Step {i + 1}</p>
+              <p className="mb-1 text-xs font-bold text-(--text-muted)">Step {i + 1}</p>
               <h2 className="font-display font-bold text-(--text-primary)">{step.title}</h2>
-              <p className="text-sm text-(--text-secondary) mt-1">{step.desc}</p>
+              <p className="mt-1 text-sm text-(--text-secondary)">{step.desc}</p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-      <Link
-        href="/learn"
-        className="inline-flex px-6 py-3 rounded-xl bg-(--accent) text-white font-display font-bold no-underline hover:bg-(--accent-hover) transition-colors"
-      >
-        Start learning →
+      <Link href="/learn" className="inline-flex rounded-xl bg-(--accent) px-6 py-3 font-display font-bold text-white no-underline transition-colors hover:bg-(--accent-hover)">
+        Start learning <span aria-hidden="true">→</span>
       </Link>
     </div>
   )
