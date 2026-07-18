@@ -14,6 +14,7 @@ import {
   Target,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import LevelAssessment from './LevelAssessment'
 import { trackEvent } from '@/lib/analytics/events'
 import {
   completeOnboardingAction,
@@ -262,6 +263,7 @@ export default function OnboardingWizard({
                 />
               ))}
             </div>
+            <LevelAssessment reviewing={reviewing} onLevelConfirmed={setLevel} />
           </div>
         )}
 

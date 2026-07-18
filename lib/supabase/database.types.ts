@@ -110,6 +110,11 @@ export interface Database {
           onboarding_completed_at: string | null
           onboarding_status: 'pending' | 'completed' | 'skipped'
           onboarding_step: number
+          assessment_recommended_level: 'beginner' | 'intermediate' | 'advanced' | null
+          assessment_confirmed_level: 'beginner' | 'intermediate' | 'advanced' | null
+          assessment_source: 'voice' | 'text' | 'self_assessment' | null
+          assessment_version: string | null
+          assessment_completed_at: string | null
           daily_goal_minutes: number | null
           preferred_mode: 'voice' | 'text'
           level: 'beginner' | 'intermediate' | 'advanced' | null
@@ -124,6 +129,11 @@ export interface Database {
           onboarding_completed_at?: string | null
           onboarding_status?: 'pending' | 'completed' | 'skipped'
           onboarding_step?: number
+          assessment_recommended_level?: 'beginner' | 'intermediate' | 'advanced' | null
+          assessment_confirmed_level?: 'beginner' | 'intermediate' | 'advanced' | null
+          assessment_source?: 'voice' | 'text' | 'self_assessment' | null
+          assessment_version?: string | null
+          assessment_completed_at?: string | null
           daily_goal_minutes?: number | null
           preferred_mode?: 'voice' | 'text'
           level?: 'beginner' | 'intermediate' | 'advanced' | null
@@ -138,6 +148,11 @@ export interface Database {
           onboarding_completed_at?: string | null
           onboarding_status?: 'pending' | 'completed' | 'skipped'
           onboarding_step?: number
+          assessment_recommended_level?: 'beginner' | 'intermediate' | 'advanced' | null
+          assessment_confirmed_level?: 'beginner' | 'intermediate' | 'advanced' | null
+          assessment_source?: 'voice' | 'text' | 'self_assessment' | null
+          assessment_version?: string | null
+          assessment_completed_at?: string | null
           daily_goal_minutes?: number | null
           preferred_mode?: 'voice' | 'text'
           level?: 'beginner' | 'intermediate' | 'advanced' | null
