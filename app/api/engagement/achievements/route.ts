@@ -1,16 +1,9 @@
-import { NextResponse } from 'next/server'
-import { getAchievements } from '@/lib/dal/engagement'
-import { createClient } from '@/lib/supabase/server'
+import { getAchievementsUseCase } from '@/features/engagement'
+import { DomainError, apiErrorResponse, respondWithApiErrors } from '@/lib/api/errors'
+import { getAuthenticatedContext } from '@/lib/api/context'
 
 export async function GET() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
-
-  try {
-    return NextResponse.json({ achievements: await getAchievements(supabase, user.id) })
-  } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Unable to load achievements' }, { status: 500 })
-  }
+  const context = await getAuthenticatedContext()
+  if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
+  return respondWithApiErrors(async () => ({ achievements: await getAchievementsUseCase(context) }), 'Unable to load achievements')
 }

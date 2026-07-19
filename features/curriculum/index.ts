@@ -7,3 +7,4 @@ export {
   getModuleProgress,
   type CurriculumProgressSnapshot,
 } from '@/lib/curriculum/progress'
+export * from './contracts'

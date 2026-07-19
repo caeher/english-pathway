@@ -7,9 +7,11 @@ English Pathway remains a single Next.js deployment, but its core capabilities h
 | `learn` | Tutor session orchestration, activity resolution, and activity tools | `@/features/learn` |
 | `curriculum` | Knowledge-backed modules, chapters, navigation, and curriculum progress calculations | `@/features/curriculum` |
 | `progress` | Guest persistence, progress contracts, server writes, resume state, and chapter completion | `@/features/progress` |
+| `srs` | Review queue scheduling, due items, and review mutations | `@/features/srs` |
 | `engagement` | XP, streak and daily-goal calculations, and engagement client operations | `@/features/engagement` |
 | `onboarding` | Onboarding drafts, completion, assessment, and related validation | `@/features/onboarding` |
 | `account` | Authenticated profile settings and account actions | `@/features/account` |
+| `tutor` | Tutor context, session orchestration, activity lookup, and private memory | `@/features/tutor` |
 
 ## Dependency rules
 

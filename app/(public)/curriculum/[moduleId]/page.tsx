@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { resolveModule } from '@/lib/content/resolve'
 import { curriculumChapterHref, curriculumModuleHref, learnHref } from '@/lib/curriculum/href'
 import { getChapterProgress, type CurriculumProgressSnapshot } from '@/lib/curriculum/progress'
-import { getCurriculumProgressSnapshot } from '@/features/progress'
+import { getCurriculumProgressSnapshot } from '@/features/progress/server'
 import { createClient } from '@/lib/supabase/server'
 
 export default async function ModuleCurriculumPage({ params }: { params: Promise<{ moduleId: string }> }) {

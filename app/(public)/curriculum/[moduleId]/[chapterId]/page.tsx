@@ -7,7 +7,7 @@ import { resolveModule, resolveChapterNav } from '@/lib/content/resolve'
 import { extractMarkdownHeadings } from '@/lib/content/markdown'
 import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
 import { getChapterProgress, type CurriculumProgressSnapshot } from '@/lib/curriculum/progress'
-import { getCurriculumProgressSnapshot } from '@/features/progress'
+import { getCurriculumProgressSnapshot } from '@/features/progress/server'
 import { createClient } from '@/lib/supabase/server'
 
 export default async function ChapterCurriculumPage({ params }: { params: Promise<{ moduleId: string; chapterId: string }> }) {

@@ -8,9 +8,11 @@ const publicEntries = [
   ['learn', 'features/learn/index.ts'],
   ['curriculum', 'features/curriculum/index.ts'],
   ['progress', 'features/progress/index.ts'],
+  ['srs', 'features/srs/index.ts'],
   ['engagement', 'features/engagement/index.ts'],
   ['onboarding', 'features/onboarding/index.ts'],
   ['account', 'features/account/index.ts'],
+  ['tutor', 'features/tutor/index.ts'],
 ]
 
 const progressBoundary = {
