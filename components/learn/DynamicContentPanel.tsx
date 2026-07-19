@@ -1,6 +1,6 @@
 'use client'
 
-import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { selectClearPanel, selectPanel, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { MarkdownWithTts } from '@/components/lesson/MarkdownWithTts'
 import ActivityRenderer, { type ActivityCompleteResult } from './ActivityRenderer'
 import { Button } from '@/components/ui/button'
@@ -11,8 +11,8 @@ interface DynamicContentPanelProps {
 }
 
 export default function DynamicContentPanel({ onActivityComplete, onActivityDifficult }: DynamicContentPanelProps) {
-  const panel = useLearnSessionStore((s) => s.panel)
-  const clearPanel = useLearnSessionStore((s) => s.clearPanel)
+  const panel = useLearnSessionStore(selectPanel)
+  const clearPanel = useLearnSessionStore(selectClearPanel)
 
   if (panel.kind === 'empty') {
     return (

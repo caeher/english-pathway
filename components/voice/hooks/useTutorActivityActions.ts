@@ -10,7 +10,7 @@ import { getReviewContentRefs } from '@/lib/srs/refs'
 import { recordEngagementSession } from '@/lib/engagement/client'
 import type { ActivityType } from '@/types'
 import { saveActivityProgress } from '@/features/progress/client'
-import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import { saveTutorMemory } from '@/lib/tutor/client'
 
 export function useTutorActivityActions() {
@@ -18,7 +18,7 @@ export function useTutorActivityActions() {
 
   const onActivityComplete = useCallback((result: ActivityCompleteResult) => {
     const pct = result.scorePercent ?? Math.round((result.score / result.total) * 100)
-    useLearnSessionStore.getState().recordActivityResult({ activityId: result.activityId, scorePercent: pct, completedAt: new Date().toISOString() })
+    learnSessionActions.recordActivityResult({ activityId: result.activityId, scorePercent: pct, completedAt: new Date().toISOString() })
     sendUserMessage(`I finished activity ${result.activityId} (${result.activityType}) with ${pct}% score.`)
     trackEvent('activity_complete', { activity_id: result.activityId, activity_type: result.activityType, score_percent: pct })
     if (result.chapterId && result.moduleId) {
@@ -38,7 +38,7 @@ export function useTutorActivityActions() {
     try {
       const { activity } = await fetchActivityById(activityId)
       await enqueueSrsItems(getReviewContentRefs(activity))
-      useLearnSessionStore.getState().requestHelp()
+      learnSessionActions.requestHelp()
       sendUserMessage('I need a graduated hint for the current activity. Do not reveal the answer yet.')
       void saveTutorMemory({ type: 'learner_memory', memoryKey: `help:${activityId}`, content: 'Learner requested a graduated hint for this activity.', source: 'help_request' })
     } catch {
