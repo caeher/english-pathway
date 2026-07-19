@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { selectClearPanel, selectPanel, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { MarkdownWithTts } from '@/components/lesson/MarkdownWithTts'
 import ActivityRenderer, { type ActivityCompleteResult } from './ActivityRenderer'
@@ -13,6 +14,11 @@ interface DynamicContentPanelProps {
 export default function DynamicContentPanel({ onActivityComplete, onActivityDifficult }: DynamicContentPanelProps) {
   const panel = useLearnSessionStore(selectPanel)
   const clearPanel = useLearnSessionStore(selectClearPanel)
+  const headingRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    if (panel.kind !== 'empty') headingRef.current?.focus({ preventScroll: window.innerWidth >= 1024 })
+  }, [panel.kind])
 
   if (panel.kind === 'empty') {
     return (
@@ -26,9 +32,9 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex min-h-full flex-col" aria-live="polite">
       <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-(--border-primary)">
-        <h2 className="font-display font-bold text-(--text-primary) text-sm truncate">
+        <h2 ref={headingRef} tabIndex={-1} className="font-display font-bold text-(--text-primary) text-sm truncate focus:outline-none">
           {panel.kind === 'grammar' && (panel.title ?? 'Lesson')}
           {panel.kind === 'activity' && panel.activity.title}
           {panel.kind === 'question' && 'Quick check'}
@@ -45,7 +51,7 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+      <div className="flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6">
         {panel.kind === 'grammar' && (
           <MarkdownWithTts
             content={panel.markdown}
