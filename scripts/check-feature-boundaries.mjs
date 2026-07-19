@@ -6,6 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 const publicEntries = [
   ['learn', 'features/learn/index.ts'],
+  ['activities', 'features/activities/index.ts'],
   ['curriculum', 'features/curriculum/index.ts'],
   ['progress', 'features/progress/index.ts'],
   ['srs', 'features/srs/index.ts'],
