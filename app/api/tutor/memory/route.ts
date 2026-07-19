@@ -1,50 +1,25 @@
-import { NextResponse } from 'next/server'
-import { tutorMemoryDeleteSchema, tutorMemoryWriteSchema } from '@/lib/api/tutor-memory-schemas'
-import { createClient } from '@/lib/supabase/server'
-import { deletePrivateTutorData, deletePrivateTutorMemory, getPrivateTutorExport, savePrivateTutorMemory } from '@/lib/dal/tutor-memory'
-
-async function getUser() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  return { supabase, user }
-}
+import { getTutorMemoryUseCase, saveTutorMemoryUseCase, deleteTutorMemoryUseCase, tutorMemoryDeleteSchema, tutorMemoryWriteSchema } from '@/features/tutor'
+import { DomainError, apiErrorResponse, respondWithApiErrors } from '@/lib/api/errors'
+import { getAuthenticatedContext } from '@/lib/api/context'
 
 export async function GET() {
-  const { supabase, user } = await getUser()
-  if (!user) return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
-  try {
-    return NextResponse.json(await getPrivateTutorExport(supabase, user.id))
-  } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Unable to export private tutor data' }, { status: 500 })
-  }
+  const context = await getAuthenticatedContext()
+  if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
+  return respondWithApiErrors(() => getTutorMemoryUseCase(context), 'Unable to export private tutor data')
 }
 
 export async function POST(request: Request) {
   const parsed = tutorMemoryWriteSchema.safeParse(await request.json().catch(() => null))
-  if (!parsed.success) return NextResponse.json({ error: 'Invalid private tutor memory payload' }, { status: 400 })
-  const { supabase, user } = await getUser()
-  if (!user) return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
-  try {
-    const data = await savePrivateTutorMemory(supabase, user.id, parsed.data)
-    return NextResponse.json({ ok: true, data })
-  } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Unable to save private tutor data' }, { status: 500 })
-  }
+  if (!parsed.success) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid private tutor memory payload'), 'Invalid private tutor memory payload')
+  const context = await getAuthenticatedContext()
+  if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
+  return respondWithApiErrors(async () => ({ ok: true as const, data: await saveTutorMemoryUseCase(context, parsed.data) }), 'Unable to save private tutor data')
 }
 
 export async function DELETE(request: Request) {
   const parsed = tutorMemoryDeleteSchema.safeParse(Object.fromEntries(new URL(request.url).searchParams))
-  if (!parsed.success) return NextResponse.json({ error: 'Invalid deletion request' }, { status: 400 })
-  const { supabase, user } = await getUser()
-  if (!user) return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
-  try {
-    if (parsed.data.memoryKey) await deletePrivateTutorMemory(supabase, user.id, parsed.data.memoryKey)
-    else await deletePrivateTutorData(supabase, user.id)
-    return NextResponse.json({ ok: true })
-  } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Unable to delete private tutor data' }, { status: 500 })
-  }
+  if (!parsed.success) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid deletion request'), 'Invalid deletion request')
+  const context = await getAuthenticatedContext()
+  if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
+  return respondWithApiErrors(async () => { await deleteTutorMemoryUseCase(context, parsed.data); return { ok: true as const } }, 'Unable to delete private tutor data')
 }

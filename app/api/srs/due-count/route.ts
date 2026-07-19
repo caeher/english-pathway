@@ -1,16 +1,9 @@
-import { NextResponse } from 'next/server'
-import { getDueCount } from '@/lib/dal/srs'
-import { createClient } from '@/lib/supabase/server'
+import { getReviewDueCountUseCase } from '@/features/srs'
+import { DomainError, apiErrorResponse, respondWithApiErrors } from '@/lib/api/errors'
+import { getAuthenticatedContext } from '@/lib/api/context'
 
 export async function GET() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
-
-  try {
-    return NextResponse.json({ count: await getDueCount(supabase, user.id) })
-  } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Unable to count due reviews' }, { status: 500 })
-  }
+  const context = await getAuthenticatedContext()
+  if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
+  return respondWithApiErrors(async () => ({ count: await getReviewDueCountUseCase(context) }), 'Unable to count due reviews')
 }

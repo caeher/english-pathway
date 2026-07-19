@@ -32,6 +32,7 @@ export const mergeProgressSchema = z.object({
 
 export type ActivityProgressInput = z.infer<typeof activityProgressSchema>
 export type ChapterProgressInput = z.infer<typeof chapterProgressSchema>
+export type MergeProgressInput = z.infer<typeof mergeProgressSchema>
 
 export const gameProgressSchema = z.object({
   won: z.boolean().optional().default(true),

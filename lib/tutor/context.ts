@@ -77,11 +77,11 @@ export function getLocalTutorMatches(query: string, moduleId?: string, chapterId
 }
 
 export async function buildTutorContext(
-  supabase: Client,
+  supabase: Client | null,
   userId: string | null,
   request: TutorContextRequest,
 ): Promise<TutorContext> {
-  const [profile, progress, recentActivities] = userId
+  const [profile, progress, recentActivities] = userId && supabase
     ? await Promise.all([
       supabase.from('profiles').select('level, daily_goal_minutes, preferred_mode').eq('id', userId).maybeSingle(),
       supabase.from('user_progress').select('last_chapter_id, last_activity_id').eq('user_id', userId).maybeSingle(),
@@ -105,7 +105,7 @@ export async function buildTutorContext(
     fallbackUsed = true
   }
 
-  const privateMemory = userId ? await getPrivateTutorMemory(supabase, userId) : []
+  const privateMemory = userId && supabase ? await getPrivateTutorMemory(supabase, userId) : []
   const terms = request.query.toLowerCase().split(/\s+/).filter((term) => term.length > 2).slice(0, 12)
   const privateMatches = privateMemory
     .filter((memory) => terms.some((term) => memory.content.toLowerCase().includes(term)))

@@ -1,0 +1,42 @@
+import { NextResponse } from 'next/server'
+import { apiErrorSchema } from './contracts'
+
+export type DomainErrorCode = 'AUTHENTICATION_REQUIRED' | 'INVALID_INPUT' | 'NOT_FOUND' | 'CONFLICT' | 'DEPENDENCY_FAILURE'
+
+const statusByCode: Record<DomainErrorCode, number> = {
+  AUTHENTICATION_REQUIRED: 401,
+  INVALID_INPUT: 400,
+  NOT_FOUND: 404,
+  CONFLICT: 409,
+  DEPENDENCY_FAILURE: 503,
+}
+
+export class DomainError extends Error {
+  readonly code: DomainErrorCode
+  readonly status: number
+
+  constructor(code: DomainErrorCode, message: string, status = statusByCode[code]) {
+    super(message)
+    this.name = 'DomainError'
+    this.code = code
+    this.status = status
+  }
+}
+
+export function apiErrorResponse(error: unknown, fallbackMessage: string) {
+  const domainError = error instanceof DomainError ? error : null
+  const response = {
+    error: domainError?.message ?? fallbackMessage,
+    ...(domainError ? { code: domainError.code } : { code: 'DEPENDENCY_FAILURE' as const }),
+  }
+  return NextResponse.json(apiErrorSchema.parse(response), { status: domainError?.status ?? 503 })
+}
+
+export async function respondWithApiErrors<T>(operation: () => Promise<T>, fallbackMessage: string, init?: ResponseInit) {
+  try {
+    return NextResponse.json(await operation(), init)
+  } catch (error) {
+    console.error(error)
+    return apiErrorResponse(error, fallbackMessage)
+  }
+}

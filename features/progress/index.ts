@@ -2,3 +2,4 @@
 export * from './client'
 export * from './contracts'
 export * from './server'
+export * from './use-cases'

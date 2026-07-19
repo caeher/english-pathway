@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Check, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { saveChapterProgress } from '@/features/progress'
+import { saveChapterProgress } from '@/features/progress/client'
 
 interface CompleteChapterButtonProps {
   chapterId: string
