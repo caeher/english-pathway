@@ -39,16 +39,11 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
           {panel.kind === 'activity' && panel.activity.title}
           {panel.kind === 'question' && 'Quick check'}
         </h2>
-        <div className="flex items-center gap-1">
-          {panel.kind === 'activity' && onActivityDifficult && (
-              <Button variant="ghost" size="sm" onClick={() => onActivityDifficult(panel.activity.id)}>
-              Need help
-            </Button>
-          )}
+        {panel.kind !== 'activity' && (
           <Button variant="ghost" size="sm" onClick={clearPanel}>
             Close
           </Button>
-        </div>
+        )}
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6">
@@ -66,6 +61,8 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
             )}
             <ActivityRenderer
               activity={panel.activity}
+              onHelp={onActivityDifficult}
+              onExit={clearPanel}
               onComplete={(result) => onActivityComplete?.({
                 ...result,
                 chapterId: panel.chapterId,
