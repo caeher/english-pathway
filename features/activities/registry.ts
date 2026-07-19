@@ -9,6 +9,9 @@ export interface ActivityResultInput {
   score: number
   total: number
   scorePercent?: number
+  explanations?: string[]
+  weakItemIndexes?: number[]
+  metrics?: Record<string, number>
 }
 
 export interface ActivityDefinition {
