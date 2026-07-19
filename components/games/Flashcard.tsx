@@ -5,6 +5,7 @@ import type { FlashcardData } from '../../types'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import ActivityResult from './ActivityResult'
 import { flashcardCoverage } from '@/lib/games/scoring'
+import { useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface FlashcardProps {
   cards: FlashcardData[]
@@ -16,6 +17,7 @@ export default function Flashcard({ cards, onComplete }: FlashcardProps) {
   const [flipped, setFlipped] = useState(false)
   const [known, setKnown] = useState<Set<string>>(new Set())
   const [finished, setFinished] = useState(false)
+  const reducedMotion = useReducedMotion()
 
   const card = cards[current]
 
@@ -74,7 +76,7 @@ export default function Flashcard({ cards, onComplete }: FlashcardProps) {
           aria-pressed={flipped}
           aria-label={flipped ? 'Flip to front' : 'Flip to back'}
           animate={{ rotateY: flipped ? 180 : 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: reducedMotion ? 0 : 0.5 }}
           className="relative h-56 w-full cursor-pointer border-0 bg-transparent p-0 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
           style={{ transformStyle: 'preserve-3d' }}
         >

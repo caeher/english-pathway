@@ -5,6 +5,7 @@ import type { SentenceChallenge } from '../../types'
 import { shuffleArray } from '@/lib/helpers'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface SentenceBuilderProps {
   sentences: SentenceChallenge[]
@@ -18,6 +19,7 @@ export default function SentenceBuilder({ sentences, onComplete }: SentenceBuild
   const [isCorrect, setIsCorrect] = useState(false)
   const [score, setScore] = useState(0)
   const [finished, setFinished] = useState(false)
+  const reducedMotion = useReducedMotion()
 
   const sentence = sentences[current]
   const words = useMemo(() => shuffleArray(sentence.words.map((w, idx) => ({ text: w, id: idx }))), [sentence])
@@ -95,7 +97,7 @@ export default function SentenceBuilder({ sentences, onComplete }: SentenceBuild
         {placed.length === 0 && <span className="text-(--text-muted) text-sm">Click words to build the sentence...</span>}
         <AnimatePresence>
           {placed.map((wordId, i) => (
-            <motion.button key={`placed-${wordId}-${i}`} initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
+            <motion.button key={`placed-${wordId}-${i}`} {...(reducedMotion ? motionProps(true) : { initial: { scale: 0 }, animate: { scale: 1 }, exit: { scale: 0 } })}
               onClick={() => handleRemove(i)}
               className={`px-3.5 py-2 rounded-xl font-display font-bold text-sm cursor-pointer transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) ${
                 checked ? (isCorrect ? 'bg-(--success-soft) border border-(--success)/30' : 'bg-red-50 dark:bg-red-950/30 border border-red-300 dark:border-red-700')
@@ -108,7 +110,7 @@ export default function SentenceBuilder({ sentences, onComplete }: SentenceBuild
 
       <div className="flex flex-wrap gap-2 mb-5" role="group" aria-label="Available words">
         {available.map((item) => (
-          <motion.button key={`avail-${item.id}`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+          <motion.button key={`avail-${item.id}`} {...(reducedMotion ? {} : { whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 } })}
             onClick={() => handlePlace(item.id)}
             onKeyDown={(e) => handleKeyPlace(e, item.id)}
             className="px-3.5 py-2 rounded-xl bg-(--bg-card) border-2 border-(--border-primary) font-display font-bold text-sm text-(--text-secondary) hover:border-(--accent) hover:bg-(--accent-soft) cursor-pointer transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)">
@@ -118,7 +120,7 @@ export default function SentenceBuilder({ sentences, onComplete }: SentenceBuild
       </div>
 
       {checked && (
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+        <motion.div {...(reducedMotion ? motionProps(true) : { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 } })}
           className={`flex items-center gap-2 p-4 rounded-xl mb-4 text-sm font-display font-bold ${isCorrect ? 'bg-(--success-soft) border border-(--success)/20' : 'bg-red-50 dark:bg-red-950/30 border border-red-300/20'}`}
           role="status" aria-live="polite">
           {isCorrect ? <CheckCircle className="w-5 h-5" /> : <XCircle className="w-5 h-5" />}
