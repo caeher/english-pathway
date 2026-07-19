@@ -102,7 +102,7 @@ The theme preference and the cookie-choice record are stored locally so the inte
 
 ## Optional analytics
 
-PostHog and product analytics requests are optional. They are not loaded or sent until you select **Allow analytics**. Selecting **Use essential only** keeps sign-in and learning available without optional analytics. You can change the choice by clearing the site's local storage or using the cookie preference control when provided by the operator.
+Product analytics requests are optional. They are not sent until you select **Allow analytics**. Selecting **Use essential only** keeps sign-in and learning available without optional analytics. You can change the choice by clearing the site's local storage or using the cookie preference control when provided by the operator.
 
 ## Microphone is not a cookie
 

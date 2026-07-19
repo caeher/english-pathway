@@ -55,13 +55,6 @@ export function trackEvent(
     timestamp: new Date().toISOString(),
   }
 
-  // Optional PostHog forward
-  const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
-  if (posthogKey && typeof window !== 'undefined') {
-    const w = window as Window & { posthog?: { capture: (e: string, p?: object) => void } }
-    w.posthog?.capture(eventName, properties)
-  }
-
   void fetch('/api/analytics/event', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

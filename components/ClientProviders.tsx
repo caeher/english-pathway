@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 import useThemeStore, { selectDark } from '@/stores/useThemeStore'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/toaster'
-import { AnalyticsProvider } from '@/lib/analytics/provider'
 import { migratePersistKeys } from '@/lib/storage/migrate-persist'
 import PwaProvider from '@/components/PwaProvider'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
@@ -41,7 +40,6 @@ function PersistMigration() {
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <TooltipProvider delayDuration={300}>
-      <AnalyticsProvider />
       <ThemeInit />
       <PersistMigration />
       <ScrollToTop />
