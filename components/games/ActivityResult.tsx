@@ -85,13 +85,14 @@ export default function ActivityResult({
           )}
         </p>
 
-        {!passed && (
-          <p className="text-xs text-(--text-muted) mb-3">
-            You need at least 70% to pass
-          </p>
-        )}
+        {!passed && (
+          <div className="mb-3 space-y-1 text-xs text-(--text-muted)">
+            <p>You need at least 70% to pass.</p>
+            <p>Review the corrections below, then try the activity again to practise the missed concepts.</p>
+          </div>
+        )}
 
-        {explanations.length > 0 && (
+        {explanations.length > 0 && (
           <div className="mt-4 space-y-2 text-left">
             {explanations.map((exp) => (
               <p key={exp} className="text-xs text-(--text-secondary) bg-(--bg-card) p-3 rounded-xl border border-(--border-primary)">
@@ -99,7 +100,11 @@ export default function ActivityResult({
               </p>
             ))}
           </div>
-        )}
+        )}
+
+        <p className="mt-4 text-xs text-(--text-muted)">
+          This is a practice result. Due reviews are scheduled separately to help you remember what needs more work.
+        </p>
 
         {onRetry && (
           <button

@@ -11,7 +11,7 @@ import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface QuizProps {
   questions: QuizQuestion[]
-  onComplete?: (result: QuizResult & { scorePercent: number }) => void
+  onComplete?: (result: QuizResult & { scorePercent: number; weakItemIndexes?: number[] }) => void
 }
 
 export default function Quiz({ questions, onComplete }: QuizProps) {
@@ -23,6 +23,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
   const [score, setScore] = useState(0)
   const [finished, setFinished] = useState(false)
   const [wrongExplanations, setWrongExplanations] = useState<string[]>([])
+  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>([])
   const reducedMotion = useReducedMotion()
 
   const q = questions[current]
@@ -34,7 +35,10 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
     const correct = index === q.correct
     setIsCorrect(correct)
     if (correct) setScore((s) => s + 1)
-    else if (q.explanation) setWrongExplanations((e) => [...e, q.explanation!])
+    else {
+      setWeakItemIndexes((indexes) => [...indexes, current])
+      setWrongExplanations((explanations) => [...explanations, q.explanation ?? `The correct answer is "${q.options[q.correct]}".`])
+    }
   }
 
   const handleFillSubmit = (e: React.FormEvent) => {
@@ -47,6 +51,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
     else {
       const exp = q.explanation ?? `The correct answer is "${q.correct}"`
       setWrongExplanations((e) => [...e, exp])
+      setWeakItemIndexes((indexes) => [...indexes, current])
     }
   }
 
@@ -54,7 +59,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
     if (current + 1 >= questions.length) {
       setFinished(true)
       const pct = scoreToPercent(score, questions.length)
-      onComplete?.({ score, total: questions.length, scorePercent: pct })
+      onComplete?.({ score, total: questions.length, scorePercent: pct, weakItemIndexes })
     } else {
       setCurrent((c) => c + 1)
       setSelected(null)
@@ -73,6 +78,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
     setScore(0)
     setFinished(false)
     setWrongExplanations([])
+    setWeakItemIndexes([])
   }
 
   if (finished) {

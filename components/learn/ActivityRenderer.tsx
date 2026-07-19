@@ -69,7 +69,7 @@ interface ActivityRendererProps {
   onExit?: () => void
 }
 
-type GameResult = Record<string, unknown> & { score: number; total: number; scorePercent?: number }
+type GameResult = Record<string, unknown> & { score: number; total: number; scorePercent?: number; weakItemIndexes?: number[] }
 type RenderActivity = (props: unknown, onComplete: (result: GameResult) => void) => ReactNode
 
 const renderers: Record<ActivityTypeKey, RenderActivity> = {
@@ -111,7 +111,9 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
       total: result.total,
       scorePercent: evaluation.scorePercent,
       details: result,
-      reviewContentRefs: evaluation.scorePercent < 100 ? getReviewContentRefs(activity) : [],
+      reviewContentRefs: result.weakItemIndexes?.length
+        ? getReviewContentRefs(activity, result.weakItemIndexes)
+        : evaluation.scorePercent < 100 ? getReviewContentRefs(activity) : [],
     })
   }
 
