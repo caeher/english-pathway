@@ -2,8 +2,8 @@
   {
     "id": "m12-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Construye tu Presentación",
-    "description": "Ordena fragmentos para construir cada fase de una presentación.",
+    "title": "Build your Presentation",
+    "description": "Arrange fragments to build each phase of a presentation.",
     "props": {
       "sentences": [
         {
@@ -108,8 +108,8 @@
   {
     "id": "m12-ch2-quiz",
     "type": "quiz",
-    "title": "¿Qué Viene Después?",
-    "description": "Elige la mejor continuación para cada momento de la presentación.",
+    "title": "What Comes Next?",
+    "description": "Choose the best continuation for each moment of the presentation.",
     "props": {
       "questions": [
         {
@@ -230,26 +230,26 @@
   {
     "id": "m12-ch2-flash",
     "type": "flashcard",
-    "title": "Frases de Presentación",
-    "description": "Domina las frases esenciales para cada fase de una presentación.",
+    "title": "Presentation Phrases",
+    "description": "Master the essential phrases for each phase of a presentation.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "GOOD MORNING. I'M GOING TO TALK ABOUT... 🎬 (Opening)",
-          "back": "Apertura formal estándar. Saludo + tema. Nivel: Formal.",
+          "back": "Standard formal opening. Greeting + topic. Level: Formal.",
           "example": "Good morning. I'm going to talk about climate change."
         },
         {
           "id": "f2",
           "front": "I'D LIKE TO START BY... 🎬 (Opening)",
-          "back": "Me gustaría comenzar por... Apertura flexible y profesional.",
+          "back": "I would like to start with... Flexible and professional opening.",
           "example": "I'd like to start by sharing some interesting data."
         },
         {
           "id": "f3",
           "front": "MOVING ON TO... 🔄 (Transition)",
-          "back": "Pasando a... Transición entre puntos principales. Nivel: Semi-formal.",
+          "back": "Moving on to... Transition between main points. Level: Semi-formal.",
           "example": "Moving on to our second topic, let's discuss the budget."
         },
         {
@@ -261,49 +261,49 @@
         {
           "id": "f5",
           "front": "AS YOU CAN SEE IN THIS CHART... 📊 (Visual)",
-          "back": "Como pueden ver en este gráfico... Para describir apoyo visual.",
+          "back": "As you can see in this graph... To describe visual support.",
           "example": "As you can see in this chart, sales grew by 15%."
         },
         {
           "id": "f6",
           "front": "I'D LIKE TO HIGHLIGHT... 💡 (Emphasis)",
-          "back": "Me gustaría resaltar... Para enfatizar un punto clave.",
+          "back": "I would like to highlight... To emphasize a key point.",
           "example": "I'd like to highlight that customer satisfaction increased."
         },
         {
           "id": "f7",
           "front": "THE KEY TAKEAWAY IS... 🏁 (Closing)",
-          "back": "El punto clave es... Resume la idea más importante.",
+          "back": "The key point is... Summarize the most important idea.",
           "example": "The key takeaway is that sustainability drives growth."
         },
         {
           "id": "f8",
           "front": "TO SUMMARIZE... 🏁 (Closing)",
-          "back": "Para resumir... Inicia el cierre formal de la presentación.",
+          "back": "To summarize... The formal closing of the presentation begins.",
           "example": "To summarize, we need to invest in three key areas."
         },
         {
           "id": "f9",
           "front": "THAT'S A GREAT QUESTION. ❓ (Q&A)",
-          "back": "¡Excelente pregunta! Ganar tiempo y validar al que pregunta.",
+          "back": "Excellent question! Save time and validate the questioner.",
           "example": "That's a great question. Let me think about that for a moment."
         },
         {
           "id": "f10",
           "front": "I'LL LOOK INTO THAT AND GET BACK TO YOU. ❓ (Q&A)",
-          "back": "Lo investigaré y le responderé. Para cuando no sabes la respuesta.",
+          "back": "I will look into it and get back to you. For when you don't know the answer.",
           "example": "I'll look into that and get back to you after the meeting."
         },
         {
           "id": "f11",
           "front": "FOR INSTANCE... 📌 (Example)",
-          "back": "Por ejemplo... Introduce un ejemplo concreto durante la presentación.",
+          "back": "For example... Introduce a concrete example during the presentation.",
           "example": "For instance, our Tokyo office increased sales by 30%."
         },
         {
           "id": "f12",
           "front": "THANK YOU FOR YOUR ATTENTION. 🏁 (Final)",
-          "back": "Gracias por su atención. Cierre cortés y profesional.",
+          "back": "Thank you for your time. Courteous and professional closing.",
           "example": "Thank you for your attention. Any questions?"
         }
       ]
@@ -312,8 +312,8 @@
   {
     "id": "m12-ch2-match",
     "type": "word-match",
-    "title": "Frase → Fase de Presentación",
-    "description": "Empareja cada frase con la fase a la que pertenece.",
+    "title": "Phrase → Presentation Phase",
+    "description": "Match each phrase with the phase to which it belongs.",
     "props": {
       "pairs": [
         {
@@ -354,8 +354,8 @@
   {
     "id": "m12-ch2-svg",
     "type": "svg-scene",
-    "title": "La Sala de Conferencias",
-    "description": "Explora la sala de conferencias y practica cada fase de la presentación.",
+    "title": "The Conference Room",
+    "description": "Explore the conference room and practice each phase of the presentation.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -369,7 +369,7 @@
             "width": 120,
             "height": 100,
             "fill": "#92400e",
-            "label": "Podio — Practica tu opening",
+            "label": "Podium — Practice your opening",
             "labelEn": "🎤 Podium"
           },
           {
@@ -380,7 +380,7 @@
             "width": 300,
             "height": 180,
             "fill": "#e2e8f0",
-            "label": "Pantalla — Describe gráficos",
+            "label": "Display — Describes graphics",
             "labelEn": "📊 Screen"
           },
           {
@@ -391,7 +391,7 @@
             "rx": 40,
             "ry": 25,
             "fill": "#c4b5fd",
-            "label": "Audiencia — Practica Q&A",
+            "label": "Audience — Practice Q&A",
             "labelEn": "👥 Audience"
           },
           {
@@ -423,7 +423,7 @@
             "cy": 70,
             "r": 35,
             "fill": "#fbbf24",
-            "label": "Reloj — Controla el tiempo",
+            "label": "Clock — Keep track of time",
             "labelEn": "⏰ Timer"
           },
           {
@@ -445,7 +445,7 @@
             "width": 60,
             "height": 80,
             "fill": "#fef3c7",
-            "label": "Notas — Prepara tu guión",
+            "label": "Notes — Prepare your script",
             "labelEn": "📝 Notes"
           }
         ]
@@ -456,17 +456,17 @@
     "id": "m12-ch2-scramble",
     "type": "word-scramble",
     "title": "Creando Presentaciones",
-    "description": "Descifra vocabulario de presentaciones.",
+    "description": "Decipher presentation vocabulary.",
     "props": {
       "words": [
         {
           "word": "SLIDE",
-          "hint": "Diapositiva; página de presentación",
+          "hint": "Slide; presentation page",
           "category": "Presentations"
         },
         {
           "word": "VISUAL",
-          "hint": "Visual; elemento gráfico",
+          "hint": "Visual; graphic element",
           "category": "Presentations"
         },
         {
@@ -476,7 +476,7 @@
         },
         {
           "word": "ENGAGE",
-          "hint": "Involucrar; captar atención",
+          "hint": "Involve; get attention",
           "category": "Presentations"
         },
         {

@@ -2,8 +2,8 @@
   {
     "id": "m14-ch3-quiz",
     "type": "quiz",
-    "title": "El Gran Test Adaptativo",
-    "description": "Evaluación integral que cubre gramática, vocabulario, lectura y pensamiento crítico.",
+    "title": "The Great Adaptive Test",
+    "description": "Comprehensive assessment covering grammar, vocabulary, reading, and critical thinking.",
     "props": {
       "questions": [
         {
@@ -83,7 +83,7 @@
             "Forgetting about"
           ],
           "correct": 1,
-          "explanation": "\"Looking forward to\" = anticipar con gusto. Común en emails y conversación."
+          "explanation": "\"Looking forward to\" = anticipate with pleasure. Common in emails and conversation."
         },
         {
           "id": "q8",
@@ -124,8 +124,8 @@
   {
     "id": "m14-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Prueba de Producción por Niveles",
-    "description": "Construye oraciones de complejidad creciente: A1 → B2.",
+    "title": "Production Test by Levels",
+    "description": "Build sentences of increasing complexity: A1 → B2.",
     "props": {
       "sentences": [
         {
@@ -220,8 +220,8 @@
   {
     "id": "m14-ch3-match",
     "type": "word-match",
-    "title": "Vocabulario por Niveles CEFR",
-    "description": "Empareja cada palabra con su definición y nivel correspondiente.",
+    "title": "Vocabulary by CEFR Levels",
+    "description": "Match each word with its corresponding definition and level.",
     "props": {
       "pairs": [
         {
@@ -262,68 +262,68 @@
   {
     "id": "m14-ch3-flash",
     "type": "flashcard",
-    "title": "Autoevaluación Metacognitiva",
-    "description": "Evalúa si conoces cada estructura ANTES de voltear. ¿Acertaste tu autoevaluación?",
+    "title": "Metacognitive self-assessment",
+    "description": "Evaluate if you know each structure BEFORE flipping. Did you get your self-assessment right?",
     "props": {
       "cards": [
         {
           "id": "f1",
-          "front": "PRESENT PERFECT CONTINUOUS — ¿Lo domino? 🤔",
-          "back": "I have been working here for 5 years. — Acción que empezó en el pasado y continúa ahora. Forma: have/has + been + -ing.",
+          "front": "PRESENT PERFECT CONTINUOUS — Do I master it? 🤔",
+          "back": "I have been working here for 5 years. — Action that began in the past and continues now. Form: have/has + been + -ing.",
           "example": "She has been studying English since 2020."
         },
         {
           "id": "f2",
-          "front": "SECOND CONDITIONAL — ¿Lo domino? 🤔",
-          "back": "If I had more money, I would travel the world. — Situación hipotética presente/futura. If + past simple, would + infinitive.",
+          "front": "SECOND CONDITIONAL — Do I master it? 🤔",
+          "back": "If I had more money, I would travel the world. — Hypothetical present/future situation. If + past simple, would + infinitive.",
           "example": "If I were you, I would accept the offer."
         },
         {
           "id": "f3",
-          "front": "THIRD CONDITIONAL — ¿Lo domino? 🤔",
-          "back": "If I had studied harder, I would have passed. — Situación hipotética pasada (arrepentimiento). If + past perfect, would have + past participle.",
+          "front": "THIRD CONDITIONAL — Do I master it? 🤔",
+          "back": "If I had studied harder, I would have passed. — Hypothetical past situation (regret). If + past perfect, would have + past participle.",
           "example": "If she had left earlier, she would have caught the train."
         },
         {
           "id": "f4",
-          "front": "PASSIVE VOICE — ¿Lo domino? 🤔",
-          "back": "The report was written by the manager. — El foco está en la acción/objeto, no en quién la hizo. Forma: be + past participle.",
+          "front": "PASSIVE VOICE — Do I master it? 🤔",
+          "back": "The report was written by the manager. — The focus is on the action/object, not on who did it. Form: be + past participle.",
           "example": "The bridge was built in 1920."
         },
         {
           "id": "f5",
-          "front": "MODAL VERBS FOR DEDUCTION — ¿Lo domino? 🤔",
-          "back": "He must be tired (seguro). He might be tired (posible). He can't be tired (imposible). — Modales para deducir.",
+          "front": "MODAL VERBS FOR DEDUCTION — Do I master it? 🤔",
+          "back": "He must be tired (sure). He might be tired (possible). He can't be tired (impossible). — Manners to deduce.",
           "example": "She must have forgotten — her phone is still here."
         },
         {
           "id": "f6",
-          "front": "REPORTED SPEECH — ¿Lo domino? 🤔",
-          "back": "She said (that) she was going to leave. — Reportar lo que alguien dijo. Los tiempos retroceden un paso.",
+          "front": "REPORTED SPEECH — Do I master it? 🤔",
+          "back": "She said (that) she was going to leave. — Report what someone said. Times go back a step.",
           "example": "He told me he had already finished the project."
         },
         {
           "id": "f7",
-          "front": "RELATIVE CLAUSES — ¿Lo domino? 🤔",
-          "back": "The man who lives next door is a doctor. — Cláusulas con who/which/that/where/whose que dan información extra.",
+          "front": "RELATIVE CLAUSES — Do I master it? 🤔",
+          "back": "The man who lives next door is a doctor. — Clauses with who/which/that/where/whose that give extra information.",
           "example": "The book which I read last week was fascinating."
         },
         {
           "id": "f8",
-          "front": "PHRASAL VERBS — ¿Lo domino? 🤔",
-          "back": "Look up (buscar), give up (rendirse), turn down (rechazar), figure out (resolver). — Verbos + partícula que cambian significado.",
+          "front": "PHRASAL VERBS — Do I master it? 🤔",
+          "back": "Look up, give up, turn down, figure out. — Verbs + particle that change meaning.",
           "example": "I need to figure out how to solve this problem."
         },
         {
           "id": "f9",
-          "front": "SUBJUNCTIVE MOOD — ¿Lo domino? 🤔",
-          "back": "If I were you... / I suggest that he be... — Modo para situaciones hipotéticas o recomendaciones formales.",
+          "front": "SUBJUNCTIVE MOOD — Do I master it? 🤔",
+          "back": "If I were you... / I suggest that he be... — Mode for hypothetical situations or formal recommendations.",
           "example": "If I were the president, I would invest more in education."
         },
         {
           "id": "f10",
-          "front": "INVERSION FOR EMPHASIS — ¿Lo domino? 🤔",
-          "back": "Not only does she speak English, but she also speaks French. — Invertir sujeto-verbo para énfasis. Nivel C1.",
+          "front": "INVESTMENT FOR EMPHASIS — Do I master it? 🤔",
+          "back": "Not only does she speak English, but she also speaks French. — Invert subject-verb for emphasis. Level C1.",
           "example": "Never have I seen such a beautiful sunset."
         }
       ]
@@ -332,8 +332,8 @@
   {
     "id": "m14-ch3-svg",
     "type": "svg-scene",
-    "title": "Mapa de Calor de Habilidades",
-    "description": "Explora tu panel de resultados: cada área muestra tu nivel estimado.",
+    "title": "Skill Heat Map",
+    "description": "Explore your results dashboard: each area shows your estimated level.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -347,7 +347,7 @@
             "width": 100,
             "height": 120,
             "fill": "#34d399",
-            "label": "Reading — Tu nivel de comprensión lectora",
+            "label": "Reading — Your level of reading comprehension",
             "labelEn": "📖 Reading: B2"
           },
           {
@@ -358,7 +358,7 @@
             "width": 100,
             "height": 120,
             "fill": "#fbbf24",
-            "label": "Writing — Tu nivel de gramática y escritura",
+            "label": "Writing — Your level of grammar and writing",
             "labelEn": "✍️ Writing: B1"
           },
           {
@@ -369,7 +369,7 @@
             "width": 100,
             "height": 120,
             "fill": "#f87171",
-            "label": "Speaking — Tu nivel de pronunciación y fluidez",
+            "label": "Speaking — Your level of pronunciation and fluency",
             "labelEn": "🗣️ Speaking: A2"
           },
           {
@@ -380,7 +380,7 @@
             "width": 100,
             "height": 120,
             "fill": "#34d399",
-            "label": "Listening — Tu nivel de comprensión auditiva",
+            "label": "Listening — Your level of listening comprehension",
             "labelEn": "👂 Listening: B2"
           },
           {
@@ -391,7 +391,7 @@
             "width": 70,
             "height": 120,
             "fill": "#fbbf24",
-            "label": "Critical — Tu nivel de pensamiento crítico",
+            "label": "Critical — Your level of critical thinking",
             "labelEn": "🧠 Critical: B1"
           },
           {
@@ -445,23 +445,23 @@
   {
     "id": "m14-ch3-scramble",
     "type": "word-scramble",
-    "title": "Evaluación de Nivel",
-    "description": "Descifra vocabulario de evaluación.",
+    "title": "Level Assessment",
+    "description": "Decipher evaluation vocabulary.",
     "props": {
       "words": [
         {
           "word": "ASSESSMENT",
-          "hint": "Evaluación; valoración",
+          "hint": "Assessment; assessment",
           "category": "Assessment"
         },
         {
           "word": "LEVEL",
-          "hint": "Nivel; grado de dominio",
+          "hint": "Level; degree of mastery",
           "category": "Assessment"
         },
         {
           "word": "SCORE",
-          "hint": "Puntuación; resultado",
+          "hint": "Punctuation; result",
           "category": "Assessment"
         },
         {

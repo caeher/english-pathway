@@ -2,14 +2,14 @@
   {
     "id": "m13-ch3-quiz",
     "type": "quiz",
-    "title": "El Crítico Literario",
-    "description": "Analiza el artículo en 4 niveles: comprensión, análisis, evaluación y respuesta personal.",
+    "title": "The Literary Critic",
+    "description": "Analyze the article in 4 levels: comprehension, analysis, evaluation and personal response.",
     "props": {
       "questions": [
         {
           "id": "q1",
           "type": "multiple-choice",
-          "question": "[Comprensión] What is the author's main argument?",
+          "question": "[Comprehension] What is the author's main argument?",
           "options": [
             "Social media is completely bad",
             "Social media is always positive",
@@ -22,7 +22,7 @@
         {
           "id": "q2",
           "type": "multiple-choice",
-          "question": "[Análisis] Which rhetorical technique does the author use when citing \"a 2023 study by the APA\"?",
+          "question": "[Analysis] Which rhetorical technique does the author use when citing \"a 2023 study by the APA\"?",
           "options": [
             "Appeal to emotion",
             "Statistical evidence + appeal to authority",
@@ -35,14 +35,14 @@
         {
           "id": "q3",
           "type": "fill-blank",
-          "question": "[Comprensión] The author says heavy social media users report higher levels of ___.",
+          "question": "[Comprehension] The author says heavy social media users report higher levels of ___.",
           "correct": "loneliness",
           "explanation": "The text states: \"heavy social media users report significantly higher levels of loneliness.\""
         },
         {
           "id": "q4",
           "type": "multiple-choice",
-          "question": "[Análisis] The phrase \"Critics argue that...\" signals that the author is...",
+          "question": "[Analysis] The phrase \"Critics argue that...\" signals that the author is...",
           "options": [
             "Sharing their personal opinion",
             "Presenting a counterargument from others",
@@ -55,7 +55,7 @@
         {
           "id": "q5",
           "type": "multiple-choice",
-          "question": "[Evaluación] What is the STRONGEST piece of evidence in the article?",
+          "question": "[Evaluation] What is the STRONGEST piece of evidence in the article?",
           "options": [
             "The researcher's quote at the end",
             "The APA study with specific data on loneliness levels",
@@ -68,7 +68,7 @@
         {
           "id": "q6",
           "type": "multiple-choice",
-          "question": "[Evaluación] What is a potential WEAKNESS of this article?",
+          "question": "[Evaluation] What is a potential WEAKNESS of this article?",
           "options": [
             "It cites a study",
             "It presents both sides",
@@ -81,14 +81,14 @@
         {
           "id": "q7",
           "type": "fill-blank",
-          "question": "[Análisis] \"The author ___ that social media may be increasing loneliness.\" (argues/jokes)",
+          "question": "[Analysis] \"The author ___ that social media may be increasing loneliness.\" (argues/jokes)",
           "correct": "argues",
           "explanation": "\"Argues\" is the academic verb for presenting someone's position. \"Suggests\" also works."
         },
         {
           "id": "q8",
           "type": "multiple-choice",
-          "question": "[Análisis] The LGBTQ+ youth example is used as...",
+          "question": "[Analysis] The LGBTQ+ youth example is used as...",
           "options": [
             "Statistical evidence",
             "A counterargument showing social media's benefits",
@@ -124,8 +124,8 @@
   {
     "id": "m13-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Construye tu Análisis",
-    "description": "Construye oraciones analíticas usando vocabulario académico.",
+    "title": "Build your Analysis",
+    "description": "Build analytical sentences using academic vocabulary.",
     "props": {
       "sentences": [
         {
@@ -231,8 +231,8 @@
   {
     "id": "m13-ch3-match",
     "type": "word-match",
-    "title": "Técnica Retórica → Ejemplo",
-    "description": "Empareja cada técnica retórica con su ejemplo del texto.",
+    "title": "Rhetorical Technique → Example",
+    "description": "Match each rhetorical technique with its example from the text.",
     "props": {
       "pairs": [
         {
@@ -273,68 +273,68 @@
   {
     "id": "m13-ch3-flash",
     "type": "flashcard",
-    "title": "Vocabulario Académico de Análisis",
-    "description": "Domina las expresiones académicas para el análisis crítico de textos.",
+    "title": "Academic Analysis Vocabulary",
+    "description": "Master academic expressions for critical analysis of texts.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "THE AUTHOR ARGUES THAT... 📝",
-          "back": "El autor argumenta que... — Presenta objetivamente la posición de un escritor. Variantes: claims, suggests, maintains, contends.",
+          "back": "The author argues that... — Objectively presents the position of a writer. Variants: claims, suggests, maintains, contents.",
           "example": "The author argues that social media has fundamentally changed communication."
         },
         {
           "id": "f2",
           "front": "THE EVIDENCE SUPPORTS... ✅",
-          "back": "La evidencia apoya... — Para cuando la evidencia refuerza una posición.",
+          "back": "The evidence supports... — For when the evidence reinforces a position.",
           "example": "The evidence supports the claim that exercise improves mental health."
         },
         {
           "id": "f3",
           "front": "ONE LIMITATION IS... ⚠️",
-          "back": "Una limitación es... — Señala debilidades del argumento de forma académica.",
+          "back": "A limitation is... — Point out weaknesses in the argument in an academic way.",
           "example": "One limitation is that the study only included participants from one country."
         },
         {
           "id": "f4",
           "front": "FROM MY PERSPECTIVE... 💭",
-          "back": "Desde mi perspectiva... — Introduce tu opinión personal fundamentada.",
+          "back": "From my perspective... — Enter your personal, well-founded opinion.",
           "example": "From my perspective, the argument would be stronger with more diverse evidence."
         },
         {
           "id": "f5",
           "front": "THIS IS A STRONG ARGUMENT BECAUSE... 💪",
-          "back": "Este es un argumento fuerte porque... — Evaluación positiva con justificación.",
+          "back": "This is a strong argument because... — Positive evaluation with justification.",
           "example": "This is a strong argument because it cites peer-reviewed research."
         },
         {
           "id": "f6",
           "front": "HOWEVER, THE AUTHOR FAILS TO... ❌",
-          "back": "Sin embargo, el autor no logra... — Crítica constructiva de una omisión.",
+          "back": "However, the author fails to... — Constructive criticism of an omission.",
           "example": "However, the author fails to address the economic implications."
         },
         {
           "id": "f7",
           "front": "I WOULD ARGUE THAT... 🎯",
-          "back": "Yo argumentaría que... — Tu posición personal presentada formalmente.",
+          "back": "I would argue that... — Your personal position formally presented.",
           "example": "I would argue that moderation, not abstinence, is the best approach."
         },
         {
           "id": "f8",
           "front": "THE TEXT REVEALS A BIAS TOWARD... 🔎",
-          "back": "El texto revela un sesgo hacia... — Identifica parcialidad del autor.",
+          "back": "The text reveals a bias towards... — Identifies the author's bias.",
           "example": "The text reveals a bias toward negative coverage of social media."
         },
         {
           "id": "f9",
           "front": "ACCORDING TO... 📚",
-          "back": "Según... — Atribuye información a una fuente. Neutral y objetivo.",
+          "back": "According to... — Attributes information to a source. Neutral and objective.",
           "example": "According to the World Health Organization, air pollution causes 7 million deaths annually."
         },
         {
           "id": "f10",
           "front": "IN CONTRAST... 🔄",
-          "back": "En contraste... — Presenta información opuesta para comparación.",
+          "back": "In contrast... — Presents opposite information for comparison.",
           "example": "In contrast, a European study found no significant correlation."
         }
       ]
@@ -343,8 +343,8 @@
   {
     "id": "m13-ch3-svg",
     "type": "svg-scene",
-    "title": "Mapa del Argumento",
-    "description": "Explora la estructura del argumento del artículo: tesis, evidencia y conclusión.",
+    "title": "Plot Map",
+    "description": "Explore the structure of the article's argument: thesis, evidence, and conclusion.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -358,7 +358,7 @@
             "rx": 130,
             "ry": 35,
             "fill": "#fbbf24",
-            "label": "Tesis principal del autor",
+            "label": "Author's main thesis",
             "labelEn": "📌 Main Thesis"
           },
           {
@@ -391,7 +391,7 @@
             "width": 160,
             "height": 50,
             "fill": "#c4b5fd",
-            "label": "Técnicas retóricas usadas",
+            "label": "Rhetorical techniques used",
             "labelEn": "🔬 Rhetorical Techniques"
           },
           {
@@ -402,7 +402,7 @@
             "width": 260,
             "height": 55,
             "fill": "#93c5fd",
-            "label": "Conclusión del autor",
+            "label": "Author's conclusion",
             "labelEn": "🏁 Conclusion"
           },
           {
@@ -423,8 +423,8 @@
   {
     "id": "m13-ch3-scramble",
     "type": "word-scramble",
-    "title": "Lectura Crítica",
-    "description": "Descifra vocabulario de análisis.",
+    "title": "Critical Reading",
+    "description": "Decipher analysis vocabulary.",
     "props": {
       "words": [
         {

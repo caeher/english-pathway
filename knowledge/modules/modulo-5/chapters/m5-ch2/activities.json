@@ -2,8 +2,8 @@
   {
     "id": "m5-ch2-svg",
     "type": "svg-scene",
-    "title": "Comparador de Tiempos",
-    "description": "Visualiza la diferencia entre pasado simple y presente perfecto.",
+    "title": "Time Comparator",
+    "description": "Visualize the difference between past simple and present perfect.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -117,7 +117,7 @@
             "height": 60,
             "fill": "#e0e7ff",
             "label": "⏰ Since & For",
-            "labelEn": "SINCE 2018 (punto) / FOR 6 years (duración) → I've lived here..."
+            "labelEn": "SINCE 2018 (period) / FOR 6 years (duration) → I've lived here..."
           },
           {
             "id": "warn",
@@ -137,8 +137,8 @@
   {
     "id": "m5-ch2-flash",
     "type": "flashcard",
-    "title": "¿Pasado Simple o Presente Perfecto?",
-    "description": "Decide cuál usar y por qué.",
+    "title": "Past Simple or Present Perfect?",
+    "description": "Decide which one to use and why.",
     "props": {
       "cards": [
         {
@@ -199,7 +199,7 @@
           "id": "c10",
           "front": "She ___ (just / arrive).",
           "back": "She has just arrived.",
-          "example": "Present Perfect: \"just\" = acabar de."
+          "example": "Present Perfect: \"just\" = finish."
         }
       ]
     }
@@ -207,8 +207,8 @@
   {
     "id": "m5-ch2-match",
     "type": "word-match",
-    "title": "Señales → Tiempo Verbal",
-    "description": "Empareja la señal temporal con el tiempo verbal correcto.",
+    "title": "Signs → Verbal Tense",
+    "description": "Match the temporal signal with the correct verb tense.",
     "props": {
       "pairs": [
         {
@@ -249,12 +249,12 @@
   {
     "id": "m5-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Forma la Oración Correcta",
-    "description": "Usa el tiempo verbal adecuado según el contexto.",
+    "title": "Form the Correct Sentence",
+    "description": "Use the appropriate verb tense according to the context.",
     "props": {
       "sentences": [
         {
-          "prompt": "He visitado París (alguna vez):",
+          "prompt": "I have visited Paris (ever):",
           "words": [
             "I",
             "have",
@@ -264,7 +264,7 @@
           "correct": "I have visited Paris"
         },
         {
-          "prompt": "Visité París el año pasado:",
+          "prompt": "I visited Paris last year:",
           "words": [
             "I",
             "visited",
@@ -275,7 +275,7 @@
           "correct": "I visited Paris last year"
         },
         {
-          "prompt": "¿Has comido alguna vez sushi?:",
+          "prompt": "Have you ever eaten sushi?:",
           "words": [
             "Have",
             "you",
@@ -286,7 +286,7 @@
           "correct": "Have you ever eaten sushi?"
         },
         {
-          "prompt": "Ella vio la película ayer:",
+          "prompt": "She saw the movie yesterday:",
           "words": [
             "She",
             "saw",
@@ -297,7 +297,7 @@
           "correct": "She saw the movie yesterday"
         },
         {
-          "prompt": "He vivido aquí desde 2018:",
+          "prompt": "I have lived here since 2018:",
           "words": [
             "I",
             "have",
@@ -309,7 +309,7 @@
           "correct": "I have lived here since 2018"
         },
         {
-          "prompt": "Compramos un coche hace dos días:",
+          "prompt": "We bought a car two days ago:",
           "words": [
             "We",
             "bought",
@@ -327,8 +327,8 @@
   {
     "id": "m5-ch2-quiz",
     "type": "quiz",
-    "title": "Quiz: ¿Past Simple o Present Perfect?",
-    "description": "Demuestra que sabes cuándo usar cada uno.",
+    "title": "Quiz: Past Simple or Present Perfect?",
+    "description": "Show that you know when to use each one.",
     "props": {
       "questions": [
         {
@@ -388,7 +388,7 @@
             "ago"
           ],
           "correct": 1,
-          "explanation": "\"since\" + punto en el tiempo."
+          "explanation": "\"since\" + point in time."
         },
         {
           "id": "q6",
@@ -413,9 +413,9 @@
         {
           "id": "q8",
           "type": "fill-blank",
-          "question": "\"I've lived here ___ five years.\" (duración)",
+          "question": "\"I've lived here ___ five years.\" (duration)",
           "correct": "for",
-          "explanation": "\"for\" + duración."
+          "explanation": "\"for\" + duration."
         },
         {
           "id": "q9",
@@ -450,7 +450,7 @@
     "id": "m5-ch2-scramble",
     "type": "word-scramble",
     "title": "Pasado vs Perfecto",
-    "description": "Descifra términos para distinguir usos.",
+    "description": "Decipher terms to distinguish uses.",
     "props": {
       "words": [
         {
@@ -470,12 +470,12 @@
         },
         {
           "word": "SPECIFIC",
-          "hint": "Específico; concreto",
+          "hint": "Specific; concrete",
           "category": "Tenses"
         },
         {
           "word": "GENERAL",
-          "hint": "General; no específico",
+          "hint": "General; not specific",
           "category": "Tenses"
         },
         {

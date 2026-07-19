@@ -2,8 +2,8 @@
   {
     "id": "m10-ch5-quiz",
     "type": "quiz",
-    "title": "Comprensión del Texto",
-    "description": "Responde preguntas sobre el artículo \"The Benefits of Regular Exercise\".",
+    "title": "Text Comprehension",
+    "description": "Answer questions about the article \"The Benefits of Regular Exercise.\"",
     "props": {
       "questions": [
         {
@@ -17,7 +17,7 @@
             "Equipment"
           ],
           "correct": 1,
-          "explanation": "El artículo dice: \"consistency — exercising regularly is more important than exercising intensely.\""
+          "explanation": "The article says: \"consistency — exercising regularly is more important than exercising intensely.\""
         },
         {
           "id": "q2",
@@ -76,14 +76,14 @@
             "Only gym workouts count"
           ],
           "correct": 1,
-          "explanation": "El tono del artículo es claramente positivo hacia el ejercicio regular."
+          "explanation": "The tone of the article is clearly positive towards regular exercise."
         },
         {
           "id": "q7",
           "type": "fill-blank",
           "question": "In the text, \"address\" means to ___ a problem. (deal with/create)",
           "correct": "deal with",
-          "explanation": "Address (en este contexto) = abordar, atender un problema."
+          "explanation": "Address (in this context) = address, address a problem."
         },
         {
           "id": "q8",
@@ -109,14 +109,14 @@
             "Argument"
           ],
           "correct": 1,
-          "explanation": "Issue (en contexto) = problema/desafío que la gente enfrenta."
+          "explanation": "Issue (in context) = problem/challenge that people face."
         },
         {
           "id": "q10",
           "type": "fill-blank",
           "question": "The article uses the connector \"___\" to add extra information about social benefits.",
           "correct": "Moreover",
-          "explanation": "\"Moreover, exercise has social benefits.\" — Moreover = además (adición formal)."
+          "explanation": "\"Moreover, exercise has social benefits.\" —Moreover = in addition (formal addition)."
         }
       ]
     }
@@ -124,8 +124,8 @@
   {
     "id": "m10-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Resume el Texto",
-    "description": "Construye oraciones que resumen las ideas principales del artículo.",
+    "title": "Summarize the Text",
+    "description": "Construct sentences that summarize the main ideas of the article.",
     "props": {
       "sentences": [
         {
@@ -197,8 +197,8 @@
   {
     "id": "m10-ch5-flash",
     "type": "flashcard",
-    "title": "Vocabulario en Contexto",
-    "description": "Aprende palabras del artículo con su significado contextual.",
+    "title": "Vocabulary in Context",
+    "description": "Learn words from the article with their contextual meaning.",
     "props": {
       "cards": [
         {
@@ -228,13 +228,13 @@
         {
           "id": "f5",
           "front": "\"DESPITE the well-known benefits...\"",
-          "back": "Despite = in spite of, even though (A pesar de). Followed by noun or -ing.",
+          "back": "Despite = in spite of, even though (Despite). Followed by noun or -ing.",
           "example": "Despite the rain, we had a wonderful time."
         },
         {
           "id": "f6",
           "front": "\"People STRUGGLE to find time.\"",
-          "back": "Struggle = to try hard but with difficulty (Esforzarse con dificultad, luchar).",
+          "back": "Struggle = to try hard but with difficulty.",
           "example": "Many students struggle with math."
         },
         {
@@ -267,8 +267,8 @@
   {
     "id": "m10-ch5-match",
     "type": "word-match",
-    "title": "Palabra → Definición en Contexto",
-    "description": "Empareja cada palabra con su significado según el artículo.",
+    "title": "Word → Definition in Context",
+    "description": "Match each word with its meaning according to the article.",
     "props": {
       "pairs": [
         {
@@ -309,8 +309,8 @@
   {
     "id": "m10-ch5-svg",
     "type": "svg-scene",
-    "title": "Mapa de Ideas del Texto",
-    "description": "Explora el organizador gráfico y descubre la estructura del artículo.",
+    "title": "Text Ideas Map",
+    "description": "Explore the graphic organizer and discover the structure of the article.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -335,7 +335,7 @@
             "width": 140,
             "height": 60,
             "fill": "#86efac",
-            "label": "Beneficios físicos",
+            "label": "Physical benefits",
             "labelEn": "Physical Benefits"
           },
           {
@@ -379,7 +379,7 @@
             "width": 140,
             "height": 50,
             "fill": "#bfdbfe",
-            "label": "Mejora el ánimo",
+            "label": "Improves mood",
             "labelEn": "Improves mood & sleep"
           },
           {
@@ -401,7 +401,7 @@
             "rx": 150,
             "ry": 30,
             "fill": "#c4b5fd",
-            "label": "Conclusión",
+            "label": "Conclusion",
             "labelEn": "Conclusion: Make it a daily routine"
           }
         ]
@@ -412,7 +412,7 @@
     "id": "m10-ch5-scramble",
     "type": "word-scramble",
     "title": "A Leer se ha Dicho",
-    "description": "Descifra vocabulario de lectura.",
+    "description": "Decipher reading vocabulary.",
     "props": {
       "words": [
         {
@@ -432,17 +432,17 @@
         },
         {
           "word": "CHAPTER",
-          "hint": "Capítulo; sección de libro",
+          "hint": "Chapter; book section",
           "category": "Reading"
         },
         {
           "word": "PARAGRAPH",
-          "hint": "Párrafo; bloque de texto",
+          "hint": "Paragraph; text block",
           "category": "Reading"
         },
         {
           "word": "SENTENCE",
-          "hint": "Oración; frase completa",
+          "hint": "Prayer; complete sentence",
           "category": "Reading"
         }
       ]

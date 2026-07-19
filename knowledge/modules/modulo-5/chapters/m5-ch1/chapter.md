@@ -1,21 +1,21 @@
 ---
 id: m5-ch1
-moduleId: modulo-5
+moduleId: module-5
 number: 1
-title: "Presente Perfecto: Experiencias de Vida"
-subtitle: Have/has + past participle — lo que has hecho
+title: "Present Perfect: Life Experiences"
+subtitle: Have/has + past participle — what you have done
 icon: ✅
 color: "#3b82f6"
 objectives:
-  - "Formar el presente perfecto: have/has + past participle"
-  - Usarlo para hablar de experiencias de vida
-  - "Aplicar \"ever\", \"never\", \"already\", \"yet\", \"just\""
+  - "Form the present perfect: have/has + past participle"
+  - Use it to talk about life experiences
+  - "Apply \"ever\", \"never\", \"already\", \"yet\", \"just\""
 xpReward: 180
 ---
 
 ## Present Perfect — Presente Perfecto
 
-### Formación: have/has + past participle (3ª columna)
+### Formation: have/has + past participle (3rd column)
 | Subject | Auxiliary | Past Participle | Example |
 |---------|-----------|-----------------|---------|
 | I / You / We / They | **have ('ve)** | visited | I'**ve visited** Paris. |
@@ -39,5 +39,5 @@ xpReward: 180
 - **Q:** **Have** you visited Rome? / **Has** she seen it?
 - **Short:** Yes, I have. / No, she hasn't.
 
-> 💡 Present Perfect = experiencia SIN decir cuándo. Si dices cuándo → Past Simple.
+> 💡 Present Perfect = experience WITHOUT saying when. If you say when → Past Simple.
 > ✅ I've visited Paris. (alguna vez) / ❌ ~~I've visited Paris last year.~~ → I visited Paris last year.

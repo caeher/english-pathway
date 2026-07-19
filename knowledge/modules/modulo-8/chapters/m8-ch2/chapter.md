@@ -1,19 +1,19 @@
 ---
 id: m8-ch2
-moduleId: modulo-8
+moduleId: module-8
 number: 2
-title: Construyendo oraciones simples
-subtitle: El poder del presente simple a través de simulaciones
+title: Building simple sentences
+subtitle: The power of the present simple through simulations
 icon: 🧱
 color: "#10b981"
 objectives:
-  - Construir oraciones afirmativas, negativas e interrogativas en presente simple
-  - "Usar verbos cotidianos: eat, work, like, play, study, live"
-  - Dominar la regla de la tercera persona (he/she/it + -s)
+  - Build affirmative, negative and interrogative sentences in the present simple
+  - "Use everyday verbs: eat, work, like, play, study, live"
+  - Master the third person rule (he/she/it + -s)
 xpReward: 200
 ---
 
-## El Presente Simple — Simple Present
+## The Simple Present — Simple Present
 
 Observa estos patrones:
 
@@ -23,41 +23,41 @@ Observa estos patrones:
 | He / She / It | **eats** | *She eats breakfast at 8.* |
 
 ### Regla clave
-Con **he, she, it** se agrega **-s** o **-es** al verbo:
+With **he, she, it** you add **-s** or **-es** to the verb:
 - *play → plays*, *work → works*, *go → goes*, *watch → watches*
 
-### ¿Por qué es importante la -s?
+### Why is the -s important?
 
-La terminación **-s** no es solo gramática — te ayuda a identificar **quién** hace la acción. En la conversación rápida, esa pequeña -s indica si hablas de "I work" (yo) o "she works" (ella). Además, usar la -s correctamente te hace sonar más natural y profesional en inglés.
+The **-s** ending is not just grammar — it helps you identify **who** is doing the action. In quick conversation, that little -s indicates whether you're talking about "I work" or "she works." Plus, using -s correctly makes you sound more natural and professional in English.
 
 ### Negativo
 - I **don't** like coffee.
-- She **doesn't** like coffee. (el verbo vuelve a la forma base)
+- She **doesn't** like coffee. (the verb returns to the base form)
 
 ### Pregunta
 - **Do** you speak English?
 - **Does** he speak English?
 
-### ⚠️ Errores frecuentes que debes evitar
+### ⚠️ Frequent mistakes that you should avoid
 
-| ❌ Incorrecto | ✅ Correcto | Explicación |
+| ❌ Incorrecto | ✅ Correcto | Explanation |
 |--------------|-----------|-------------|
 | I **likes** pizza | I **like** pizza | I/you/we/they NO llevan -s |
 | He **don't** work | He **doesn't** work | He/she/it usa **doesn't** |
 | She **studys** | She **studies** | Consonante + y → -ies |
-| He **gos** | He **goes** | Verbos en -o/-s/-ch/-sh/-x → -es |
+| He **gos** | He **goes** | Verbs in -o/-s/-ch/-sh/-x → -es |
 
-### 📌 ¿Cuándo usar Present Simple?
+### 📌 When to use Present Simple?
 
-Úsalo para:
-- **Rutinas y hábitos**: *I work Monday to Friday.*
+Use it for:
+- **Routines and habits**: *I work Monday to Friday.*
 - **Hechos universales**: *The sun rises in the east.*
 - **Gustos y preferencias**: *She likes chocolate.*
 
-**NO** lo uses para acciones en este momento exacto (eso es Present Continuous: *I am working now*).
+**DO NOT** use it for actions at this exact moment (that's Present Continuous: *I am working now*).
 
-### 💡 Truco de memoria
+### 💡 Memory trick
 
-Recuerda: **"He-She-It takes an -S"** — Si el sujeto es *he*, *she*, o *it*, el verbo lleva -s. ¡Es una rima en inglés que te ayudará a recordar!
+Remember: **"He-She-It takes an -S"** — If the subject is *he*, *she*, or *it*, the verb takes -s. It's an English rhyme that will help you remember!
 
-> 💡 En negativo e interrogativo con does/doesn't, el verbo **no** lleva -s.
+> 💡 In negative and interrogative with does/doesn't, the verb **no** takes -s.

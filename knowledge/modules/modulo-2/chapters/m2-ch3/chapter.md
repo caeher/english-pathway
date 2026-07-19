@@ -1,16 +1,16 @@
 ---
 id: m2-ch3
-moduleId: modulo-2
+moduleId: module-2
 number: 3
-title: "Pasado Simple: Verbos Regulares e Irregulares"
-subtitle: "Narra lo que pasó: regulares con -ed e irregulares"
+title: "Simple Past: Regular and Irregular Verbs"
+subtitle: "It tells what happened: regulars with -ed and irregulars"
 icon: 📖
 color: "#8b5cf6"
 objectives:
-  - Formar el pasado simple de verbos regulares (-ed) e irregulares
-  - Aplicar las reglas ortográficas de -ed y memorizar los irregulares esenciales
-  - Usar ambos tipos en oraciones afirmativas, negativas y preguntas
-  - Contar eventos pasados con fluidez
+  - Form the simple past of regular (-ed) and irregular verbs
+  - Apply the spelling rules of -ed and memorize the essential irregulars
+  - Use both types in affirmative, negative sentences and questions
+  - Recount past events fluently
 xpReward: 170
 ---
 
@@ -20,19 +20,19 @@ xpReward: 170
 | Regla | Ejemplo |
 |-------|---------|
 | Verbo + **ed** | work → worked, play → played |
-| Verbo en -e + **d** | live → lived, dance → danced |
+| Verb in -e + **d** | live → lived, dance → danced |
 | Consonante + y → **ied** | study → studied, try → tried |
-| CVC (vocal corta en sílaba tónica) → **doble consonante + ed** | stop → stopped, plan → planned |
+| CVC (short vowel in stressed syllable) → **double consonant + ed** | stop → stopped, plan → planned |
 
-### Pronunciación de -ED
-| Sonido | Cuándo | Ejemplos |
+### -ED pronunciation
+| Sonido | When | Ejemplos |
 |--------|--------|----------|
-| **/t/** | Después de sonidos sordos (p, k, f, s, sh, ch) | walked, stopped, watched |
-| **/d/** | Después de sonidos sonoros (b, g, v, z, m, n, l, r) | played, lived, cleaned |
-| **/ɪd/** | Después de t, d | wanted, needed, started |
+| **/t/** | After voiceless sounds (p, k, f, s, sh, ch) | walked, stopped, watched |
+| **/d/** | After voiced sounds (b, g, v, z, m, n, l, r) | played, lived, cleaned |
+| **/ɪd/** | After t, d | wanted, needed, started |
 
 ### Verbos irregulares
-Los verbos irregulares NO siguen la regla de -ed. Hay que memorizarlos.
+Irregular verbs DO NOT follow the -ed rule. You have to memorize them.
 
 | Base | Past | Base | Past |
 |------|------|------|------|
@@ -51,6 +51,6 @@ Los verbos irregulares NO siguen la regla de -ed. Hay que memorizarlos.
 | swim | swam | fly | flew |
 | begin | began | break | broke |
 
-> 💡 **Tip:** En negativas y preguntas, usa la forma BASE del verbo: *Did you work?* / *Did you go?* (no ~~Did you went?~~).
+> 💡 **Tip:** In negatives and questions, use the BASE form of the verb: *Did you work?* / *Did you go?* (not ~~Did you went?~~).
 
-> 💡 **Read** en pasado se escribe igual pero se pronuncia /rɛd/ (como "red").
+> 💡 **Read** in the past tense is written the same but pronounced /rɛd/ (like "red").

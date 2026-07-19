@@ -2,7 +2,7 @@
   {
     "id": "m6-ch6-svg",
     "type": "svg-scene",
-    "title": "Preguntas, Órdenes y Phrasal Verbs",
+    "title": "Questions, Orders and Phrasal Verbs",
     "description": "Reported questions/orders y phrasal verbs esenciales.",
     "props": {
       "scene": {
@@ -72,7 +72,7 @@
             "width": 640,
             "height": 55,
             "fill": "#e0e7ff",
-            "label": "📌 look FOR (buscar), look AFTER (cuidar), run OUT OF (quedarse sin)",
+            "label": "📌 look FOR (search), look AFTER (take care), run OUT OF (run out)",
             "labelEn": "Separable: Turn IT off. Inseparable: looking FOR my keys."
           }
         ]
@@ -83,7 +83,7 @@
     "id": "m6-ch6-flash",
     "type": "flashcard",
     "title": "Reported + Phrasal Verbs",
-    "description": "Preguntas reportadas, órdenes y phrasal verbs.",
+    "description": "Reported questions, commands and phrasal verbs.",
     "props": {
       "cards": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "left": "run out of",
-          "right": "quedarse sin"
+          "right": "run out"
         }
       ]
     }
@@ -173,7 +173,7 @@
     "props": {
       "sentences": [
         {
-          "prompt": "\"¿Te gusta la pizza?\" → Reporte:",
+          "prompt": "\"Do you like pizza?\" → Report:",
           "words": [
             "He",
             "asked",
@@ -186,7 +186,7 @@
           "correct": "He asked me if I liked pizza"
         },
         {
-          "prompt": "\"Abre la puerta\" → Reporte:",
+          "prompt": "\"Open the door\" → Report:",
           "words": [
             "She",
             "told",
@@ -199,7 +199,7 @@
           "correct": "She told me to open the door"
         },
         {
-          "prompt": "Me levanto a las 7:",
+          "prompt": "I get up at 7:",
           "words": [
             "I",
             "get",
@@ -228,7 +228,7 @@
     "id": "m6-ch6-quiz",
     "type": "quiz",
     "title": "Quiz: Reported + Phrasal Verbs",
-    "description": "Preguntas reportadas, órdenes y phrasal verbs.",
+    "description": "Reported questions, commands and phrasal verbs.",
     "props": {
       "questions": [
         {
@@ -302,22 +302,22 @@
     "id": "m6-ch6-scramble",
     "type": "word-scramble",
     "title": "Reported Speech y Phrasal Verbs",
-    "description": "Descifra verbos de preguntas y órdenes.",
+    "description": "Unscramble question and command verbs.",
     "props": {
       "words": [
         {
           "word": "ASKED",
-          "hint": "Preguntó; pasado de ask",
+          "hint": "Asked; past of ask",
           "category": "Reported Speech"
         },
         {
           "word": "WONDERED",
-          "hint": "Se preguntó; preguntarse",
+          "hint": "He wondered; wonder",
           "category": "Reported Speech"
         },
         {
           "word": "INQUIRED",
-          "hint": "Inquirió; preguntar formal",
+          "hint": "He inquired; ask formally",
           "category": "Reported Speech"
         },
         {
@@ -332,7 +332,7 @@
         },
         {
           "word": "ORDER",
-          "hint": "Orden; instrucción",
+          "hint": "Order; instruction",
           "category": "Reported Speech"
         }
       ]

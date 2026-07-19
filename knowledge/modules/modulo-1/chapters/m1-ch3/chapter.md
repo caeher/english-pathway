@@ -1,35 +1,35 @@
 ---
 id: m1-ch3
-moduleId: modulo-1
+moduleId: module-1
 number: 3
-title: "Pronombres Personales y el Verbo \"To Be\""
-subtitle: Los cimientos de toda oración en inglés
+title: "Personal Pronouns and the Verb \"To Be\""
+subtitle: The foundations of every English sentence
 icon: 🧱
 color: "#8b5cf6"
 objectives:
-  - Identificar y usar los 7 pronombres personales (I, you, he, she, it, we, they)
-  - "Conjugar el verbo \"to be\" en presente (am, is, are)"
-  - "Formar oraciones afirmativas, negativas e interrogativas con \"to be\""
-  - "Usar contracciones naturales (I'm, you're, he's, etc.)"
-  - "Dar respuestas cortas (Yes, I am. / No, I'm not.) y usar tag questions básicas"
+  - Identify and use the 7 personal pronouns (I, you, he, she, it, we, they)
+  - "Conjugate the verb \"to be\" in the present tense (am, is, are)"
+  - "Form affirmative, negative and interrogative sentences with \"to be\""
+  - "Use natural contractions (I'm, you're, he's, etc.)"
+  - "Give short answers (Yes, I am. / No, I'm not.) and use basic tag questions"
 xpReward: 130
 ---
 
 ## Personal Pronouns & The Verb "To Be"
 
-### Pronombres Personales
+### Personal Pronouns
 | Pronombre | Significado | Ejemplo |
 |-----------|------------|---------|
 | **I** | Yo | *I am a student.* |
-| **You** | Tú / Ustedes | *You are my friend.* |
-| **He** | Él | *He is tall.* |
+| **You** | You/You | *You are my friend.* |
+| **He** | He | *He is tall.* |
 | **She** | Ella | *She is a doctor.* |
 | **It** | Ello (cosas/animales) | *It is a cat.* |
 | **We** | Nosotros | *We are happy.* |
 | **They** | Ellos/Ellas | *They are teachers.* |
 
-### Verbo "To Be" — Presente
-| Pronombre | Forma | Contracción |
+### Verb "To Be" — Present
+| Pronombre | Forma | Contraction |
 |-----------|-------|-------------|
 | I | am | I'm |
 | You | are | You're |
@@ -37,22 +37,22 @@ xpReward: 130
 | We | are | We're |
 | They | are | They're |
 
-### Formas
-- **Afirmativa:** *I am happy.* → *I'm happy.*
-- **Negativa:** *I am not sad.* → *I'm not sad.* / *He is not here.* → *He isn't here.*
-- **Pregunta:** *Am I late?* / *Is she a teacher?* / *Are they ready?*
+### Shapes
+- **Affirmative:** *I am happy.* → *I'm happy.*
+- **Negative:** *I am not sad.* → *I'm not sad.* / *He is not here.* → *He isn't here.*
+- **Question:** *Am I late?* / *Is she a teacher?* / *Are they ready?*
 
-### Short Answers — Respuestas cortas
-| Pregunta | Sí | No |
+### Short Answers
+| Pregunta | Yeah | No |
 |----------|-----|-----|
 | Are you a student? | Yes, I am. | No, I'm not. |
 | Is she a teacher? | Yes, she is. | No, she isn't. |
 | Are they ready? | Yes, they are. | No, they aren't. |
 
-### Tag Questions — Preguntas coletilla
-Se añaden al final de una afirmación para confirmar o pedir acuerdo.
-- *You're a student*, **aren't you?** — Eres estudiante, ¿verdad?
-- *She is from Spain*, **isn't she?** — Ella es de España, ¿no?
-- *They are happy*, **aren't they?** — Ellos están contentos, ¿verdad?
+### Tag Questions
+They are added to the end of a statement to confirm or ask for agreement.
+- *You're a student*, **aren't you?** — You're a student, right?
+- *She is from Spain*, **isn't she?** — She is from Spain, right?
+- *They are happy*, **aren't they?** — They are happy, right?
 
-> 💡 **Tip:** "I" siempre se escribe con mayúscula en inglés, incluso en medio de una oración.
+> 💡 **Tip:** "I" is always capitalized in English, even in the middle of a sentence.

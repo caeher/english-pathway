@@ -2,8 +2,8 @@
   {
     "id": "m12-ch5-quiz",
     "type": "quiz",
-    "title": "Reacción Rápida",
-    "description": "Elige la mejor reacción para cada situación sorpresa. ¡Piensa rápido!",
+    "title": "Quick Reaction",
+    "description": "Choose the best reaction for each surprise situation. Think fast!",
     "props": {
       "questions": [
         {
@@ -131,7 +131,7 @@
     "id": "m12-ch5-sentence",
     "type": "sentence-builder",
     "title": "Yes, And...",
-    "description": "Construye respuestas que acepten y expandan la idea del interlocutor.",
+    "description": "Construct responses that accept and expand the interlocutor's idea.",
     "props": {
       "sentences": [
         {
@@ -225,8 +225,8 @@
   {
     "id": "m12-ch5-svg",
     "type": "svg-scene",
-    "title": "La Ruleta de Situaciones",
-    "description": "Gira la ruleta y reacciona a la situación que te toque. ¡Practica tus reflejos!",
+    "title": "The Roulette of Situations",
+    "description": "Spin the wheel and react to the situation you face. Practice your reflexes!",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -237,7 +237,7 @@
             "type": "polygon",
             "points": "300,200 220,80 300,50 380,80",
             "fill": "#f87171",
-            "label": "Charla de ascensor con tu jefe",
+            "label": "Elevator chat with your boss",
             "labelEn": "🛗 Elevator Talk"
           },
           {
@@ -245,7 +245,7 @@
             "type": "polygon",
             "points": "300,200 380,80 430,140 420,200",
             "fill": "#fbbf24",
-            "label": "Encuentro sorpresa con un amigo",
+            "label": "Surprise meeting with a friend",
             "labelEn": "🎉 Surprise Meeting"
           },
           {
@@ -253,7 +253,7 @@
             "type": "polygon",
             "points": "300,200 420,200 430,270 380,320",
             "fill": "#60a5fa",
-            "label": "Alguien te da una mala noticia",
+            "label": "Someone gives you bad news",
             "labelEn": "😢 Bad News"
           },
           {
@@ -261,7 +261,7 @@
             "type": "polygon",
             "points": "300,200 380,320 300,350 220,320",
             "fill": "#34d399",
-            "label": "Recibes un cumplido inesperado",
+            "label": "You receive an unexpected compliment",
             "labelEn": "🙌 Compliment"
           },
           {
@@ -269,7 +269,7 @@
             "type": "polygon",
             "points": "300,200 220,320 170,270 180,200",
             "fill": "#c4b5fd",
-            "label": "Momento incómodo/error social",
+            "label": "Awkward moment/social mistake",
             "labelEn": "😅 Awkward Moment"
           },
           {
@@ -277,7 +277,7 @@
             "type": "polygon",
             "points": "300,200 180,200 170,140 220,80",
             "fill": "#f9a8d4",
-            "label": "Recibes un regalo inesperado",
+            "label": "You receive an unexpected gift",
             "labelEn": "🎁 Surprise Gift"
           },
           {
@@ -287,7 +287,7 @@
             "cy": 200,
             "r": 25,
             "fill": "#1e1b4b",
-            "label": "Centro de la ruleta",
+            "label": "Roulette center",
             "labelEn": "🎯 Spin!"
           }
         ]
@@ -298,79 +298,79 @@
     "id": "m12-ch5-flash",
     "type": "flashcard",
     "title": "Reacciones Naturales",
-    "description": "Construye tu baraja de reacciones espontáneas para cualquier situación.",
+    "description": "Build your deck of spontaneous reactions for any situation.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "NO WAY! 😱 (Sorpresa alta)",
-          "back": "¡No puede ser! / ¡De ninguna manera! — Informal, alto nivel de sorpresa. Variantes: \"You're kidding!\", \"Are you serious?\"",
+          "back": "It just can't be! / No way! — Informal, high level of surprise. Variants: \"You're kidding!\", \"Are you serious?\"",
           "example": "You got the job? No way! That's incredible!"
         },
         {
           "id": "f2",
-          "front": "I'M SO HAPPY FOR YOU! 😊 (Alegría)",
-          "back": "¡Me alegro mucho por ti! — Muestra alegría genuina por el éxito de otro.",
+          "front": "I'M SO HAPPY FOR YOU! 😊 (Joy)",
+          "back": "I'm very happy for you! — Shows genuine joy at another's success.",
           "example": "You're getting married? I'm so happy for you!"
         },
         {
           "id": "f3",
-          "front": "I'M SORRY TO HEAR THAT. 😔 (Empatía)",
-          "back": "Lamento escuchar eso. — Muestra empatía ante malas noticias.",
+          "front": "I'M SORRY TO HEAR THAT. 😔 (Empathy)",
+          "back": "I'm sorry to hear that. — Show empathy in the face of bad news.",
           "example": "You lost your job? I'm sorry to hear that. How can I help?"
         },
         {
           "id": "f4",
           "front": "YOU SHOULDN'T HAVE! 🎁 (Gratitud)",
-          "back": "¡No debiste (molestarte)! — Reacción a un regalo inesperado. Positiva y agradecida.",
+          "back": "You shouldn't have (bothered)! — Reaction to an unexpected gift. Positive and grateful.",
           "example": "You got me flowers? You shouldn't have! Thank you so much!"
         },
         {
           "id": "f5",
-          "front": "BLESS YOU! 🤧 (Cortesía)",
-          "back": "¡Salud! — Se dice automáticamente cuando alguien estornuda. Cultural.",
+          "front": "BLESS YOU! 🤧 (Courtesy)",
+          "back": "Health! — It is said automatically when someone sneezes. Cultural.",
           "example": "*someone sneezes* \"Bless you!\" \"Thank you!\""
         },
         {
           "id": "f6",
-          "front": "I SEE YOUR POINT, BUT... 🤔 (Desacuerdo diplomático)",
-          "back": "Entiendo tu punto, pero... — Desacuerdo educado que valida al otro primero.",
+          "front": "I SEE YOUR POINT, BUT... 🤔 (Diplomatic disagreement)",
+          "back": "I understand your point, but... — Polite disagreement that validates the other first.",
           "example": "I see your point, but I think we should consider other options."
         },
         {
           "id": "f7",
           "front": "THAT'S A GREAT QUESTION. ⏳ (Ganar tiempo)",
-          "back": "Buena pregunta. — Gana tiempo para pensar. Profesional y natural.",
+          "back": "Good question. — Gain time to think. Professional and natural.",
           "example": "That's a great question. Let me think about that for a moment."
         },
         {
           "id": "f8",
           "front": "IT'S BEEN FOREVER! 👋 (Reencuentro)",
-          "back": "¡Ha pasado un siglo! — Para cuando ves a alguien después de mucho tiempo.",
+          "back": "A century has passed! — For when you see someone after a long time.",
           "example": "Oh my gosh! It's been forever! How have you been?"
         },
         {
           "id": "f9",
           "front": "WHAT A RELIEF! 😮‍💨 (Alivio)",
-          "back": "¡Qué alivio! — Cuando una preocupación se resuelve positivamente.",
+          "back": "What a relief! —When a concern is resolved positively.",
           "example": "The exam was canceled? What a relief!"
         },
         {
           "id": "f10",
-          "front": "BY THE WAY... 🔄 (Cambio de tema)",
-          "back": "A propósito... / Por cierto... — Transición natural a otro tema.",
+          "front": "BY THE WAY... 🔄 (Change of subject)",
+          "back": "By the way... / By the way... — Natural transition to another topic.",
           "example": "By the way, have you heard about the new restaurant downtown?"
         },
         {
           "id": "f11",
-          "front": "YOU'LL DO GREAT! 💪 (Ánimo)",
-          "back": "¡Lo harás genial! — Expresión de apoyo y confianza.",
+          "front": "YOU'LL DO GREAT! 💪 (Cheer up)",
+          "back": "You will do great! — Expression of support and trust.",
           "example": "Don't worry about the interview. You'll do great!"
         },
         {
           "id": "f12",
-          "front": "HOW FRUSTRATING! 😤 (Empatía con frustración)",
-          "back": "¡Qué frustrante! — Muestra que compartes la frustración del otro.",
+          "front": "HOW FRUSTRATING! 😤 (Empathy with frustration)",
+          "back": "How frustrating! — Show that you share the other's frustration.",
           "example": "Your flight was delayed again? How frustrating!"
         }
       ]
@@ -379,8 +379,8 @@
   {
     "id": "m12-ch5-match",
     "type": "word-match",
-    "title": "Situación → Reacción",
-    "description": "Empareja cada situación con la reacción verbal más apropiada.",
+    "title": "Situation → Reaction",
+    "description": "Match each situation with the most appropriate verbal reaction.",
     "props": {
       "pairs": [
         {
@@ -421,8 +421,8 @@
   {
     "id": "m12-ch5-scramble",
     "type": "word-scramble",
-    "title": "Juegos de Improvisación",
-    "description": "Descifra vocabulario de improvisación.",
+    "title": "Improvisation Games",
+    "description": "Decipher improvisation vocabulary.",
     "props": {
       "words": [
         {
@@ -442,7 +442,7 @@
         },
         {
           "word": "SPONTANEOUS",
-          "hint": "Espontáneo; sin plan",
+          "hint": "Spontaneous; no plan",
           "category": "Improv"
         },
         {
@@ -452,7 +452,7 @@
         },
         {
           "word": "SCENE",
-          "hint": "Escena; situación dramática",
+          "hint": "Scene; dramatic situation",
           "category": "Improv"
         }
       ]

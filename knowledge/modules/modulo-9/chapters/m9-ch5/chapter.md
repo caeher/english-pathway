@@ -1,68 +1,68 @@
 ---
 id: m9-ch5
-moduleId: modulo-9
+moduleId: module-9
 number: 5
-title: Describiendo personas y objetos
-subtitle: Utilizando adjetivos en juegos de descripción
+title: Describing people and objects
+subtitle: Using adjectives in description games
 icon: 🎨
 color: "#ec4899"
 objectives:
-  - Describir personas, objetos y lugares usando adjetivos atributivos y predicativos con precisión
-  - Aplicar el orden correcto de adjetivos múltiples (OSASCOMP) naturalmente
-  - Usar adjetivos de apariencia, personalidad, tamaño, forma, color, origen y material en contexto
-  - Comparar y contrastar usando adjetivos opuestos apropiadamente
+  - Describe people, objects, and places using attributive and predicative adjectives accurately
+  - Apply the correct order of multiple adjectives (OSASCOMP) naturally
+  - Use adjectives of appearance, personality, size, shape, color, origin and material in context
+  - Compare and contrast using opposite adjectives appropriately
 xpReward: 270
 ---
 
 ## Adjetivos — Dando color a tus descripciones 🎨
 
-Los adjetivos describen sustantivos. En inglés van **antes del sustantivo**:
+Adjectives describe nouns. In English they go **before the noun**:
 - *a **tall** man* / *a **beautiful** house* / *a **red** car*
 
-También pueden ir después del verbo "to be":
+They can also come after the verb "to be":
 - *The house **is beautiful**.* / *She **is tall**.* / *The car **is red**.*
 
-### Categorías de adjetivos
+### Categories of adjectives
 
-| Categoría | Ejemplos |
+| Category | Ejemplos |
 |-----------|----------|
-| **Opinión** | nice, beautiful, terrible, amazing, wonderful, awful |
-| **Tamaño** | big, small, tall, short, long, tiny, huge, enormous |
+| **Opinion** | nice, beautiful, terrible, amazing, wonderful, awful |
+| **Size** | big, small, tall, short, long, tiny, huge, enormous |
 | **Edad** | young, old, new, ancient, modern, elderly |
 | **Forma** | round, square, thin, wide, narrow, flat, curved |
 | **Color** | red, blue, green, dark, light, bright, pale |
 | **Origen** | French, Italian, Mexican, Chinese, European, Asian |
 | **Material** | wooden, metal, cotton, plastic, leather, silk, paper |
-| **Propósito** | sleeping (bag), racing (car), cooking (oil) |
+| **Purpose** | sleeping (bag), racing (car), cooking (oil) |
 
-### El orden mágico: OSASCOMP
+### The magical order: OSASCOMP
 
-Cuando usas **más de un adjetivo**, siguen este orden:
+When you use **more than one adjective**, they follow this order:
 
-**O**pinión → **S**ize → **A**ge → **S**hape → **C**olor → **O**rigin → **M**aterial → **P**urpose
+**O**pinion → **S**ize → **A**ge → **S**hape → **C**olor → **O**rigin → **M**aterial → **P**urpose
 
 **Ejemplo completo**: 
 *"a **beautiful** (O) **big** (S) **old** (A) **round** (S) **red** (C) **Italian** (O) **leather** (M) **racing** (P) car"*
 
-**Ejemplos prácticos** (2-3 adjetivos es lo normal):
+**Practical examples** (2-3 adjectives is normal):
 - *"a **small red** bag"* (Size + Color) ✓
 - *"a **beautiful old French** house"* (Opinion + Age + Origin) ✓
 - *"a **nice big wooden** table"* (Opinion + Size + Material) ✓
 
-### Posición de los adjetivos
+### Position of adjectives
 
-**Atributivo** (antes del sustantivo):
+**Attributive** (before the noun):
 - *"She has **long hair**."*
 - *"He lives in a **big house**."*
 
-**Predicativo** (después del verbo to be/seem/look/feel):
+**Predicative** (after the verb to be/seem/look/feel):
 - *"Her hair is **long**."*
 - *"The house looks **big**."*
 - *"I feel **happy**."*
 
 ### Opuestos comunes
 
-| Adjetivo | Opuesto | Ejemplo de uso |
+| Adjetivo | Opuesto | Example of use |
 |----------|---------|----------------|
 | tall | short | *He is tall, but his brother is short.* |
 | big / large | small / little | *A big house vs. a small apartment.* |
@@ -77,22 +77,22 @@ Cuando usas **más de un adjetivo**, siguen este orden:
 | easy | difficult / hard | *An easy test vs. a difficult exam.* |
 | expensive | cheap | *An expensive restaurant.* |
 
-### Intensificadores con adjetivos
+### Intensifiers with adjectives
 
-Puedes hacer los adjetivos más fuertes o más suaves:
+You can make the adjectives stronger or softer:
 
 - **very** + adjective: *very big, very beautiful*
 - **really** + adjective: *really nice, really tall*
 - **quite** / **pretty** + adjective: *quite good, pretty fast*
 - **extremely** / **incredibly** + adjective: *extremely hot, incredibly smart*
 
-> 💡 **Tip:** Practica describiendo objetos a tu alrededor con 2 adjetivos. Por ejemplo: "a red wooden chair", "a small black phone". ¡Se vuelve natural con la práctica!
+> 💡 **Tip:** Practice describing objects around you with 2 adjectives. For example: "a red wooden chair", "a small black phone". It becomes natural with practice!
 
-> 🗣️ **Pronunciation Tip**: Al usar varios adjetivos, haz una pausa pequeña entre ellos: "a beautiful (pausa) old (pausa) house."
+> 🗣️ **Pronunciation Tip**: When using several adjectives, make a short pause between them: "a beautiful (pause) old (pause) house."
 
 > ⚠️ **Common Mistakes**: 
 - ✗ ~~"a red big car"~~ → ✓ "a big red car" (Size before color)
 - ✗ ~~"a car red"~~ → ✓ "a red car" (Adjective before noun in English)
 - ✗ ~~"She is a person tall"~~ → ✓ "She is a tall person" / "She is tall"
 
-> 🎯 **Strategy**: Memoriza la frase "OSASCOMP" cantándola o repitiéndola. Cuando pienses en múltiples adjetivos, repasa mentalmente este orden.
+> 🎯 **Strategy**: Memorize the phrase "OSACOMP" by singing or repeating it. When you think of multiple adjectives, mentally review this order.

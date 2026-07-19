@@ -1,21 +1,21 @@
 ---
 id: m7-ch2
-moduleId: modulo-7
+moduleId: module-7
 number: 2
-title: Conectores y Conjunciones Avanzadas
-subtitle: Linking words para textos complejos
+title: Connectors and Advanced Conjunctions
+subtitle: Linking words for complex texts
 icon: 🔀
 color: "#10b981"
 objectives:
-  - Usar conectores de adición, contraste, causa y resultado
-  - Construir argumentos y párrafos coherentes
-  - Distinguir registros formales e informales
+  - Use addition, contrast, cause and result connectors
+  - Build coherent arguments and paragraphs
+  - Distinguish formal and informal records
 xpReward: 170
 ---
 
 ## Advanced Connectors & Conjunctions
 
-### Conectores de Adición (Adding)
+### Adding Connectors
 | Connector | Formality | Example |
 |-----------|-----------|---------|
 | **and** | neutral | I like tea **and** coffee. |
@@ -25,7 +25,7 @@ xpReward: 170
 | **moreover** | formal | **Moreover**, it is cost-effective. |
 | **as well as** | neutral | She speaks French **as well as** German. |
 
-### Conectores de Contraste (Contrasting)
+### Contrast Connectors (Contrasting)
 | Connector | Formality | Example |
 |-----------|-----------|---------|
 | **but** | neutral | I like tea, **but** not coffee. |
@@ -35,7 +35,7 @@ xpReward: 170
 | **on the other hand** | formal | Cars are fast. **On the other hand**, bikes are healthier. |
 | **nevertheless** | formal | It was raining. **Nevertheless**, we went out. |
 
-### Conectores de Causa (Cause)
+### Cause Connectors
 | Connector | Example |
 |-----------|---------|
 | **because** | I stayed home **because** it was raining. |
@@ -44,7 +44,7 @@ xpReward: 170
 | **due to** | The delay was **due to** bad weather. |
 | **because of** | We stayed home **because of** the rain. |
 
-### Conectores de Resultado (Result)
+### Result Connectors
 | Connector | Example |
 |-----------|---------|
 | **so** | It was raining, **so** I stayed home. |
@@ -52,7 +52,7 @@ xpReward: 170
 | **as a result** | She studied hard. **As a result**, she passed. |
 | **consequently** | He ate too much. **Consequently**, he felt sick. |
 
-### Conectores de Propósito (Purpose)
+### Purpose Connectors
 | Connector | Example |
 |-----------|---------|
 | **to** | I went to the store **to** buy milk. |

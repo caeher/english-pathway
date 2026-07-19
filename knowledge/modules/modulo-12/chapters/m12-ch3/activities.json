@@ -2,8 +2,8 @@
   {
     "id": "m12-ch3-quiz",
     "type": "quiz",
-    "title": "Comprensión Multinivel",
-    "description": "Responde preguntas en tres niveles: literal, inferencial y crítico.",
+    "title": "Multilevel Understanding",
+    "description": "Answer questions at three levels: literal, inferential and critical.",
     "props": {
       "questions": [
         {
@@ -124,8 +124,8 @@
   {
     "id": "m12-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Reconstruye el Resumen",
-    "description": "Construye un resumen ordenando las ideas principales del audio.",
+    "title": "Reconstruct the Summary",
+    "description": "Build a summary by ordering the main ideas of the audio.",
     "props": {
       "sentences": [
         {
@@ -215,8 +215,8 @@
   {
     "id": "m12-ch3-match",
     "type": "word-match",
-    "title": "Vocabulario del Audio",
-    "description": "Empareja palabras escuchadas con sus significados contextuales.",
+    "title": "Audio Vocabulary",
+    "description": "Match words heard with their contextual meanings.",
     "props": {
       "pairs": [
         {
@@ -258,67 +258,67 @@
     "id": "m12-ch3-flash",
     "type": "flashcard",
     "title": "Discourse Markers",
-    "description": "Aprende los marcadores del discurso que te ayudan a seguir lo que escuchas.",
+    "description": "Learn speech markers that help you follow what you hear.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "ACTUALLY 🎯 (Discourse Marker)",
-          "back": "En realidad / De hecho — Señala corrección o información sorprendente. NO significa \"actualmente\" (= currently).",
+          "back": "Actually / In fact — Indicates correctness or surprising information. NO means \"currently\" (= currently).",
           "example": "I thought it was expensive, but actually it was quite affordable."
         },
         {
           "id": "f2",
           "front": "IN FACT ⚡ (Emphasis)",
-          "back": "De hecho — Refuerza o intensifica lo dicho antes. Añade peso.",
+          "back": "In fact — Reinforces or intensifies what was said before. Add weight.",
           "example": "She's not just good at English. In fact, she's fluent in five languages."
         },
         {
           "id": "f3",
           "front": "TO BE HONEST 💭 (Sincerity)",
-          "back": "Para ser honesto — Introduce una opinión personal sincera, posiblemente controversial.",
+          "back": "To be honest — Enter an honest, possibly controversial, personal opinion.",
           "example": "To be honest, I don't think the project will succeed."
         },
         {
           "id": "f4",
           "front": "BASICALLY 📝 (Simplification)",
-          "back": "Básicamente — Simplifica o resume algo complejo.",
+          "back": "Basically — Simplifies or summarizes something complex.",
           "example": "Basically, we need more time and money to finish this."
         },
         {
           "id": "f5",
           "front": "I MEAN 🔄 (Clarification)",
-          "back": "Es decir / Quiero decir — Aclara o reformula lo dicho.",
+          "back": "That is to say / I mean — Clarifies or rephrases what was said.",
           "example": "It was okay, I mean, it wasn't terrible, but it wasn't great either."
         },
         {
           "id": "f6",
           "front": "APPARENTLY 🤔 (Reported info)",
-          "back": "Aparentemente — Información que el hablante recibió pero no ha confirmado.",
+          "back": "Apparently — Information that the speaker received but has not confirmed.",
           "example": "Apparently, they are going to close the office next month."
         },
         {
           "id": "f7",
           "front": "ON THE OTHER HAND 🔄 (Contrast)",
-          "back": "Por otro lado — Introduce el lado opuesto de un argumento.",
+          "back": "On the other hand — Introduces the opposite side of an argument.",
           "example": "The job pays well. On the other hand, the hours are terrible."
         },
         {
           "id": "f8",
           "front": "SO BASICALLY 🏁 (Summary)",
-          "back": "Así que básicamente — Introduce un resumen informal de lo discutido.",
+          "back": "So basically — Enter an informal summary of what was discussed.",
           "example": "So basically, we need to start from scratch."
         },
         {
           "id": "f9",
           "front": "THE THING IS... 💡 (Key point)",
-          "back": "El asunto es que... — Introduce el punto más importante o un obstáculo.",
+          "back": "The thing is... — Introduce the most important point or obstacle.",
           "example": "The thing is, we don't have enough budget for that."
         },
         {
           "id": "f10",
           "front": "AS I WAS SAYING... 🔙 (Return)",
-          "back": "Como decía... — Retomar un punto interrumpido.",
+          "back": "As I said... — Take up an interrupted point.",
           "example": "As I was saying, the results were quite surprising."
         }
       ]
@@ -327,8 +327,8 @@
   {
     "id": "m12-ch3-svg",
     "type": "svg-scene",
-    "title": "El Estudio de Podcast",
-    "description": "Explora el estudio de podcast y practica las estaciones de escucha activa.",
+    "title": "The Podcast Studio",
+    "description": "Explore the podcast studio and practice active listening stations.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -363,7 +363,7 @@
             "width": 120,
             "height": 90,
             "fill": "#60a5fa",
-            "label": "Analiza el contenido",
+            "label": "Analyze the content",
             "labelEn": "🔍 Analyze"
           },
           {
@@ -385,7 +385,7 @@
             "rx": 30,
             "ry": 50,
             "fill": "#a3a3a3",
-            "label": "Micrófono del podcast",
+            "label": "podcast microphone",
             "labelEn": "🎙️ Microphone"
           },
           {
@@ -395,7 +395,7 @@
             "cy": 280,
             "r": 35,
             "fill": "#f87171",
-            "label": "Auriculares de escucha",
+            "label": "Listening headphones",
             "labelEn": "🎧 Headphones"
           },
           {
@@ -406,7 +406,7 @@
             "width": 200,
             "height": 20,
             "fill": "#34d399",
-            "label": "Forma de onda",
+            "label": "waveform",
             "labelEn": "〰️ Waveform"
           }
         ]
@@ -417,12 +417,12 @@
     "id": "m12-ch3-scramble",
     "type": "word-scramble",
     "title": "Listening Avanzado",
-    "description": "Descifra vocabulario de comprensión auditiva.",
+    "description": "Decipher listening comprehension vocabulary.",
     "props": {
       "words": [
         {
           "word": "ACCENT",
-          "hint": "Acento; forma de pronunciar",
+          "hint": "Accent; way of pronouncing",
           "category": "Listening"
         },
         {

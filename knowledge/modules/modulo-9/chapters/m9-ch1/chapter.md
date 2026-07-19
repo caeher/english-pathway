@@ -1,62 +1,62 @@
 ---
 id: m9-ch1
-moduleId: modulo-9
+moduleId: module-9
 number: 1
-title: Viajes imaginarios
-subtitle: Ampliando vocabulario de viajes y lugares con mapas interactivos
+title: imaginary trips
+subtitle: Expanding vocabulary of travel and places with interactive maps
 icon: ✈️
 color: "#f59e0b"
 objectives:
-  - Usar vocabulario de viajes, transporte, alojamiento y lugares turísticos (70-90 palabras)
-  - Describir itinerarios, pedir indicaciones y hacer reservaciones en inglés
-  - "Desenvolverse con confianza en situaciones comunes: aeropuerto, hotel, ciudad, restaurante"
-  - Usar expresiones clave para cada contexto de viaje
+  - Use vocabulary about travel, transportation, accommodation and tourist places (70-90 words)
+  - Describe itineraries, ask for directions, and make reservations in English
+  - "Move with confidence in common situations: airport, hotel, city, restaurant"
+  - Use key expressions for each travel context
 xpReward: 280
 ---
 
-## Tu viaje virtual empieza aquí 🌍
+## Your virtual journey starts here 🌍
 
-Imagina que estás planeando un viaje. Cada actividad es una etapa:
+Imagine that you are planning a trip. Each activity is a stage:
 
 **Aeropuerto ✈️ → Hotel 🏨 → Ciudad 🏙️ → Restaurante 🍽️ → Atracciones 🎡**
 
-### Vocabulario por categorías
+### Vocabulary by categories
 
-| Categoría | Palabras clave |
+| Category | Palabras clave |
 |-----------|---------------|
 | Transporte | airport, flight, ticket, gate, bus, train, taxi, subway, boarding pass, departure, arrival |
 | Alojamiento | hotel, room, check-in, check-out, key, reception, reservation, lobby, single/double room |
 | Lugares | museum, beach, park, restaurant, market, hospital, bank, station, square, monument |
 | Acciones | book, reserve, pack, arrive, depart, explore, visit, check, confirm |
 
-### Frases útiles de viaje
+### Useful travel phrases
 
-**En el aeropuerto:**
+**At the airport:**
 - *"Where is gate 25?"*
 - *"When does the flight board?"*
 - *"I need to check in my luggage."*
 
-**En el hotel:**
+**At the hotel:**
 - *"I'd like to check in, please."*
 - *"I have a reservation under the name..."*
 - *"What time is breakfast?"*
 - *"Could I have a wake-up call at 7 AM?"*
 
-**En la ciudad:**
+**In the city:**
 - *"Where is the nearest subway station?"*
 - *"How much is a ticket to downtown?"*
 - *"How do I get to the museum?"*
 - *"Is it walking distance?"*
 
-**En restaurantes/tiendas:**
+**In restaurants/stores:**
 - *"Table for two, please."*
 - *"Could I see the menu?"*
 - *"How much does this cost?"*
 
-> 💡 **Travel Tip**: En países de habla inglesa, la propina (tip) suele ser 15-20% en restaurantes. Pregunta: "Is service included?"
+> 💡 **Travel Tip**: In English-speaking countries, the tip (tip) is usually 15-20% in restaurants. Question: "Is service included?"
 
-> 🎯 **Strategy**: Practica estas frases en voz alta antes de viajar. En situaciones reales, la fluidez importa más que la perfección.
+> 🎯 **Strategy**: Practice these phrases out loud before traveling. In real situations, fluency matters more than perfection.
 
-> 🗣️ **Pronunciation Tip**: "Th" en "thank you" y "the" suena diferente. En "thank" es suave /θ/, en "the" es sonoro /ð/. Pon tu lengua entre los dientes.
+> 🗣️ **Pronunciation Tip**: "Th" in "thank you" and "the" sound different. In "thank" it is soft /θ/, in "the" it is voiced /ð/. Put your tongue between your teeth.
 
-> ⚠️ **Common Mistake**: No digas "I want..." cuando pides algo. Es directo y puede sonar grosero. Usa "I'd like..." o "Could I have...?"
+> ⚠️ **Common Mistake**: Don't say "I want..." when you ask for something. It is direct and may sound rude. Use "I'd like..." or "Could I have...?"

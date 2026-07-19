@@ -1,52 +1,52 @@
 ---
 id: m10-ch2
-moduleId: modulo-10
+moduleId: module-10
 number: 2
-title: Vocabulario para el día a día
-subtitle: Expandiendo tu léxico en escenarios de vida real
+title: Vocabulary for everyday life
+subtitle: Expanding your lexicon in real-life scenarios
 icon: 🏠
 color: "#10b981"
 objectives:
-  - "Usar vocabulario intermedio en contextos cotidianos: hogar, salud, trabajo, compras"
-  - Dominar colocaciones comunes (make/do/take/have)
-  - Reconocer y usar familias de palabras (word families)
-  - Expresarse con mayor precisión y variedad léxica
+  - "Use intermediate vocabulary in everyday contexts: home, health, work, shopping"
+  - Master common collocations (make/do/take/have)
+  - Recognize and use word families
+  - Express yourself with greater precision and lexical variety
 xpReward: 300
 ---
 
-## Vocabulario en contexto — Los mundos del día a día
+## Vocabulary in context — The worlds of everyday life
 
-El vocabulario se aprende mejor **en contexto**, no en listas aisladas. En este capítulo explorarás 6 "mundos" temáticos.
+Vocabulary is best learned **in context**, not in isolated lists. In this chapter you will explore 6 thematic "worlds".
 
 ### 🏠 Hogar (Home)
-| Inglés | Español | Colocación |
+| English | Spanish | Placement |
 |---|---|---|
 | furniture | muebles | a piece of furniture |
-| appliance | electrodoméstico | kitchen appliance |
-| chores | tareas del hogar | do the chores |
+| appliance | household appliance | kitchen appliance |
+| chores | housework | do the chores |
 | vacuum | aspiradora | vacuum the floor |
-| drawer | cajón | open the drawer |
+| drawer | drawer | open the drawer |
 
 ### 🏥 Salud (Health)
-| Inglés | Español | Colocación |
+| English | Spanish | Placement |
 |---|---|---|
-| appointment | cita médica | make an appointment |
-| symptom | síntoma | have symptoms |
-| prescription | receta médica | write a prescription |
-| headache | dolor de cabeza | have a headache |
+| appointment | medical appointment | make an appointment |
+| symptom | symptom | have symptoms |
+| prescription | prescription | write a prescription |
+| headache | headache | have a headache |
 | fever | fiebre | have a fever |
 
 ### 💼 Trabajo (Work)
-| Inglés | Español | Colocación |
+| English | Spanish | Placement |
 |---|---|---|
-| deadline | fecha límite | meet the deadline |
+| deadline | deadline | meet the deadline |
 | colleague | colega | a close colleague |
 | salary | salario | earn a salary |
 | promotion | ascenso | get a promotion |
 | resign | renunciar | resign from a job |
 
 ### 🛒 Compras (Shopping)
-| Inglés | Español | Colocación |
+| English | Spanish | Placement |
 |---|---|---|
 | receipt | recibo | keep the receipt |
 | discount | descuento | get a discount |
@@ -56,7 +56,7 @@ El vocabulario se aprende mejor **en contexto**, no en listas aisladas. En este 
 
 ### Colocaciones importantes
 
-> 💡 **Tip:** Una colocación es una combinación natural de palabras. No decimos "do the bed" sino **"make the bed"**.
+> 💡 **Tip:** A collocation is a natural combination of words. We don't say "do the bed" but **"make the bed"**.
 
 | MAKE | DO | TAKE | HAVE |
 |---|---|---|---|

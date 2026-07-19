@@ -2,8 +2,8 @@
   {
     "id": "m2-ch3-svg",
     "type": "svg-scene",
-    "title": "Regulares e Irregulares en Acción",
-    "description": "Explora el pasado simple con ambos tipos de verbos.",
+    "title": "Regulars and Irregulars in Action",
+    "description": "Explore the past simple with both types of verbs.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -61,7 +61,7 @@
             "width": 280,
             "height": 70,
             "fill": "#dcfce7",
-            "label": "🔊 Pronunciación -ed",
+            "label": "🔊 Pronunciation -ed",
             "labelEn": "/t/ walked, /d/ played, /ɪd/ wanted"
           },
           {
@@ -116,7 +116,7 @@
     "id": "m2-ch3-flash",
     "type": "flashcard",
     "title": "Regulares e Irregulares",
-    "description": "Domina la forma pasada de verbos regulares e irregulares.",
+    "description": "Master the past form of regular and irregular verbs.",
     "props": {
       "cards": [
         {
@@ -198,7 +198,7 @@
     "id": "m2-ch3-match",
     "type": "word-match",
     "title": "Presente → Pasado",
-    "description": "Empareja cada verbo con su forma en pasado.",
+    "description": "Match each verb with its past form.",
     "props": {
       "pairs": [
         {
@@ -240,11 +240,11 @@
     "id": "m2-ch3-sentence",
     "type": "sentence-builder",
     "title": "Cuenta tu Ayer",
-    "description": "Construye oraciones en pasado simple con verbos regulares e irregulares.",
+    "description": "Build sentences in the past simple with regular and irregular verbs.",
     "props": {
       "sentences": [
         {
-          "prompt": "Ayer caminé al parque:",
+          "prompt": "Yesterday I walked to the park:",
           "words": [
             "walked",
             "I",
@@ -267,7 +267,7 @@
           "correct": "I went to the cinema"
         },
         {
-          "prompt": "No dormí bien:",
+          "prompt": "I didn't sleep well:",
           "words": [
             "didn't",
             "I",
@@ -277,7 +277,7 @@
           "correct": "I didn't sleep well"
         },
         {
-          "prompt": "¿Fuiste a la fiesta?:",
+          "prompt": "Did you go to the party?:",
           "words": [
             "you",
             "Did",
@@ -289,7 +289,7 @@
           "correct": "Did you go to the party?"
         },
         {
-          "prompt": "Ella compró un regalo:",
+          "prompt": "She bought a gift:",
           "words": [
             "bought",
             "She",
@@ -308,7 +308,7 @@
           "correct": "They ate pizza"
         },
         {
-          "prompt": "La película empezó a las 8:",
+          "prompt": "The movie started at 8:",
           "words": [
             "movie",
             "The",
@@ -319,7 +319,7 @@
           "correct": "The movie started at 8"
         },
         {
-          "prompt": "¿Miraste el partido?:",
+          "prompt": "Did you watch the game?:",
           "words": [
             "you",
             "Did",
@@ -336,7 +336,7 @@
     "id": "m2-ch3-quiz",
     "type": "quiz",
     "title": "Quiz: Pasado Simple",
-    "description": "Demuestra que dominas verbos regulares e irregulares.",
+    "description": "Show that you master regular and irregular verbs.",
     "props": {
       "questions": [
         {
@@ -438,38 +438,38 @@
   {
     "id": "m2-ch3-scramble",
     "type": "word-scramble",
-    "title": "Verbos en Pasado Simple",
-    "description": "Descifra verbos regulares en pasado.",
+    "title": "Verbs in Past Simple",
+    "description": "Decipher regular verbs in the past tense.",
     "props": {
       "words": [
         {
           "word": "WALKED",
-          "hint": "Pasado de walk (caminar)",
+          "hint": "Past tense of walk",
           "category": "Past Simple"
         },
         {
           "word": "TALKED",
-          "hint": "Pasado de talk (hablar)",
+          "hint": "Past tense of talk",
           "category": "Past Simple"
         },
         {
           "word": "PLAYED",
-          "hint": "Pasado de play (jugar)",
+          "hint": "Past of play",
           "category": "Past Simple"
         },
         {
           "word": "WORKED",
-          "hint": "Pasado de work (trabajar)",
+          "hint": "Past tense of work",
           "category": "Past Simple"
         },
         {
           "word": "STUDIED",
-          "hint": "Pasado de study (estudiar)",
+          "hint": "Past tense of study",
           "category": "Past Simple"
         },
         {
           "word": "WATCHED",
-          "hint": "Pasado de watch (mirar)",
+          "hint": "Past of watch",
           "category": "Past Simple"
         }
       ]

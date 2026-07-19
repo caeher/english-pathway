@@ -2,8 +2,8 @@
   {
     "id": "m1-ch2-svg",
     "type": "svg-scene",
-    "title": "En la Fiesta de Bienvenida",
-    "description": "Explora la escena y descubre cómo saludar y presentarte en cada situación.",
+    "title": "At the Welcome Party",
+    "description": "Explore the scene and discover how to greet and introduce yourself in each situation.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -28,7 +28,7 @@
             "width": 140,
             "height": 70,
             "fill": "#bbf7d0",
-            "label": "👋 Saludo informal",
+            "label": "👋 Informal greeting",
             "labelEn": "Hi! Hey! What's up? How's it going?"
           },
           {
@@ -39,7 +39,7 @@
             "width": 140,
             "height": 70,
             "fill": "#bfdbfe",
-            "label": "🤝 Saludo formal",
+            "label": "🤝 Formal greeting",
             "labelEn": "Good morning! Good afternoon! How do you do?"
           },
           {
@@ -50,7 +50,7 @@
             "width": 140,
             "height": 70,
             "fill": "#fef3c7",
-            "label": "🏷️ Tu nombre",
+            "label": "🏷️ Your name",
             "labelEn": "My name is Maria. / I'm Carlos. What's your name?"
           },
           {
@@ -61,7 +61,7 @@
             "width": 140,
             "height": 70,
             "fill": "#fce7f3",
-            "label": "😊 Conocerse",
+            "label": "😊 Get to know each other",
             "labelEn": "Nice to meet you! — Nice to meet you too!"
           },
           {
@@ -72,8 +72,8 @@
             "width": 140,
             "height": 70,
             "fill": "#e0e7ff",
-            "label": "🌎 De dónde eres",
-            "labelEn": "Where are you from? — I'm from Colombia."
+            "label": "🌎 Where are you from?",
+            "labelEn": "Where are you from? —I'm from Colombia."
           },
           {
             "id": "howareyou",
@@ -83,7 +83,7 @@
             "width": 140,
             "height": 70,
             "fill": "#ccfbf1",
-            "label": "❓ ¿Cómo estás?",
+            "label": "❓ How are you?",
             "labelEn": "How are you? — I'm fine, thanks. And you?"
           },
           {
@@ -94,7 +94,7 @@
             "width": 140,
             "height": 70,
             "fill": "#fed7aa",
-            "label": "👋 Despedidas",
+            "label": "👋 Farewells",
             "labelEn": "Bye! See you later! See you tomorrow! Have a nice day!"
           },
           {
@@ -105,7 +105,7 @@
             "width": 140,
             "height": 70,
             "fill": "#d1fae5",
-            "label": "👨‍👩‍👧 Familia",
+            "label": "👨‍👩‍👧 Family",
             "labelEn": "mother, father, sister, brother, uncle, aunt, cousin, grandparents"
           },
           {
@@ -116,7 +116,7 @@
             "width": 190,
             "height": 70,
             "fill": "#fecaca",
-            "label": "🎨 Colores",
+            "label": "🎨 Colors",
             "labelEn": "red, blue, green, yellow, orange, purple, black, white, pink, brown, gray, silver, gold"
           },
           {
@@ -127,7 +127,7 @@
             "width": 190,
             "height": 70,
             "fill": "#fde68a",
-            "label": "🍕 Comida",
+            "label": "🍕 Food",
             "labelEn": "water, bread, rice, chicken, fruit, vegetables, meat, fish, dessert"
           },
           {
@@ -138,7 +138,7 @@
             "width": 190,
             "height": 70,
             "fill": "#c4b5fd",
-            "label": "📦 Objetos",
+            "label": "📦 Objects",
             "labelEn": "phone, table, chair, door, window, pen, book, bag"
           }
         ]
@@ -148,164 +148,164 @@
   {
     "id": "m1-ch2-flash",
     "type": "flashcard",
-    "title": "Vocabulario Esencial",
-    "description": "Aprende las palabras más importantes para tus primeras conversaciones.",
+    "title": "Essential Vocabulary",
+    "description": "Learn the most important words for your first conversations.",
     "props": {
       "cards": [
         {
           "id": "g1",
-          "front": "Hello / Hi",
-          "back": "Hola",
+          "front": "Hello",
+          "back": "Hello",
           "example": "Hello! How are you?"
         },
         {
           "id": "g2",
           "front": "Good morning",
-          "back": "Buenos días",
+          "back": "Good morning",
           "example": "Good morning, teacher!"
         },
         {
           "id": "g3",
           "front": "Good afternoon",
-          "back": "Buenas tardes",
+          "back": "Good afternoon",
           "example": "Good afternoon, Mr. Smith."
         },
         {
           "id": "g4",
           "front": "Good evening",
-          "back": "Buenas noches (al llegar)",
+          "back": "Good night (upon arrival)",
           "example": "Good evening, welcome to the restaurant."
         },
         {
           "id": "g5",
-          "front": "Goodbye / Bye",
-          "back": "Adiós",
+          "front": "Goodbye",
+          "back": "Bye",
           "example": "Goodbye! See you tomorrow!"
         },
         {
           "id": "g6",
           "front": "See you later",
-          "back": "Hasta luego",
+          "back": "See you later",
           "example": "I have to go. See you later!"
         },
         {
           "id": "g7",
           "front": "Nice to meet you",
-          "back": "Encantado de conocerte",
+          "back": "Pleased to meet you",
           "example": "I'm Ana. Nice to meet you!"
         },
         {
           "id": "g8",
           "front": "What's your name?",
-          "back": "¿Cómo te llamas?",
-          "example": "Hi! What's your name? — I'm Pedro."
+          "back": "What is your name?",
+          "example": "Hi! What's your name? —I'm Pedro."
         },
         {
           "id": "g9",
           "front": "Where are you from?",
-          "back": "¿De dónde eres?",
-          "example": "Where are you from? — I'm from Mexico."
+          "back": "Where are you from?",
+          "example": "Where are you from? —I'm from Mexico."
         },
         {
           "id": "g10",
           "front": "How are you?",
-          "back": "¿Cómo estás?",
+          "back": "How are you?",
           "example": "How are you? — I'm fine, thanks!"
         },
         {
           "id": "f1",
-          "front": "Mother / Mom",
-          "back": "Madre / Mamá",
+          "front": "Mother/Mom",
+          "back": "Mother/Mom",
           "example": "My mother is a teacher."
         },
         {
           "id": "f2",
-          "front": "Father / Dad",
-          "back": "Padre / Papá",
+          "front": "Father/Dad",
+          "back": "Father/Dad",
           "example": "My father works in an office."
         },
         {
           "id": "f3",
           "front": "Brother",
-          "back": "Hermano",
+          "back": "Brother",
           "example": "I have one brother."
         },
         {
           "id": "f4",
-          "front": "Sister",
-          "back": "Hermana",
+          "front": "sister",
+          "back": "Sister",
           "example": "My sister is 10 years old."
         },
         {
           "id": "c1",
-          "front": "Red / Blue / Green",
-          "back": "Rojo / Azul / Verde",
+          "front": "Red/Blue/Green",
+          "back": "Red/Blue/Green",
           "example": "The sky is blue."
         },
         {
           "id": "c2",
           "front": "Yellow / Orange / Purple",
-          "back": "Amarillo / Naranja / Morado",
+          "back": "Yellow/Orange/Purple",
           "example": "Bananas are yellow."
         },
         {
           "id": "c3",
-          "front": "Black / White / Pink",
-          "back": "Negro / Blanco / Rosa",
+          "front": "Black/White/Pink",
+          "back": "Black/White/Pink",
           "example": "My phone is black."
         },
         {
           "id": "fd1",
           "front": "Water / Milk / Coffee",
-          "back": "Agua / Leche / Café",
+          "back": "Water / Milk / Coffee",
           "example": "Can I have some water, please?"
         },
         {
           "id": "fd2",
           "front": "Bread / Rice / Chicken",
-          "back": "Pan / Arroz / Pollo",
+          "back": "Bread / Rice / Chicken",
           "example": "I eat rice every day."
         },
         {
           "id": "fd3",
           "front": "Fruit / Apple / Banana",
-          "back": "Fruta / Manzana / Banana",
+          "back": "Fruit / Apple / Banana",
           "example": "I like fruit. My favorite is apple."
         },
         {
           "id": "f5",
-          "front": "Uncle / Aunt",
-          "back": "Tío / Tía",
+          "front": "Uncle/Aunt",
+          "back": "Uncle/Aunt",
           "example": "My uncle and aunt live in New York."
         },
         {
           "id": "f6",
-          "front": "Cousin / Grandparents",
-          "back": "Primo/a / Abuelos",
+          "front": "Cousin/Grandparents",
+          "back": "Cousin / Grandparents",
           "example": "My grandparents have five grandchildren."
         },
         {
           "id": "c4",
-          "front": "Gray / Silver / Gold",
-          "back": "Gris / Plateado / Dorado",
+          "front": "Grey/Silver/Gold",
+          "back": "Grey/Silver/Gold",
           "example": "The sky is gray today."
         },
         {
           "id": "fd4",
           "front": "Vegetables / Meat / Fish",
-          "back": "Vegetales / Carne / Pescado",
+          "back": "Vegetables / Meat / Fish",
           "example": "I eat vegetables every day."
         },
         {
           "id": "fd5",
           "front": "Please / Thank you",
-          "back": "Por favor / Gracias",
+          "back": "Please/Thank you",
           "example": "Can I have water, please? Thank you!"
         },
         {
           "id": "fd6",
           "front": "Excuse me / Sorry",
-          "back": "Disculpe / Lo siento",
+          "back": "Excuse me / I'm sorry",
           "example": "Excuse me, where is the restroom? Sorry for being late."
         }
       ]
@@ -314,8 +314,8 @@
   {
     "id": "m1-ch2-match",
     "type": "word-match",
-    "title": "Saludo → Respuesta",
-    "description": "Empareja cada saludo o pregunta con su respuesta correcta.",
+    "title": "Greeting → Reply",
+    "description": "Match each greeting or question with its correct answer.",
     "props": {
       "pairs": [
         {
@@ -356,14 +356,14 @@
   {
     "id": "m1-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Construye tu Presentación",
-    "description": "Ordena las palabras para crear saludos y presentaciones correctas.",
+    "title": "Build your Presentation",
+    "description": "Order the words to create correct greetings and introductions.",
     "props": {
       "sentences": [
         {
-          "prompt": "Preséntate:",
+          "prompt": "Introduce yourself:",
           "words": [
-            "name",
+            "yam",
             "My",
             "is",
             "Carlos"
@@ -371,16 +371,16 @@
           "correct": "My name is Carlos"
         },
         {
-          "prompt": "Pregunta el nombre:",
+          "prompt": "Ask the name:",
           "words": [
             "your",
             "What's",
-            "name?"
+            "yam?"
           ],
           "correct": "What's your name?"
         },
         {
-          "prompt": "Di de dónde eres:",
+          "prompt": "Say where you are from:",
           "words": [
             "from",
             "I'm",
@@ -389,7 +389,7 @@
           "correct": "I'm from Mexico"
         },
         {
-          "prompt": "Pregunta de dónde es:",
+          "prompt": "Ask where it's from:",
           "words": [
             "you",
             "are",
@@ -399,7 +399,7 @@
           "correct": "Where are you from?"
         },
         {
-          "prompt": "Responde cómo estás:",
+          "prompt": "Answer how are you:",
           "words": [
             "fine",
             "I'm",
@@ -408,7 +408,7 @@
           "correct": "I'm fine thanks"
         },
         {
-          "prompt": "Di encantado de conocerte:",
+          "prompt": "Say nice to meet you:",
           "words": [
             "to",
             "Nice",
@@ -418,7 +418,7 @@
           "correct": "Nice to meet you"
         },
         {
-          "prompt": "Despídete hasta mañana:",
+          "prompt": "Say goodbye until tomorrow:",
           "words": [
             "you",
             "See",
@@ -427,10 +427,10 @@
           "correct": "See you tomorrow"
         },
         {
-          "prompt": "Buenos días:",
+          "prompt": "Good morning:",
           "words": [
             "morning",
-            "Good"
+            "good"
           ],
           "correct": "Good morning"
         }
@@ -440,8 +440,8 @@
   {
     "id": "m1-ch2-quiz",
     "type": "quiz",
-    "title": "Quiz de Saludos",
-    "description": "Demuestra que puedes saludar y presentarte correctamente.",
+    "title": "Greetings Quiz",
+    "description": "Show that you can greet and introduce yourself correctly.",
     "props": {
       "questions": [
         {
@@ -450,9 +450,9 @@
           "question": "How do you greet someone in the morning?",
           "options": [
             "Good evening",
-            "Good night",
+            "good night",
             "Good morning",
-            "Good bye"
+            "good bye"
           ],
           "correct": 2,
           "explanation": "\"Good morning\" is used in the morning."
@@ -467,7 +467,7 @@
         {
           "id": "q3",
           "type": "multiple-choice",
-          "question": "Someone says \"How are you?\" — What's the best response?",
+          "question": "Someone says \"How are you?\" —What's the best response?",
           "options": [
             "My name is Ana",
             "I'm fine, thanks",
@@ -480,15 +480,15 @@
         {
           "id": "q4",
           "type": "multiple-choice",
-          "question": "Which word means \"hermano\" in English?",
+          "question": "Which word means \"brother\" in English?",
           "options": [
-            "Sister",
+            "sister",
             "Brother",
             "Father",
             "Mother"
           ],
           "correct": 1,
-          "explanation": "Brother = hermano."
+          "explanation": "Brother = brother."
         },
         {
           "id": "q5",
@@ -500,7 +500,7 @@
         {
           "id": "q6",
           "type": "multiple-choice",
-          "question": "Which is an informal greeting?",
+          "question": "What is an informal greeting?",
           "options": [
             "Good evening, sir",
             "How do you do?",
@@ -522,20 +522,20 @@
           "type": "multiple-choice",
           "question": "What does \"Goodbye\" mean?",
           "options": [
-            "Hola",
-            "Adiós",
-            "Gracias",
-            "Por favor"
+            "Hello",
+            "Bye",
+            "Thank you",
+            "Please"
           ],
           "correct": 1,
-          "explanation": "Goodbye = Adiós."
+          "explanation": "Goodbye = Goodbye."
         },
         {
           "id": "q9",
           "type": "multiple-choice",
-          "question": "Which is NOT a color?",
+          "question": "Which is NOT in color?",
           "options": [
-            "Red",
+            "Grid",
             "Chair",
             "Blue",
             "Green"
@@ -546,12 +546,12 @@
         {
           "id": "q10",
           "type": "multiple-choice",
-          "question": "\"Have a nice ___!\" — What word completes the farewell?",
+          "question": "\"Have a nice ___!\" —What word completes the farewell?",
           "options": [
             "time",
             "day",
             "morning",
-            "name"
+            "yam"
           ],
           "correct": 1,
           "explanation": "\"Have a nice day!\" is a common farewell."
@@ -559,7 +559,7 @@
         {
           "id": "q11",
           "type": "multiple-choice",
-          "question": "Which word means \"tío\" in English?",
+          "question": "Which word means \"uncle\" in English?",
           "options": [
             "Aunt",
             "Uncle",
@@ -567,7 +567,7 @@
             "Grandfather"
           ],
           "correct": 1,
-          "explanation": "Uncle = tío."
+          "explanation": "Uncle = uncle."
         },
         {
           "id": "q12",
@@ -582,38 +582,38 @@
   {
     "id": "m1-ch2-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Saludos",
-    "description": "Descifra palabras clave para saludar y despedirse.",
+    "title": "Greetings Vocabulary",
+    "description": "Decipher key words to say hello and goodbye.",
     "props": {
       "words": [
         {
           "word": "HELLO",
-          "hint": "Hola; saludo universal",
+          "hint": "Hello; universal greeting",
           "category": "Greetings"
         },
         {
           "word": "GOODBYE",
-          "hint": "Adiós; despedida",
+          "hint": "Bye bye; farewell",
           "category": "Greetings"
         },
         {
           "word": "MORNING",
-          "hint": "Mañana; parte del día",
+          "hint": "Tomorrow; part of the day",
           "category": "Greetings"
         },
         {
           "word": "EVENING",
-          "hint": "Noche temprana; después de la tarde",
+          "hint": "early night; after afternoon",
           "category": "Greetings"
         },
         {
           "word": "PLEASE",
-          "hint": "Por favor; cortesía",
+          "hint": "Please; courtesy",
           "category": "Greetings"
         },
         {
           "word": "THANKS",
-          "hint": "Gracias; agradecimiento",
+          "hint": "Thank you; gratitude",
           "category": "Greetings"
         }
       ]

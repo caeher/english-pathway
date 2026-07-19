@@ -2,8 +2,8 @@
   {
     "id": "m10-ch2-svg",
     "type": "svg-scene",
-    "title": "Los Mundos del Vocabulario",
-    "description": "Explora cada mundo temático y descubre vocabulario nuevo en contexto.",
+    "title": "The Worlds of Vocabulary",
+    "description": "Explore each themed world and discover new vocabulary in context.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -61,7 +61,7 @@
             "width": 120,
             "height": 100,
             "fill": "#67e8f9",
-            "label": "Tecnología",
+            "label": "Technology",
             "labelEn": "📱 Tech World"
           },
           {
@@ -112,38 +112,38 @@
   {
     "id": "m10-ch2-flash",
     "type": "flashcard",
-    "title": "Vocabulario en Contexto",
-    "description": "Aprende cada palabra con su definición, colocación y ejemplo de uso.",
+    "title": "Vocabulary in Context",
+    "description": "Learn each word with its definition, placement and example of use.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "APPOINTMENT 📅",
-          "back": "Una cita (médica, de negocios). Collocations: make / schedule / cancel an appointment",
+          "back": "An appointment (medical, business). Collocations: make / schedule / cancel an appointment",
           "example": "I need to make an appointment with the dentist."
         },
         {
           "id": "f2",
           "front": "DEADLINE ⏰",
-          "back": "Fecha límite para entregar algo. Collocations: meet / miss the deadline",
+          "back": "Deadline to deliver something. Collocations: meet / miss the deadline",
           "example": "We need to meet the deadline by Friday."
         },
         {
           "id": "f3",
           "front": "RECEIPT 🧾",
-          "back": "Recibo o comprobante de compra. Collocations: keep / ask for the receipt",
+          "back": "Receipt or proof of purchase. Collocations: keep / ask for the receipt",
           "example": "Always keep the receipt in case you need a refund."
         },
         {
           "id": "f4",
           "front": "COLLEAGUE 👥",
-          "back": "Compañero de trabajo. Collocations: a close colleague, work with colleagues",
+          "back": "Co-worker. Collocations: a close colleague, work with colleagues",
           "example": "My colleague helped me with the project."
         },
         {
           "id": "f5",
           "front": "SYMPTOM 🤒",
-          "back": "Síntoma de una enfermedad. Collocations: show / have symptoms",
+          "back": "Symptom of a disease. Collocations: show / have symptoms",
           "example": "What symptoms do you have?"
         },
         {
@@ -155,7 +155,7 @@
         {
           "id": "f7",
           "front": "DISCOUNT 💰",
-          "back": "Descuento en una compra. Collocations: get / offer / give a discount",
+          "back": "Discount on a purchase. Collocations: get / offer / give a discount",
           "example": "They offered me a 20% discount."
         },
         {
@@ -167,7 +167,7 @@
         {
           "id": "f9",
           "front": "PRESCRIPTION 💊",
-          "back": "Receta médica. Collocations: write / fill a prescription",
+          "back": "Prescription. Collocations: write / fill a prescription",
           "example": "The doctor wrote a prescription for antibiotics."
         },
         {
@@ -179,7 +179,7 @@
         {
           "id": "f11",
           "front": "RESIGN ✋",
-          "back": "Renunciar a un trabajo. Collocations: resign from a position",
+          "back": "Quit a job. Collocations: resign from a position",
           "example": "He decided to resign from his job."
         },
         {
@@ -195,7 +195,7 @@
     "id": "m10-ch2-match",
     "type": "word-match",
     "title": "Colocaciones Correctas",
-    "description": "Empareja cada verbo con su complemento correcto.",
+    "description": "Match each verb with its correct object.",
     "props": {
       "pairs": [
         {
@@ -236,8 +236,8 @@
   {
     "id": "m10-ch2-quiz",
     "type": "quiz",
-    "title": "¿Qué Palabra Necesitas?",
-    "description": "Elige la palabra correcta para cada situación cotidiana.",
+    "title": "What Word Do You Need?",
+    "description": "Choose the correct word for each everyday situation.",
     "props": {
       "questions": [
         {
@@ -251,14 +251,14 @@
             "homework"
           ],
           "correct": 0,
-          "explanation": "Take medicine = tomar medicina. Es la colocación correcta."
+          "explanation": "Take medicine = take medicine. It is the correct placement."
         },
         {
           "id": "q2",
           "type": "fill-blank",
           "question": "I need to ___ an appointment with the dentist.",
           "correct": "make",
-          "explanation": "Make an appointment = hacer/agendar una cita."
+          "explanation": "Make an appointment = make/schedule an appointment."
         },
         {
           "id": "q3",
@@ -271,7 +271,7 @@
             "symptom"
           ],
           "correct": 2,
-          "explanation": "Deadline = fecha límite."
+          "explanation": "Deadline = deadline."
         },
         {
           "id": "q4",
@@ -284,14 +284,14 @@
             "salary"
           ],
           "correct": 2,
-          "explanation": "Receipt = recibo. Lo necesitas para devoluciones."
+          "explanation": "Receipt = receipt. You need it for returns."
         },
         {
           "id": "q5",
           "type": "fill-blank",
           "question": "Every morning I ___ a shower before work.",
           "correct": "take",
-          "explanation": "Take a shower = tomar una ducha (colocación con take)."
+          "explanation": "Take a shower = take a shower (placement with take)."
         },
         {
           "id": "q6",
@@ -304,7 +304,7 @@
             "promotion"
           ],
           "correct": 1,
-          "explanation": "Colleague = compañero de trabajo."
+          "explanation": "Colleague = co-worker."
         },
         {
           "id": "q7",
@@ -317,7 +317,7 @@
             "make"
           ],
           "correct": 3,
-          "explanation": "Make the bed = tender la cama."
+          "explanation": "Make the bed = make the bed."
         },
         {
           "id": "q8",
@@ -337,14 +337,14 @@
             "bargains"
           ],
           "correct": 2,
-          "explanation": "Symptoms = síntomas. Describes lo que sientes al doctor."
+          "explanation": "Symptoms = symptoms. You describe what you feel to the doctor."
         },
         {
           "id": "q10",
           "type": "fill-blank",
           "question": "I ___ homework every evening after school.",
           "correct": "do",
-          "explanation": "Do homework = hacer la tarea (colocación con do)."
+          "explanation": "Do homework = do homework (collocation with do)."
         }
       ]
     }
@@ -352,8 +352,8 @@
   {
     "id": "m10-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Frases del Día a Día",
-    "description": "Construye frases cotidianas usando el vocabulario nuevo.",
+    "title": "Day to Day Phrases",
+    "description": "Build everyday sentences using new vocabulary.",
     "props": {
       "sentences": [
         {
@@ -433,18 +433,18 @@
   {
     "id": "m10-ch2-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario Día a Día",
+    "title": "Day to Day Vocabulary",
     "description": "Descifra palabras cotidianas.",
     "props": {
       "words": [
         {
           "word": "MORNING",
-          "hint": "Mañana; parte del día",
+          "hint": "Tomorrow; part of the day",
           "category": "Daily"
         },
         {
           "word": "AFTERNOON",
-          "hint": "Tarde; después del mediodía",
+          "hint": "Late; after noon",
           "category": "Daily"
         },
         {

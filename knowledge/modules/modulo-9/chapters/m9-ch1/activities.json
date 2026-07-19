@@ -2,8 +2,8 @@
   {
     "id": "m9-ch1-svg",
     "type": "svg-scene",
-    "title": "Mapa del Viaje",
-    "description": "Explora las zonas de la ciudad y descubre vocabulario de viaje en cada lugar.",
+    "title": "Journey Map",
+    "description": "Explore the areas of the city and discover travel vocabulary in each place.",
     "props": {
       "scene": {
         "viewBox": "0 0 650 420",
@@ -33,7 +33,7 @@
             "type": "polygon",
             "points": "85,270 95,250 105,270",
             "fill": "#e2e8f0",
-            "label": "Avión",
+            "label": "Plane",
             "labelEn": "Airplane"
           },
           {
@@ -55,7 +55,7 @@
             "width": 50,
             "height": 25,
             "fill": "#f59e0b",
-            "label": "Recepción",
+            "label": "Reception",
             "labelEn": "Reception"
           },
           {
@@ -118,7 +118,7 @@
             "width": 130,
             "height": 30,
             "fill": "#7dd3fc",
-            "label": "Océano",
+            "label": "Ocean",
             "labelEn": "Ocean"
           },
           {
@@ -140,7 +140,7 @@
             "width": 70,
             "height": 30,
             "fill": "#a3a3a3",
-            "label": "Estación",
+            "label": "Season",
             "labelEn": "Station"
           },
           {
@@ -151,7 +151,7 @@
             "width": 45,
             "height": 22,
             "fill": "#60a5fa",
-            "label": "Autobús",
+            "label": "Bus",
             "labelEn": "Bus"
           },
           {
@@ -183,8 +183,8 @@
   {
     "id": "m9-ch1-flash",
     "type": "flashcard",
-    "title": "Flashcards de Viaje",
-    "description": "Aprende vocabulario esencial para cada etapa del viaje.",
+    "title": "Travel Flashcards",
+    "description": "Learn essential vocabulary for each stage of the trip.",
     "props": {
       "cards": [
         {
@@ -207,7 +207,7 @@
         },
         {
           "id": "f4",
-          "front": "Puerta de embarque",
+          "front": "boarding gate",
           "back": "Gate",
           "example": "Please proceed to gate 5."
         },
@@ -219,7 +219,7 @@
         },
         {
           "id": "f6",
-          "front": "Reservación",
+          "front": "Reservation",
           "back": "Reservation",
           "example": "I have a reservation for tonight."
         },
@@ -237,7 +237,7 @@
         },
         {
           "id": "f9",
-          "front": "Habitación",
+          "front": "Room",
           "back": "Room",
           "example": "We booked a double room."
         },
@@ -267,7 +267,7 @@
         },
         {
           "id": "f14",
-          "front": "Estación",
+          "front": "Season",
           "back": "Station",
           "example": "The train station is nearby."
         },
@@ -314,7 +314,7 @@
     "id": "m9-ch1-match",
     "type": "word-match",
     "title": "Lugar → Actividad",
-    "description": "Empareja cada lugar con la actividad que se realiza ahí.",
+    "description": "Match each place with the activity that takes place there.",
     "props": {
       "pairs": [
         {
@@ -364,11 +364,11 @@
     "id": "m9-ch1-sentence",
     "type": "sentence-builder",
     "title": "Planifica tu Itinerario",
-    "description": "Ordena las palabras para formar oraciones sobre tu viaje.",
+    "description": "Order the words to make sentences about your trip.",
     "props": {
       "sentences": [
         {
-          "prompt": "Describe tu plan de la mañana:",
+          "prompt": "Describe your morning plan:",
           "words": [
             "visit",
             "the",
@@ -381,7 +381,7 @@
           "correct": "I'll visit the museum in the morning"
         },
         {
-          "prompt": "Pregunta por la estación:",
+          "prompt": "Ask about the station:",
           "words": [
             "is",
             "Where",
@@ -393,7 +393,7 @@
           "correct": "Where is the nearest subway station?"
         },
         {
-          "prompt": "Registrarse en el hotel:",
+          "prompt": "Check in at the hotel:",
           "words": [
             "to",
             "like",
@@ -405,7 +405,7 @@
           "correct": "I'd like to check in, please"
         },
         {
-          "prompt": "Habla sobre tu reservación:",
+          "prompt": "Talk about your reservation:",
           "words": [
             "a",
             "have",
@@ -417,7 +417,7 @@
           "correct": "I have a reservation for tonight"
         },
         {
-          "prompt": "Pregunta por el precio:",
+          "prompt": "Ask about the price:",
           "words": [
             "much",
             "How",
@@ -444,7 +444,7 @@
           "correct": "we'll go to the beach in the afternoon"
         },
         {
-          "prompt": "Compra en el mercado:",
+          "prompt": "Buy in the market:",
           "words": [
             "souvenirs",
             "bought",
@@ -456,7 +456,7 @@
           "correct": "We bought souvenirs at the market"
         },
         {
-          "prompt": "Habla de tu vuelo:",
+          "prompt": "Talk about your flight:",
           "words": [
             "flight",
             "Our",
@@ -468,7 +468,7 @@
           "correct": "Our flight departs at 9 AM"
         },
         {
-          "prompt": "Plan del día:",
+          "prompt": "Plan of the day:",
           "words": [
             "explore",
             "Let's",
@@ -480,7 +480,7 @@
           "correct": "Let's explore the old town today"
         },
         {
-          "prompt": "Hora de salida:",
+          "prompt": "Departure time:",
           "words": [
             "is",
             "Check-out",
@@ -496,8 +496,8 @@
   {
     "id": "m9-ch1-quiz",
     "type": "quiz",
-    "title": "Quiz de Viaje",
-    "description": "Situaciones reales en el aeropuerto y el hotel. ¿Sabes qué decir?",
+    "title": "Travel Quiz",
+    "description": "Real situations at the airport and hotel. Do you know what to say?",
     "props": {
       "questions": [
         {
@@ -531,12 +531,12 @@
           "type": "fill-blank",
           "question": "I have a ____ for two nights at this hotel.",
           "correct": "reservation",
-          "explanation": "Reservation = reservación. \"I have a reservation for two nights.\""
+          "explanation": "Reservation = reservation. \"I have a reservation for two nights.\""
         },
         {
           "id": "q4",
           "type": "multiple-choice",
-          "question": "What is \"puerta de embarque\" in English?",
+          "question": "What is \"boarding gate\" in English?",
           "options": [
             "Exit door",
             "Gate",
@@ -544,7 +544,7 @@
             "Platform"
           ],
           "correct": 1,
-          "explanation": "Puerta de embarque = Gate (at the airport)."
+          "explanation": "Boarding gate = Gate (at the airport)."
         },
         {
           "id": "q5",
@@ -619,7 +619,7 @@
     "id": "m9-ch1-scramble",
     "type": "word-scramble",
     "title": "Viajes Imaginarios",
-    "description": "Descifra vocabulario de viajes.",
+    "description": "Decipher travel vocabulary.",
     "props": {
       "words": [
         {
@@ -644,7 +644,7 @@
         },
         {
           "word": "PASSPORT",
-          "hint": "Pasaporte; documento para viajar",
+          "hint": "Passport; travel document",
           "category": "Travel"
         },
         {

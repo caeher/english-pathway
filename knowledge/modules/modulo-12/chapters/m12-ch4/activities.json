@@ -2,8 +2,8 @@
   {
     "id": "m12-ch4-quiz",
     "type": "quiz",
-    "title": "¿Qué Dijo Realmente?",
-    "description": "Identifica la forma completa de cada reducción. Decodifica el habla natural.",
+    "title": "What Did He Really Say?",
+    "description": "Identify the full form of each reduction. Decodes natural speech.",
     "props": {
       "questions": [
         {
@@ -24,7 +24,7 @@
           "type": "fill-blank",
           "question": "Informal: \"I ___ leave now.\" (= I have got to leave now)",
           "correct": "gotta",
-          "explanation": "gotta = got to / have got to. Expresa obligación informal."
+          "explanation": "gotta = got to / have got to. Expresses informal obligation."
         },
         {
           "id": "q3",
@@ -70,7 +70,7 @@
             "kindergarten"
           ],
           "correct": 1,
-          "explanation": "kinda = kind of = algo, un poco. \"I'm kinda hungry\" = \"Tengo algo de hambre.\""
+          "explanation": "kinda = kind of = something, a little. \"I'm kinda hungry\" = \"I'm kinda hungry.\""
         },
         {
           "id": "q7",
@@ -83,14 +83,14 @@
             "happen to"
           ],
           "correct": 2,
-          "explanation": "hafta = have to. Expresa obligación."
+          "explanation": "hafta = have to. Expresses obligation."
         },
         {
           "id": "q8",
           "type": "fill-blank",
           "question": "\"I ___ a pizza, please.\" (= I want to have a pizza — casual)",
           "correct": "wanna",
-          "explanation": "wanna = want to. \"I wanna a pizza\" = \"Quiero una pizza\" (informal)."
+          "explanation": "wanna = want to. \"I wanna a pizza\" = \"I want a pizza\" (informal)."
         },
         {
           "id": "q9",
@@ -125,7 +125,7 @@
     "id": "m12-ch4-match",
     "type": "word-match",
     "title": "Forma Reducida → Forma Completa",
-    "description": "Empareja cada reducción con su equivalente completo.",
+    "description": "Match each reduction with its full equivalent.",
     "props": {
       "pairs": [
         {
@@ -167,43 +167,43 @@
     "id": "m12-ch4-flash",
     "type": "flashcard",
     "title": "Reducciones Esenciales",
-    "description": "Aprende cada reducción con su forma completa, regla y contexto de uso.",
+    "description": "Learn each reduction with its full form, rule, and context of use.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "GONNA 🗣️",
-          "back": "= going to. Solo habla informal y casual. NUNCA en escritura formal.",
+          "back": "= going to. Just speak informally and casually. NEVER in formal writing.",
           "example": "I'm gonna call you later. (= I'm going to call you later.)"
         },
         {
           "id": "f2",
           "front": "WANNA 🗣️",
-          "back": "= want to. Informal. Se usa con \"I\", \"you\", \"we\", \"they\". NO con \"he/she/it\".",
+          "back": "= want to. Informal. It is used with \"I\", \"you\", \"we\", \"they\". NOT with \"he/she/it\".",
           "example": "I wanna go home. (= I want to go home.)"
         },
         {
           "id": "f3",
           "front": "GOTTA 🗣️",
-          "back": "= got to / have got to. Obligación informal. Muy común en EE.UU.",
+          "back": "= got to / have got to. Informal obligation. Very common in the US.",
           "example": "I gotta leave now. (= I have got to leave now.)"
         },
         {
           "id": "f4",
           "front": "HAFTA 🗣️",
-          "back": "= have to. Obligación informal. Alternativa a \"gotta\".",
+          "back": "= have to. Informal obligation. Alternative to \"gotta\".",
           "example": "You hafta try this restaurant. (= You have to try this restaurant.)"
         },
         {
           "id": "f5",
           "front": "LEMME 🗣️",
-          "back": "= let me. Muy casual. Petición informal.",
+          "back": "= let me. Very casual. Informal request.",
           "example": "Lemme think about it. (= Let me think about it.)"
         },
         {
           "id": "f6",
           "front": "KINDA 🗣️",
-          "back": "= kind of. Significa \"algo, un poco\". Suaviza lo que dices.",
+          "back": "= kind of. It means \"something, a little.\" Soften what you say.",
           "example": "I'm kinda tired. (= I'm kind of tired.)"
         },
         {
@@ -227,7 +227,7 @@
         {
           "id": "f10",
           "front": "DON'TCHU / DONTCHA 🗣️",
-          "back": "= don't you. Assimilation: la /t/ + /y/ se fusionan en /tʃ/ (\"ch\").",
+          "back": "= don't you. Assimilation: /t/ + /y/ merge into /tʃ/ (\"ch\").",
           "example": "Don'tchu think so? (= Don't you think so?)"
         }
       ]
@@ -236,8 +236,8 @@
   {
     "id": "m12-ch4-sentence",
     "type": "sentence-builder",
-    "title": "De Formal a Natural",
-    "description": "Reconstruye la oración usando contracciones y reducciones naturales.",
+    "title": "From Formal to Natural",
+    "description": "Reconstruct the sentence using natural contractions and reductions.",
     "props": {
       "sentences": [
         {
@@ -340,8 +340,8 @@
   {
     "id": "m12-ch4-svg",
     "type": "svg-scene",
-    "title": "El Espectro de Formalidad",
-    "description": "Explora el espectro de formal a informal y descubre cómo cambia el lenguaje.",
+    "title": "The Spectrum of Formality",
+    "description": "Explore the spectrum from formal to informal and discover how language changes.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -410,7 +410,7 @@
             "width": 560,
             "height": 8,
             "fill": "#a3a3a3",
-            "label": "Espectro de formalidad",
+            "label": "Spectrum of formality",
             "labelEn": "← Formal ————— Casual →"
           }
         ]
@@ -420,23 +420,23 @@
   {
     "id": "m12-ch4-scramble",
     "type": "word-scramble",
-    "title": "Hablando como Nativo",
-    "description": "Descifra vocabulario de habla natural.",
+    "title": "Speaking like a Native",
+    "description": "Decipher natural speech vocabulary.",
     "props": {
       "words": [
         {
           "word": "FLUENT",
-          "hint": "Fluido; hablar con facilidad",
+          "hint": "Fluent; speak easily",
           "category": "Speaking"
         },
         {
           "word": "NATURAL",
-          "hint": "Natural; auténtico",
+          "hint": "Natural; authentic",
           "category": "Speaking"
         },
         {
           "word": "IDIOM",
-          "hint": "Modismo; expresión fija",
+          "hint": "Idiom; fixed expression",
           "category": "Speaking"
         },
         {

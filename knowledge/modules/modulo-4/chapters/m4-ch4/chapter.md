@@ -1,39 +1,39 @@
 ---
 id: m4-ch4
-moduleId: modulo-4
+moduleId: module-4
 number: 4
-title: "Verbos Modales: Must, Should, May, Might"
-subtitle: Obligación, consejos y posibilidad
+title: "Modal Verbs: Must, Should, May, Might"
+subtitle: Obligation, advice and possibility
 icon: ⚖️
 color: "#f59e0b"
 objectives:
-  - "Usar \"must\" para obligación y prohibición"
-  - "Usar \"should\" para consejos y recomendaciones"
-  - "Usar \"may/might\" para posibilidad y permiso formal"
+  - "Use \"must\" for obligation and prohibition"
+  - "Use \"should\" for advice and recommendations"
+  - "Use \"may/might\" for possibility and formal permission"
 xpReward: 170
 ---
 
 ## Modal Verbs: Must, Should, May, Might
 
-### Must — Obligación fuerte / Prohibición
-- You **must** wear a seatbelt. (obligación)
-- You **must not (mustn't)** smoke here. (prohibición)
-- She **must** be tired. (deducción lógica)
+### Must — Strong obligation / Prohibition
+- You **must** wear a seatbelt. (obligation)
+- You **must not (mustn't)** smoke here. (prohibition)
+- She **must** be tired. (logical deduction)
 
-### Should — Consejo / Recomendación
+### Should — Advice / Recommendation
 - You **should** study more. (consejo)
-- She **shouldn't** eat so much sugar. (no deberías)
+- She **shouldn't** eat so much sugar. (you shouldn't)
 - **Should** I call the doctor?
 
 ### May — Posibilidad / Permiso formal
 - It **may** rain later. (posibilidad ~50%)
 - **May** I come in? (permiso formal)
-- She **may not** come today. (quizás no)
+- She **may not** eat today. (maybe not)
 
 ### Might — Posibilidad menor
 - It **might** rain. (posibilidad ~30%)
-- He **might** be at home. (quizás)
-- They **might not** come. (quizás no)
+- He **might** be at home. (maybe)
+- They **might not** eat. (maybe not)
 
 ### Summary
 | Modal | Use | Strength |

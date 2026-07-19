@@ -1,15 +1,15 @@
 ---
 id: m7-ch1
-moduleId: modulo-7
+moduleId: module-7
 number: 1
-title: Nouns, Pronouns y Cláusulas Relativas
-subtitle: Pronombres, relativos y appositives avanzados
+title: Nouns, Pronouns and Relative Clauses
+subtitle: Advanced pronouns, relatives and appositives
 icon: 🔗
 color: "#3b82f6"
 objectives:
-  - Revisar demonstrative y third person pronouns
-  - "Usar pronombres relativos: who, which, that, where, whose"
-  - Dominar appositives avanzados y cláusulas relativas
+  - Review demonstrative and third person pronouns
+  - "Use relative pronouns: who, which, that, where, whose"
+  - Master advanced appositives and relative clauses
 xpReward: 180
 ---
 
@@ -18,7 +18,7 @@ xpReward: 180
 ### Pronombres demostrativos (Demonstrative pronouns)
 | Singular | Plural | Uso |
 |----------|--------|-----|
-| **this** | **these** | Cerca (este/estos) → This is my book. These are my friends. |
+| **this** | **these** | Near (this/these) → This is my book. These are my friends. |
 | **that** | **those** | Lejos (ese/eses, aquel/aquellos) → That is the teacher. Those are the students. |
 
 ### Third person singular pronouns (he, she, it)
@@ -26,10 +26,10 @@ xpReward: 180
 - **she** → persona femenina  
 - **it** → cosas, animales, conceptos abstractos, tiempo/clima
 
-### Relative Clauses — Cláusulas Relativas
+### Relative Clauses
 
-### ¿Qué son?
-Las cláusulas relativas dan **información extra** sobre un sustantivo.
+### What are they?
+Relative clauses give **extra information** about a noun.
 - The man **who lives next door** is a doctor.
 - The book **that I bought** is interesting.
 
@@ -66,7 +66,7 @@ Las cláusulas relativas dan **información extra** sobre un sustantivo.
 | The boy is my friend. His father is a pilot. | The boy **whose** father is a pilot is my friend. |
 
 ### Appositives avanzados
-Los appositives modifican o complementan sustantivos. En nivel avanzado:
+Appositives modify or complement nouns. At advanced level:
 - *The president*, **a former lawyer**, gave a speech. (appositive entre comas)
-- *My friend* **Carlos** lives in Madrid. (appositive esencial, sin comas)
-- The idea **that we should leave early** was rejected. (noun clause como appositive — tema avanzado)
+- *My friend* **Carlos** lives in Madrid. (appositive essential, without commas)
+- The idea **that we should leave early** was rejected. (noun clause as appositive — advanced topic)

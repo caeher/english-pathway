@@ -1,49 +1,49 @@
 ---
 id: m13-ch4
-moduleId: modulo-13
+moduleId: module-13
 number: 4
-title: Pronunciación de Nivel 3
-subtitle: Refinando el acento y la articulación avanzada
+title: Level 3 Pronunciation
+subtitle: Refining accent and advanced articulation
 icon: 🎶
 color: "#ec4899"
 objectives:
-  - Dominar sentence stress para cambiar el significado implícito de las oraciones
-  - Reconocer y producir entonación discursiva para narrar, persuadir y cuestionar
-  - Comprender reducciones avanzadas del habla conectada (woulda, shoulda, coulda)
-  - "Exponerse a variantes del inglés global: británico, americano, australiano, indio"
+  - Master sentence stress to change the implicit meaning of sentences
+  - Recognize and produce discursive intonation to narrate, persuade and question
+  - Understand advanced reductions of connected speech (woulda, shoulda, coulda)
+  - "Exposure yourself to variants of global English: British, American, Australian, Indian"
 xpReward: 350
 ---
 
-## Pronunciación Avanzada — La prosodia como herramienta de significado
+## Advanced Pronunciation — Prosody as a tool of meaning
 
-En este nivel, la pronunciación no es solo "sonar bien". Es usar la **entonación, el ritmo y el stress como herramientas de comunicación**.
+At this level, pronunciation is not just about "sounding good." It is using **intonation, rhythm and stress as communication tools**.
 
-### Sentence Stress para Cambiar Significado
+### Sentence Stress to Change Meaning
 
-La MISMA oración cambia de significado según QUÉ palabra acentúes:
+The SAME sentence changes meaning depending on WHICH word you accentuate:
 
-| Oración con stress | Significado implícito |
+| Prayer with stress | Implied meaning |
 |---|---|
-| "**I** didn't say he stole the money." | (Alguien más lo dijo, no yo) |
+| "**I** didn't say he stole the money." | (Someone else said it, not me) |
 | "I **DIDN'T** say he stole the money." | (Niego haberlo dicho) |
-| "I didn't say **HE** stole the money." | (Dije que alguien más lo robó) |
-| "I didn't say he **STOLE** the money." | (Dije que lo tomó prestado, no robado) |
-| "I didn't say he stole the **MONEY**." | (Robó otra cosa, no el dinero) |
+| "I didn't say **HE** stole the money." | (I said someone else stole it) |
+| "I didn't say he **STOLE** the money." | (I said he borrowed it, not stole it) |
+| "I didn't say he stole the **MONEY**." | (He stole something else, not the money) |
 
-> ¡7 palabras, 5 significados diferentes! El stress es PODER.
+> 7 words, 5 different meanings! Stress is POWER.
 
-### Entonación Discursiva
+### Discursive Intonation
 
-| Patrón | Uso | Ejemplo |
+| Pattern | Uso | Ejemplo |
 |---|---|---|
 | Narrativo ↘️↗️↘️ | Contar historias | "So I was walking↗️ and suddenly↘️..." |
 | Persuasivo ↘️⬆️ | Convencer | "We MUST↑ act NOW↑" |
-| Interrogativo ↗️ | Cuestionar con sorpresa | "YOU did that?↗️" |
-| Diplomático ↘️↗️ | Suavizar desacuerdo | "Well... I'm not so sure...↘️↗️" |
+| Interrogativo ↗️ | Question with surprise | "YOU did that?↗️" |
+| Diplomat ↘️↗️ | Suavizar desacuerdo | "Well... I'm not so sure...↘️↗️" |
 
 ### Reducciones Avanzadas
 
-| Forma completa | Reducción | Ejemplo |
+| Forma completa | Reduction | Ejemplo |
 |---|---|---|
 | would have | **woulda** | "I woulda helped if I'd known." |
 | should have | **shoulda** | "You shoulda told me earlier." |
@@ -51,18 +51,18 @@ La MISMA oración cambia de significado según QUÉ palabra acentúes:
 | must have | **musta** | "He musta forgotten." |
 | might have | **mighta** | "She mighta left already." |
 
-⚠️ Estas son SOLO para comprensión auditiva y habla muy informal. Nunca en escritura formal.
+⚠️ These are ONLY for listening comprehension and very informal speech. Never in formal writing.
 
-### World Englishes — El inglés es global
+### World Englishes — English is global
 
-| Variante | Característica | Ejemplo |
+| Variante | Feature | Ejemplo |
 |---|---|---|
 | 🇬🇧 British RP | Non-rhotic (no pronuncia /r/ final) | "car" → /kɑː/ |
 | 🇺🇸 American General | Rhotic (pronuncia /r/ final) | "car" → /kɑːr/ |
-| 🇦🇺 Australian | Entonación ascendente en afirmaciones | "I went to the shop?" ↗️ |
-| 🇮🇳 Indian English | Consonantes retroflejas /ʈ, ɖ/ | "time" con /t/ retrofleja |
-| 🇿🇦 South African | Cambio de vocales /æ/ → /e/ | "hat" suena más como "het" |
+| 🇦🇺 Australian | Rising intonation in affirmations | "I went to the shop?" ↗️ |
+| 🇮🇳 Indian English | Consonantes retroflejas /ʈ, ɖ/ | "time" with retroflex /t/ |
+| 🇿🇦 South African | Vowel change /æ/ → /e/ | "hat" sounds more like "het" |
 
-### Principio de Inteligibilidad
+### Intelligibility Principle
 
-> 💡 **Tip:** El objetivo NO es eliminar tu acento. Es ser **entendido claramente**. Un acento es parte de tu identidad. Enfócate en las características que más afectan la comprensión.
+> 💡 **Tip:** The goal is NOT to eliminate your accent. It is being **clearly understood**. An accent is part of your identity. Focus on the features that most affect understanding.

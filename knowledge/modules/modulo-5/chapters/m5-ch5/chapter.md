@@ -1,27 +1,27 @@
 ---
 id: m5-ch5
-moduleId: modulo-5
+moduleId: module-5
 number: 5
-title: "Voz Pasiva: Formación"
-subtitle: Be + past participle — El enfoque en la acción
+title: "Passive Voice: Training"
+subtitle: Be + past participle — Focus on action
 icon: 🔄
 color: "#06b6d4"
 objectives:
-  - Comprender la diferencia entre voz activa y voz pasiva
-  - "Formar la voz pasiva: be + past participle"
-  - Transformar oraciones activas a pasivas en varios tiempos
+  - Understand the difference between active voice and passive voice
+  - "Form the passive voice: be + past participle"
+  - Transform active sentences into passive sentences in various tenses
 xpReward: 180
 ---
 
 ## Passive Voice — Voz Pasiva
 
-### ¿Qué es la voz pasiva?
-- **Activa:** The dog **bit** the man. (sujeto = quien hace la acción)
-- **Pasiva:** The man **was bitten** by the dog. (sujeto = quien recibe la acción)
-- Usamos pasiva cuando el **receptor** es más importante, o no sabemos quién hizo la acción.
+### What is passive voice?
+- **Active:** The dog **bit** the man. (subject = who does the action)
+- **Passive:** The man **was bitten** by the dog. (subject = who receives the action)
+- We use passive when the **receiver** is more important, or we don't know who did the action.
 
-### La importancia del auxiliar "to be"
-En la voz pasiva, el auxiliar **BE** es fundamental. Se conjuga según el tiempo (am/is/are, was/were, been, being) y lleva el **past participle**. Sin "be" no hay pasiva.
+### The importance of the auxiliary "to be"
+In the passive voice, the auxiliary **BE** is essential. It is conjugated according to time (am/is/are, was/were, been, being) and takes the **past participle**. Without "be" there is no passive.
 - The house **is** built. (present)
 - The house **was** built. (past)
 - The house **has been** built. (present perfect)
@@ -36,7 +36,7 @@ En la voz pasiva, el auxiliar **BE** es fundamental. Se conjuga según el tiempo
 | **Interrogative** | **Is** the car **made** in Japan? / **Has** the letter **been sent**? / **Was** the house **built** in 2020? |
 | **Short answers** | Yes, it is. / No, it wasn't. / Yes, it has been. |
 
-### Formación: BE (conjugado) + past participle
+### Formation: BE (conjugated) + past participle
 | Tense | Active | Passive |
 |-------|--------|---------|
 | **Present Simple** | They **make** cars in Japan. | Cars **are made** in Japan. |
@@ -46,10 +46,10 @@ En la voz pasiva, el auxiliar **BE** es fundamental. Se conjuga según el tiempo
 | **Present Continuous** | They **are building** a house. | A house **is being built**. |
 | **Past Continuous** | They **were cleaning** the room. | The room **was being cleaned**. |
 
-### "By" — ¿Quién lo hizo?
+### "By" — Who did it?
 - The book was written **by** J.K. Rowling.
 - The cake was made **by** my grandmother.
-- Solo se usa "by + agente" cuando es importante saber QUIÉN.
+- "by + agent" is only used when it is important to know WHO.
 
 ### Pattern Summary
 | Tense | BE form | + Past Participle |

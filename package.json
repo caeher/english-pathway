@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "architecture:check": "node scripts/check-feature-boundaries.mjs",
     "activities:validate": "tsx scripts/validate-activities.ts",
+    "knowledge:language:validate": "node scripts/validate-knowledge-language.mjs",
     "test": "vitest run",
     "test:critical": "vitest run __tests__/quality __tests__/auth __tests__/onboarding __tests__/curriculum __tests__/tutor __tests__/audio __tests__/legal",
     "test:watch": "vitest",

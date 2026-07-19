@@ -2,8 +2,8 @@
   {
     "id": "m9-ch2-svg",
     "type": "svg-scene",
-    "title": "¿Qué están haciendo?",
-    "description": "Observa la escena del parque y haz clic en cada personaje para descubrir qué está haciendo.",
+    "title": "What are they doing?",
+    "description": "Watch the park scene and click on each character to find out what they are doing.",
     "props": {
       "scene": {
         "viewBox": "0 0 650 400",
@@ -70,7 +70,7 @@
             "cy": 310,
             "r": 22,
             "fill": "#a78bfa",
-            "label": "Niños jugando",
+            "label": "children playing",
             "labelEn": "The children are playing"
           },
           {
@@ -134,7 +134,7 @@
             "cy": 220,
             "r": 35,
             "fill": "#22c55e",
-            "label": "Árbol",
+            "label": "Tree",
             "labelEn": "Tree — The leaves are moving"
           },
           {
@@ -144,7 +144,7 @@
             "cy": 210,
             "r": 40,
             "fill": "#16a34a",
-            "label": "Árbol",
+            "label": "Tree",
             "labelEn": "Tree — Birds are singing in the tree"
           },
           {
@@ -166,7 +166,7 @@
             "width": 650,
             "height": 50,
             "fill": "#86efac",
-            "label": "Césped",
+            "label": "Grass",
             "labelEn": "Grass — It is growing"
           }
         ]
@@ -176,8 +176,8 @@
   {
     "id": "m9-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Describe la Acción",
-    "description": "Ordena las palabras para formar oraciones en presente continuo.",
+    "title": "Describe the Action",
+    "description": "Order the words to form sentences in the present continuous.",
     "props": {
       "sentences": [
         {
@@ -288,7 +288,7 @@
     "id": "m9-ch2-quiz",
     "type": "quiz",
     "title": "Presente Simple vs. Continuo",
-    "description": "¿Hábito o acción en progreso? Elige la forma correcta del verbo.",
+    "description": "Habit or action in progress? Choose the correct form of the verb.",
     "props": {
       "questions": [
         {
@@ -355,7 +355,7 @@
           "type": "fill-blank",
           "question": "I ___ (not / watch) TV right now. I am studying.",
           "correct": "am not watching",
-          "explanation": "Negativo en continuo: \"I am not watching TV.\""
+          "explanation": "Continuous negative: \"I am not watching TV.\""
         },
         {
           "id": "q7",
@@ -410,7 +410,7 @@
     "id": "m9-ch2-flash",
     "type": "flashcard",
     "title": "Flashcards: Verbo → -ing",
-    "description": "Aprende las reglas ortográficas para formar el gerundio.",
+    "description": "Learn the spelling rules to form the gerund.",
     "props": {
       "cards": [
         {
@@ -510,7 +510,7 @@
     "id": "m9-ch2-match",
     "type": "word-match",
     "title": "Verbo Base → Forma -ing",
-    "description": "Empareja cada verbo con su forma correcta en -ing.",
+    "description": "Match each verb with its correct -ing form.",
     "props": {
       "pairs": [
         {
@@ -559,8 +559,8 @@
   {
     "id": "m9-ch2-scramble",
     "type": "word-scramble",
-    "title": "Presente Continuo en Acción",
-    "description": "Descifra verbos en -ing.",
+    "title": "Present Continuous in Action",
+    "description": "Unscramble -ing verbs.",
     "props": {
       "words": [
         {

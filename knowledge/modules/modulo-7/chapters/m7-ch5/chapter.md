@@ -1,22 +1,22 @@
 ---
 id: m7-ch5
-moduleId: modulo-7
+moduleId: module-7
 number: 5
-title: Errores Gramaticales Comunes
-subtitle: Los fallos típicos de hispanohablantes
+title: Common Grammatical Errors
+subtitle: Typical mistakes of Spanish speakers
 icon: ⚠️
 color: "#ef4444"
 objectives:
-  - Identificar los errores gramaticales más frecuentes de hispanohablantes
-  - Comprender por qué suceden (interferencia del español)
-  - Practicar la corrección de errores en contexto real
+  - Identify the most frequent grammatical errors of Spanish speakers
+  - Understand why they happen (Spanish interference)
+  - Practice correcting errors in real context
 xpReward: 170
 ---
 
 ## Common Grammar Mistakes — Errores Gramaticales Comunes
 
-### ¿Por qué cometes estos errores?
-Muchos errores vienen de **traducir literalmente** del español al inglés. Las estructuras no siempre coinciden.
+### Why do you make these mistakes?
+Many errors come from **translating literally** from Spanish to English. The structures do not always coincide.
 
 ---
 
@@ -27,22 +27,22 @@ Muchos errores vienen de **traducir literalmente** del español al inglés. Las 
 | He **don't** like it. | He **doesn't** like it. |
 | The people **is** happy. | The people **are** happy. |
 
-> **Regla:** 3ª persona singular → añadir **-s** / usar **does/has**.
+> **Rule:** 3rd person singular → add **-s** / use **does/has**.
 
 ---
 
-### Error 2: Uso incorrecto de artículos
+### Mistake 2: Incorrect use of items
 | ❌ Incorrecto | ✅ Correcto |
 |---------------|-------------|
 | I like **the** music. (general) | I like **Ø** music. |
 | She is **Ø** teacher. | She is **a** teacher. |
 | I go to **the** school every day. | I go to **Ø** school every day. |
 
-> **Regla:** No usar "the" para cosas en general. Siempre artículo antes de profesiones.
+> **Rule:** Don't use "the" for things in general. Always article before professions.
 
 ---
 
-### Error 3: Confusión "make" vs "do"
+### Mistake 3: Confusion "make" vs "do"
 | Make (crear/producir) | Do (realizar/actividad) |
 |------------------------|-------------------------|
 | make a mistake | do homework |
@@ -62,7 +62,7 @@ Muchos errores vienen de **traducir literalmente** del español al inglés. Las 
 
 ---
 
-### Error 5: Posición de adverbios
+### Error 5: Position of adverbs
 | ❌ Incorrecto | ✅ Correcto |
 |---------------|-------------|
 | I go always to the gym. | I **always go** to the gym. |

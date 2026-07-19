@@ -1,15 +1,15 @@
 ---
 id: m4-ch1
-moduleId: modulo-4
+moduleId: module-4
 number: 1
-title: Adjetivos y Adverbios
-subtitle: Describe personas, cosas y acciones
+title: Adjectives and Adverbs
+subtitle: Describes people, things and actions
 icon: 🎨
 color: "#3b82f6"
 objectives:
-  - Usar adjetivos para describir sustantivos
-  - Usar adverbios para describir verbos, adjetivos y otros adverbios
-  - Distinguir entre adjetivos y adverbios (good vs. well)
+  - Using adjectives to describe nouns
+  - Use adverbs to describe verbs, adjectives, and other adverbs
+  - Distinguish between adjectives and adverbs (good vs. well)
 xpReward: 150
 ---
 

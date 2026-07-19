@@ -3,7 +3,7 @@
     "id": "m4-ch3-svg",
     "type": "svg-scene",
     "title": "Records Mundiales",
-    "description": "Descubre superlativos en records mundiales.",
+    "description": "Discover superlatives in world records.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -126,8 +126,8 @@
   {
     "id": "m4-ch3-flash",
     "type": "flashcard",
-    "title": "Forma el Superlativo",
-    "description": "Practica formando superlativos.",
+    "title": "Form the Superlative",
+    "description": "Practice forming superlatives.",
     "props": {
       "cards": [
         {
@@ -209,7 +209,7 @@
     "id": "m4-ch3-match",
     "type": "word-match",
     "title": "Adjetivo → Superlativo",
-    "description": "Empareja cada adjetivo con su superlativo.",
+    "description": "Match each adjective with its superlative.",
     "props": {
       "pairs": [
         {
@@ -251,11 +251,11 @@
     "id": "m4-ch3-sentence",
     "type": "sentence-builder",
     "title": "Records y Superlativos",
-    "description": "Ordena las palabras para crear oraciones superlativas.",
+    "description": "Arrange the words to create superlative sentences.",
     "props": {
       "sentences": [
         {
-          "prompt": "Ella es la más alta de la clase:",
+          "prompt": "She is the tallest in the class:",
           "words": [
             "She",
             "is",
@@ -268,7 +268,7 @@
           "correct": "She is the tallest in the class"
         },
         {
-          "prompt": "Es el mejor libro que he leído:",
+          "prompt": "It is the best book I have ever read:",
           "words": [
             "It",
             "is",
@@ -279,7 +279,7 @@
           "correct": "It is the best book"
         },
         {
-          "prompt": "El Everest es la montaña más alta:",
+          "prompt": "Everest is the highest mountain:",
           "words": [
             "Everest",
             "is",
@@ -290,7 +290,7 @@
           "correct": "Everest is the tallest mountain"
         },
         {
-          "prompt": "Es el coche más caro:",
+          "prompt": "It is the most expensive car:",
           "words": [
             "It",
             "is",
@@ -302,7 +302,7 @@
           "correct": "It is the most expensive car"
         },
         {
-          "prompt": "Ella es la más feliz:",
+          "prompt": "She is the happiest:",
           "words": [
             "She",
             "is",
@@ -312,7 +312,7 @@
           "correct": "She is the happiest"
         },
         {
-          "prompt": "Es la peor película:",
+          "prompt": "It's the worst movie:",
           "words": [
             "It",
             "is",
@@ -323,7 +323,7 @@
           "correct": "It is the worst movie"
         },
         {
-          "prompt": "El guepardo es el animal más rápido:",
+          "prompt": "The cheetah is the fastest animal:",
           "words": [
             "The",
             "cheetah",
@@ -335,7 +335,7 @@
           "correct": "The cheetah is the fastest animal"
         },
         {
-          "prompt": "Es el lugar más bonito:",
+          "prompt": "It is the most beautiful place:",
           "words": [
             "It",
             "is",
@@ -353,7 +353,7 @@
     "id": "m4-ch3-quiz",
     "type": "quiz",
     "title": "Quiz: Superlativos",
-    "description": "Demuestra tu dominio de los superlativos.",
+    "description": "Demonstrate your mastery of superlatives.",
     "props": {
       "questions": [
         {
@@ -463,37 +463,37 @@
     "id": "m4-ch3-scramble",
     "type": "word-scramble",
     "title": "Superlativos",
-    "description": "Descifra formas superlativas de adjetivos.",
+    "description": "Decipher superlative forms of adjectives.",
     "props": {
       "words": [
         {
           "word": "BIGGEST",
-          "hint": "El más grande; superlative de big",
+          "hint": "The largest; superlative of big",
           "category": "Superlative"
         },
         {
           "word": "SMALLEST",
-          "hint": "El más pequeño; superlative de small",
+          "hint": "The smallest; superlative of small",
           "category": "Superlative"
         },
         {
           "word": "FASTEST",
-          "hint": "El más rápido; superlative de fast",
+          "hint": "The fastest; superlative of fast",
           "category": "Superlative"
         },
         {
           "word": "SLOWEST",
-          "hint": "El más lento; superlative de slow",
+          "hint": "Slowest; superlative of slow",
           "category": "Superlative"
         },
         {
           "word": "BEST",
-          "hint": "El mejor; superlative de good",
+          "hint": "The best; superlative of good",
           "category": "Superlative"
         },
         {
           "word": "WORST",
-          "hint": "El peor; superlative de bad",
+          "hint": "Worst; superlative of bad",
           "category": "Superlative"
         }
       ]

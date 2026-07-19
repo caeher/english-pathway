@@ -1,22 +1,22 @@
 ---
 id: m7-ch3
-moduleId: modulo-7
+moduleId: module-7
 number: 3
-title: Inversión y Estructuras Enfáticas
+title: Investment and Emphatic Structures
 subtitle: Not only… but also, hardly… when
 icon: 🔄
 color: "#8b5cf6"
 objectives:
-  - Usar inversión con expresiones negativas/restrictivas
-  - "Aplicar \"not only… but also\", \"hardly… when\", \"no sooner… than\""
-  - Añadir énfasis con estructuras cleft (It is… that / What… is)
+  - Using inversion with negative/restrictive expressions
+  - "Apply \"not only… but also\", \"hardly… when\", \"no sooner… than\""
+  - Add emphasis with cleft structures (It is… that / What… is)
 xpReward: 190
 ---
 
 ## Subject-Verb Inversion & Emphatic Structures
 
-### Inversión con expresiones negativas
-Cuando empezamos con una expresión negativa, el sujeto y auxiliar se **invierten**:
+### Investment with negative expressions
+When we start with a negative expression, the subject and auxiliary are **inverted**:
 
 | Normal | Inverted (emphatic) |
 |--------|---------------------|
@@ -24,7 +24,7 @@ Cuando empezamos con una expresión negativa, el sujeto y auxiliar se **invierte
 | She **not only** sings but also dances. | **Not only does** she sing, **but** she also dances. |
 | He **hardly** arrived **when** it started raining. | **Hardly had** he arrived **when** it started raining. |
 
-### Expresiones que causan inversión
+### Expressions that cause inversion
 | Expression | Example |
 |------------|---------|
 | **Never** | **Never have** I been so happy. |
@@ -37,7 +37,7 @@ Cuando empezamos con una expresión negativa, el sujeto y auxiliar se **invierte
 | **Little** | **Little did** I know it would rain. |
 
 ### Cleft sentences — Oraciones hendidas
-Para dar **énfasis** a una parte de la oración:
+To give **emphasis** to a part of speech:
 
 | Normal | Cleft (emphasis) |
 |--------|------------------|

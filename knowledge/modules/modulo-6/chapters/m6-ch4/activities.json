@@ -3,7 +3,7 @@
     "id": "m6-ch4-svg",
     "type": "svg-scene",
     "title": "Mixed Conditional",
-    "description": "Third conditional y mezcla de tiempos pasado-presente.",
+    "description": "Third conditional and mixture of past-present tenses.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -94,7 +94,7 @@
     "id": "m6-ch4-flash",
     "type": "flashcard",
     "title": "Third & Mixed Conditional",
-    "description": "Practica el tercer condicional y los mixtos.",
+    "description": "Practice the third conditional and mixed conditions.",
     "props": {
       "cards": [
         {
@@ -133,8 +133,8 @@
   {
     "id": "m6-ch4-match",
     "type": "word-match",
-    "title": "¿Third o Mixed?",
-    "description": "Clasifica cada oración.",
+    "title": "Third or Mixed?",
+    "description": "Classify each sentence.",
     "props": {
       "pairs": [
         {
@@ -168,11 +168,11 @@
     "id": "m6-ch4-sentence",
     "type": "sentence-builder",
     "title": "Construye Third y Mixed",
-    "description": "Ordena para formar oraciones.",
+    "description": "Order to form sentences.",
     "props": {
       "sentences": [
         {
-          "prompt": "Si hubiera estudiado más, habría aprobado:",
+          "prompt": "If I had studied more, I would have passed:",
           "words": [
             "If",
             "I",
@@ -187,7 +187,7 @@
           "correct": "If I had studied harder, I would have passed"
         },
         {
-          "prompt": "Si ella hubiera sabido, habría venido:",
+          "prompt": "If she had known, she would have come:",
           "words": [
             "If",
             "she",
@@ -201,7 +201,7 @@
           "correct": "If she had known, she would have come"
         },
         {
-          "prompt": "Si hubiera ido a la cama antes, no estaría tan cansado:",
+          "prompt": "If I had gone to bed earlier, I wouldn't be so tired:",
           "words": [
             "If",
             "I",
@@ -225,7 +225,7 @@
     "id": "m6-ch4-quiz",
     "type": "quiz",
     "title": "Quiz: Mixed Conditional",
-    "description": "Demuestra tu dominio del tercer condicional y mixtos.",
+    "description": "Demonstrate your mastery of the third conditional and mixed conditions.",
     "props": {
       "questions": [
         {
@@ -301,7 +301,7 @@
     "id": "m6-ch4-scramble",
     "type": "word-scramble",
     "title": "Mixed Conditional",
-    "description": "Descifra términos de condicionales mixtos.",
+    "description": "Decipher mixed conditional terms.",
     "props": {
       "words": [
         {
@@ -321,7 +321,7 @@
         },
         {
           "word": "SITUATION",
-          "hint": "Situación; circunstancia",
+          "hint": "Situation; circumstance",
           "category": "Conditionals"
         },
         {

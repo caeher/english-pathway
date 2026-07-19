@@ -2,8 +2,8 @@
   {
     "id": "m7-ch5-svg",
     "type": "svg-scene",
-    "title": "Mapa de Errores Frecuentes",
-    "description": "Visualiza los errores más comunes y sus correcciones.",
+    "title": "Frequent Errors Map",
+    "description": "View the most common errors and their corrections.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -137,8 +137,8 @@
   {
     "id": "m7-ch5-flash",
     "type": "flashcard",
-    "title": "Error → Corrección",
-    "description": "Aprende la forma correcta de cada error común.",
+    "title": "Error → Correction",
+    "description": "Learn the correct way for each common mistake.",
     "props": {
       "cards": [
         {
@@ -207,8 +207,8 @@
   {
     "id": "m7-ch5-match",
     "type": "word-match",
-    "title": "Error ↔ Corrección",
-    "description": "Empareja cada error con su forma correcta.",
+    "title": "Error ↔ Correction",
+    "description": "Match each error with its correct form.",
     "props": {
       "pairs": [
         {
@@ -249,12 +249,12 @@
   {
     "id": "m7-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Forma la Oración Correcta",
-    "description": "Ordena para construir la versión correcta.",
+    "title": "Form the Correct Sentence",
+    "description": "Sort to build the correct version.",
     "props": {
       "sentences": [
         {
-          "prompt": "Ella tiene un carro (correcto):",
+          "prompt": "She has a car (correct):",
           "words": [
             "She",
             "has",
@@ -264,7 +264,7 @@
           "correct": "She has a car"
         },
         {
-          "prompt": "Tengo 25 años (correcto):",
+          "prompt": "I am 25 years old (correct):",
           "words": [
             "I",
             "am",
@@ -287,7 +287,7 @@
           "correct": "I always go to the gym"
         },
         {
-          "prompt": "Depende de ti (correcto):",
+          "prompt": "It's up to you (correct):",
           "words": [
             "It",
             "depends",
@@ -297,7 +297,7 @@
           "correct": "It depends on you"
         },
         {
-          "prompt": "A él no le gusta (correcto):",
+          "prompt": "He doesn't like it (correct):",
           "words": [
             "He",
             "doesn't",
@@ -312,8 +312,8 @@
   {
     "id": "m7-ch5-quiz",
     "type": "quiz",
-    "title": "Quiz: Corrige el Error",
-    "description": "Elige la opción correcta en cada oración.",
+    "title": "Quiz: Correct the Error",
+    "description": "Choose the correct option in each sentence.",
     "props": {
       "questions": [
         {
@@ -385,7 +385,7 @@
         {
           "id": "q7",
           "type": "multiple-choice",
-          "question": "\"I ___ with you.\" (= estoy de acuerdo)",
+          "question": "\"I ___ with you.\" (= I agree)",
           "options": [
             "am agree",
             "agree",
@@ -435,12 +435,12 @@
     "id": "m7-ch5-scramble",
     "type": "word-scramble",
     "title": "Errores Comunes",
-    "description": "Descifra términos de corrección gramatical.",
+    "description": "Decipher grammatical correctness terms.",
     "props": {
       "words": [
         {
           "word": "MISTAKE",
-          "hint": "Error; equivocación",
+          "hint": "Mistake; mistake",
           "category": "Grammar"
         },
         {
@@ -455,12 +455,12 @@
         },
         {
           "word": "WRONG",
-          "hint": "Incorrecto; erróneo",
+          "hint": "Incorrect; wrong",
           "category": "Grammar"
         },
         {
           "word": "COMMON",
-          "hint": "Común; frecuente",
+          "hint": "Common; frequent",
           "category": "Grammar"
         },
         {

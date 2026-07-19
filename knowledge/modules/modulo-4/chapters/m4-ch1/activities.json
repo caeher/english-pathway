@@ -3,7 +3,7 @@
     "id": "m4-ch1-svg",
     "type": "svg-scene",
     "title": "Adjetivos vs. Adverbios",
-    "description": "Comprende la diferencia visual entre adjetivos y adverbios.",
+    "description": "Understand the visual difference between adjectives and adverbs.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -105,7 +105,7 @@
     "id": "m4-ch1-flash",
     "type": "flashcard",
     "title": "Adjetivo → Adverbio",
-    "description": "Transforma adjetivos en adverbios.",
+    "description": "Transform adjectives into adverbs.",
     "props": {
       "cards": [
         {
@@ -187,7 +187,7 @@
     "id": "m4-ch1-match",
     "type": "word-match",
     "title": "Adjetivo ↔ Adverbio",
-    "description": "Empareja cada adjetivo con su adverbio.",
+    "description": "Match each adjective with its adverb.",
     "props": {
       "pairs": [
         {
@@ -228,8 +228,8 @@
   {
     "id": "m4-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Usa el Adjetivo o Adverbio",
-    "description": "Ordena las palabras eligiendo la forma correcta.",
+    "title": "Use the Adjective or Adverb",
+    "description": "Order the words choosing the correct form.",
     "props": {
       "sentences": [
         {
@@ -242,7 +242,7 @@
           "correct": "She sings well"
         },
         {
-          "prompt": "Él es un buen conductor:",
+          "prompt": "He is a good driver:",
           "words": [
             "He",
             "is",
@@ -253,7 +253,7 @@
           "correct": "He is a good driver"
         },
         {
-          "prompt": "Ella habla español fluidamente:",
+          "prompt": "She speaks Spanish fluently:",
           "words": [
             "She",
             "speaks",
@@ -263,7 +263,7 @@
           "correct": "She speaks Spanish fluently"
         },
         {
-          "prompt": "Él corre muy rápido:",
+          "prompt": "He runs very fast:",
           "words": [
             "He",
             "runs",
@@ -273,7 +273,7 @@
           "correct": "He runs very fast"
         },
         {
-          "prompt": "Es una chica hermosa:",
+          "prompt": "She is a beautiful girl:",
           "words": [
             "She",
             "is",
@@ -303,7 +303,7 @@
           "correct": "She drives carefully"
         },
         {
-          "prompt": "Él llegó tarde:",
+          "prompt": "He arrived late:",
           "words": [
             "He",
             "arrived",
@@ -318,7 +318,7 @@
     "id": "m4-ch1-quiz",
     "type": "quiz",
     "title": "Quiz: Adjetivos y Adverbios",
-    "description": "Demuestra que sabes cuándo usar adjetivos y adverbios.",
+    "description": "Show that you know when to use adjectives and adverbs.",
     "props": {
       "questions": [
         {
@@ -433,38 +433,38 @@
   {
     "id": "m4-ch1-scramble",
     "type": "word-scramble",
-    "title": "Adverbios de Manera",
-    "description": "Descifra adverbios que describen cómo se hace algo.",
+    "title": "Adverbs of Manner",
+    "description": "Unscramble adverbs that describe how something is done.",
     "props": {
       "words": [
         {
           "word": "QUICKLY",
-          "hint": "Rápidamente; de forma rápida",
+          "hint": "Quickly; quickly",
           "category": "Adverbs"
         },
         {
           "word": "SLOWLY",
-          "hint": "Lentamente; de forma lenta",
+          "hint": "Slowly; slowly",
           "category": "Adverbs"
         },
         {
           "word": "CAREFULLY",
-          "hint": "Cuidadosamente; con cuidado",
+          "hint": "Carefully; carefully",
           "category": "Adverbs"
         },
         {
           "word": "HAPPILY",
-          "hint": "Felizmente; con felicidad",
+          "hint": "Happily; with happiness",
           "category": "Adverbs"
         },
         {
           "word": "LOUDLY",
-          "hint": "Ruidosamente; en voz alta",
+          "hint": "Noisily; aloud",
           "category": "Adverbs"
         },
         {
           "word": "QUIETLY",
-          "hint": "Silenciosamente; sin ruido",
+          "hint": "Silently; noiseless",
           "category": "Adverbs"
         }
       ]

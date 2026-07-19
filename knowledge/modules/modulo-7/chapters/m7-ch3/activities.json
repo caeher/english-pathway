@@ -2,8 +2,8 @@
   {
     "id": "m7-ch3-svg",
     "type": "svg-scene",
-    "title": "Estructuras de Énfasis",
-    "description": "Visualiza la inversión y las oraciones hendidas.",
+    "title": "Structures of Emphasis",
+    "description": "Visualize inversion and cleft sentences.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -115,8 +115,8 @@
   {
     "id": "m7-ch3-flash",
     "type": "flashcard",
-    "title": "Inversión y Énfasis",
-    "description": "Practica transformando oraciones normales en enfáticas.",
+    "title": "Investment and Emphasis",
+    "description": "Practice transforming normal sentences into emphatic ones.",
     "props": {
       "cards": [
         {
@@ -173,8 +173,8 @@
   {
     "id": "m7-ch3-match",
     "type": "word-match",
-    "title": "Expresión → Inversión",
-    "description": "Empareja la expresión con su construcción correcta.",
+    "title": "Expression → Investment",
+    "description": "Match the expression with its correct construction.",
     "props": {
       "pairs": [
         {
@@ -207,12 +207,12 @@
   {
     "id": "m7-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Construye Oraciones Enfáticas",
-    "description": "Ordena para formar oraciones con inversión y énfasis.",
+    "title": "Build Emphatic Sentences",
+    "description": "Order to form sentences with inversion and emphasis.",
     "props": {
       "sentences": [
         {
-          "prompt": "Nunca he visto tal belleza (inversión):",
+          "prompt": "I have never seen such beauty (inversion):",
           "words": [
             "Never",
             "have",
@@ -224,7 +224,7 @@
           "correct": "Never have I seen such beauty"
         },
         {
-          "prompt": "No solo canta, sino también baila:",
+          "prompt": "He not only sings, but also dances:",
           "words": [
             "Not",
             "only",
@@ -239,7 +239,7 @@
           "correct": "Not only does she sing, but she also dances"
         },
         {
-          "prompt": "Fue John quien rompió la ventana:",
+          "prompt": "It was John who broke the window:",
           "words": [
             "It",
             "was",
@@ -252,7 +252,7 @@
           "correct": "It was John who broke the window"
         },
         {
-          "prompt": "Lo que necesito es más tiempo:",
+          "prompt": "What I need is more time:",
           "words": [
             "What",
             "I",
@@ -269,14 +269,14 @@
   {
     "id": "m7-ch3-quiz",
     "type": "quiz",
-    "title": "Quiz: Inversión y Énfasis",
-    "description": "Demuestra tu dominio de las estructuras enfáticas.",
+    "title": "Quiz: Investment and Emphasis",
+    "description": "Demonstrate your mastery of emphatic structures.",
     "props": {
       "questions": [
         {
           "id": "q1",
           "type": "multiple-choice",
-          "question": "\"___ have I seen such beauty.\" (inversión)",
+          "question": "\"___ have I seen such beauty.\" (investment)",
           "options": [
             "Not",
             "Never",
@@ -284,7 +284,7 @@
             "None"
           ],
           "correct": 1,
-          "explanation": "Never have I seen = inversión enfática."
+          "explanation": "Never have I seen = emphatic reversal."
         },
         {
           "id": "q2",
@@ -359,8 +359,8 @@
   {
     "id": "m7-ch3-scramble",
     "type": "word-scramble",
-    "title": "Inversión y Énfasis",
-    "description": "Descifra adverbios y términos de énfasis.",
+    "title": "Investment and Emphasis",
+    "description": "Decipher adverbs and terms of emphasis.",
     "props": {
       "words": [
         {
@@ -375,22 +375,22 @@
         },
         {
           "word": "HARDLY",
-          "hint": "Apenas; difícilmente",
+          "hint": "Barely; hardly",
           "category": "Inversion"
         },
         {
           "word": "EMPHASIS",
-          "hint": "Énfasis; dar importancia",
+          "hint": "Emphasis; give importance",
           "category": "Inversion"
         },
         {
           "word": "INVERSION",
-          "hint": "Inversión; cambio de orden",
+          "hint": "Investment; change of order",
           "category": "Inversion"
         },
         {
           "word": "DRAMATIC",
-          "hint": "Dramático; impactante",
+          "hint": "Dramatic; shocking",
           "category": "Inversion"
         }
       ]

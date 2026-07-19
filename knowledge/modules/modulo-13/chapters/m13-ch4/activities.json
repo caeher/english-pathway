@@ -2,8 +2,8 @@
   {
     "id": "m13-ch4-quiz",
     "type": "quiz",
-    "title": "El Significado Oculto del Stress",
-    "description": "Identifica el significado implícito según qué palabra se acentúa.",
+    "title": "The Hidden Meaning of Stress",
+    "description": "Identify the implied meaning based on which word is stressed.",
     "props": {
       "questions": [
         {
@@ -131,43 +131,43 @@
     "id": "m13-ch4-flash",
     "type": "flashcard",
     "title": "Reducciones Avanzadas",
-    "description": "Reconoce las reducciones avanzadas del habla natural conectada.",
+    "description": "Recognizes advanced reductions of connected natural speech.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "WOULDA /wʊdə/ 🔊",
-          "back": "= would have. Reducción de auxiliar + have. Se pronuncia como una sola palabra.",
+          "back": "= would have. Reduction of auxiliary + have. It is pronounced as a single word.",
           "example": "I woulda helped if I'd known. (= I would have helped if I had known.)"
         },
         {
           "id": "f2",
           "front": "SHOULDA /ʃʊdə/ 🔊",
-          "back": "= should have. Expresa arrepentimiento. Muy común en habla informal.",
+          "back": "= should have. Express regret. Very common in informal speech.",
           "example": "You shoulda told me earlier. (= You should have told me earlier.)"
         },
         {
           "id": "f3",
           "front": "COULDA /kʊdə/ 🔊",
-          "back": "= could have. Posibilidad no realizada en el pasado.",
+          "back": "= could have. Possibility not realized in the past.",
           "example": "We coulda won the game. (= We could have won the game.)"
         },
         {
           "id": "f4",
           "front": "MUSTA /mʌstə/ 🔊",
-          "back": "= must have. Deducción sobre el pasado.",
+          "back": "= must have. Deduction about the past.",
           "example": "He musta forgotten about the meeting. (= He must have forgotten.)"
         },
         {
           "id": "f5",
           "front": "MIGHTA /maɪtə/ 🔊",
-          "back": "= might have. Posibilidad incierta sobre el pasado.",
+          "back": "= might have. Uncertain possibility about the past.",
           "example": "She mighta left already. (= She might have left already.)"
         },
         {
           "id": "f6",
           "front": "WOULDN'TA /wʊdntə/ 🔊",
-          "back": "= wouldn't have. Negativo de would have.",
+          "back": "= wouldn't have. Negative of would have.",
           "example": "I wouldn'ta done that. (= I wouldn't have done that.)"
         },
         {
@@ -179,13 +179,13 @@
         {
           "id": "f8",
           "front": "SUPPOSTA /səpoʊstə/ 🔊",
-          "back": "= supposed to. Lo que se espera o debería pasar.",
+          "back": "= supposed to. What is expected or should happen.",
           "example": "You're supposta be here at 9. (= You're supposed to be here at 9.)"
         },
         {
           "id": "f9",
           "front": "USETA /juːstə/ 🔊",
-          "back": "= used to. Hábito pasado.",
+          "back": "= used to. Past habit.",
           "example": "I useta live in New York. (= I used to live in New York.)"
         },
         {
@@ -201,7 +201,7 @@
     "id": "m13-ch4-match",
     "type": "word-match",
     "title": "Acento Global",
-    "description": "Empareja cada característica de pronunciación con la variante del inglés.",
+    "description": "Match each pronunciation feature to the English variant.",
     "props": {
       "pairs": [
         {
@@ -234,8 +234,8 @@
   {
     "id": "m13-ch4-sentence",
     "type": "sentence-builder",
-    "title": "Entonación Persuasiva",
-    "description": "Construye oraciones persuasivas con las palabras clave de énfasis.",
+    "title": "Persuasive Intonation",
+    "description": "Build persuasive sentences with key emphasis words.",
     "props": {
       "sentences": [
         {
@@ -326,38 +326,38 @@
   {
     "id": "m13-ch4-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Pronunciación Avanzada",
-    "description": "Descifra términos sobre entonación, énfasis y ritmo.",
+    "title": "Advanced Pronunciation Vocabulary",
+    "description": "Decipher terms about intonation, emphasis and rhythm.",
     "props": {
       "words": [
         {
           "word": "INTONATION",
-          "hint": "Entonación; subidas y bajadas de la voz",
+          "hint": "Intonation; rises and falls of voice",
           "category": "Pronunciation"
         },
         {
           "word": "EMPHASIS",
-          "hint": "Énfasis; dar importancia a una palabra",
+          "hint": "Emphasis; give importance to a word",
           "category": "Pronunciation"
         },
         {
           "word": "RHYTHM",
-          "hint": "Ritmo; patrón de acentos al hablar",
+          "hint": "Rhythm; accent pattern when speaking",
           "category": "Pronunciation"
         },
         {
           "word": "PEAK",
-          "hint": "Pico; punto más alto de entonación",
+          "hint": "Beak; highest point of intonation",
           "category": "Pronunciation"
         },
         {
           "word": "TAG",
-          "hint": "Etiqueta; como en \"tag question\" (¿verdad?)",
+          "hint": "Label; as in \"tag question\" (right?)",
           "category": "Pronunciation"
         },
         {
           "word": "PERSUASIVE",
-          "hint": "Persuasivo; que convence o influye",
+          "hint": "Persuasive; that convinces or influences",
           "category": "Pronunciation"
         }
       ]

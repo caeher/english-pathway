@@ -1,69 +1,69 @@
 ---
 id: m14-ch2
-moduleId: modulo-14
+moduleId: module-14
 number: 2
-title: Creación de Contenido Propio
-subtitle: Blogs, vlogs o podcasts personales en inglés
+title: Creation of Own Content
+subtitle: Blogs, vlogs or personal podcasts in English
 icon: 📹
 color: "#e85d3a"
 objectives:
-  - "Crear contenido original en inglés: blog, vlog o podcast"
-  - "Escribir hooks atrapantes: pregunta retórica, estadística, anécdota, cita"
-  - "Dominar vocabulario de content creation: engagement, niche, CTA, thumbnail"
-  - Diseñar un storyboard y estructura para tu contenido
+  - "Create original content in English: blog, vlog or podcast"
+  - "Writing engaging hooks: rhetorical question, statistic, anecdote, quote"
+  - "Master content creation vocabulary: engagement, niche, CTA, thumbnail"
+  - Design a storyboard and structure for your content
 xpReward: 350
 ---
 
-## Creación de Contenido — Aprender creando
+## Content Creation — Learn by creating
 
-Crear contenido en inglés es una de las formas más poderosas de aprender. Te obliga a investigar, organizar ideas y comunicar con claridad.
+Creating content in English is one of the most powerful ways to learn. It forces you to investigate, organize ideas and communicate clearly.
 
-### Los 3 Formatos
+### The 3 Formats
 
-| Formato | Fortaleza principal | Ideal para |
+| Formato | Fortaleza principal | Ideal for |
 |---|---|---|
-| 📝 **Blog** | Escritura, estructura, vocabulario | Quienes prefieren expresión escrita |
-| 🎥 **Vlog** | Pronunciación, fluidez, presencia | Quienes son visuales y expresivos |
-| 🎙️ **Podcast** | Narración oral, fluidez | Quienes disfrutan hablar y contar historias |
+| 📝 **Blog** | Escritura, estructura, vocabulario | Those who prefer written expression |
+| 🎥 **Vlog** | Pronunciation, fluency, presence | Who are visual and expressive |
+| 🎙️ **Podcast** | Oral narration, fluency | Quienes disfrutan hablar y contar historias |
 
-### Proceso de Creación en 5 Pasos
+### Creation Process in 5 Steps
 
 1. 🧠 **Brainstorming** — Explorar ideas y elegir tu nicho/tema
-2. 🔍 **Research** — Leer/escuchar fuentes en inglés
-3. ✏️ **Scripting** — Escribir el guión o borrador
-4. 🎬 **Production** — Grabar o escribir la versión final
+2. 🔍 **Research** — Read/listen to English sources
+3. ✏️ **Scripting** — Write the script or draft
+4. 🎬 **Production** — Record or write the final version
 5. 📤 **Publication** — Compartir y recibir feedback
 
-### El Arte del Hook — Los primeros 10 segundos
+### The Art of the Hook — The first 10 seconds
 
-El **hook** (gancho) es la primera frase que atrapa la atención. Sin un buen hook, nadie leerá/escuchará tu contenido.
+The **hook** is the first phrase that catches attention. Without a good hook, no one will read/listen to your content.
 
-| Técnica | Ejemplo |
+| Technique | Ejemplo |
 |---|---|
-| ❓ **Pregunta retórica** | "What if everything you knew about productivity was wrong?" |
-| 📊 **Estadística sorprendente** | "According to recent studies, we spend 7 hours daily on screens." |
-| 📖 **Anécdota personal** | "Last Tuesday, I was walking home when something changed my life." |
+| ❓ **Rhetorical question** | "What if everything you knew about productivity was wrong?" |
+| 📊 **Surprising statistic** | "According to recent studies, we spend 7 hours daily on screens." |
+| 📖 **Personal anecdote** | "Last Tuesday, I was walking home when something changed my life." |
 | 💬 **Cita famosa** | "As Steve Jobs once said, 'Stay hungry, stay foolish.'" |
-| 🌍 **Escenario hipotético** | "Imagine a world where you could learn any language in 30 days." |
+| 🌍 **Hypothetical scenario** | "Imagine a world where you could learn any language in 30 days." |
 
-### Vocabulario de Content Creator
+### Content Creator Vocabulary
 
-| Término | Significado |
+| Term | Significado |
 |---|---|
-| **Engagement** | Interacción de la audiencia (likes, comments, shares) |
-| **Niche** | Tu tema o área de especialización |
-| **Target audience** | El público al que diriges tu contenido |
-| **Call to Action (CTA)** | Instrucción para que la audiencia haga algo |
-| **Thumbnail** | Imagen miniatura que representa tu contenido |
-| **SEO** | Optimización para motores de búsqueda |
-| **Content calendar** | Plan de publicación organizado por fechas |
+| **Engagement** | Audience interaction (likes, comments, shares) |
+| **Niche** | Your topic or area of ​​expertise |
+| **Target audience** | The audience you direct your content to |
+| **Call to Action (CTA)** | Instruction for the audience to do something |
+| **Thumbnail** | Thumbnail image that represents your content |
+| **SEO** | Search Engine Optimization |
+| **Content calendar** | Publication plan organized by dates |
 
-### Estándares de Calidad
+### Quality Standards
 
-| Formato | Extensión | Requisitos |
+| Formato | Extension | Requisitos |
 |---|---|---|
-| Blog | 500-800 palabras | Estructura clara, mín. 3 párrafos con topic sentences |
-| Vlog | 3-5 minutos | Buena dicción, contacto visual con cámara |
-| Podcast | 5-8 minutos | Narrativa coherente, uso de conectores |
+| Blog | 500-800 palabras | Clear structure, min. 3 paragraphs with topic sentences |
+| Vlog | 3-5 minutos | Good diction, eye contact with camera |
+| Podcast | 5-8 minutos | Coherent narrative, use of connectors |
 
-> 💡 **Tip:** No esperes la perfección para publicar. El primer contenido nunca será perfecto, pero es infinitamente mejor que el contenido que nunca creaste.
+> 💡 **Tip:** Don't wait for perfection to publish. The first content will never be perfect, but it is infinitely better than the content you never created.

@@ -2,8 +2,8 @@
   {
     "id": "m11-ch4-quiz",
     "type": "quiz",
-    "title": "Detective de Phrasal Verbs",
-    "description": "Descubre el significado correcto de cada Phrasal Verb según el contexto.",
+    "title": "Phrasal Verbs Detective",
+    "description": "Discover the correct meaning of each Phrasal Verb according to the context.",
     "props": {
       "questions": [
         {
@@ -151,7 +151,7 @@
     "id": "m11-ch4-match",
     "type": "word-match",
     "title": "Phrasal Verb → Significado",
-    "description": "Empareja cada Phrasal Verb con su definición.",
+    "description": "Match each Phrasal Verb with its definition.",
     "props": {
       "pairs": [
         {
@@ -193,7 +193,7 @@
     "id": "m11-ch4-sentence",
     "type": "sentence-builder",
     "title": "Formal → Phrasal Verb",
-    "description": "Reescribe cada oración formal usando el Phrasal Verb natural.",
+    "description": "Rewrite each formal sentence using the natural Phrasal Verb.",
     "props": {
       "sentences": [
         {
@@ -315,8 +315,8 @@
   {
     "id": "m11-ch4-flash",
     "type": "flashcard",
-    "title": "Los 30 Phrasal Verbs Esenciales",
-    "description": "Tarjetas agrupadas por contexto para dominar los Phrasal Verbs más importantes.",
+    "title": "The 30 Essential Phrasal Verbs",
+    "description": "Cards grouped by context to master the most important Phrasal Verbs.",
     "props": {
       "cards": [
         {
@@ -340,13 +340,13 @@
         {
           "id": "pv4",
           "front": "THROW AWAY",
-          "back": "Tirar a la basura",
+          "back": "Throw away",
           "example": "Don't throw away those papers — I need them."
         },
         {
           "id": "pv5",
           "front": "PUT AWAY",
-          "back": "Guardar en su sitio",
+          "back": "Save in place",
           "example": "Put away your toys after playing."
         },
         {
@@ -370,7 +370,7 @@
         {
           "id": "pv9",
           "front": "DEAL WITH",
-          "back": "Encargarse de, lidiar con",
+          "back": "take care of, deal with",
           "example": "I'll deal with this problem tomorrow."
         },
         {
@@ -382,13 +382,13 @@
         {
           "id": "pv11",
           "front": "GET ALONG WITH",
-          "back": "Llevarse bien con",
+          "back": "Get along with",
           "example": "I get along well with my coworkers."
         },
         {
           "id": "pv12",
           "front": "BREAK UP (WITH)",
-          "back": "Terminar una relación",
+          "back": "End a relationship",
           "example": "They broke up after two years together."
         },
         {
@@ -400,7 +400,7 @@
         {
           "id": "pv14",
           "front": "LOOK AFTER",
-          "back": "Cuidar de",
+          "back": "Look after",
           "example": "She looks after her elderly parents."
         },
         {
@@ -418,7 +418,7 @@
         {
           "id": "pv17",
           "front": "LOOK UP",
-          "back": "Buscar (en un diccionario, internet)",
+          "back": "Search (in a dictionary, internet)",
           "example": "Look up the word in the dictionary."
         },
         {
@@ -442,7 +442,7 @@
         {
           "id": "pv21",
           "front": "GIVE UP",
-          "back": "Rendirse, dejar de intentar",
+          "back": "Give up, stop trying",
           "example": "Don't give up! You can do it!"
         },
         {
@@ -454,13 +454,13 @@
         {
           "id": "pv23",
           "front": "RUN OUT OF",
-          "back": "Quedarse sin",
+          "back": "run out",
           "example": "We've run out of milk. Can you buy some?"
         },
         {
           "id": "pv24",
           "front": "LOOK FORWARD TO",
-          "back": "Esperar con ganas",
+          "back": "look forward to",
           "example": "I'm looking forward to the holidays!"
         },
         {
@@ -472,7 +472,7 @@
         {
           "id": "pv26",
           "front": "BRING UP",
-          "back": "Criar / mencionar un tema",
+          "back": "Raise/mention a topic",
           "example": "She was brought up in London. / He brought up an interesting topic."
         },
         {
@@ -505,8 +505,8 @@
   {
     "id": "m11-ch4-svg2",
     "type": "svg-scene",
-    "title": "La Casa de los Phrasal Verbs",
-    "description": "Recorre cada habitación y descubre los Phrasal Verbs que se usan en cada espacio.",
+    "title": "The House of Phrasal Verbs",
+    "description": "Walk through each room and discover the Phrasal Verbs used in each space.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -520,7 +520,7 @@
             "width": 600,
             "height": 360,
             "fill": "#d1fae5",
-            "label": "🏠 La Casa de los Phrasal Verbs",
+            "label": "🏠 The House of Phrasal Verbs",
             "labelEn": "Welcome! Explore each room."
           },
           {
@@ -575,7 +575,7 @@
             "width": 160,
             "height": 130,
             "fill": "#86efac",
-            "label": "🌿 Jardín",
+            "label": "🌿 Garden",
             "labelEn": "LOOK AFTER = care for plants\nGROW UP = where kids play\nWORK OUT = exercise outside"
           },
           {
@@ -586,7 +586,7 @@
             "width": 160,
             "height": 130,
             "fill": "#fca5a5",
-            "label": "📚 Cuarto de estudio",
+            "label": "📚 Study room",
             "labelEn": "LOOK UP = find in dictionary\nGO OVER = review notes\nGIVE UP = never do this! 💪"
           }
         ]
@@ -597,7 +597,7 @@
     "id": "m11-ch4-scramble",
     "type": "word-scramble",
     "title": "Phrasal Verbs",
-    "description": "Descifra verbos que forman phrasal verbs.",
+    "description": "Unscramble verbs that form phrasal verbs.",
     "props": {
       "words": [
         {

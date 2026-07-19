@@ -2,8 +2,8 @@
   {
     "id": "m9-ch4-quiz",
     "type": "quiz",
-    "title": "La Historia Misteriosa",
-    "description": "Completa la historia eligiendo la forma correcta del verbo en pasado.",
+    "title": "The Mysterious Story",
+    "description": "Complete the story by choosing the correct form of the verb in the past tense.",
     "props": {
       "questions": [
         {
@@ -138,8 +138,8 @@
   {
     "id": "m9-ch4-sentence",
     "type": "sentence-builder",
-    "title": "Narra tu Día de Ayer",
-    "description": "Construye oraciones sobre lo que hiciste ayer.",
+    "title": "Narrate your day yesterday",
+    "description": "Build sentences about what you did yesterday.",
     "props": {
       "sentences": [
         {
@@ -155,7 +155,7 @@
           "correct": "I ate breakfast and drank coffee"
         },
         {
-          "prompt": "Cuenta lo que hiciste:",
+          "prompt": "Tell what you did:",
           "words": [
             "went",
             "I",
@@ -191,7 +191,7 @@
           "correct": "She watched a movie last night"
         },
         {
-          "prompt": "Pregunta en pasado:",
+          "prompt": "Question in past tense:",
           "words": [
             "Did",
             "the",
@@ -202,7 +202,7 @@
           "correct": "Did you visit the museum?"
         },
         {
-          "prompt": "Cuenta un evento:",
+          "prompt": "Tell an event:",
           "words": [
             "We",
             "at",
@@ -214,7 +214,7 @@
           "correct": "We played soccer at the park"
         },
         {
-          "prompt": "Describe lo que pasó:",
+          "prompt": "Describe what happened:",
           "words": [
             "made",
             "She",
@@ -238,7 +238,7 @@
           "correct": "He didn't like the food"
         },
         {
-          "prompt": "Cuenta tu fin de semana:",
+          "prompt": "Count your weekend:",
           "words": [
             "friends",
             "met",
@@ -250,7 +250,7 @@
           "correct": "I met my friends on Saturday"
         },
         {
-          "prompt": "Pregunta en pasado:",
+          "prompt": "Question in past tense:",
           "words": [
             "she",
             "Did",
@@ -267,7 +267,7 @@
     "id": "m9-ch4-match",
     "type": "word-match",
     "title": "Presente → Pasado",
-    "description": "Empareja cada verbo con su forma en pasado simple.",
+    "description": "Match each verb with its past simple form.",
     "props": {
       "pairs": [
         {
@@ -317,7 +317,7 @@
     "id": "m9-ch4-flash",
     "type": "flashcard",
     "title": "Verbos Irregulares",
-    "description": "Memoriza los verbos irregulares más comunes con ejemplos.",
+    "description": "Memorize the most common irregular verbs with examples.",
     "props": {
       "cards": [
         {
@@ -446,8 +446,8 @@
   {
     "id": "m9-ch4-svg",
     "type": "svg-scene",
-    "title": "La Línea del Tiempo",
-    "description": "Explora los eventos del día y descubre qué pasó en cada momento.",
+    "title": "The Time Line",
+    "description": "Explore the events of the day and discover what happened at each moment.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 250",
@@ -461,7 +461,7 @@
             "width": 600,
             "height": 6,
             "fill": "#8b5cf6",
-            "label": "Línea del tiempo",
+            "label": "timeline",
             "labelEn": "Timeline — A day in the past"
           },
           {
@@ -538,7 +538,7 @@
     "id": "m9-ch4-scramble",
     "type": "word-scramble",
     "title": "Narrando Eventos Pasados",
-    "description": "Descifra palabras para contar historias.",
+    "description": "Unscramble words to tell stories.",
     "props": {
       "words": [
         {
@@ -553,7 +553,7 @@
         },
         {
           "word": "HAPPENED",
-          "hint": "Pasó; ocurrió",
+          "hint": "Passed; occurred",
           "category": "Narrative"
         },
         {

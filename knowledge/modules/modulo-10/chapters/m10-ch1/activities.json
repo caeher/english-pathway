@@ -2,8 +2,8 @@
   {
     "id": "m10-ch1-quiz",
     "type": "quiz",
-    "title": "¿Will o Going To?",
-    "description": "Elige la estructura correcta según el contexto de cada situación.",
+    "title": "Will or Going To?",
+    "description": "Choose the correct structure according to the context of each situation.",
     "props": {
       "questions": [
         {
@@ -17,7 +17,7 @@
             "am will"
           ],
           "correct": 1,
-          "explanation": "Decisión espontánea → will. No lo habías planeado antes."
+          "explanation": "Spontaneous decision → will. You hadn't planned it before."
         },
         {
           "id": "q2",
@@ -50,7 +50,7 @@
           "type": "fill-blank",
           "question": "\"I think the exam ___ be difficult.\" (will/is going to)",
           "correct": "will",
-          "explanation": "Predicción basada en opinión → will."
+          "explanation": "Prediction based on opinion → will."
         },
         {
           "id": "q5",
@@ -63,7 +63,7 @@
             "shall to"
           ],
           "correct": 1,
-          "explanation": "Oferta/promesa espontánea → will."
+          "explanation": "Spontaneous offer/promise → will."
         },
         {
           "id": "q6",
@@ -83,7 +83,7 @@
           "type": "fill-blank",
           "question": "\"We have bought the tickets. We ___ travel to Paris next month.\" (will/are going to)",
           "correct": "are going to",
-          "explanation": "Plan ya decidido (ya compraron los boletos) → going to."
+          "explanation": "Plan already decided (they already bought the tickets) → going to."
         },
         {
           "id": "q8",
@@ -96,7 +96,7 @@
             "am will"
           ],
           "correct": 1,
-          "explanation": "Decisión tomada en el momento → will."
+          "explanation": "Decision made at the moment → will."
         },
         {
           "id": "q9",
@@ -125,7 +125,7 @@
     "id": "m10-ch1-sentence",
     "type": "sentence-builder",
     "title": "Planes y Promesas",
-    "description": "Construye oraciones de futuro ordenando las palabras correctamente.",
+    "description": "Build future sentences by ordering the words correctly.",
     "props": {
       "sentences": [
         {
@@ -201,8 +201,8 @@
   {
     "id": "m10-ch1-svg",
     "type": "svg-scene",
-    "title": "La Bola de Cristal",
-    "description": "Haz clic en las visiones del futuro para descubrir qué predicción corresponde.",
+    "title": "The Crystal Ball",
+    "description": "Click on the visions of the future to find out which prediction corresponds.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -215,7 +215,7 @@
             "cy": 200,
             "r": 120,
             "fill": "#c4b5fd",
-            "label": "Bola de cristal",
+            "label": "crystal ball",
             "labelEn": "Crystal Ball"
           },
           {
@@ -255,7 +255,7 @@
             "cy": 300,
             "r": 30,
             "fill": "#fde68a",
-            "label": "Idea espontánea → will",
+            "label": "spontaneous idea → will",
             "labelEn": "Light Bulb"
           },
           {
@@ -281,7 +281,7 @@
             "type": "polygon",
             "points": "400,180 410,210 440,210 415,230 425,260 400,240 375,260 385,230 360,210 390,210",
             "fill": "#a78bfa",
-            "label": "Predicción → will be famous",
+            "label": "Prediction → will be famous",
             "labelEn": "Star"
           }
         ]
@@ -291,8 +291,8 @@
   {
     "id": "m10-ch1-flash",
     "type": "flashcard",
-    "title": "Señales de Futuro",
-    "description": "Identifica si la señal requiere \"will\" o \"going to\" antes de voltear.",
+    "title": "Signs of the Future",
+    "description": "Identify whether the signal requires \"will\" or \"going to\" before turning.",
     "props": {
       "cards": [
         {
@@ -361,8 +361,8 @@
   {
     "id": "m10-ch1-match",
     "type": "word-match",
-    "title": "Situación → Estructura",
-    "description": "Empareja cada situación con la forma de futuro correcta.",
+    "title": "Situation → Structure",
+    "description": "Match each situation with the correct future form.",
     "props": {
       "pairs": [
         {
@@ -403,18 +403,18 @@
   {
     "id": "m10-ch1-scramble",
     "type": "word-scramble",
-    "title": "El Futuro te Espera",
-    "description": "Descifra palabras del futuro y planes.",
+    "title": "The Future Awaits You",
+    "description": "Decipher future words and plans.",
     "props": {
       "words": [
         {
           "word": "FUTURE",
-          "hint": "Futuro; tiempo por venir",
+          "hint": "Future; time to come",
           "category": "Future"
         },
         {
           "word": "DREAM",
-          "hint": "Sueño; aspiración",
+          "hint": "Dream; aspiration",
           "category": "Future"
         },
         {
@@ -424,7 +424,7 @@
         },
         {
           "word": "PLAN",
-          "hint": "Plan; intención organizada",
+          "hint": "Plan; organized intention",
           "category": "Future"
         },
         {

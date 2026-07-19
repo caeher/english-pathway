@@ -1,22 +1,22 @@
 ---
 id: m9-ch3
-moduleId: modulo-9
+moduleId: module-9
 number: 3
-title: Preguntas y respuestas
-subtitle: Dominando la formulación de preguntas básicas con cuestionarios
+title: Questions and answers
+subtitle: Mastering the formulation of basic questions with questionnaires
 icon: ❓
 color: "#06b6d4"
 objectives:
-  - Formular y responder preguntas con Wh- words (What, Where, When, Who, Why, How) con confianza
-  - Usar Yes/No questions con do/does y am/is/are correctamente en diferentes contextos
-  - Comprender y aplicar la inversión sujeto-auxiliar en preguntas
-  - "Distinguir entre diferentes tipos de \"How\" questions (How many, How much, How often, etc.)"
+  - Ask and answer questions with wh-words (What, Where, When, Who, Why, How) with confidence
+  - Using Yes/No questions with do/does and am/is/are correctly in different contexts
+  - Understand and apply subject-auxiliary inversion in questions
+  - "Distinguish between different types of \"How\" questions (How many, How much, How often, etc.)"
 xpReward: 250
 ---
 
-## Las preguntas son tu superpoder 🦸
+## Questions are your superpower 🦸
 
-Para obtener información, necesitas saber preguntar. Hay dos tipos principales:
+To get information, you need to know how to ask. There are two main types:
 
 ### Yes / No Questions
 Respuesta: *Yes* o *No*.
@@ -26,53 +26,53 @@ Respuesta: *Yes* o *No*.
 - **Are** they coming? → No, they aren't.
 
 ### Wh- Questions
-Contienen una **palabra interrogativa** y piden información específica:
+They contain a **question word** and ask for specific information:
 
-| Wh- word | Pregunta por | Ejemplo |
+| Wh- word | Ask for | Ejemplo |
 |----------|-------------|---------|
-| **What** | Cosas / Información | *What is your name?* |
+| **What** | Things/Information | *What is your name?* |
 | **Where** | Lugar | *Where do you live?* |
 | **When** | Tiempo | *When is the party?* |
 | **Who** | Persona | *Who is your teacher?* |
-| **Why** | Razón | *Why are you late?* |
+| **Why** | Reason | *Why are you late?* |
 | **How** | Manera | *How do you get to work?* |
 
-### Variaciones de "How"
+### Variations of "How"
 
-"How" se combina con otras palabras para formar preguntas específicas:
+"How" is combined with other words to form specific questions:
 
-| Pregunta | Función | Ejemplo |
+| Pregunta | Function | Ejemplo |
 |----------|---------|---------|
 | **How many** | Cantidad (contables) | *How many books do you have?* |
 | **How much** | Cantidad (no contables) / Precio | *How much water? / How much is it?* |
 | **How often** | Frecuencia | *How often do you exercise?* |
 | **How old** | Edad | *How old are you?* |
-| **How long** | Duración / Longitud | *How long is the movie?* |
+| **How long** | Duration/Length | *How long is the movie?* |
 | **How far** | Distancia | *How far is the airport?* |
 | **How tall** | Altura | *How tall is he?* |
 
-### Patrón de inversión
-- **Afirmación**: She **is** a doctor.
+### Investment pattern
+- **Claim**: She **is** a doctor.
 - **Pregunta**: **Is** she a doctor?
-- **Con Wh-**: **What is** she?
+- **With Wh-**: **What is** she?
 
-Con **do/does**:
-- **Afirmación**: You **live** in Mexico.
+With **do/does**:
+- **Claim**: You **live** in Mexico.
 - **Pregunta**: **Do** you **live** in Mexico?
-- **Con Wh-**: **Where do** you **live**?
+- **With Wh-**: **Where do** you **live**?
 
-### Entonación en preguntas
+### Intonation in questions
 
-- **Yes/No questions**: Entonación SUBE al final ↗️
+- **Yes/No questions**: Intonation GOES UP at the end ↗️
   - "Do you like coffee?" ↗️
   
-- **Wh- questions**: Entonación BAJA al final ↘️
+- **Wh-questions**: LOW intonation at the end ↘️
   - "Where do you live?" ↘️
 
-> 💡 **Tip:** Practica convirtiendo afirmaciones en preguntas. ¡Es la mejor manera de dominar la inversión!
+> 💡 **Tip:** Practice turning statements into questions. It's the best way to master investing!
 
-> 🗣️ **Pronunciation Tip**: En preguntas con "do you", a menudo suena como /d'ya/ o "d'you" en habla rápida: "D'you like pizza?"
+> 🗣️ **Pronunciation Tip**: In questions with "do you", it often sounds like /d'ya/ or "d'you" in fast speech: "D'you like pizza?"
 
-> ⚠️ **Common Mistake**: En preguntas con "do/does", NUNCA conjugues el verbo principal:
+> ⚠️ **Common Mistake**: In questions with "do/does", NEVER conjugate the main verb:
 - ✓ "Does she **work** here?"
 - ✗ ~~"Does she **works** here?"~~

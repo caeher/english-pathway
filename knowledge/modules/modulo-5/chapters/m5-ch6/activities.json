@@ -3,7 +3,7 @@
     "id": "m5-ch6-svg",
     "type": "svg-scene",
     "title": "Pasiva Avanzada",
-    "description": "Casos especiales y errores comunes con la voz pasiva.",
+    "description": "Special cases and common errors with the passive voice.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -116,7 +116,7 @@
     "id": "m5-ch6-flash",
     "type": "flashcard",
     "title": "Transformaciones Complejas",
-    "description": "Practica la voz pasiva en contextos avanzados.",
+    "description": "Practice the passive voice in advanced contexts.",
     "props": {
       "cards": [
         {
@@ -151,7 +151,7 @@
         },
         {
           "id": "c6",
-          "front": "¿Se puede? \"The accident was happened.\"",
+          "front": "Can? \"The accident happened.\"",
           "back": "❌ INCORRECTO. \"The accident happened.\"",
           "example": "\"happen\" is intransitive — cannot be passive."
         },
@@ -171,7 +171,7 @@
           "id": "c9",
           "front": "She / know / for her kindness",
           "back": "She is known for her kindness.",
-          "example": "\"be known for\" = ser conocida por."
+          "example": "\"be known for\" = be known by."
         },
         {
           "id": "c10",
@@ -186,7 +186,7 @@
     "id": "m5-ch6-match",
     "type": "word-match",
     "title": "Modal Activa → Modal Pasiva",
-    "description": "Empareja la forma activa con su pasiva.",
+    "description": "Match the active form with its passive.",
     "props": {
       "pairs": [
         {
@@ -220,11 +220,11 @@
     "id": "m5-ch6-sentence",
     "type": "sentence-builder",
     "title": "Construye Pasivas Avanzadas",
-    "description": "Ordena para formar pasivas complejas.",
+    "description": "Arrange to form complex passives.",
     "props": {
       "sentences": [
         {
-          "prompt": "La tarea debe ser hecha:",
+          "prompt": "The task must be done:",
           "words": [
             "The",
             "homework",
@@ -235,7 +235,7 @@
           "correct": "The homework must be done"
         },
         {
-          "prompt": "Me dieron un regalo:",
+          "prompt": "They gave me a gift:",
           "words": [
             "I",
             "was",
@@ -246,7 +246,7 @@
           "correct": "I was given a present"
         },
         {
-          "prompt": "Se dice que él es rico:",
+          "prompt": "It is said that he is rich:",
           "words": [
             "It",
             "is",
@@ -259,7 +259,7 @@
           "correct": "It is said that he is rich"
         },
         {
-          "prompt": "Esta mesa está hecha de madera:",
+          "prompt": "This table is made of wood:",
           "words": [
             "This",
             "table",
@@ -271,7 +271,7 @@
           "correct": "This table is made of wood"
         },
         {
-          "prompt": "Yo nací en 1990:",
+          "prompt": "I was born in 1990:",
           "words": [
             "I",
             "was",
@@ -282,7 +282,7 @@
           "correct": "I was born in 1990"
         },
         {
-          "prompt": "El evento podría ser cancelado:",
+          "prompt": "The event could be canceled:",
           "words": [
             "The",
             "event",
@@ -299,7 +299,7 @@
     "id": "m5-ch6-quiz",
     "type": "quiz",
     "title": "Quiz: Pasiva Avanzada",
-    "description": "Demuestra tu dominio de la voz pasiva avanzada.",
+    "description": "Demonstrate your mastery of the advanced passive voice.",
     "props": {
       "questions": [
         {
@@ -393,7 +393,7 @@
           "type": "fill-blank",
           "question": "\"She is ___ for her kindness.\"",
           "correct": "known",
-          "explanation": "be known for = ser conocido por."
+          "explanation": "be known for = be known by."
         },
         {
           "id": "q10",
@@ -415,22 +415,22 @@
     "id": "m5-ch6-scramble",
     "type": "word-scramble",
     "title": "Voz Pasiva Avanzada",
-    "description": "Descifra verbos comunes en pasiva.",
+    "description": "Unscramble common verbs in the passive.",
     "props": {
       "words": [
         {
           "word": "REPORTED",
-          "hint": "Reportado; se dice que",
+          "hint": "Reported; it is said that",
           "category": "Passive"
         },
         {
           "word": "BELIEVED",
-          "hint": "Creído; se cree que",
+          "hint": "Believed; it is believed that",
           "category": "Passive"
         },
         {
           "word": "CONSIDERED",
-          "hint": "Considerado; tenido en cuenta",
+          "hint": "Considered; taken into account",
           "category": "Passive"
         },
         {

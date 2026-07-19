@@ -2,8 +2,8 @@
   {
     "id": "m8-ch2-flash",
     "type": "flashcard",
-    "title": "Flashcards de Conjugación",
-    "description": "Practica la conjugación de verbos en presente simple.",
+    "title": "Conjugation Flashcards",
+    "description": "Practice conjugating verbs in the simple present.",
     "props": {
       "cards": [
         {
@@ -73,7 +73,7 @@
     "id": "m8-ch2-match",
     "type": "word-match",
     "title": "Sujeto + Verbo",
-    "description": "Empareja cada sujeto con la forma verbal correcta.",
+    "description": "Match each subject with the correct verb form.",
     "props": {
       "pairs": [
         {
@@ -110,12 +110,12 @@
   {
     "id": "m8-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Arma la Oración",
-    "description": "Ordena las palabras para formar oraciones correctas en presente simple.",
+    "title": "Arm the Prayer",
+    "description": "Order the words to form correct sentences in present simple.",
     "props": {
       "sentences": [
         {
-          "prompt": "Forma una oración afirmativa:",
+          "prompt": "Form an affirmative sentence:",
           "words": [
             "breakfast",
             "eats",
@@ -124,7 +124,7 @@
           "correct": "She eats breakfast"
         },
         {
-          "prompt": "Forma una oración afirmativa:",
+          "prompt": "Form an affirmative sentence:",
           "words": [
             "to",
             "go",
@@ -134,7 +134,7 @@
           "correct": "They go to school"
         },
         {
-          "prompt": "Forma una oración negativa:",
+          "prompt": "Form a negative sentence:",
           "words": [
             "like",
             "not",
@@ -145,7 +145,7 @@
           "correct": "He does not like coffee"
         },
         {
-          "prompt": "Forma una pregunta:",
+          "prompt": "Form a question:",
           "words": [
             "you",
             "Do",
@@ -155,7 +155,7 @@
           "correct": "Do you speak English?"
         },
         {
-          "prompt": "Forma una oración afirmativa:",
+          "prompt": "Form an affirmative sentence:",
           "words": [
             "every",
             "works",
@@ -165,7 +165,7 @@
           "correct": "She works every day"
         },
         {
-          "prompt": "Forma una oración afirmativa:",
+          "prompt": "Form an affirmative sentence:",
           "words": [
             "play",
             "We",
@@ -176,7 +176,7 @@
           "correct": "We play soccer on weekends"
         },
         {
-          "prompt": "Forma una pregunta:",
+          "prompt": "Form a question:",
           "words": [
             "he",
             "Does",
@@ -186,7 +186,7 @@
           "correct": "Does he live here?"
         },
         {
-          "prompt": "Forma una oración negativa:",
+          "prompt": "Form a negative sentence:",
           "words": [
             "don't",
             "I",
@@ -196,7 +196,7 @@
           "correct": "I don't watch TV"
         },
         {
-          "prompt": "Forma una oración afirmativa:",
+          "prompt": "Form an affirmative sentence:",
           "words": [
             "studies",
             "night",
@@ -206,7 +206,7 @@
           "correct": "He studies at night"
         },
         {
-          "prompt": "Forma una oración afirmativa:",
+          "prompt": "Form an affirmative sentence:",
           "words": [
             "like",
             "I",
@@ -221,7 +221,7 @@
     "id": "m8-ch2-quiz",
     "type": "quiz",
     "title": "Quiz Gramatical",
-    "description": "Elige la forma correcta del verbo. ¡Cuidado con la tercera persona!",
+    "description": "Choose the correct form of the verb. Be careful with the third person!",
     "props": {
       "questions": [
         {
@@ -248,14 +248,14 @@
             "played"
           ],
           "correct": 2,
-          "explanation": "They + play (sin -s para I/you/we/they)."
+          "explanation": "They + play (without -s for I/you/we/they)."
         },
         {
           "id": "q3",
           "type": "fill-blank",
           "question": "She ___ (study) English every day.",
           "correct": "studies",
-          "explanation": "Study → studies con he/she/it (y → ies)."
+          "explanation": "Study → studies with he/she/it (y → ies)."
         },
         {
           "id": "q4",
@@ -281,7 +281,7 @@
             "Has"
           ],
           "correct": 1,
-          "explanation": "Does + he/she/it para preguntas en presente simple."
+          "explanation": "Does + he/she/it for questions in the simple present."
         },
         {
           "id": "q6",
@@ -314,7 +314,7 @@
             "watching"
           ],
           "correct": 2,
-          "explanation": "Watch → watches con he/she/it (-ch + es)."
+          "explanation": "Watch → watches with he/she/it (-ch + es)."
         },
         {
           "id": "q9",
@@ -327,7 +327,7 @@
             "Is"
           ],
           "correct": 1,
-          "explanation": "Do + I/you/we/they para preguntas."
+          "explanation": "Do + I/you/we/they for questions."
         },
         {
           "id": "q10",
@@ -343,32 +343,32 @@
     "id": "m8-ch2-scramble",
     "type": "word-scramble",
     "title": "Oraciones Simples",
-    "description": "Descifra términos gramaticales básicos.",
+    "description": "Decipher basic grammatical terms.",
     "props": {
       "words": [
         {
           "word": "SUBJECT",
-          "hint": "Sujeto; quien realiza la acción",
+          "hint": "Subject; who performs the action",
           "category": "Grammar"
         },
         {
           "word": "VERB",
-          "hint": "Verbo; acción o estado",
+          "hint": "Verb; action or state",
           "category": "Grammar"
         },
         {
           "word": "OBJECT",
-          "hint": "Objeto; lo que recibe la acción",
+          "hint": "Object; what the action receives",
           "category": "Grammar"
         },
         {
           "word": "SIMPLE",
-          "hint": "Simple; básico",
+          "hint": "Simple; essential",
           "category": "Grammar"
         },
         {
           "word": "BASIC",
-          "hint": "Básico; fundamental",
+          "hint": "Essential; fundamental",
           "category": "Grammar"
         },
         {

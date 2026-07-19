@@ -3,7 +3,7 @@
     "id": "m2-ch6-svg",
     "type": "svg-scene",
     "title": "Presente vs Pasado",
-    "description": "Visualiza las diferencias entre ambos tiempos.",
+    "description": "Visualize the differences between both times.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -105,7 +105,7 @@
     "id": "m2-ch6-flash",
     "type": "flashcard",
     "title": "Presente vs Pasado",
-    "description": "Identifica cuándo usar cada tiempo.",
+    "description": "Identify when to use each tense.",
     "props": {
       "cards": [
         {
@@ -163,7 +163,7 @@
     "id": "m2-ch6-match",
     "type": "word-match",
     "title": "Marcador → Tiempo",
-    "description": "Empareja el marcador temporal con el tiempo correcto.",
+    "description": "Match the temporal marker with the correct time.",
     "props": {
       "pairs": [
         {
@@ -197,11 +197,11 @@
     "id": "m2-ch6-sentence",
     "type": "sentence-builder",
     "title": "Presente o Pasado",
-    "description": "Elige el verbo correcto según el contexto.",
+    "description": "Choose the correct verb according to the context.",
     "props": {
       "sentences": [
         {
-          "prompt": "Ella trabaja en un banco (hoy en día):",
+          "prompt": "She works in a bank (nowadays):",
           "words": [
             "works",
             "She",
@@ -212,7 +212,7 @@
           "correct": "She works in a bank"
         },
         {
-          "prompt": "Trabajé ayer:",
+          "prompt": "I worked yesterday:",
           "words": [
             "worked",
             "I",
@@ -221,7 +221,7 @@
           "correct": "I worked yesterday"
         },
         {
-          "prompt": "Ellos van al gimnasio todos los días:",
+          "prompt": "They go to the gym every day:",
           "words": [
             "go",
             "They",
@@ -234,7 +234,7 @@
           "correct": "They go to the gym every day"
         },
         {
-          "prompt": "Fueron al cine la semana pasada:",
+          "prompt": "They went to the cinema last week:",
           "words": [
             "went",
             "They",
@@ -247,7 +247,7 @@
           "correct": "They went to the movies last week"
         },
         {
-          "prompt": "El sol sale por el este:",
+          "prompt": "The sun rises in the east:",
           "words": [
             "rises",
             "The",
@@ -259,7 +259,7 @@
           "correct": "The sun rises in the east"
         },
         {
-          "prompt": "¿Estudiaste anoche?:",
+          "prompt": "Did you study last night?:",
           "words": [
             "you",
             "Did",
@@ -276,7 +276,7 @@
     "id": "m2-ch6-quiz",
     "type": "quiz",
     "title": "Quiz: Presente vs Pasado",
-    "description": "Demuestra que eliges el tiempo correcto.",
+    "description": "Show that you choose the correct time.",
     "props": {
       "questions": [
         {
@@ -380,17 +380,17 @@
     "id": "m2-ch6-scramble",
     "type": "word-scramble",
     "title": "Presente vs Pasado",
-    "description": "Descifra términos para comparar tiempos verbales.",
+    "description": "Unscramble terms to compare verb tenses.",
     "props": {
       "words": [
         {
           "word": "YESTERDAY",
-          "hint": "Ayer; marcador de pasado",
+          "hint": "Yesterday; past marker",
           "category": "Time Markers"
         },
         {
           "word": "ALWAYS",
-          "hint": "Siempre; marcador de presente",
+          "hint": "Always; present marker",
           "category": "Time Markers"
         },
         {
@@ -405,12 +405,12 @@
         },
         {
           "word": "BEFORE",
-          "hint": "Antes; en el pasado",
+          "hint": "Before; in the past",
           "category": "Time Markers"
         },
         {
           "word": "USUALLY",
-          "hint": "Usualmente; marcador de presente",
+          "hint": "Usually; present marker",
           "category": "Time Markers"
         }
       ]

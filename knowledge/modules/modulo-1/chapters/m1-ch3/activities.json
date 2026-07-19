@@ -2,8 +2,8 @@
   {
     "id": "m1-ch3-svg",
     "type": "svg-scene",
-    "title": "Los Pronombres en Acción",
-    "description": "Explora cada pronombre y descubre cómo se usa con el verbo \"to be\".",
+    "title": "Pronouns in Action",
+    "description": "Explore each pronoun and discover how it is used with the verb \"to be.\"",
     "props": {
       "scene": {
         "viewBox": "0 0 700 470",
@@ -27,7 +27,7 @@
             "cy": 110,
             "r": 45,
             "fill": "#fecaca",
-            "label": "I (Yo)",
+            "label": "I (I)",
             "labelEn": "I AM → I'm a student. I'm happy. I'm from Mexico."
           },
           {
@@ -37,7 +37,7 @@
             "cy": 110,
             "r": 45,
             "fill": "#bfdbfe",
-            "label": "YOU (Tú)",
+            "label": "YOU",
             "labelEn": "YOU ARE → You're my friend. You're smart. You're welcome."
           },
           {
@@ -47,7 +47,7 @@
             "cy": 110,
             "r": 45,
             "fill": "#bbf7d0",
-            "label": "HE (Él)",
+            "label": "HE (He)",
             "labelEn": "HE IS → He's tall. He's a doctor. He's 25 years old."
           },
           {
@@ -57,7 +57,7 @@
             "cy": 110,
             "r": 45,
             "fill": "#fce7f3",
-            "label": "SHE (Ella)",
+            "label": "SHE",
             "labelEn": "SHE IS → She's beautiful. She's a teacher. She's from Spain."
           },
           {
@@ -67,7 +67,7 @@
             "cy": 110,
             "r": 45,
             "fill": "#fef3c7",
-            "label": "IT (Ello)",
+            "label": "IT",
             "labelEn": "IT IS → It's a cat. It's cold today. It's Monday."
           },
           {
@@ -77,7 +77,7 @@
             "cy": 250,
             "r": 45,
             "fill": "#d1fae5",
-            "label": "WE (Nosotros)",
+            "label": "WE (We)",
             "labelEn": "WE ARE → We're friends. We're ready. We're from Colombia."
           },
           {
@@ -87,7 +87,7 @@
             "cy": 250,
             "r": 45,
             "fill": "#e0e7ff",
-            "label": "THEY (Ellos)",
+            "label": "THEY",
             "labelEn": "THEY ARE → They're students. They're happy. They're here."
           },
           {
@@ -98,7 +98,7 @@
             "width": 280,
             "height": 60,
             "fill": "#fecaca",
-            "label": "❌ Negativo",
+            "label": "❌ Negative",
             "labelEn": "I'm NOT sad. He ISN'T here. They AREN'T ready. (am not / isn't / aren't)"
           },
           {
@@ -109,8 +109,8 @@
             "width": 280,
             "height": 60,
             "fill": "#ccfbf1",
-            "label": "❓ Pregunta",
-            "labelEn": "AM I late? IS she a teacher? ARE they ready? (invert subject + be)"
+            "label": "❓ Question",
+            "labelEn": "AM I beat? IS she a teacher? ARE they ready? (invert subject + be)"
           },
           {
             "id": "short",
@@ -141,8 +141,8 @@
   {
     "id": "m1-ch3-flash",
     "type": "flashcard",
-    "title": "Pronombres y \"To Be\"",
-    "description": "Domina cada pronombre con su forma del verbo \"to be\".",
+    "title": "Pronouns and \"To Be\"",
+    "description": "Master each pronoun with its form of the verb \"to be.\"",
     "props": {
       "cards": [
         {
@@ -189,45 +189,45 @@
         },
         {
           "id": "p8",
-          "front": "Negativo: IS NOT",
-          "back": "ISN'T (contracción)",
+          "front": "Negative: IS NOT",
+          "back": "ISN'T (contraction)",
           "example": "He isn't here. She isn't sad. It isn't cold."
         },
         {
           "id": "p9",
-          "front": "Negativo: ARE NOT",
-          "back": "AREN'T (contracción)",
+          "front": "Negative: ARE NOT",
+          "back": "AREN'T (contraction)",
           "example": "We aren't tired. They aren't from Spain. You aren't wrong."
         },
         {
           "id": "p10",
-          "front": "Negativo: AM NOT",
-          "back": "I'M NOT (sin contracción de amn't)",
+          "front": "Negative: AM NOT",
+          "back": "I'M NOT (no contraction of amn't)",
           "example": "I'm not hungry. I'm not a doctor. I'm not late."
         },
         {
           "id": "p11",
           "front": "Short Answer: Are you...?",
           "back": "Yes, I am. / No, I'm not.",
-          "example": "Are you tired? — Yes, I am."
+          "example": "Are you tired? —Yes, I am."
         },
         {
           "id": "p12",
           "front": "Short Answer: Is she...?",
           "back": "Yes, she is. / No, she isn't.",
-          "example": "Is she a doctor? — No, she isn't."
+          "example": "Is she a doctor? —No, she isn't."
         },
         {
           "id": "p13",
           "front": "Tag: You're a student...",
           "back": "aren't you?",
-          "example": "You're a student, aren't you? — Yes, I am."
+          "example": "You're a student, aren't you? —Yes, I am."
         },
         {
           "id": "p14",
           "front": "Tag: She is from Spain...",
           "back": "isn't she?",
-          "example": "She is from Spain, isn't she? — Yes, she is."
+          "example": "She is from Spain, isn't she? —Yes, she is."
         }
       ]
     }
@@ -235,20 +235,20 @@
   {
     "id": "m1-ch3-match",
     "type": "word-match",
-    "title": "Pronombre → To Be",
-    "description": "Empareja cada pronombre con la forma correcta de \"to be\".",
+    "title": "Pronoun → To Be",
+    "description": "Match each pronoun with the correct form of \"to be.\"",
     "props": {
       "pairs": [
         {
-          "left": "I",
-          "right": "am"
+          "left": "Yo",
+          "right": "A.M"
         },
         {
           "left": "You",
           "right": "are"
         },
         {
-          "left": "He",
+          "left": "I have",
           "right": "is"
         },
         {
@@ -256,7 +256,7 @@
           "right": "is"
         },
         {
-          "left": "It",
+          "left": "Item",
           "right": "is"
         },
         {
@@ -273,32 +273,32 @@
   {
     "id": "m1-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Forma Oraciones con \"To Be\"",
-    "description": "Ordena las palabras para crear oraciones correctas.",
+    "title": "Form Sentences with \"To Be\"",
+    "description": "Order the words to create correct sentences.",
     "props": {
       "sentences": [
         {
-          "prompt": "Soy un estudiante:",
+          "prompt": "I am a student:",
           "words": [
-            "am",
-            "I",
-            "a",
+            "A.M",
+            "Yo",
+            "to",
             "student"
           ],
           "correct": "I am a student"
         },
         {
-          "prompt": "Ella es doctora:",
+          "prompt": "She is a doctor:",
           "words": [
             "is",
             "She",
-            "a",
+            "to",
             "doctor"
           ],
           "correct": "She is a doctor"
         },
         {
-          "prompt": "Ellos están contentos:",
+          "prompt": "They are happy:",
           "words": [
             "are",
             "They",
@@ -307,7 +307,7 @@
           "correct": "They are happy"
         },
         {
-          "prompt": "Somos amigos:",
+          "prompt": "We are friends:",
           "words": [
             "are",
             "We",
@@ -316,57 +316,57 @@
           "correct": "We are friends"
         },
         {
-          "prompt": "Él no está aquí:",
+          "prompt": "He is not here:",
           "words": [
             "is",
-            "He",
+            "I have",
             "not",
             "here"
           ],
           "correct": "He is not here"
         },
         {
-          "prompt": "¿Eres estudiante?:",
+          "prompt": "Are you a student?:",
           "words": [
             "you",
             "Are",
-            "a",
+            "to",
             "student?"
           ],
           "correct": "Are you a student?"
         },
         {
-          "prompt": "¿Es ella profesora?:",
+          "prompt": "Is she a teacher?:",
           "words": [
             "she",
             "Is",
-            "a",
+            "to",
             "teacher?"
           ],
           "correct": "Is she a teacher?"
         },
         {
-          "prompt": "No estoy cansado:",
+          "prompt": "I'm not tired:",
           "words": [
             "not",
-            "am",
-            "I",
+            "A.M",
+            "Yo",
             "tired"
           ],
           "correct": "I am not tired"
         },
         {
-          "prompt": "Hace frío hoy:",
+          "prompt": "It's cold today:",
           "words": [
             "is",
-            "It",
+            "Item",
             "cold",
             "today"
           ],
-          "correct": "It is cold today"
+          "correct": "It's cold today"
         },
         {
-          "prompt": "¿Están listos?:",
+          "prompt": "Are you ready?:",
           "words": [
             "they",
             "Are",
@@ -375,16 +375,16 @@
           "correct": "Are they ready?"
         },
         {
-          "prompt": "Responde corto a \"Are you a student?\":",
+          "prompt": "Short answer to \"Are you a student?\":",
           "words": [
-            "am",
+            "A.M",
             "Yes",
-            "I"
+            "Yo"
           ],
           "correct": "Yes I am"
         },
         {
-          "prompt": "Tag: Ella es simpática, ¿no?:",
+          "prompt": "Tag: She's nice, isn't she?:",
           "words": [
             "She",
             "is",
@@ -400,15 +400,15 @@
   {
     "id": "m1-ch3-quiz",
     "type": "quiz",
-    "title": "Quiz: To Be o No To Be",
-    "description": "Demuestra tu dominio del verbo \"to be\".",
+    "title": "Quiz: To Be or Not To Be",
+    "description": "Demonstrate your mastery of the verb \"to be.\"",
     "props": {
       "questions": [
         {
           "id": "q1",
           "type": "fill-blank",
           "question": "I ___ a student. (to be)",
-          "correct": "am",
+          "correct": "A.M",
           "explanation": "I AM a student."
         },
         {
@@ -441,9 +441,9 @@
         {
           "id": "q5",
           "type": "multiple-choice",
-          "question": "\"He ___ not here.\" — Fill the blank.",
+          "question": "\"He ___ not here.\" —Fill the blank.",
           "options": [
-            "am",
+            "A.M",
             "are",
             "is",
             "be"
@@ -463,9 +463,9 @@
           "type": "multiple-choice",
           "question": "Which pronoun do we use for a cat?",
           "options": [
-            "He",
+            "I have",
             "She",
-            "It",
+            "Item",
             "They"
           ],
           "correct": 2,
@@ -474,9 +474,9 @@
         {
           "id": "q8",
           "type": "multiple-choice",
-          "question": "\"We ___ friends.\" — Fill the blank.",
+          "question": "\"We ___ friends.\" —Fill the blank.",
           "options": [
-            "am",
+            "A.M",
             "is",
             "are",
             "be"
@@ -507,12 +507,12 @@
         {
           "id": "q11",
           "type": "multiple-choice",
-          "question": "\"Is she a doctor?\" — Correct short answer:",
+          "question": "\"Is she a doctor?\" —Correct short answer:",
           "options": [
             "Yes, she's",
             "Yes, she is",
             "Yes, she",
-            "Yes, is she"
+            "Yes, it is she"
           ],
           "correct": 1,
           "explanation": "Short answer: Yes, she is. (We repeat the pronoun + be.)"
@@ -530,38 +530,38 @@
   {
     "id": "m1-ch3-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario Gramatical",
-    "description": "Descifra términos de pronombres y verbos.",
+    "title": "Grammatical Vocabulary",
+    "description": "Unscramble pronoun and verb terms.",
     "props": {
       "words": [
         {
           "word": "PRONOUN",
-          "hint": "Pronombre; reemplaza al sustantivo",
+          "hint": "Pronoun; replaces noun",
           "category": "Grammar"
         },
         {
           "word": "SUBJECT",
-          "hint": "Sujeto; quien realiza la acción",
+          "hint": "Subject; who performs the action",
           "category": "Grammar"
         },
         {
           "word": "SINGULAR",
-          "hint": "Singular; uno solo",
+          "hint": "Singular; only one",
           "category": "Grammar"
         },
         {
           "word": "PLURAL",
-          "hint": "Plural; más de uno",
+          "hint": "Plural; more than one",
           "category": "Grammar"
         },
         {
           "word": "SENTENCE",
-          "hint": "Oración; grupo de palabras con sentido",
+          "hint": "Prayer; group of meaningful words",
           "category": "Grammar"
         },
         {
           "word": "VERB",
-          "hint": "Verbo; palabra de acción o estado",
+          "hint": "Verb; action or state word",
           "category": "Grammar"
         }
       ]

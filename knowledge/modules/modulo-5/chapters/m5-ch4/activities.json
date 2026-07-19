@@ -3,7 +3,7 @@
     "id": "m5-ch4-svg",
     "type": "svg-scene",
     "title": "Participios: Presente y Pasado",
-    "description": "Visualiza la diferencia entre ambas formas y sus usos.",
+    "description": "Visualize the difference between both forms and their uses.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -174,7 +174,7 @@
     "id": "m5-ch4-match",
     "type": "word-match",
     "title": "Verbo → Past Participle",
-    "description": "Empareja cada verbo con su pasado participio.",
+    "description": "Match each verb with its past participle.",
     "props": {
       "pairs": [
         {
@@ -215,8 +215,8 @@
   {
     "id": "m5-ch4-sentence",
     "type": "sentence-builder",
-    "title": "Identifica el Participio",
-    "description": "Reconoce si es presente o pasado participio.",
+    "title": "Identify the Participle",
+    "description": "Recognize if it is present or past participle.",
     "props": {
       "sentences": [
         {
@@ -229,7 +229,7 @@
           "correct": "She has eaten"
         },
         {
-          "prompt": "Está trabajando (¿qué participio?):",
+          "prompt": "He is working (what participle?):",
           "words": [
             "She",
             "is",
@@ -238,7 +238,7 @@
           "correct": "She is working"
         },
         {
-          "prompt": "El coche fue robado:",
+          "prompt": "The car was stolen:",
           "words": [
             "The",
             "car",
@@ -248,7 +248,7 @@
           "correct": "The car was stolen"
         },
         {
-          "prompt": "Había escrito una carta:",
+          "prompt": "He had written a letter:",
           "words": [
             "He",
             "had",
@@ -259,7 +259,7 @@
           "correct": "He had written a letter"
         },
         {
-          "prompt": "Una ventana rota:",
+          "prompt": "A broken window:",
           "words": [
             "a",
             "broken",
@@ -268,7 +268,7 @@
           "correct": "a broken window"
         },
         {
-          "prompt": "Un libro interesante:",
+          "prompt": "An interesting book:",
           "words": [
             "an",
             "interesting",
@@ -282,8 +282,8 @@
   {
     "id": "m5-ch4-quiz",
     "type": "quiz",
-    "title": "Quiz: Naturaleza de los Participios",
-    "description": "Demuestra que comprendes qué son los participios.",
+    "title": "Quiz: Nature of Participles",
+    "description": "Show that you understand what participles are.",
     "props": {
       "questions": [
         {
@@ -384,32 +384,32 @@
       "words": [
         {
           "word": "BROKEN",
-          "hint": "Roto; participio de break",
+          "hint": "Broken; participle of break",
           "category": "Participles"
         },
         {
           "word": "WRITTEN",
-          "hint": "Escrito; participio de write",
+          "hint": "Written; participle of write",
           "category": "Participles"
         },
         {
           "word": "SPOKEN",
-          "hint": "Hablando; participio de speak",
+          "hint": "Talking; participle of speak",
           "category": "Participles"
         },
         {
           "word": "CHOSEN",
-          "hint": "Elegido; participio de choose",
+          "hint": "Elected; participle of choose",
           "category": "Participles"
         },
         {
           "word": "TAKEN",
-          "hint": "Tomado; participio de take",
+          "hint": "Taken; participle of take",
           "category": "Participles"
         },
         {
           "word": "GIVEN",
-          "hint": "Dado; participio de give",
+          "hint": "Given; participle of give",
           "category": "Participles"
         }
       ]

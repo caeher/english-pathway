@@ -1,21 +1,21 @@
 ---
 id: m3-ch3
-moduleId: modulo-3
+moduleId: module-3
 number: 3
-title: Pasado Continuo
-subtitle: Lo que estaba pasando en un momento del pasado
+title: Past Continuous
+subtitle: What was happening at a time in the past
 icon: ⏪
 color: "#8b5cf6"
 objectives:
-  - "Formar el pasado continuo: was/were + verb-ing"
-  - Usarlo para describir acciones en progreso en el pasado
-  - "Combinarlo con pasado simple usando \"when\" y \"while\""
+  - "Form the past continuous: was/were + verb-ing"
+  - Use it to describe actions in progress in the past
+  - "Combine it with past simple using \"when\" and \"while\""
 xpReward: 160
 ---
 
 ## Past Continuous — Pasado Continuo
 
-### Formación: Subject + was/were + verb-ing
+### Formation: Subject + was/were + verb-ing
 | Subject | Was/Were | Verb-ing | Example |
 |---------|----------|----------|---------|
 | I / He / She / It | **was** | working | I **was working** at 9 PM. |

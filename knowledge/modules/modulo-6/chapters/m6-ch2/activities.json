@@ -3,7 +3,7 @@
     "id": "m6-ch2-svg",
     "type": "svg-scene",
     "title": "Causa y Resultado Real",
-    "description": "Visualiza el primer condicional como causa-efecto real.",
+    "description": "Visualize the first conditional as real cause-effect.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -115,8 +115,8 @@
   {
     "id": "m6-ch2-flash",
     "type": "flashcard",
-    "title": "First Conditional: Práctica",
-    "description": "Forma oraciones con el primer condicional.",
+    "title": "First Conditional: Practice",
+    "description": "Make sentences with the first conditional.",
     "props": {
       "cards": [
         {
@@ -174,7 +174,7 @@
     "id": "m6-ch2-match",
     "type": "word-match",
     "title": "If Clause → Result",
-    "description": "Empareja la condición con su resultado lógico.",
+    "description": "Match the condition with its logical result.",
     "props": {
       "pairs": [
         {
@@ -207,12 +207,12 @@
   {
     "id": "m6-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Construye el Condicional",
-    "description": "Ordena para formar frases con first conditional.",
+    "title": "Build the Conditional",
+    "description": "Order to form sentences with first conditional.",
     "props": {
       "sentences": [
         {
-          "prompt": "Si llueve, me quedaré en casa:",
+          "prompt": "If it rains, I'll stay home:",
           "words": [
             "If",
             "it",
@@ -225,7 +225,7 @@
           "correct": "If it rains, I will stay home"
         },
         {
-          "prompt": "Si estudias duro, aprobarás:",
+          "prompt": "If you study hard, you will pass:",
           "words": [
             "If",
             "you",
@@ -238,7 +238,7 @@
           "correct": "If you study hard, you will pass"
         },
         {
-          "prompt": "Si no se apuran, llegarán tarde:",
+          "prompt": "If you don't hurry, you'll be late:",
           "words": [
             "If",
             "they",
@@ -252,7 +252,7 @@
           "correct": "If they don't hurry, they will be late"
         },
         {
-          "prompt": "Te ayudaré si me lo pides:",
+          "prompt": "I will help you if you ask me:",
           "words": [
             "I",
             "will",
@@ -266,7 +266,7 @@
           "correct": "I will help you if you ask me"
         },
         {
-          "prompt": "A menos que estudies, no aprobarás:",
+          "prompt": "Unless you study, you will not pass:",
           "words": [
             "Unless",
             "you",
@@ -284,7 +284,7 @@
     "id": "m6-ch2-quiz",
     "type": "quiz",
     "title": "Quiz: First Conditional",
-    "description": "Demuestra tu dominio del primer condicional.",
+    "description": "Demonstrate your mastery of the first conditional.",
     "props": {
       "questions": [
         {
@@ -380,12 +380,12 @@
     "id": "m6-ch2-scramble",
     "type": "word-scramble",
     "title": "First Conditional",
-    "description": "Descifra palabras de condiciones reales.",
+    "description": "Unscramble words of real conditions.",
     "props": {
       "words": [
         {
           "word": "POSSIBLE",
-          "hint": "Posible; que puede ocurrir",
+          "hint": "Possible; what can happen",
           "category": "Conditionals"
         },
         {
@@ -395,7 +395,7 @@
         },
         {
           "word": "FUTURE",
-          "hint": "Futuro; tiempo por venir",
+          "hint": "Future; time to come",
           "category": "Conditionals"
         },
         {
@@ -405,7 +405,7 @@
         },
         {
           "word": "CONDITION",
-          "hint": "Condición; requisito",
+          "hint": "Condition; requirement",
           "category": "Conditionals"
         },
         {

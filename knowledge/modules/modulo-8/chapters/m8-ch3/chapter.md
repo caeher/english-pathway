@@ -1,42 +1,42 @@
 ---
 id: m8-ch3
-moduleId: modulo-8
+moduleId: module-8
 number: 3
-title: Pronunciación de nivel 1
-subtitle: Conquistando los sonidos básicos con retos de repetición
+title: level 1 pronunciation
+subtitle: Conquering basic sounds with repetition challenges
 icon: 🗣️
 color: "#8b5cf6"
 objectives:
-  - "Distinguir sonidos que no existen en español: /θ/, /ð/, /æ/, /ʌ/, /ɹ/"
-  - "Identificar pares mínimos: ship/sheep, cat/cut, think/sink"
-  - Comprender la entonación básica de preguntas y afirmaciones
+  - "Distinguish sounds that do not exist in Spanish: /θ/, /ð/, /æ/, /ʌ/, /ɹ/"
+  - "Identify minimum pairs: ship/sheep, cat/cut, think/sink"
+  - Understand the basic intonation of questions and statements
 xpReward: 180
 ---
 
-## Los sonidos del inglés que no existen en español
+## The sounds of English that do not exist in Spanish
 
-El inglés tiene sonidos que el español no tiene. ¡Aprender a reconocerlos es el primer paso!
+English has sounds that Spanish does not have. Learning to recognize them is the first step!
 
 ### Sonidos clave
 
-| Símbolo | Ejemplo | Descripción |
+| Symbol | Ejemplo | Description |
 |---------|---------|-------------|
-| /θ/ | **th**ink | Lengua entre los dientes, sopla aire |
-| /ð/ | **th**is | Como /θ/ pero con vibración |
-| /æ/ | c**a**t | Entre la "a" y la "e" española |
-| /ʌ/ | c**u**p | Una "a" corta y relajada |
+| /θ/ | **th**ink | Tongue between teeth, blow air |
+| /ð/ | **th**is | Like /θ/ but with vibration |
+| /æ/ | c**a**t | Between the Spanish "a" and "e" |
+| /ʌ/ | c**u**p | A short and relaxed "a" |
 | /ɪ/ | sh**i**p | "i" corta y relajada |
 | /iː/ | sh**ee**p | "i" larga y tensa |
-| /ɹ/ | **r**ed | La lengua NO toca el paladar |
+| /ɹ/ | **r**ed | The tongue does NOT touch the palate |
 
-### Pares mínimos (Minimal Pairs)
-Dos palabras que solo se diferencian en un sonido:
+### Minimum Pairs
+Two words that only differ in one sound:
 - **ship** /ʃɪp/ vs **sheep** /ʃiːp/
 - **cat** /kæt/ vs **cut** /kʌt/
 - **think** /θɪŋk/ vs **sink** /sɪŋk/
 
-### Entonación
-- **Afirmaciones** ↘️ — la voz baja al final: *"I like coffee."*
-- **Preguntas sí/no** ↗️ — la voz sube al final: *"Do you like coffee?"*
+### Intonation
+- **Affirmations** ↘️ — the voice drops at the end: *"I like coffee."*
+- **Yes/no questions** ↗️ — the voice rises at the end: *"Do you like coffee?"*
 
-> 💡 No necesitas una pronunciación perfecta. ¡Lo importante es que te entiendan!
+> 💡 You don't need perfect pronunciation. The important thing is that they understand you!

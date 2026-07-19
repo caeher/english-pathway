@@ -2,8 +2,8 @@
   {
     "id": "m11-ch5-quiz",
     "type": "quiz",
-    "title": "El Debate Interactivo",
-    "description": "Elige la mejor expresión para cada situación de debate.",
+    "title": "The Interactive Debate",
+    "description": "Choose the best expression for each debate situation.",
     "props": {
       "questions": [
         {
@@ -151,11 +151,11 @@
     "id": "m11-ch5-sentence",
     "type": "sentence-builder",
     "title": "Argumentos OREO",
-    "description": "Construye argumentos bien estructurados usando la técnica OREO.",
+    "description": "Build well-structured arguments using the OREO technique.",
     "props": {
       "sentences": [
         {
-          "prompt": "Opinión (O):",
+          "prompt": "Opinion (O):",
           "words": [
             "believe",
             "I",
@@ -168,7 +168,7 @@
           "correct": "I strongly believe that exercise is important"
         },
         {
-          "prompt": "Razón (R):",
+          "prompt": "Reason (R):",
           "words": [
             "because",
             "This",
@@ -232,7 +232,7 @@
           "correct": "However technology also has some disadvantages"
         },
         {
-          "prompt": "Adición:",
+          "prompt": "Addition:",
           "words": [
             "Furthermore",
             "helps",
@@ -243,7 +243,7 @@
           "correct": "Furthermore reading helps improve vocabulary"
         },
         {
-          "prompt": "Conclusión:",
+          "prompt": "Conclusion:",
           "words": [
             "conclusion",
             "In",
@@ -256,7 +256,7 @@
           "correct": "In conclusion the benefits outweigh the risks"
         },
         {
-          "prompt": "Opinión formal:",
+          "prompt": "Formal opinion:",
           "words": [
             "my",
             "From",
@@ -268,7 +268,7 @@
           "correct": "From my perspective education is essential"
         },
         {
-          "prompt": "Concesión + desacuerdo:",
+          "prompt": "Concession + disagreement:",
           "words": [
             "Although",
             "respect",
@@ -289,8 +289,8 @@
   {
     "id": "m11-ch5-match",
     "type": "word-match",
-    "title": "Expresión → Función",
-    "description": "Empareja cada expresión de debate con su función comunicativa.",
+    "title": "Expression → Function",
+    "description": "Match each debate expression with its communicative function.",
     "props": {
       "pairs": [
         {
@@ -331,20 +331,20 @@
   {
     "id": "m11-ch5-flash",
     "type": "flashcard",
-    "title": "Arsenal de Debate",
-    "description": "Domina todas las expresiones que necesitas para debatir con confianza.",
+    "title": "Debate Arsenal",
+    "description": "Master all the expressions you need to debate with confidence.",
     "props": {
       "cards": [
         {
           "id": "d1",
           "front": "IN MY OPINION,...",
-          "back": "En mi opinión,...",
+          "back": "In my opinion,...",
           "example": "In my opinion, learning languages opens doors to new cultures."
         },
         {
           "id": "d2",
           "front": "I BELIEVE THAT...",
-          "back": "Creo que...",
+          "back": "I think that...",
           "example": "I believe that education should be free for everyone."
         },
         {
@@ -356,19 +356,19 @@
         {
           "id": "d4",
           "front": "I'M CONVINCED THAT...",
-          "back": "Estoy convencido de que...",
+          "back": "I am convinced that...",
           "example": "I'm convinced that practice makes perfect."
         },
         {
           "id": "d5",
           "front": "AS I SEE IT,...",
-          "back": "Tal como lo veo,...",
+          "back": "The way I see it,...",
           "example": "As I see it, we need to focus on renewable energy."
         },
         {
           "id": "d6",
           "front": "I COULDN'T AGREE MORE.",
-          "back": "No podría estar más de acuerdo.",
+          "back": "I couldn't agree more.",
           "example": "\"School should start later.\" — \"I couldn't agree more!\""
         },
         {
@@ -380,13 +380,13 @@
         {
           "id": "d8",
           "front": "YOU'RE ABSOLUTELY RIGHT.",
-          "back": "Tienes toda la razón.",
+          "back": "You are absolutely right.",
           "example": "\"Exercise is important for mental health.\" — \"You're absolutely right.\""
         },
         {
           "id": "d9",
           "front": "I'M AFRAID I DISAGREE.",
-          "back": "Me temo que no estoy de acuerdo.",
+          "back": "I'm afraid I don't agree.",
           "example": "\"Cars should be banned.\" — \"I'm afraid I disagree. People need them.\""
         },
         {
@@ -398,31 +398,31 @@
         {
           "id": "d11",
           "front": "WITH ALL DUE RESPECT,...",
-          "back": "Con todo respeto,...",
+          "back": "With all due respect,...",
           "example": "With all due respect, I think that argument doesn't hold up."
         },
         {
           "id": "d12",
           "front": "HOWEVER,...",
-          "back": "Sin embargo,...",
+          "back": "However,...",
           "example": "Travel is exciting. However, it can also be stressful."
         },
         {
           "id": "d13",
           "front": "FURTHERMORE,...",
-          "back": "Además,...",
+          "back": "Besides,...",
           "example": "Furthermore, studies show that reading improves empathy."
         },
         {
           "id": "d14",
           "front": "ON THE OTHER HAND,...",
-          "back": "Por otro lado,...",
+          "back": "On the other hand,...",
           "example": "Cars are convenient. On the other hand, they pollute."
         },
         {
           "id": "d15",
           "front": "IN CONCLUSION,...",
-          "back": "En conclusión,...",
+          "back": "In conclusion,...",
           "example": "In conclusion, the evidence strongly supports my position."
         },
         {
@@ -434,7 +434,7 @@
         {
           "id": "d17",
           "front": "MOREOVER,...",
-          "back": "Es más,...",
+          "back": "What's more,...",
           "example": "Moreover, this approach has been proven effective in other countries."
         },
         {
@@ -452,7 +452,7 @@
         {
           "id": "d20",
           "front": "TO SUM UP,...",
-          "back": "En resumen,...",
+          "back": "In summary,...",
           "example": "To sum up, the advantages clearly outweigh the disadvantages."
         }
       ]
@@ -461,8 +461,8 @@
   {
     "id": "m11-ch5-svg",
     "type": "svg-scene",
-    "title": "La Arena del Debate",
-    "description": "Explora cada zona del debate y descubre las expresiones que necesitas.",
+    "title": "The Arena of Debate",
+    "description": "Explore each area of ​​the debate and discover the expressions you need.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 450",
@@ -476,7 +476,7 @@
             "width": 660,
             "height": 430,
             "fill": "#fef9c3",
-            "label": "🏟️ La Arena del Debate",
+            "label": "🏟️ The Arena of Debate",
             "labelEn": "Welcome to the Debate Arena! Explore each zone."
           },
           {
@@ -487,7 +487,7 @@
             "width": 180,
             "height": 100,
             "fill": "#bbf7d0",
-            "label": "💬 Zona de Opiniones",
+            "label": "💬 Opinion Zone",
             "labelEn": "I believe... / In my opinion... / I'm convinced that... / From my perspective..."
           },
           {
@@ -498,7 +498,7 @@
             "width": 180,
             "height": 100,
             "fill": "#bfdbfe",
-            "label": "✅ Zona de Acuerdo",
+            "label": "✅ Agreement Zone",
             "labelEn": "I couldn't agree more! / That's a good point. / You're absolutely right. / I totally agree."
           },
           {
@@ -509,7 +509,7 @@
             "width": 180,
             "height": 100,
             "fill": "#fecaca",
-            "label": "🙅 Zona de Desacuerdo",
+            "label": "🙅 Zone of Disagreement",
             "labelEn": "I'm afraid I disagree. / I see your point, but... / With all due respect... / I beg to differ."
           },
           {
@@ -520,7 +520,7 @@
             "width": 180,
             "height": 100,
             "fill": "#e0e7ff",
-            "label": "➕ Conectores: Adición",
+            "label": "➕ Connectors: Addition",
             "labelEn": "Furthermore... / Moreover... / In addition... / Besides..."
           },
           {
@@ -564,7 +564,7 @@
             "width": 285,
             "height": 100,
             "fill": "#fce7f3",
-            "label": "🎬 Zona de Conclusión",
+            "label": "🎬 Conclusion Zone",
             "labelEn": "In conclusion... / To sum up... / All in all... / Therefore..."
           }
         ]
@@ -575,7 +575,7 @@
     "id": "m11-ch5-scramble",
     "type": "word-scramble",
     "title": "Debates y Discusiones",
-    "description": "Descifra vocabulario de argumentación.",
+    "description": "Decipher vocabulary of argumentation.",
     "props": {
       "words": [
         {
@@ -585,27 +585,27 @@
         },
         {
           "word": "DEBATE",
-          "hint": "Debate; discusión formal",
+          "hint": "Debate; formal discussion",
           "category": "Debate"
         },
         {
           "word": "OPINION",
-          "hint": "Opinión; punto de vista",
+          "hint": "Opinion; point of view",
           "category": "Debate"
         },
         {
           "word": "AGREE",
-          "hint": "Estar de acuerdo",
+          "hint": "Agree",
           "category": "Debate"
         },
         {
           "word": "DISAGREE",
-          "hint": "Discrepar; no estar de acuerdo",
+          "hint": "Disagree; disagree",
           "category": "Debate"
         },
         {
           "word": "DISCUSS",
-          "hint": "Discutir; hablar sobre",
+          "hint": "Discuss; talk about",
           "category": "Debate"
         }
       ]

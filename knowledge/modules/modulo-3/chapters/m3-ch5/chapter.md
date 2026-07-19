@@ -1,15 +1,15 @@
 ---
 id: m3-ch5
-moduleId: modulo-3
+moduleId: module-3
 number: 5
-title: Can, Could y Habilidades
-subtitle: Expresa lo que puedes y podrías hacer
+title: Can, Could and Skills
+subtitle: Express what you can and could do
 icon: 💪
 color: "#06b6d4"
 objectives:
-  - "Usar \"can\" para habilidades y permisos en presente"
-  - "Usar \"could\" para habilidades pasadas y peticiones educadas"
-  - Formar negaciones y preguntas con can/could
+  - "Use \"can\" for abilities and permissions in the present tense"
+  - "Use \"could\" for past skills and polite requests"
+  - Form negations and questions with can/could
 xpReward: 160
 ---
 
@@ -28,7 +28,7 @@ xpReward: 160
 ### Questions: Can + subject + verb?
 - **Can** you swim? — Yes, I can. / No, I can't.
 
-### Could — Pasado + Cortesía
+### Could — Past + Courtesy
 | Use | Example |
 |-----|---------|
 | **Past ability** | I **could** swim when I was 5. |
@@ -48,7 +48,7 @@ xpReward: 160
 - **Can** no tiene futuro ni infinitivo. Usa **be able to**:
   - Futuro: I **will be able to** swim next year.
   - Infinitivo: I want **to be able to** speak French.
-- **Could** = habilidad general en el pasado. **Was/were able to** = logro puntual:
+- **Could** = general ability in the past. **Was/were able to** = specific achievement:
   - I **could** swim when I was 5. (habilidad)
   - I **was able to** fix the car yesterday. (logro concreto)
 

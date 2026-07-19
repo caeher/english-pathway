@@ -1,26 +1,26 @@
 ---
 id: m11-ch4
-moduleId: modulo-11
+moduleId: module-11
 number: 4
-title: Phrasal Verbs al rescate
-subtitle: Domina las combinaciones verbo + partícula más usadas
+title: Phrasal Verbs to the rescue
+subtitle: Master the most used verb + particle combinations
 icon: 🧩
 color: "#14b8a6"
 objectives:
-  - Aprender los Phrasal Verbs más comunes agrupados por contexto (hogar, trabajo, relaciones, estudio)
-  - Diferenciar entre Phrasal Verbs separables e inseparables
-  - Usar Phrasal Verbs como alternativa natural a verbos formales
+  - Learn the most common Phrasal Verbs grouped by context (home, work, relationships, study)
+  - Differentiate between separable and inseparable Phrasal Verbs
+  - Use Phrasal Verbs as a natural alternative to formal verbs
 xpReward: 300
 ---
 
-## Phrasal Verbs — Los "combos" del inglés
+## Phrasal Verbs — The "combos" of English
 
-Un Phrasal Verb es un verbo + partícula (preposición/adverbio) que juntos crean un significado nuevo.
+A Phrasal Verb is a verb + particle (preposition/adverb) that together create a new meaning.
 
-### ¿Por qué son importantes?
-- Son **extremadamente comunes** en el inglés hablado
-- Hacen tu inglés más **natural y fluido**
-- Muchos verbos formales tienen un Phrasal Verb equivalente
+### Why are they important?
+- They are **extremely common** in spoken English
+- They make your English more **natural and fluent**
+- Many formal verbs have a Phrasal Verb equivalent
 
 ### Ejemplos: Formal vs Phrasal Verb
 | Formal | Phrasal Verb |
@@ -33,17 +33,17 @@ Un Phrasal Verb es un verbo + partícula (preposición/adverbio) que juntos crea
 | investigate | *look into* |
 
 ### Separables vs Inseparables
-- **Separables:** Se puede poner el objeto entre el verbo y la partícula.
+- **Separable:** You can put the object between the verb and the particle.
   - *Turn **off** the light* ✓ / *Turn the light **off*** ✓
-  - Con pronombres: *Turn **it** off* ✓ / ~~Turn off it~~ ✗
-- **Inseparables:** El objeto va DESPUÉS de la partícula.
+  - With pronouns: *Turn **it** off* ✓ / ~~Turn off it~~ ✗
+- **Inseparable:** The object comes AFTER the particle.
   - *Look **after** the baby* ✓ / ~~Look the baby after~~ ✗
 
-### Phrasal Verbs por contexto
+### Phrasal Verbs by Context
 
-**🏠 En casa:** wake up, tidy up, turn on/off, throw away, put away
-**💼 En el trabajo:** carry out, set up, come up with, deal with, figure out
+**🏠 At home:** wake up, tidy up, turn on/off, throw away, put away
+**💼 At work:** carry out, set up, come up with, deal with, figure out
 **❤️ Relaciones:** get along with, break up, make up, look after, grow up
 **📚 Estudio:** find out, look up, go over, hand in, drop out
 
-> 💡 **Tip:** No intentes traducir Phrasal Verbs palabra por palabra. Aprende cada uno como una unidad.
+> 💡 **Tip:** Don't try to translate Phrasal Verbs word by word. Learn each one as a unit.

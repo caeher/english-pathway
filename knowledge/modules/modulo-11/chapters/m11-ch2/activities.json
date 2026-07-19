@@ -2,8 +2,8 @@
   {
     "id": "m11-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Transforma la Oración",
-    "description": "Convierte oraciones activas en pasivas y viceversa.",
+    "title": "Transform Prayer",
+    "description": "Convert active sentences into passive sentences and vice versa.",
     "props": {
       "sentences": [
         {
@@ -149,7 +149,7 @@
     "id": "m11-ch2-quiz",
     "type": "quiz",
     "title": "Activa, Pasiva o Ambas",
-    "description": "Elige la forma correcta según el contexto. ¿Cuándo es mejor la pasiva?",
+    "description": "Choose the correct form according to the context. When is passive better?",
     "props": {
       "questions": [
         {
@@ -271,7 +271,7 @@
     "id": "m11-ch2-match",
     "type": "word-match",
     "title": "Tiempo Verbal → Forma Pasiva",
-    "description": "Empareja cada tiempo verbal con su estructura en voz pasiva.",
+    "description": "Match each verb tense with its passive voice structure.",
     "props": {
       "pairs": [
         {
@@ -305,7 +305,7 @@
     "id": "m11-ch2-flash",
     "type": "flashcard",
     "title": "Transformaciones Activa ↔ Pasiva",
-    "description": "Practica la transformación mental antes de voltear la tarjeta.",
+    "description": "Practice mental transformation before flipping the card.",
     "props": {
       "cards": [
         {
@@ -404,8 +404,8 @@
   {
     "id": "m11-ch2-svg",
     "type": "svg-scene",
-    "title": "El Periódico Interactivo",
-    "description": "Explora los titulares del periódico y descubre la voz pasiva en las noticias.",
+    "title": "The Interactive Newspaper",
+    "description": "Explore the newspaper headlines and discover the passive voice in the news.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 420",
@@ -441,7 +441,7 @@
             "width": 240,
             "height": 60,
             "fill": "#f5f5dc",
-            "label": "📰 Premio científico",
+            "label": "📰 Scientific award",
             "labelEn": "Award Was Given to Young Scientist"
           },
           {
@@ -485,7 +485,7 @@
             "width": 240,
             "height": 60,
             "fill": "#f5f5dc",
-            "label": "📰 Ladrón atrapado",
+            "label": "📰 Thief caught",
             "labelEn": "Thief Was Caught by Security Cameras"
           },
           {
@@ -518,22 +518,22 @@
     "id": "m11-ch2-scramble",
     "type": "word-scramble",
     "title": "Voz Pasiva",
-    "description": "Descifra términos de la voz pasiva.",
+    "description": "Decipher terms of the passive voice.",
     "props": {
       "words": [
         {
           "word": "PASSIVE",
-          "hint": "Pasiva; el sujeto recibe",
+          "hint": "Passive; the subject receives",
           "category": "Passive"
         },
         {
           "word": "AGENT",
-          "hint": "Agente; quien hace la acción",
+          "hint": "Agent; who does the action",
           "category": "Passive"
         },
         {
           "word": "OBJECT",
-          "hint": "Objeto; lo que recibe",
+          "hint": "Object; what you receive",
           "category": "Passive"
         },
         {
@@ -543,7 +543,7 @@
         },
         {
           "word": "STRUCTURE",
-          "hint": "Estructura; organización",
+          "hint": "Structure; organization",
           "category": "Passive"
         },
         {

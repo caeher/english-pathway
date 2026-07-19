@@ -3,7 +3,7 @@
     "id": "m3-ch5-svg",
     "type": "svg-scene",
     "title": "Superpoderes: Can & Could",
-    "description": "Descubre qué pueden y podían hacer estas personas.",
+    "description": "Find out what these people can and could do.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -115,8 +115,8 @@
   {
     "id": "m3-ch5-flash",
     "type": "flashcard",
-    "title": "Can y Could en Acción",
-    "description": "Practica todos los usos de can y could.",
+    "title": "Can and Could in Action",
+    "description": "Practice all the uses of can and could.",
     "props": {
       "cards": [
         {
@@ -129,7 +129,7 @@
           "id": "c2",
           "front": "She / speak French (habilidad)",
           "back": "She CAN speak French.",
-          "example": "Can para habilidades presentes."
+          "example": "Can for present skills."
         },
         {
           "id": "c3",
@@ -141,13 +141,13 @@
           "id": "c4",
           "front": "___ I use your phone? (permiso)",
           "back": "CAN I use your phone?",
-          "example": "Can para pedir permiso."
+          "example": "Can to ask permission."
         },
         {
           "id": "c5",
           "front": "I / swim / when I was 5 (pasado)",
           "back": "I COULD swim when I was 5.",
-          "example": "Could = habilidad en el pasado."
+          "example": "Could = ability in the past."
         },
         {
           "id": "c6",
@@ -157,9 +157,9 @@
         },
         {
           "id": "c7",
-          "front": "___ you help me, please? (cortesía)",
+          "front": "___ you help me, please? (courtesy)",
           "back": "COULD you help me, please?",
-          "example": "Could para peticiones educadas."
+          "example": "Could for polite requests."
         },
         {
           "id": "c8",
@@ -177,13 +177,13 @@
           "id": "c10",
           "front": "Yes, I ___. / No, I ___.",
           "back": "Yes, I CAN. / No, I CAN'T.",
-          "example": "Respuestas cortas con can."
+          "example": "Short answers with can."
         },
         {
           "id": "c11",
           "front": "___ he ride a bike when he was 4?",
           "back": "COULD he ride a bike?",
-          "example": "Could para preguntas sobre el pasado."
+          "example": "Could for questions about the past."
         },
         {
           "id": "c12",
@@ -198,7 +198,7 @@
     "id": "m3-ch5-match",
     "type": "word-match",
     "title": "Can vs. Could",
-    "description": "Empareja cada situación con can o could.",
+    "description": "Match each situation with can or could.",
     "props": {
       "pairs": [
         {
@@ -240,7 +240,7 @@
     "id": "m3-ch5-sentence",
     "type": "sentence-builder",
     "title": "Expresa Habilidades",
-    "description": "Ordena las palabras para expresar habilidades y peticiones.",
+    "description": "Order the words to express abilities and requests.",
     "props": {
       "sentences": [
         {
@@ -262,7 +262,7 @@
           "correct": "She can't drive"
         },
         {
-          "prompt": "¿Puedo usar tu teléfono?:",
+          "prompt": "Can I use your phone?:",
           "words": [
             "Can",
             "I",
@@ -273,7 +273,7 @@
           "correct": "Can I use your phone?"
         },
         {
-          "prompt": "Podía leer a los 4 años:",
+          "prompt": "I could read at 4 years old:",
           "words": [
             "I",
             "could",
@@ -285,7 +285,7 @@
           "correct": "I could read at age 4"
         },
         {
-          "prompt": "¿Podrías ayudarme?:",
+          "prompt": "Could you help me?:",
           "words": [
             "Could",
             "you",
@@ -295,7 +295,7 @@
           "correct": "Could you help me?"
         },
         {
-          "prompt": "No podía nadar de niño:",
+          "prompt": "I couldn't swim as a child:",
           "words": [
             "I",
             "couldn't",
@@ -307,7 +307,7 @@
           "correct": "I couldn't swim as a child"
         },
         {
-          "prompt": "¿Sabes hablar inglés?:",
+          "prompt": "Do you know how to speak English?:",
           "words": [
             "Can",
             "you",
@@ -317,7 +317,7 @@
           "correct": "Can you speak English?"
         },
         {
-          "prompt": "Podría llover más tarde:",
+          "prompt": "It could rain later:",
           "words": [
             "It",
             "could",
@@ -333,7 +333,7 @@
     "id": "m3-ch5-quiz",
     "type": "quiz",
     "title": "Quiz: Can & Could",
-    "description": "Pon a prueba tu dominio de can y could.",
+    "description": "Test your mastery of can and could.",
     "props": {
       "questions": [
         {
@@ -367,7 +367,7 @@
             "Will"
           ],
           "correct": 1,
-          "explanation": "Could = más educado que can."
+          "explanation": "Could = more polite than can."
         },
         {
           "id": "q4",
@@ -387,7 +387,7 @@
             "Am I can"
           ],
           "correct": 1,
-          "explanation": "Can I...? para pedir permiso."
+          "explanation": "Can I...? to ask permission."
         },
         {
           "id": "q6",
@@ -449,12 +449,12 @@
     "id": "m3-ch5-scramble",
     "type": "word-scramble",
     "title": "Can, Could y Habilidades",
-    "description": "Descifra términos de capacidad y permiso.",
+    "description": "Decipher capacity and permission terms.",
     "props": {
       "words": [
         {
           "word": "ABILITY",
-          "hint": "Habilidad; capacidad de hacer algo",
+          "hint": "Ability; ability to do something",
           "category": "Modals"
         },
         {
@@ -469,12 +469,12 @@
         },
         {
           "word": "CAPABLE",
-          "hint": "Capaz; con habilidad",
+          "hint": "Able; with skill",
           "category": "Modals"
         },
         {
           "word": "POSSIBLE",
-          "hint": "Posible; que puede ocurrir",
+          "hint": "Possible; what can happen",
           "category": "Modals"
         },
         {

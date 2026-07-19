@@ -3,7 +3,7 @@
     "id": "m5-ch5-svg",
     "type": "svg-scene",
     "title": "Activa vs. Pasiva",
-    "description": "Visualiza cómo se transforma una oración de activa a pasiva.",
+    "description": "Visualize how a sentence transforms from active to passive.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -148,8 +148,8 @@
   {
     "id": "m5-ch5-flash",
     "type": "flashcard",
-    "title": "De Activa a Pasiva",
-    "description": "Transforma oraciones activas en pasivas.",
+    "title": "From Active to Passive",
+    "description": "Transform active sentences into passive ones.",
     "props": {
       "cards": [
         {
@@ -231,7 +231,7 @@
     "id": "m5-ch5-match",
     "type": "word-match",
     "title": "Tiempo → Pasiva Pattern",
-    "description": "Empareja el tiempo con su forma pasiva.",
+    "description": "Match the tense with its passive form.",
     "props": {
       "pairs": [
         {
@@ -264,12 +264,12 @@
   {
     "id": "m5-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Construye la Pasiva",
-    "description": "Ordena las palabras para formar oraciones pasivas.",
+    "title": "Build the Passive",
+    "description": "Arrange the words to form passive sentences.",
     "props": {
       "sentences": [
         {
-          "prompt": "Los coches se fabrican en Japón:",
+          "prompt": "The cars are made in Japan:",
           "words": [
             "Cars",
             "are",
@@ -290,7 +290,7 @@
           "correct": "My bike was stolen"
         },
         {
-          "prompt": "La carretera ha sido reparada:",
+          "prompt": "The road has been repaired:",
           "words": [
             "The",
             "road",
@@ -301,7 +301,7 @@
           "correct": "The road has been repaired"
         },
         {
-          "prompt": "Un puente será construido:",
+          "prompt": "A bridge will be built:",
           "words": [
             "A",
             "bridge",
@@ -312,7 +312,7 @@
           "correct": "A bridge will be built"
         },
         {
-          "prompt": "El libro fue escrito por J.K. Rowling:",
+          "prompt": "The book was written by J.K. Rowling:",
           "words": [
             "The",
             "book",
@@ -325,7 +325,7 @@
           "correct": "The book was written by J.K. Rowling"
         },
         {
-          "prompt": "Una casa está siendo construida:",
+          "prompt": "A house is being built:",
           "words": [
             "A",
             "house",
@@ -342,7 +342,7 @@
     "id": "m5-ch5-quiz",
     "type": "quiz",
     "title": "Quiz: Voz Pasiva",
-    "description": "Pon a prueba tu dominio de la voz pasiva.",
+    "description": "Test your mastery of the passive voice.",
     "props": {
       "questions": [
         {
@@ -458,37 +458,37 @@
     "id": "m5-ch5-scramble",
     "type": "word-scramble",
     "title": "Voz Pasiva",
-    "description": "Descifra términos de la voz pasiva.",
+    "description": "Decipher terms of the passive voice.",
     "props": {
       "words": [
         {
           "word": "PASSIVE",
-          "hint": "Pasiva; el sujeto recibe la acción",
+          "hint": "Passive; the subject receives the action",
           "category": "Passive Voice"
         },
         {
           "word": "ACTIVE",
-          "hint": "Activa; el sujeto realiza la acción",
+          "hint": "Active; the subject performs the action",
           "category": "Passive Voice"
         },
         {
           "word": "AGENT",
-          "hint": "Agente; quien realiza la acción",
+          "hint": "Agent; who performs the action",
           "category": "Passive Voice"
         },
         {
           "word": "OBJECT",
-          "hint": "Objeto; lo que recibe la acción",
+          "hint": "Object; what the action receives",
           "category": "Passive Voice"
         },
         {
           "word": "SUBJECT",
-          "hint": "Sujeto; tema de la oración",
+          "hint": "Subject; sentence topic",
           "category": "Passive Voice"
         },
         {
           "word": "ACTION",
-          "hint": "Acción; lo que se hace",
+          "hint": "Action; what is done",
           "category": "Passive Voice"
         }
       ]

@@ -2,8 +2,8 @@
   {
     "id": "m1-ch6-svg",
     "type": "svg-scene",
-    "title": "El Muro de las Preguntas",
-    "description": "Explora cada Wh-word y descubre qué tipo de información busca.",
+    "title": "The Wall of Questions",
+    "description": "Explore each Wh-word and find out what type of information it is looking for.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 470",
@@ -28,7 +28,7 @@
             "width": 140,
             "height": 80,
             "fill": "#fecaca",
-            "label": "WHAT ¿Qué?",
+            "label": "WHAT What?",
             "labelEn": "What is your name? What time is it? What color is this?"
           },
           {
@@ -39,7 +39,7 @@
             "width": 140,
             "height": 80,
             "fill": "#bbf7d0",
-            "label": "WHERE ¿Dónde?",
+            "label": "WHERE Where?",
             "labelEn": "Where are you from? Where is the library? Where do you live?"
           },
           {
@@ -50,7 +50,7 @@
             "width": 140,
             "height": 80,
             "fill": "#bfdbfe",
-            "label": "WHEN ¿Cuándo?",
+            "label": "WHEN When?",
             "labelEn": "When is your birthday? When is the test? When do you wake up?"
           },
           {
@@ -61,7 +61,7 @@
             "width": 140,
             "height": 80,
             "fill": "#e0e7ff",
-            "label": "WHO ¿Quién?",
+            "label": "WHO Who?",
             "labelEn": "Who is your teacher? Who is she? Who are they?"
           },
           {
@@ -72,7 +72,7 @@
             "width": 140,
             "height": 80,
             "fill": "#fef3c7",
-            "label": "WHY ¿Por qué?",
+            "label": "WHY Why?",
             "labelEn": "Why are you sad? Why is he here? Answer: Because..."
           },
           {
@@ -83,7 +83,7 @@
             "width": 140,
             "height": 80,
             "fill": "#fce7f3",
-            "label": "HOW ¿Cómo?",
+            "label": "HOW How?",
             "labelEn": "How are you? How do you spell it? How is the weather?"
           },
           {
@@ -95,7 +95,7 @@
             "height": 80,
             "fill": "#ccfbf1",
             "label": "HOW OLD",
-            "labelEn": "How old are you? — I am 20 years old."
+            "labelEn": "How old are you? —I am 20 years old."
           },
           {
             "id": "howmany",
@@ -127,7 +127,7 @@
             "width": 300,
             "height": 80,
             "fill": "#c4b5fd",
-            "label": "📐 Estructura",
+            "label": "📐 Structure",
             "labelEn": "Wh-word + BE + subject? What IS your name? Where ARE you from?"
           },
           {
@@ -138,7 +138,7 @@
             "width": 600,
             "height": 50,
             "fill": "#e0e7ff",
-            "label": "📏 How far / How long / How tall",
+            "label": "📏How far / How long / How tall",
             "labelEn": "How far is the school? How long is the movie? How tall are you?"
           }
         ]
@@ -148,86 +148,86 @@
   {
     "id": "m1-ch6-flash",
     "type": "flashcard",
-    "title": "Preguntas Esenciales",
-    "description": "Domina las preguntas más importantes del inglés básico.",
+    "title": "Essential Questions",
+    "description": "Master the most important questions in basic English.",
     "props": {
       "cards": [
         {
           "id": "w1",
           "front": "WHAT",
-          "back": "¿Qué? / ¿Cuál? — Pregunta por cosas/información",
+          "back": "That? / Which? — Ask for things/information",
           "example": "What is your name? What time is it?"
         },
         {
           "id": "w2",
           "front": "WHERE",
-          "back": "¿Dónde? — Pregunta por lugares",
+          "back": "Where? — Ask about places",
           "example": "Where are you from? Where is the school?"
         },
         {
           "id": "w3",
           "front": "WHEN",
-          "back": "¿Cuándo? — Pregunta por tiempo",
+          "back": "When? — Ask for time",
           "example": "When is your birthday? When is the class?"
         },
         {
           "id": "w4",
           "front": "WHO",
-          "back": "¿Quién? — Pregunta por personas",
+          "back": "Who? — Ask for people",
           "example": "Who is your best friend? Who are they?"
         },
         {
           "id": "w5",
           "front": "WHY",
-          "back": "¿Por qué? — Pregunta por razones",
-          "example": "Why are you late? — Because I missed the bus."
+          "back": "Because? — Ask for reasons",
+          "example": "Why are you late? —Because I missed the bus."
         },
         {
           "id": "w6",
           "front": "HOW",
-          "back": "¿Cómo? — Pregunta por manera/estado",
+          "back": "As? — Ask by way/state",
           "example": "How are you? How do you spell your name?"
         },
         {
           "id": "w7",
           "front": "HOW OLD",
-          "back": "¿Cuántos años?",
-          "example": "How old are you? — I am 25 years old."
+          "back": "How many years?",
+          "example": "How old are you? —I am 25 years old."
         },
         {
           "id": "w8",
           "front": "HOW MUCH",
-          "back": "¿Cuánto? (incontable/precio)",
+          "back": "How much? (uncountable/price)",
           "example": "How much is this? How much water do you want?"
         },
         {
           "id": "w9",
           "front": "HOW MANY",
-          "back": "¿Cuántos? (contable)",
+          "back": "How many? (accountant)",
           "example": "How many brothers do you have? How many students are there?"
         },
         {
           "id": "w10",
           "front": "HOW OFTEN",
-          "back": "¿Con qué frecuencia?",
+          "back": "How often?",
           "example": "How often do you exercise? — Twice a week."
         },
         {
           "id": "w11",
           "front": "HOW FAR",
-          "back": "¿Qué tan lejos? (distancia)",
-          "example": "How far is the airport? — It is 10 kilometers."
+          "back": "How far? (distance)",
+          "example": "How far is the airport? —It is 10 kilometers."
         },
         {
           "id": "w12",
           "front": "HOW LONG",
-          "back": "¿Cuánto tiempo? (duración)",
-          "example": "How long is the movie? — Two hours."
+          "back": "How long? (duration)",
+          "example": "How long is the movie? —Two hours."
         },
         {
           "id": "w13",
           "front": "HOW TALL",
-          "back": "¿Qué tan alto? (altura)",
+          "back": "How high? (height)",
           "example": "How tall are you? — I am 1.75 meters."
         }
       ]
@@ -236,8 +236,8 @@
   {
     "id": "m1-ch6-match",
     "type": "word-match",
-    "title": "Pregunta → Respuesta",
-    "description": "Empareja cada pregunta con su respuesta lógica.",
+    "title": "Question → Answer",
+    "description": "Match each question with its logical answer.",
     "props": {
       "pairs": [
         {
@@ -278,8 +278,8 @@
   {
     "id": "m1-ch6-dialogue-match",
     "type": "word-match",
-    "title": "Diálogo: Encuentro",
-    "description": "Ordena el diálogo emparejando cada línea con su respuesta.",
+    "title": "Dialogue: Encounter",
+    "description": "Order the dialogue by matching each line with its answer.",
     "props": {
       "pairs": [
         {
@@ -308,22 +308,22 @@
   {
     "id": "m1-ch6-sentence",
     "type": "sentence-builder",
-    "title": "Construye la Pregunta",
-    "description": "Ordena las palabras para formar preguntas correctas.",
+    "title": "Build the Question",
+    "description": "Order the words to form correct questions.",
     "props": {
       "sentences": [
         {
-          "prompt": "¿Cómo te llamas?",
+          "prompt": "What is your name?",
           "words": [
             "your",
             "What",
             "is",
-            "name?"
+            "yam?"
           ],
           "correct": "What is your name?"
         },
         {
-          "prompt": "¿De dónde eres?",
+          "prompt": "Where are you from?",
           "words": [
             "are",
             "Where",
@@ -333,7 +333,7 @@
           "correct": "Where are you from?"
         },
         {
-          "prompt": "¿Cuándo es tu cumpleaños?",
+          "prompt": "When is your birthday?",
           "words": [
             "your",
             "When",
@@ -343,17 +343,17 @@
           "correct": "When is your birthday?"
         },
         {
-          "prompt": "¿Quién es tu profesor?",
+          "prompt": "Who is your teacher?",
           "words": [
             "your",
-            "Who",
+            "who",
             "is",
             "teacher?"
           ],
           "correct": "Who is your teacher?"
         },
         {
-          "prompt": "¿Por qué estás triste?",
+          "prompt": "Why are you sad?",
           "words": [
             "are",
             "Why",
@@ -363,7 +363,7 @@
           "correct": "Why are you sad?"
         },
         {
-          "prompt": "¿Cuántos años tienes?",
+          "prompt": "How old are you?",
           "words": [
             "old",
             "How",
@@ -373,7 +373,7 @@
           "correct": "How old are you?"
         },
         {
-          "prompt": "¿Cuánto cuesta esto?",
+          "prompt": "How much does this cost?",
           "words": [
             "much",
             "How",
@@ -383,17 +383,17 @@
           "correct": "How much is this?"
         },
         {
-          "prompt": "¿Eres estudiante?",
+          "prompt": "Are you a student?",
           "words": [
             "you",
             "Are",
-            "a",
+            "to",
             "student?"
           ],
           "correct": "Are you a student?"
         },
         {
-          "prompt": "¿Qué tan lejos está la escuela?:",
+          "prompt": "How far is the school?:",
           "words": [
             "far",
             "How",
@@ -404,7 +404,7 @@
           "correct": "How far is the school?"
         },
         {
-          "prompt": "¿Qué tan alto eres?:",
+          "prompt": "How tall are you?:",
           "words": [
             "tall",
             "How",
@@ -419,8 +419,8 @@
   {
     "id": "m1-ch6-quiz",
     "type": "quiz",
-    "title": "Quiz Final: Wh-Questions",
-    "description": "Demuestra tu dominio de todas las preguntas en inglés.",
+    "title": "Final Quiz: Wh-Questions",
+    "description": "Demonstrate your mastery of all questions in English.",
     "props": {
       "questions": [
         {
@@ -431,7 +431,7 @@
             "What",
             "When",
             "Where",
-            "Who"
+            "who"
           ],
           "correct": 2,
           "explanation": "WHERE asks about places."
@@ -460,7 +460,7 @@
           "id": "q4",
           "type": "fill-blank",
           "question": "___ is she? She is my mother. (asking about a person)",
-          "correct": "Who",
+          "correct": "who",
           "explanation": "WHO asks about people."
         },
         {
@@ -492,7 +492,7 @@
         {
           "id": "q7",
           "type": "fill-blank",
-          "question": "___ is the test? It is on Friday. (asking about time)",
+          "question": "___ is the test? It's on Friday. (asking about time)",
           "correct": "When",
           "explanation": "WHEN asks about time."
         },
@@ -532,7 +532,7 @@
         {
           "id": "q11",
           "type": "multiple-choice",
-          "question": "\"___ is the airport?\" — Asking about distance.",
+          "question": "\"___ is the airport?\" —Asking about distance.",
           "options": [
             "How much",
             "How far",
@@ -561,38 +561,38 @@
   {
     "id": "m1-ch6-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Preguntas",
-    "description": "Descifra palabras clave de las Wh-questions.",
+    "title": "Vocabulary of Questions",
+    "description": "Decipher key words from the Wh-questions.",
     "props": {
       "words": [
         {
           "word": "WHAT",
-          "hint": "Qué; pregunta por cosas o información",
+          "hint": "That; ask for things or information",
           "category": "Questions"
         },
         {
           "word": "WHERE",
-          "hint": "Dónde; pregunta por lugar",
+          "hint": "Where; ask for place",
           "category": "Questions"
         },
         {
           "word": "WHEN",
-          "hint": "Cuándo; pregunta por tiempo",
+          "hint": "When; ask for time",
           "category": "Questions"
         },
         {
           "word": "WHICH",
-          "hint": "Cuál; pregunta por elección",
+          "hint": "Which; question by choice",
           "category": "Questions"
         },
         {
           "word": "QUESTION",
-          "hint": "Pregunta; oración interrogativa",
+          "hint": "Ask; interrogative sentence",
           "category": "Questions"
         },
         {
           "word": "ANSWER",
-          "hint": "Respuesta; lo que se dice para responder",
+          "hint": "Answer; what is said to respond",
           "category": "Questions"
         }
       ]

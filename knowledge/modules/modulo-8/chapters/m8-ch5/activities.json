@@ -3,7 +3,7 @@
     "id": "m8-ch5-svg",
     "type": "svg-scene",
     "title": "Elige tu Aventura Conversacional",
-    "description": "Visita diferentes escenarios y practica las frases que se usan en cada lugar.",
+    "description": "Visit different settings and practice the phrases used in each place.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 350",
@@ -71,8 +71,8 @@
   {
     "id": "m8-ch5-quiz",
     "type": "quiz",
-    "title": "Quiz Conversacional — Elige la Mejor Respuesta",
-    "description": "En cada situación, elige la respuesta más natural y apropiada.",
+    "title": "Conversational Quiz — Choose the Best Answer",
+    "description": "In each situation, choose the most natural and appropriate response.",
     "props": {
       "questions": [
         {
@@ -200,7 +200,7 @@
     "id": "m8-ch5-sentence",
     "type": "sentence-builder",
     "title": "Construye tu Respuesta",
-    "description": "El mesero o vendedor te habla — ¡ordena las palabras para responder!",
+    "description": "The waiter or salesperson speaks to you — order the words to respond!",
     "props": {
       "sentences": [
         {
@@ -334,7 +334,7 @@
     "id": "m8-ch5-flash",
     "type": "flashcard",
     "title": "Expresiones Conversacionales",
-    "description": "Aprende expresiones útiles organizadas por función comunicativa.",
+    "description": "Learn useful expressions organized by communicative function.",
     "props": {
       "cards": [
         {
@@ -416,7 +416,7 @@
     "id": "m8-ch5-match",
     "type": "word-match",
     "title": "Pregunta → Respuesta",
-    "description": "Empareja cada pregunta con su respuesta más apropiada.",
+    "description": "Match each question with its most appropriate answer.",
     "props": {
       "pairs": [
         {
@@ -453,8 +453,8 @@
   {
     "id": "m8-ch5-scramble",
     "type": "word-scramble",
-    "title": "Tu Primer Diálogo",
-    "description": "Descifra palabras clave de conversaciones.",
+    "title": "Your First Dialogue",
+    "description": "Decipher key words from conversations.",
     "props": {
       "words": [
         {
@@ -464,12 +464,12 @@
         },
         {
           "word": "GOODBYE",
-          "hint": "Adiós; despedida",
+          "hint": "Bye bye; farewell",
           "category": "Dialogue"
         },
         {
           "word": "NAME",
-          "hint": "Nombre; cómo te llamas",
+          "hint": "Name; what is your name",
           "category": "Dialogue"
         },
         {
@@ -484,7 +484,7 @@
         },
         {
           "word": "TODAY",
-          "hint": "Hoy; este día",
+          "hint": "Today; this day",
           "category": "Dialogue"
         }
       ]

@@ -2,8 +2,8 @@
   {
     "id": "m5-ch3-svg",
     "type": "svg-scene",
-    "title": "Línea Temporal del Pasado",
-    "description": "Visualiza cómo el pasado perfecto se ubica ANTES del pasado simple.",
+    "title": "Timeline of the Past",
+    "description": "Visualize how the past perfect is placed BEFORE the past simple.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -62,7 +62,7 @@
             "height": 55,
             "fill": "#bfdbfe",
             "label": "✅ By the time we got there...",
-            "labelEn": "...the concert HAD STARTED. (empezó ANTES)"
+            "labelEn": "...the concert HAD STARTED. (started BEFORE)"
           },
           {
             "id": "conn",
@@ -104,8 +104,8 @@
   {
     "id": "m5-ch3-flash",
     "type": "flashcard",
-    "title": "Pasado Perfecto: Conjugación",
-    "description": "Practica formando el pasado perfecto correctamente.",
+    "title": "Past Perfect: Conjugation",
+    "description": "Practice forming the past perfect correctly.",
     "props": {
       "cards": [
         {
@@ -163,7 +163,7 @@
     "id": "m5-ch3-match",
     "type": "word-match",
     "title": "Conector → Ejemplo",
-    "description": "Empareja cada conector con su ejemplo correcto.",
+    "description": "Match each connector with its correct example.",
     "props": {
       "pairs": [
         {
@@ -196,12 +196,12 @@
   {
     "id": "m5-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Secuencia de Eventos",
-    "description": "Ordena para mostrar qué pasó primero.",
+    "title": "Sequence of Events",
+    "description": "Sort to show what happened first.",
     "props": {
       "sentences": [
         {
-          "prompt": "Cuando llegué, ella ya se había ido:",
+          "prompt": "When I arrived, she was already gone:",
           "words": [
             "When",
             "I",
@@ -214,7 +214,7 @@
           "correct": "When I arrived, she had already left"
         },
         {
-          "prompt": "Habían terminado antes de que la película empezara:",
+          "prompt": "They were finished before the movie started:",
           "words": [
             "They",
             "had",
@@ -227,7 +227,7 @@
           "correct": "They had finished before the movie started"
         },
         {
-          "prompt": "Nunca había visto nieve antes:",
+          "prompt": "I've never seen snow before:",
           "words": [
             "I",
             "had",
@@ -239,7 +239,7 @@
           "correct": "I had never seen snow before"
         },
         {
-          "prompt": "Para cuando llegamos, el tren se había ido:",
+          "prompt": "By the time we arrived, the train had left:",
           "words": [
             "By",
             "the",
@@ -254,7 +254,7 @@
           "correct": "By the time we arrived, the train had left"
         },
         {
-          "prompt": "No había desayunado, así que tenía hambre:",
+          "prompt": "I hadn't had breakfast, so I was hungry:",
           "words": [
             "She",
             "hadn't",
@@ -274,7 +274,7 @@
     "id": "m5-ch3-quiz",
     "type": "quiz",
     "title": "Quiz: Pasado Perfecto",
-    "description": "Demuestra tu dominio del Past Perfect.",
+    "description": "Demonstrate your mastery of the Past Perfect.",
     "props": {
       "questions": [
         {
@@ -370,17 +370,17 @@
     "id": "m5-ch3-scramble",
     "type": "word-scramble",
     "title": "Tiempos Perfectos",
-    "description": "Descifra palabras de pasados y futuros perfectos.",
+    "description": "Unscramble past and future perfect words.",
     "props": {
       "words": [
         {
           "word": "BEFORE",
-          "hint": "Antes de; anterior a",
+          "hint": "Before; prior to",
           "category": "Perfect Tenses"
         },
         {
           "word": "AFTER",
-          "hint": "Después de; posterior a",
+          "hint": "After; after",
           "category": "Perfect Tenses"
         },
         {

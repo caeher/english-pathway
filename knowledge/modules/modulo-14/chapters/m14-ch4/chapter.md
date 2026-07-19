@@ -1,70 +1,70 @@
 ---
 id: m14-ch4
-moduleId: modulo-14
+moduleId: module-14
 number: 4
-title: Recursos para el Autoaprendizaje
-subtitle: Apps, plataformas y comunidades para seguir aprendiendo
+title: Resources for Self-Learning
+subtitle: Apps, platforms and communities to continue learning
 icon: 🧭
 color: "#10b981"
 objectives:
-  - Diseñar un plan de autoaprendizaje continuo personalizado
-  - Evaluar y seleccionar recursos según nivel, habilidad y presupuesto
-  - Establecer metas SMART para el aprendizaje del inglés
-  - Crear una rutina semanal sostenible de práctica
+  - Design a personalized continuous self-learning plan
+  - Evaluate and select resources according to level, skill and budget
+  - Set SMART goals for learning English
+  - Create a sustainable weekly practice routine
 xpReward: 300
 ---
 
-## Autoaprendizaje — De estudiante dependiente a aprendiz autónomo
+## Self-learning — From dependent student to autonomous learner
 
-El objetivo final de cualquier curso es que **no necesites más el curso**. Este capítulo te da las herramientas para seguir aprendiendo de por vida.
+The ultimate goal of any course is for you to **no longer need the course**. This chapter gives you the tools to continue learning for life.
 
-### Las 5 Categorías de Recursos
+### The 5 Categories of Resources
 
-| Categoría | Ejemplos | Habilidad principal |
+| Category | Ejemplos | Habilidad principal |
 |---|---|---|
-| 📱 **Apps de práctica** | Duolingo, Anki, Memrise, HelloTalk | Vocabulario, gramática |
+| 📱 **Practice apps** | Duolingo, Anki, Memrise, HelloTalk | Vocabulary, grammar |
 | 🎧 **Input comprensible** | 6 Minute English (BBC), TED Talks, All Ears English | Listening, vocabulario |
 | 📖 **Lectura graduada** | News in Levels, graded readers, Breaking News English | Reading |
 | 👥 **Comunidades** | Reddit r/EnglishLearning, Discord, iTalki | Speaking, writing |
-| 🏆 **Certificaciones** | IELTS, TOEFL, Cambridge (FCE, CAE, CPE) | Todas las habilidades |
+| 🏆 **Certificaciones** | IELTS, TOEFL, Cambridge (FCE, CAE, CPE) | All skills |
 
-### Cómo Evaluar un Recurso
+### How to Evaluate a Resource
 
-Antes de invertir tiempo en un recurso, pregúntate:
+Before investing time in a resource, ask yourself:
 
-| Pregunta | Por qué importa |
+| Pregunta | Why it matters |
 |---|---|
-| ¿Es apropiado para mi nivel? | Un recurso demasiado fácil o difícil no sirve |
-| ¿Lo usaré regularmente? | La consistencia es más importante que la intensidad |
-| ¿Provee retroalimentación? | Sin feedback, no sabes si mejoras |
-| ¿Cubre lo que necesito? | Enfócate en tus áreas débiles |
-| ¿Vale la inversión? | Muchos recursos gratuitos son excelentes |
+| Is it appropriate for my level? | A resource that is too easy or difficult is useless |
+| Will I use it regularly? | Consistency is more important than intensity |
+| Do you provide feedback? | Without feedback, you don't know if you improve |
+| Does it cover what I need? | Focus on your weak areas |
+| Is it worth the investment? | Many free resources are excellent |
 
 ### Rutina Semanal Modelo
 
-| Día | Tipo de práctica | Ejemplo |
+| Day | Type of practice | Ejemplo |
 |---|---|---|
-| Lun/Mié/Vie | Práctica activa (hablar, escribir) | iTalki, escribir en journal |
-| Mar/Jue | Input pasivo (escuchar, leer) | Podcast, serie en inglés, noticias |
-| Fin de semana | Comunidad + revisión | Reddit, Discord, revisar la semana |
+| Mon/Wed/Fri | Active practice (speaking, writing) | iTalki, writing in journal |
+| Mar/Jue | Input pasivo (escuchar, leer) | Podcast, English series, news |
+| Weekend | Community + review | Reddit, Discord, review the week |
 
-### Metas SMART para el Inglés
+### SMART Goals for English
 
 | Letra | Significado | Ejemplo |
 |---|---|---|
-| **S** — Specific | Específica | "Mejorar mi speaking" → "Tener conversaciones en iTalki" |
-| **M** — Measurable | Medible | "3 conversaciones de 30 minutos por semana" |
-| **A** — Achievable | Alcanzable | "30 minutos es realista con mi horario" |
-| **R** — Relevant | Relevante | "Speaking es mi área más débil" |
-| **T** — Time-bound | Con fecha límite | "Durante los próximos 2 meses" |
+| **S** — Specific | Specific | "Improve my speaking" → "Have conversations on iTalki" |
+| **M** — Measurable | Medible | "3 30-minute conversations per week" |
+| **A** — Achievable | Alcanzable | "30 minutes is realistic with my schedule" |
+| **R** — Relevant | Relevante | "Speaking is my weakest area" |
+| **T** — Time-bound | With deadline | "For the next 2 months" |
 
 **Meta SMART completa:** *"I will have three 30-minute conversations per week on iTalki for two months to improve my speaking fluency."*
 
-### Medir el Progreso sin Profesor
+### Measure Progress without a Teacher
 
-1. 📓 Llevar un **learning journal** en inglés
-2. 🎙️ **Grabarte** cada mes y comparar con grabaciones anteriores
-3. 📊 Tomar **tests de nivel** periódicos
+1. 📓 Keep a **learning journal** in English
+2. 🎙️ **Record yourself** every month and compare with previous recordings
+3. 📊 Take periodic **level tests**
 4. 🎯 Establecer **metas SMART** y revisarlas mensualmente
 
-> 💡 **Tip:** La mejor app es la que USAS. No busques la perfecta — busca la que se adapte a tu vida y la uses consistentemente.
+> 💡 **Tip:** The best app is the one you USE. Don't look for the perfect one — look for the one that fits your life and you use consistently.

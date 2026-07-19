@@ -2,8 +2,8 @@
   {
     "id": "m9-ch5-svg",
     "type": "svg-scene",
-    "title": "Galería de Personajes",
-    "description": "Observa cada personaje y descubre cómo describirlo en inglés.",
+    "title": "Character Gallery",
+    "description": "Observe each character and discover how to describe them in English.",
     "props": {
       "scene": {
         "viewBox": "0 0 650 400",
@@ -17,7 +17,7 @@
             "width": 40,
             "height": 70,
             "fill": "#f87171",
-            "label": "Chica con lentes",
+            "label": "girl with glasses",
             "labelEn": "She is a young, tall girl with glasses"
           },
           {
@@ -59,7 +59,7 @@
             "width": 35,
             "height": 55,
             "fill": "#a78bfa",
-            "label": "Niño pequeño",
+            "label": "Toddler",
             "labelEn": "He is a small, funny boy"
           },
           {
@@ -187,8 +187,8 @@
   {
     "id": "m9-ch5-quiz",
     "type": "quiz",
-    "title": "¿Quién es Quién?",
-    "description": "Lee la descripción y elige la respuesta correcta. ¡Estilo Guess Who!",
+    "title": "Who is Who?",
+    "description": "Read the description and choose the correct answer. Guess Who style!",
     "props": {
       "questions": [
         {
@@ -301,7 +301,7 @@
             "Shape"
           ],
           "correct": 2,
-          "explanation": "Wooden = de madera. It describes the material."
+          "explanation": "Wooden = of wood. It describes the material."
         }
       ]
     }
@@ -309,12 +309,12 @@
   {
     "id": "m9-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Ordena los Adjetivos",
-    "description": "Coloca los adjetivos en el orden correcto según la regla OSASCOMP.",
+    "title": "Order the Adjectives",
+    "description": "Place the adjectives in the correct order according to the OSASCOMP rule.",
     "props": {
       "sentences": [
         {
-          "prompt": "Describe el carro:",
+          "prompt": "Describe the car:",
           "words": [
             "red",
             "a",
@@ -325,7 +325,7 @@
           "correct": "a beautiful big red car"
         },
         {
-          "prompt": "Describe la casa:",
+          "prompt": "Describe the house:",
           "words": [
             "house",
             "a",
@@ -336,7 +336,7 @@
           "correct": "a lovely old French house"
         },
         {
-          "prompt": "Describe la mesa:",
+          "prompt": "Describe the table:",
           "words": [
             "wooden",
             "table",
@@ -347,7 +347,7 @@
           "correct": "a small round wooden table"
         },
         {
-          "prompt": "Describe la bolsa:",
+          "prompt": "Describe the bag:",
           "words": [
             "Italian",
             "a",
@@ -358,7 +358,7 @@
           "correct": "a beautiful Italian leather bag"
         },
         {
-          "prompt": "Describe a la persona:",
+          "prompt": "Describe the person:",
           "words": [
             "is",
             "She",
@@ -369,7 +369,7 @@
           "correct": "She is tall and young"
         },
         {
-          "prompt": "Describe el libro:",
+          "prompt": "Describe the book:",
           "words": [
             "old",
             "an",
@@ -379,7 +379,7 @@
           "correct": "an interesting old book"
         },
         {
-          "prompt": "Describe la flor:",
+          "prompt": "Describe the flower:",
           "words": [
             "flower",
             "red",
@@ -401,7 +401,7 @@
           "correct": "The cat is small black"
         },
         {
-          "prompt": "Describe la camisa:",
+          "prompt": "Describe the shirt:",
           "words": [
             "cotton",
             "blue",
@@ -424,7 +424,7 @@
           "correct": "He is a friendly old man"
         },
         {
-          "prompt": "Describe el edificio:",
+          "prompt": "Describe the building:",
           "words": [
             "building",
             "modern",
@@ -435,7 +435,7 @@
           "correct": "a tall modern glass building"
         },
         {
-          "prompt": "Describe el perro:",
+          "prompt": "Describe the dog:",
           "words": [
             "The",
             "dog",
@@ -451,8 +451,8 @@
   {
     "id": "m9-ch5-match",
     "type": "word-match",
-    "title": "Adjetivo → Categoría",
-    "description": "Clasifica cada adjetivo en su categoría correcta.",
+    "title": "Adjective → Category",
+    "description": "Classify each adjective in its correct category.",
     "props": {
       "pairs": [
         {
@@ -502,7 +502,7 @@
     "id": "m9-ch5-flash",
     "type": "flashcard",
     "title": "Adjetivos y sus Opuestos",
-    "description": "Aprende pares de adjetivos opuestos con ejemplos.",
+    "description": "Learn pairs of opposite adjectives with examples.",
     "props": {
       "cards": [
         {
@@ -602,12 +602,12 @@
     "id": "m9-ch5-scramble",
     "type": "word-scramble",
     "title": "Adjetivos Descriptivos",
-    "description": "Descifra adjetivos que usas para describir personas y objetos.",
+    "description": "Decipher adjectives that you use to describe people and objects.",
     "props": {
       "words": [
         {
           "word": "SMALL",
-          "hint": "Pequeño; opuesto de big",
+          "hint": "Little; opposite of big",
           "category": "Adjectives"
         },
         {
@@ -617,7 +617,7 @@
         },
         {
           "word": "TALL",
-          "hint": "Alto (personas); opuesto de short",
+          "hint": "High (people); opposite of short",
           "category": "Adjectives"
         },
         {
