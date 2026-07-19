@@ -10,7 +10,7 @@ import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import { useTutorSession } from './hooks/useTutorSession'
 import type { MicrophoneState, SessionMode } from './session-types'
 import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
-import { Button } from '@/components/ui/button'
+import { Button, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { showActivity } from '@/lib/learn/client-tools'
 import EngagementSummary from '@/components/engagement/EngagementSummary'
@@ -83,7 +83,7 @@ function TutorControls({
           </div>
 
           <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
-            {!active && <section className="rounded-2xl border border-(--border-primary) bg-(--bg-card) p-4 sm:p-5" aria-labelledby="session-preflight-heading">
+            {!active && <Surface as="section" padding="md" className="sm:p-5" aria-labelledby="session-preflight-heading">
               <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p>
               <h2 id="session-preflight-heading" className="mt-1 font-display text-xl font-black text-(--text-primary)">Choose your session mode</h2>
               <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">Voice mode lets you speak with the tutor. Text mode works without a microphone or audio permission.</p>
@@ -115,7 +115,7 @@ function TutorControls({
                 {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
                 {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
               </Button>
-            </section>}
+            </Surface>}
 
             {active && <section className="space-y-4" aria-labelledby="active-session-heading">
               <div className="flex flex-wrap items-center justify-between gap-3">

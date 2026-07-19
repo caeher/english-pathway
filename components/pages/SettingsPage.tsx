@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button, FeedbackCard, Surface } from '@/components/ui'
 import { Label } from '@/components/ui/label'
 import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
@@ -93,11 +93,11 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
         <p className="mt-1 text-(--text-secondary)">Manage your profile, learning preferences, and account controls.</p>
       </div>
 
-      {error && <p role="alert" aria-live="polite" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">{error}</p>}
-      {success && <p role="status" aria-live="polite" className="rounded-xl bg-(--success-soft) px-4 py-3 text-sm text-(--success)">Settings saved successfully.</p>}
+      {error && <FeedbackCard variant="error" title="Could not save settings">{error}</FeedbackCard>}
+      {success && <FeedbackCard variant="success">Settings saved successfully.</FeedbackCard>}
       {dirty && <p role="status" className="text-sm text-(--text-muted)">You have unsaved changes.</p>}
 
-      <section className="space-y-5 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="profile-heading">
+      <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="profile-heading">
         <div>
           <h2 id="profile-heading" className="font-display font-bold text-(--text-primary)">Profile</h2>
           <p className="mt-1 text-sm text-(--text-secondary)">This information identifies your learning account.</p>
@@ -111,9 +111,9 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
           <input id="email" value={email ?? 'Unavailable'} readOnly aria-describedby="email-help" className="mt-1 w-full rounded-xl border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-muted)" />
           <p id="email-help" className="mt-1 text-xs text-(--text-muted)">Email is managed by your authentication provider.</p>
         </div>
-      </section>
+      </Surface>
 
-      <section className="space-y-5 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="learning-heading">
+      <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="learning-heading">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 id="learning-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><Sparkles className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Learning preferences</h2>
@@ -134,9 +134,9 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
             <option value="20">20 minutes</option>
           </select>
         </div>
-      </section>
+      </Surface>
 
-      <section className="space-y-5 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="voice-heading">
+      <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="voice-heading">
         <div>
           <h2 id="voice-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><Volume2 className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Voice and accessibility</h2>
           <p className="mt-1 text-sm text-(--text-secondary)">Choose the mode your tutor should prioritize. You can still switch modes in a lesson.</p>
@@ -154,26 +154,26 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
           ))}
         </fieldset>
         <p className="text-xs text-(--text-muted)">Reduced motion follows your device&apos;s accessibility preference.</p>
-      </section>
+      </Surface>
 
-      <section className="space-y-4 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="security-heading">
+      <Surface as="section" padding="lg" className="space-y-4" aria-labelledby="security-heading">
         <h2 id="security-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><ShieldCheck className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Security</h2>
         <p className="text-sm text-(--text-secondary)">Use the provider-managed recovery flow to change your password.</p>
         <div className="flex flex-wrap gap-3">
           <Button asChild variant="outline"><Link href="/forgot-password">Reset password</Link></Button>
           <form action={signOutAction}><Button type="submit" variant="outline"><LogOut className="h-4 w-4" aria-hidden="true" /> Sign out</Button></form>
         </div>
-      </section>
+      </Surface>
 
-      <section className="space-y-4 rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6" aria-labelledby="privacy-heading">
+      <Surface as="section" padding="lg" className="space-y-4" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><Database className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Privacy and data</h2>
         <p className="text-sm leading-relaxed text-(--text-secondary)">English Pathway uses your profile preferences and learning activity to personalize sessions and show progress. Audio and full transcripts are not stored as tutor memory.</p>
         <div className="flex flex-wrap gap-3"><Button type="button" variant="outline" onClick={() => void exportTutorData()} disabled={dataPending}><Download className="h-4 w-4" aria-hidden="true" /> Export tutor data</Button><Button type="button" variant="outline" onClick={() => void deleteTutorData()} disabled={dataPending}><Trash2 className="h-4 w-4" aria-hidden="true" /> Delete tutor memory</Button><Button type="button" variant="ghost" onClick={clearCookieConsent}>Change analytics choice</Button></div>
         {dataMessage && <p role="status" className="text-sm text-(--text-secondary)">{dataMessage}</p>}
         <div className="flex flex-wrap gap-4 text-sm font-bold text-(--accent)"><Link href="/legal/privacy">Privacy policy</Link><Link href="/legal/terms">Terms</Link><Link href="/legal/cookies">Cookies</Link></div>
-      </section>
+      </Surface>
 
-      <Button onClick={handleSave} disabled={pending || !dirty} className="font-display font-bold">{pending ? 'Saving...' : 'Save changes'}</Button>
+      <Button onClick={handleSave} loading={pending} loadingLabel="Saving..." disabled={!dirty} className="font-display font-bold">Save changes</Button>
     </div>
   )
 }
