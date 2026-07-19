@@ -1,0 +1,7 @@
+{
+  "criticalRoutes": {
+    "public": { "lcpMs": 2500, "inpMs": 200, "cls": 0.1, "clientJsKb": 220, "cssKb": 80, "fontKb": 180, "imageKb": 512 },
+    "authenticated": { "lcpMs": 3000, "inpMs": 200, "cls": 0.1, "clientJsKb": 320, "cssKb": 100, "fontKb": 180, "imageKb": 512 }
+  },
+  "staticAssets": { "maxIndividualImageKb": 512, "maxTotalImageKb": 1100 }
+}
