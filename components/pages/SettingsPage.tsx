@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type } from 'lucide-react'
-import { Button, FeedbackCard, Surface } from '@/components/ui'
+import { Button, InlineError, SuccessState, Surface } from '@/components/ui'
 import { Label } from '@/components/ui/label'
 import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
@@ -93,8 +93,8 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
         <p className="mt-1 text-(--text-secondary)">Manage your profile, learning preferences, and account controls.</p>
       </div>
 
-      {error && <FeedbackCard variant="error" title="Could not save settings">{error}</FeedbackCard>}
-      {success && <FeedbackCard variant="success">Settings saved successfully.</FeedbackCard>}
+      {error && <InlineError message={error} onRetry={() => void handleSave()} />}
+      {success && <SuccessState title="Settings saved" description="Your preferences will be used in your next learning session." />}
       {dirty && <p role="status" className="text-sm text-(--text-muted)">You have unsaved changes.</p>}
 
       <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="profile-heading">
