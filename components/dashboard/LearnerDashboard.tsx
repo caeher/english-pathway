@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, CheckCircle2, Flame, RotateCcw, Sparkles, Trophy 
 import { getLevelProgress } from '@/lib/engagement/xp'
 import { learnHref } from '@/lib/curriculum/href'
 import { Badge, SectionHeader, Surface } from '@/components/ui'
+import { getLearningContinuation } from '@/lib/learning/continuation'
 
 interface DashboardData {
   profile: { full_name: string | null; daily_goal_minutes: number | null } | null
@@ -21,13 +22,14 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
   const streak = data.engagement?.current_streak ?? 0
   const dailyPct = data.daily.goalMinutes > 0 ? Math.min(100, Math.round((data.daily.minutes / data.daily.goalMinutes) * 100)) : 0
   const firstName = data.profile?.full_name?.split(' ')[0] ?? 'Learner'
-  const continueHref = data.lastChapter
-    ? learnHref({
+  const resume = data.lastChapter
+    ? {
       moduleId: data.lastChapter.module.id,
       chapterId: data.lastChapter.chapter.id,
-      activityId: data.progress?.last_activity_id,
-    })
-    : '/learn'
+      activityId: data.progress?.last_activity_id ?? null,
+    }
+    : null
+  const continuation = getLearningContinuation({ dueReviews: data.dueReviews, resume, completedChapters: data.completedChapters, totalChapters: 0 })
 
   return (
     <div className="mx-auto max-w-6xl space-y-6">
@@ -65,8 +67,8 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
       <section className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
         <Surface padding="lg">
           <div className="flex flex-wrap items-start justify-between gap-4">
-            <div><p className="text-sm font-bold text-(--accent)">Continue learning</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">{data.lastChapter?.chapter.title ?? 'Start your first lesson'}</h2><p className="mt-1 text-sm text-(--text-secondary)">{data.lastChapter?.module.title ?? 'Practice with your AI tutor and interactive activities.'}</p></div>
-            <Link href={continueHref} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">Learn <ArrowRight className="h-4 w-4" /></Link>
+            <div><p className="text-sm font-bold text-(--accent)">{continuation.kind === 'review' ? 'Review due' : 'Continue learning'}</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">{continuation.title}</h2><p className="mt-1 text-sm text-(--text-secondary)">{continuation.description}</p></div>
+            <Link href={continuation.href} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">{continuation.label} <ArrowRight className="h-4 w-4" /></Link>
           </div>
           {data.lastChapter && <p className="mt-6 flex items-center gap-2 text-xs text-(--text-muted)"><BookOpen className="h-4 w-4" /> Your latest chapter is ready to resume.</p>}
         </Surface>

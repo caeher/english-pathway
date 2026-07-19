@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Check, ChevronRight, Sparkles } from 'lucide-react'
+import Link from 'next/link'
 import { Button, EmptyState, InlineError, LoadingState } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import type { SrsQueueItem } from '@/lib/srs/types'
@@ -69,7 +70,7 @@ export default function ReviewSession() {
   }
 
   if (!item) {
-    return <EmptyState className="mt-12 px-6" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." />
+    return <EmptyState className="mt-12 px-6" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
   }
 
   return (
