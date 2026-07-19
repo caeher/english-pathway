@@ -41,6 +41,9 @@ jobs:
       - name: Check feature boundaries
         run: pnpm architecture:check
 
+      - name: Validate activity content
+        run: pnpm activities:validate
+
       - name: Run critical tests
         run: pnpm test:critical
 

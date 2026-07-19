@@ -116,6 +116,7 @@ pnpm db:env
 | `pnpm start` | Servidor de producción |
 | `pnpm lint` | ESLint |
 | `pnpm architecture:check` | Verifica APIs públicas y límites de features |
+| `pnpm activities:validate` | Valida schemas y referencias de las actividades del currículo |
 | `pnpm db:env` | Genera `.env.local` desde el stack Supabase local |
 | `pnpm db:start` | Levanta stack Supabase local (Docker) |
 | `pnpm db:stop` | Detiene stack Supabase local |

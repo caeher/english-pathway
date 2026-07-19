@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import type { ChapterActivity } from '@/types'
 import {
   Quiz,
@@ -13,8 +14,7 @@ import {
   Pronunciation,
   DragDrop,
 } from '@/components/games'
-import type { ActivityTypeKey } from '@/lib/content/schemas'
-import { validateActivityProps } from '@/lib/content/schemas'
+import { activityRegistry, type ActivityTypeKey } from '@/features/activities'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import type {
   DictationItem,
@@ -45,125 +45,50 @@ interface ActivityRendererProps {
   onComplete?: (result: ActivityCompleteResult) => void
 }
 
-function propsForType(type: ActivityTypeKey, props: Record<string, unknown>) {
-  const result = validateActivityProps(type, props)
-  if (!result.success) {
-    console.error(`Invalid props for activity type ${type}`, result.error)
-    return null
-  }
-  return result.data
+type GameResult = Record<string, unknown> & { score: number; total: number; scorePercent?: number }
+type RenderActivity = (props: unknown, onComplete: (result: GameResult) => void) => ReactNode
+
+const renderers: Record<ActivityTypeKey, RenderActivity> = {
+  quiz: (props, onComplete) => <Quiz questions={(props as { questions: QuizQuestion[] }).questions} onComplete={(result) => onComplete({ ...result, scorePercent: result.scorePercent })} />,
+  flashcard: (props, onComplete) => <Flashcard cards={(props as { cards: FlashcardData[] }).cards} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  'word-match': (props, onComplete) => <WordMatch pairs={(props as { pairs: MatchPair[] }).pairs} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  'sentence-builder': (props, onComplete) => <SentenceBuilder sentences={(props as { sentences: SentenceChallenge[] }).sentences} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  'svg-scene': (props, onComplete) => <SVGInteractive scene={(props as { scene: SVGScene }).scene} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  'word-scramble': (props, onComplete) => <WordScramble words={(props as { words: WordScrambleItem[] }).words} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  listening: (props, onComplete) => <Listening items={(props as { items: ListeningItem[] }).items} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  dictation: (props, onComplete) => <Dictation items={(props as { items: DictationItem[] }).items} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  pronunciation: (props, onComplete) => <Pronunciation items={(props as { items: PronunciationItem[] }).items} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
+  'drag-drop': (props, onComplete) => {
+    const data = props as { mode: 'match' | 'sentence'; pairs?: MatchPair[]; sentences?: SentenceChallenge[] }
+    return <DragDrop mode={data.mode} pairs={data.pairs} sentences={data.sentences} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />
+  },
 }
 
 export default function ActivityRenderer({ activity, onComplete }: ActivityRendererProps) {
-  const validated = propsForType(activity.type as ActivityTypeKey, activity.props)
-  if (!validated) {
-    return (
-      <p className="text-sm text-(--text-muted)">
-        This activity could not be loaded. Invalid configuration.
-      </p>
-    )
+  const type = activity.type as ActivityTypeKey
+  const definition = activityRegistry[type]
+  if (!definition) {
+    return <p className="text-sm text-(--text-muted)">Unsupported activity type: {activity.type}</p>
   }
 
-  const handleComplete = (result: Record<string, unknown> & { score: number; total: number }) => {
-    const scorePercent =
-      typeof result.scorePercent === 'number'
-        ? result.scorePercent
-        : Math.round((result.score / result.total) * 100)
+  const validated = definition.schema.safeParse(activity.props)
+  if (!validated.success) {
+    console.error(`Invalid props for activity ${activity.id} (${activity.type})`, validated.error)
+    return <p className="text-sm text-(--text-muted)">This activity could not be loaded. Invalid configuration.</p>
+  }
+
+  const handleComplete = (result: GameResult) => {
+    const evaluation = definition.evaluator(result)
     onComplete?.({
       activityId: activity.id,
       activityType: activity.type,
       score: result.score,
       total: result.total,
-      scorePercent,
+      scorePercent: evaluation.scorePercent,
       details: result,
-      reviewContentRefs: scorePercent < 100 ? getReviewContentRefs(activity) : [],
+      reviewContentRefs: evaluation.scorePercent < 100 ? getReviewContentRefs(activity) : [],
     })
   }
 
-  switch (activity.type) {
-    case 'quiz':
-      return (
-        <Quiz
-          questions={(validated as { questions: QuizQuestion[] }).questions}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.scorePercent })}
-        />
-      )
-    case 'flashcard':
-      return (
-        <Flashcard
-          cards={(validated as { cards: FlashcardData[] }).cards}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'word-match':
-      return (
-        <WordMatch
-          pairs={(validated as { pairs: MatchPair[] }).pairs}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'sentence-builder':
-      return (
-        <SentenceBuilder
-          sentences={(validated as { sentences: SentenceChallenge[] }).sentences}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'svg-scene':
-      return (
-        <SVGInteractive
-          scene={(validated as unknown as { scene: SVGScene }).scene}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'word-scramble':
-      return (
-        <WordScramble
-          words={(validated as { words: WordScrambleItem[] }).words}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'listening':
-      return (
-        <Listening
-          items={(validated as { items: ListeningItem[] }).items}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'dictation':
-      return (
-        <Dictation
-          items={(validated as { items: DictationItem[] }).items}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'pronunciation':
-      return (
-        <Pronunciation
-          items={(validated as { items: PronunciationItem[] }).items}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    case 'drag-drop': {
-      const data = validated as {
-        mode: 'match' | 'sentence'
-        pairs?: MatchPair[]
-        sentences?: SentenceChallenge[]
-      }
-      return (
-        <DragDrop
-          mode={data.mode}
-          pairs={data.pairs}
-          sentences={data.sentences}
-          onComplete={(r) => handleComplete({ ...r, scorePercent: r.score })}
-        />
-      )
-    }
-    default:
-      return (
-        <p className="text-sm text-(--text-muted)">
-          Unsupported activity type: {activity.type}
-        </p>
-      )
-  }
+  return renderers[definition.renderer](validated.data, handleComplete)
 }
