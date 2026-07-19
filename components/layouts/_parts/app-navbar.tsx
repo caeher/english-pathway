@@ -3,7 +3,7 @@
 import { Menu, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
-import useThemeStore from '@/stores/useThemeStore'
+import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
 import { cn } from '@/lib/helpers'
 
 interface AppNavbarProps {
@@ -13,7 +13,8 @@ interface AppNavbarProps {
 }
 
 export function AppNavbar({ title, onToggleSidebar, className }: AppNavbarProps) {
-  const { dark, toggle } = useThemeStore()
+  const dark = useThemeStore(selectDark)
+  const toggle = useThemeStore(selectToggleTheme)
 
   return (
     <header

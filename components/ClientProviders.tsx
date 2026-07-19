@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import useThemeStore from '@/stores/useThemeStore'
+import useThemeStore, { selectDark } from '@/stores/useThemeStore'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/toaster'
 import { AnalyticsProvider } from '@/lib/analytics/provider'
@@ -11,7 +11,7 @@ import PwaProvider from '@/components/PwaProvider'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
 
 function ThemeInit() {
-  const { dark } = useThemeStore()
+  const dark = useThemeStore(selectDark)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)

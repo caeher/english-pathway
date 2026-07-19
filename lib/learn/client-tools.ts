@@ -1,4 +1,4 @@
-import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import { curriculumChapterHref } from '@/lib/curriculum/href'
 import type { ChapterActivity } from '@/types'
 
@@ -34,12 +34,12 @@ export async function fetchActivityById(activityId: string): Promise<{
 }
 
 export function showGrammar(markdown: string, title?: string) {
-  useLearnSessionStore.getState().setGrammar(markdown, title)
+  learnSessionActions.setGrammar(markdown, title)
 }
 
 export async function showActivity(activityId: string) {
   const data = await fetchActivityById(activityId)
-  useLearnSessionStore.getState().setActivity(data.activity, data.chapterId, data.moduleId)
+  learnSessionActions.setActivity(data.activity, data.chapterId, data.moduleId)
   return {
     success: true,
     title: data.activity.title,
@@ -48,9 +48,9 @@ export async function showActivity(activityId: string) {
 }
 
 export function showQuestion(prompt: string, options?: string[], correctIndex?: number) {
-  useLearnSessionStore.getState().setQuestion(prompt, options, correctIndex)
+  learnSessionActions.setQuestion(prompt, options, correctIndex)
 }
 
 export function clearPanel() {
-  useLearnSessionStore.getState().clearPanel()
+  learnSessionActions.clearPanel()
 }

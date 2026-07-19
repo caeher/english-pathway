@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Moon, Sun, BookOpen, GraduationCap, RotateCcw, Menu, X, LayoutDashboard } from 'lucide-react'
 import { motion } from 'framer-motion'
-import useThemeStore from '@/stores/useThemeStore'
+import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
 import { Switch } from '@/components/ui/switch'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { NavUser } from '@/components/layouts/_parts/nav-user'
@@ -26,7 +26,8 @@ const GUEST_CONTEXT: NavigationContext = {
 }
 
 export default function Header({ navigation, isAuthenticated = false }: HeaderProps) {
-  const { dark, toggle } = useThemeStore()
+  const dark = useThemeStore(selectDark)
+  const toggle = useThemeStore(selectToggleTheme)
   const [mobileOpen, setMobileOpen] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null)
