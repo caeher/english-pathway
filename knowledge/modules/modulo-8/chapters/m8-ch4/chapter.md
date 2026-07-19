@@ -1,6 +1,6 @@
 ---
 id: m8-ch4
-moduleId: module-8
+moduleId: modulo-8
 number: 4
 title: Let's listen, it's been said!
 subtitle: Identifying everyday phrases in interactive audios

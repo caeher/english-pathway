@@ -1,6 +1,6 @@
 ---
 id: m9-ch3
-moduleId: module-9
+moduleId: modulo-9
 number: 3
 title: Questions and answers
 subtitle: Mastering the formulation of basic questions with questionnaires

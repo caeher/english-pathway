@@ -1,6 +1,6 @@
 ---
 id: m4-ch5
-moduleId: module-4
+moduleId: modulo-4
 number: 5
 title: The Imperative
 subtitle: Orders, instructions and suggestions

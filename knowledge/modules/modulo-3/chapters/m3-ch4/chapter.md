@@ -1,6 +1,6 @@
 ---
 id: m3-ch4
-moduleId: module-3
+moduleId: modulo-3
 number: 4
 title: Future with Will and Going To
 subtitle: Predictions, decisions and plans for the future

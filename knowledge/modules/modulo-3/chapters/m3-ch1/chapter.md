@@ -1,6 +1,6 @@
 ---
 id: m3-ch1
-moduleId: module-3
+moduleId: modulo-3
 number: 1
 title: "Present Continuous: Formation and Uses"
 subtitle: What's happening right now — be + verb-ing

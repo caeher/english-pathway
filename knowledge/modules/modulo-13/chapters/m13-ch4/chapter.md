@@ -1,6 +1,6 @@
 ---
 id: m13-ch4
-moduleId: module-13
+moduleId: modulo-13
 number: 4
 title: Level 3 Pronunciation
 subtitle: Refining accent and advanced articulation

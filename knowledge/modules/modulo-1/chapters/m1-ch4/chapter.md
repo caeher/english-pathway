@@ -1,6 +1,6 @@
 ---
 id: m1-ch4
-moduleId: module-1
+moduleId: modulo-1
 number: 4
 title: "Nouns: Types, Classification and Articles"
 subtitle: Proper, common, concrete, abstract; a, an, the; singular/plural

@@ -1,6 +1,6 @@
 ---
 id: m11-ch5
-moduleId: module-11
+moduleId: modulo-11
 number: 5
 title: Debates and discussions
 subtitle: Express opinions, argue and debate with confidence

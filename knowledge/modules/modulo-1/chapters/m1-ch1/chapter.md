@@ -1,6 +1,6 @@
 ---
 id: m1-ch1
-moduleId: module-1
+moduleId: modulo-1
 number: 1
 title: The Alphabet and Basic Sounds
 subtitle: Learn the 26 letters and their sounds in English

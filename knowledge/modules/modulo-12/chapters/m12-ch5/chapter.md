@@ -1,6 +1,6 @@
 ---
 id: m12-ch5
-moduleId: module-12
+moduleId: modulo-12
 number: 5
 title: improvisation games
 subtitle: Reacting spontaneously in different situations

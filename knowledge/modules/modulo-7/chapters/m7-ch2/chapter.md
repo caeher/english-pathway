@@ -1,6 +1,6 @@
 ---
 id: m7-ch2
-moduleId: module-7
+moduleId: modulo-7
 number: 2
 title: Connectors and Advanced Conjunctions
 subtitle: Linking words for complex texts

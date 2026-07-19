@@ -1,6 +1,6 @@
 ---
 id: m3-ch5
-moduleId: module-3
+moduleId: modulo-3
 number: 5
 title: Can, Could and Skills
 subtitle: Express what you can and could do

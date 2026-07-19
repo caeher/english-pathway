@@ -1,6 +1,6 @@
 ---
 id: m8-ch2
-moduleId: module-8
+moduleId: modulo-8
 number: 2
 title: Building simple sentences
 subtitle: The power of the present simple through simulations

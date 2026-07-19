@@ -1,6 +1,6 @@
 ---
 id: m9-ch1
-moduleId: module-9
+moduleId: modulo-9
 number: 1
 title: imaginary trips
 subtitle: Expanding vocabulary of travel and places with interactive maps

@@ -1,6 +1,6 @@
 ---
 id: m10-ch5
-moduleId: module-10
+moduleId: modulo-10
 number: 5
 title: Let's read it has been said!
 subtitle: Reading comprehension in interactive articles and blogs

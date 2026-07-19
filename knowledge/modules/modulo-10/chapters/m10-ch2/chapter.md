@@ -1,6 +1,6 @@
 ---
 id: m10-ch2
-moduleId: module-10
+moduleId: modulo-10
 number: 2
 title: Vocabulary for everyday life
 subtitle: Expanding your lexicon in real-life scenarios

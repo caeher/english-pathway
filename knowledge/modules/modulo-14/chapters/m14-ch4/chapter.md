@@ -1,6 +1,6 @@
 ---
 id: m14-ch4
-moduleId: module-14
+moduleId: modulo-14
 number: 4
 title: Resources for Self-Learning
 subtitle: Apps, platforms and communities to continue learning

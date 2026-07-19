@@ -1,6 +1,6 @@
 ---
 id: m4-ch1
-moduleId: module-4
+moduleId: modulo-4
 number: 1
 title: Adjectives and Adverbs
 subtitle: Describes people, things and actions

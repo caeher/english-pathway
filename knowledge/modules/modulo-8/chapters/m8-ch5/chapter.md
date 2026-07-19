@@ -1,6 +1,6 @@
 ---
 id: m8-ch5
-moduleId: module-8
+moduleId: modulo-8
 number: 5
 title: Your first dialogue
 subtitle: Creating simple conversations in gamified role-plays

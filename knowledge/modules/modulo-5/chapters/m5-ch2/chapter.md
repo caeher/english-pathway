@@ -1,6 +1,6 @@
 ---
 id: m5-ch2
-moduleId: module-5
+moduleId: modulo-5
 number: 2
 title: Past Simple vs. Present Perfect
 subtitle: When to use each correctly

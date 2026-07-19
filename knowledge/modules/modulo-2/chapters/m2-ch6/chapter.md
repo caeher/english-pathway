@@ -1,6 +1,6 @@
 ---
 id: m2-ch6
-moduleId: module-2
+moduleId: modulo-2
 number: 6
 title: Simple Present vs Simple Past
 subtitle: Comprehensive Comparison and When to Use Each

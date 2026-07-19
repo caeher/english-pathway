@@ -1,6 +1,6 @@
 ---
 id: m9-ch4
-moduleId: module-9
+moduleId: modulo-9
 number: 4
 title: Narrating past events
 subtitle: Introducing the past simple in interactive stories

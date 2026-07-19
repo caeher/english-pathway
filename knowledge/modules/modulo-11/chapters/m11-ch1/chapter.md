@@ -1,6 +1,6 @@
 ---
 id: m11-ch1
-moduleId: module-11
+moduleId: modulo-11
 number: 1
 title: The present perfect
 subtitle: Counting experiences and achievements with interactive timelines

@@ -1,6 +1,6 @@
 ---
 id: m6-ch3
-moduleId: module-6
+moduleId: modulo-6
 number: 3
 title: Second Conditional
 subtitle: If + past simple, would + base verb

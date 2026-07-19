@@ -1,6 +1,6 @@
 ---
 id: m12-ch2
-moduleId: module-12
+moduleId: modulo-12
 number: 2
 title: Creating presentations
 subtitle: Communicating ideas effectively in English

@@ -1,6 +1,6 @@
 ---
 id: m1-ch2
-moduleId: module-1
+moduleId: modulo-1
 number: 2
 title: Greetings, Introductions and Essential Vocabulary
 subtitle: Say hello, introduce yourself and learn the most used words

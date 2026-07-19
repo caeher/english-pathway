@@ -1,6 +1,6 @@
 ---
 id: m12-ch3
-moduleId: module-12
+moduleId: modulo-12
 number: 3
 title: Advanced listening
 subtitle: Understanding podcasts and videos with active listening

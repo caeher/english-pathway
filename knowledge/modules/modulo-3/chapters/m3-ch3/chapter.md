@@ -1,6 +1,6 @@
 ---
 id: m3-ch3
-moduleId: module-3
+moduleId: modulo-3
 number: 3
 title: Past Continuous
 subtitle: What was happening at a time in the past

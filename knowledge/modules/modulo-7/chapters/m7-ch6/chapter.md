@@ -1,6 +1,6 @@
 ---
 id: m7-ch6
-moduleId: module-7
+moduleId: modulo-7
 number: 6
 title: Final Review and Comprehensive Practice
 subtitle: Demonstrate everything you have learned

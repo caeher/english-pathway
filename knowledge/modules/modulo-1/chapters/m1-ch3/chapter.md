@@ -1,6 +1,6 @@
 ---
 id: m1-ch3
-moduleId: module-1
+moduleId: modulo-1
 number: 3
 title: "Personal Pronouns and the Verb \"To Be\""
 subtitle: The foundations of every English sentence

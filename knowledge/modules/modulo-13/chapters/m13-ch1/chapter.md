@@ -1,6 +1,6 @@
 ---
 id: m13-ch1
-moduleId: module-13
+moduleId: modulo-13
 number: 1
 title: English for work
 subtitle: Vocabulary and key phrases in interview simulations

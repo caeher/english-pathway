@@ -1,6 +1,6 @@
 ---
 id: m1-ch6
-moduleId: module-1
+moduleId: modulo-1
 number: 6
 title: Basic Questions (Wh-Questions)
 subtitle: Master questions with What, Where, When, Who, Why, How

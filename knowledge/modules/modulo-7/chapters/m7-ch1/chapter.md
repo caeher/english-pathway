@@ -1,6 +1,6 @@
 ---
 id: m7-ch1
-moduleId: module-7
+moduleId: modulo-7
 number: 1
 title: Nouns, Pronouns and Relative Clauses
 subtitle: Advanced pronouns, relatives and appositives

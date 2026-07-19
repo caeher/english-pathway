@@ -1,6 +1,6 @@
 ---
 id: m2-ch1
-moduleId: module-2
+moduleId: modulo-2
 number: 1
 title: "Present Simple: Formation and Uses"
 subtitle: Describe your routine, habits and universal truths

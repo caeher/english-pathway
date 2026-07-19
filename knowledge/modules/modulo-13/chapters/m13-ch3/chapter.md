@@ -1,6 +1,6 @@
 ---
 id: m13-ch3
-moduleId: module-13
+moduleId: modulo-13
 number: 3
 title: Critical reading
 subtitle: Analyzing complex texts and expressing points of view

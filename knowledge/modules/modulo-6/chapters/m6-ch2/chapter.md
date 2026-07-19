@@ -1,6 +1,6 @@
 ---
 id: m6-ch2
-moduleId: module-6
+moduleId: modulo-6
 number: 2
 title: First Conditional
 subtitle: If + present simple, will + base verb

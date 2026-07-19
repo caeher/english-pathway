@@ -1,6 +1,6 @@
 ---
 id: m5-ch1
-moduleId: module-5
+moduleId: modulo-5
 number: 1
 title: "Present Perfect: Life Experiences"
 subtitle: Have/has + past participle — what you have done

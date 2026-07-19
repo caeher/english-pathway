@@ -1,6 +1,6 @@
 ---
 id: m12-ch4
-moduleId: module-12
+moduleId: modulo-12
 number: 4
 title: Speaking like a native
 subtitle: Reductions and contractions for natural fluidity

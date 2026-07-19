@@ -1,6 +1,6 @@
 ---
 id: m12-ch1
-moduleId: module-12
+moduleId: modulo-12
 number: 1
 title: Writing your story
 subtitle: Writing paragraphs and short texts with an interactive guide

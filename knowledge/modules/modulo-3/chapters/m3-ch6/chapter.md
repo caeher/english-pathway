@@ -1,6 +1,6 @@
 ---
 id: m3-ch6
-moduleId: module-3
+moduleId: modulo-3
 number: 6
 title: Want to, Like to, Need to
 subtitle: Express desires, tastes and needs

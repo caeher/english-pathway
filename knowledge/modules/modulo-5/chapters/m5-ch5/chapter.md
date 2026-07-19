@@ -1,6 +1,6 @@
 ---
 id: m5-ch5
-moduleId: module-5
+moduleId: modulo-5
 number: 5
 title: "Passive Voice: Training"
 subtitle: Be + past participle — Focus on action

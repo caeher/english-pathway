@@ -1,6 +1,6 @@
 ---
 id: m13-ch5
-moduleId: module-13
+moduleId: modulo-13
 number: 5
 title: Gamified Final Project
 subtitle: Creating complete multimedia content in English

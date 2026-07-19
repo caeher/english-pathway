@@ -1,6 +1,6 @@
 ---
 id: m9-ch5
-moduleId: module-9
+moduleId: modulo-9
 number: 5
 title: Describing people and objects
 subtitle: Using adjectives in description games

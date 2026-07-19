@@ -1,6 +1,6 @@
 ---
 id: m14-ch2
-moduleId: module-14
+moduleId: modulo-14
 number: 2
 title: Creation of Own Content
 subtitle: Blogs, vlogs or personal podcasts in English

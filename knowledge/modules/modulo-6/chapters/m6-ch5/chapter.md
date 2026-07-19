@@ -1,6 +1,6 @@
 ---
 id: m6-ch5
-moduleId: module-6
+moduleId: modulo-6
 number: 5
 title: "Reported Speech: Affirmations"
 subtitle: Said that, told me that — What he said

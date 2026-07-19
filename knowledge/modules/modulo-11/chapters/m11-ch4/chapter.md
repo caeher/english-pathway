@@ -1,6 +1,6 @@
 ---
 id: m11-ch4
-moduleId: module-11
+moduleId: modulo-11
 number: 4
 title: Phrasal Verbs to the rescue
 subtitle: Master the most used verb + particle combinations

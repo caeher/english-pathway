@@ -44,6 +44,9 @@ jobs:
       - name: Validate activity content
         run: pnpm activities:validate
 
+      - name: Validate knowledge base
+        run: pnpm knowledge:validate
+
       - name: Validate curriculum language
         run: pnpm knowledge:language:validate
 

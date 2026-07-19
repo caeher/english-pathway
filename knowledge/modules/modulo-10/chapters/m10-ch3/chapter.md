@@ -1,6 +1,6 @@
 ---
 id: m10-ch3
-moduleId: module-10
+moduleId: modulo-10
 number: 3
 title: Deeper conversations
 subtitle: Using connectors for fluid dialogues

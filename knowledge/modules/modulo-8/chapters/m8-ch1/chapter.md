@@ -1,6 +1,6 @@
 ---
 id: m8-ch1
-moduleId: module-8
+moduleId: modulo-8
 number: 1
 title: Unlocking your first words
 subtitle: Essential vocabulary level A1 with association games

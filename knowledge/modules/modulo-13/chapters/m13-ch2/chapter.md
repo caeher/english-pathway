@@ -1,6 +1,6 @@
 ---
 id: m13-ch2
-moduleId: module-13
+moduleId: modulo-13
 number: 2
 title: Negotiation and persuasion
 subtitle: Communication techniques in business scenarios

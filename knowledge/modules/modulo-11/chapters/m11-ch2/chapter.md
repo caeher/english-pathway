@@ -1,6 +1,6 @@
 ---
 id: m11-ch2
-moduleId: module-11
+moduleId: modulo-11
 number: 2
 title: passive voice
 subtitle: Transforming sentences for more sophisticated communication

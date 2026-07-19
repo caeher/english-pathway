@@ -1,6 +1,6 @@
 ---
 id: m4-ch2
-moduleId: module-4
+moduleId: modulo-4
 number: 2
 title: Comparatives
 subtitle: "Compare two things: bigger, faster, better"

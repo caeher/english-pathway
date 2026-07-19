@@ -1,6 +1,6 @@
 ---
 id: m2-ch3
-moduleId: module-2
+moduleId: modulo-2
 number: 3
 title: "Simple Past: Regular and Irregular Verbs"
 subtitle: "It tells what happened: regulars with -ed and irregulars"

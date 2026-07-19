@@ -1,6 +1,6 @@
 ---
 id: m7-ch3
-moduleId: module-7
+moduleId: modulo-7
 number: 3
 title: Investment and Emphatic Structures
 subtitle: Not only… but also, hardly… when

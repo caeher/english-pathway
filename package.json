@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "architecture:check": "node scripts/check-feature-boundaries.mjs",
     "activities:validate": "tsx scripts/validate-activities.ts",
+    "knowledge:validate": "tsx scripts/validate-knowledge.ts",
     "knowledge:language:validate": "node scripts/validate-knowledge-language.mjs",
     "test": "vitest run",
     "test:critical": "vitest run __tests__/quality __tests__/auth __tests__/onboarding __tests__/curriculum __tests__/tutor __tests__/audio __tests__/legal",
@@ -23,7 +24,7 @@
     "db:reset": "node scripts/db-reset.mjs",
     "db:types": "supabase gen types typescript --local > lib/supabase/database.types.ts",
     "db:seed": "tsx scripts/seed.ts",
-    "kb:embed": "tsx scripts/embed-knowledge.ts",
+    "kb:embed": "pnpm knowledge:validate && tsx scripts/embed-knowledge.ts",
     "postinstall": "node ./node_modules/esbuild/install.js"
   },
   "dependencies": {

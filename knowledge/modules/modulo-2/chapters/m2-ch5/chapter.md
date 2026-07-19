@@ -1,6 +1,6 @@
 ---
 id: m2-ch5
-moduleId: module-2
+moduleId: modulo-2
 number: 5
 title: "The Verb \"To Have\" in Present and Past"
 subtitle: Have, has, had — possession, obligation and customs

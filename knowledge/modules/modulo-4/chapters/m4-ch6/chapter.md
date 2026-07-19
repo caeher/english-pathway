@@ -1,6 +1,6 @@
 ---
 id: m4-ch6
-moduleId: module-4
+moduleId: modulo-4
 number: 6
 title: Prepositions of Place and Time
 subtitle: In, on, at — where and when

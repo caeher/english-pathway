@@ -1,6 +1,6 @@
 ---
 id: m4-ch3
-moduleId: module-4
+moduleId: modulo-4
 number: 3
 title: Superlatives
 subtitle: The biggest, the best, the most interesting

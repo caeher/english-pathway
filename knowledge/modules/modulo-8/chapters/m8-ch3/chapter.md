@@ -1,6 +1,6 @@
 ---
 id: m8-ch3
-moduleId: module-8
+moduleId: modulo-8
 number: 3
 title: level 1 pronunciation
 subtitle: Conquering basic sounds with repetition challenges

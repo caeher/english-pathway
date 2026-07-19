@@ -1,6 +1,6 @@
 ---
 id: m10-ch4
-moduleId: module-10
+moduleId: modulo-10
 number: 4
 title: level 2 pronunciation
 subtitle: Modulating intonation and rhythm with prosodic patterns

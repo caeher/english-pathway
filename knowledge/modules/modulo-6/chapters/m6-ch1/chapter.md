@@ -1,6 +1,6 @@
 ---
 id: m6-ch1
-moduleId: module-6
+moduleId: modulo-6
 number: 1
 title: Zero Conditional
 subtitle: If + simple present + simple present — Facts and cause-effect

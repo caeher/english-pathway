@@ -1,6 +1,6 @@
 ---
 id: m6-ch6
-moduleId: module-6
+moduleId: modulo-6
 number: 6
 title: "Reported Speech: Questions, Commands and Phrasal Verbs"
 subtitle: Asked if/what, told to, and common phrasal verbs

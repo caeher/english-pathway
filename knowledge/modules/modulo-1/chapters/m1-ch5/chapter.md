@@ -1,6 +1,6 @@
 ---
 id: m1-ch5
-moduleId: module-1
+moduleId: modulo-1
 number: 5
 title: Numbers, Days of the Week and Months
 subtitle: Count, read dates and manage the calendar in English

@@ -1,6 +1,6 @@
 ---
 id: m11-ch3
-moduleId: module-11
+moduleId: modulo-11
 number: 3
 title: "Manners: possibility and obligation"
 subtitle: Decision-making games with modal verbs

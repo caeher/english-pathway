@@ -1,6 +1,6 @@
 ---
 id: m10-ch1
-moduleId: module-10
+moduleId: modulo-10
 number: 1
 title: The future awaits you
 subtitle: "Practicing \"will\" and \"going to\" with predictions and plans"
