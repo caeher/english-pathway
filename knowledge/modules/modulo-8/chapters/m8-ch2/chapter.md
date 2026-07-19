@@ -4,7 +4,7 @@ moduleId: modulo-8
 number: 2
 title: Building simple sentences
 subtitle: The power of the present simple through simulations
-icon: ðŸ§±
+icon: 🧱
 color: "#10b981"
 objectives:
   - Build affirmative, negative and interrogative sentences in the present simple
@@ -13,7 +13,7 @@ objectives:
 xpReward: 200
 ---
 
-## The Simple Present â€” Simple Present
+## The Simple Present — Simple Present
 
 Observa estos patrones:
 
@@ -24,11 +24,11 @@ Observa estos patrones:
 
 ### Regla clave
 With **he, she, it** you add **-s** or **-es** to the verb:
-- *play â†’ plays*, *work â†’ works*, *go â†’ goes*, *watch â†’ watches*
+- *play → plays*, *work → works*, *go → goes*, *watch → watches*
 
 ### Why is the -s important?
 
-The **-s** ending is not just grammar â€” it helps you identify **who** is doing the action. In quick conversation, that little -s indicates whether you're talking about "I work" or "she works." Plus, using -s correctly makes you sound more natural and professional in English.
+The **-s** ending is not just grammar — it helps you identify **who** is doing the action. In quick conversation, that little -s indicates whether you're talking about "I work" or "she works." Plus, using -s correctly makes you sound more natural and professional in English.
 
 ### Negativo
 - I **don't** like coffee.
@@ -38,16 +38,16 @@ The **-s** ending is not just grammar â€” it helps you identify **who** is 
 - **Do** you speak English?
 - **Does** he speak English?
 
-### âš ï¸ Frequent mistakes that you should avoid
+### ⚠️ Frequent mistakes that you should avoid
 
-| âŒ Incorrecto | âœ… Correcto | Explanation |
+| ❌ Incorrecto | ✅ Correcto | Explanation |
 |--------------|-----------|-------------|
 | I **likes** pizza | I **like** pizza | I/you/we/they NO llevan -s |
 | He **don't** work | He **doesn't** work | He/she/it usa **doesn't** |
-| She **studys** | She **studies** | Consonante + y â†’ -ies |
-| He **gos** | He **goes** | Verbs in -o/-s/-ch/-sh/-x â†’ -es |
+| She **studys** | She **studies** | Consonante + y → -ies |
+| He **gos** | He **goes** | Verbs in -o/-s/-ch/-sh/-x → -es |
 
-### ðŸ“Œ When to use Present Simple?
+### 📌 When to use Present Simple?
 
 Use it for:
 - **Routines and habits**: *I work Monday to Friday.*
@@ -56,8 +56,8 @@ Use it for:
 
 **DO NOT** use it for actions at this exact moment (that's Present Continuous: *I am working now*).
 
-### ðŸ’¡ Memory trick
+### 💡 Memory trick
 
-Remember: **"He-She-It takes an -S"** â€” If the subject is *he*, *she*, or *it*, the verb takes -s. It's an English rhyme that will help you remember!
+Remember: **"He-She-It takes an -S"** — If the subject is *he*, *she*, or *it*, the verb takes -s. It's an English rhyme that will help you remember!
 
-> ðŸ’¡ In negative and interrogative with does/doesn't, the verb **no** takes -s.
+> 💡 In negative and interrogative with does/doesn't, the verb **no** takes -s.

@@ -3,13 +3,13 @@ id: m7-ch3
 moduleId: modulo-7
 number: 3
 title: Investment and Emphatic Structures
-subtitle: Not onlyâ€¦ but also, hardlyâ€¦ when
-icon: ðŸ”„
+subtitle: Not only… but also, hardly… when
+icon: 🔄
 color: "#8b5cf6"
 objectives:
   - Using inversion with negative/restrictive expressions
-  - "Apply \"not onlyâ€¦ but also\", \"hardlyâ€¦ when\", \"no soonerâ€¦ than\""
-  - Add emphasis with cleft structures (It isâ€¦ that / Whatâ€¦ is)
+  - "Apply \"not only… but also\", \"hardly… when\", \"no sooner… than\""
+  - Add emphasis with cleft structures (It is… that / What… is)
 xpReward: 190
 ---
 
@@ -30,13 +30,13 @@ When we start with a negative expression, the subject and auxiliary are **invert
 | **Never** | **Never have** I been so happy. |
 | **Rarely** | **Rarely do** we see such talent. |
 | **Seldom** | **Seldom does** she complain. |
-| **Not onlyâ€¦ but also** | **Not only does** he cook, **but** he also cleans. |
-| **Hardlyâ€¦ when** | **Hardly had** I sat down **when** the phone rang. |
-| **No soonerâ€¦ than** | **No sooner had** I left **than** it started raining. |
+| **Not only… but also** | **Not only does** he cook, **but** he also cleans. |
+| **Hardly… when** | **Hardly had** I sat down **when** the phone rang. |
+| **No sooner… than** | **No sooner had** I left **than** it started raining. |
 | **Only after** | **Only after** finishing **did** I rest. |
 | **Little** | **Little did** I know it would rain. |
 
-### Cleft sentences â€” Oraciones hendidas
+### Cleft sentences — Oraciones hendidas
 To give **emphasis** to a part of speech:
 
 | Normal | Cleft (emphasis) |
@@ -46,8 +46,8 @@ To give **emphasis** to a part of speech:
 | She loves music. | **What she loves is** music. |
 | The price surprised me. | **It was the price that** surprised me. |
 
-### "It is/wasâ€¦ who/that" (for subject/object emphasis)
-### "Whatâ€¦ is/was" (for emphasizing what someone does/needs/wants)
+### "It is/was… who/that" (for subject/object emphasis)
+### "What… is/was" (for emphasizing what someone does/needs/wants)
 
-### âš ï¸ Note
+### ⚠️ Note
 These structures are more common in **formal writing** and **speeches**. In everyday conversation, normal word order is preferred.

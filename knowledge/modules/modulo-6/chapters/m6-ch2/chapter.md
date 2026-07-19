@@ -4,7 +4,7 @@ moduleId: modulo-6
 number: 2
 title: First Conditional
 subtitle: If + present simple, will + base verb
-icon: ðŸŒ¤ï¸
+icon: 🌤️
 color: "#3b82f6"
 objectives:
   - "Form the first conditional: if + present simple, will + base verb"
@@ -13,7 +13,7 @@ objectives:
 xpReward: 170
 ---
 
-## First Conditional â€” Primer Condicional
+## First Conditional — Primer Condicional
 
 ### Estructura
 | If clause | Result clause |
@@ -44,6 +44,6 @@ xpReward: 170
 - If it rains, we **might** stay home. (possibility)
 - If she calls, I **may** answer. (possibility)
 
-### âš ï¸ Common mistakes
-- âŒ ~~If it **will rain**, I'll stay home.~~ â†’ âœ… If it **rains**, I'll stay home.
+### ⚠️ Common mistakes
+- ❌ ~~If it **will rain**, I'll stay home.~~ → ✅ If it **rains**, I'll stay home.
 - The **if clause** uses **present simple**, NOT future.

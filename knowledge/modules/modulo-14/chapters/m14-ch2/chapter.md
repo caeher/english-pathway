@@ -4,7 +4,7 @@ moduleId: modulo-14
 number: 2
 title: Creation of Own Content
 subtitle: Blogs, vlogs or personal podcasts in English
-icon: ðŸ“¹
+icon: 📹
 color: "#e85d3a"
 objectives:
   - "Create original content in English: blog, vlog or podcast"
@@ -14,7 +14,7 @@ objectives:
 xpReward: 350
 ---
 
-## Content Creation â€” Learn by creating
+## Content Creation — Learn by creating
 
 Creating content in English is one of the most powerful ways to learn. It forces you to investigate, organize ideas and communicate clearly.
 
@@ -22,36 +22,36 @@ Creating content in English is one of the most powerful ways to learn. It forces
 
 | Formato | Fortaleza principal | Ideal for |
 |---|---|---|
-| ðŸ“ **Blog** | Escritura, estructura, vocabulario | Those who prefer written expression |
-| ðŸŽ¥ **Vlog** | Pronunciation, fluency, presence | Who are visual and expressive |
-| ðŸŽ™ï¸ **Podcast** | Oral narration, fluency | Quienes disfrutan hablar y contar historias |
+| 📝 **Blog** | Escritura, estructura, vocabulario | Those who prefer written expression |
+| 🎥 **Vlog** | Pronunciation, fluency, presence | Who are visual and expressive |
+| 🎙️ **Podcast** | Oral narration, fluency | Quienes disfrutan hablar y contar historias |
 
 ### Creation Process in 5 Steps
 
-1. ðŸ§  **Brainstorming** â€” Explorar ideas y elegir tu nicho/tema
-2. ðŸ” **Research** â€” Read/listen to English sources
-3. âœï¸ **Scripting** â€” Write the script or draft
-4. ðŸŽ¬ **Production** â€” Record or write the final version
-5. ðŸ“¤ **Publication** â€” Share and receive feedback
+1. 🧠 **Brainstorming** — Explorar ideas y elegir tu nicho/tema
+2. 🔍 **Research** — Read/listen to English sources
+3. ✏️ **Scripting** — Write the script or draft
+4. 🎬 **Production** — Record or write the final version
+5. 📤 **Publication** — Share and receive feedback
 
-### The Art of the Hook â€” The first 10 seconds
+### The Art of the Hook — The first 10 seconds
 
 The **hook** is the first phrase that catches attention. Without a good hook, no one will read/listen to your content.
 
 | Technique | Ejemplo |
 |---|---|
-| â“ **Rhetorical question** | "What if everything you knew about productivity was wrong?" |
-| ðŸ“Š **Surprising statistic** | "According to recent studies, we spend 7 hours daily on screens." |
-| ðŸ“– **Personal anecdote** | "Last Tuesday, I was walking home when something changed my life." |
-| ðŸ’¬ **Cita famosa** | "As Steve Jobs once said, 'Stay hungry, stay foolish.'" |
-| ðŸŒ **Hypothetical scenario** | "Imagine a world where you could learn any language in 30 days." |
+| ❓ **Rhetorical question** | "What if everything you knew about productivity was wrong?" |
+| 📊 **Surprising statistic** | "According to recent studies, we spend 7 hours daily on screens." |
+| 📖 **Personal anecdote** | "Last Tuesday, I was walking home when something changed my life." |
+| 💬 **Cita famosa** | "As Steve Jobs once said, 'Stay hungry, stay foolish.'" |
+| 🌍 **Hypothetical scenario** | "Imagine a world where you could learn any language in 30 days." |
 
 ### Content Creator Vocabulary
 
 | Term | Significado |
 |---|---|
 | **Engagement** | Audience interaction (likes, comments, shares) |
-| **Niche** | Your topic or area of â€‹â€‹expertise |
+| **Niche** | Your topic or area of ​​expertise |
 | **Target audience** | The audience you direct your content to |
 | **Call to Action (CTA)** | Instruction for the audience to do something |
 | **Thumbnail** | Thumbnail image that represents your content |
@@ -66,4 +66,4 @@ The **hook** is the first phrase that catches attention. Without a good hook, no
 | Vlog | 3-5 minutos | Good diction, eye contact with camera |
 | Podcast | 5-8 minutos | Coherent narrative, use of connectors |
 
-> ðŸ’¡ **Tip:** Don't wait for perfection to publish. The first content will never be perfect, but it is infinitely better than the content you never created.
+> 💡 **Tip:** Don't wait for perfection to publish. The first content will never be perfect, but it is infinitely better than the content you never created.

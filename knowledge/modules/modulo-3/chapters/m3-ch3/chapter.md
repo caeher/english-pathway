@@ -4,7 +4,7 @@ moduleId: modulo-3
 number: 3
 title: Past Continuous
 subtitle: What was happening at a time in the past
-icon: âª
+icon: ⏪
 color: "#8b5cf6"
 objectives:
   - "Form the past continuous: was/were + verb-ing"
@@ -13,7 +13,7 @@ objectives:
 xpReward: 160
 ---
 
-## Past Continuous â€” Pasado Continuo
+## Past Continuous — Pasado Continuo
 
 ### Formation: Subject + was/were + verb-ing
 | Subject | Was/Were | Verb-ing | Example |
@@ -41,4 +41,4 @@ xpReward: 160
 | **when** | + Past Simple (short action) | I was eating **when** he arrived. |
 | **while** | + Past Continuous (long action) | **While** I was eating, he arrived. |
 
-> ðŸ’¡ **when** â†’ corta y puntual / **while** â†’ larga y continua
+> 💡 **when** → corta y puntual / **while** → larga y continua

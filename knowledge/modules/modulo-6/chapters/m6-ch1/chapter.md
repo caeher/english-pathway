@@ -3,8 +3,8 @@ id: m6-ch1
 moduleId: modulo-6
 number: 1
 title: Zero Conditional
-subtitle: If + simple present + simple present â€” Facts and cause-effect
-icon: â˜€ï¸
+subtitle: If + simple present + simple present — Facts and cause-effect
+icon: ☀️
 color: "#22c55e"
 objectives:
   - "Form the zero conditional: If + present simple + present simple"
@@ -13,7 +13,7 @@ objectives:
 xpReward: 160
 ---
 
-## Zero Conditional â€” Condicional Cero
+## Zero Conditional — Condicional Cero
 
 ### Estructura
 | If clause | Result clause |
@@ -23,8 +23,8 @@ xpReward: 160
 | If it **rains**, | the ground **gets** wet. |
 
 ### Uso: hechos, verdades y causa-efecto directo
-- **No complex condition stated** â€” just a fact: if X passes, Y passes.
-- Scientific facts: If you **heat** water to 100Â°C, it **boils**.
+- **No complex condition stated** — just a fact: if X passes, Y passes.
+- Scientific facts: If you **heat** water to 100°C, it **boils**.
 - Generalizaciones: If I **eat** too much, I **feel** sick.
 - Rutinas/preferencias: If I **have** free time, I **read**.
 - Reglas: If you **mix** red and blue, you **get** purple.

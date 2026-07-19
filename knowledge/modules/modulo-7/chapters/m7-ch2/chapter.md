@@ -4,7 +4,7 @@ moduleId: modulo-7
 number: 2
 title: Connectors and Advanced Conjunctions
 subtitle: Linking words for complex texts
-icon: ðŸ”€
+icon: 🔀
 color: "#10b981"
 objectives:
   - Use addition, contrast, cause and result connectors

@@ -4,7 +4,7 @@ moduleId: modulo-3
 number: 5
 title: Can, Could and Skills
 subtitle: Express what you can and could do
-icon: ðŸ’ª
+icon: 💪
 color: "#06b6d4"
 objectives:
   - "Use \"can\" for abilities and permissions in the present tense"
@@ -13,9 +13,9 @@ objectives:
 xpReward: 160
 ---
 
-## Can & Could â€” Habilidades y Posibilidades
+## Can & Could — Habilidades y Posibilidades
 
-### Can â€” Presente
+### Can — Presente
 | Use | Example |
 |-----|---------|
 | **Ability** (habilidad) | I **can** swim. / She **can** speak French. |
@@ -26,9 +26,9 @@ xpReward: 160
 - I **can't** swim. / She **can't** drive.
 
 ### Questions: Can + subject + verb?
-- **Can** you swim? â€” Yes, I can. / No, I can't.
+- **Can** you swim? — Yes, I can. / No, I can't.
 
-### Could â€” Past + Courtesy
+### Could — Past + Courtesy
 | Use | Example |
 |-----|---------|
 | **Past ability** | I **could** swim when I was 5. |
@@ -41,8 +41,8 @@ xpReward: 160
 ### Can vs. Could
 | | Present | Past | Polite |
 |--|---------|------|--------|
-| âœ… | I **can** swim. | I **could** swim at 5. | **Could** you help? |
-| âŒ | I **can't** drive. | I **couldn't** read at 3. | â€” |
+| ✅ | I **can** swim. | I **could** swim at 5. | **Could** you help? |
+| ❌ | I **can't** drive. | I **couldn't** read at 3. | — |
 
 ### Be able to (alternativa)
 - **Can** no tiene futuro ni infinitivo. Usa **be able to**:
@@ -52,4 +52,4 @@ xpReward: 160
   - I **could** swim when I was 5. (habilidad)
   - I **was able to** fix the car yesterday. (logro concreto)
 
-> ðŸ’¡ "Can" NO lleva "to": I can swim (NOT: ~~I can to swim~~)
+> 💡 "Can" NO lleva "to": I can swim (NOT: ~~I can to swim~~)

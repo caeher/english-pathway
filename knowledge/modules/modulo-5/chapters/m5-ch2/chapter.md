@@ -4,7 +4,7 @@ moduleId: modulo-5
 number: 2
 title: Past Simple vs. Present Perfect
 subtitle: When to use each correctly
-icon: âš–ï¸
+icon: ⚖️
 color: "#10b981"
 objectives:
   - Differentiate the use of the past simple and the present perfect
@@ -42,9 +42,9 @@ xpReward: 170
 ### With "since" and "for"?
 - **Since** (point in time): I've lived here **since 2018**.
 - **For** (duration): I've lived here **for 6 years**.
-- Both â†’ **Present Perfect** (the action continues until now).
+- Both → **Present Perfect** (the action continues until now).
 
 ### Errores comunes
-- âŒ ~~I have visited Paris last year.~~ â†’ âœ… I **visited** Paris last year.
-- âŒ ~~I saw that movie already.~~ â†’ âœ… I **have seen** that movie already.
-- âŒ ~~Did you ever eat sushi?~~ â†’ âœ… **Have** you **ever eaten** sushi?
+- ❌ ~~I have visited Paris last year.~~ → ✅ I **visited** Paris last year.
+- ❌ ~~I saw that movie already.~~ → ✅ I **have seen** that movie already.
+- ❌ ~~Did you ever eat sushi?~~ → ✅ **Have** you **ever eaten** sushi?

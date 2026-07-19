@@ -4,7 +4,7 @@ moduleId: modulo-13
 number: 2
 title: Negotiation and persuasion
 subtitle: Communication techniques in business scenarios
-icon: ðŸ¤
+icon: 🤝
 color: "#0ea5e9"
 objectives:
   - Negotiate agreements using diplomatic language in English
@@ -14,13 +14,13 @@ objectives:
 xpReward: 350
 ---
 
-## Negotiation and Persuasion â€” The art of agreement in English
+## Negotiation and Persuasion — The art of agreement in English
 
 In business, it's not enough to be right. You have to **communicate with diplomacy** and find solutions that work for everyone.
 
 ### Phases of a Negotiation
 
-#### 1. ðŸ“‹ Proponer
+#### 1. 📋 Proponer
 | Frase | Nivel |
 |---|---|
 | "I'd like to suggest..." | Formal |
@@ -28,7 +28,7 @@ In business, it's not enough to be right. You have to **communicate with diploma
 | "What if we considered...?" | Formal/tentativo |
 | "Perhaps we could explore..." | Muy formal |
 
-#### 2. âœ… Aceptar condiciones
+#### 2. ✅ Aceptar condiciones
 | Frase | Nivel |
 |---|---|
 | "That works for us." | Neutro |
@@ -36,7 +36,7 @@ In business, it's not enough to be right. You have to **communicate with diploma
 | "That sounds fair." | Neutro |
 | "I think we have a deal." | Semi-formal |
 
-#### 3. âŒ Diplomatically decline
+#### 3. ❌ Diplomatically decline
 | Frase | Nivel |
 |---|---|
 | "I'm afraid that won't work for us." | Diplomatic |
@@ -44,7 +44,7 @@ In business, it's not enough to be right. You have to **communicate with diploma
 | "We'd need to reconsider that." | Formal |
 | "I appreciate the offer, but..." | Courteous |
 
-#### 4. ðŸ¤ Buscar compromiso
+#### 4. 🤝 Buscar compromiso
 | Frase | Nivel |
 |---|---|
 | "Could we meet halfway?" | Direct but diplomatic |
@@ -52,7 +52,7 @@ In business, it's not enough to be right. You have to **communicate with diploma
 | "Perhaps we could find a middle ground." | Formal |
 | "Let's see if there's a solution that works for both of us." | Colaborativo |
 
-#### 5. ðŸ“ Cerrar acuerdo
+#### 5. 📝 Cerrar acuerdo
 | Frase | Nivel |
 |---|---|
 | "So we've agreed that..." | Resumen |
@@ -67,15 +67,15 @@ In business, it's not enough to be right. You have to **communicate with diploma
 | **Pathos** (emotion) | Apelar a sentimientos | "Imagine how this could improve your team's morale..." |
 | **Logos** (logic) | Use data and reason | "The data clearly shows a 30% improvement..." |
 
-### Hedging â€” Suavizar afirmaciones
+### Hedging — Suavizar afirmaciones
 
 In negotiations, direct language can come across as aggressive. Use **hedging**:
 
-| Directo âŒ | Suavizado âœ… |
+| Directo ❌ | Suavizado ✅ |
 |---|---|
 | "That's wrong." | "I see it slightly differently." |
 | "We can't do that." | "That might be challenging for us." |
 | "You need to..." | "It might be worth considering..." |
 | "I disagree." | "I appreciate your perspective, however..." |
 
-> ðŸ’¡ **Tip:** In negotiations, diplomacy is not weakness â€” it is strategy. The goal is to win the agreement, not the argument.
+> 💡 **Tip:** In negotiations, diplomacy is not weakness — it is strategy. The goal is to win the agreement, not the argument.

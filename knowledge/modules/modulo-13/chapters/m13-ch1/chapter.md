@@ -4,7 +4,7 @@ moduleId: modulo-13
 number: 1
 title: English for work
 subtitle: Vocabulary and key phrases in interview simulations
-icon: ðŸ’¼
+icon: 💼
 color: "#1e3a5f"
 objectives:
   - Answer typical job interview questions in English
@@ -14,7 +14,7 @@ objectives:
 xpReward: 350
 ---
 
-## Job Interviews in English â€” Strategic Preparation
+## Job Interviews in English — Strategic Preparation
 
 The job interview is one of the most challenging situations to speak in English. But with the right preparation, you can stand out.
 
@@ -30,16 +30,16 @@ The job interview is one of the most challenging situations to speak in English.
 | 6 | "Tell me about a challenge you faced." | STAR Response |
 | 7 | "Do you have any questions for us?" | 2-3 preguntas inteligentes |
 
-### The STAR Technique â­
+### The STAR Technique ⭐
 
 For behavioral questions ("Tell me about a time when..."), use STAR:
 
 | Letra | Significado | Ejemplo |
 |---|---|---|
-| **S** â€” Situation | Describe the context | "In my previous role at a marketing agency..." |
-| **T** â€” Task | Tu responsabilidad | "I was responsible for launching a new product campaign..." |
-| **A** â€” Action | what did you do | "I coordinated with the design team and implemented a new strategy..." |
-| **R** â€” Result | The result | "As a result, we increased sales by 25% in three months." |
+| **S** — Situation | Describe the context | "In my previous role at a marketing agency..." |
+| **T** — Task | Tu responsabilidad | "I was responsible for launching a new product campaign..." |
+| **A** — Action | what did you do | "I coordinated with the design team and implemented a new strategy..." |
+| **R** — Result | The result | "As a result, we increased sales by 25% in three months." |
 
 ### Vocabulario Profesional
 
@@ -72,4 +72,4 @@ For behavioral questions ("Tell me about a time when..."), use STAR:
 | "That's an excellent question." | Ganar tiempo |
 | "Thank you for the opportunity." | Cierre |
 
-> ðŸ’¡ **Tip:** NEVER use informal reductions (gonna, wanna) in an interview. Always use complete and formal forms.
+> 💡 **Tip:** NEVER use informal reductions (gonna, wanna) in an interview. Always use complete and formal forms.

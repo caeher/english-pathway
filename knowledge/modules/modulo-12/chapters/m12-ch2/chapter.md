@@ -4,7 +4,7 @@ moduleId: modulo-12
 number: 2
 title: Creating presentations
 subtitle: Communicating ideas effectively in English
-icon: ðŸŽ¤
+icon: 🎤
 color: "#0ea5e9"
 objectives:
   - Plan and structure a presentation in English (opening, body, closing)
@@ -14,13 +14,13 @@ objectives:
 xpReward: 280
 ---
 
-## Presentations in English â€” Structure and Key Phrases
+## Presentations in English — Structure and Key Phrases
 
 A good presentation has a clear structure that guides the audience step by step.
 
 ### The 4 Phases of a Presentation
 
-#### ðŸŽ¬ 1. Opening (Apertura)
+#### 🎬 1. Opening (Apertura)
 Greeting + personal introduction + topic:
 
 | Frase | Nivel |
@@ -30,7 +30,7 @@ Greeting + personal introduction + topic:
 | "Let me begin with an interesting fact..." | Semi-formal |
 | "Have you ever wondered why...?" | Enganche |
 
-#### ðŸ“Š 2. Body (Cuerpo)
+#### 📊 2. Body (Cuerpo)
 2-3 main points with transitions:
 
 | transition phrase | Uso |
@@ -42,7 +42,7 @@ Greeting + personal introduction + topic:
 | "For instance..." | Dar ejemplo |
 | "I'd like to highlight that..." | Enfatizar |
 
-#### â“ 3. Q&A (Preguntas)
+#### ❓ 3. Q&A (Preguntas)
 | Frase | Uso |
 |---|---|
 | "Does anyone have any questions?" | Abrir Q&A |
@@ -50,7 +50,7 @@ Greeting + personal introduction + topic:
 | "If I understand correctly, you're asking..." | Clarificar |
 | "I'll look into that and get back to you." | Not knowing the answer |
 
-#### ðŸ 4. Closing (Cierre)
+#### 🏁 4. Closing (Cierre)
 | Frase | Uso |
 |---|---|
 | "To summarize, the key points are..." | Resumir |
@@ -63,4 +63,4 @@ Greeting + personal introduction + topic:
 2. **Level 2:** Mini presentation (2 minutes, 2 points)
 3. **Level 3:** Complete presentation (5 minutes with visual)
 
-> ðŸ’¡ **Tip:** Practice your opening until it sounds natural. The first impression is key.
+> 💡 **Tip:** Practice your opening until it sounds natural. The first impression is key.

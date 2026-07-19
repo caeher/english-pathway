@@ -4,7 +4,7 @@ moduleId: modulo-11
 number: 4
 title: Phrasal Verbs to the rescue
 subtitle: Master the most used verb + particle combinations
-icon: ðŸ§©
+icon: 🧩
 color: "#14b8a6"
 objectives:
   - Learn the most common Phrasal Verbs grouped by context (home, work, relationships, study)
@@ -13,7 +13,7 @@ objectives:
 xpReward: 300
 ---
 
-## Phrasal Verbs â€” The "combos" of English
+## Phrasal Verbs — The "combos" of English
 
 A Phrasal Verb is a verb + particle (preposition/adverb) that together create a new meaning.
 
@@ -34,16 +34,16 @@ A Phrasal Verb is a verb + particle (preposition/adverb) that together create a 
 
 ### Separables vs Inseparables
 - **Separable:** You can put the object between the verb and the particle.
-  - *Turn **off** the light* âœ“ / *Turn the light **off*** âœ“
-  - With pronouns: *Turn **it** off* âœ“ / ~~Turn off it~~ âœ—
+  - *Turn **off** the light* ✓ / *Turn the light **off*** ✓
+  - With pronouns: *Turn **it** off* ✓ / ~~Turn off it~~ ✗
 - **Inseparable:** The object comes AFTER the particle.
-  - *Look **after** the baby* âœ“ / ~~Look the baby after~~ âœ—
+  - *Look **after** the baby* ✓ / ~~Look the baby after~~ ✗
 
 ### Phrasal Verbs by Context
 
-**ðŸ  At home:** wake up, tidy up, turn on/off, throw away, put away
-**ðŸ’¼ At work:** carry out, set up, come up with, deal with, figure out
-**â¤ï¸ Relaciones:** get along with, break up, make up, look after, grow up
-**ðŸ“š Estudio:** find out, look up, go over, hand in, drop out
+**🏠 At home:** wake up, tidy up, turn on/off, throw away, put away
+**💼 At work:** carry out, set up, come up with, deal with, figure out
+**❤️ Relaciones:** get along with, break up, make up, look after, grow up
+**📚 Estudio:** find out, look up, go over, hand in, drop out
 
-> ðŸ’¡ **Tip:** Don't try to translate Phrasal Verbs word by word. Learn each one as a unit.
+> 💡 **Tip:** Don't try to translate Phrasal Verbs word by word. Learn each one as a unit.

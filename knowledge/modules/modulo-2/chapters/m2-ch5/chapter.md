@@ -3,8 +3,8 @@ id: m2-ch5
 moduleId: modulo-2
 number: 5
 title: "The Verb \"To Have\" in Present and Past"
-subtitle: Have, has, had â€” possession, obligation and customs
-icon: ðŸ¤
+subtitle: Have, has, had — possession, obligation and customs
+icon: 🤝
 color: "#0ea5e9"
 objectives:
   - "Conjugate \"have\" in the present: I have / She has"
@@ -39,4 +39,4 @@ xpReward: 140
 3. **have + noun** (activities):
    - have breakfast / have a shower / have fun / have a party
 
-> ðŸ’¡ "Have" as an auxiliary verb is used in perfect tenses (Module 5).
+> 💡 "Have" as an auxiliary verb is used in perfect tenses (Module 5).

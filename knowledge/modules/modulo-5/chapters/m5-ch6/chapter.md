@@ -4,7 +4,7 @@ moduleId: modulo-5
 number: 6
 title: "Passive Voice: Advanced Practice"
 subtitle: Complex Transformations and Common Mistakes
-icon: ðŸŽ¯
+icon: 🎯
 color: "#ec4899"
 objectives:
   - Transform more complex sentences into passive voice
@@ -13,10 +13,10 @@ objectives:
 xpReward: 180
 ---
 
-## Passive Voice â€” Advanced Practice
+## Passive Voice — Advanced Practice
 
-### Repaso: Activa â†’ Pasiva
-1. The **object** of the active â†’ **subject** of the passive.
+### Repaso: Activa → Pasiva
+1. The **object** of the active → **subject** of the passive.
 2. Conjugate **BE** in the same tense as the active verb.
 3. Add the **past participle**.
 4. (Optional) Add **by + agent**.
@@ -35,10 +35,10 @@ xpReward: 180
 | They **might cancel** the event. | The event **might be cancelled**. |
 
 ### When NOT to use the passive
-- âŒ Intransitive verbs (without object): happen, arrive, die, sleep
-  - ~~The accident was happened.~~ â†’ The accident happened.
-- âŒ Cuando suena raro o innecesario:
-  - ~~A good time was had by us.~~ â†’ We had a good time.
+- ❌ Intransitive verbs (without object): happen, arrive, die, sleep
+  - ~~The accident was happened.~~ → The accident happened.
+- ❌ Cuando suena raro o innecesario:
+  - ~~A good time was had by us.~~ → We had a good time.
 
 ### Pasiva impersonal (It is said that...)
 | Active | Passive |

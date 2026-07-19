@@ -4,7 +4,7 @@ moduleId: modulo-11
 number: 2
 title: passive voice
 subtitle: Transforming sentences for more sophisticated communication
-icon: ðŸ”„
+icon: 🔄
 color: "#6366f1"
 objectives:
   - Transform sentences from active to passive voice and vice versa
@@ -13,7 +13,7 @@ objectives:
 xpReward: 280
 ---
 
-## Passive Voice â€” Otra perspectiva
+## Passive Voice — Otra perspectiva
 
 The passive voice shifts the focus from **who does** the action to **what receives** the action.
 
@@ -43,4 +43,4 @@ Ignored when the agent is **obvious, unknown or unimportant**:
 - *"Rice is grown in Asia."* (no necesitamos decir "by farmers")
 - *"The building was destroyed."* (we don't know by who/what)
 
-> ðŸ’¡ If the agent is important or surprising, we use *by**: *"This song was written by a 10-year-old."*
+> 💡 If the agent is important or surprising, we use *by**: *"This song was written by a 10-year-old."*

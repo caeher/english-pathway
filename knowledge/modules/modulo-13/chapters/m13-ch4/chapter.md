@@ -4,7 +4,7 @@ moduleId: modulo-13
 number: 4
 title: Level 3 Pronunciation
 subtitle: Refining accent and advanced articulation
-icon: ðŸŽ¶
+icon: 🎶
 color: "#ec4899"
 objectives:
   - Master sentence stress to change the implicit meaning of sentences
@@ -14,7 +14,7 @@ objectives:
 xpReward: 350
 ---
 
-## Advanced Pronunciation â€” Prosody as a tool of meaning
+## Advanced Pronunciation — Prosody as a tool of meaning
 
 At this level, pronunciation is not just about "sounding good." It is using **intonation, rhythm and stress as communication tools**.
 
@@ -36,10 +36,10 @@ The SAME sentence changes meaning depending on WHICH word you accentuate:
 
 | Pattern | Uso | Ejemplo |
 |---|---|---|
-| Narrativo â†˜ï¸â†—ï¸â†˜ï¸ | Contar historias | "So I was walkingâ†—ï¸ and suddenlyâ†˜ï¸..." |
-| Persuasivo â†˜ï¸â¬†ï¸ | Convencer | "We MUSTâ†‘ act NOWâ†‘" |
-| Interrogativo â†—ï¸ | Question with surprise | "YOU did that?â†—ï¸" |
-| Diplomat â†˜ï¸â†—ï¸ | Suavizar desacuerdo | "Well... I'm not so sure...â†˜ï¸â†—ï¸" |
+| Narrativo ↘️↗️↘️ | Contar historias | "So I was walking↗️ and suddenly↘️..." |
+| Persuasivo ↘️⬆️ | Convencer | "We MUST↑ act NOW↑" |
+| Interrogativo ↗️ | Question with surprise | "YOU did that?↗️" |
+| Diplomat ↘️↗️ | Suavizar desacuerdo | "Well... I'm not so sure...↘️↗️" |
 
 ### Reducciones Avanzadas
 
@@ -51,18 +51,18 @@ The SAME sentence changes meaning depending on WHICH word you accentuate:
 | must have | **musta** | "He musta forgotten." |
 | might have | **mighta** | "She mighta left already." |
 
-âš ï¸ These are ONLY for listening comprehension and very informal speech. Never in formal writing.
+⚠️ These are ONLY for listening comprehension and very informal speech. Never in formal writing.
 
-### World Englishes â€” English is global
+### World Englishes — English is global
 
 | Variante | Feature | Ejemplo |
 |---|---|---|
-| ðŸ‡¬ðŸ‡§ British RP | Non-rhotic (no pronuncia /r/ final) | "car" â†’ /kÉ‘Ë/ |
-| ðŸ‡ºðŸ‡¸ American General | Rhotic (pronuncia /r/ final) | "car" â†’ /kÉ‘Ër/ |
-| ðŸ‡¦ðŸ‡º Australian | Rising intonation in affirmations | "I went to the shop?" â†—ï¸ |
-| ðŸ‡®ðŸ‡³ Indian English | Consonantes retroflejas /Êˆ, É–/ | "time" with retroflex /t/ |
-| ðŸ‡¿ðŸ‡¦ South African | Vowel change /Ã¦/ â†’ /e/ | "hat" sounds more like "het" |
+| 🇬🇧 British RP | Non-rhotic (no pronuncia /r/ final) | "car" → /kɑː/ |
+| 🇺🇸 American General | Rhotic (pronuncia /r/ final) | "car" → /kɑːr/ |
+| 🇦🇺 Australian | Rising intonation in affirmations | "I went to the shop?" ↗️ |
+| 🇮🇳 Indian English | Consonantes retroflejas /ʈ, ɖ/ | "time" with retroflex /t/ |
+| 🇿🇦 South African | Vowel change /æ/ → /e/ | "hat" sounds more like "het" |
 
 ### Intelligibility Principle
 
-> ðŸ’¡ **Tip:** The goal is NOT to eliminate your accent. It is being **clearly understood**. An accent is part of your identity. Focus on the features that most affect understanding.
+> 💡 **Tip:** The goal is NOT to eliminate your accent. It is being **clearly understood**. An accent is part of your identity. Focus on the features that most affect understanding.

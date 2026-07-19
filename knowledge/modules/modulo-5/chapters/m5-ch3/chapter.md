@@ -3,8 +3,8 @@ id: m5-ch3
 moduleId: modulo-5
 number: 3
 title: Past Perfect and Future Perfect
-subtitle: Had + pp and will have + pp â€” Temporal sequences
-icon: â®ï¸
+subtitle: Had + pp and will have + pp — Temporal sequences
+icon: ⏮️
 color: "#8b5cf6"
 objectives:
   - "Form the past perfect: had + past participle"
@@ -14,14 +14,14 @@ objectives:
 xpReward: 180
 ---
 
-## Past Perfect â€” Pasado Perfecto
+## Past Perfect — Pasado Perfecto
 
 ### Formation: had + past participle
 | Subject | Had | Past Participle | Example |
 |---------|-----|-----------------|---------|
 | I / You / He / She / It / We / They | **had ('d)** | eaten | When I arrived, they **had** already **eaten**. |
 
-> ðŸ’¡ "had" is the same for ALL subjects.
+> 💡 "had" is the same for ALL subjects.
 
 ### Primary use: one action BEFORE another in the past
 | First action (Past Perfect) | Second action (Past Simple) |
@@ -38,7 +38,7 @@ xpReward: 180
 | **after** | **After** she **had** eaten, she left. |
 | **by the time** | **By the time** we got there, the concert **had** started. |
 | **already** | They **had** already **gone** home. |
-| **neverâ€¦ before** | I **had** never **tried** sushi before that day. |
+| **never… before** | I **had** never **tried** sushi before that day. |
 
 ### Negative & Questions
 - **Neg:** I **hadn't** (had not) finished.
@@ -51,7 +51,7 @@ xpReward: 180
 | Two actions in sequence | One action BEFORE another |
 | I arrived and he left. (same time or seq.) | When I arrived, he **had left**. (he left FIRST) |
 
-### Future Perfect â€” Futuro Perfecto (Resumen)
+### Future Perfect — Futuro Perfecto (Resumen)
 | Training | will have + past participle |
 |-----------|----------------------------|
 | Uso | Action completed BEFORE a future time |

@@ -3,8 +3,8 @@ id: m5-ch5
 moduleId: modulo-5
 number: 5
 title: "Passive Voice: Training"
-subtitle: Be + past participle â€” Focus on action
-icon: ðŸ”„
+subtitle: Be + past participle — Focus on action
+icon: 🔄
 color: "#06b6d4"
 objectives:
   - Understand the difference between active voice and passive voice
@@ -13,7 +13,7 @@ objectives:
 xpReward: 180
 ---
 
-## Passive Voice â€” Voz Pasiva
+## Passive Voice — Voz Pasiva
 
 ### What is passive voice?
 - **Active:** The dog **bit** the man. (subject = who does the action)
@@ -46,7 +46,7 @@ In the passive voice, the auxiliary **BE** is essential. It is conjugated accord
 | **Present Continuous** | They **are building** a house. | A house **is being built**. |
 | **Past Continuous** | They **were cleaning** the room. | The room **was being cleaned**. |
 
-### "By" â€” Who did it?
+### "By" — Who did it?
 - The book was written **by** J.K. Rowling.
 - The cake was made **by** my grandmother.
 - "by + agent" is only used when it is important to know WHO.

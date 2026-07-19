@@ -4,7 +4,7 @@ moduleId: modulo-2
 number: 4
 title: Denials and Questions in the Past
 subtitle: "Learn to deny and ask with did / didn't"
-icon: ðŸš«
+icon: 🚫
 color: "#a855f7"
 objectives:
   - "Form negative sentences in the past with didn't + base verb"
@@ -15,30 +15,30 @@ xpReward: 150
 
 ## Negations & Questions in Past Simple
 
-### âŒ Negative: didn't + base verb
+### ❌ Negative: didn't + base verb
 | Affirmative | Negative |
 |-------------|----------|
 | I went | I **didn't go** |
 | She ate | She **didn't eat** |
 | They saw | They **didn't see** |
 
-> âš ï¸ Always verb in base form after didn't! (NOT: *didn't go*)
+> ⚠️ Always verb in base form after didn't! (NOT: *didn't go*)
 
-### â“ Questions: Did + subject + base verb?
+### ❓ Questions: Did + subject + base verb?
 | Statement | Question |
 |-----------|----------|
 | You liked it | **Did** you **like** it? |
 | He went | **Did** he **go**? |
 | They ate | **Did** they **eat**? |
 
-### âœ… Short Answers
+### ✅ Short Answers
 - **Yes, I did.** / **No, I didn't.**
 - **Yes, she did.** / **No, she didn't.**
 
-### âš¡ With "was/were"
+### ⚡ With "was/were"
 | Affirmative | Negative | Question |
 |-------------|----------|----------|
 | I was there | I **wasn't** there | **Was** I there? |
 | They were happy | They **weren't** happy | **Were** they happy? |
 
-> ðŸ’¡ "Was/were" are special: they DO NOT use "did" for questions or denials.
+> 💡 "Was/were" are special: they DO NOT use "did" for questions or denials.

@@ -3,8 +3,8 @@ id: m4-ch6
 moduleId: modulo-4
 number: 6
 title: Prepositions of Place and Time
-subtitle: In, on, at â€” where and when
-icon: ðŸ“
+subtitle: In, on, at — where and when
+icon: 📍
 color: "#06b6d4"
 objectives:
   - Use in, on, at for place
@@ -45,4 +45,4 @@ xpReward: 150
 - at the **weekend** (British) / on the **weekend** (American)
 - at **noon** / at **midnight**
 
-> ðŸ’¡ IN = large (countries, months, years) / ON = medium (days, dates) / AT = small (hours, points)
+> 💡 IN = large (countries, months, years) / ON = medium (days, dates) / AT = small (hours, points)

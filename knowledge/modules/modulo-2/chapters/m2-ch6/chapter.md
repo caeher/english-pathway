@@ -4,7 +4,7 @@ moduleId: modulo-2
 number: 6
 title: Simple Present vs Simple Past
 subtitle: Comprehensive Comparison and When to Use Each
-icon: âš–ï¸
+icon: ⚖️
 color: "#14b8a6"
 objectives:
   - Compare the formation of the simple present and simple past
@@ -14,7 +14,7 @@ objectives:
 xpReward: 170
 ---
 
-## Present Simple vs Past Simple â€” Comprehensive Comparison
+## Present Simple vs Past Simple — Comprehensive Comparison
 
 ### Training in comparison
 | | Present Simple | Past Simple |
@@ -32,12 +32,12 @@ xpReward: 170
 | **today** (if usual) | this morning (it's already happened) |
 
 ### golden rule
-- **Present Simple** = routines, facts, truths, habits â†’ *I **eat** breakfast at 7.*
-- **Past Simple** = actions completed in the past â†’ *I **ate** breakfast at 7 **yesterday**.*
+- **Present Simple** = routines, facts, truths, habits → *I **eat** breakfast at 7.*
+- **Past Simple** = actions completed in the past → *I **ate** breakfast at 7 **yesterday**.*
 
 ### Ejemplos lado a lado
-- She **works** in a bank. (works â€” routine) vs She **worked** in a bank. (worked â€” not anymore)
+- She **works** in a bank. (works — routine) vs She **worked** in a bank. (worked — not anymore)
 - He **goes** to the gym **every day**. vs He **went** to the gym **yesterday**.
-- Water **boils** at 100Â°C. (done) vs The water **boiled** yesterday. (passed)
+- Water **boils** at 100°C. (done) vs The water **boiled** yesterday. (passed)
 
-> ðŸ’¡ When there is a **past marker** (yesterday, last week, ago), use **past simple**.
+> 💡 When there is a **past marker** (yesterday, last week, ago), use **past simple**.

@@ -3,8 +3,8 @@ id: m3-ch1
 moduleId: modulo-3
 number: 1
 title: "Present Continuous: Formation and Uses"
-subtitle: What's happening right now â€” be + verb-ing
-icon: ðŸ”„
+subtitle: What's happening right now — be + verb-ing
+icon: 🔄
 color: "#3b82f6"
 objectives:
   - "Form the present continuous: am/is/are + verb-ing"
@@ -13,7 +13,7 @@ objectives:
 xpReward: 160
 ---
 
-## Present Continuous â€” Presente Continuo
+## Present Continuous — Presente Continuo
 
 ### Formation: Subject + am/is/are + verb-ing
 | Subject | Be | Verb-ing | Example |
@@ -28,11 +28,11 @@ xpReward: 160
 ### Spelling Rules for -ing
 | Rule | Example |
 |------|---------|
-| Most verbs: + ing | play â†’ play**ing**, eat â†’ eat**ing** |
-| -e at the end: drop e + ing | make â†’ mak**ing**, write â†’ writ**ing** |
-| Short vowel + consonant: double consonant + ing | run â†’ run**ning**, sit â†’ sit**ting**, begin â†’ begin**ning** |
-| -ie at the end: change to y + ing | die â†’ dy**ing**, lie â†’ ly**ing** |
-| -l at the end (British): double l + ing | travel â†’ travel**ling** ðŸ‡¬ðŸ‡§ / traveling ðŸ‡ºðŸ‡¸ |
+| Most verbs: + ing | play → play**ing**, eat → eat**ing** |
+| -e at the end: drop e + ing | make → mak**ing**, write → writ**ing** |
+| Short vowel + consonant: double consonant + ing | run → run**ning**, sit → sit**ting**, begin → begin**ning** |
+| -ie at the end: change to y + ing | die → dy**ing**, lie → ly**ing** |
+| -l at the end (British): double l + ing | travel → travel**ling** 🇬🇧 / traveling 🇺🇸 |
 
 ### Uses
 1. **Action happening NOW:** I'm studying right now.

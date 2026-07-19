@@ -4,7 +4,7 @@ moduleId: modulo-1
 number: 2
 title: Greetings, Introductions and Essential Vocabulary
 subtitle: Say hello, introduce yourself and learn the most used words
-icon: ðŸ‘‹
+icon: 👋
 color: "#10b981"
 objectives:
   - Greet and say goodbye in different contexts (formal and informal)
@@ -13,35 +13,35 @@ objectives:
 xpReward: 120
 ---
 
-## Greetings & Introductions â€” Greetings and Introductions
+## Greetings & Introductions — Greetings and Introductions
 
 ### Informal greetings
-- **Hi!** / **Hey!** â€” Hello!
-- **What's up?** â€” How are you?
-- **How's it going?** â€” How's it going?
+- **Hi!** / **Hey!** — Hello!
+- **What's up?** — How are you?
+- **How's it going?** — How's it going?
 
 ### Formal greetings
 - **Good morning** / **Good afternoon** / **Good evening**
-- **How â€‹â€‹do you do?** â€” Nice to meet you (very formal)
+- **How ​​do you do?** — Nice to meet you (very formal)
 
 ### Presentations
-- **My name isâ€¦** / **I'mâ€¦** â€” My name isâ€¦ / I amâ€¦
-- **Nice to meet you!** â€” Nice to meet you!
-- **What's your name?** â€” What's your name?
-- **Where are you from?** â€” Where are you from?
-- **I'm fromâ€¦**
+- **My name is…** / **I'm…** — My name is… / I am…
+- **Nice to meet you!** — Nice to meet you!
+- **What's your name?** — What's your name?
+- **Where are you from?** — Where are you from?
+- **I'm from…**
 
 ### Farewells
-- **Bye! / Goodbye!** â€” Goodbye!
-- **See you later!** â€” See you later!
-- **See you tomorrow!** â€” See you tomorrow!
-- **Have a nice day!** â€” Have a nice day!
+- **Bye! / Goodbye!** — Goodbye!
+- **See you later!** — See you later!
+- **See you tomorrow!** — See you tomorrow!
+- **Have a nice day!** — Have a nice day!
 
 ### Expressions of courtesy
-- **Please** â€” Please
-- **Thank you / Thanks** â€” Thank you
-- **Excuse me** â€” Excuse me / With permission
-- **Sorry** â€” Sorry / Sorry
+- **Please** — Please
+- **Thank you / Thanks** — Thank you
+- **Excuse me** — Excuse me / With permission
+- **Sorry** — Sorry / Sorry
 
 ### extended family
 - **uncle** (uncle), **aunt** (aunt), **cousin** (cousin)
@@ -55,4 +55,4 @@ xpReward: 120
 ### Additional colors
 - **gray**, **silver**, **gold**
 
-> ðŸ’¡ **Tip:** In English it is common to ask "How are you?" as a greeting The standard response is "I'm fine, thanks. And you?"
+> 💡 **Tip:** In English it is common to ask "How are you?" as a greeting The standard response is "I'm fine, thanks. And you?"

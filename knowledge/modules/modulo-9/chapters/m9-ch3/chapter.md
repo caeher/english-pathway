@@ -4,7 +4,7 @@ moduleId: modulo-9
 number: 3
 title: Questions and answers
 subtitle: Mastering the formulation of basic questions with questionnaires
-icon: â“
+icon: ❓
 color: "#06b6d4"
 objectives:
   - Ask and answer questions with wh-words (What, Where, When, Who, Why, How) with confidence
@@ -14,16 +14,16 @@ objectives:
 xpReward: 250
 ---
 
-## Questions are your superpower ðŸ¦¸
+## Questions are your superpower 🦸
 
 To get information, you need to know how to ask. There are two main types:
 
 ### Yes / No Questions
 Answer: *Yes* or *No*.
-- **Do** you like pizza? â†’ Yes, I do.
-- **Does** she work here? â†’ No, she doesn't.
-- **Is** he a teacher? â†’ Yes, he is.
-- **Are** they coming? â†’ No, they aren't.
+- **Do** you like pizza? → Yes, I do.
+- **Does** she work here? → No, she doesn't.
+- **Is** he a teacher? → Yes, he is.
+- **Are** they coming? → No, they aren't.
 
 ### Wh- Questions
 They contain a **question word** and ask for specific information:
@@ -63,16 +63,16 @@ With **do/does**:
 
 ### Intonation in questions
 
-- **Yes/No questions**: Intonation GOES UP at the end â†—ï¸
-  - "Do you like coffee?" â†—ï¸
+- **Yes/No questions**: Intonation GOES UP at the end ↗️
+  - "Do you like coffee?" ↗️
   
-- **Wh-questions**: LOW intonation at the end â†˜ï¸
-  - "Where do you live?" â†˜ï¸
+- **Wh-questions**: LOW intonation at the end ↘️
+  - "Where do you live?" ↘️
 
-> ðŸ’¡ **Tip:** Practice turning statements into questions. It's the best way to master investing!
+> 💡 **Tip:** Practice turning statements into questions. It's the best way to master investing!
 
-> ðŸ—£ï¸ **Pronunciation Tip**: In questions with "do you", it often sounds like /d'ya/ or "d'you" in fast speech: "D'you like pizza?"
+> 🗣️ **Pronunciation Tip**: In questions with "do you", it often sounds like /d'ya/ or "d'you" in fast speech: "D'you like pizza?"
 
-> âš ï¸ **Common Mistake**: In questions with "do/does", NEVER conjugate the main verb:
-- âœ“ "Does she **work** here?"
-- âœ— ~~"Does she **works** here?"~~
+> ⚠️ **Common Mistake**: In questions with "do/does", NEVER conjugate the main verb:
+- ✓ "Does she **work** here?"
+- ✗ ~~"Does she **works** here?"~~

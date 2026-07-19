@@ -4,7 +4,7 @@ moduleId: modulo-6
 number: 3
 title: Second Conditional
 subtitle: If + past simple, would + base verb
-icon: ðŸ’­
+icon: 💭
 color: "#10b981"
 objectives:
   - "Form the second conditional: if + past simple, would + base verb"
@@ -13,7 +13,7 @@ objectives:
 xpReward: 180
 ---
 
-## Second Conditional â€” Segundo Condicional
+## Second Conditional — Segundo Condicional
 
 ### Estructura
 | If clause | Result clause |
@@ -27,14 +27,14 @@ xpReward: 180
 - If I **were** rich, I **would travel** the world. (No soy rico)
 - If I **had** wings, I **would fly**. (No tengo alas)
 
-### If I wereâ€¦ (NOT "was" in conditionals)
-- âœ… If I **were** you, I would study more.
-- âœ… If she **were** here, she would help us.
+### If I were… (NOT "was" in conditionals)
+- ✅ If I **were** you, I would study more.
+- ✅ If she **were** here, she would help us.
 - (In informal English, "was" is sometimes used, but "were" is grammatically correct for all subjects.)
 
 ### Contractions
-- would â†’ **'d**: I**'d** buy, she**'d** tell, we**'d** go
-- would not â†’ **wouldn't**: I **wouldn't** do that.
+- would → **'d**: I**'d** buy, she**'d** tell, we**'d** go
+- would not → **wouldn't**: I **wouldn't** do that.
 
 ### Negative
 - If I **didn't have** to work, I **would sleep** all day.
@@ -47,6 +47,6 @@ xpReward: 180
 | If I eat too much, I feel sick. | If I have time, I'll study. | If I **had** time, I**'d** travel. (I don't have time) |
 
 ### Common phrases with Second Conditional
-- If I **were** you, I wouldâ€¦
-- If I **had** more time / moneyâ€¦
-- What **would** you **do** ifâ€¦?
+- If I **were** you, I would…
+- If I **had** more time / money…
+- What **would** you **do** if…?
