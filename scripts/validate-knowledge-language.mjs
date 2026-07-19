@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative } from 'node:path'
 
 const root = join(process.cwd(), 'knowledge', 'modules')
-const spanish = /(?:[¿¡]|\b(?:ambos|aprender|aprende|aprendizaje|actividad|actividades|administré|ahora|algunas|antes|aquí|capítulo|completa|contenido|continúa|correctamente|cuál|cuándo|debe|después|elige|entonces|escucha|estudia|explica|feedback|gestionar|identificar|inglés|lección|más|mismo|número|objetivo|oración|palabra|practica|pregunta|respuesta|selecciona|siempre|sonido|siguiente|traduce|usar)\b)/iu
+const spanish = /(?:[¿¡]|\b(?:ambos|aprender|aprende|aprendizaje|actividad|actividades|administré|ahora|algunas|antes|aquí|capítulo|completa|contenido|continúa|correctamente|cuál|cuándo|debe|después|elige|entonces|escucha|estudia|explica|gestionar|identificar|inglés|lección|más|mismo|número|objetivo|oración|palabra|practica|pregunta|respuesta|selecciona|siempre|sonido|siguiente|traduce|usar)\b)/iu
 const violations = []
 
 function visit(directory) {

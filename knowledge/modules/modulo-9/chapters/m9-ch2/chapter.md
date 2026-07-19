@@ -39,7 +39,7 @@ Use the present continuous to describe **what is happening right now**:
 
 | Presente Simple | Presente Continuo |
 |----------------|-------------------|
-| 📅 Habits, routines | 📸 Ahora mismo |
+| 📅 Habits, routines | 📸 Right now |
 | "I read books every day." | "I am reading a book right now." |
 | "She works at a bank." | "She is working on a project today." |
 | "They play soccer on weekends." | "Look! They are playing soccer." |

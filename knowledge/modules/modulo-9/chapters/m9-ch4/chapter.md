@@ -46,7 +46,7 @@ The past simple is used for actions **finished** at a time in the past.
   - *"I didn't go to work."*
   - *"She didn't like the movie."*
   
-- **Pregunta**: **Did** + subject + verbo **base**? 
+- **Question**: **Did** + subject + verb **base**?
   - *"Did you see the movie?"*
   - *"Did she finish her homework?"*
 
@@ -60,7 +60,7 @@ The past simple is used for actions **finished** at a time in the past.
 
 The -ed ending has 3 different sounds:
 
-| Sonido | After | Ejemplo | Pronunciation |
+| Sound | After | Example | Pronunciation |
 |--------|-----------|---------|---------------|
 | **/t/** | p, k, f, s, sh, ch | walk**ed**, watch**ed** | /wɔːkt/, /wɒtʃt/ |
 | **/d/** | vocales, b, g, l, m, n, v, z | play**ed**, call**ed** | /pleɪd/, /kɔːld/ |

@@ -101,7 +101,7 @@
         {
           "id": "q9",
           "type": "multiple-choice",
-          "question": "[Respuesta] Which is the best example of a critical response to this text?",
+          "question": "[Answer] What is the best example of a critical response to this text?",
           "options": [
             "\"I agree because I don't like social media\"",
             "\"The article makes a balanced argument, but would benefit from discussing age-specific impacts\"",
@@ -413,7 +413,7 @@
             "rx": 120,
             "ry": 30,
             "fill": "#f9a8d4",
-            "label": "Tu respuesta personal",
+            "label": "Your personal response",
             "labelEn": "💭 My Response"
           }
         ]

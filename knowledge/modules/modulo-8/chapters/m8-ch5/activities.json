@@ -2,7 +2,7 @@
   {
     "id": "m8-ch5-svg",
     "type": "svg-scene",
-    "title": "Elige tu Aventura Conversacional",
+    "title": "Choose your Conversational Adventure",
     "description": "Visit different settings and practice the phrases used in each place.",
     "props": {
       "scene": {
@@ -199,7 +199,7 @@
   {
     "id": "m8-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Construye tu Respuesta",
+    "title": "Build your Answer",
     "description": "The waiter or salesperson speaks to you — order the words to respond!",
     "props": {
       "sentences": [
@@ -415,7 +415,7 @@
   {
     "id": "m8-ch5-match",
     "type": "word-match",
-    "title": "Pregunta → Respuesta",
+    "title": "Question → Answer",
     "description": "Match each question with its most appropriate answer.",
     "props": {
       "pairs": [

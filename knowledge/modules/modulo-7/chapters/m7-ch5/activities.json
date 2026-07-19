@@ -275,7 +275,7 @@
           "correct": "I am 25 years old"
         },
         {
-          "prompt": "Siempre voy al gimnasio (correcto):",
+          "prompt": "I always go to the gym (correct):",
           "words": [
             "I",
             "always",
@@ -411,7 +411,7 @@
         {
           "id": "q9",
           "type": "fill-blank",
-          "question": "\"I ___ go to the gym.\" (= siempre)",
+          "question": "\"I ___ go to the gym.\" (= always)",
           "correct": "always",
           "explanation": "Adverb of frequency before the main verb: I ALWAYS go."
         },

@@ -22,7 +22,7 @@ Most people abandon learning English not because of lack of ability, but because
 
 | Tipo | Description | Ejemplo |
 |---|---|---|
-| 🎯 **Intrinsic** | Aprender porque te gusta y te satisface | "I enjoy understanding songs in English" |
+| 🎯 **Intrinsic** | Learn why you like it and it satisfies you | "I enjoy understanding songs in English" |
 | 🏆 **Extrinsic** | Learn to obtain a result | "I need English for my job" |
 | 👥 **Social** | Learn to connect with people | "I want to talk to international friends" |
 
@@ -44,7 +44,7 @@ Most people abandon learning English not because of lack of ability, but because
 |---|---|
 | 🔔 **Cue** | After morning coffee = 10 min of English |
 | 💡 **Deseo (Craving)** | Choose activities that you enjoy (series, music, games) |
-| 🎬 **Respuesta (Response)** | Make it ridiculously easy: 1 flashcard > 0 flashcards |
+| 🎬 **Response** | Make it ridiculously easy: 1 flashcard > 0 flashcards |
 | 🎁 **Recompensa (Reward)** | Gamification, streak tracking, celebrating achievements |
 
 ### "Don't Break the Chain" — The Seinfeld Method

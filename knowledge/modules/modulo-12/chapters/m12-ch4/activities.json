@@ -124,7 +124,7 @@
   {
     "id": "m12-ch4-match",
     "type": "word-match",
-    "title": "Forma Reducida → Forma Completa",
+    "title": "Reduced Form → Full Form",
     "description": "Match each reduction with its full equivalent.",
     "props": {
       "pairs": [

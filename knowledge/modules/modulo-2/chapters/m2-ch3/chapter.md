@@ -25,7 +25,7 @@ xpReward: 170
 | CVC (short vowel in stressed syllable) → **double consonant + ed** | stop → stopped, plan → planned |
 
 ### -ED pronunciation
-| Sonido | When | Ejemplos |
+| Sound | When | Examples |
 |--------|--------|----------|
 | **/t/** | After voiceless sounds (p, k, f, s, sh, ch) | walked, stopped, watched |
 | **/d/** | After voiced sounds (b, g, v, z, m, n, l, r) | played, lived, cleaned |

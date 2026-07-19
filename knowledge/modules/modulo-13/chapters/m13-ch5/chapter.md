@@ -41,7 +41,7 @@ This is the climactic chapter. Here you integrate **everything** what you learne
 - **Skills:** Writing (Module 12, Ch. 1), Connectors (Module 10, Ch. 3)
 
 #### Phase 3: ✏️ Production
-- Escribe/graba tu contenido
+- Write/record your content
 - Uses varied grammar: present perfect, modals, passive voice, conditionals
 - Incluye vocabulario avanzado y conectores
 - **Skills:** Grammar (Module 11), Presentations (Module 12, Ch. 2)
@@ -61,7 +61,7 @@ This is the climactic chapter. Here you integrate **everything** what you learne
 
 | Criterio | Excelente (25%) | Bueno (20%) | In development (15%) |
 |---|---|---|---|
-| **Contenido** | Bien organizado, ideas claras | Organizado, algunas ideas vagas | Desorganizado |
+| **Content** | Well organized, clear ideas | Organized, some vague ideas | Disorganized |
 | **Grammar** | Variada y precisa | Correcta, poca variedad | Errores frecuentes |
 | **Vocabulario** | Avanzado y preciso | Adecuado | Basic or repetitive |
 | **Pronunciation** | Clara, buen stress/intonation | Comprensible | hard to understand |

@@ -43,7 +43,7 @@ xpReward: 130
 - **Question:** *Am I late?* / *Is she a teacher?* / *Are they ready?*
 
 ### Short Answers
-| Pregunta | Yeah | No |
+| Question | Yeah | No |
 |----------|-----|-----|
 | Are you a student? | Yes, I am. | No, I'm not. |
 | Is she a teacher? | Yes, she is. | No, she isn't. |

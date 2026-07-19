@@ -21,7 +21,7 @@ xpReward: 160
 |-------|--------------|-----------|
 | ✅ Afirmativa | I **work** | She **works** |
 | ❌ Negativa | I **don't work** | She **doesn't work** |
-| ❓ Pregunta | **Do** you **work**? | **Does** she **work**? |
+| ❓ Question | **Do** you **work**? | **Does** she **work**? |
 
 ### Third person rule (he/she/it)
 - Verbo + **s**: *work → works, play → plays*

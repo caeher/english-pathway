@@ -23,8 +23,8 @@ A conversation has structure. Learn the patterns and you can adapt them to any s
 | Turno | Function | Ejemplo |
 |-------|---------|---------|
 | 1 | Saludo | *Hello! How are you?* |
-| 2 | Respuesta + pregunta | *I'm fine, thanks! And you?* |
-| 3 | Respuesta | *Great, thanks!* |
+| 2 | Answer + question | *I'm fine, thanks! And you?* |
+| 3 | Answer | *Great, thanks!* |
 | 4 | Tema / Pedido | *I'd like a coffee, please.* |
 | 5 | Confirmation | *Sure! Anything else?* |
 | 6 | Cierre | *No, that's all. Thank you!* |
@@ -54,7 +54,7 @@ A conversation has structure. Learn the patterns and you can adapt them to any s
 
 ### Helpful answers depending on the context
 
-| Situation | Respuesta apropiada |
+| Situation | Appropriate response |
 |-----------|-------------------|
 | Alguien te agradece | You're welcome! / No problem! / My pleasure! |
 | No entiendes | Sorry, could you repeat that? / Pardon? |

@@ -32,7 +32,7 @@ The ultimate goal of any course is for you to **no longer need the course**. Thi
 
 Before investing time in a resource, ask yourself:
 
-| Pregunta | Why it matters |
+| Question | Why it matters |
 |---|---|
 | Is it appropriate for my level? | A resource that is too easy or difficult is useless |
 | Will I use it regularly? | Consistency is more important than intensity |
@@ -45,7 +45,7 @@ Before investing time in a resource, ask yourself:
 | Day | Type of practice | Ejemplo |
 |---|---|---|
 | Mon/Wed/Fri | Active practice (speaking, writing) | iTalki, writing in journal |
-| Mar/Jue | Input pasivo (escuchar, leer) | Podcast, English series, news |
+| Tue/Thu | Passive input (listening, reading) | Podcasts, English series, news |
 | Weekend | Community + review | Reddit, Discord, review the week |
 
 ### SMART Goals for English
@@ -58,7 +58,7 @@ Before investing time in a resource, ask yourself:
 | **R** — Relevant | Relevante | "Speaking is my weakest area" |
 | **T** — Time-bound | With deadline | "For the next 2 months" |
 
-**Meta SMART completa:** *"I will have three 30-minute conversations per week on iTalki for two months to improve my speaking fluency."*
+**Complete SMART goal:** *"I will have three 30-minute conversations per week on iTalki for two months to improve my speaking fluency."*
 
 ### Measure Progress without a Teacher
 

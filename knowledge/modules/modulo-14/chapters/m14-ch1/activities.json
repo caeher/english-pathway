@@ -83,7 +83,7 @@
           "type": "fill-blank",
           "question": "\"I ___ your effort on this project. However, there are a few areas where we could improve.\"",
           "correct": "appreciate",
-          "explanation": "\"I appreciate your effort\" softens negative feedback. Always start with recognition before critique."
+          "explanation": "\"I appreciate your effort\" softens negative feedback. Always start with recognition before criticism."
         },
         {
           "id": "q8",
@@ -317,7 +317,7 @@
         {
           "id": "f4",
           "front": "❌ \"Your work isn't good enough.\"",
-          "back": "✅ \"I appreciate your effort. There are a few areas where we could improve together.\" — Feedback constructivo.",
+          "back": "✅ \"I appreciate your effort. There are a few areas where we could improve together.\" — Constructive feedback.",
           "example": "I appreciate your effort on this report. There are a few areas where we could strengthen the analysis."
         },
         {

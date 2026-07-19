@@ -36,7 +36,7 @@ xpReward: 140
    - I **have to** study. / She **has to** work.
 2. **have got** = have (possession, British English):
    - I'**ve got** a new phone. / She'**s got** a brother.
-3. **have + noun** (actividades):
+3. **have + noun** (activities):
    - have breakfast / have a shower / have fun / have a party
 
 > 💡 "Have" as an auxiliary verb is used in perfect tenses (Module 5).

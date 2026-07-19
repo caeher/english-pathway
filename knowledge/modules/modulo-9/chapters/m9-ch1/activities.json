@@ -313,7 +313,7 @@
   {
     "id": "m9-ch1-match",
     "type": "word-match",
-    "title": "Lugar → Actividad",
+    "title": "Place → Activity",
     "description": "Match each place with the activity that takes place there.",
     "props": {
       "pairs": [

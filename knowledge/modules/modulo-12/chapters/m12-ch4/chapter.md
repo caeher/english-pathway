@@ -20,7 +20,7 @@ The #1 reason students say "I don't understand native speakers" is because spoke
 
 ### Reducciones Principales
 
-| Forma completa | Reduction | Ejemplo |
+| Complete form | Reduction | Example |
 |---|---|---|
 | going to | **gonna** | "I'm gonna help you." |
 | want to | **wanna** | "I wanna go home." |

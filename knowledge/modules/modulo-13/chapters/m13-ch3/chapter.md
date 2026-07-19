@@ -20,12 +20,12 @@ Critical reading doesn't just ask "What does the text say?" but also "How do you
 
 ### The 4 Dimensions of Critical Reading
 
-| Dimension | Pregunta clave | Habilidad |
+| Dimension | Key question | Skill |
 |---|---|---|
 | 📖 **Understanding** | What does the text say? | Resumir objetivamente |
 | 🔬 **Analysis** | How do you say it? | Identify structure and techniques |
 | ⚖️ **Evaluation** | Is it convincing? | Juzgar fortalezas y debilidades |
-| 💭 **Respuesta** | What do I think? | Form informed opinion |
+| 💭 **Answer** | What do I think? | Form an informed opinion |
 
 ### Rhetorical Techniques — The author's tools
 
@@ -40,7 +40,7 @@ Critical reading doesn't just ask "What does the text say?" but also "How do you
 
 ### Detectar Sesgos (Bias)
 
-Hazte estas preguntas:
+Ask yourself these questions:
 - **Who** wrote this? For what **purpose**?
 - What **perspectives are omitted**?
 - Is the language **neutral** or position-oriented?

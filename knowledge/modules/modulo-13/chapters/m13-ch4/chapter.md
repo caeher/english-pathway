@@ -43,7 +43,7 @@ The SAME sentence changes meaning depending on WHICH word you accentuate:
 
 ### Reducciones Avanzadas
 
-| Forma completa | Reduction | Ejemplo |
+| Complete form | Reduction | Example |
 |---|---|---|
 | would have | **woulda** | "I woulda helped if I'd known." |
 | should have | **shoulda** | "You shoulda told me earlier." |

@@ -43,7 +43,7 @@ Many errors come from **translating literally** from Spanish to English. The str
 ---
 
 ### Mistake 3: Confusion "make" vs "do"
-| Make (crear/producir) | Do (realizar/actividad) |
+| Make (create/produce) | Do (do/activity) |
 |------------------------|-------------------------|
 | make a mistake | do homework |
 | make a decision | do the dishes |

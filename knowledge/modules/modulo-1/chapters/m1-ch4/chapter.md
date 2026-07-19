@@ -43,7 +43,7 @@ Uncountables do not take *a/an* or plural. Use:
 | **any** | Negativo e interrogativo | *I don't have any money. Do you have any water?* |
 | **much** | Incontable (negativo/interrogativo) | *How much water? I don't have much time.* |
 | **many** | Contable (negativo/interrogativo) | *How many books? I don't have many friends.* |
-| **a lot of** | Afirmativo (ambos) | *I have a lot of work. She has a lot of friends.* |
+| **a lot of** | Affirmative (both) | *I have a lot of work. She has a lot of friends.* |
 
 **Common uncountables:** *information, advice, news, furniture, homework, rice, water, milk, coffee, bread, money*
 

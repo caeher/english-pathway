@@ -255,7 +255,7 @@
         {
           "id": "f4",
           "front": "NOW LET'S TURN TO... 🔄 (Transition)",
-          "back": "Ahora pasemos a... Alternativa a \"moving on to\". Nivel: Formal.",
+          "back": "Now let's move on to... Alternative to \"moving on to\". Level: Formal.",
           "example": "Now let's turn to the results of our survey."
         },
         {
@@ -434,7 +434,7 @@
             "width": 60,
             "height": 45,
             "fill": "#86efac",
-            "label": "Slides — Organiza contenido",
+            "label": "Slides — Organize content",
             "labelEn": "🖥️ Slides"
           },
           {

@@ -19,7 +19,7 @@ xpReward: 250
 To get information, you need to know how to ask. There are two main types:
 
 ### Yes / No Questions
-Respuesta: *Yes* o *No*.
+Answer: *Yes* or *No*.
 - **Do** you like pizza? → Yes, I do.
 - **Does** she work here? → No, she doesn't.
 - **Is** he a teacher? → Yes, he is.
@@ -41,7 +41,7 @@ They contain a **question word** and ask for specific information:
 
 "How" is combined with other words to form specific questions:
 
-| Pregunta | Function | Ejemplo |
+| Question | Function | Example |
 |----------|---------|---------|
 | **How many** | Cantidad (contables) | *How many books do you have?* |
 | **How much** | Cantidad (no contables) / Precio | *How much water? / How much is it?* |
@@ -53,12 +53,12 @@ They contain a **question word** and ask for specific information:
 
 ### Investment pattern
 - **Claim**: She **is** a doctor.
-- **Pregunta**: **Is** she a doctor?
+- **Question**: **Is** she a doctor?
 - **With Wh-**: **What is** she?
 
 With **do/does**:
 - **Claim**: You **live** in Mexico.
-- **Pregunta**: **Do** you **live** in Mexico?
+- **Question**: **Do** you **live** in Mexico?
 - **With Wh-**: **Where do** you **live**?
 
 ### Intonation in questions

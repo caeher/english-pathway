@@ -22,7 +22,7 @@ Pronunciation is not just individual sounds. **Prosody** — intonation, rhythm,
 
 Every multi-syllabic word has a stressed syllable (stronger, longer, higher pitch):
 
-| Palabra | Pattern | Acento |
+| Word | Pattern | Accent |
 |---|---|---|
 | PHO-to-graph | **O**oo | 1st syllable |
 | pho-TO-gra-phy | o**O**oo | 2nd syllable |

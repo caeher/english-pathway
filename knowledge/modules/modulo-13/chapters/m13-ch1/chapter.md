@@ -20,14 +20,14 @@ The job interview is one of the most challenging situations to speak in English.
 
 ### The 7 Questions They Always Ask
 
-| # | Pregunta | Estrategia |
+| # | Question | Strategy |
 |---|---|---|
 | 1 | "Tell me about yourself." | 60 second professional summary |
 | 2 | "What are your strengths?" | 3 qualities with examples |
 | 3 | "What are your weaknesses?" | 1 real weakness + how you overcome it |
 | 4 | "Why are you interested in this position?" | Research + alignment |
 | 5 | "Where do you see yourself in 5 years?" | Realistic and ambitious projection |
-| 6 | "Tell me about a challenge you faced." | Respuesta STAR |
+| 6 | "Tell me about a challenge you faced." | STAR Response |
 | 7 | "Do you have any questions for us?" | 2-3 preguntas inteligentes |
 
 ### The STAR Technique ⭐

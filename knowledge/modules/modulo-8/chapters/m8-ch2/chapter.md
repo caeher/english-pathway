@@ -34,7 +34,7 @@ The **-s** ending is not just grammar — it helps you identify **who** is doing
 - I **don't** like coffee.
 - She **doesn't** like coffee. (the verb returns to the base form)
 
-### Pregunta
+### Ask
 - **Do** you speak English?
 - **Does** he speak English?
 

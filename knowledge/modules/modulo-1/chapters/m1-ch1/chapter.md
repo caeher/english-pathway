@@ -19,7 +19,7 @@ xpReward: 100
 The English alphabet has **26 letters**: 5 vowels (A, E, I, O, U) and 21 consonants.
 
 ### Vowels and their sounds
-| Letra | Sonido corto | Ejemplo | Sonido largo | Ejemplo |
+| Lyrics | Short sound | Example | Long sound | Example |
 |-------|-------------|---------|-------------|---------|
 | **A** | /æ/ | *cat, hat* | /eɪ/ | *cake, name* |
 | **E** | /ɛ/ | *bed, red* | /iː/ | *tree, me* |

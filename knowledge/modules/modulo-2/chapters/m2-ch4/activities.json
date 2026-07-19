@@ -127,7 +127,7 @@
         },
         {
           "id": "c2",
-          "front": "He ate lunch. (pregunta)",
+          "front": "I have ate lunch. (ask)",
           "back": "Did he eat lunch?",
           "example": "Did + he + eat (base form)."
         },
@@ -139,7 +139,7 @@
         },
         {
           "id": "c4",
-          "front": "You bought a car. (pregunta)",
+          "front": "You bought a car. (ask)",
           "back": "Did you buy a car?",
           "example": "Did + you + buy (base form)."
         },
@@ -151,7 +151,7 @@
         },
         {
           "id": "c6",
-          "front": "They were happy. (pregunta)",
+          "front": "They were happy. (ask)",
           "back": "Were they happy?",
           "example": "were → Were they? (no 'did')."
         },
@@ -163,7 +163,7 @@
         },
         {
           "id": "c8",
-          "front": "We flew to Madrid. (pregunta)",
+          "front": "We flew to Madrid. (ask)",
           "back": "Did we fly to Madrid?",
           "example": "Did + we + fly."
         },
@@ -181,13 +181,13 @@
         },
         {
           "id": "c11",
-          "front": "Was she there? (respuesta corta no)",
+          "front": "Was she there? (short answer no)",
           "back": "No, she wasn't.",
           "example": "Short answer: No, + subject + wasn't."
         },
         {
           "id": "c12",
-          "front": "Did they come? (respuesta corta no)",
+          "front": "Did they eat? (short answer no)",
           "back": "No, they didn't.",
           "example": "Short answer: No, + subject + didn't."
         }
@@ -473,7 +473,7 @@
         },
         {
           "word": "BEFORE",
-          "hint": "Antes",
+          "hint": "Before",
           "category": "Past"
         },
         {

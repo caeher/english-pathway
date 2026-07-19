@@ -24,7 +24,7 @@ Writing well in English is not a matter of translating from Spanish. It's about 
 |---|---|
 | 🧠 **Pre-writing** | Brainstorming, organizar ideas, elegir tema |
 | ✏️ **Drafting** | Write the first draft without seeking perfection |
-| 🔍 **Revising** | Revisar contenido, estructura y coherencia |
+| 🔍 **Reviewing** | Review content, structure and coherence |
 | ✅ **Editing** | Correct grammar, spelling and punctuation |
 | 📤 **Publishing** | Final version ready to share |
 

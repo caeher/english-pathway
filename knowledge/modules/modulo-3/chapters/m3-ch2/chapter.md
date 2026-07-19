@@ -23,7 +23,7 @@ xpReward: 160
 **Keywords:** always, usually, often, sometimes, never, every day/week/month
 
 ### Present Continuous → NOW, temporary, changing
-- I **am working** right now. (ahora mismo)
+- I **am working** right now. (right now)
 - She **is living** in Madrid this month. (temporal)
 - Prices **are rising**. (tendencia)
 

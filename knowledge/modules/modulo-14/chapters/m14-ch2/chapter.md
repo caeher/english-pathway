@@ -32,7 +32,7 @@ Creating content in English is one of the most powerful ways to learn. It forces
 2. 🔍 **Research** — Read/listen to English sources
 3. ✏️ **Scripting** — Write the script or draft
 4. 🎬 **Production** — Record or write the final version
-5. 📤 **Publication** — Compartir y recibir feedback
+5. 📤 **Publication** — Share and receive feedback
 
 ### The Art of the Hook — The first 10 seconds
 
@@ -62,7 +62,7 @@ The **hook** is the first phrase that catches attention. Without a good hook, no
 
 | Formato | Extension | Requisitos |
 |---|---|---|
-| Blog | 500-800 palabras | Clear structure, min. 3 paragraphs with topic sentences |
+| Blog | 500-800 words | Clear structure, min. 3 paragraphs with topic sentences |
 | Vlog | 3-5 minutos | Good diction, eye contact with camera |
 | Podcast | 5-8 minutos | Coherent narrative, use of connectors |
 

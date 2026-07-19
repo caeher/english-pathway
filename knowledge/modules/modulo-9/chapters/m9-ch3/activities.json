@@ -129,7 +129,7 @@
     "props": {
       "sentences": [
         {
-          "prompt": "Respuesta: \"I live in Mexico City.\"",
+          "prompt": "Answer: \"I live in Mexico City.\"",
           "words": [
             "do",
             "Where",
@@ -139,7 +139,7 @@
           "correct": "Where do you live?"
         },
         {
-          "prompt": "Respuesta: \"She is a doctor.\"",
+          "prompt": "Answer: \"She is a doctor.\"",
           "words": [
             "is",
             "What",
@@ -149,7 +149,7 @@
           "correct": "What is her job?"
         },
         {
-          "prompt": "Respuesta: \"The party is on Friday.\"",
+          "prompt": "Answer: \"The party is on Friday.\"",
           "words": [
             "is",
             "When",
@@ -159,7 +159,7 @@
           "correct": "When is the party?"
         },
         {
-          "prompt": "Respuesta: \"He goes to work by bus.\"",
+          "prompt": "Answer: \"He goes to work by bus.\"",
           "words": [
             "does",
             "How",
@@ -171,7 +171,7 @@
           "correct": "How does he get to work?"
         },
         {
-          "prompt": "Respuesta: \"Yes, I do.\"",
+          "prompt": "Answer: \"Yes, I do.\"",
           "words": [
             "Do",
             "like",
@@ -181,7 +181,7 @@
           "correct": "Do you like pizza?"
         },
         {
-          "prompt": "Respuesta: \"Mr. Smith is my teacher.\"",
+          "prompt": "Answer: \"Mr. Smith is my teacher.\"",
           "words": [
             "is",
             "Who",
@@ -191,7 +191,7 @@
           "correct": "Who is your teacher?"
         },
         {
-          "prompt": "Respuesta: \"Because it's fun.\"",
+          "prompt": "Answer: \"Because it's fun.\"",
           "words": [
             "do",
             "Why",
@@ -202,7 +202,7 @@
           "correct": "Why do you like it?"
         },
         {
-          "prompt": "Respuesta: \"Yes, she does.\"",
+          "prompt": "Answer: \"Yes, she does.\"",
           "words": [
             "Does",
             "English?",
@@ -212,7 +212,7 @@
           "correct": "Does she speak English?"
         },
         {
-          "prompt": "Respuesta: \"I have two brothers.\"",
+          "prompt": "Answer: \"I have two brothers.\"",
           "words": [
             "many",
             "How",
@@ -224,7 +224,7 @@
           "correct": "How many brothers do you have?"
         },
         {
-          "prompt": "Respuesta: \"It's 3 o'clock.\"",
+          "prompt": "Answer: \"It's 3 o'clock.\"",
           "words": [
             "is",
             "What",
@@ -499,12 +499,12 @@
       "words": [
         {
           "word": "QUESTION",
-          "hint": "Pregunta",
+          "hint": "Ask",
           "category": "Questions"
         },
         {
           "word": "ANSWER",
-          "hint": "Respuesta",
+          "hint": "Answer",
           "category": "Questions"
         },
         {

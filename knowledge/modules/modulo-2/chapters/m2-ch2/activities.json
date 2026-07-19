@@ -117,7 +117,7 @@
         {
           "id": "f2",
           "front": "USUALLY (90%)",
-          "back": "Generalmente — casi siempre",
+          "back": "Generally — almost always",
           "example": "She usually walks to school."
         },
         {
@@ -225,7 +225,7 @@
     "props": {
       "sentences": [
         {
-          "prompt": "Siempre me levanto temprano:",
+          "prompt": "I always get up early:",
           "words": [
             "always",
             "I",

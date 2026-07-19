@@ -77,7 +77,7 @@
             "cy": 128,
             "r": 20,
             "fill": "#ef4444",
-            "label": "Ahora ⭐",
+            "label": "Now ⭐",
             "labelEn": "Now — All these experiences are part of who I am"
           },
           {
@@ -110,7 +110,7 @@
             "was living"
           ],
           "correct": 1,
-          "explanation": "\"For 10 years\" (hasta ahora) → present perfect: \"I have lived here for 10 years.\""
+          "explanation": "\"For 10 years\" → present perfect: \"I have lived here for 10 years.\""
         },
         {
           "id": "q2",

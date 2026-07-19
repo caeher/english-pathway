@@ -32,7 +32,7 @@ xpReward: 160
 ### Difference with First Conditional
 | Zero Conditional | First Conditional |
 |-----------------|-------------------|
-| Hecho general, siempre cierto | Possible future situation |
+| General fact, always true | Possible future situation |
 | If + present, **present** | If + present, **will** |
 | If it rains, the ground **gets** wet. | If it rains, I **will stay** home. |
 | (Every time it rains) | (If it rains in the future) |

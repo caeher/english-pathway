@@ -21,7 +21,7 @@ xpReward: 170
 |--|----------------|-------------|
 | **Afirmativa** | I work / She works | I worked / She went |
 | **Negativa** | I don't work / She doesn't work | I didn't work / She didn't go |
-| **Pregunta** | Do you work? / Does she work? | Did you work? / Did she go? |
+| **Question** | Do you work? / Does she work? | Did you work? / Did she go? |
 
 ### Marcadores temporales
 | Present Simple | Past Simple |

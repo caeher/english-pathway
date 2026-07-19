@@ -16,7 +16,7 @@ xpReward: 160
 ## Wh-Questions — Questions with Wh-
 
 ### The 6 question words
-| Wh-Word | Significado | Pregunta |
+| Wh-Word | Meaning | Question |
 |---------|------------|---------|
 | **What** | That? | *What is your name?* |
 | **Where** | Where? | *Where are you from?* |

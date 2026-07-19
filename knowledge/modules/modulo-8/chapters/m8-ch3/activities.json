@@ -162,7 +162,7 @@
   {
     "id": "m8-ch3-match",
     "type": "word-match",
-    "title": "Sonido → Palabra",
+    "title": "Sound → Word",
     "description": "Match each phonetic symbol with the word that contains that sound.",
     "props": {
       "pairs": [

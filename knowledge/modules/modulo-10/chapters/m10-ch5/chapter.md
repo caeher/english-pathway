@@ -53,7 +53,7 @@ You don't need to spend hours at the gym. Even a 30-minute walk can make a signi
 
 ### Text vocabulary
 
-| Palabra | In the text it means | Spanish |
+| Word | In the text it means | Spanish |
 |---|---|---|
 | highlights | emphasizes, draws attention to | resalta, enfatiza |
 | consistency | doing something regularly | constancia |
