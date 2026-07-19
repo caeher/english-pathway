@@ -4,6 +4,7 @@ import type { SVGScene, SVGSceneItem } from '../../types'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import ActivityResult from './ActivityResult'
 import { svgSceneCoverage } from '@/lib/games/scoring'
+import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface SVGInteractiveProps {
   scene: SVGScene
@@ -15,6 +16,7 @@ export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGIn
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [discovered, setDiscovered] = useState<Set<string>>(new Set())
   const [finished, setFinished] = useState(false)
+  const reducedMotion = useReducedMotion()
 
   const hovered = scene.items.find((i) => i.id === hoveredId)
 
@@ -104,7 +106,7 @@ export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGIn
       </svg>
 
       {hovered && (
-        <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+        <motion.div {...(reducedMotion ? motionProps(true) : { initial: { opacity: 0, y: 5 }, animate: { opacity: 1, y: 0 } })}
           className="text-center text-sm bg-(--bg-card) px-5 py-2.5 rounded-xl shadow-sm border border-(--border-primary) mx-auto w-fit flex items-center gap-2"
           role="status" aria-live="polite">
           <span className="font-display font-bold" style={{ color: 'var(--accent)' }}>{hovered.labelEn}</span>

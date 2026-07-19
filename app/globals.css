@@ -38,6 +38,8 @@
   --shadow-lg: 0 12px 30px rgba(44, 36, 22, 0.12);
   --state-focus: var(--accent);
   --state-disabled-opacity: 0.5;
+  --motion-fast: 150ms;
+  --motion-standard: 280ms;
   /* Fonts (next/font variables set on html) */
   --font-display: var(--font-outfit), sans-serif;
   --font-body: var(--font-nunito), sans-serif;
@@ -77,6 +79,10 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-standard: 0ms;
+  }
   html {
     scroll-behavior: auto;
   }

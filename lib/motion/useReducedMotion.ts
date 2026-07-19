@@ -30,3 +30,7 @@ export function motionProps(reduced: boolean) {
   }
   return {}
 }
+
+export function optionalMotion<T extends Record<string, unknown>>(reduced: boolean, props: T): T | ReturnType<typeof motionProps> {
+  return reduced ? motionProps(true) : props
+}

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface QuizProps {
   questions: QuizQuestion[]
@@ -22,6 +23,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
   const [score, setScore] = useState(0)
   const [finished, setFinished] = useState(false)
   const [wrongExplanations, setWrongExplanations] = useState<string[]>([])
+  const reducedMotion = useReducedMotion()
 
   const q = questions[current]
 
@@ -95,7 +97,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
       <Progress value={((current + 1) / questions.length) * 100} className="mb-6" />
 
       <AnimatePresence mode="wait">
-        <motion.div key={current} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
+        <motion.div key={current} {...(reducedMotion ? motionProps(true) : { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: -20 } })}>
           <h3 className="font-display text-lg font-bold text-(--text-primary) mb-5">{q.question}</h3>
 
           {q.type === 'multiple-choice' && (
@@ -142,14 +144,14 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
           )}
 
           {answered && q.explanation && isCorrect && (
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+            <motion.div {...(reducedMotion ? motionProps(true) : { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 } })}
               className="mt-4 p-4 bg-(--secondary-soft) border border-(--secondary)/20 rounded-xl text-sm text-(--text-secondary)">
               💡 {q.explanation}
             </motion.div>
           )}
 
           {answered && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 flex justify-end">
+            <motion.div {...(reducedMotion ? motionProps(true) : { initial: { opacity: 0 }, animate: { opacity: 1 } })} className="mt-5 flex justify-end">
               <Button onClick={handleNext} size="md">
                 {current + 1 >= questions.length ? 'View results' : 'Next'} <ArrowRight className="w-4 h-4" />
               </Button>
