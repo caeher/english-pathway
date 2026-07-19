@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Moon, Sun, BookOpen, GraduationCap, RotateCcw, Menu, X, LayoutDashboard } from 'lucide-react'
 import { motion } from 'framer-motion'
 import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
@@ -11,6 +12,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { NavUser } from '@/components/layouts/_parts/nav-user'
 import { SrsBadge } from '@/components/layouts/_parts/srs-badge'
 import { getHeaderNavItems } from '@/lib/navigation-model'
+import { isNavigationItemActive } from '@/lib/navigation-model'
 import type { NavigationContext } from '@/lib/navigation'
 
 interface HeaderProps {
@@ -30,6 +32,7 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
   const dark = useThemeStore(selectDark)
   const toggle = useThemeStore(selectToggleTheme)
   const reducedMotion = useReducedMotion()
+  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null)
@@ -68,8 +71,9 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
           <nav className="hidden items-center gap-3 sm:flex" aria-label="Main navigation">
             {navItems.map(({ href, label, icon }) => {
               const Icon = icons[icon]
+              const active = isNavigationItemActive(pathname, href)
               return (
-              <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) no-underline transition-colors hover:text-(--accent)">
+              <Link key={href} href={href} aria-current={active ? 'page' : undefined} className="inline-flex items-center gap-1.5 text-sm font-medium text-(--text-secondary) no-underline transition-colors hover:text-(--accent) aria-[current=page]:text-(--accent)">
                 <Icon className="h-4 w-4" aria-hidden="true" /> {label} {href === '/review' && <SrsBadge />}
               </Link>
               )
@@ -110,8 +114,9 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
             {navItems.map(({ href, label, icon }, index) => {
               const Icon = icons[icon]
+              const active = isNavigationItemActive(pathname, href)
               return (
-              <Link key={href} ref={index === 0 ? firstMobileLinkRef : undefined} href={href} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 font-medium text-(--text-secondary) no-underline hover:bg-(--bg-tertiary) hover:text-(--accent)">
+              <Link key={href} ref={index === 0 ? firstMobileLinkRef : undefined} href={href} aria-current={active ? 'page' : undefined} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 font-medium text-(--text-secondary) no-underline hover:bg-(--bg-tertiary) hover:text-(--accent) aria-[current=page]:bg-(--accent-soft) aria-[current=page]:text-(--accent)">
                 <Icon className="h-4 w-4" aria-hidden="true" /> {label} {href === '/review' && <SrsBadge />}
               </Link>
               )

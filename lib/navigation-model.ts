@@ -6,25 +6,23 @@ export type HeaderNavItem = {
   icon: 'book' | 'learn' | 'review' | 'dashboard'
 }
 
+type HeaderNavDefinition = HeaderNavItem & {
+  visible: (context: NavigationContext) => boolean
+}
+
+const headerNavDefinitions: HeaderNavDefinition[] = [
+  { href: '/curriculum', label: 'Curriculum', icon: 'book', visible: () => true },
+  { href: '/learn', label: 'Learn', icon: 'learn', visible: (context) => !context.isAuthenticated || context.onboardingCompleted },
+  { href: '/onboarding?next=%2Flearn', label: 'Continue setup', icon: 'learn', visible: (context) => context.isAuthenticated && !context.onboardingCompleted },
+  { href: '/review', label: 'Review', icon: 'review', visible: (context) => context.isAuthenticated && context.onboardingCompleted },
+  { href: '/dashboard', label: 'Dashboard', icon: 'dashboard', visible: (context) => context.isAuthenticated && context.onboardingCompleted },
+]
+
 export function getHeaderNavItems(context: NavigationContext): HeaderNavItem[] {
-  if (!context.isAuthenticated) {
-    return [
-      { href: '/curriculum', label: 'Curriculum', icon: 'book' },
-      { href: '/learn', label: 'Learn', icon: 'learn' },
-    ]
-  }
+  return headerNavDefinitions.filter((item) => item.visible(context)).map(({ visible: _, ...item }) => item)
+}
 
-  if (!context.onboardingCompleted) {
-    return [
-      { href: '/curriculum', label: 'Curriculum', icon: 'book' },
-      { href: '/onboarding?next=%2Flearn', label: 'Continue setup', icon: 'learn' },
-    ]
-  }
-
-  return [
-    { href: '/curriculum', label: 'Curriculum', icon: 'book' },
-    { href: '/learn', label: 'Learn', icon: 'learn' },
-    { href: '/review', label: 'Review', icon: 'review' },
-    { href: '/dashboard', label: 'Dashboard', icon: 'dashboard' },
-  ]
+export function isNavigationItemActive(pathname: string, href: string): boolean {
+  const path = href.split('?')[0]
+  return pathname === path || (path !== '/' && pathname.startsWith(`${path}/`))
 }

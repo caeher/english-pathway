@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/helpers'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { isNavigationItemActive } from '@/lib/navigation-model'
 
 const NAV_ICONS = {
   LayoutDashboard,
@@ -45,12 +46,13 @@ export function SidebarBody({ items, collapsed }: SidebarBodyProps) {
     <ScrollArea className="flex-1 min-h-0">
       <nav className="flex flex-col gap-1 p-3">
         {items.map((item) => {
-          const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`)
+          const isActive = isNavigationItemActive(pathname, item.href)
           const Icon = NAV_ICONS[item.icon]
           return (
             <Link
               key={item.href}
               href={item.href}
+              aria-current={isActive ? 'page' : undefined}
               className={cn(
                 'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors no-underline',
                 isActive

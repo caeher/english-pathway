@@ -6,6 +6,7 @@ import {
 } from '@/lib/auth/resolve-redirect'
 import { isSafeRedirectPath } from '@/lib/auth/safe-redirect'
 import { getHeaderNavItems } from '@/lib/navigation-model'
+import { isNavigationItemActive } from '@/lib/navigation-model'
 import type { NavigationContext } from '@/lib/navigation'
 
 describe('authentication redirects', () => {
@@ -16,6 +17,13 @@ describe('authentication redirects', () => {
     expect(isSafeRedirectPath('//example.com')).toBe(false)
     expect(isSafeRedirectPath('/login')).toBe(false)
     expect(getExplicitRedirectParam('/register')).toBeNull()
+  })
+
+  it('uses one active-route rule for exact, nested, and query-string links', () => {
+    expect(isNavigationItemActive('/learn', '/learn')).toBe(true)
+    expect(isNavigationItemActive('/curriculum/a1/chapter-1', '/curriculum')).toBe(true)
+    expect(isNavigationItemActive('/onboarding', '/onboarding?next=%2Flearn')).toBe(true)
+    expect(isNavigationItemActive('/learn', '/review')).toBe(false)
   })
 
   it('sends incomplete profiles to onboarding before any requested destination', () => {
