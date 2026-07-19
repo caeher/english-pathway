@@ -11,6 +11,8 @@ import {
   recordActivityProgress,
   recordChapterProgress,
 } from './server'
+import { getDueCount } from '@/lib/dal/srs'
+import { getLearningContinuation } from '@/lib/learning/continuation'
 
 export async function saveActivityProgressUseCase(context: AuthenticatedContext, input: ActivityProgressInput) {
   const resolved = resolveActivityByIdValidated(input.activityId)
@@ -137,6 +139,20 @@ export async function getCurriculumProgressUseCase(context: AuthenticatedContext
     modules: modules.map((curriculumModule) => getModuleProgress(curriculumModule, snapshot)),
     resume: getLearningTarget(modules, snapshot),
   }
+}
+
+export async function getLearningContinuationUseCase(context: AuthenticatedContext) {
+  const modules = await resolveAllModules()
+  const [snapshot, dueReviews] = await Promise.all([
+    getCurriculumProgressSnapshot(context.supabase, context.userId),
+    getDueCount(context.supabase, context.userId),
+  ])
+  return getLearningContinuation({
+    dueReviews,
+    resume: getLearningTarget(modules, snapshot),
+    completedChapters: modules.flatMap((module) => module.chapters).filter((chapter) => snapshot.completedChapterIds.has(chapter.id)).length,
+    totalChapters: modules.flatMap((module) => module.chapters).length,
+  })
 }
 
 export async function completeCurriculumChapterUseCase(context: AuthenticatedContext, chapterId: string) {

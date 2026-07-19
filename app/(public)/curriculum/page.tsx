@@ -5,6 +5,8 @@ import { curriculumModuleHref, learnHref } from '@/lib/curriculum/href'
 import { getModuleProgress, getLearningTarget } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
 import { createClient } from '@/lib/supabase/server'
+import { getDueCount } from '@/lib/dal/srs'
+import { getLearningContinuation } from '@/lib/learning/continuation'
 
 export const metadata = {
   title: 'Curriculum - English Pathway',
@@ -22,6 +24,9 @@ export default async function CurriculumPage() {
   const chapterCount = modules.reduce((count, curriculumModule) => count + curriculumModule.chapters.length, 0)
   const completedCount = progress.reduce((count, item) => count + item.completedChapters, 0)
   const resume = user ? getLearningTarget(modules, snapshot) : null
+  const continuation = user
+    ? getLearningContinuation({ dueReviews: await getDueCount(supabase, user.id), resume, completedChapters: completedCount, totalChapters: chapterCount })
+    : null
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
@@ -35,8 +40,9 @@ export default async function CurriculumPage() {
         {user ? <span className="inline-flex items-center gap-2 rounded-xl bg-(--success-soft) px-4 py-2 text-sm font-bold text-(--success)">
           <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> {completedCount}/{chapterCount} chapters completed
         </span> : <Link href="/login?redirectTo=%2Fcurriculum" className="text-sm font-bold text-(--accent) hover:underline">Sign in to save progress</Link>}
-        {resume && <Link href={learnHref(resume)} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">Continue learning <ArrowRight className="h-4 w-4" /></Link>}
+        {continuation && <Link href={continuation.href} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">{continuation.label} <ArrowRight className="h-4 w-4" /></Link>}
       </div>
+      {continuation && <p className="mt-4 text-sm text-(--text-secondary)">{continuation.description}</p>}
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {modules.map((curriculumModule, index) => {
