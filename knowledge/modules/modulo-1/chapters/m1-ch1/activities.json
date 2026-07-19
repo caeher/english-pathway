@@ -777,7 +777,7 @@
     "title": "Drag and Match",
     "description": "Drag the translations to the English words.",
     "props": {
-      "mode": "matches",
+      "mode": "match",
       "pairs": [
         {
           "left": "Apple",
