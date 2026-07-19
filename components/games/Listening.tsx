@@ -12,7 +12,7 @@ import { scoreToPercent } from '@/lib/games/scoring'
 
 interface ListeningProps {
   items: ListeningItem[]
-  onComplete?: (result: { score: number; total: number }) => void
+  onComplete?: (result: { score: number; total: number; weakItemIndexes?: number[] }) => void
 }
 
 export default function Listening({ items, onComplete }: ListeningProps) {
@@ -22,6 +22,7 @@ export default function Listening({ items, onComplete }: ListeningProps) {
   const [score, setScore] = useState(0)
   const [finished, setFinished] = useState(false)
   const [explanations, setExplanations] = useState<string[]>([])
+  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>([])
 
   const item = items[current]
 
@@ -31,14 +32,17 @@ export default function Listening({ items, onComplete }: ListeningProps) {
     setAnswered(true)
     const correct = index === item.correct
     if (correct) setScore((s) => s + 1)
-    else if (item.explanation) setExplanations((e) => [...e, item.explanation!])
+    else {
+      setWeakItemIndexes((indexes) => [...indexes, current])
+      setExplanations((explanations) => [...explanations, item.explanation ?? `The correct answer is "${item.options[item.correct]}".`])
+    }
   }
 
   const handleNext = () => {
     if (current + 1 >= items.length) {
       setFinished(true)
       const pct = scoreToPercent(score, items.length)
-      onComplete?.({ score: pct, total: 100 })
+      onComplete?.({ score: pct, total: 100, weakItemIndexes })
       return
     }
     setCurrent((c) => c + 1)
@@ -54,6 +58,7 @@ export default function Listening({ items, onComplete }: ListeningProps) {
     setScore(0)
     setFinished(false)
     setExplanations([])
+    setWeakItemIndexes([])
   }
 
   if (finished) {

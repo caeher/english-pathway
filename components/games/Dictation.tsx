@@ -16,7 +16,7 @@ function similarity(a: string, b: string): boolean {
 
 interface DictationProps {
   items: DictationItem[]
-  onComplete?: (result: { score: number; total: number }) => void
+  onComplete?: (result: { score: number; total: number; weakItemIndexes?: number[] }) => void
 }
 
 export default function Dictation({ items, onComplete }: DictationProps) {
@@ -26,6 +26,8 @@ export default function Dictation({ items, onComplete }: DictationProps) {
   const [isCorrect, setIsCorrect] = useState(false)
   const [score, setScore] = useState(0)
   const [finished, setFinished] = useState(false)
+  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>([])
+  const [explanations, setExplanations] = useState<string[]>([])
 
   const item = items[current]
 
@@ -36,13 +38,17 @@ export default function Dictation({ items, onComplete }: DictationProps) {
     setAnswered(true)
     setIsCorrect(correct)
     if (correct) setScore((s) => s + 1)
+    else {
+      setWeakItemIndexes((indexes) => [...indexes, current])
+      setExplanations((items) => [...items, `Listen again, then compare your response with "${item.audioText}".`])
+    }
   }
 
   const handleNext = () => {
     if (current + 1 >= items.length) {
       setFinished(true)
       const pct = scoreToPercent(score, items.length)
-      onComplete?.({ score: pct, total: 100 })
+      onComplete?.({ score: pct, total: 100, weakItemIndexes })
       return
     }
     setCurrent((c) => c + 1)
@@ -59,6 +65,8 @@ export default function Dictation({ items, onComplete }: DictationProps) {
     setIsCorrect(false)
     setScore(0)
     setFinished(false)
+    setWeakItemIndexes([])
+    setExplanations([])
   }
 
   if (finished) {
@@ -68,6 +76,7 @@ export default function Dictation({ items, onComplete }: DictationProps) {
         percent={pct}
         score={score}
         total={items.length}
+        explanations={explanations}
         onRetry={handleRestart}
       />
     )
