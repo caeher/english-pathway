@@ -1,0 +1,41 @@
+name: Bug report
+description: Report reproducible behavior that differs from the expected experience.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and the expected result.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include browser, device, operating system, and relevant local configuration (without secrets).
+  - type: textarea
+    id: impact
+    attributes:
+      label: Content or data impact
+      description: State whether curriculum content, embeddings, authentication, or stored data is affected.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I removed secrets and personal data from this report.
+          required: true

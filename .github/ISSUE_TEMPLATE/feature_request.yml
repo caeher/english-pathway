@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a focused improvement to English Pathway.
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or learner need
+      description: Explain the user or contributor problem this request solves.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the intended scope and acceptance criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Content, data, and accessibility impact
+      description: Note curriculum/embedding, migration/RLS, performance, accessibility, or privacy implications. Write "None" when not applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This request is scoped to the existing Next.js monolith.
+          required: true
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
