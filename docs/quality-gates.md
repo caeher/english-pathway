@@ -13,6 +13,16 @@ This document is the release contract for English Pathway. Every pull request mu
 | Voice with and without microphone | microphone and tutor lifecycle tests | ElevenLabs agent | permission denied, stop session, no active track |
 | Legal pages and consent | legal version, analytics schema, cookie-gate tests | Supabase consent write | consent choice, export/delete, legal metadata |
 
+## Activity change checks
+
+| Change | Required automated checks | Manual/browser evidence |
+| --- | --- | --- |
+| Any activity contract, renderer, or curriculum activity | `pnpm activities:validate`, `pnpm test -- __tests__/activities __tests__/learn`, full `pnpm test` | Complete, restart, retry, skip, and exit one representative activity at desktop and 390px widths. |
+| Feedback, scoring, SRS, or persistence | The activity checks above plus `pnpm test -- __tests__/games __tests__/srs __tests__/progress` | Confirm an incorrect result explains the correction and the follow-up review retains prompt, answer, and chapter context. |
+| Interaction, keyboard, or visual-state changes | The activity checks above plus accessibility and reduced-motion tests | Keyboard-only pass (Tab, Enter, Space) for the changed state; verify focus, live feedback, loading, error/retry, and dark mode. |
+
+The activity behavior matrix is enforced in `__tests__/activities/behavior-matrix.test.ts`. It requires every registered type to share reset, retry, result, persistence, and review behavior, and it uses one valid curriculum item per type as a schema fixture. Browser checks deliberately target completion and recovery states because they combine interaction, navigation, and responsive layout risks that unit tests cannot render.
+
 The provider smoke journeys run in a staging environment with test accounts. They are not run in public CI because they require secrets and can create external data. A failed provider smoke test blocks release even if unit/contract checks pass.
 
 ## Accessibility review

@@ -19,6 +19,23 @@ export interface ActivityDefinition {
   renderer: ActivityTypeKey
   evaluator: (result: ActivityResultInput) => ActivityEvaluation
   capabilities: readonly string[]
+  behavior: ActivityBehavior
+}
+
+export interface ActivityBehavior {
+  reset: true
+  retry: true
+  result: true
+  persistence: true
+  review: true
+}
+
+export const sharedActivityBehavior: ActivityBehavior = {
+  reset: true,
+  retry: true,
+  result: true,
+  persistence: true,
+  review: true,
 }
 
 function evaluateScore(result: ActivityResultInput): ActivityEvaluation {
@@ -26,7 +43,7 @@ function evaluateScore(result: ActivityResultInput): ActivityEvaluation {
 }
 
 function definition(type: ActivityTypeKey, capabilities: readonly string[]): ActivityDefinition {
-  return { schema: activityPropsSchemas[type], renderer: type, evaluator: evaluateScore, capabilities }
+  return { schema: activityPropsSchemas[type], renderer: type, evaluator: evaluateScore, capabilities, behavior: sharedActivityBehavior }
 }
 
 export const activityRegistry = {
