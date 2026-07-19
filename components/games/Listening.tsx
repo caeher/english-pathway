@@ -93,7 +93,7 @@ export default function Listening({ items, onComplete }: ListeningProps) {
 
       <h3 className="font-display text-lg font-bold text-(--text-primary) mb-4">{item.question}</h3>
 
-      <div className="space-y-3" role="listbox" aria-label="Options">
+      <div className="space-y-3" role="radiogroup" aria-label="Options. Select one answer to submit it.">
         {item.options.map((opt, i) => {
           const isRight = i === item.correct
           const isSel = i === selected
@@ -108,8 +108,8 @@ export default function Listening({ items, onComplete }: ListeningProps) {
               key={i}
               onClick={() => handleSelect(i)}
               disabled={answered}
-              role="option"
-              aria-selected={isSel}
+              role="radio"
+              aria-checked={isSel}
               className={cn(
                 'w-full text-left px-4 py-3.5 rounded-2xl border-2 transition-all flex items-center gap-3 cursor-pointer disabled:cursor-default focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
                 cls
@@ -136,7 +136,7 @@ export default function Listening({ items, onComplete }: ListeningProps) {
       )}
 
       <div className="sr-only" aria-live="polite">
-        {answered && (selected === item.correct ? 'Correct answer' : 'Incorrect answer')}
+        {answered && (selected === item.correct ? 'Correct answer.' : 'Incorrect answer.')}
       </div>
     </div>
   )

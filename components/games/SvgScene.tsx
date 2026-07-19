@@ -74,8 +74,21 @@ export default function SvgScene({
       if (!elementId) return
 
       const handleActivate = () => onElementActivate?.(elementId)
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          handleActivate()
+        }
+      }
+      element.setAttribute('tabindex', '0')
+      element.setAttribute('role', 'button')
+      element.setAttribute('aria-label', element.getAttribute('aria-label') ?? `Activate ${elementId}`)
       element.addEventListener('click', handleActivate)
-      cleanups.push(() => element.removeEventListener('click', handleActivate))
+      element.addEventListener('keydown', handleKeyDown)
+      cleanups.push(() => {
+        element.removeEventListener('click', handleActivate)
+        element.removeEventListener('keydown', handleKeyDown)
+      })
     })
 
     return () => {
@@ -89,7 +102,7 @@ export default function SvgScene({
       <div
         ref={containerRef}
         className={className}
-        role="img"
+        role="group"
         aria-label="Interactive SVG scene"
       />
     </div>

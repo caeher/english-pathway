@@ -47,11 +47,13 @@ export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGIn
     const common = {
       onMouseEnter: () => setHoveredId(item.id),
       onMouseLeave: () => setHoveredId(null),
+      onFocus: () => setHoveredId(item.id),
+      onBlur: () => setHoveredId(null),
       onClick: () => handleClick(item),
       onKeyDown: (e: React.KeyboardEvent) => handleKeyActivate(e, item),
       tabIndex: 0,
       role: 'button' as const,
-      'aria-label': isFound ? `${item.labelEn} descubierto` : `Descubrir ${item.labelEn}`,
+      'aria-label': isFound ? `${item.labelEn} discovered` : `Discover ${item.labelEn}`,
       className: 'cursor-pointer transition-all focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-(--accent)',
       style: {
         filter: isHovered ? 'brightness(1.2)' : 'none',
@@ -90,13 +92,13 @@ export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGIn
   }
 
   return (
-    <div className="space-y-3" role="region" aria-label="Escena interactiva">
+    <div className="space-y-3" role="region" aria-label="Interactive scene">
       <div className="flex justify-between text-sm font-display font-bold text-(--text-muted) mb-1">
-        <span>Haz clic en los objetos para descubrir sus nombres</span>
-        <span style={{ color: 'var(--success)' }}>{discovered.size}/{scene.items.length} encontrados</span>
+        <span>Use Tab, Enter, or Space to discover each object</span>
+        <span style={{ color: 'var(--success)' }}>{discovered.size}/{scene.items.length} discovered</span>
       </div>
 
-      <svg viewBox={scene.viewBox} className="w-full rounded-2xl border-2 border-(--border-primary) bg-amber-50/50 dark:bg-slate-800" style={{ maxHeight: 400 }} role="img" aria-label="Escena SVG interactiva">
+      <svg viewBox={scene.viewBox} className="w-full rounded-2xl border-2 border-(--border-primary) bg-amber-50/50 dark:bg-slate-800" style={{ maxHeight: 400 }} role="group" aria-label="Interactive scene objects">
         {scene.bg && <rect width="100%" height="100%" fill={scene.bg} />}
         {scene.items.map(renderItem)}
       </svg>
@@ -111,7 +113,7 @@ export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGIn
         </motion.div>
       )}
 
-      <div className="flex flex-wrap gap-2 justify-center">
+      <div className="flex flex-wrap gap-2 justify-center" aria-label="Discovered object names">
         {scene.items.map((item) => (
           <span key={item.id}
             className={`px-3 py-1.5 rounded-xl text-xs font-display font-bold transition-all ${
@@ -122,6 +124,7 @@ export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGIn
           </span>
         ))}
       </div>
+      <p className="sr-only" aria-live="polite">{hovered ? `${hovered.labelEn}. ${discovered.size} of ${scene.items.length} objects discovered.` : `${discovered.size} of ${scene.items.length} objects discovered.`}</p>
     </div>
   )
 }

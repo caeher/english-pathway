@@ -102,11 +102,12 @@ export default function WordMatch({ pairs, onComplete }: WordMatchProps) {
             const isSel = selectedLeft === i
             const isWrong = wrong?.left === i
             return (
-              <motion.button key={`l-${i}`} onClick={() => handleLeft(i)}
+              <div key={`l-${i}`} className="flex items-center gap-2">
+              <motion.button onClick={() => handleLeft(i)}
                 onKeyDown={(e) => handleKeyDown(e, 'left', i)}
                 animate={isWrong && !shouldReduceMotion ? { x: [0, -6, 6, -6, 0] } : {}}
                 aria-pressed={isSel}
-                className={cn('w-full px-3.5 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
+                className={cn('min-w-0 flex-1 px-3.5 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
                   isMatched ? 'border-(--success)/40 bg-(--success-soft)' :
                   isWrong ? 'border-red-400 bg-red-50 dark:bg-red-950/30' :
                   isSel ? 'border-(--accent) bg-(--accent-soft) shadow-sm' :
@@ -114,9 +115,10 @@ export default function WordMatch({ pairs, onComplete }: WordMatchProps) {
                 <span className="flex items-center gap-2">
                   {isMatched && <CheckCircle className="w-4 h-4 shrink-0" style={{ color: 'var(--success)' }} />}
                   {p.left}
-                  <SpeakButton text={p.left.replace(/[^\w\s]/g, '').trim() || p.left} size="sm" />
                 </span>
               </motion.button>
+              <SpeakButton text={p.left.replace(/[^\w\s]/g, '').trim() || p.left} size="sm" />
+              </div>
             )
           })}
         </div>
@@ -143,8 +145,9 @@ export default function WordMatch({ pairs, onComplete }: WordMatchProps) {
         </div>
       </div>
       <div className="sr-only" aria-live="polite">
-        {wrong && 'Incorrect match'}
-        {allMatched && 'All matched'}
+        {wrong && 'Incorrect match. Choose another pair.'}
+        {allMatched && 'All pairs matched.'}
+        {!wrong && !allMatched && `Matched ${matched.size} of ${pairs.length}. Attempts ${attempts}.`}
       </div>
     </div>
   )
