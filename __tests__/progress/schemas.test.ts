@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { mergeProgressSchema } from '@/lib/api/progress-schemas'
+import { mergeProgressSchema } from '@/features/progress'
 
 describe('learning progress schemas', () => {
   it('accepts an empty merge for an authenticated user', () => {

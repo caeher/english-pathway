@@ -3,7 +3,7 @@ import { ArrowRight, BookOpen, CheckCircle2, Layers } from 'lucide-react'
 import { resolveAllModules } from '@/lib/content/resolve'
 import { curriculumModuleHref, learnHref } from '@/lib/curriculum/href'
 import { getModuleProgress, getLearningTarget } from '@/lib/curriculum/progress'
-import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
+import { getCurriculumProgressSnapshot } from '@/features/progress'
 import { createClient } from '@/lib/supabase/server'
 
 export const metadata = {

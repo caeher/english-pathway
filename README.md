@@ -115,6 +115,7 @@ pnpm db:env
 | `pnpm build` | Build de producción |
 | `pnpm start` | Servidor de producción |
 | `pnpm lint` | ESLint |
+| `pnpm architecture:check` | Verifica APIs públicas y límites de features |
 | `pnpm db:env` | Genera `.env.local` desde el stack Supabase local |
 | `pnpm db:start` | Levanta stack Supabase local (Docker) |
 | `pnpm db:stop` | Detiene stack Supabase local |
@@ -171,6 +172,7 @@ app/
 └── auth/            # Callbacks OAuth
 
 knowledge/           # Base de conocimiento (markdown + JSON)
+features/            # APIs públicas y ownership de cada feature
 components/learn/    # ActivityRenderer, DynamicContentPanel
 components/games/    # Componentes interactivos de práctica
 lib/knowledge/       # Carga y chunking del currículo

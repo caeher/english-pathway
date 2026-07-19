@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { mergeGuestProgress } from '@/lib/progress/client'
+import { mergeGuestProgress } from '@/features/progress'
 
 export default function ProgressSync() {
   useEffect(() => {

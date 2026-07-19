@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
-import { activityProgressSchema } from '@/lib/api/progress-schemas'
-import { recordActivityProgress } from '@/lib/dal/learning-progress'
-import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
+import { activityProgressSchema, recordActivityProgress } from '@/features/progress'
+import { resolveActivityByIdValidated } from '@/features/learn'
 import { createClient } from '@/lib/supabase/server'
 
 export async function POST(request: Request) {

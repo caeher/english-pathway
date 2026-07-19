@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server'
-import { getLastProgress } from '@/lib/dal/learning-progress'
-import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
-import { resolveChapter } from '@/lib/content/resolve'
-import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
+import { getLastProgress } from '@/features/progress'
+import { resolveActivityByIdValidated } from '@/features/learn'
+import { resolveChapter, curriculumChapterHref, learnHref } from '@/features/curriculum'
 import { createClient } from '@/lib/supabase/server'
 
 export async function GET() {
