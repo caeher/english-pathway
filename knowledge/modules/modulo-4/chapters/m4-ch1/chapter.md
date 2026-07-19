@@ -1,10 +1,10 @@
 ---
 id: m4-ch1
-moduleId: module-4
+moduleId: modulo-4
 number: 1
 title: Adjectives and Adverbs
 subtitle: Describes people, things and actions
-icon: 🎨
+icon: ðŸŽ¨
 color: "#3b82f6"
 objectives:
   - Using adjectives to describe nouns
@@ -15,12 +15,12 @@ xpReward: 150
 
 ## Adjectives & Adverbs
 
-### Adjectives — Describe NOUNS
+### Adjectives â€” Describe NOUNS
 - She is a **beautiful** girl.
 - The **big** dog is **friendly**.
 - Position: Before a noun OR after be/look/feel/seem.
 
-### Adverbs — Describe VERBS, adjectives, other adverbs
+### Adverbs â€” Describe VERBS, adjectives, other adverbs
 - She sings **beautifully**. (describes HOW she sings)
 - He runs **quickly**. (describes HOW he runs)
 - She is **very** tall. (describes HOW tall)
@@ -30,9 +30,9 @@ xpReward: 150
 |-----------|--------|------|
 | slow | slow**ly** | + ly |
 | quick | quick**ly** | + ly |
-| happy | happi**ly** | y → ily |
-| easy | easi**ly** | y → ily |
-| terrible | terrib**ly** | le → ly |
+| happy | happi**ly** | y â†’ ily |
+| easy | easi**ly** | y â†’ ily |
+| terrible | terrib**ly** | le â†’ ly |
 | good | **well** | irregular! |
 | fast | **fast** | same form |
 | hard | **hard** | same form |
@@ -40,10 +40,10 @@ xpReward: 150
 | early | **early** | same form |
 
 ### Common Mistakes
-| ❌ Wrong | ✅ Correct |
+| âŒ Wrong | âœ… Correct |
 |----------|-----------|
 | She sings **good**. | She sings **well**. |
 | He drives **careful**. | He drives **careful**ly. |
 | She is a **beautifully** girl. | She is a **beautiful** girl. |
 
-> 💡 **good** = adjetivo / **well** = adverbio (She is **good** at singing. She sings **well**.)
+> ðŸ’¡ **good** = adjetivo / **well** = adverbio (She is **good** at singing. She sings **well**.)

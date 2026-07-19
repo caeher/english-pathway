@@ -1,10 +1,10 @@
 ---
 id: m3-ch6
-moduleId: module-3
+moduleId: modulo-3
 number: 6
 title: Want to, Like to, Need to
 subtitle: Express desires, tastes and needs
-icon: ❤️
+icon: â¤ï¸
 color: "#ec4899"
 objectives:
   - "Use \"want to\" to express wishes"

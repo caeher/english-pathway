@@ -1,10 +1,10 @@
 ---
 id: m8-ch5
-moduleId: module-8
+moduleId: modulo-8
 number: 5
 title: Your first dialogue
 subtitle: Creating simple conversations in gamified role-plays
-icon: 💬
+icon: ðŸ’¬
 color: "#ec4899"
 objectives:
   - Engage in basic conversations in English with confidence
@@ -14,7 +14,7 @@ objectives:
 xpReward: 280
 ---
 
-## It's time to talk! — Time to Talk!
+## It's time to talk! â€” Time to Talk!
 
 A conversation has structure. Learn the patterns and you can adapt them to any situation.
 
@@ -61,8 +61,8 @@ A conversation has structure. Learn the patterns and you can adapt them to any s
 | Necesitas ayuda | Excuse me, could you help me? |
 | Pides disculpas | I'm sorry / Sorry about that / My apologies |
 
-> 💡 **Pronunciation Tip**: In "Thank you", the 'th' sounds like putting your tongue between your teeth and blowing.
+> ðŸ’¡ **Pronunciation Tip**: In "Thank you", the 'th' sounds like putting your tongue between your teeth and blowing.
 
-> 🎯 **Strategy**: Start with dialogues with "help" (options) and little by little build your own answers. Practice makes perfect!
+> ðŸŽ¯ **Strategy**: Start with dialogues with "help" (options) and little by little build your own answers. Practice makes perfect!
 
-> ⚠️ **Common Mistake**: Do not use "How are you?" as a real question when greeting. It is a courtesy formula. Answer simply: "Fine, thanks!" or "Good, and you?"
+> âš ï¸ **Common Mistake**: Do not use "How are you?" as a real question when greeting. It is a courtesy formula. Answer simply: "Fine, thanks!" or "Good, and you?"

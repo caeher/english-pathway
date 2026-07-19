@@ -1,10 +1,10 @@
 ---
 id: m9-ch5
-moduleId: module-9
+moduleId: modulo-9
 number: 5
 title: Describing people and objects
 subtitle: Using adjectives in description games
-icon: 🎨
+icon: ðŸŽ¨
 color: "#ec4899"
 objectives:
   - Describe people, objects, and places using attributive and predicative adjectives accurately
@@ -14,7 +14,7 @@ objectives:
 xpReward: 270
 ---
 
-## Adjetivos — Dando color a tus descripciones 🎨
+## Adjetivos â€” Dando color a tus descripciones ðŸŽ¨
 
 Adjectives describe nouns. In English they go **before the noun**:
 - *a **tall** man* / *a **beautiful** house* / *a **red** car*
@@ -39,15 +39,15 @@ They can also come after the verb "to be":
 
 When you use **more than one adjective**, they follow this order:
 
-**O**pinion → **S**ize → **A**ge → **S**hape → **C**olor → **O**rigin → **M**aterial → **P**urpose
+**O**pinion â†’ **S**ize â†’ **A**ge â†’ **S**hape â†’ **C**olor â†’ **O**rigin â†’ **M**aterial â†’ **P**urpose
 
 **Ejemplo completo**: 
 *"a **beautiful** (O) **big** (S) **old** (A) **round** (S) **red** (C) **Italian** (O) **leather** (M) **racing** (P) car"*
 
 **Practical examples** (2-3 adjectives is normal):
-- *"a **small red** bag"* (Size + Color) ✓
-- *"a **beautiful old French** house"* (Opinion + Age + Origin) ✓
-- *"a **nice big wooden** table"* (Opinion + Size + Material) ✓
+- *"a **small red** bag"* (Size + Color) âœ“
+- *"a **beautiful old French** house"* (Opinion + Age + Origin) âœ“
+- *"a **nice big wooden** table"* (Opinion + Size + Material) âœ“
 
 ### Position of adjectives
 
@@ -86,13 +86,13 @@ You can make the adjectives stronger or softer:
 - **quite** / **pretty** + adjective: *quite good, pretty fast*
 - **extremely** / **incredibly** + adjective: *extremely hot, incredibly smart*
 
-> 💡 **Tip:** Practice describing objects around you with 2 adjectives. For example: "a red wooden chair", "a small black phone". It becomes natural with practice!
+> ðŸ’¡ **Tip:** Practice describing objects around you with 2 adjectives. For example: "a red wooden chair", "a small black phone". It becomes natural with practice!
 
-> 🗣️ **Pronunciation Tip**: When using several adjectives, make a short pause between them: "a beautiful (pause) old (pause) house."
+> ðŸ—£ï¸ **Pronunciation Tip**: When using several adjectives, make a short pause between them: "a beautiful (pause) old (pause) house."
 
-> ⚠️ **Common Mistakes**: 
-- ✗ ~~"a red big car"~~ → ✓ "a big red car" (Size before color)
-- ✗ ~~"a car red"~~ → ✓ "a red car" (Adjective before noun in English)
-- ✗ ~~"She is a person tall"~~ → ✓ "She is a tall person" / "She is tall"
+> âš ï¸ **Common Mistakes**: 
+- âœ— ~~"a red big car"~~ â†’ âœ“ "a big red car" (Size before color)
+- âœ— ~~"a car red"~~ â†’ âœ“ "a red car" (Adjective before noun in English)
+- âœ— ~~"She is a person tall"~~ â†’ âœ“ "She is a tall person" / "She is tall"
 
-> 🎯 **Strategy**: Memorize the phrase "OSACOMP" by singing or repeating it. When you think of multiple adjectives, mentally review this order.
+> ðŸŽ¯ **Strategy**: Memorize the phrase "OSACOMP" by singing or repeating it. When you think of multiple adjectives, mentally review this order.

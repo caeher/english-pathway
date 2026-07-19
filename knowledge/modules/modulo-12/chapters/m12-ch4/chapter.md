@@ -1,10 +1,10 @@
 ---
 id: m12-ch4
-moduleId: module-12
+moduleId: modulo-12
 number: 4
 title: Speaking like a native
 subtitle: Reductions and contractions for natural fluidity
-icon: 🗣️
+icon: ðŸ—£ï¸
 color: "#f59e0b"
 objectives:
   - "Recognize natural phonetic reductions: gonna, wanna, gotta, kinda, lemme, hafta"
@@ -14,7 +14,7 @@ objectives:
 xpReward: 260
 ---
 
-## Reductions and Contractions — Why you "don't understand" natives
+## Reductions and Contractions â€” Why you "don't understand" natives
 
 The #1 reason students say "I don't understand native speakers" is because spoken English uses **reductions**: shortened forms that sound very different from what is written.
 
@@ -32,12 +32,12 @@ The #1 reason students say "I don't understand native speakers" is because spoke
 | give me | **gimme** | "Gimme a break." |
 | don't know | **dunno** | "I dunno." |
 
-### ⚠️ Importante: Reducciones ≠ Errores
+### âš ï¸ Importante: Reducciones â‰  Errores
 
-- ✅ They are a **natural** part of fluent speech
-- ✅ They are used in **informal** contexts (friends, family, casual)
-- ❌ In formal writing **NOT** used
-- ❌ In a job interview, use complete forms
+- âœ… They are a **natural** part of fluent speech
+- âœ… They are used in **informal** contexts (friends, family, casual)
+- âŒ In formal writing **NOT** used
+- âŒ In a job interview, use complete forms
 
 ### Connected Speech
 
@@ -54,10 +54,10 @@ In natural speech, words are connected and transformed:
 
 | Nivel | Ejemplo |
 |---|---|
-| 📜 Muy formal | "I would like to discuss the matter with you." |
-| 👔 Formal | "I'd like to talk about this with you." |
-| 🤝 Neutral | "I want to talk to you about this." |
-| 😊 Informal | "I wanna talk to you about this." |
-| 🤙 Muy casual | "Wanna talk?" |
+| ðŸ“œ Muy formal | "I would like to discuss the matter with you." |
+| ðŸ‘” Formal | "I'd like to talk about this with you." |
+| ðŸ¤ Neutral | "I want to talk to you about this." |
+| ðŸ˜Š Informal | "I wanna talk to you about this." |
+| ðŸ¤™ Muy casual | "Wanna talk?" |
 
-> 💡 **Tip:** The goal is to always RECOGNIZE reductions (understanding) and PRODUCE THEM only in appropriate contexts (informal). In a job interview, use the full forms.
+> ðŸ’¡ **Tip:** The goal is to always RECOGNIZE reductions (understanding) and PRODUCE THEM only in appropriate contexts (informal). In a job interview, use the full forms.

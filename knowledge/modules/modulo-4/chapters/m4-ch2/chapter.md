@@ -1,10 +1,10 @@
 ---
 id: m4-ch2
-moduleId: module-4
+moduleId: modulo-4
 number: 2
 title: Comparatives
 subtitle: "Compare two things: bigger, faster, better"
-icon: 📊
+icon: ðŸ“Š
 color: "#10b981"
 objectives:
   - Form comparatives with -er and more
@@ -13,7 +13,7 @@ objectives:
 xpReward: 160
 ---
 
-## Comparatives — Comparativos
+## Comparatives â€” Comparativos
 
 ### Short adjectives: + er (+ than)
 | Adjective | Comparative | Example |
@@ -42,9 +42,9 @@ xpReward: 160
 ### Spelling Rules
 | Rule | Example |
 |------|---------|
-| 1 syllable + e: + r | nice → nicer |
-| 1 syllable, CVC: double + er | big → bigger, hot → hotter |
-| 2 syllables ending -y: y → ier | happy → happier, easy → easier |
-| 2+ syllables: more + adj | beautiful → more beautiful |
+| 1 syllable + e: + r | nice â†’ nicer |
+| 1 syllable, CVC: double + er | big â†’ bigger, hot â†’ hotter |
+| 2 syllables ending -y: y â†’ ier | happy â†’ happier, easy â†’ easier |
+| 2+ syllables: more + adj | beautiful â†’ more beautiful |
 
-> 💡 "Than" = that (compare): She is taller **than** me.
+> ðŸ’¡ "Than" = that (compare): She is taller **than** me.

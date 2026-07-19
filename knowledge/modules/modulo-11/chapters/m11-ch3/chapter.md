@@ -1,10 +1,10 @@
 ---
 id: m11-ch3
-moduleId: module-11
+moduleId: modulo-11
 number: 3
 title: "Manners: possibility and obligation"
 subtitle: Decision-making games with modal verbs
-icon: ⚖️
+icon: âš–ï¸
 color: "#f43f5e"
 objectives:
   - Use modal verbs (can, could, may, might, must, have to, should) to express ability, possibility, permission, obligation and advice
@@ -13,7 +13,7 @@ objectives:
 xpReward: 300
 ---
 
-## Modal Verbs — Expressing nuances in English
+## Modal Verbs â€” Expressing nuances in English
 
 Modal verbs add extra meaning to the main verb: ability, possibility, obligation, permission, advice...
 
@@ -29,7 +29,7 @@ Modal verbs add extra meaning to the main verb: ability, possibility, obligation
 | **Consejo** | should, ought to | *You should see a doctor.* |
 | **No necesario** | don't have to | *You don't have to come.* |
 
-### ⚠️ Diferencias sutiles
+### âš ï¸ Diferencias sutiles
 
 | Contraste | Explanation |
 |-----------|-------------|
@@ -41,4 +41,4 @@ Modal verbs add extra meaning to the main verb: ability, possibility, obligation
 ### Strength scale
 `must > should > could > might` (from strongest to weakest)
 
-> 💡 **Remember:** Modals DO NOT change with the person (*he **can*** ✓, ~~he cans~~ ✗) and are followed by the verb in **base** form (*must **go*** ✓, ~~must goes~~ ✗).
+> ðŸ’¡ **Remember:** Modals DO NOT change with the person (*he **can*** âœ“, ~~he cans~~ âœ—) and are followed by the verb in **base** form (*must **go*** âœ“, ~~must goes~~ âœ—).

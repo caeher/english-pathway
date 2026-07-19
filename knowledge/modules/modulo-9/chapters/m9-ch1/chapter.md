@@ -1,10 +1,10 @@
 ---
 id: m9-ch1
-moduleId: module-9
+moduleId: modulo-9
 number: 1
 title: imaginary trips
 subtitle: Expanding vocabulary of travel and places with interactive maps
-icon: ✈️
+icon: âœˆï¸
 color: "#f59e0b"
 objectives:
   - Use vocabulary about travel, transportation, accommodation and tourist places (70-90 words)
@@ -14,11 +14,11 @@ objectives:
 xpReward: 280
 ---
 
-## Your virtual journey starts here 🌍
+## Your virtual journey starts here ðŸŒ
 
 Imagine that you are planning a trip. Each activity is a stage:
 
-**Aeropuerto ✈️ → Hotel 🏨 → Ciudad 🏙️ → Restaurante 🍽️ → Atracciones 🎡**
+**Aeropuerto âœˆï¸ â†’ Hotel ðŸ¨ â†’ Ciudad ðŸ™ï¸ â†’ Restaurante ðŸ½ï¸ â†’ Atracciones ðŸŽ¡**
 
 ### Vocabulary by categories
 
@@ -53,10 +53,10 @@ Imagine that you are planning a trip. Each activity is a stage:
 - *"Could I see the menu?"*
 - *"How much does this cost?"*
 
-> 💡 **Travel Tip**: In English-speaking countries, the tip (tip) is usually 15-20% in restaurants. Question: "Is service included?"
+> ðŸ’¡ **Travel Tip**: In English-speaking countries, the tip (tip) is usually 15-20% in restaurants. Question: "Is service included?"
 
-> 🎯 **Strategy**: Practice these phrases out loud before traveling. In real situations, fluency matters more than perfection.
+> ðŸŽ¯ **Strategy**: Practice these phrases out loud before traveling. In real situations, fluency matters more than perfection.
 
-> 🗣️ **Pronunciation Tip**: "Th" in "thank you" and "the" sound different. In "thank" it is soft /θ/, in "the" it is voiced /ð/. Put your tongue between your teeth.
+> ðŸ—£ï¸ **Pronunciation Tip**: "Th" in "thank you" and "the" sound different. In "thank" it is soft /Î¸/, in "the" it is voiced /Ã°/. Put your tongue between your teeth.
 
-> ⚠️ **Common Mistake**: Don't say "I want..." when you ask for something. It is direct and may sound rude. Use "I'd like..." or "Could I have...?"
+> âš ï¸ **Common Mistake**: Don't say "I want..." when you ask for something. It is direct and may sound rude. Use "I'd like..." or "Could I have...?"

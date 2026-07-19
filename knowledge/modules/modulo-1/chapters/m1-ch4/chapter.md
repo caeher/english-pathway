@@ -1,10 +1,10 @@
 ---
 id: m1-ch4
-moduleId: module-1
+moduleId: modulo-1
 number: 4
 title: "Nouns: Types, Classification and Articles"
 subtitle: Proper, common, concrete, abstract; a, an, the; singular/plural
-icon: 📦
+icon: ðŸ“¦
 color: "#f59e0b"
 objectives:
   - "Classify nouns: proper, common, concrete, abstract"
@@ -16,7 +16,7 @@ objectives:
 xpReward: 140
 ---
 
-## Nouns: Types, Classification & Articles — Nouns
+## Nouns: Types, Classification & Articles â€” Nouns
 
 ### Types of nouns
 | Tipo | Description | Ejemplos |
@@ -29,12 +29,12 @@ xpReward: 140
 | **Uncountable** | There are no numbers | water, rice, information |
 
 ### Nouns that represent abstract ideas
-- **love, hate, fear** — emotions
-- **freedom, justice, peace** — concepts
-- **time, luck, advice** — abstract ideas
-- **music, art, education** — activities/concepts
+- **love, hate, fear** â€” emotions
+- **freedom, justice, peace** â€” concepts
+- **time, luck, advice** â€” abstract ideas
+- **music, art, education** â€” activities/concepts
 
-### Uncountable nouns — Use with quantifiers
+### Uncountable nouns â€” Use with quantifiers
 Uncountables do not take *a/an* or plural. Use:
 
 | Cuantificador | Uso | Ejemplo |
@@ -48,22 +48,22 @@ Uncountables do not take *a/an* or plural. Use:
 **Common uncountables:** *information, advice, news, furniture, homework, rice, water, milk, coffee, bread, money*
 
 ### Indefinite articles: A / AN
-- **A** → before consonant: *a book, a car, a dog*
-- **AN** → before vowel (sound): *an apple, an egg, an umbrella*
-- ⚠️ Exceptions by sound: *an hour* (silent h), *a university* (sound /juː/)
+- **A** â†’ before consonant: *a book, a car, a dog*
+- **AN** â†’ before vowel (sound): *an apple, an egg, an umbrella*
+- âš ï¸ Exceptions by sound: *an hour* (silent h), *a university* (sound /juË/)
 
 ### Defined article: THE
-- **THE** → something specific or already mentioned: *the sun, the book on the table*
+- **THE** â†’ something specific or already mentioned: *the sun, the book on the table*
 - Not generally used with proper nouns: *Mexico* (not *the Mexico*)
 
 ### regular plurals
-| Regla | Singular → Plural | Ejemplo |
+| Regla | Singular â†’ Plural | Ejemplo |
 |-------|-------------------|---------|
-| +s | book → books | *two books* |
-| +es (s, sh, ch, x, z) | bus → buses | *three buses* |
-| consonante + y → ies | baby → babies | *two babies* |
-| vocal + y → ys | boy → boys | *three boys* |
-| f/fe → ves | knife → knives | *two knives* |
+| +s | book â†’ books | *two books* |
+| +es (s, sh, ch, x, z) | bus â†’ buses | *three buses* |
+| consonante + y â†’ ies | baby â†’ babies | *two babies* |
+| vocal + y â†’ ys | boy â†’ boys | *three boys* |
+| f/fe â†’ ves | knife â†’ knives | *two knives* |
 
 ### irregular plurals
 | Singular | Plural |
@@ -90,6 +90,6 @@ An **appositive** is a noun (or noun phrase) that **modifies or complements** an
 - *Paris*, **the capital of France**, is beautiful.
 - My brother **Carlos** lives in Madrid. (Carlos = appositive that identifies "my brother")
 
-> 💡 Appositives are enclosed in commas when they give extra information. They go without commas when they are essential for identification.
+> ðŸ’¡ Appositives are enclosed in commas when they give extra information. They go without commas when they are essential for identification.
 
-> 💡 **Tip:** "A" and "An" depend on the **sound**, not the letter. "An hour" (silent h) but "a hotel" (voiced h).
+> ðŸ’¡ **Tip:** "A" and "An" depend on the **sound**, not the letter. "An hour" (silent h) but "a hotel" (voiced h).

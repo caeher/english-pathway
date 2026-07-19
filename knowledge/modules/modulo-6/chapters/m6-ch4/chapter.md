@@ -1,10 +1,10 @@
 ---
 id: m6-ch4
-moduleId: module-6
+moduleId: modulo-6
 number: 4
 title: Mixed Conditional
-subtitle: Third conditional and mixture of tenses — Past and present
-icon: 🔀
+subtitle: Third conditional and mixture of tenses â€” Past and present
+icon: ðŸ”€
 color: "#8b5cf6"
 objectives:
   - "Form the third conditional: if + past perfect, would have + past participle"
@@ -13,7 +13,7 @@ objectives:
 xpReward: 190
 ---
 
-## Mixed Conditional — Condicional Mixto
+## Mixed Conditional â€” Condicional Mixto
 
 ### Third Conditional (part of Mixed)
 | If clause | Result clause |
@@ -27,20 +27,20 @@ xpReward: 190
 - If I **had woken up** earlier, I **wouldn't have been** late. (But I did NOT wake up.)
 - If he **had saved** money, he **would have bought** a car. (But he did NOT save.)
 
-### Mixed Conditional — Mixing of tenses
+### Mixed Conditional â€” Mixing of tenses
 We combine **condition in the past** with **result in the present** (or vice versa):
 
 | Tipo | If clause | Result | Ejemplo |
 |------|-----------|--------|---------|
-| **Past → Present** | If + past perfect | would + base | If I **had studied** medicine, I **would be** a doctor now. |
-| **Past → Present** | If + past perfect | would + base | If you **had listened**, you **would know** the answer. |
+| **Past â†’ Present** | If + past perfect | would + base | If I **had studied** medicine, I **would be** a doctor now. |
+| **Past â†’ Present** | If + past perfect | would + base | If you **had listened**, you **would know** the answer. |
 
 - If I **had gone** to bed earlier, I **wouldn't be** so tired now.
 - If she **had learned** Spanish, she **would work** in Madrid today.
 
 ### Contractions
-- would have → **'d have** / **would've**: I**'d have** passed.
-- would not have → **wouldn't have**
+- would have â†’ **'d have** / **would've**: I**'d have** passed.
+- would not have â†’ **wouldn't have**
 
 ### Four conditionals summary
 | | If clause | Result | Use |
@@ -50,4 +50,4 @@ We combine **condition in the past** with **result in the present** (or vice ver
 | **2nd** | past | would | Unreal present |
 | **3rd/Mixed** | past perfect | would have / would | Unreal past / Mixed |
 
-> 💡 The "Third conditional" is a type of mixed conditional. Mixed ranges from First (combinations) to Third.
+> ðŸ’¡ The "Third conditional" is a type of mixed conditional. Mixed ranges from First (combinations) to Third.

@@ -1,10 +1,10 @@
 ---
 id: m10-ch3
-moduleId: module-10
+moduleId: modulo-10
 number: 3
 title: Deeper conversations
 subtitle: Using connectors for fluid dialogues
-icon: 🔗
+icon: ðŸ”—
 color: "#f59e0b"
 objectives:
   - Connect ideas using addition connectors (and, also, moreover)
@@ -14,7 +14,7 @@ objectives:
 xpReward: 260
 ---
 
-## Connectors — From fragmentation to fluidity
+## Connectors â€” From fragmentation to fluidity
 
 Connectors are the "hinges" that join your ideas and make your English sound natural and fluent.
 
@@ -30,7 +30,7 @@ Connectors are the "hinges" that join your ideas and make your English sound nat
 
 ### Connector Categories
 
-#### ➕ Addition
+#### âž• Addition
 | Conector | Uso | Ejemplo |
 |---|---|---|
 | and | Unir ideas similares | I like tea **and** coffee. |
@@ -38,7 +38,7 @@ Connectors are the "hinges" that join your ideas and make your English sound nat
 | moreover | Formal, add emphasis | **Moreover**, the price is very reasonable. |
 | in addition | Formal | **In addition**, we offer free shipping. |
 
-#### 🔄 Contraste
+#### ðŸ”„ Contraste
 | Conector | Uso | Ejemplo |
 |---|---|---|
 | but | Contraste simple | I'm tired, **but** I'll keep working. |
@@ -46,21 +46,21 @@ Connectors are the "hinges" that join your ideas and make your English sound nat
 | although | Despite | **Although** it was cold, we went outside. |
 | despite | Despite (+ noun/-ing) | **Despite** the rain, we had fun. |
 
-#### 🔍 Causa
+#### ðŸ” Causa
 | Conector | Uso | Ejemplo |
 |---|---|---|
 | because | Porque | I stayed home **because** I was sick. |
 | since | since (formal) | **Since** you're here, let's start. |
 | due to | Debido a (+ noun) | **Due to** the weather, the event was canceled. |
 
-#### ➡️ Resultado
+#### âž¡ï¸ Resultado
 | Conector | Uso | Ejemplo |
 |---|---|---|
 | so | So | It was raining, **so** I took an umbrella. |
 | therefore | Therefore (formal) | **Therefore**, we need to change our plan. |
 | as a result | As a result | **As a result**, sales increased. |
 
-#### 🔢 Secuencia
+#### ðŸ”¢ Secuencia
 | Conector | Uso | Ejemplo |
 |---|---|---|
 | first | Primero | **First**, preheat the oven. |
@@ -68,4 +68,4 @@ Connectors are the "hinges" that join your ideas and make your English sound nat
 | after that | Thereafter | **After that**, mix everything. |
 | finally | Finalmente | **Finally**, bake for 30 minutes. |
 
-> 💡 **Tip:** Using advanced connectors like *however*, *moreover* and *therefore* makes your English sound more sophisticated and professional.
+> ðŸ’¡ **Tip:** Using advanced connectors like *however*, *moreover* and *therefore* makes your English sound more sophisticated and professional.

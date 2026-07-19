@@ -1,10 +1,10 @@
 ---
 id: m13-ch3
-moduleId: module-13
+moduleId: modulo-13
 number: 3
 title: Critical reading
 subtitle: Analyzing complex texts and expressing points of view
-icon: 🔍
+icon: ðŸ”
 color: "#8b5cf6"
 objectives:
   - Critically read B2 level texts identifying arguments and biases
@@ -14,7 +14,7 @@ objectives:
 xpReward: 350
 ---
 
-## Critical Reading — Beyond understanding
+## Critical Reading â€” Beyond understanding
 
 Critical reading doesn't just ask "What does the text say?" but also "How do you say it?", "Is it convincing?" and "What do I think?"
 
@@ -22,12 +22,12 @@ Critical reading doesn't just ask "What does the text say?" but also "How do you
 
 | Dimension | Key question | Skill |
 |---|---|---|
-| 📖 **Understanding** | What does the text say? | Resumir objetivamente |
-| 🔬 **Analysis** | How do you say it? | Identify structure and techniques |
-| ⚖️ **Evaluation** | Is it convincing? | Juzgar fortalezas y debilidades |
-| 💭 **Answer** | What do I think? | Form an informed opinion |
+| ðŸ“– **Understanding** | What does the text say? | Resumir objetivamente |
+| ðŸ”¬ **Analysis** | How do you say it? | Identify structure and techniques |
+| âš–ï¸ **Evaluation** | Is it convincing? | Juzgar fortalezas y debilidades |
+| ðŸ’­ **Answer** | What do I think? | Form an informed opinion |
 
-### Rhetorical Techniques — The author's tools
+### Rhetorical Techniques â€” The author's tools
 
 | Technique | Ejemplo | Warning sign |
 |---|---|---|
@@ -59,16 +59,16 @@ Ask yourself these questions:
 
 ---
 
-### 📄 Practice text: "Is Social Media Making Us Lonelier?"
+### ðŸ“„ Practice text: "Is Social Media Making Us Lonelier?"
 
 Social media platforms like Instagram, TikTok, and X **claim** to connect people. With billions of users worldwide, these platforms have fundamentally changed how we communicate. **However**, a growing body of research **suggests** that social media may actually be increasing feelings of loneliness and isolation.
 
-**According to** a 2023 study by the American Psychological Association, heavy social media users report **significantly** higher levels of loneliness compared to moderate users. **Critics argue** that the curated nature of social media — where people share only their highlights — creates unrealistic comparisons that damage self-esteem.
+**According to** a 2023 study by the American Psychological Association, heavy social media users report **significantly** higher levels of loneliness compared to moderate users. **Critics argue** that the curated nature of social media â€” where people share only their highlights â€” creates unrealistic comparisons that damage self-esteem.
 
 **On the other hand**, **proponents maintain** that social media provides vital connections for people who are geographically isolated or have niche interests. **For instance**, online communities have been **crucial** for LGBTQ+ youth in conservative areas.
 
 **Nevertheless**, even supporters acknowledge that **moderation** is key. **As one researcher noted**, "Social media is a tool. Like any tool, its impact depends on how we use it."
 
-**In conclusion**, while social media offers genuine benefits for connection, the evidence **indicates** that excessive use correlates with increased loneliness. **Therefore**, a balanced approach — using social media intentionally rather than passively — appears to be the healthiest strategy.
+**In conclusion**, while social media offers genuine benefits for connection, the evidence **indicates** that excessive use correlates with increased loneliness. **Therefore**, a balanced approach â€” using social media intentionally rather than passively â€” appears to be the healthiest strategy.
 
-> 💡 **Tip:** Underline the words that indicate the author's position: "argues", "suggests", "claims". These are clues about how the author presents the information.
+> ðŸ’¡ **Tip:** Underline the words that indicate the author's position: "argues", "suggests", "claims". These are clues about how the author presents the information.

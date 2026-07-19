@@ -1,10 +1,10 @@
 ---
 id: m7-ch6
-moduleId: module-7
+moduleId: modulo-7
 number: 6
 title: Final Review and Comprehensive Practice
 subtitle: Demonstrate everything you have learned
-icon: 🏆
+icon: ðŸ†
 color: "#a855f7"
 objectives:
   - Review all the topics covered in the course modules
@@ -13,7 +13,7 @@ objectives:
 xpReward: 200
 ---
 
-## Final Review — Final Review and Comprehensive Practice
+## Final Review â€” Final Review and Comprehensive Practice
 
 ### What are you going to review?
 
@@ -37,7 +37,7 @@ This chapter integrates **everything** what was learned in the course:
 ### Review strategy
 
 1. **Read the theory** if you don't remember a topic.
-2. **Do the activities** in this chapter — they are mixed.
+2. **Do the activities** in this chapter â€” they are mixed.
 3. **Go back** to previous modules if you need to reinforce a point.
 
 ---
@@ -57,4 +57,4 @@ This chapter integrates **everything** what was learned in the course:
 ---
 
 ### Congratulations!
-If you complete all the activities in this chapter, you will have demonstrated that you have mastered English grammar from basic to advanced levels. 🎉
+If you complete all the activities in this chapter, you will have demonstrated that you have mastered English grammar from basic to advanced levels. ðŸŽ‰

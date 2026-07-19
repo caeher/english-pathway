@@ -1,10 +1,10 @@
 ---
 id: m10-ch1
-moduleId: module-10
+moduleId: modulo-10
 number: 1
 title: The future awaits you
 subtitle: "Practicing \"will\" and \"going to\" with predictions and plans"
-icon: 🔮
+icon: ðŸ”®
 color: "#8b5cf6"
 objectives:
   - "Express plans and intentions using \"going to\""
@@ -14,11 +14,11 @@ objectives:
 xpReward: 250
 ---
 
-## Will vs Going to — The future in English
+## Will vs Going to â€” The future in English
 
 In English there are two main ways of talking about the future: **will** and **going to**. Each one has specific uses.
 
-### Going to — Planes ya decididos + Evidencia presente
+### Going to â€” Planes ya decididos + Evidencia presente
 
 Usamos **going to** cuando:
 - We have already made a decision: *"I'm going to study medicine."*
@@ -32,7 +32,7 @@ Usamos **going to** cuando:
 | She | She's going to start a new job. |
 | They | They're going to move to a new city. |
 
-### Will — Spontaneous decisions + Predictions + Promises
+### Will â€” Spontaneous decisions + Predictions + Promises
 
 Usamos **will** cuando:
 - We make a decision in the moment: *"The phone is ringing. I'll answer it."*
@@ -50,9 +50,9 @@ Usamos **will** cuando:
 
 ### How to distinguish them?
 
-> 💡 **Tip:** If the plan already existed BEFORE speaking → **going to**. If the decision is made AT THE MOMENT of speaking → **will**.
+> ðŸ’¡ **Tip:** If the plan already existed BEFORE speaking â†’ **going to**. If the decision is made AT THE MOMENT of speaking â†’ **will**.
 
-- 📅 "I'm **going to** go to the gym on Monday." (plan ya decidido)
-- 📞 "The phone is ringing. I**'ll** answer it." (spontaneous decision)
-- ⛈️ "Look at those clouds. It's **going to** rain." (evidencia presente)
-- 🤔 "I think it **will** be sunny tomorrow." (prediction/opinion)
+- ðŸ“… "I'm **going to** go to the gym on Monday." (plan ya decidido)
+- ðŸ“ž "The phone is ringing. I**'ll** answer it." (spontaneous decision)
+- â›ˆï¸ "Look at those clouds. It's **going to** rain." (evidencia presente)
+- ðŸ¤” "I think it **will** be sunny tomorrow." (prediction/opinion)

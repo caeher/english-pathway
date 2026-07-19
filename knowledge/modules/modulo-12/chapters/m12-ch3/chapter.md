@@ -1,10 +1,10 @@
 ---
 id: m12-ch3
-moduleId: module-12
+moduleId: modulo-12
 number: 3
 title: Advanced listening
 subtitle: Understanding podcasts and videos with active listening
-icon: 🎧
+icon: ðŸŽ§
 color: "#8b5cf6"
 objectives:
   - Understand listening content at level B1-B2 (podcasts, interviews)
@@ -14,7 +14,7 @@ objectives:
 xpReward: 320
 ---
 
-## Multilevel Active Listening — Beyond "understanding words"
+## Multilevel Active Listening â€” Beyond "understanding words"
 
 Advanced listening is not just about picking up individual words. It is **understanding meaning, intention and organization** of the speech.
 
@@ -30,29 +30,29 @@ Advanced listening is not just about picking up individual words. It is **unders
 
 ### Listen in 3 Layers
 
-1. **1st listen — Gist (general idea):** "What is it about?"
-2. **2nd listen — Details:** "What specific data did they mention?"
-3. **3rd listen — Analysis:** "What does the speaker think? How do you know?"
+1. **1st listen â€” Gist (general idea):** "What is it about?"
+2. **2nd listen â€” Details:** "What specific data did they mention?"
+3. **3rd listen â€” Analysis:** "What does the speaker think? How do you know?"
 
-### Discourse Markers — The "traffic signs" of discourse
+### Discourse Markers â€” The "traffic signs" of discourse
 
 These markers help you follow the structure of what you hear:
 
 | Marcador | Function | Sign |
 |---|---|---|
-| **Firstly / To begin with** | Enter the first point | 🟢 Inicio |
-| **However / On the other hand** | Introduce contraste | 🔄 Cambio |
-| **In fact / Actually** | Corrige o enfatiza | ⚡ Attention |
-| **For example / Such as** | Give an example | 📌 Detalle |
-| **To be honest / Frankly** | Honest personal opinion | 💭 Honestidad |
-| **In conclusion / Overall** | Close the speech | 🏁 Final |
+| **Firstly / To begin with** | Enter the first point | ðŸŸ¢ Inicio |
+| **However / On the other hand** | Introduce contraste | ðŸ”„ Cambio |
+| **In fact / Actually** | Corrige o enfatiza | âš¡ Attention |
+| **For example / Such as** | Give an example | ðŸ“Œ Detalle |
+| **To be honest / Frankly** | Honest personal opinion | ðŸ’­ Honestidad |
+| **In conclusion / Overall** | Close the speech | ðŸ Final |
 
 ### Progressive Audio Types
 
 | Nivel | Tipo | Dificultad |
 |---|---|---|
-| 1 | Clear and structured monologue (educational podcast) | ⭐ |
-| 2 | Natural dialogue between two speakers | ⭐⭐ |
-| 3 | Interview with multiple speakers | ⭐⭐⭐ |
+| 1 | Clear and structured monologue (educational podcast) | â­ |
+| 2 | Natural dialogue between two speakers | â­â­ |
+| 3 | Interview with multiple speakers | â­â­â­ |
 
-> 💡 **Tip:** If you don't understand a word, don't stop! Keep listening and try to deduce the meaning from the context.
+> ðŸ’¡ **Tip:** If you don't understand a word, don't stop! Keep listening and try to deduce the meaning from the context.

@@ -1,10 +1,10 @@
 ---
 id: m6-ch6
-moduleId: module-6
+moduleId: modulo-6
 number: 6
 title: "Reported Speech: Questions, Commands and Phrasal Verbs"
 subtitle: Asked if/what, told to, and common phrasal verbs
-icon: 🧩
+icon: ðŸ§©
 color: "#06b6d4"
 objectives:
   - Report questions (asked if / asked what) and orders (told to)
@@ -20,13 +20,13 @@ xpReward: 180
 2. The **order** changes to affirmative (non-inversion).
 3. **backshift** is applied as in assertions.
 
-### Yes/No → asked if / whether
+### Yes/No â†’ asked if / whether
 | Direct | Reported |
 |--------|----------|
 | "**Do** you like pizza?" | He **asked** me **if** I **liked** pizza. |
 | "**Are** you coming?" | She **asked** **if** I **was** coming. |
 
-### Wh-questions → asked + wh-word (NO inversion)
+### Wh-questions â†’ asked + wh-word (NO inversion)
 | Direct | Reported |
 |--------|----------|
 | "**Where** do you live?" | She asked me **where** I **lived**. |
@@ -45,7 +45,7 @@ xpReward: 180
 ## Common Phrasal Verbs
 
 ### Phrasal verb = verb + particle
-- **look** = mirar → **look after** = cuidar → **look for** = buscar
+- **look** = mirar â†’ **look after** = cuidar â†’ **look for** = buscar
 
 ### Esenciales
 | Phrasal Verb | Meaning | Example |

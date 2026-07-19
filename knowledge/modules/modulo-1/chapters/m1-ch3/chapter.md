@@ -1,10 +1,10 @@
 ---
 id: m1-ch3
-moduleId: module-1
+moduleId: modulo-1
 number: 3
 title: "Personal Pronouns and the Verb \"To Be\""
 subtitle: The foundations of every English sentence
-icon: 🧱
+icon: ðŸ§±
 color: "#8b5cf6"
 objectives:
   - Identify and use the 7 personal pronouns (I, you, he, she, it, we, they)
@@ -28,7 +28,7 @@ xpReward: 130
 | **We** | Nosotros | *We are happy.* |
 | **They** | Ellos/Ellas | *They are teachers.* |
 
-### Verb "To Be" — Present
+### Verb "To Be" â€” Present
 | Pronombre | Forma | Contraction |
 |-----------|-------|-------------|
 | I | am | I'm |
@@ -38,8 +38,8 @@ xpReward: 130
 | They | are | They're |
 
 ### Shapes
-- **Affirmative:** *I am happy.* → *I'm happy.*
-- **Negative:** *I am not sad.* → *I'm not sad.* / *He is not here.* → *He isn't here.*
+- **Affirmative:** *I am happy.* â†’ *I'm happy.*
+- **Negative:** *I am not sad.* â†’ *I'm not sad.* / *He is not here.* â†’ *He isn't here.*
 - **Question:** *Am I late?* / *Is she a teacher?* / *Are they ready?*
 
 ### Short Answers
@@ -51,8 +51,8 @@ xpReward: 130
 
 ### Tag Questions
 They are added to the end of a statement to confirm or ask for agreement.
-- *You're a student*, **aren't you?** — You're a student, right?
-- *She is from Spain*, **isn't she?** — She is from Spain, right?
-- *They are happy*, **aren't they?** — They are happy, right?
+- *You're a student*, **aren't you?** â€” You're a student, right?
+- *She is from Spain*, **isn't she?** â€” She is from Spain, right?
+- *They are happy*, **aren't they?** â€” They are happy, right?
 
-> 💡 **Tip:** "I" is always capitalized in English, even in the middle of a sentence.
+> ðŸ’¡ **Tip:** "I" is always capitalized in English, even in the middle of a sentence.

@@ -1,10 +1,10 @@
 ---
 id: m4-ch3
-moduleId: module-4
+moduleId: modulo-4
 number: 3
 title: Superlatives
 subtitle: The biggest, the best, the most interesting
-icon: 🏆
+icon: ðŸ†
 color: "#8b5cf6"
 objectives:
   - Form superlatives with -est and most
@@ -13,7 +13,7 @@ objectives:
 xpReward: 160
 ---
 
-## Superlatives — Superlativos
+## Superlatives â€” Superlativos
 
 ### Short adjectives: the + adj-est
 | Adjective | Superlative | Example |

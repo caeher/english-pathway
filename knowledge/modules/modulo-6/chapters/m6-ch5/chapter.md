@@ -1,10 +1,10 @@
 ---
 id: m6-ch5
-moduleId: module-6
+moduleId: modulo-6
 number: 5
 title: "Reported Speech: Affirmations"
-subtitle: Said that, told me that — What he said
-icon: 🗣️
+subtitle: Said that, told me that â€” What he said
+icon: ðŸ—£ï¸
 color: "#f59e0b"
 objectives:
   - Transform direct statements into indirect speech
@@ -13,7 +13,7 @@ objectives:
 xpReward: 180
 ---
 
-## Reported Speech — Estilo Indirecto (Statements)
+## Reported Speech â€” Estilo Indirecto (Statements)
 
 ### What is it?
 - **Direct:** "I **am** happy," she said.
@@ -25,10 +25,10 @@ xpReward: 180
 |------|-----|---------|
 | **said** | without person (said that...) | She **said** she was happy. |
 | **told** | with person (told someone that...) | She **told** me she was happy. |
-- ❌ ~~She said me...~~ → ✅ She **told** me...
-- ❌ ~~She told that...~~ → ✅ She **said** that...
+- âŒ ~~She said me...~~ â†’ âœ… She **told** me...
+- âŒ ~~She told that...~~ â†’ âœ… She **said** that...
 
-### Backshift — Change of times
+### Backshift â€” Change of times
 | Direct Speech | Reported Speech |
 |---------------|-----------------|
 | "I **am** happy." | She said she **was** happy. |

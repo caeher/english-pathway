@@ -1,10 +1,10 @@
 ---
 id: m12-ch5
-moduleId: module-12
+moduleId: modulo-12
 number: 5
 title: improvisation games
 subtitle: Reacting spontaneously in different situations
-icon: 🎭
+icon: ðŸŽ­
 color: "#ec4899"
 objectives:
   - React spontaneously in English to unexpected situations
@@ -14,13 +14,13 @@ objectives:
 xpReward: 300
 ---
 
-## Improvisation – When there is no script
+## Improvisation â€“ When there is no script
 
 True fluency is demonstrated when you can **react without preparation**. This chapter gives you a repertoire of reactions for any situation.
 
 ### Repertoire of Reactions
 
-#### 😱 Sorpresa
+#### ðŸ˜± Sorpresa
 | Expression | Intensidad | Registro |
 |---|---|---|
 | "Really?!" | Media | Neutral |
@@ -30,7 +30,7 @@ True fluency is demonstrated when you can **react without preparation**. This ch
 | "You're kidding!" | Alta | Informal |
 | "That's incredible!" | Alta | Neutral |
 
-#### ✅ Quick agreement
+#### âœ… Quick agreement
 | Expression | Registro |
 |---|---|
 | "Absolutely!" | Semi-formal |
@@ -40,7 +40,7 @@ True fluency is demonstrated when you can **react without preparation**. This ch
 | "I totally agree." | Neutral |
 | "Exactly!" | Neutral |
 
-#### 🤔 Diplomatic disagreement
+#### ðŸ¤” Diplomatic disagreement
 | Expression | Registro |
 |---|---|
 | "I'm not so sure about that..." | Diplomatic |
@@ -49,7 +49,7 @@ True fluency is demonstrated when you can **react without preparation**. This ch
 | "I see your point, however..." | Formal/diplomatic |
 | "I'm afraid I disagree." | Formal |
 
-#### ⏳ Ask for time to think
+#### â³ Ask for time to think
 | Expression | Registro |
 |---|---|
 | "Let me think about that..." | Neutral |
@@ -58,7 +58,7 @@ True fluency is demonstrated when you can **react without preparation**. This ch
 | "Give me a second..." | Informal |
 | "I need to think it over." | Neutral |
 
-#### 🔄 Change theme
+#### ðŸ”„ Change theme
 | Expression | Registro |
 |---|---|
 | "By the way..." | Neutral |
@@ -67,7 +67,7 @@ True fluency is demonstrated when you can **react without preparation**. This ch
 | "On a different note..." | Semi-formal |
 | "Anyway..." | Informal |
 
-#### 💬 Expresar emociones
+#### ðŸ’¬ Expresar emociones
 | Expression | Emotion |
 |---|---|
 | "That's amazing!" | Joy/admiration |
@@ -76,7 +76,7 @@ True fluency is demonstrated when you can **react without preparation**. This ch
 | "That's terrible!" | Negative empathy |
 | "What a relief!" | Alivio |
 
-### The "Yes, And..." Technique 🎭
+### The "Yes, And..." Technique ðŸŽ­
 
 From improvisation theater: **accept** what the other says ("Yes") and **add** something new ("and...").
 
@@ -85,4 +85,4 @@ From improvisation theater: **accept** what the other says ("Yes") and **add** s
 
 This technique keeps the conversation flowing and shows genuine interest.
 
-> 💡 **Tip:** Don't look for the perfect answer. Look for a **quick and appropriate** response. Fluency is more important than grammatical perfection.
+> ðŸ’¡ **Tip:** Don't look for the perfect answer. Look for a **quick and appropriate** response. Fluency is more important than grammatical perfection.

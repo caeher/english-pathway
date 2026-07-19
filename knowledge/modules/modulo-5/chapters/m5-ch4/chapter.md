@@ -1,10 +1,10 @@
 ---
 id: m5-ch4
-moduleId: module-5
+moduleId: modulo-5
 number: 4
 title: The Nature of Participles
-subtitle: Present participle and past participle — They are not tenses
-icon: 📌
+subtitle: Present participle and past participle â€” They are not tenses
+icon: ðŸ“Œ
 color: "#6366f1"
 objectives:
   - Understand that participles are NOT tenses, but forms of the verb
@@ -14,9 +14,9 @@ objectives:
 xpReward: 170
 ---
 
-## Participles — The Participles
+## Participles â€” The Participles
 
-### ⚠️ Important: These are not verb tenses
+### âš ï¸ Important: These are not verb tenses
 Many people believe that "present participle" and "past participle" are tenses (like present or past). **They are not.** They are **forms of the verb** that are used in different structures.
 
 | Forma | How it is formed | Ejemplo |
@@ -52,7 +52,7 @@ Many people believe that "present participle" and "past participle" are tenses (
 | see | saw | **seen** |
 | break | broke | **broken** |
 
-### Verbos donde Past ≠ Past participle
+### Verbos donde Past â‰  Past participle
 | Base | Past | Past participle |
 |-----|------|------------------|
 | be | was/were | **been** |
@@ -61,4 +61,4 @@ Many people believe that "present participle" and "past participle" are tenses (
 | speak | spoke | **spoken** |
 | write | wrote | **written** |
 
-> 💡 Participles are **pieces** that are combined with auxiliaries: **have + pp** (perfect), **be + pp** (passive), **be + -ing** (continuous).
+> ðŸ’¡ Participles are **pieces** that are combined with auxiliaries: **have + pp** (perfect), **be + pp** (passive), **be + -ing** (continuous).

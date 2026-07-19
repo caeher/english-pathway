@@ -1,10 +1,10 @@
 ---
 id: m2-ch2
-moduleId: module-2
+moduleId: modulo-2
 number: 2
 title: Adverbs of Frequency and Routines
 subtitle: Describe how often you do things
-icon: 📊
+icon: ðŸ“Š
 color: "#10b981"
 objectives:
   - Use adverbs of frequency (always, usually, often, sometimes, rarely, never)
@@ -35,4 +35,4 @@ xpReward: 140
 - once a week / twice a month / three times a year
 - on Mondays / in the morning / at night
 
-> 💡 **Tip:** "Never" is already negative: *I never smoke.* (NO ~~I don't never smoke~~)
+> ðŸ’¡ **Tip:** "Never" is already negative: *I never smoke.* (NO ~~I don't never smoke~~)

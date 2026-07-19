@@ -1,10 +1,10 @@
 ---
 id: m10-ch2
-moduleId: module-10
+moduleId: modulo-10
 number: 2
 title: Vocabulary for everyday life
 subtitle: Expanding your lexicon in real-life scenarios
-icon: 🏠
+icon: ðŸ 
 color: "#10b981"
 objectives:
   - "Use intermediate vocabulary in everyday contexts: home, health, work, shopping"
@@ -14,11 +14,11 @@ objectives:
 xpReward: 300
 ---
 
-## Vocabulary in context — The worlds of everyday life
+## Vocabulary in context â€” The worlds of everyday life
 
 Vocabulary is best learned **in context**, not in isolated lists. In this chapter you will explore 6 thematic "worlds".
 
-### 🏠 Hogar (Home)
+### ðŸ  Hogar (Home)
 | English | Spanish | Placement |
 |---|---|---|
 | furniture | muebles | a piece of furniture |
@@ -27,7 +27,7 @@ Vocabulary is best learned **in context**, not in isolated lists. In this chapte
 | vacuum | aspiradora | vacuum the floor |
 | drawer | drawer | open the drawer |
 
-### 🏥 Salud (Health)
+### ðŸ¥ Salud (Health)
 | English | Spanish | Placement |
 |---|---|---|
 | appointment | medical appointment | make an appointment |
@@ -36,7 +36,7 @@ Vocabulary is best learned **in context**, not in isolated lists. In this chapte
 | headache | headache | have a headache |
 | fever | fiebre | have a fever |
 
-### 💼 Trabajo (Work)
+### ðŸ’¼ Trabajo (Work)
 | English | Spanish | Placement |
 |---|---|---|
 | deadline | deadline | meet the deadline |
@@ -45,7 +45,7 @@ Vocabulary is best learned **in context**, not in isolated lists. In this chapte
 | promotion | ascenso | get a promotion |
 | resign | renunciar | resign from a job |
 
-### 🛒 Compras (Shopping)
+### ðŸ›’ Compras (Shopping)
 | English | Spanish | Placement |
 |---|---|---|
 | receipt | recibo | keep the receipt |
@@ -56,7 +56,7 @@ Vocabulary is best learned **in context**, not in isolated lists. In this chapte
 
 ### Colocaciones importantes
 
-> 💡 **Tip:** A collocation is a natural combination of words. We don't say "do the bed" but **"make the bed"**.
+> ðŸ’¡ **Tip:** A collocation is a natural combination of words. We don't say "do the bed" but **"make the bed"**.
 
 | MAKE | DO | TAKE | HAVE |
 |---|---|---|---|

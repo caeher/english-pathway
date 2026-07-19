@@ -1,10 +1,10 @@
 ---
 id: m7-ch1
-moduleId: module-7
+moduleId: modulo-7
 number: 1
 title: Nouns, Pronouns and Relative Clauses
 subtitle: Advanced pronouns, relatives and appositives
-icon: 🔗
+icon: ðŸ”—
 color: "#3b82f6"
 objectives:
   - Review demonstrative and third person pronouns
@@ -18,13 +18,13 @@ xpReward: 180
 ### Pronombres demostrativos (Demonstrative pronouns)
 | Singular | Plural | Uso |
 |----------|--------|-----|
-| **this** | **these** | Near (this/these) → This is my book. These are my friends. |
-| **that** | **those** | Lejos (ese/eses, aquel/aquellos) → That is the teacher. Those are the students. |
+| **this** | **these** | Near (this/these) â†’ This is my book. These are my friends. |
+| **that** | **those** | Lejos (ese/eses, aquel/aquellos) â†’ That is the teacher. Those are the students. |
 
 ### Third person singular pronouns (he, she, it)
-- **he** → persona masculina
-- **she** → persona femenina  
-- **it** → cosas, animales, conceptos abstractos, tiempo/clima
+- **he** â†’ persona masculina
+- **she** â†’ persona femenina  
+- **it** â†’ cosas, animales, conceptos abstractos, tiempo/clima
 
 ### Relative Clauses
 
@@ -44,18 +44,18 @@ Relative clauses give **extra information** about a noun.
 | **when** | time | The day **when** I arrived was sunny. |
 
 ### Defining vs. Non-defining
-| Defining (essential info) | Non-defining (extra info — commas) |
+| Defining (essential info) | Non-defining (extra info â€” commas) |
 |---------------------------|-------------------------------------|
 | The man **who lives next door** is kind. | My brother**,** **who is 30**, is a doctor. |
-| No commas — information needed to identify | Commas — extra info, can be removed |
+| No commas â€” information needed to identify | Commas â€” extra info, can be removed |
 | Can use **that** | Cannot use **that** |
 
 ### Omitting the relative pronoun
 - You can omit who/which/that when it's the **object**:
-  - The book **(that)** I bought is good. ✅ (I = subject, book = object)
-  - The man **(who)** I met was nice. ✅
+  - The book **(that)** I bought is good. âœ… (I = subject, book = object)
+  - The man **(who)** I met was nice. âœ…
 - You CANNOT omit when it's the **subject**:
-  - The man **who** lives next door is kind. (**who** is the subject → can't omit)
+  - The man **who** lives next door is kind. (**who** is the subject â†’ can't omit)
 
 ### Examples
 | Two sentences | Combined with relative clause |
@@ -69,4 +69,4 @@ Relative clauses give **extra information** about a noun.
 Appositives modify or complement nouns. At advanced level:
 - *The president*, **a former lawyer**, gave a speech. (appositive entre comas)
 - *My friend* **Carlos** lives in Madrid. (appositive essential, without commas)
-- The idea **that we should leave early** was rejected. (noun clause as appositive — advanced topic)
+- The idea **that we should leave early** was rejected. (noun clause as appositive â€” advanced topic)

@@ -1,10 +1,10 @@
 ---
 id: m4-ch5
-moduleId: module-4
+moduleId: modulo-4
 number: 5
 title: The Imperative
 subtitle: Orders, instructions and suggestions
-icon: 📣
+icon: ðŸ“£
 color: "#ef4444"
 objectives:
   - Form the affirmative and negative imperative
@@ -42,5 +42,5 @@ xpReward: 130
 | **Requests (+ please)** | Close the window, please. |
 | **Suggestions (let's)** | Let's go! / Let's try again! |
 
-> 💡 The imperative does NOT have a visible subject. "You" is implied.
+> ðŸ’¡ The imperative does NOT have a visible subject. "You" is implied.
 > "Please" makes it more polite: **Please** sit down. / Sit down, **please**.

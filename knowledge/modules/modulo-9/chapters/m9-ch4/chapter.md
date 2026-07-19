@@ -1,10 +1,10 @@
 ---
 id: m9-ch4
-moduleId: module-9
+moduleId: modulo-9
 number: 4
 title: Narrating past events
 subtitle: Introducing the past simple in interactive stories
-icon: 📖
+icon: ðŸ“–
 color: "#8b5cf6"
 objectives:
   - Narrate past events using the past simple with regular and irregular verbs fluently
@@ -14,11 +14,11 @@ objectives:
 xpReward: 300
 ---
 
-## Past Simple — Telling what happened yesterday
+## Past Simple â€” Telling what happened yesterday
 
 The past simple is used for actions **finished** at a time in the past.
 
-### Verbos regulares → agregar -ed
+### Verbos regulares â†’ agregar -ed
 | Base | Pasado | Ejemplo |
 |------|--------|---------|
 | walk | walk**ed** | *I walked to school yesterday.* |
@@ -26,13 +26,13 @@ The past simple is used for actions **finished** at a time in the past.
 | study | stud**ied** | *She studied all night.* |
 
 **Spelling rules for -ed:**
-- **Regular**: add -ed → play**ed**, work**ed**
-- **-e**: solo agregar -d → lov**ed**, us**ed**
-- **consonante + y**: cambiar y → i + ed → stud**ied**, tr**ied**
-- **vocal + y**: solo agregar -ed → pla**yed**, sta**yed**
-- **consonante corta acentuada**: doblar consonante + ed → stop**ped**, plan**ned**
+- **Regular**: add -ed â†’ play**ed**, work**ed**
+- **-e**: solo agregar -d â†’ lov**ed**, us**ed**
+- **consonante + y**: cambiar y â†’ i + ed â†’ stud**ied**, tr**ied**
+- **vocal + y**: solo agregar -ed â†’ pla**yed**, sta**yed**
+- **consonante corta acentuada**: doblar consonante + ed â†’ stop**ped**, plan**ned**
 
-### Irregular verbs → memorize!
+### Irregular verbs â†’ memorize!
 | Base | Pasado | Ejemplo |
 |------|--------|---------|
 | go | **went** | *I went to the park.* |
@@ -50,11 +50,11 @@ The past simple is used for actions **finished** at a time in the past.
   - *"Did you see the movie?"*
   - *"Did she finish her homework?"*
 
-> ⚠️ **VERY IMPORTANT**: With "did/didn't", the verb returns to its base form:
-- ✓ "Did you **go**?" 
-- ✗ ~~"Did you **went**?"~~
-- ✓ "She didn't **eat**."
-- ✗ ~~"She didn't **ate**."~~
+> âš ï¸ **VERY IMPORTANT**: With "did/didn't", the verb returns to its base form:
+- âœ“ "Did you **go**?" 
+- âœ— ~~"Did you **went**?"~~
+- âœ“ "She didn't **eat**."
+- âœ— ~~"She didn't **ate**."~~
 
 ### -ed pronunciation
 
@@ -62,9 +62,9 @@ The -ed ending has 3 different sounds:
 
 | Sound | After | Example | Pronunciation |
 |--------|-----------|---------|---------------|
-| **/t/** | p, k, f, s, sh, ch | walk**ed**, watch**ed** | /wɔːkt/, /wɒtʃt/ |
-| **/d/** | vocales, b, g, l, m, n, v, z | play**ed**, call**ed** | /pleɪd/, /kɔːld/ |
-| **/ɪd/** | t, d | want**ed**, need**ed** | /ˈwɒntɪd/, /ˈniːdɪd/ |
+| **/t/** | p, k, f, s, sh, ch | walk**ed**, watch**ed** | /wÉ”Ëkt/, /wÉ’tÊƒt/ |
+| **/d/** | vocales, b, g, l, m, n, v, z | play**ed**, call**ed** | /pleÉªd/, /kÉ”Ëld/ |
+| **/Éªd/** | t, d | want**ed**, need**ed** | /ËˆwÉ’ntÉªd/, /ËˆniËdÉªd/ |
 
 ### Past tense expressions
 
@@ -78,14 +78,14 @@ These words indicate that you should use past simple:
 | **in + year** | *in 2020, in 1990, in the past* |
 | **when + past** | *when I was young, when she called* |
 
-> 💡 **Memory Tip**: The most common irregular verbs are grouped by pattern:
-- **i → a**: sing→sang, drink→drank, begin→began
-- **Iguales**: put→put, cut→cut, hit→hit
-- **Totalmente diferentes**: go→went, buy→bought
+> ðŸ’¡ **Memory Tip**: The most common irregular verbs are grouped by pattern:
+- **i â†’ a**: singâ†’sang, drinkâ†’drank, beginâ†’began
+- **Iguales**: putâ†’put, cutâ†’cut, hitâ†’hit
+- **Totalmente diferentes**: goâ†’went, buyâ†’bought
 
-> 🗣️ **Pronunciation Practice**: 
-- wanted /ˈwɒntɪd/ (3 syllables)
-- played /pleɪd/ (1 syllable)
-- stopped /stɒpt/ (1 syllable)
+> ðŸ—£ï¸ **Pronunciation Practice**: 
+- wanted /ËˆwÉ’ntÉªd/ (3 syllables)
+- played /pleÉªd/ (1 syllable)
+- stopped /stÉ’pt/ (1 syllable)
 
-> 🎯 **Strategy**: To memorize irregulars, group them by sound or pattern. Practice saying them out loud in groups.
+> ðŸŽ¯ **Strategy**: To memorize irregulars, group them by sound or pattern. Practice saying them out loud in groups.

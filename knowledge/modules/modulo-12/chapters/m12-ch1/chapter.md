@@ -1,10 +1,10 @@
 ---
 id: m12-ch1
-moduleId: module-12
+moduleId: modulo-12
 number: 1
 title: Writing your story
 subtitle: Writing paragraphs and short texts with an interactive guide
-icon: ✍️
+icon: âœï¸
 color: "#e85d3a"
 objectives:
   - Write well-structured paragraphs with topic sentence, supporting details and concluding sentence
@@ -14,7 +14,7 @@ objectives:
 xpReward: 300
 ---
 
-## Procedural Writing — From idea to text
+## Procedural Writing â€” From idea to text
 
 Writing well in English is not a matter of translating from Spanish. It's about following a **process** that takes you from ideas to the final text.
 
@@ -22,19 +22,19 @@ Writing well in English is not a matter of translating from Spanish. It's about 
 
 | Fase | To do |
 |---|---|
-| 🧠 **Pre-writing** | Brainstorming, organizar ideas, elegir tema |
-| ✏️ **Drafting** | Write the first draft without seeking perfection |
-| 🔍 **Reviewing** | Review content, structure and coherence |
-| ✅ **Editing** | Correct grammar, spelling and punctuation |
-| 📤 **Publishing** | Final version ready to share |
+| ðŸ§  **Pre-writing** | Brainstorming, organizar ideas, elegir tema |
+| âœï¸ **Drafting** | Write the first draft without seeking perfection |
+| ðŸ” **Reviewing** | Review content, structure and coherence |
+| âœ… **Editing** | Correct grammar, spelling and punctuation |
+| ðŸ“¤ **Publishing** | Final version ready to share |
 
-### Paragraph Structure — The Hamburger Model 🍔
+### Paragraph Structure â€” The Hamburger Model ðŸ”
 
 Every well-written paragraph has three parts:
 
-- 🍞 **Topic Sentence** — The main idea of ​​the paragraph. Goes to the beginning.
-- 🥩 **Supporting Details** — 2-3 sentences that develop the idea with examples, reasons or evidence.
-- 🍞 **Concluding Sentence** — Summary or closure that connects to the topic sentence.
+- ðŸž **Topic Sentence** â€” The main idea of â€‹â€‹the paragraph. Goes to the beginning.
+- ðŸ¥© **Supporting Details** â€” 2-3 sentences that develop the idea with examples, reasons or evidence.
+- ðŸž **Concluding Sentence** â€” Summary or closure that connects to the topic sentence.
 
 ### Ejemplo
 
@@ -59,4 +59,4 @@ Every well-written paragraph has three parts:
 | Concluir | in conclusion, to sum up, all in all, in short |
 | Secuencia | first, second, then, finally, lastly |
 
-> 💡 **Tip:** Before writing, always make a map of ideas. Organizing BEFORE writing greatly improves the quality of the text.
+> ðŸ’¡ **Tip:** Before writing, always make a map of ideas. Organizing BEFORE writing greatly improves the quality of the text.

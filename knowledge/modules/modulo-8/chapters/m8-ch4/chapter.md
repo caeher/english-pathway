@@ -1,10 +1,10 @@
 ---
 id: m8-ch4
-moduleId: module-8
+moduleId: modulo-8
 number: 4
 title: Let's listen, it's been said!
 subtitle: Identifying everyday phrases in interactive audios
-icon: 👂
+icon: ðŸ‘‚
 color: "#f59e0b"
 objectives:
   - Understand everyday phrases in spoken English
@@ -13,13 +13,13 @@ objectives:
 xpReward: 200
 ---
 
-## Listening Comprehension — Listening Comprehension
+## Listening Comprehension â€” Listening Comprehension
 
 To understand spoken English you need to practice **active listening**:
 
 ### 3 step strategy
 1. **Before listening:** Think about the context and key vocabulary
-2. **First listen:** Get the general idea — what are they talking about?
+2. **First listen:** Get the general idea â€” what are they talking about?
 3. **Second listen:** Look for specific details
 
 ### Frases cotidianas esenciales
@@ -34,4 +34,4 @@ To understand spoken English you need to practice **active listening**:
 | Despedirse | *See you later!* | See you later! |
 
 ### Listening tip
-> 💡 Don't try to understand EVERY word. Focus on the **keywords** (nouns and verbs) to get the general meaning.
+> ðŸ’¡ Don't try to understand EVERY word. Focus on the **keywords** (nouns and verbs) to get the general meaning.

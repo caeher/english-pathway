@@ -1,10 +1,10 @@
 ---
 id: m7-ch5
-moduleId: module-7
+moduleId: modulo-7
 number: 5
 title: Common Grammatical Errors
 subtitle: Typical mistakes of Spanish speakers
-icon: ⚠️
+icon: âš ï¸
 color: "#ef4444"
 objectives:
   - Identify the most frequent grammatical errors of Spanish speakers
@@ -13,30 +13,30 @@ objectives:
 xpReward: 170
 ---
 
-## Common Grammar Mistakes — Errores Gramaticales Comunes
+## Common Grammar Mistakes â€” Errores Gramaticales Comunes
 
 ### Why do you make these mistakes?
 Many errors come from **translating literally** from Spanish to English. The structures do not always coincide.
 
 ---
 
-### Error 1: Concordancia sujeto–verbo (S-V Agreement)
-| ❌ Incorrecto | ✅ Correcto |
+### Error 1: Concordancia sujetoâ€“verbo (S-V Agreement)
+| âŒ Incorrecto | âœ… Correcto |
 |---------------|-------------|
 | She **have** a car. | She **has** a car. |
 | He **don't** like it. | He **doesn't** like it. |
 | The people **is** happy. | The people **are** happy. |
 
-> **Rule:** 3rd person singular → add **-s** / use **does/has**.
+> **Rule:** 3rd person singular â†’ add **-s** / use **does/has**.
 
 ---
 
 ### Mistake 2: Incorrect use of items
-| ❌ Incorrecto | ✅ Correcto |
+| âŒ Incorrecto | âœ… Correcto |
 |---------------|-------------|
-| I like **the** music. (general) | I like **Ø** music. |
-| She is **Ø** teacher. | She is **a** teacher. |
-| I go to **the** school every day. | I go to **Ø** school every day. |
+| I like **the** music. (general) | I like **Ã˜** music. |
+| She is **Ã˜** teacher. | She is **a** teacher. |
+| I go to **the** school every day. | I go to **Ã˜** school every day. |
 
 > **Rule:** Don't use "the" for things in general. Always article before professions.
 
@@ -53,7 +53,7 @@ Many errors come from **translating literally** from Spanish to English. The str
 ---
 
 ### Error 4: Falsos amigos / Traducciones literales
-| ❌ Incorrecto | ✅ Correcto |
+| âŒ Incorrecto | âœ… Correcto |
 |---------------|-------------|
 | I have 25 years. | I **am** 25 years old. |
 | I am agree. | I **agree**. |
@@ -63,7 +63,7 @@ Many errors come from **translating literally** from Spanish to English. The str
 ---
 
 ### Error 5: Position of adverbs
-| ❌ Incorrecto | ✅ Correcto |
+| âŒ Incorrecto | âœ… Correcto |
 |---------------|-------------|
 | I go always to the gym. | I **always go** to the gym. |
 | He speaks very well English. | He speaks English **very well**. |
@@ -71,7 +71,7 @@ Many errors come from **translating literally** from Spanish to English. The str
 ---
 
 ### Error 6: There is / There are
-| ❌ Incorrecto | ✅ Correcto |
+| âŒ Incorrecto | âœ… Correcto |
 |---------------|-------------|
 | There is many people. | There **are** many people. |
 | It has a park nearby. | **There is** a park nearby. |
