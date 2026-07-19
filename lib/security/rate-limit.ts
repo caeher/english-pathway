@@ -14,6 +14,12 @@ export const expensiveRoutePolicies: Record<string, RateLimitPolicy> = {
   '/api/tutor/context': { limit: 30, windowMs: 60_000 },
   '/api/tutor/session': { limit: 10, windowMs: 60_000 },
   '/api/onboarding/assessment': { limit: 20, windowMs: 60_000 },
+  '/api/progress/activity': { limit: 60, windowMs: 60_000 },
+  '/api/progress/chapter': { limit: 30, windowMs: 60_000 },
+  '/api/progress/merge': { limit: 10, windowMs: 60_000 },
+  '/api/engagement/session': { limit: 30, windowMs: 60_000 },
+  '/api/srs': { limit: 60, windowMs: 60_000 },
+  '/api/tutor/memory': { limit: 30, windowMs: 60_000 },
 }
 
 export function getRateLimitPolicy(pathname: string): RateLimitPolicy | null {
