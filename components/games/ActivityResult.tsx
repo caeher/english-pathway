@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import { RotateCcw } from 'lucide-react'
 import ReactConfetti from 'react-confetti'
 import { cn } from '@/lib/helpers'
-import { useReducedMotion } from '@/lib/games/useReducedMotion'
+import { useReducedMotion } from '@/lib/games/useReducedMotion'
+import { resultTransition } from '@/lib/motion/system'
 import { starsFromPercent, passesThreshold } from '@/lib/games/scoring'
 
 export interface ActivityResultProps {
@@ -18,8 +19,7 @@ export interface ActivityResultProps {
   onRetry?: () => void
   retryLabel?: string
   compact?: boolean
-}
-
+}
 export default function ActivityResult({
   percent,
   score,
@@ -50,8 +50,7 @@ export default function ActivityResult({
       {shouldConfetti && <ReactConfetti recycle={false} numberOfPieces={160} />}
 
       <motion.div
-        initial={reducedMotion ? false : { scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        {...(reducedMotion ? { initial: false } : resultTransition)}
         className={cn(
           'text-center max-w-md mx-auto p-6 rounded-2xl border-2',
           passed ? 'border-(--success)/40 bg-(--success-soft)' : 'border-red-300 bg-red-50 dark:bg-red-950/30'
@@ -114,5 +113,4 @@ export default function ActivityResult({
       </motion.div>
     </div>
   )
-}
-
+}
