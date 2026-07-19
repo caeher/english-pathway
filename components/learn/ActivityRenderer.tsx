@@ -1,6 +1,6 @@
 'use client'
 
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { ChapterActivity } from '@/types'
 import {
   Quiz,
@@ -16,6 +16,7 @@ import {
 } from '@/components/games'
 import { activityRegistry, type ActivityTypeKey } from '@/features/activities'
 import { getReviewContentRefs } from '@/lib/srs/refs'
+import { ActivityControlBar } from './ActivityControlBar'
 import type {
   DictationItem,
   FlashcardData,
@@ -43,6 +44,8 @@ export interface ActivityCompleteResult {
 interface ActivityRendererProps {
   activity: ChapterActivity
   onComplete?: (result: ActivityCompleteResult) => void
+  onHelp?: (activityId: string) => void
+  onExit?: () => void
 }
 
 type GameResult = Record<string, unknown> & { score: number; total: number; scorePercent?: number }
@@ -64,7 +67,8 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
   },
 }
 
-export default function ActivityRenderer({ activity, onComplete }: ActivityRendererProps) {
+export default function ActivityRenderer({ activity, onComplete, onHelp, onExit }: ActivityRendererProps) {
+  const [attempt, setAttempt] = useState(0)
   const type = activity.type as ActivityTypeKey
   const definition = activityRegistry[type]
   if (!definition) {
@@ -90,5 +94,10 @@ export default function ActivityRenderer({ activity, onComplete }: ActivityRende
     })
   }
 
-  return renderers[definition.renderer](validated.data, handleComplete)
+  return (
+    <div>
+      <ActivityControlBar activityTitle={activity.title} activityType={activity.type} onHelp={onHelp ? () => onHelp(activity.id) : undefined} onReset={() => setAttempt((value) => value + 1)} onExit={onExit ?? (() => {})} />
+      <div key={attempt}>{renderers[definition.renderer](validated.data, handleComplete)}</div>
+    </div>
+  )
 }
