@@ -29,6 +29,15 @@
   /* Success */
   --success: #3d9e6e;
   --success-soft: #edf8f2;
+  /* Semantic layout and elevation tokens */
+  --space-page: 1.5rem;
+  --space-section: 1.5rem;
+  --radius-control: 0.75rem;
+  --radius-card: 1rem;
+  --shadow-sm: 0 1px 2px rgba(44, 36, 22, 0.06);
+  --shadow-lg: 0 12px 30px rgba(44, 36, 22, 0.12);
+  --state-focus: var(--accent);
+  --state-disabled-opacity: 0.5;
   /* Fonts (next/font variables set on html) */
   --font-display: var(--font-outfit), sans-serif;
   --font-body: var(--font-nunito), sans-serif;
@@ -58,6 +67,8 @@
   --reward-soft: #332c1a;
   --success: #5cba8a;
   --success-soft: #1e2e24;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.28);
   --dot-color: rgba(240, 235, 228, 0.04);
 }
 

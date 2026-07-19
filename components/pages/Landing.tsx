@@ -16,6 +16,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics/events'
+import { Badge, Surface } from '@/components/ui'
 
 const METHOD = [
   {
@@ -72,9 +73,9 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
 
         <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28 lg:py-32">
           <div className="max-w-3xl">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-white/90">
+            <Badge variant="neutral" className="mb-6 border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90">
               <Zap className="h-4 w-4" aria-hidden="true" /> A clearer path to confident English
-            </p>
+            </Badge>
             <h1 id="landing-title" className="font-display text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-7xl">
               Learn English by using it.
             </h1>
@@ -119,7 +120,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {METHOD.map(({ icon: Icon, step, title, description }) => (
-            <article key={step} className="rounded-3xl border border-(--border-primary) bg-(--bg-card) p-6 shadow-sm transition-transform hover:-translate-y-1">
+            <Surface as="article" key={step} padding="lg" elevation="raised" className="rounded-3xl transition-transform hover:-translate-y-1">
               <div className="flex items-center justify-between">
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-(--accent-soft) text-(--accent)">
                   <Icon className="h-5 w-5" aria-hidden="true" />
@@ -128,7 +129,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
               </div>
               <h3 className="mt-6 font-display text-xl font-black text-(--text-primary)">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">{description}</p>
-            </article>
+            </Surface>
           ))}
         </div>
       </section>
