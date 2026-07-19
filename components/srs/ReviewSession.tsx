@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Check, ChevronRight, Sparkles } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button, EmptyState, InlineError, LoadingState } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import type { SrsQueueItem } from '@/lib/srs/types'
 
@@ -21,7 +21,9 @@ export default function ReviewSession() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
+  async function loadQueue() {
+    setLoading(true)
+    setError(null)
     fetch('/api/srs/queue')
       .then(async (response) => {
         if (!response.ok) throw new Error('Unable to load your review queue.')
@@ -30,7 +32,9 @@ export default function ReviewSession() {
       .then((data) => setItems(data.items))
       .catch((loadError: Error) => setError(loadError.message))
       .finally(() => setLoading(false))
-  }, [])
+  }
+
+  useEffect(() => { void loadQueue() }, [])
 
   const item = items[index]
 
@@ -57,23 +61,15 @@ export default function ReviewSession() {
   }
 
   if (loading) {
-    return <p className="py-16 text-center text-sm text-(--text-muted)">Loading your review queue...</p>
+    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." className="max-w-2xl px-6" />
   }
 
   if (error && !item) {
-    return <p role="alert" className="py-16 text-center text-sm text-red-600">{error}</p>
+    return <InlineError message={error} onRetry={() => void loadQueue()} className="mx-auto mt-12 max-w-2xl" />
   }
 
   if (!item) {
-    return (
-      <section className="flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-(--success-soft) text-(--success)">
-          <Check className="h-6 w-6" />
-        </div>
-        <h1 className="mt-5 font-display text-2xl font-black text-(--text-primary)">All caught up</h1>
-        <p className="mt-2 max-w-sm text-sm text-(--text-secondary)">There are no review items due right now. Keep learning and return when you are ready.</p>
-      </section>
-    )
+    return <EmptyState className="mt-12 px-6" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." />
   }
 
   return (
@@ -107,7 +103,7 @@ export default function ReviewSession() {
         )}
       </article>
 
-      {error && <p role="alert" className="mt-4 text-center text-sm text-red-600">{error}</p>}
+      {error && <InlineError message={error} onRetry={() => { setError(null); setRevealed(true) }} className="mt-4" />}
       <p className="mt-5 flex items-center justify-center gap-2 text-center text-xs text-(--text-muted)">
         <Sparkles className="h-3.5 w-3.5" /> Your next review adapts to this answer.
       </p>

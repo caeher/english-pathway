@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Loader2 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Check } from 'lucide-react'
+import { Button, InlineError } from '@/components/ui'
 import { saveChapterProgress } from '@/features/progress/client'
 
 interface CompleteChapterButtonProps {
@@ -33,12 +33,12 @@ export function CompleteChapterButton({ chapterId, initialCompleted, canComplete
 
   return (
     <div>
-      <Button onClick={markCompleted} disabled={completed || submitting || !canComplete} variant={completed ? 'reward' : 'accent'}>
-        {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
+      <Button onClick={markCompleted} loading={submitting} loadingLabel="Completing..." disabled={completed || !canComplete} variant={completed ? 'reward' : 'accent'}>
+        {!submitting && <Check className="h-4 w-4" />}
         {completed ? 'Completed' : canComplete ? 'Complete chapter' : 'Complete activities first'}
       </Button>
       {!completed && !canComplete && <p className="mt-2 text-sm text-(--text-secondary)">Finish every activity in this chapter before marking it complete.</p>}
-      {error && <p role="alert" className="mt-2 text-sm text-red-600">{error}</p>}
+      {error && <InlineError message={error} onRetry={() => void markCompleted()} className="mt-3" />}
     </div>
   )
 }

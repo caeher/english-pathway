@@ -10,7 +10,7 @@ import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import { useTutorSession } from './hooks/useTutorSession'
 import type { MicrophoneState, SessionMode } from './session-types'
 import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
-import { Button, Surface } from '@/components/ui'
+import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { showActivity } from '@/lib/learn/client-tools'
 import EngagementSummary from '@/components/engagement/EngagementSummary'
@@ -110,7 +110,7 @@ function TutorControls({
                 </div>
               </div>}
 
-              {error && <p role="alert" className="mt-4 text-sm font-bold text-red-600">{error}</p>}
+              {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}
               <Button type="button" onClick={() => void start()} disabled={connecting} className="mt-5 w-full sm:w-auto">
                 {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
                 {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
