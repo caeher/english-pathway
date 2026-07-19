@@ -5,6 +5,7 @@ import { Component, useState, type ReactNode } from 'react'
 import type { ChapterActivity } from '@/types'
 import { activityRegistry, type ActivityTypeKey } from '@/features/activities'
 import { getReviewContentRefs } from '@/lib/srs/refs'
+import { normalizeActivityResult } from '@/lib/games/result'
 import { ActivityControlBar } from './ActivityControlBar'
 import type {
   DictationItem,
@@ -60,6 +61,9 @@ export interface ActivityCompleteResult {
   reviewContentRefs?: string[]
   chapterId?: string
   moduleId?: string
+  correctness?: 'complete' | 'partial' | 'needs-practice'
+  nextAction?: 'continue' | 'retry' | 'review'
+  metrics?: Record<string, number>
 }
 
 interface ActivityRendererProps {
@@ -103,17 +107,20 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
   }
 
   const handleComplete = (result: GameResult) => {
-    const evaluation = definition.evaluator(result)
+    const normalized = normalizeActivityResult(result)
     onComplete?.({
       activityId: activity.id,
       activityType: activity.type,
       score: result.score,
       total: result.total,
-      scorePercent: evaluation.scorePercent,
+      scorePercent: normalized.scorePercent,
       details: result,
-      reviewContentRefs: result.weakItemIndexes?.length
-        ? getReviewContentRefs(activity, result.weakItemIndexes)
-        : evaluation.scorePercent < 100 ? getReviewContentRefs(activity) : [],
+      correctness: normalized.correctness,
+      nextAction: normalized.nextAction,
+      metrics: normalized.metrics,
+      reviewContentRefs: normalized.weakItemIndexes.length
+        ? getReviewContentRefs(activity, normalized.weakItemIndexes)
+        : normalized.scorePercent < 100 ? getReviewContentRefs(activity) : [],
     })
   }
 
