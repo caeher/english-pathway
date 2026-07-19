@@ -80,6 +80,7 @@ export default function SentenceBuilder({ sentences, onComplete }: SentenceBuild
 
   return (
     <div className="max-w-2xl mx-auto" role="region" aria-label="Build sentences">
+      <p className="mb-3 text-sm text-(--text-muted)">Use Tab, Enter, or Space to add words. Select a placed word to remove it.</p>
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-display font-bold text-(--text-muted)">Sentence {current + 1} / {sentences.length}</span>
         <span className="text-sm font-display font-bold" style={{ color: 'var(--reward)' }}>Score: {score}</span>
@@ -143,6 +144,7 @@ export default function SentenceBuilder({ sentences, onComplete }: SentenceBuild
           </button>
         )}
       </div>
+      <p className="sr-only" aria-live="polite">Sentence {current + 1} of {sentences.length}. {placed.length} words selected.{checked ? isCorrect ? ' Correct.' : ` Incorrect. Answer: ${sentence.correct}.` : ''}</p>
     </div>
   )
 }

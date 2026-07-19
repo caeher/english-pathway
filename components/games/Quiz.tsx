@@ -99,7 +99,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
           <h3 className="font-display text-lg font-bold text-(--text-primary) mb-5">{q.question}</h3>
 
           {q.type === 'multiple-choice' && (
-            <div className="space-y-3" role="listbox" aria-label="Options">
+            <div className="space-y-3" role="radiogroup" aria-label="Options. Select one answer to submit it.">
               {q.options.map((opt, i) => {
                 const isRight = i === q.correct
                 const isSel = i === selected
@@ -111,8 +111,8 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
                 }
                 return (
                   <button key={i} onClick={() => handleMCSelect(i)} disabled={answered}
-                    role="option"
-                    aria-selected={isSel}
+                    role="radio"
+                    aria-checked={isSel}
                     className={cn('w-full text-left px-4 py-3.5 rounded-2xl border-2 transition-all flex items-center gap-3 cursor-pointer disabled:cursor-default focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)', cls)}>
                     <span className="w-7 h-7 rounded-lg border-2 border-current flex items-center justify-center text-xs font-display font-bold shrink-0">
                       {String.fromCharCode(65 + i)}
@@ -159,7 +159,7 @@ export default function Quiz({ questions, onComplete }: QuizProps) {
       </AnimatePresence>
 
       <div className="sr-only" aria-live="polite">
-        {answered && (isCorrect ? 'Correct' : 'Incorrect')}
+        {answered && (isCorrect ? 'Correct answer.' : 'Incorrect answer.')}
       </div>
     </div>
   )

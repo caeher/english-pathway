@@ -114,7 +114,7 @@ function MatchDragDrop({
   return (
     <div role="region" aria-label="Match by dragging or selecting">
       <p className="text-sm text-(--text-muted) mb-4">
-        Drag each translation to its English word or select them with the keyboard ({matchedCount}/{pairs.length})
+        Drag each translation to its English word, or use Tab then Enter or Space to select both items ({matchedCount}/{pairs.length})
       </p>
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2" role="group" aria-label="English words and slots">
@@ -197,6 +197,7 @@ function MatchDragDrop({
           Finish
         </button>
       )}
+      <p className="sr-only" aria-live="polite">{wrongSlot !== null ? 'Incorrect match. Select another translation.' : `${matchedCount} of ${pairs.length} pairs matched.`}</p>
     </div>
   )
 }
@@ -272,6 +273,7 @@ function SentenceDragDrop({
 
   return (
     <div role="region" aria-label="Build a sentence by dragging or selecting">
+      <p className="mb-3 text-sm text-(--text-muted)">Use Tab then Enter or Space to add and remove words. Dragging is optional.</p>
       {sentence.prompt && (
         <p className="text-sm text-(--text-secondary) mb-4 italic">&quot;{sentence.prompt}&quot;</p>
       )}
@@ -348,6 +350,7 @@ function SentenceDragDrop({
           {current + 1 >= sentences.length ? 'View results' : 'Check and next'}
         </button>
       </div>
+      <p className="sr-only" aria-live="polite">Sentence {current + 1} of {sentences.length}. {placed.length} words selected.</p>
     </div>
   )
 }

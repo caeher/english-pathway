@@ -68,39 +68,31 @@ export default function Flashcard({ cards, onComplete }: FlashcardProps) {
       </div>
 
       <div style={{ perspective: '1000px' }}>
-        <motion.div
+        <motion.button
+          type="button"
           onClick={() => setFlipped((f) => !f)}
-          onKeyDown={(e) => e.key === 'Enter' && setFlipped((f) => !f)}
-          tabIndex={0}
-          role="button"
+          aria-pressed={flipped}
           aria-label={flipped ? 'Flip to front' : 'Flip to back'}
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.5 }}
-          className="relative w-full h-56 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
+          className="relative h-56 w-full cursor-pointer border-0 bg-transparent p-0 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
           style={{ transformStyle: 'preserve-3d' }}
         >
           <div className="absolute inset-0 rounded-3xl bg-(--bg-card) border-2 border-(--border-primary) shadow-lg flex flex-col items-center justify-center p-8"
             style={{ backfaceVisibility: 'hidden' }}>
             <p className="text-[10px] font-display font-bold text-(--text-muted) mb-3 uppercase tracking-widest">Front</p>
-            <div className="flex items-center gap-2">
-              <p className="text-2xl font-display font-black text-(--text-primary) text-center">{card.front}</p>
-              <SpeakButton text={card.front} label={`Pronounce ${card.front}`} />
-            </div>
-            <p className="text-xs text-(--text-muted) mt-5">Tap to flip</p>
+            <p className="text-2xl font-display font-black text-(--text-primary) text-center">{card.front}</p>
+            <p className="text-xs text-(--text-muted) mt-5">Press Enter or Space to flip</p>
           </div>
           <div className="absolute inset-0 rounded-3xl bg-(--secondary-soft) border-2 border-(--secondary)/20 shadow-lg flex flex-col items-center justify-center p-8"
             style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
             <p className="text-[10px] font-display font-bold uppercase tracking-widest" style={{ color: 'var(--secondary)' }}>Back</p>
             <p className="text-xl font-display font-bold text-(--text-primary) text-center mt-3">{card.back}</p>
-            {card.example && (
-              <p className="text-sm text-(--text-secondary) mt-4 italic text-center flex items-center gap-2 justify-center">
-                &quot;{card.example}&quot;
-                <SpeakButton text={card.example} size="sm" />
-              </p>
-            )}
+            {card.example && <p className="text-sm text-(--text-secondary) mt-4 italic text-center">&quot;{card.example}&quot;</p>}
           </div>
-        </motion.div>
+        </motion.button>
       </div>
+      <div className="flex justify-center"><SpeakButton text={flipped ? card.example ?? card.back : card.front} label={flipped ? `Pronounce ${card.back}` : `Pronounce ${card.front}`} /></div>
 
       <div className="flex items-center justify-between">
         <button onClick={handlePrev} disabled={current === 0} aria-label="Previous"
@@ -123,6 +115,7 @@ export default function Flashcard({ cards, onComplete }: FlashcardProps) {
           <ArrowRight className="w-5 h-5 text-(--text-secondary)" />
         </button>
       </div>
+      <p className="sr-only" aria-live="polite">Card {current + 1} of {cards.length}. {flipped ? 'Back shown.' : 'Front shown.'} {known.size} known.</p>
     </div>
   )
 }
