@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen, CheckCircle2, Flame, RotateCcw, Sparkles, Trophy } from 'lucide-react'
+import { ArrowRight, BookOpen, CheckCircle2, Flame, Info, RotateCcw, Sparkles, Trophy } from 'lucide-react'
 import { getLevelProgress } from '@/lib/engagement/xp'
 import { learnHref } from '@/lib/curriculum/href'
 import { Badge, SectionHeader, Surface } from '@/components/ui'
@@ -13,6 +13,11 @@ interface DashboardData {
   recentActivities: Array<{ id: string; title: string; chapterTitle: string; score: number | null; status: string; updatedAt: string }>
   completedChapters: number
   dueReviews: number
+  achievements: {
+    earned: number
+    total: number
+    next: { title: string; description: string; icon: string; xp_reward: number } | null
+  }
   lastChapter: { module: { id: string; title: string }; chapter: { id: string; title: string } } | null
 }
 
@@ -50,7 +55,7 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
         <Surface>
           <div className="flex items-center justify-between"><Flame className="h-5 w-5 text-(--accent)" /><Badge variant="accent">BEST {data.engagement?.longest_streak ?? 0}</Badge></div>
           <p className="mt-4 text-2xl font-black text-(--text-primary)">{streak} days</p>
-          <p className="mt-2 text-xs text-(--text-muted)">Current study streak</p>
+          <p className="mt-2 text-xs text-(--text-muted)">A streak grows on each day you record learning activity.</p>
         </Surface>
         <Surface>
           <div className="flex items-center justify-between"><Trophy className="h-5 w-5 text-(--secondary)" /><Badge variant="secondary">CHAPTERS</Badge></div>
@@ -75,6 +80,33 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
         <Surface padding="lg">
           <div className="flex items-center justify-between"><div><p className="text-sm font-bold text-(--accent)">Daily goal</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">{data.daily.minutes}/{data.daily.goalMinutes} min</h2></div><div className="relative flex h-16 w-16 items-center justify-center rounded-full" style={{ background: `conic-gradient(var(--accent) ${dailyPct}%, var(--bg-tertiary) ${dailyPct}% 100%)` }}><div className="flex h-11 w-11 items-center justify-center rounded-full bg-(--bg-card) text-sm font-black text-(--text-primary)">{dailyPct}%</div></div></div>
           <p className="mt-4 text-sm text-(--text-secondary)">{data.daily.goalMet ? 'Goal met — excellent work today.' : `${Math.max(0, data.daily.goalMinutes - data.daily.minutes)} minutes left to reach your goal.`}</p>
+        </Surface>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <Surface padding="lg">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-sm font-bold text-(--secondary)">Achievements</p>
+              <h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">{data.achievements.earned} of {data.achievements.total} unlocked</h2>
+              <p className="mt-2 text-sm text-(--text-secondary)">Achievements mark learning milestones and award XP when their requirement is met.</p>
+            </div>
+            <Trophy className="h-6 w-6 shrink-0 text-(--secondary)" aria-hidden="true" />
+          </div>
+          {data.achievements.next ? (
+            <div className="mt-5 rounded-xl bg-(--bg-secondary) px-4 py-3">
+              <p className="text-sm font-bold text-(--text-primary)">{data.achievements.next.icon} Next: {data.achievements.next.title}</p>
+              <p className="mt-1 text-xs text-(--text-muted)">{data.achievements.next.description} +{data.achievements.next.xp_reward} XP</p>
+            </div>
+          ) : <p className="mt-5 text-sm text-(--text-secondary)">You have unlocked every available achievement. Keep practicing to maintain your progress.</p>}
+        </Surface>
+        <Surface padding="lg">
+          <div className="flex items-center gap-2"><Info className="h-4 w-4 text-(--accent)" aria-hidden="true" /><p className="text-sm font-bold text-(--accent)">How progress works</p></div>
+          <ul className="mt-4 space-y-3 text-sm text-(--text-secondary)">
+            <li><span className="font-bold text-(--text-primary)">Review:</span> due items are previous material scheduled to help you remember it.</li>
+            <li><span className="font-bold text-(--text-primary)">Daily goal:</span> your target is based on activity minutes completed today.</li>
+            <li><span className="font-bold text-(--text-primary)">Streak:</span> consecutive days with recorded learning activity.</li>
+          </ul>
         </Surface>
       </section>
 
