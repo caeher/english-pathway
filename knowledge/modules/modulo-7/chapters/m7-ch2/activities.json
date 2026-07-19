@@ -2,8 +2,8 @@
   {
     "id": "m7-ch2-svg",
     "type": "svg-scene",
-    "title": "Mapa de Conectores",
-    "description": "Visualiza los diferentes tipos de conectores.",
+    "title": "Connector Map",
+    "description": "View the different types of connectors.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -104,69 +104,69 @@
   {
     "id": "m7-ch2-flash",
     "type": "flashcard",
-    "title": "Conectores en Contexto",
-    "description": "Aprende a usar cada conector correctamente.",
+    "title": "Connectors in Context",
+    "description": "Learn to use each connector correctly.",
     "props": {
       "cards": [
         {
           "id": "c1",
-          "front": "Me gusta el té, ___ no el café. (contraste simple)",
+          "front": "I like tea, ___ not coffee. (simple contrast)",
           "back": "I like tea, but not coffee.",
           "example": "but = pero (neutral)."
         },
         {
           "id": "c2",
-          "front": "Me gusta el té. ___, no lo bebo seguido. (contraste formal)",
+          "front": "I like tea. ___, I don't drink it often. (formal contrast)",
           "back": "I like tea. However, I don't drink it often.",
-          "example": "however = sin embargo (formal)."
+          "example": "however = however (formal)."
         },
         {
           "id": "c3",
-          "front": "___ llovía, salimos. (contraste con cláusula)",
+          "front": "___ it was raining, we went out. (contrast with clause)",
           "back": "Although it rained, we went out.",
           "example": "although/though = aunque."
         },
         {
           "id": "c4",
-          "front": "___ la lluvia, salimos. (contraste + sustantivo)",
+          "front": "___ the rain, we went out. (contrast + noun)",
           "back": "Despite the rain, we went out.",
           "example": "despite/in spite of + noun/-ing."
         },
         {
           "id": "c5",
-          "front": "Me quedé en casa ___ estaba lloviendo. (causa)",
+          "front": "I stayed at home ___ it was raining. (cause)",
           "back": "I stayed home because it was raining.",
           "example": "because + clause."
         },
         {
           "id": "c6",
-          "front": "El retraso fue ___ mal tiempo. (causa formal)",
+          "front": "The delay was ___ bad weather. (formal cause)",
           "back": "The delay was due to bad weather.",
           "example": "due to + noun."
         },
         {
           "id": "c7",
-          "front": "Llovía, ___ me quedé en casa. (resultado)",
+          "front": "It was raining, ___ I stayed at home. (result)",
           "back": "It was raining, so I stayed home.",
-          "example": "so = así que (neutral)."
+          "example": "so = so (neutral)."
         },
         {
           "id": "c8",
-          "front": "Estudió mucho. ___, aprobó. (resultado formal)",
+          "front": "He studied a lot. ___, approved. (formal result)",
           "back": "She studied hard. Therefore, she passed.",
-          "example": "therefore = por lo tanto (formal)."
+          "example": "therefore = therefore (formal)."
         },
         {
           "id": "c9",
-          "front": "Ahorré dinero ___ poder viajar. (propósito)",
+          "front": "I saved money ___ to travel. (purpose)",
           "back": "I saved money so that I could travel.",
           "example": "so that = para que."
         },
         {
           "id": "c10",
-          "front": "___, el hotel tiene piscina. (adición formal)",
+          "front": "___, Does the hotel have a swimming pool. (formal addition)",
           "back": "In addition, the hotel has a pool.",
-          "example": "in addition = además (formal)."
+          "example": "in addition = in addition (formal)."
         }
       ]
     }
@@ -175,7 +175,7 @@
     "id": "m7-ch2-match",
     "type": "word-match",
     "title": "Informal → Formal",
-    "description": "Empareja el conector informal con su equivalente formal.",
+    "description": "Match the informal connector with its formal equivalent.",
     "props": {
       "pairs": [
         {
@@ -209,11 +209,11 @@
     "id": "m7-ch2-sentence",
     "type": "sentence-builder",
     "title": "Conecta Ideas",
-    "description": "Ordena para usar conectores correctamente.",
+    "description": "Order to use connectors correctly.",
     "props": {
       "sentences": [
         {
-          "prompt": "Me gusta el té, pero no el café (but):",
+          "prompt": "I like tea, but not coffee (but):",
           "words": [
             "I",
             "like",
@@ -225,7 +225,7 @@
           "correct": "I like tea, but not coffee"
         },
         {
-          "prompt": "Aunque llovía, salimos (although):",
+          "prompt": "Although it was raining, we went out (although):",
           "words": [
             "Although",
             "it",
@@ -237,7 +237,7 @@
           "correct": "Although it rained, we went out"
         },
         {
-          "prompt": "Llovía, así que me quedé (so):",
+          "prompt": "It was raining, so I stayed (so):",
           "words": [
             "It",
             "was",
@@ -250,7 +250,7 @@
           "correct": "It was raining, so I stayed home"
         },
         {
-          "prompt": "Estudió mucho. Por lo tanto, aprobó:",
+          "prompt": "He studied a lot. Therefore, it approved:",
           "words": [
             "She",
             "studied",
@@ -262,7 +262,7 @@
           "correct": "She studied hard. Therefore, she passed"
         },
         {
-          "prompt": "Ahorré dinero para poder viajar:",
+          "prompt": "I saved money to be able to travel:",
           "words": [
             "I",
             "saved",
@@ -282,7 +282,7 @@
     "id": "m7-ch2-quiz",
     "type": "quiz",
     "title": "Quiz: Conectores Avanzados",
-    "description": "Demuestra tu dominio de los conectores.",
+    "description": "Demonstrate your mastery of connectors.",
     "props": {
       "questions": [
         {
@@ -296,7 +296,7 @@
             "Because"
           ],
           "correct": 1,
-          "explanation": "However = sin embargo (formal)."
+          "explanation": "However = however (formal)."
         },
         {
           "id": "q2",
@@ -356,7 +356,7 @@
           "type": "fill-blank",
           "question": "\"She studied hard. ___, she passed.\" (formal result)",
           "correct": "Therefore",
-          "explanation": "Therefore = por lo tanto."
+          "explanation": "Therefore = therefore."
         },
         {
           "id": "q8",
@@ -369,7 +369,7 @@
             "So"
           ],
           "correct": 1,
-          "explanation": "In addition = además (formal)."
+          "explanation": "In addition = in addition (formal)."
         }
       ]
     }
@@ -383,12 +383,12 @@
       "words": [
         {
           "word": "FURTHERMORE",
-          "hint": "Además; además de eso",
+          "hint": "Besides; besides that",
           "category": "Connectors"
         },
         {
           "word": "NEVERTHELESS",
-          "hint": "No obstante; sin embargo",
+          "hint": "Nevertheless; however",
           "category": "Connectors"
         },
         {
@@ -398,17 +398,17 @@
         },
         {
           "word": "OTHERWISE",
-          "hint": "De lo contrario",
+          "hint": "Otherwise",
           "category": "Connectors"
         },
         {
           "word": "HENCE",
-          "hint": "Por ende; por lo tanto",
+          "hint": "Therefore; therefore",
           "category": "Connectors"
         },
         {
           "word": "THUS",
-          "hint": "Así; por consiguiente",
+          "hint": "So; therefore",
           "category": "Connectors"
         }
       ]

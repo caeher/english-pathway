@@ -2,8 +2,8 @@
   {
     "id": "m8-ch3-svg",
     "type": "svg-scene",
-    "title": "El Mapa de los Sonidos",
-    "description": "Explora las zonas de la boca y descubre qué sonidos se producen en cada punto.",
+    "title": "The Map of Sounds",
+    "description": "Explore the areas of the mouth and discover what sounds are produced at each point.",
     "props": {
       "scene": {
         "viewBox": "0 0 500 400",
@@ -39,7 +39,7 @@
             "width": 60,
             "height": 25,
             "fill": "#fca5a5",
-            "label": "Alvéolos",
+            "label": "alveoli",
             "labelEn": "Alveolar ridge — /t/, /d/, /n/, /s/, /z/"
           },
           {
@@ -104,57 +104,57 @@
   {
     "id": "m8-ch3-flash",
     "type": "flashcard",
-    "title": "Flashcards Fonéticas",
-    "description": "Aprende cada símbolo fonético con su ejemplo y descripción articulatoria.",
+    "title": "Phonics Flashcards",
+    "description": "Learn each phonetic symbol with its example and articulatory description.",
     "props": {
       "cards": [
         {
           "id": "p1",
           "front": "/θ/ — \"th\" sorda",
           "back": "think, three, bath",
-          "example": "Coloca la lengua entre los dientes y sopla aire suavemente."
+          "example": "Place your tongue between your teeth and blow air gently."
         },
         {
           "id": "p2",
           "front": "/ð/ — \"th\" sonora",
           "back": "this, that, mother",
-          "example": "Como /θ/ pero con vibración en la garganta."
+          "example": "Like /θ/ but with vibration in the throat."
         },
         {
           "id": "p3",
           "front": "/æ/ — \"a\" abierta",
           "back": "cat, hat, apple",
-          "example": "Abre la boca más que para la \"e\" pero menos que para la \"a\"."
+          "example": "Open your mouth more than for \"e\" but less than for \"a\"."
         },
         {
           "id": "p4",
           "front": "/ʌ/ — \"u\" corta",
           "back": "cup, bus, love",
-          "example": "Una \"a\" relajada y corta. La boca apenas se abre."
+          "example": "A relaxed and short \"a\". The mouth barely opens."
         },
         {
           "id": "p5",
           "front": "/ɪ/ — \"i\" corta",
           "back": "ship, sit, fish",
-          "example": "Una \"i\" relajada, sin tensar los labios."
+          "example": "A relaxed \"i\", without tensing the lips."
         },
         {
           "id": "p6",
           "front": "/iː/ — \"i\" larga",
           "back": "sheep, see, eat",
-          "example": "Una \"i\" larga y tensa, como sonreír."
+          "example": "A long, tense \"i\", like smiling."
         },
         {
           "id": "p7",
           "front": "/ɹ/ — \"r\" inglesa",
           "back": "red, run, right",
-          "example": "La lengua NO toca nada. Se curva hacia atrás."
+          "example": "The tongue does NOT touch anything. It curves back."
         },
         {
           "id": "p8",
           "front": "/h/ — aspirada",
           "back": "house, happy, hello",
-          "example": "Solo un soplo de aire, como empañar un espejo."
+          "example": "Just a breath of air, like fogging up a mirror."
         }
       ]
     }
@@ -162,8 +162,8 @@
   {
     "id": "m8-ch3-match",
     "type": "word-match",
-    "title": "Sonido → Palabra",
-    "description": "Empareja cada símbolo fonético con la palabra que contiene ese sonido.",
+    "title": "Sound → Word",
+    "description": "Match each phonetic symbol with the word that contains that sound.",
     "props": {
       "pairs": [
         {
@@ -204,8 +204,8 @@
   {
     "id": "m8-ch3-quiz",
     "type": "quiz",
-    "title": "Quiz de Pares Mínimos",
-    "description": "¿Puedes distinguir entre sonidos similares? ¡Pon a prueba tu oído!",
+    "title": "Minimal Pairs Quiz",
+    "description": "Can you distinguish between similar sounds? Test your hearing!",
     "props": {
       "questions": [
         {
@@ -312,38 +312,38 @@
   {
     "id": "m8-ch3-scramble",
     "type": "word-scramble",
-    "title": "Palabras de Entonación",
-    "description": "Descifra palabras relacionadas con preguntas y afirmaciones en inglés.",
+    "title": "Intonation Words",
+    "description": "Unscramble words related to questions and statements in English.",
     "props": {
       "words": [
         {
           "word": "COFFEE",
-          "hint": "Bebida caliente que muchos toman por la mañana",
+          "hint": "Hot drink that many drink in the morning",
           "category": "Intonation"
         },
         {
           "word": "QUESTION",
-          "hint": "Pregunta; en inglés la voz sube al final (↗️)",
+          "hint": "Ask; in English the voice rises at the end (↗️)",
           "category": "Intonation"
         },
         {
           "word": "ANSWER",
-          "hint": "Respuesta a una pregunta",
+          "hint": "Answer to a question",
           "category": "Intonation"
         },
         {
           "word": "STATEMENT",
-          "hint": "Afirmación; la voz baja al final (↘️)",
+          "hint": "Affirmation; the voice drops at the end (↘️)",
           "category": "Intonation"
         },
         {
           "word": "RISING",
-          "hint": "Que sube (entonación de preguntas sí/no)",
+          "hint": "What goes up (yes/no question intonation)",
           "category": "Intonation"
         },
         {
           "word": "FALLING",
-          "hint": "Que baja (entonación de afirmaciones)",
+          "hint": "How low (intonation of affirmations)",
           "category": "Intonation"
         }
       ]

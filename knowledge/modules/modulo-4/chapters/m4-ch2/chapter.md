@@ -1,15 +1,15 @@
 ---
 id: m4-ch2
-moduleId: modulo-4
+moduleId: module-4
 number: 2
-title: Comparativos
-subtitle: "Compara dos cosas: más grande, más rápido, mejor"
+title: Comparatives
+subtitle: "Compare two things: bigger, faster, better"
 icon: 📊
 color: "#10b981"
 objectives:
-  - Formar comparativos con -er y more
-  - "Usar \"than\" para comparaciones"
-  - "Dominar los comparativos irregulares: better, worse, farther"
+  - Form comparatives with -er and more
+  - "Use \"than\" for comparisons"
+  - "Master irregular comparatives: better, worse, farther"
 xpReward: 160
 ---
 
@@ -47,4 +47,4 @@ xpReward: 160
 | 2 syllables ending -y: y → ier | happy → happier, easy → easier |
 | 2+ syllables: more + adj | beautiful → more beautiful |
 
-> 💡 "Than" = que (comparar): She is taller **than** me.
+> 💡 "Than" = that (compare): She is taller **than** me.

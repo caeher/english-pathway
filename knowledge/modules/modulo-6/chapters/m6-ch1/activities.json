@@ -116,7 +116,7 @@
     "id": "m6-ch1-flash",
     "type": "flashcard",
     "title": "Zero Conditional",
-    "description": "Practica el condicional cero con hechos y causa-efecto.",
+    "description": "Practice the zero conditional with facts and cause-effect.",
     "props": {
       "cards": [
         {
@@ -162,7 +162,7 @@
     "id": "m6-ch1-match",
     "type": "word-match",
     "title": "Causa → Efecto",
-    "description": "Empareja la causa con su efecto en zero conditional.",
+    "description": "Match the cause with its effect in zero conditional.",
     "props": {
       "pairs": [
         {
@@ -195,8 +195,8 @@
   {
     "id": "m6-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Construye el Zero Conditional",
-    "description": "Ordena para formar oraciones con zero conditional.",
+    "title": "Build the Zero Conditional",
+    "description": "Order to form sentences with zero conditional.",
     "props": {
       "sentences": [
         {
@@ -212,7 +212,7 @@
           "correct": "If you heat ice, it melts"
         },
         {
-          "prompt": "Si llueve, el suelo se moja:",
+          "prompt": "If it rains, the ground gets wet:",
           "words": [
             "If",
             "it",
@@ -273,7 +273,7 @@
     "id": "m6-ch1-quiz",
     "type": "quiz",
     "title": "Quiz: Zero Conditional",
-    "description": "Demuestra tu dominio del condicional cero.",
+    "description": "Demonstrate your mastery of the zero conditional.",
     "props": {
       "questions": [
         {
@@ -363,7 +363,7 @@
     "id": "m6-ch1-scramble",
     "type": "word-scramble",
     "title": "Zero Conditional",
-    "description": "Descifra palabras de hechos y verdades.",
+    "description": "Unscramble words of facts and truths.",
     "props": {
       "words": [
         {
@@ -378,17 +378,17 @@
         },
         {
           "word": "GENERAL",
-          "hint": "General; aplica siempre",
+          "hint": "General; always apply",
           "category": "Conditionals"
         },
         {
           "word": "ALWAYS",
-          "hint": "Siempre; en todo momento",
+          "hint": "Always; at all times",
           "category": "Conditionals"
         },
         {
           "word": "WATER",
-          "hint": "Agua; líquido universal",
+          "hint": "Water; universal liquid",
           "category": "Conditionals"
         },
         {

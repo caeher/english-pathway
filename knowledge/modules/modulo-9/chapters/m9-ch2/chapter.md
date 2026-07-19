@@ -1,22 +1,22 @@
 ---
 id: m9-ch2
-moduleId: modulo-9
+moduleId: module-9
 number: 2
-title: Presente continuo en acción
-subtitle: Describiendo escenas y acciones en tiempo real
+title: Present continuous in action
+subtitle: Describing scenes and actions in real time
 icon: 🎬
 color: "#ef4444"
 objectives:
-  - Usar el presente continuo (am/is/are + verb-ing) para describir acciones en progreso
-  - Diferenciar cuándo usar presente simple vs. presente continuo en contexto
-  - Aplicar correctamente las reglas ortográficas de -ing (dropping -e, doubling consonant, ie → y)
-  - Reconocer verbos que NO se usan en presente continuo (stative verbs)
+  - Use the present continuous (am/is/are + verb-ing) to describe actions in progress
+  - Differentiate when to use present simple vs. present continuous in context
+  - Correctly apply the spelling rules of -ing (dropping -e, doubling consonant, ie → y)
+  - Recognize verbs that are NOT used in the present continuous (stative verbs)
 xpReward: 250
 ---
 
-## Present Continuous — Acciones en este momento
+## Present Continuous — Actions at this moment
 
-Usa el presente continuo para describir **lo que está pasando ahora mismo**:
+Use the present continuous to describe **what is happening right now**:
 
 | Sujeto | Auxiliar | Verbo + -ing | Ejemplo |
 |--------|----------|-------------|---------|
@@ -24,7 +24,7 @@ Usa el presente continuo para describir **lo que está pasando ahora mismo**:
 | He / She / It | **is** | reading | *She is reading a book.* |
 | We / You / They | **are** | playing | *They are playing soccer.* |
 
-### Reglas ortográficas para -ing
+### Spelling rules for -ing
 
 | Regla | Base → -ing | Ejemplo |
 |-------|------------|---------|
@@ -33,22 +33,22 @@ Usa el presente continuo para describir **lo que está pasando ahora mismo**:
 | Double consonant | ru**n** → ru**nn**ing | *He is running fast.* |
 | -ie → -ying | d**ie** → d**y**ing | *The plant is dying.* |
 
-> 🔍 **Regla del doble consonante**: Solo con verbos de una sílaba que terminan en consonante + vocal + consonante: run → ru**nn**ing, stop → sto**pp**ing, si**tt**ing. Pero NO: play**ing** (dos vocales), work**ing** (dos consonantes).
+> 🔍 **Double consonant rule**: Only with one-syllable verbs that end in consonant + vowel + consonant: run → ru**nn**ing, stop → sto**pp**ing, si**tt**ing. But NOT: playing**ing** (two vowels), working**ing** (two consonants).
 
-### ¿Simple o Continuo?
+### Simple or Continuous?
 
 | Presente Simple | Presente Continuo |
 |----------------|-------------------|
-| 📅 Hábitos, rutinas | 📸 Ahora mismo |
+| 📅 Habits, routines | 📸 Right now |
 | "I read books every day." | "I am reading a book right now." |
 | "She works at a bank." | "She is working on a project today." |
 | "They play soccer on weekends." | "Look! They are playing soccer." |
 
-### Verbos que NO se usan en continuo (Stative Verbs)
+### Verbs that are NOT used in continuous (Stative Verbs)
 
-Algunos verbos expresan estados, no acciones, y NO se usan en continuo:
+Some verbs express states, not actions, and are NOT used in continuous:
 
-**Emoción:** like, love, hate, want, need, prefer
+**Emotion:** like, love, hate, want, need, prefer
 - ✓ *"I like pizza."* 
 - ✗ ~~"I am liking pizza."~~
 
@@ -56,17 +56,17 @@ Algunos verbos expresan estados, no acciones, y NO se usan en continuo:
 - ✓ *"I know the answer."*
 - ✗ ~~"I am knowing the answer."~~
 
-**Posesión:** have (cuando significa "tener"), own, belong
+**Possession:** have (when it means "to have"), own, belong
 - ✓ *"She has a car."*
 - ✗ ~~"She is having a car."~~
-- Pero: ✓ *"She is having dinner."* (acción)
+- But: ✓ *"She is having dinner."* (action)
 
 **Sentidos:** see, hear, smell, taste (uso involuntario)
 - ✓ *"I see the mountains."*
-- Pero: ✓ *"I'm seeing my doctor tomorrow."* (cita = acción)
+- But: ✓ *"I'm seeing my doctor tomorrow."* (quote = action)
 
-> 💡 Palabras clave para continuo: **right now, at the moment, now, today, this week, currently, look!, listen!**
+> 💡 Keywords for continuous: **right now, at the moment, now, today, this week, currently, look!, listen!**
 
-> 🗣️ **Pronunciation Tip**: El -ing suena como /ɪŋ/ (nasalizado). NO como "in-guh". Practica: play-ing, read-ing, sleep-ing.
+> 🗣️ **Pronunciation Tip**: The -ing sounds like /ɪŋ/ (nasalized). NOT like "in-guh." Practice: play-ing, reading-ing, sleeping-ing.
 
-> ⚠️ **Common Mistake**: No uses continuo para expresar gustos o preferencias. "I'm liking" es incorrecto. Usa "I like".
+> ⚠️ **Common Mistake**: Do not use continuous to express tastes or preferences. "I'm liking" is incorrect. Use "I like."

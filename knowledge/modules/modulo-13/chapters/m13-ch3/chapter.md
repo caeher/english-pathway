@@ -1,65 +1,65 @@
 ---
 id: m13-ch3
-moduleId: modulo-13
+moduleId: module-13
 number: 3
-title: Lectura crítica
-subtitle: Analizando textos complejos y expresando puntos de vista
+title: Critical reading
+subtitle: Analyzing complex texts and expressing points of view
 icon: 🔍
 color: "#8b5cf6"
 objectives:
-  - Leer críticamente textos de nivel B2 identificando argumentos y sesgos
-  - "Reconocer técnicas retóricas: estadísticas, apelación emocional, autoridad"
-  - Expresar opiniones fundamentadas usando vocabulario académico
-  - "Analizar textos en 4 dimensiones: comprensión, análisis, evaluación y respuesta"
+  - Critically read B2 level texts identifying arguments and biases
+  - "Recognize rhetorical techniques: statistics, emotional appeal, authority"
+  - Express informed opinions using academic vocabulary
+  - "Analyze texts in 4 dimensions: comprehension, analysis, evaluation and response"
 xpReward: 350
 ---
 
-## Lectura Crítica — Más allá de comprender
+## Critical Reading — Beyond understanding
 
-La lectura crítica no pregunta solo "¿Qué dice el texto?" sino también "¿Cómo lo dice?", "¿Es convincente?" y "¿Qué pienso yo?"
+Critical reading doesn't just ask "What does the text say?" but also "How do you say it?", "Is it convincing?" and "What do I think?"
 
-### Las 4 Dimensiones de la Lectura Crítica
+### The 4 Dimensions of Critical Reading
 
-| Dimensión | Pregunta clave | Habilidad |
+| Dimension | Key question | Skill |
 |---|---|---|
-| 📖 **Comprensión** | ¿Qué dice el texto? | Resumir objetivamente |
-| 🔬 **Análisis** | ¿Cómo lo dice? | Identificar estructura y técnicas |
-| ⚖️ **Evaluación** | ¿Es convincente? | Juzgar fortalezas y debilidades |
-| 💭 **Respuesta** | ¿Qué pienso yo? | Formar opinión fundamentada |
+| 📖 **Understanding** | What does the text say? | Resumir objetivamente |
+| 🔬 **Analysis** | How do you say it? | Identify structure and techniques |
+| ⚖️ **Evaluation** | Is it convincing? | Juzgar fortalezas y debilidades |
+| 💭 **Answer** | What do I think? | Form an informed opinion |
 
-### Técnicas Retóricas — Las herramientas del autor
+### Rhetorical Techniques — The author's tools
 
-| Técnica | Ejemplo | Señal de alerta |
+| Technique | Ejemplo | Warning sign |
 |---|---|---|
-| **Estadísticas** | "Studies show a 40% increase" | ¿De qué estudio? ¿Quién lo financió? |
-| **Apelación a autoridad** | "9 out of 10 doctors agree" | ¿Qué doctores? ¿Cómo se midió? |
-| **Apelación a emoción** | "Think of the children!" | ¿Distrae de los hechos? |
-| **Generalización** | "Everyone knows that..." | ¿Realmente todos? ¿Hay datos? |
-| **Anécdota personal** | "As a mother, I feel..." | ¿Una experiencia es representativa? |
-| **Lenguaje cargado** | "outrageous", "shocking" | ¿Está manipulando la reacción? |
+| **Statistics** | "Studies show a 40% increase" | What study? Who financed it? |
+| **Appeal to authority** | "9 out of 10 doctors agree" | What doctors? How was it measured? |
+| **Appeal to emotion** | "Think of the children!" | Does it distract from the facts? |
+| **Generalization** | "Everyone knows that..." | Really all? Is there data? |
+| **Personal anecdote** | "As a mother, I feel..." | Is an experience representative? |
+| **Lenguaje cargado** | "outrageous", "shocking" | Are you manipulating the reaction? |
 
 ### Detectar Sesgos (Bias)
 
-Hazte estas preguntas:
-- **¿Quién** escribió esto? ¿Con qué **propósito**?
-- ¿Qué **perspectivas se omiten**?
-- ¿El lenguaje es **neutral** u orientado a una posición?
-- ¿La **evidencia** es suficiente y verificable?
+Ask yourself these questions:
+- **Who** wrote this? For what **purpose**?
+- What **perspectives are omitted**?
+- Is the language **neutral** or position-oriented?
+- Is the **evidence** sufficient and verifiable?
 
-### Vocabulario Académico para el Análisis
+### Academic Vocabulary for Analysis
 
-| Expresión | Uso |
+| Expression | Uso |
 |---|---|
-| "The author argues/claims/suggests that..." | Presentar la posición del autor |
-| "The evidence supports/contradicts..." | Evaluar la evidencia |
+| "The author argues/claims/suggests that..." | Present the author's position |
+| "The evidence supports/contradicts..." | Evaluate the evidence |
 | "This is a strong/weak argument because..." | Juzgar calidad |
-| "One limitation of this text is..." | Señalar debilidades |
-| "From my perspective..." | Dar tu opinión |
-| "I would argue that..." | Tu posición |
+| "One limitation of this text is..." | Point out weaknesses |
+| "From my perspective..." | Give your opinion |
+| "I would argue that..." | Your position |
 
 ---
 
-### 📄 Texto de práctica: "Is Social Media Making Us Lonelier?"
+### 📄 Practice text: "Is Social Media Making Us Lonelier?"
 
 Social media platforms like Instagram, TikTok, and X **claim** to connect people. With billions of users worldwide, these platforms have fundamentally changed how we communicate. **However**, a growing body of research **suggests** that social media may actually be increasing feelings of loneliness and isolation.
 
@@ -71,4 +71,4 @@ Social media platforms like Instagram, TikTok, and X **claim** to connect people
 
 **In conclusion**, while social media offers genuine benefits for connection, the evidence **indicates** that excessive use correlates with increased loneliness. **Therefore**, a balanced approach — using social media intentionally rather than passively — appears to be the healthiest strategy.
 
-> 💡 **Tip:** Subraya las palabras que indican la posición del autor: "argues", "suggests", "claims". Estas son pistas sobre cómo el autor presenta la información.
+> 💡 **Tip:** Underline the words that indicate the author's position: "argues", "suggests", "claims". These are clues about how the author presents the information.

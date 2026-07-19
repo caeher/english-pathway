@@ -2,8 +2,8 @@
   {
     "id": "m2-ch2-svg",
     "type": "svg-scene",
-    "title": "La Escalera de Frecuencia",
-    "description": "Sube la escalera de frecuencia y descubre cada adverbio.",
+    "title": "The Frequency Ladder",
+    "description": "Climb the frequency ladder and discover each adverb.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -105,31 +105,31 @@
     "id": "m2-ch2-flash",
     "type": "flashcard",
     "title": "Adverbios y Rutinas",
-    "description": "Domina los adverbios de frecuencia y sus usos.",
+    "description": "Master adverbs of frequency and their uses.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "ALWAYS (100%)",
-          "back": "Siempre — todo el tiempo, sin excepción",
+          "back": "Always — all the time, without exception",
           "example": "I always drink water in the morning."
         },
         {
           "id": "f2",
           "front": "USUALLY (90%)",
-          "back": "Generalmente — casi siempre",
+          "back": "Generally — almost always",
           "example": "She usually walks to school."
         },
         {
           "id": "f3",
           "front": "OFTEN (70%)",
-          "back": "A menudo — con frecuencia",
+          "back": "often — frequently",
           "example": "We often go to the park on weekends."
         },
         {
           "id": "f4",
           "front": "SOMETIMES (50%)",
-          "back": "A veces — de vez en cuando",
+          "back": "Sometimes — from time to time",
           "example": "I sometimes eat pizza for dinner."
         },
         {
@@ -141,19 +141,19 @@
         {
           "id": "f6",
           "front": "NEVER (0%)",
-          "back": "Nunca — jamás",
+          "back": "Never—ever",
           "example": "She never drinks soda."
         },
         {
           "id": "f7",
           "front": "every day",
-          "back": "cada día / todos los días",
+          "back": "every day / every day",
           "example": "I exercise every day."
         },
         {
           "id": "f8",
           "front": "once a week",
-          "back": "una vez a la semana",
+          "back": "once a week",
           "example": "We have a meeting once a week."
         },
         {
@@ -165,19 +165,19 @@
         {
           "id": "f10",
           "front": "on Mondays",
-          "back": "los lunes (cada lunes)",
+          "back": "on Mondays (every Monday)",
           "example": "I have English class on Mondays."
         },
         {
           "id": "f11",
-          "front": "Posición: verbo principal",
-          "back": "ANTES del verbo: I always EAT",
+          "front": "Position: main verb",
+          "back": "BEFORE the verb: I always EAT",
           "example": "I usually wake up at 7. She often reads."
         },
         {
           "id": "f12",
-          "front": "Posición: verbo \"to be\"",
-          "back": "DESPUÉS de \"to be\": She IS always happy",
+          "front": "Position: verb \"to be\"",
+          "back": "AFTER \"to be\": She IS always happy",
           "example": "He is never late. They are usually tired."
         }
       ]
@@ -187,7 +187,7 @@
     "id": "m2-ch2-match",
     "type": "word-match",
     "title": "Frecuencia → Porcentaje",
-    "description": "Empareja cada adverbio con su porcentaje de frecuencia.",
+    "description": "Match each adverb with its frequency percentage.",
     "props": {
       "pairs": [
         {
@@ -221,11 +221,11 @@
     "id": "m2-ch2-sentence",
     "type": "sentence-builder",
     "title": "Mi Rutina Diaria",
-    "description": "Construye oraciones sobre rutinas con adverbios de frecuencia.",
+    "description": "Build sentences about routines with adverbs of frequency.",
     "props": {
       "sentences": [
         {
-          "prompt": "Siempre me levanto temprano:",
+          "prompt": "I always get up early:",
           "words": [
             "always",
             "I",
@@ -246,7 +246,7 @@
           "correct": "She usually has breakfast"
         },
         {
-          "prompt": "A veces como fuera:",
+          "prompt": "Sometimes like out:",
           "words": [
             "sometimes",
             "I",
@@ -256,7 +256,7 @@
           "correct": "I sometimes eat out"
         },
         {
-          "prompt": "Él nunca llega tarde:",
+          "prompt": "He is never late:",
           "words": [
             "never",
             "He",
@@ -275,7 +275,7 @@
           "correct": "They often travel"
         },
         {
-          "prompt": "Ella es siempre amable:",
+          "prompt": "She is always kind:",
           "words": [
             "is",
             "She",
@@ -285,7 +285,7 @@
           "correct": "She is always kind"
         },
         {
-          "prompt": "Hago ejercicio todos los días:",
+          "prompt": "I exercise every day:",
           "words": [
             "exercise",
             "I",
@@ -295,7 +295,7 @@
           "correct": "I exercise every day"
         },
         {
-          "prompt": "Raramente veo televisión:",
+          "prompt": "I rarely watch television:",
           "words": [
             "rarely",
             "I",
@@ -310,8 +310,8 @@
   {
     "id": "m2-ch2-quiz",
     "type": "quiz",
-    "title": "Quiz de Frecuencia",
-    "description": "Pon a prueba tu conocimiento de adverbios y rutinas.",
+    "title": "Frequency Quiz",
+    "description": "Test your knowledge of adverbs and routines.",
     "props": {
       "questions": [
         {
@@ -426,18 +426,18 @@
   {
     "id": "m2-ch2-scramble",
     "type": "word-scramble",
-    "title": "Adverbios de Frecuencia",
-    "description": "Descifra adverbios que indican con qué frecuencia.",
+    "title": "Adverbs of Frequency",
+    "description": "Unscramble adverbs that indicate how often.",
     "props": {
       "words": [
         {
           "word": "ALWAYS",
-          "hint": "Siempre; 100% del tiempo",
+          "hint": "Always; 100% of the time",
           "category": "Frequency"
         },
         {
           "word": "USUALLY",
-          "hint": "Usualmente; la mayor parte del tiempo",
+          "hint": "Usually; most of the time",
           "category": "Frequency"
         },
         {
@@ -452,12 +452,12 @@
         },
         {
           "word": "NEVER",
-          "hint": "Nunca; 0% del tiempo",
+          "hint": "Never; 0% of the time",
           "category": "Frequency"
         },
         {
           "word": "OFTEN",
-          "hint": "A menudo; con frecuencia",
+          "hint": "Often; often",
           "category": "Frequency"
         }
       ]

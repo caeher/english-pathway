@@ -2,8 +2,8 @@
   {
     "id": "m4-ch6-svg",
     "type": "svg-scene",
-    "title": "El Mapa de las Preposiciones",
-    "description": "Visualiza preposiciones de lugar y tiempo.",
+    "title": "The Map of Prepositions",
+    "description": "View prepositions of place and time.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -115,8 +115,8 @@
   {
     "id": "m4-ch6-flash",
     "type": "flashcard",
-    "title": "In, On, At — Práctica",
-    "description": "Aprende cuándo usar cada preposición.",
+    "title": "In, On, At — Practice",
+    "description": "Learn when to use each preposition.",
     "props": {
       "cards": [
         {
@@ -127,7 +127,7 @@
         },
         {
           "id": "c2",
-          "front": "___ the table (sobre)",
+          "front": "___ the table (about)",
           "back": "ON the table",
           "example": "The book is on the table."
         },
@@ -145,7 +145,7 @@
         },
         {
           "id": "c5",
-          "front": "___ Monday (día)",
+          "front": "___ Monday (day)",
           "back": "ON Monday",
           "example": "The meeting is on Monday."
         },
@@ -157,19 +157,19 @@
         },
         {
           "id": "c7",
-          "front": "___ the morning (parte del día)",
+          "front": "___ the morning (part of the day)",
           "back": "IN the morning",
           "example": "I exercise in the morning."
         },
         {
           "id": "c8",
-          "front": "___ night (excepción)",
+          "front": "___ night (exception)",
           "back": "AT night",
           "example": "AT night (not \"in the night\")."
         },
         {
           "id": "c9",
-          "front": "al lado de (lugar)",
+          "front": "next to (place)",
           "back": "NEXT TO",
           "example": "The bank is next to the school."
         },
@@ -181,13 +181,13 @@
         },
         {
           "id": "c11",
-          "front": "debajo de (lugar)",
+          "front": "below (place)",
           "back": "UNDER",
           "example": "The cat is under the table."
         },
         {
           "id": "c12",
-          "front": "delante de (lugar)",
+          "front": "in front of (place)",
           "back": "IN FRONT OF",
           "example": "The tree is in front of the house."
         }
@@ -197,8 +197,8 @@
   {
     "id": "m4-ch6-match",
     "type": "word-match",
-    "title": "Completa con In, On, At",
-    "description": "Empareja cada frase con la preposición correcta.",
+    "title": "Complete with In, On, At",
+    "description": "Match each phrase with the correct preposition.",
     "props": {
       "pairs": [
         {
@@ -239,12 +239,12 @@
   {
     "id": "m4-ch6-sentence",
     "type": "sentence-builder",
-    "title": "Ubica las Cosas",
-    "description": "Ordena las palabras usando la preposición correcta.",
+    "title": "Locate Things",
+    "description": "Order the words using the correct preposition.",
     "props": {
       "sentences": [
         {
-          "prompt": "El libro está en la mesa:",
+          "prompt": "The book is on the table:",
           "words": [
             "The",
             "book",
@@ -256,7 +256,7 @@
           "correct": "The book is on the table"
         },
         {
-          "prompt": "Estoy en la habitación:",
+          "prompt": "I'm in the room:",
           "words": [
             "I",
             "am",
@@ -267,7 +267,7 @@
           "correct": "I am in the room"
         },
         {
-          "prompt": "Nos vemos a las 5:",
+          "prompt": "See you at 5:",
           "words": [
             "See",
             "you",
@@ -278,7 +278,7 @@
           "correct": "See you at 5 PM"
         },
         {
-          "prompt": "Mi cumpleaños es en marzo:",
+          "prompt": "My birthday is in March:",
           "words": [
             "My",
             "birthday",
@@ -289,7 +289,7 @@
           "correct": "My birthday is in March"
         },
         {
-          "prompt": "La reunión es el lunes:",
+          "prompt": "The meeting is on Monday:",
           "words": [
             "The",
             "meeting",
@@ -300,7 +300,7 @@
           "correct": "The meeting is on Monday"
         },
         {
-          "prompt": "El gato está debajo de la mesa:",
+          "prompt": "The cat is under the table:",
           "words": [
             "The",
             "cat",
@@ -312,7 +312,7 @@
           "correct": "The cat is under the table"
         },
         {
-          "prompt": "El banco está al lado de la escuela:",
+          "prompt": "The bank is next to the school:",
           "words": [
             "The",
             "bank",
@@ -325,7 +325,7 @@
           "correct": "The bank is next to the school"
         },
         {
-          "prompt": "Estudio por la mañana:",
+          "prompt": "Study in the morning:",
           "words": [
             "I",
             "study",
@@ -342,7 +342,7 @@
     "id": "m4-ch6-quiz",
     "type": "quiz",
     "title": "Quiz: Preposiciones",
-    "description": "Demuestra tu dominio de las preposiciones.",
+    "description": "Demonstrate your mastery of prepositions.",
     "props": {
       "questions": [
         {
@@ -449,7 +449,7 @@
             "on"
           ],
           "correct": 0,
-          "explanation": "Next to = al lado de."
+          "explanation": "Next to = next to."
         }
       ]
     }
@@ -457,38 +457,38 @@
   {
     "id": "m4-ch6-scramble",
     "type": "word-scramble",
-    "title": "Preposiciones de Lugar y Tiempo",
+    "title": "Prepositions of Place and Time",
     "description": "Descifra preposiciones clave.",
     "props": {
       "words": [
         {
           "word": "BEHIND",
-          "hint": "Detrás de",
+          "hint": "Behind",
           "category": "Prepositions"
         },
         {
           "word": "BETWEEN",
-          "hint": "Entre; en medio de dos",
+          "hint": "Between; in the middle of two",
           "category": "Prepositions"
         },
         {
           "word": "ABOVE",
-          "hint": "Encima de; sobre",
+          "hint": "Above; about",
           "category": "Prepositions"
         },
         {
           "word": "BELOW",
-          "hint": "Debajo de",
+          "hint": "Below",
           "category": "Prepositions"
         },
         {
           "word": "DURING",
-          "hint": "Durante; a lo largo de",
+          "hint": "During; throughout",
           "category": "Prepositions"
         },
         {
           "word": "UNTIL",
-          "hint": "Hasta; hasta que",
+          "hint": "Until; until",
           "category": "Prepositions"
         }
       ]

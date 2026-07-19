@@ -2,8 +2,8 @@
   {
     "id": "m11-ch3-quiz",
     "type": "quiz",
-    "title": "El Consejero",
-    "description": "Lee cada dilema y elige el consejo o la regla con el modal correcto.",
+    "title": "The Counselor",
+    "description": "Read each dilemma and choose the advice or rule with the correct modal.",
     "props": {
       "questions": [
         {
@@ -150,8 +150,8 @@
   {
     "id": "m11-ch3-svg",
     "type": "svg-scene",
-    "title": "El Tablero de Decisiones",
-    "description": "Explora cada situación del tablero y descubre qué modal necesitas.",
+    "title": "The Decision Board",
+    "description": "Explore each situation on the board and discover which modal you need.",
     "props": {
       "scene": {
         "viewBox": "0 0 650 400",
@@ -165,7 +165,7 @@
             "width": 600,
             "height": 350,
             "fill": "#fff1f2",
-            "label": "Tablero de Modales",
+            "label": "Manners Board",
             "labelEn": "The Modal Board Game"
           },
           {
@@ -176,7 +176,7 @@
             "width": 120,
             "height": 70,
             "fill": "#fecaca",
-            "label": "🚫 Zona sin fumar",
+            "label": "🚫 Non-smoking area",
             "labelEn": "You mustn't smoke here — It's prohibited!"
           },
           {
@@ -198,7 +198,7 @@
             "width": 120,
             "height": 70,
             "fill": "#bfdbfe",
-            "label": "🏊 En la piscina",
+            "label": "🏊 In the pool",
             "labelEn": "Can you swim? — Asking about ability"
           },
           {
@@ -220,7 +220,7 @@
             "width": 120,
             "height": 70,
             "fill": "#fef3c7",
-            "label": "👔 En el trabajo",
+            "label": "👔 At work",
             "labelEn": "I have to wear a uniform — External obligation"
           },
           {
@@ -231,7 +231,7 @@
             "width": 120,
             "height": 70,
             "fill": "#d1fae5",
-            "label": "📱 En clase",
+            "label": "📱 In class",
             "labelEn": "You mustn't use your phone — School rule"
           },
           {
@@ -253,7 +253,7 @@
             "width": 120,
             "height": 70,
             "fill": "#fce7f3",
-            "label": "📝 Examen mañana",
+            "label": "📝 Exam tomorrow",
             "labelEn": "I must study tonight — Personal obligation"
           },
           {
@@ -286,7 +286,7 @@
             "width": 120,
             "height": 70,
             "fill": "#f3e8ff",
-            "label": "🛂 En el aeropuerto",
+            "label": "🛂 At the airport",
             "labelEn": "You must show your passport — Obligation"
           },
           {
@@ -308,11 +308,11 @@
     "id": "m11-ch3-sentence",
     "type": "sentence-builder",
     "title": "Reglas y Consejos",
-    "description": "Construye oraciones con el modal correcto para cada situación.",
+    "description": "Build sentences with the correct modal for each situation.",
     "props": {
       "sentences": [
         {
-          "prompt": "Regla de la biblioteca:",
+          "prompt": "Library rule:",
           "words": [
             "must",
             "quiet",
@@ -325,7 +325,7 @@
           "correct": "You must be quiet in the library"
         },
         {
-          "prompt": "Consejo para alguien estresado:",
+          "prompt": "Advice for someone stressed:",
           "words": [
             "should",
             "a",
@@ -357,7 +357,7 @@
           "correct": "She can speak three languages"
         },
         {
-          "prompt": "Prohibición:",
+          "prompt": "Prohibition:",
           "words": [
             "must",
             "You",
@@ -368,7 +368,7 @@
           "correct": "You must not smoke here"
         },
         {
-          "prompt": "Obligación externa:",
+          "prompt": "External obligation:",
           "words": [
             "have",
             "I",
@@ -435,8 +435,8 @@
   {
     "id": "m11-ch3-match",
     "type": "word-match",
-    "title": "Modal → Función",
-    "description": "Empareja cada modal con su función comunicativa principal.",
+    "title": "Modal → Function",
+    "description": "Match each modal with its main communicative function.",
     "props": {
       "pairs": [
         {
@@ -470,7 +470,7 @@
     "id": "m11-ch3-flash",
     "type": "flashcard",
     "title": "Diferencias Sutiles",
-    "description": "Domina los contrastes entre modales que parecen similares.",
+    "description": "Master contrasts between modals that seem similar.",
     "props": {
       "cards": [
         {
@@ -545,32 +545,32 @@
       "words": [
         {
           "word": "MIGHT",
-          "hint": "Podría; posibilidad baja",
+          "hint": "Could; low chance",
           "category": "Modals"
         },
         {
           "word": "MUST",
-          "hint": "Debe; obligación fuerte",
+          "hint": "Has to; strong obligation",
           "category": "Modals"
         },
         {
           "word": "SHOULD",
-          "hint": "Debería; consejo",
+          "hint": "Ought; advice",
           "category": "Modals"
         },
         {
           "word": "OBLIGATION",
-          "hint": "Obligación; deber",
+          "hint": "Obligation; duty",
           "category": "Modals"
         },
         {
           "word": "POSSIBILITY",
-          "hint": "Posibilidad; que puede ser",
+          "hint": "Possibility; what can it be",
           "category": "Modals"
         },
         {
           "word": "ADVICE",
-          "hint": "Consejo; recomendación",
+          "hint": "Advice; recommendation",
           "category": "Modals"
         }
       ]

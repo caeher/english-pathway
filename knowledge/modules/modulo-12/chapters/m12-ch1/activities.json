@@ -2,8 +2,8 @@
   {
     "id": "m12-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Construye el Párrafo Perfecto",
-    "description": "Ordena las oraciones para formar un párrafo coherente con topic sentence, supporting details y conclusión.",
+    "title": "Build the Perfect Paragraph",
+    "description": "Arrange the sentences to form a coherent paragraph with topic sentence, supporting details and conclusion.",
     "props": {
       "sentences": [
         {
@@ -62,8 +62,8 @@
   {
     "id": "m12-ch1-quiz",
     "type": "quiz",
-    "title": "Identifica la Estructura",
-    "description": "Identifica las partes de un párrafo: topic sentence, supporting details y concluding sentence.",
+    "title": "Identify the Structure",
+    "description": "Identify the parts of a paragraph: topic sentence, supporting details and concluding sentence.",
     "props": {
       "questions": [
         {
@@ -184,13 +184,13 @@
   {
     "id": "m12-ch1-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Escritura",
-    "description": "Descifra palabras clave para organizar ideas antes de escribir.",
+    "title": "Writing Vocabulary",
+    "description": "Decipher key words to organize ideas before writing.",
     "props": {
       "words": [
         {
           "word": "PARAGRAPH",
-          "hint": "Párrafo; bloque de texto con una idea",
+          "hint": "Paragraph; text block with an idea",
           "category": "Writing"
         },
         {
@@ -200,22 +200,22 @@
         },
         {
           "word": "CONCLUSION",
-          "hint": "Conclusión; cierre del texto",
+          "hint": "Conclusion; closing of the text",
           "category": "Writing"
         },
         {
           "word": "DRAFT",
-          "hint": "Borrador; primera versión del texto",
+          "hint": "Draft; first version of the text",
           "category": "Writing"
         },
         {
           "word": "OUTLINE",
-          "hint": "Esquema; estructura de ideas antes de escribir",
+          "hint": "Scheme; structure of ideas before writing",
           "category": "Writing"
         },
         {
           "word": "TOPIC",
-          "hint": "Tema; asunto del que se escribe",
+          "hint": "Issue; matter being written about",
           "category": "Writing"
         }
       ]
@@ -224,80 +224,80 @@
   {
     "id": "m12-ch1-flash",
     "type": "flashcard",
-    "title": "Conectores para la Escritura",
-    "description": "Domina los conectores y transiciones esenciales para textos escritos.",
+    "title": "Connectors for Writing",
+    "description": "Master the essential connectors and transitions for written texts.",
     "props": {
       "cards": [
         {
           "id": "f1",
-          "front": "FURTHERMORE ➕ (Adición formal)",
-          "back": "Además / Es más — Para añadir un punto adicional importante. Más formal que \"also\".",
+          "front": "FURTHERMORE ➕ (Formal addition)",
+          "back": "Furthermore / It is more — To add an important additional point. More formal than \"also.\"",
           "example": "The hotel was beautiful. Furthermore, it was very affordable."
         },
         {
           "id": "f2",
           "front": "NEVERTHELESS 🔄 (Contraste formal)",
-          "back": "Sin embargo / No obstante — Contraste fuerte y formal. Más enfático que \"however\".",
+          "back": "However / However — Strong and formal contrast. More emphatic than \"however.\"",
           "example": "The project was difficult. Nevertheless, the team completed it on time."
         },
         {
           "id": "f3",
-          "front": "IN ADDITION ➕ (Adición)",
-          "back": "Además — Para sumar información. Se usa al inicio de oración.",
+          "front": "IN ADDITION ➕",
+          "back": "Additionally — To add information. It is used at the beginning of a sentence.",
           "example": "The course is free. In addition, you receive a certificate."
         },
         {
           "id": "f4",
           "front": "ON THE OTHER HAND 🔄 (Contraste)",
-          "back": "Por otro lado — Presenta el lado opuesto de un argumento.",
+          "back": "On the other hand — Presents the opposite side of an argument.",
           "example": "City life is exciting. On the other hand, it can be stressful."
         },
         {
           "id": "f5",
           "front": "FOR INSTANCE 📌 (Ejemplo)",
-          "back": "Por ejemplo — Introduce un ejemplo concreto. Igual que \"for example\".",
+          "back": "For example — Enter a concrete example. Same as \"for example\".",
           "example": "Many countries have beautiful beaches. For instance, Thailand is famous for its coast."
         },
         {
           "id": "f6",
           "front": "IN CONCLUSION 🏁 (Cierre)",
-          "back": "En conclusión — Señala el cierre del texto o párrafo.",
+          "back": "In conclusion — Indicates the closing of the text or paragraph.",
           "example": "In conclusion, learning English opens many doors."
         },
         {
           "id": "f7",
           "front": "TO SUM UP 🏁 (Resumen)",
-          "back": "En resumen — Para sintetizar los puntos principales al final.",
+          "back": "In summary — To summarize the main points at the end.",
           "example": "To sum up, exercise benefits both body and mind."
         },
         {
           "id": "f8",
           "front": "ALL IN ALL 🏁 (Cierre informal)",
-          "back": "En general / En definitiva — Cierre menos formal.",
+          "back": "In general / In short — Less formal closing.",
           "example": "All in all, it was a wonderful experience."
         },
         {
           "id": "f9",
           "front": "FIRST / SECOND / FINALLY 🔢 (Secuencia)",
-          "back": "Primero / Segundo / Finalmente — Para enumerar puntos en orden.",
+          "back": "First / Second / Finally — To list points in order.",
           "example": "First, prepare the ingredients. Second, mix them together. Finally, bake for 30 minutes."
         },
         {
           "id": "f10",
           "front": "SUCH AS 📌 (Ejemplo)",
-          "back": "Tales como / Como — Para dar ejemplos dentro de una oración.",
+          "back": "Such as / As — To give examples within a sentence.",
           "example": "Fruits such as apples, oranges, and bananas are very healthy."
         },
         {
           "id": "f11",
           "front": "AS A RESULT ➡️ (Resultado)",
-          "back": "Como resultado — Indica la consecuencia de algo mencionado antes.",
+          "back": "As a result — Indicates the consequence of something mentioned before.",
           "example": "She studied every day. As a result, she passed the exam."
         },
         {
           "id": "f12",
           "front": "IN SHORT 🏁 (Resumen breve)",
-          "back": "En pocas palabras — Resumen conciso al final.",
+          "back": "In a nutshell — Concise summary at the end.",
           "example": "In short, technology has changed our lives forever."
         }
       ]
@@ -306,8 +306,8 @@
   {
     "id": "m12-ch1-svg",
     "type": "svg-scene",
-    "title": "El Taller del Escritor",
-    "description": "Explora las fases del proceso de escritura en el taller interactivo.",
+    "title": "The Writer's Workshop",
+    "description": "Explore the phases of the writing process in the interactive workshop.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -321,7 +321,7 @@
             "rx": 70,
             "ry": 40,
             "fill": "#fbbf24",
-            "label": "Lluvia de ideas",
+            "label": "Brainstorming",
             "labelEn": "💡 Brainstorm"
           },
           {
@@ -384,7 +384,7 @@
             "type": "polygon",
             "points": "300,160 310,140 320,160",
             "fill": "#a3a3a3",
-            "label": "Lápiz",
+            "label": "Pencil",
             "labelEn": "Pencil (Your tool!)"
           },
           {

@@ -3,7 +3,7 @@
     "id": "m14-ch1-quiz",
     "type": "quiz",
     "title": "Escoge tu Aventura Corporativa",
-    "description": "Simulación narrativa: eres el manager en una crisis. Cada decisión tiene consecuencias.",
+    "description": "Narrative simulation: you are the manager in a crisis. Every decision has consequences.",
     "props": {
       "questions": [
         {
@@ -83,7 +83,7 @@
           "type": "fill-blank",
           "question": "\"I ___ your effort on this project. However, there are a few areas where we could improve.\"",
           "correct": "appreciate",
-          "explanation": "\"I appreciate your effort\" softens negative feedback. Always start with recognition before critique."
+          "explanation": "\"I appreciate your effort\" softens negative feedback. Always start with recognition before criticism."
         },
         {
           "id": "q8",
@@ -130,8 +130,8 @@
   {
     "id": "m14-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Diplomacia en Acción",
-    "description": "Construye respuestas diplomáticas para situaciones delicadas.",
+    "title": "Diplomacy in Action",
+    "description": "Build diplomatic responses to delicate situations.",
     "props": {
       "sentences": [
         {
@@ -250,8 +250,8 @@
   {
     "id": "m14-ch1-match",
     "type": "word-match",
-    "title": "Registro vs. Situación",
-    "description": "Empareja cada expresión con el registro y situación apropiados.",
+    "title": "Registration vs. Situation",
+    "description": "Match each expression with the appropriate register and situation.",
     "props": {
       "pairs": [
         {
@@ -260,7 +260,7 @@
         },
         {
           "left": "\"I'd like to schedule a meeting to discuss this\"",
-          "right": "Formal — con superiores 👔"
+          "right": "Formal — with superiors 👔"
         },
         {
           "left": "\"Could we perhaps revisit this at a convenient time?\"",
@@ -268,7 +268,7 @@
         },
         {
           "left": "\"Hey, can you help me out with this?\"",
-          "right": "Casual — con amigos 😊"
+          "right": "Casual — with friends 😊"
         },
         {
           "left": "\"I would be grateful if you could assist\"",
@@ -284,7 +284,7 @@
         },
         {
           "left": "\"What do you reckon?\"",
-          "right": "Casual British — con compañeros 🇬🇧"
+          "right": "Casual British — with colleagues 🇬🇧"
         }
       ]
     }
@@ -292,62 +292,62 @@
   {
     "id": "m14-ch1-flash",
     "type": "flashcard",
-    "title": "Arsenal Diplomático",
-    "description": "Transforma frases directas en versiones diplomáticas y profesionales.",
+    "title": "Diplomatic Arsenal",
+    "description": "Transform direct sentences into diplomatic and professional versions.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "❌ \"You're wrong about this.\"",
-          "back": "✅ \"I see your point, but I'd like to offer a different perspective.\" — Redirige sin confrontar directamente.",
+          "back": "✅ \"I see your point, but I'd like to offer a different perspective.\" — Redirect without directly confronting.",
           "example": "I see your point about the budget, but I'd like to offer a different perspective on the timeline."
         },
         {
           "id": "f2",
           "front": "❌ \"That's a bad idea.\"",
-          "back": "✅ \"That's an interesting approach. Have you considered...?\" — Sugiere sin descalificar.",
+          "back": "✅ \"That's an interesting approach. Have you considered...?\" — Suggest without disqualifying.",
           "example": "That's an interesting approach. Have you considered the impact on our existing clients?"
         },
         {
           "id": "f3",
           "front": "❌ \"We can't do that.\"",
-          "back": "✅ \"That might be challenging, but let me see what we can do.\" — Muestra disposición.",
+          "back": "✅ \"That might be challenging, but let me see what we can do.\" — Shows willingness.",
           "example": "That might be challenging within the current timeline, but let me see what we can do."
         },
         {
           "id": "f4",
           "front": "❌ \"Your work isn't good enough.\"",
-          "back": "✅ \"I appreciate your effort. There are a few areas where we could improve together.\" — Feedback constructivo.",
+          "back": "✅ \"I appreciate your effort. There are a few areas where we could improve together.\" — Constructive feedback.",
           "example": "I appreciate your effort on this report. There are a few areas where we could strengthen the analysis."
         },
         {
           "id": "f5",
           "front": "❌ \"That's not my problem.\"",
-          "back": "✅ \"I understand the situation. Let me connect you with the right person who can help.\" — Redirige con empatía.",
+          "back": "✅ \"I understand the situation. Let me connect you with the right person who can help.\" — Redirect with empathy.",
           "example": "I understand the situation. Let me connect you with Sarah, who handles client accounts."
         },
         {
           "id": "f6",
           "front": "❌ \"You always make mistakes.\"",
-          "back": "✅ \"I've noticed a pattern we should address. How can I support you?\" — De acusación a apoyo.",
+          "back": "✅ \"I've noticed a pattern we should address. How can I support you?\" — From accusation to support.",
           "example": "I've noticed a few recurring issues. How can I support you in improving this process?"
         },
         {
           "id": "f7",
           "front": "❌ \"I don't care about your opinion.\"",
-          "back": "✅ \"I appreciate your input. Let me consider all perspectives before deciding.\" — Valida sin comprometerte.",
+          "back": "✅ \"I appreciate your input. Let me consider all perspectives before deciding.\" — Validate without committing.",
           "example": "I appreciate your input on the strategy. Let me consider all perspectives before we make a decision."
         },
         {
           "id": "f8",
           "front": "❌ \"You're late again.\"",
-          "back": "✅ \"I noticed we're running behind schedule. Is there anything blocking your progress?\" — De reproche a diagnóstico.",
+          "back": "✅ \"I noticed we're running behind schedule. Is there anything blocking your progress?\" — From reproach to diagnosis.",
           "example": "I noticed we're running behind on the deliverables. Is there anything blocking your progress that I can help with?"
         },
         {
           "id": "f9",
           "front": "❌ \"No.\" (flat rejection)",
-          "back": "✅ \"I'm afraid that won't be possible at this time, but perhaps we could explore...\" — Rechazo suave con alternativa.",
+          "back": "✅ \"I'm afraid that won't be possible at this time, but perhaps we could explore...\" — Soft rejection with alternative.",
           "example": "I'm afraid that won't be possible this quarter, but perhaps we could explore this for Q2."
         },
         {
@@ -362,8 +362,8 @@
   {
     "id": "m14-ch1-svg",
     "type": "svg-scene",
-    "title": "Mapa de Stakeholders",
-    "description": "Explora los stakeholders de la simulación y entiende sus perspectivas.",
+    "title": "Stakeholder Map",
+    "description": "Explore simulation stakeholders and understand their perspectives.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -416,7 +416,7 @@
             "cy": 330,
             "r": 30,
             "fill": "#a78bfa",
-            "label": "Finanzas — Quiere números claros",
+            "label": "Finance — You want clear numbers",
             "labelEn": "👤 Finance — Wants clear numbers"
           },
           {
@@ -427,7 +427,7 @@
             "rx": 50,
             "ry": 30,
             "fill": "#f9a8d4",
-            "label": "TÚ — El mediador entre todos",
+            "label": "YOU — The mediator between everyone",
             "labelEn": "⭐ YOU — The mediator"
           }
         ]
@@ -437,7 +437,7 @@
   {
     "id": "m14-ch1-scramble",
     "type": "word-scramble",
-    "title": "Juegos de Rol Avanzados",
+    "title": "Advanced Role Playing Games",
     "description": "Descifra vocabulario teatral.",
     "props": {
       "words": [
@@ -448,12 +448,12 @@
         },
         {
           "word": "SCENARIO",
-          "hint": "Escenario; situación",
+          "hint": "Scenery; situation",
           "category": "Role-play"
         },
         {
           "word": "DIALOGUE",
-          "hint": "Diálogo; conversación",
+          "hint": "Dialogue; conversation",
           "category": "Role-play"
         },
         {

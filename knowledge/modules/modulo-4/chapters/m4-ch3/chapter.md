@@ -1,15 +1,15 @@
 ---
 id: m4-ch3
-moduleId: modulo-4
+moduleId: module-4
 number: 3
-title: Superlativos
-subtitle: El más grande, el mejor, el más interesante
+title: Superlatives
+subtitle: The biggest, the best, the most interesting
 icon: 🏆
 color: "#8b5cf6"
 objectives:
-  - Formar superlativos con -est y most
-  - "Usar \"the\" antes de superlativos"
-  - "Dominar los superlativos irregulares: best, worst, farthest"
+  - Form superlatives with -est and most
+  - "Use \"the\" before superlatives"
+  - "Master irregular superlatives: best, worst, farthest"
 xpReward: 160
 ---
 

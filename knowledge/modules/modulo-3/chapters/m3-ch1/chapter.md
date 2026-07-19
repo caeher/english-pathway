@@ -1,21 +1,21 @@
 ---
 id: m3-ch1
-moduleId: modulo-3
+moduleId: module-3
 number: 1
-title: "Presente Continuo: Formación y Usos"
-subtitle: Lo que está pasando ahora mismo — be + verb-ing
+title: "Present Continuous: Formation and Uses"
+subtitle: What's happening right now — be + verb-ing
 icon: 🔄
 color: "#3b82f6"
 objectives:
-  - "Formar el presente continuo: am/is/are + verb-ing"
-  - "Diferenciar sus usos: acción en progreso, planes futuros, tendencias"
-  - Aplicar las reglas de spelling al añadir -ing
+  - "Form the present continuous: am/is/are + verb-ing"
+  - "Differentiate their uses: action in progress, future plans, trends"
+  - Apply spelling rules when adding -ing
 xpReward: 160
 ---
 
 ## Present Continuous — Presente Continuo
 
-### Formación: Subject + am/is/are + verb-ing
+### Formation: Subject + am/is/are + verb-ing
 | Subject | Be | Verb-ing | Example |
 |---------|-----|----------|---------|
 | I | **am** | working | I **am working** now. |

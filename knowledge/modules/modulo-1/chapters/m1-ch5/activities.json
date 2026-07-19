@@ -2,8 +2,8 @@
   {
     "id": "m1-ch5-svg",
     "type": "svg-scene",
-    "title": "El Calendario Interactivo",
-    "description": "Explora el calendario y aprende números, días y meses.",
+    "title": "The Interactive Calendar",
+    "description": "Explore the calendar and learn numbers, days and months.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 450",
@@ -17,7 +17,7 @@
             "width": 650,
             "height": 430,
             "fill": "#cffafe",
-            "label": "📅 The Interactive Calendar",
+            "label": "📅The Interactive Calendar",
             "labelEn": "Learn numbers, days, and months!"
           },
           {
@@ -28,7 +28,7 @@
             "width": 190,
             "height": 80,
             "fill": "#bfdbfe",
-            "label": "🔢 Números 1-10",
+            "label": "🔢 Numbers 1-10",
             "labelEn": "1 one, 2 two, 3 three, 4 four, 5 five, 6 six, 7 seven, 8 eight, 9 nine, 10 ten"
           },
           {
@@ -39,7 +39,7 @@
             "width": 190,
             "height": 80,
             "fill": "#c4b5fd",
-            "label": "🔢 Números 11-20",
+            "label": "🔢 Numbers 11-20",
             "labelEn": "11 eleven, 12 twelve, 13 thirteen, 14 fourteen, 15 fifteen, 16 sixteen, 17 seventeen, 18 eighteen, 19 nineteen, 20 twenty"
           },
           {
@@ -50,7 +50,7 @@
             "width": 190,
             "height": 80,
             "fill": "#fde68a",
-            "label": "🔢 Decenas",
+            "label": "🔢 Dozens",
             "labelEn": "10 ten, 20 twenty, 30 thirty, 40 forty, 50 fifty, 60 sixty, 70 seventy, 80 eighty, 90 ninety, 100 hundred"
           },
           {
@@ -61,7 +61,7 @@
             "width": 600,
             "height": 70,
             "fill": "#bbf7d0",
-            "label": "📅 Days of the Week",
+            "label": "📅Days of the Week",
             "labelEn": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — Always capitalized!"
           },
           {
@@ -84,7 +84,7 @@
             "height": 70,
             "fill": "#e0e7ff",
             "label": "⏰ Telling the Time",
-            "labelEn": "3:00 three o'clock. 5:10 ten past five. 6:45 quarter to seven. 9:20 twenty past nine."
+            "labelEn": "3:00 three o'clock. 5:10 have past five. 6:45 quarter to seven. 9:20 twenty past nine."
           },
           {
             "id": "ordinals",
@@ -104,8 +104,8 @@
   {
     "id": "m1-ch5-flash",
     "type": "flashcard",
-    "title": "Números, Días y Meses",
-    "description": "Memoriza los números, días de la semana y meses del año.",
+    "title": "Numbers, Days and Months",
+    "description": "Memorize the numbers, days of the week and months of the year.",
     "props": {
       "cards": [
         {
@@ -146,31 +146,31 @@
         },
         {
           "id": "d1",
-          "front": "Lunes - Miércoles",
+          "front": "Monday - Wednesday",
           "back": "Monday, Tuesday, Wednesday",
           "example": "I have English class on Monday and Wednesday."
         },
         {
           "id": "d2",
-          "front": "Jueves - Domingo",
+          "front": "Thursday - Sunday",
           "back": "Thursday, Friday, Saturday, Sunday",
           "example": "We go to the park on Saturday."
         },
         {
           "id": "m1",
-          "front": "Enero - Abril",
+          "front": "January - April",
           "back": "January, February, March, April",
           "example": "My birthday is in March."
         },
         {
           "id": "m2",
-          "front": "Mayo - Agosto",
+          "front": "May - August",
           "back": "May, June, July, August",
           "example": "School ends in June."
         },
         {
           "id": "m3",
-          "front": "Septiembre - Diciembre",
+          "front": "September - December",
           "back": "September, October, November, December",
           "example": "Christmas is in December."
         },
@@ -213,7 +213,7 @@
         {
           "id": "date1",
           "front": "March 5th, 2026",
-          "back": "5 de marzo de 2026",
+          "back": "March 5, 2026",
           "example": "I was born on March 5th, 1990."
         }
       ]
@@ -222,8 +222,8 @@
   {
     "id": "m1-ch5-match",
     "type": "word-match",
-    "title": "Número → Palabra",
-    "description": "Empareja cada número con su forma escrita en inglés.",
+    "title": "Number → Word",
+    "description": "Match each number with its written form in English.",
     "props": {
       "pairs": [
         {
@@ -264,12 +264,12 @@
   {
     "id": "m1-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Fechas y Horarios",
-    "description": "Construye oraciones con fechas, días y horas.",
+    "title": "Dates and Times",
+    "description": "Build sentences with dates, days and times.",
     "props": {
       "sentences": [
         {
-          "prompt": "Hoy es lunes:",
+          "prompt": "Today is Monday:",
           "words": [
             "is",
             "Today",
@@ -278,7 +278,7 @@
           "correct": "Today is Monday"
         },
         {
-          "prompt": "Mi cumpleaños es en marzo:",
+          "prompt": "My birthday is in March:",
           "words": [
             "birthday",
             "My",
@@ -289,30 +289,30 @@
           "correct": "My birthday is in March"
         },
         {
-          "prompt": "Son las tres:",
+          "prompt": "They are three:",
           "words": [
             "is",
-            "It",
+            "Item",
             "three",
             "o'clock"
           ],
           "correct": "It is three o'clock"
         },
         {
-          "prompt": "Hay doce meses:",
+          "prompt": "There are twelve months:",
           "words": [
             "twelve",
-            "There",
+            "there",
             "are",
             "months"
           ],
           "correct": "There are twelve months"
         },
         {
-          "prompt": "Tengo veinte años:",
+          "prompt": "I am twenty years old:",
           "words": [
-            "am",
-            "I",
+            "A.M",
+            "Yo",
             "twenty",
             "old",
             "years"
@@ -320,7 +320,7 @@
           "correct": "I am twenty years old"
         },
         {
-          "prompt": "El viernes es mi día favorito:",
+          "prompt": "Friday is my favorite day:",
           "words": [
             "is",
             "Friday",
@@ -331,10 +331,10 @@
           "correct": "Friday is my favorite day"
         },
         {
-          "prompt": "Son las 6:45:",
+          "prompt": "It's 6:45:",
           "words": [
             "is",
-            "It",
+            "Item",
             "quarter",
             "to",
             "seven"
@@ -342,9 +342,9 @@
           "correct": "It is quarter to seven"
         },
         {
-          "prompt": "Nací el 15 de marzo:",
+          "prompt": "I was born on March 15:",
           "words": [
-            "I",
+            "Yo",
             "was",
             "born",
             "on",
@@ -359,8 +359,8 @@
   {
     "id": "m1-ch5-quiz",
     "type": "quiz",
-    "title": "Quiz del Calendario",
-    "description": "Demuestra que dominas números, días y meses.",
+    "title": "Calendar Quiz",
+    "description": "Show that you master numbers, days and months.",
     "props": {
       "questions": [
         {
@@ -381,12 +381,12 @@
             "fortie"
           ],
           "correct": 1,
-          "explanation": "Forty — no \"u\"! Common mistake."
+          "explanation": "Forty — not \"u\"! Common mistake."
         },
         {
           "id": "q3",
           "type": "multiple-choice",
-          "question": "Which is the third day of the week?",
+          "question": "What is the third day of the week?",
           "options": [
             "Monday",
             "Tuesday",
@@ -400,7 +400,7 @@
           "id": "q4",
           "type": "fill-blank",
           "question": "The month after June is ___",
-          "correct": "July",
+          "correct": "June",
           "explanation": "June → July."
         },
         {
@@ -474,17 +474,17 @@
           "type": "fill-blank",
           "question": "6:45 = \"It's quarter ___ seven.\"",
           "correct": "to",
-          "explanation": "6:45 = quarter to seven (menos cuarto para las siete)."
+          "explanation": "6:45 = quarter to seven (minus quarter to seven)."
         },
         {
           "id": "q12",
           "type": "multiple-choice",
-          "question": "How do you say \"5 de marzo\" in English?",
+          "question": "How do you say \"March 5\" in English?",
           "options": [
-            "March the 5",
+            "March the 5th",
             "March 5th",
             "5 March",
-            "The march 5"
+            "March 5"
           ],
           "correct": 1,
           "explanation": "March 5th or the 5th of March."
@@ -495,38 +495,38 @@
   {
     "id": "m1-ch5-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario del Calendario",
-    "description": "Descifra palabras de días, meses y números.",
+    "title": "Calendar Vocabulary",
+    "description": "Unscramble words of days, months and numbers.",
     "props": {
       "words": [
         {
           "word": "MONDAY",
-          "hint": "Lunes; primer día laboral",
+          "hint": "Monday; first day of work",
           "category": "Calendar"
         },
         {
           "word": "FRIDAY",
-          "hint": "Viernes; último día laboral",
+          "hint": "Friday; last working day",
           "category": "Calendar"
         },
         {
           "word": "JANUARY",
-          "hint": "Enero; primer mes del año",
+          "hint": "January; first month of the year",
           "category": "Calendar"
         },
         {
           "word": "TWELVE",
-          "hint": "Doce; el número 12",
+          "hint": "Twelve; the number 12",
           "category": "Calendar"
         },
         {
           "word": "HUNDRED",
-          "hint": "Cien; 100",
+          "hint": "Hundred; 100",
           "category": "Calendar"
         },
         {
           "word": "CALENDAR",
-          "hint": "Calendario; organizador de días y meses",
+          "hint": "Calendar; days and months organizer",
           "category": "Calendar"
         }
       ]

@@ -2,38 +2,38 @@
   {
     "id": "m10-ch4-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Stress y Entonación",
-    "description": "Descifra palabras relacionadas con patrones de énfasis y melodía.",
+    "title": "Stress and Intonation Vocabulary",
+    "description": "Unscramble words related to stress and melody patterns.",
     "props": {
       "words": [
         {
           "word": "STRESS",
-          "hint": "Acento o énfasis en una sílaba",
+          "hint": "Accent or emphasis on a syllable",
           "category": "Pronunciation"
         },
         {
           "word": "RISING",
-          "hint": "Que sube; entonación de preguntas",
+          "hint": "That goes up; question intonation",
           "category": "Pronunciation"
         },
         {
           "word": "FALLING",
-          "hint": "Que baja; entonación de afirmaciones",
+          "hint": "How low; intonation of affirmations",
           "category": "Pronunciation"
         },
         {
           "word": "SYLLABLE",
-          "hint": "Sílaba; unidad de sonido",
+          "hint": "Syllable; sound unit",
           "category": "Pronunciation"
         },
         {
           "word": "EMPHASIS",
-          "hint": "Énfasis; dar importancia a una palabra",
+          "hint": "Emphasis; give importance to a word",
           "category": "Pronunciation"
         },
         {
           "word": "MELODY",
-          "hint": "Melodía; patrón de subidas y bajadas",
+          "hint": "Melody; up and down pattern",
           "category": "Pronunciation"
         }
       ]
@@ -42,8 +42,8 @@
   {
     "id": "m10-ch4-quiz",
     "type": "quiz",
-    "title": "¿Qué Emoción / Intención?",
-    "description": "Identifica la intención o emoción según la entonación descrita.",
+    "title": "What Emotion/Intention?",
+    "description": "Identify the intention or emotion according to the intonation described.",
     "props": {
       "questions": [
         {
@@ -57,7 +57,7 @@
             "Making a list"
           ],
           "correct": 1,
-          "explanation": "Entonación ascendente al final = pregunta yes/no."
+          "explanation": "Rising intonation at the end = yes/no question."
         },
         {
           "id": "q2",
@@ -70,7 +70,7 @@
             "Surprise"
           ],
           "correct": 1,
-          "explanation": "Entonación descendente = afirmación."
+          "explanation": "Falling intonation = affirmation."
         },
         {
           "id": "q3",
@@ -82,7 +82,7 @@
             "graph (3rd)"
           ],
           "correct": 0,
-          "explanation": "PHO-to-graph: el acento cae en la primera sílaba."
+          "explanation": "PHO-to-graph: the stress falls on the first syllable."
         },
         {
           "id": "q4",
@@ -95,14 +95,14 @@
             "phy (4th)"
           ],
           "correct": 1,
-          "explanation": "pho-TO-gra-phy: el acento se mueve a la segunda sílaba."
+          "explanation": "pho-TO-gra-phy: the stress moves to the second syllable."
         },
         {
           "id": "q5",
           "type": "fill-blank",
           "question": "In the word \"information\", the stress falls on the ___ syllable. (first/second/third)",
           "correct": "third",
-          "explanation": "in-for-MA-tion: la tercera sílaba lleva el acento (regla: -tion)."
+          "explanation": "in-for-MA-tion: the third syllable has the accent (rule: -tion)."
         },
         {
           "id": "q6",
@@ -115,7 +115,7 @@
             "Surprises"
           ],
           "correct": 2,
-          "explanation": "Patrón ascendente-ascendente-descendente = enumeración/lista."
+          "explanation": "Ascending-ascending-descending pattern = enumeration/list."
         },
         {
           "id": "q7",
@@ -128,7 +128,7 @@
             "All words equally"
           ],
           "correct": 1,
-          "explanation": "Se acentúan las palabras de contenido: WANT, GO, PARK."
+          "explanation": "Content words are stressed: WANT, GO, PARK."
         },
         {
           "id": "q8",
@@ -141,14 +141,14 @@
             "Happy"
           ],
           "correct": 2,
-          "explanation": "Fall-rise = incertidumbre o cortesía."
+          "explanation": "Fall-rise = uncertainty or politeness."
         },
         {
           "id": "q9",
           "type": "fill-blank",
           "question": "English is a ___-timed language. (stress/syllable)",
           "correct": "stress",
-          "explanation": "El inglés es stress-timed: el tiempo entre acentos es regular."
+          "explanation": "English is stress-timed: the time between accents is regular."
         },
         {
           "id": "q10",
@@ -159,7 +159,7 @@
             "air-PORT"
           ],
           "correct": 0,
-          "explanation": "Compound nouns: acento en el primer elemento → AIR-port."
+          "explanation": "Compound nouns: accent on the first element → AIR-port."
         }
       ]
     }
@@ -167,8 +167,8 @@
   {
     "id": "m10-ch4-svg",
     "type": "svg-scene",
-    "title": "El Panel de Patrones",
-    "description": "Explora los patrones de entonación y descubre cómo cambian el significado.",
+    "title": "The Pattern Panel",
+    "description": "Explore intonation patterns and discover how they change meaning.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -195,7 +195,7 @@
             "type": "polygon",
             "points": "330,100 380,160 430,120 480,100",
             "fill": "#a78bfa",
-            "label": "Duda/Cortesía",
+            "label": "Question/Courtesy",
             "labelEn": "↘️↗️ Fall-Rise (Uncertainty)"
           },
           {
@@ -203,7 +203,7 @@
             "type": "polygon",
             "points": "30,260 80,240 130,250 180,230 230,280",
             "fill": "#34d399",
-            "label": "Enumeración",
+            "label": "Enumeration",
             "labelEn": "↗️↗️↘️ List Pattern"
           },
           {
@@ -213,7 +213,7 @@
             "cy": 280,
             "r": 50,
             "fill": "#fbbf24",
-            "label": "Acento de palabra",
+            "label": "word accent",
             "labelEn": "Word Stress (PHO-to-graph)"
           },
           {
@@ -224,7 +224,7 @@
             "rx": 100,
             "ry": 25,
             "fill": "#f9a8d4",
-            "label": "Acento de oración",
+            "label": "Prayer accent",
             "labelEn": "Sentence Stress (I WANT to GO)"
           }
         ]
@@ -234,68 +234,68 @@
   {
     "id": "m10-ch4-flash",
     "type": "flashcard",
-    "title": "Reglas de Acento",
-    "description": "Aprende las reglas de acentuación con ejemplos claros.",
+    "title": "Accent Rules",
+    "description": "Learn the rules of accentuation with clear examples.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "pho-TO-gra-phy 📸",
-          "back": "Acento en la 2ª sílaba. Regla: palabras en -phy → acento en sílaba anterior.",
+          "back": "Accent on the 2nd syllable. Rule: words in -phy → accent on previous syllable.",
           "example": "She studied photography at university."
         },
         {
           "id": "f2",
           "front": "in-for-MA-tion ℹ️",
-          "back": "Acento en la 3ª sílaba. Regla: palabras en -tion → acento en sílaba anterior.",
+          "back": "Accent on the 3rd syllable. Rule: words in -tion → accent on previous syllable.",
           "example": "I need some information about the course."
         },
         {
           "id": "f3",
           "front": "fan-TAS-tic ⭐",
-          "back": "Acento en la 2ª sílaba. Regla: palabras en -ic → acento en sílaba anterior.",
+          "back": "Accent on the 2nd syllable. Rule: words in -ic → accent on previous syllable.",
           "example": "The concert was fantastic!"
         },
         {
           "id": "f4",
           "front": "AIR-port ✈️",
-          "back": "Acento en la 1ª sílaba. Regla: compound nouns → acento en primer elemento.",
+          "back": "Accent on the 1st syllable. Rule: compound nouns → accent on first element.",
           "example": "We arrived at the airport early."
         },
         {
           "id": "f5",
           "front": "e-co-NO-mic 💰",
-          "back": "Acento en la 3ª sílaba. Regla: palabras en -ic → acento en sílaba anterior.",
+          "back": "Accent on the 3rd syllable. Rule: words in -ic → accent on previous syllable.",
           "example": "The economic situation is improving."
         },
         {
           "id": "f6",
           "front": "u-ni-VER-si-ty 🎓",
-          "back": "Acento en la 3ª sílaba. Patrón: ooOoo.",
+          "back": "Accent on the 3rd syllable. Pattern: ooOoo.",
           "example": "She goes to university every day."
         },
         {
           "id": "f7",
           "front": "FOOT-ball ⚽",
-          "back": "Acento en la 1ª sílaba. Regla: compound nouns → acento en primer elemento.",
+          "back": "Accent on the 1st syllable. Rule: compound nouns → accent on first element.",
           "example": "Do you want to play football?"
         },
         {
           "id": "f8",
           "front": "com-PU-ter 💻",
-          "back": "Acento en la 2ª sílaba. Patrón: oOo.",
+          "back": "Accent on the 2nd syllable. Pattern: oOo.",
           "example": "I use my computer every day."
         },
         {
           "id": "f9",
           "front": "te-le-VI-sion 📺",
-          "back": "Acento en la 3ª sílaba. Regla: palabras en -sion → acento en sílaba anterior.",
+          "back": "Accent on the 3rd syllable. Rule: words in -sion → accent on previous syllable.",
           "example": "There's nothing good on television."
         },
         {
           "id": "f10",
           "front": "PHO-to-graph 📷",
-          "back": "Acento en la 1ª sílaba. Patrón: Ooo. Nota: cambia en photography y photographic.",
+          "back": "Accent on the 1st syllable. Pattern: Ooo. Note: changes in photography and photographic.",
           "example": "This is a beautiful photograph."
         }
       ]
@@ -304,8 +304,8 @@
   {
     "id": "m10-ch4-match",
     "type": "word-match",
-    "title": "Palabra → Patrón de Acento",
-    "description": "Empareja cada palabra con su patrón de acentuación.",
+    "title": "Word → Accent Pattern",
+    "description": "Match each word with its stress pattern.",
     "props": {
       "pairs": [
         {

@@ -1,15 +1,15 @@
 ---
 id: m2-ch4
-moduleId: modulo-2
+moduleId: module-2
 number: 4
-title: Negaciones y Preguntas en Pasado
-subtitle: "Aprende a negar y preguntar con did / didn't"
+title: Denials and Questions in the Past
+subtitle: "Learn to deny and ask with did / didn't"
 icon: 🚫
 color: "#a855f7"
 objectives:
-  - "Formar oraciones negativas en pasado con didn't + verbo base"
-  - Crear preguntas en pasado con Did + sujeto + verbo base
-  - "Dar respuestas cortas: Yes, I did / No, I didn't"
+  - "Form negative sentences in the past with didn't + base verb"
+  - Create questions in the past with Did + subject + base verb
+  - "Give short answers: Yes, I did / No, I didn't"
 xpReward: 150
 ---
 
@@ -22,7 +22,7 @@ xpReward: 150
 | She ate | She **didn't eat** |
 | They saw | They **didn't see** |
 
-> ⚠️ ¡Siempre verbo en forma base después de didn't! (NOT: *didn't went*)
+> ⚠️ Always verb in base form after didn't! (NOT: *didn't go*)
 
 ### ❓ Questions: Did + subject + base verb?
 | Statement | Question |
@@ -41,4 +41,4 @@ xpReward: 150
 | I was there | I **wasn't** there | **Was** I there? |
 | They were happy | They **weren't** happy | **Were** they happy? |
 
-> 💡 "Was/were" son especiales: NO usan "did" para preguntas o negaciones.
+> 💡 "Was/were" are special: they DO NOT use "did" for questions or denials.

@@ -2,8 +2,8 @@
   {
     "id": "m2-ch5-svg",
     "type": "svg-scene",
-    "title": "La Casa de \"Have\"",
-    "description": "Explora los diferentes usos del verbo \"have\" en cada habitación.",
+    "title": "The House of \"Have\"",
+    "description": "Explore the different uses of the verb \"have\" in each room.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -104,8 +104,8 @@
   {
     "id": "m2-ch5-flash",
     "type": "flashcard",
-    "title": "Usos de Have / Has / Had",
-    "description": "Repasa todas las formas y usos del verbo \"have\".",
+    "title": "Uses of Have/Has/Had",
+    "description": "Review all the forms and uses of the verb \"have.\"",
     "props": {
       "cards": [
         {
@@ -160,7 +160,7 @@
           "id": "h9",
           "front": "I ___ study tonight. (obligation)",
           "back": "I HAVE TO study tonight.",
-          "example": "have to = tener que (obligación)."
+          "example": "have to = have to (obligation)."
         },
         {
           "id": "h10",
@@ -172,12 +172,12 @@
           "id": "h11",
           "front": "I've ___ a new phone. (British)",
           "back": "I've GOT a new phone.",
-          "example": "have got = tener (posesión, British)."
+          "example": "have got = have (possession, British)."
         },
         {
           "id": "h12",
           "front": "have breakfast / have a shower",
-          "back": "have + activity = HACER una actividad",
+          "back": "have + activity = DO an activity",
           "example": "have breakfast = desayunar, have a shower = ducharse."
         }
       ]
@@ -186,12 +186,12 @@
   {
     "id": "m2-ch5-match",
     "type": "word-match",
-    "title": "Traduce con Have",
-    "description": "Empareja cada frase en español con su traducción en inglés.",
+    "title": "Translate with Have",
+    "description": "Match each Spanish phrase with its English translation.",
     "props": {
       "pairs": [
         {
-          "left": "Tengo un perro",
+          "left": "I have a dog",
           "right": "I have a dog"
         },
         {
@@ -199,7 +199,7 @@
           "right": "She has blue eyes"
         },
         {
-          "left": "Tenía un gato",
+          "left": "I had a cat",
           "right": "I had a cat"
         },
         {
@@ -207,15 +207,15 @@
           "right": "I don't have money"
         },
         {
-          "left": "Tengo que estudiar",
+          "left": "I have to study",
           "right": "I have to study"
         },
         {
-          "left": "¿Tienes un bolígrafo?",
+          "left": "Do you have a pen?",
           "right": "Do you have a pen?"
         },
         {
-          "left": "Ella tiene que trabajar",
+          "left": "She has to work",
           "right": "She has to work"
         },
         {
@@ -228,8 +228,8 @@
   {
     "id": "m2-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Construye con Have",
-    "description": "Ordena las palabras para formar oraciones con \"have\".",
+    "title": "Build with Have",
+    "description": "Arrange the words to make sentences with \"have.\"",
     "props": {
       "sentences": [
         {
@@ -253,7 +253,7 @@
           "correct": "She has long hair"
         },
         {
-          "prompt": "Tenía un perro:",
+          "prompt": "I had a dog:",
           "words": [
             "I",
             "had",
@@ -274,7 +274,7 @@
           "correct": "I don't have a car"
         },
         {
-          "prompt": "¿Tienes tiempo?:",
+          "prompt": "Do you have time?:",
           "words": [
             "Do",
             "you",
@@ -284,7 +284,7 @@
           "correct": "Do you have time?"
         },
         {
-          "prompt": "Ella tiene que ir:",
+          "prompt": "She has to go:",
           "words": [
             "She",
             "has",
@@ -294,7 +294,7 @@
           "correct": "She has to go"
         },
         {
-          "prompt": "Desayunamos a las 8:",
+          "prompt": "We have breakfast at 8:",
           "words": [
             "We",
             "have",
@@ -305,7 +305,7 @@
           "correct": "We have breakfast at 8"
         },
         {
-          "prompt": "No tenía dinero:",
+          "prompt": "I had no money:",
           "words": [
             "I",
             "didn't",
@@ -321,7 +321,7 @@
     "id": "m2-ch5-quiz",
     "type": "quiz",
     "title": "Quiz: Have, Has, Had",
-    "description": "Demuestra que dominas el verbo \"have\" en todas sus formas.",
+    "description": "Show that you master the verb \"have\" in all its forms.",
     "props": {
       "questions": [
         {
@@ -367,7 +367,7 @@
         {
           "id": "q5",
           "type": "multiple-choice",
-          "question": "\"I ___ study for the exam.\" (obligación)",
+          "question": "\"I ___ study for the exam.\" (obligation)",
           "options": [
             "have to",
             "has to",
@@ -375,12 +375,12 @@
             "having to"
           ],
           "correct": 0,
-          "explanation": "I have to = tengo que."
+          "explanation": "I have to = I have to."
         },
         {
           "id": "q6",
           "type": "multiple-choice",
-          "question": "\"She ___ work on weekends.\" (obligación)",
+          "question": "\"She ___ work on weekends.\" (obligation)",
           "options": [
             "have to",
             "has to",
@@ -388,7 +388,7 @@
             "having to"
           ],
           "correct": 1,
-          "explanation": "She has to = ella tiene que."
+          "explanation": "She has to = she has to."
         },
         {
           "id": "q7",
@@ -436,8 +436,8 @@
   {
     "id": "m2-ch5-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de To Have",
-    "description": "Descifra palabras relacionadas con tener y comidas.",
+    "title": "To Have Vocabulary",
+    "description": "Unscramble words related to having and eating.",
     "props": {
       "words": [
         {
@@ -452,7 +452,7 @@
         },
         {
           "word": "HAD",
-          "hint": "Tenía/tuvo; pasado",
+          "hint": "had/had; past",
           "category": "To Have"
         },
         {

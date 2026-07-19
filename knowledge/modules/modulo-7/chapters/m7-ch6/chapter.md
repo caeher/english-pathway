@@ -1,23 +1,23 @@
 ---
 id: m7-ch6
-moduleId: modulo-7
+moduleId: module-7
 number: 6
-title: Repaso Final y Práctica Integral
-subtitle: Demuestra todo lo aprendido
+title: Final Review and Comprehensive Practice
+subtitle: Demonstrate everything you have learned
 icon: 🏆
 color: "#a855f7"
 objectives:
-  - Repasar todos los temas tratados en los módulos del curso
-  - Combinar tiempos verbales, modales, condicionales, voz pasiva y más
-  - Resolver ejercicios mixtos de dificultad avanzada
+  - Review all the topics covered in the course modules
+  - Combine tenses, modals, conditionals, passive voice and more
+  - Solve mixed exercises of advanced difficulty
 xpReward: 200
 ---
 
-## Final Review — Repaso Final y Práctica Integral
+## Final Review — Final Review and Comprehensive Practice
 
-### ¿Qué vas a repasar?
+### What are you going to review?
 
-Este capítulo integra **todo** lo aprendido en el curso:
+This chapter integrates **everything** what was learned in the course:
 
 | Area | Key Topics |
 |------|-----------|
@@ -34,15 +34,15 @@ Este capítulo integra **todo** lo aprendido en el curso:
 
 ---
 
-### Estrategia de repaso
+### Review strategy
 
-1. **Lee la teoría** si no recuerdas un tema.
-2. **Haz las actividades** de este capítulo — son mixtas.
-3. **Vuelve** a módulos anteriores si necesitas reforzar un punto.
+1. **Read the theory** if you don't remember a topic.
+2. **Do the activities** in this chapter — they are mixed.
+3. **Go back** to previous modules if you need to reinforce a point.
 
 ---
 
-### Resumen visual por módulo
+### Visual summary by module
 
 | Module | Focus |
 |--------|-------|
@@ -56,5 +56,5 @@ Este capítulo integra **todo** lo aprendido en el curso:
 
 ---
 
-### ¡Felicidades!
-Si completas todas las actividades de este capítulo, habrás demostrado que dominas la gramática inglesa desde nivel básico hasta avanzado. 🎉
+### Congratulations!
+If you complete all the activities in this chapter, you will have demonstrated that you have mastered English grammar from basic to advanced levels. 🎉

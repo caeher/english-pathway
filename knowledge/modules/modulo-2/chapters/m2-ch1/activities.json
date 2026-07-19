@@ -2,8 +2,8 @@
   {
     "id": "m2-ch1-svg",
     "type": "svg-scene",
-    "title": "Un Día Típico",
-    "description": "Sigue la rutina de Ana y descubre el presente simple en acción.",
+    "title": "A Typical Day",
+    "description": "Follow Ana's routine and discover the present simple in action.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -137,8 +137,8 @@
   {
     "id": "m2-ch1-flash",
     "type": "flashcard",
-    "title": "Verbos en Presente Simple",
-    "description": "Domina la conjugación y los usos del presente simple.",
+    "title": "Verbs in the Present Simple",
+    "description": "Master the conjugation and uses of the present simple.",
     "props": {
       "cards": [
         {
@@ -150,25 +150,25 @@
         {
           "id": "ps2",
           "front": "I play / He plays",
-          "back": "Juego / Él juega\nVocal + y → add -s",
+          "back": "Game / He plays\nVowel + y → add -s",
           "example": "I play tennis. He plays soccer."
         },
         {
           "id": "ps3",
           "front": "I watch / She watches",
-          "back": "Miro / Ella mira\nVerbo en -ch → add -es",
+          "back": "I look / She looks\nVerb in -ch → add -es",
           "example": "I watch TV. She watches movies."
         },
         {
           "id": "ps4",
           "front": "I study / He studies",
-          "back": "Estudio / Él estudia\nConsonante + y → -ies",
+          "back": "Study / He studies\nConsonant + y → -ies",
           "example": "I study English. He studies math."
         },
         {
           "id": "ps5",
           "front": "I go / She goes",
-          "back": "Voy / Ella va\nVerbo en -o → add -es",
+          "back": "I go / She goes\nVerb in -o → add -es",
           "example": "I go to school. She goes to work."
         },
         {
@@ -186,19 +186,19 @@
         {
           "id": "ps8",
           "front": "Do you work?",
-          "back": "¿Trabajas?\nDO + subject + base verb?",
+          "back": "Do you work?\nDO + subject + base verb?",
           "example": "Do you work here? — Yes, I do."
         },
         {
           "id": "ps9",
           "front": "Does she work?",
-          "back": "¿Ella trabaja?\nDOES + subject + base verb?",
+          "back": "Does she work?\nDOES + subject + base verb?",
           "example": "Does she work here? — No, she doesn't."
         },
         {
           "id": "ps10",
-          "front": "Uso: Hábitos",
-          "back": "Acciones que haces regularmente",
+          "front": "Use: Habits",
+          "back": "Actions you do regularly",
           "example": "I brush my teeth every morning."
         },
         {
@@ -220,7 +220,7 @@
     "id": "m2-ch1-match",
     "type": "word-match",
     "title": "Verbo → Tercera Persona",
-    "description": "Empareja cada verbo con su forma en tercera persona.",
+    "description": "Match each verb with its third person form.",
     "props": {
       "pairs": [
         {
@@ -261,12 +261,12 @@
   {
     "id": "m2-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Oraciones en Presente Simple",
+    "title": "Sentences in Present Simple",
     "description": "Construye oraciones afirmativas, negativas y preguntas.",
     "props": {
       "sentences": [
         {
-          "prompt": "Ella trabaja en un hospital:",
+          "prompt": "She works in a hospital:",
           "words": [
             "works",
             "She",
@@ -277,7 +277,7 @@
           "correct": "She works in a hospital"
         },
         {
-          "prompt": "Yo no bebo café:",
+          "prompt": "I don't drink coffee:",
           "words": [
             "don't",
             "I",
@@ -287,7 +287,7 @@
           "correct": "I don't drink coffee"
         },
         {
-          "prompt": "¿Estudias inglés?:",
+          "prompt": "Do you study English?:",
           "words": [
             "you",
             "Do",
@@ -297,7 +297,7 @@
           "correct": "Do you study English?"
         },
         {
-          "prompt": "Él va al gimnasio:",
+          "prompt": "He goes to the gym:",
           "words": [
             "goes",
             "He",
@@ -308,7 +308,7 @@
           "correct": "He goes to the gym"
         },
         {
-          "prompt": "Ella no vive aquí:",
+          "prompt": "She doesn't live here:",
           "words": [
             "doesn't",
             "She",
@@ -318,7 +318,7 @@
           "correct": "She doesn't live here"
         },
         {
-          "prompt": "¿Ella habla francés?:",
+          "prompt": "Does she speak French?:",
           "words": [
             "she",
             "Does",
@@ -338,7 +338,7 @@
           "correct": "I wake up early"
         },
         {
-          "prompt": "El sol sale por el este:",
+          "prompt": "The sun rises in the east:",
           "words": [
             "The",
             "rises",
@@ -356,7 +356,7 @@
     "id": "m2-ch1-quiz",
     "type": "quiz",
     "title": "Quiz: Presente Simple",
-    "description": "Demuestra tu dominio del presente simple.",
+    "description": "Demonstrate your mastery of the present simple.",
     "props": {
       "questions": [
         {
@@ -459,8 +459,8 @@
   {
     "id": "m2-ch1-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario del Presente Simple",
-    "description": "Descifra palabras clave de rutinas y hábitos.",
+    "title": "Simple Present Vocabulary",
+    "description": "Decipher key words from routines and habits.",
     "props": {
       "words": [
         {
@@ -485,12 +485,12 @@
         },
         {
           "word": "DAILY",
-          "hint": "Diario; cada día",
+          "hint": "Diary; daily",
           "category": "Present Simple"
         },
         {
           "word": "ROUTINE",
-          "hint": "Rutina; actividades habituales",
+          "hint": "Routine; usual activities",
           "category": "Present Simple"
         }
       ]

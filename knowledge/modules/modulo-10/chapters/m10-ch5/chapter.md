@@ -1,43 +1,43 @@
 ---
 id: m10-ch5
-moduleId: modulo-10
+moduleId: module-10
 number: 5
-title: ¡A leer se ha dicho!
-subtitle: Comprensión lectora en artículos y blogs interactivos
+title: Let's read it has been said!
+subtitle: Reading comprehension in interactive articles and blogs
 icon: 📖
 color: "#0ea5e9"
 objectives:
-  - Leer y comprender textos de nivel intermedio (artículos, blogs, emails)
-  - Identificar ideas principales y detalles específicos
-  - Deducir vocabulario por contexto
-  - Resumir información de textos leídos
+  - Read and understand intermediate level texts (articles, blogs, emails)
+  - Identify main ideas and specific details
+  - Deduce vocabulary by context
+  - Summarize information from read texts
 xpReward: 300
 ---
 
-## Comprensión Lectora — Lectura Estratégica en 3 Fases
+## Reading Comprehension — Strategic Reading in 3 Phases
 
-Leer en inglés no significa traducir palabra por palabra. Se trata de **estrategias** que te permiten comprender textos de forma eficiente.
+Reading in English does not mean translating word for word. These are **strategies** that allow you to understand texts efficiently.
 
-### Fase 1: Pre-reading (Antes de leer)
-- **Activa tu conocimiento previo:** ¿Qué sabes sobre el tema?
-- **Predice:** Mira el título, subtítulos e imágenes. ¿De qué tratará?
-- **Vocabulario clave:** Aprende 5-8 palabras importantes antes de leer.
+### Phase 1: Pre-reading (Before reading)
+- **Activate your prior knowledge:** What do you know about the topic?
+- **Predict:** Look at the title, subtitles and images. What will it be about?
+- **Key Vocabulary:** Learn 5-8 important words before reading.
 
-### Fase 2: While-reading (Durante la lectura)
-1. **Skimming** — Lectura rápida para la idea general (1 minuto)
-2. **Scanning** — Buscar información específica
-3. **Lectura detallada** — Comprensión profunda
+### Phase 2: While-reading
+1. **Skimming** — Quick read for general idea (1 minute)
+2. **Scanning** — Search for specific information
+3. **Detailed reading** — Deep understanding
 
-> 💡 **Tip:** Si encuentras una palabra desconocida, intenta deducir su significado por el contexto antes de buscarla en el diccionario.
+> 💡 **Tip:** If you find an unknown word, try to deduce its meaning from the context before looking it up in the dictionary.
 
-### Fase 3: Post-reading (Después de leer)
-- Responde preguntas de comprensión
-- Haz inferencias (lee "entre líneas")
-- Conecta con tu experiencia personal
+### Phase 3: Post-reading (After reading)
+- Answer comprehension questions
+- Make inferences (read "between the lines")
+- Connect with your personal experience
 
 ---
 
-### 📄 Artículo de práctica: "The Benefits of Regular Exercise"
+### 📄 Practice article: "The Benefits of Regular Exercise"
 
 Regular exercise is one of the most important things you can do for your health. Research **highlights** that physical activity can improve your mental health, help you manage your weight, and reduce the risk of disease.
 
@@ -51,9 +51,9 @@ You don't need to spend hours at the gym. Even a 30-minute walk can make a signi
 
 ---
 
-### Vocabulario del texto
+### Text vocabulary
 
-| Palabra | En el texto significa | Español |
+| Word | In the text it means | Spanish |
 |---|---|---|
 | highlights | emphasizes, draws attention to | resalta, enfatiza |
 | consistency | doing something regularly | constancia |

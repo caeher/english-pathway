@@ -1,15 +1,15 @@
 ---
 id: m6-ch3
-moduleId: modulo-6
+moduleId: module-6
 number: 3
 title: Second Conditional
 subtitle: If + past simple, would + base verb
 icon: 💭
 color: "#10b981"
 objectives:
-  - "Formar el segundo condicional: if + past simple, would + base verb"
-  - Usarlo para situaciones hipotéticas o irreales
-  - "Usar \"were\" en lugar de \"was\" en el condicional"
+  - "Form the second conditional: if + past simple, would + base verb"
+  - Use it for hypothetical or unreal situations
+  - "Use \"were\" instead of \"was\" in the conditional"
 xpReward: 180
 ---
 
@@ -22,12 +22,12 @@ xpReward: 180
 | If I **had** more money, | I **would buy** a house. |
 | If she **knew** the answer, | she **would tell** us. |
 
-### Uso: situaciones irreales, hipotéticas o improbables
-- Cosas que **NO son reales** ahora o que es **improbable** que pasen.
+### Use: unreal, hypothetical or improbable situations
+- Things that are **NOT real** now or are **unlikely** to happen.
 - If I **were** rich, I **would travel** the world. (No soy rico)
 - If I **had** wings, I **would fly**. (No tengo alas)
 
-### If I were… (NOT "was" en condicionales)
+### If I were… (NOT "was" in conditionals)
 - ✅ If I **were** you, I would study more.
 - ✅ If she **were** here, she would help us.
 - (In informal English, "was" is sometimes used, but "were" is grammatically correct for all subjects.)

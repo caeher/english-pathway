@@ -2,8 +2,8 @@
   {
     "id": "m11-ch1-svg",
     "type": "svg-scene",
-    "title": "Mi Línea del Tiempo",
-    "description": "Explora los hitos de vida y descubre el presente perfecto en cada experiencia.",
+    "title": "My Timeline",
+    "description": "Explore life milestones and discover the perfect present in each experience.",
     "props": {
       "scene": {
         "viewBox": "0 0 750 260",
@@ -17,7 +17,7 @@
             "width": 630,
             "height": 6,
             "fill": "#0ea5e9",
-            "label": "Línea del tiempo",
+            "label": "timeline",
             "labelEn": "Timeline — From past to present"
           },
           {
@@ -77,7 +77,7 @@
             "cy": 128,
             "r": 20,
             "fill": "#ef4444",
-            "label": "Ahora ⭐",
+            "label": "Now ⭐",
             "labelEn": "Now — All these experiences are part of who I am"
           },
           {
@@ -85,7 +85,7 @@
             "type": "polygon",
             "points": "700,128 690,118 690,138",
             "fill": "#0ea5e9",
-            "label": "Continúa...",
+            "label": "Continue...",
             "labelEn": "Life continues... What will you do next?"
           }
         ]
@@ -95,8 +95,8 @@
   {
     "id": "m11-ch1-quiz",
     "type": "quiz",
-    "title": "¿Pasado Simple o Presente Perfecto?",
-    "description": "Elige el tiempo verbal correcto según el contexto. ¡Cuidado con los marcadores temporales!",
+    "title": "Past Simple or Present Perfect?",
+    "description": "Choose the correct verb tense according to the context. Be careful with temporary markers!",
     "props": {
       "questions": [
         {
@@ -110,7 +110,7 @@
             "was living"
           ],
           "correct": 1,
-          "explanation": "\"For 10 years\" (hasta ahora) → present perfect: \"I have lived here for 10 years.\""
+          "explanation": "\"For 10 years\" → present perfect: \"I have lived here for 10 years.\""
         },
         {
           "id": "q2",
@@ -123,7 +123,7 @@
             "visits"
           ],
           "correct": 1,
-          "explanation": "\"Last summer\" = tiempo específico → past simple: \"She visited Rome last summer.\""
+          "explanation": "\"Last summer\" = specific time → past simple: \"She visited Rome last summer.\""
         },
         {
           "id": "q3",
@@ -238,11 +238,11 @@
     "id": "m11-ch1-sentence",
     "type": "sentence-builder",
     "title": "Have You Ever...?",
-    "description": "Construye preguntas y oraciones en presente perfecto sobre experiencias de vida.",
+    "description": "Build questions and sentences in the present perfect about life experiences.",
     "props": {
       "sentences": [
         {
-          "prompt": "Pregunta sobre viajes:",
+          "prompt": "Travel question:",
           "words": [
             "you",
             "Have",
@@ -254,7 +254,7 @@
           "correct": "Have you ever been to Japan?"
         },
         {
-          "prompt": "Habla de un logro:",
+          "prompt": "Talk about an achievement:",
           "words": [
             "has",
             "She",
@@ -266,7 +266,7 @@
           "correct": "She has just finished her homework"
         },
         {
-          "prompt": "Habla de experiencia:",
+          "prompt": "Speaks from experience:",
           "words": [
             "have",
             "I",
@@ -277,7 +277,7 @@
           "correct": "I have never tried sushi"
         },
         {
-          "prompt": "Describe duración:",
+          "prompt": "Describe duration:",
           "words": [
             "have",
             "We",
@@ -290,7 +290,7 @@
           "correct": "We have lived here for five years"
         },
         {
-          "prompt": "Pregunta sobre experiencia:",
+          "prompt": "Question about experience:",
           "words": [
             "Has",
             "he",
@@ -302,7 +302,7 @@
           "correct": "Has he ever ridden a horse?"
         },
         {
-          "prompt": "Habla de logro:",
+          "prompt": "Talk about achievement:",
           "words": [
             "have",
             "They",
@@ -313,7 +313,7 @@
           "correct": "They have already eaten lunch"
         },
         {
-          "prompt": "Duración con since:",
+          "prompt": "Duration with since:",
           "words": [
             "has",
             "She",
@@ -338,7 +338,7 @@
           "correct": "I have not seen the movie yet"
         },
         {
-          "prompt": "Pregunta con ever:",
+          "prompt": "Ask with ever:",
           "words": [
             "you",
             "Have",
@@ -367,7 +367,7 @@
     "id": "m11-ch1-flash",
     "type": "flashcard",
     "title": "Participios Irregulares",
-    "description": "Domina las tres formas de los verbos irregulares más importantes.",
+    "description": "Master the three most important irregular verb forms.",
     "props": {
       "cards": [
         {
@@ -497,7 +497,7 @@
     "id": "m11-ch1-match",
     "type": "word-match",
     "title": "Marcador → Tiempo Verbal",
-    "description": "Empareja cada marcador temporal con el tiempo verbal correcto.",
+    "description": "Match each temporal marker with the correct verb tense.",
     "props": {
       "pairs": [
         {
@@ -539,7 +539,7 @@
     "id": "m11-ch1-scramble",
     "type": "word-scramble",
     "title": "Presente Perfecto",
-    "description": "Descifra vocabulario del presente perfecto.",
+    "description": "Decipher vocabulary of the present perfect.",
     "props": {
       "words": [
         {
@@ -564,7 +564,7 @@
         },
         {
           "word": "EVER",
-          "hint": "Alguna vez; en preguntas",
+          "hint": "Ever; in questions",
           "category": "Present Perfect"
         },
         {

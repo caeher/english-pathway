@@ -1,15 +1,15 @@
 ---
 id: m3-ch4
-moduleId: modulo-3
+moduleId: module-3
 number: 4
-title: Futuro con Will y Going To
-subtitle: Predicciones, decisiones y planes para el futuro
+title: Future with Will and Going To
+subtitle: Predictions, decisions and plans for the future
 icon: 🔮
 color: "#f59e0b"
 objectives:
-  - "Formar el futuro con \"will\" y \"be going to\""
-  - Diferenciar cuándo usar cada forma del futuro
-  - Crear negaciones y preguntas en futuro
+  - "Shaping the future with \"will\" and \"be going to\""
+  - Differentiate when to use each future form
+  - Create denials and questions in the future
 xpReward: 160
 ---
 
@@ -41,4 +41,4 @@ xpReward: 160
 | **Promises & offers** | **Intentions** |
 | I'll call you later. | I'm going to learn French. |
 
-> 💡 "Shall" se usa con "I/we" para sugerencias: **Shall** I open the window?
+> 💡 "Shall" is used with "I/we" for suggestions: **Shall** I open the window?

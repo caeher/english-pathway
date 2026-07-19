@@ -2,8 +2,8 @@
   {
     "id": "m5-ch1-svg",
     "type": "svg-scene",
-    "title": "Pasaporte de Experiencias",
-    "description": "Explora el presente perfecto como un pasaporte de vida.",
+    "title": "Passport of Experiences",
+    "description": "Explore the present perfect as a life passport.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -84,7 +84,7 @@
             "height": 60,
             "fill": "#e0e7ff",
             "label": "⏳ YET",
-            "labelEn": "I haven't finished YET. Have you done it YET? (todavía)"
+            "labelEn": "I haven't finished YET. Have you done it YET? (still)"
           },
           {
             "id": "just",
@@ -95,7 +95,7 @@
             "height": 60,
             "fill": "#fce7f3",
             "label": "⚡ JUST",
-            "labelEn": "I've JUST arrived. (acabar de)"
+            "labelEn": "I've JUST arrived. (finish)"
           },
           {
             "id": "warn",
@@ -126,8 +126,8 @@
   {
     "id": "m5-ch1-flash",
     "type": "flashcard",
-    "title": "Presente Perfecto: Conjugación",
-    "description": "Practica la formación del presente perfecto.",
+    "title": "Present Perfect: Conjugation",
+    "description": "Practice forming the present perfect.",
     "props": {
       "cards": [
         {
@@ -170,7 +170,7 @@
           "id": "c7",
           "front": "I / just / arrive",
           "back": "I have just arrived. / I've just arrived.",
-          "example": "\"just\" = acabar de."
+          "example": "\"just\" = finish."
         },
         {
           "id": "c8",
@@ -209,7 +209,7 @@
     "id": "m5-ch1-match",
     "type": "word-match",
     "title": "Verbo Base → Past Participle",
-    "description": "Empareja con el participio pasado correcto.",
+    "description": "Match with the correct past participle.",
     "props": {
       "pairs": [
         {
@@ -251,11 +251,11 @@
     "id": "m5-ch1-sentence",
     "type": "sentence-builder",
     "title": "Cuenta tus Experiencias",
-    "description": "Ordena las palabras para formar oraciones en presente perfecto.",
+    "description": "Order the words to form sentences in the present perfect.",
     "props": {
       "sentences": [
         {
-          "prompt": "He visitado París:",
+          "prompt": "I have visited Paris:",
           "words": [
             "I",
             "have",
@@ -265,7 +265,7 @@
           "correct": "I have visited Paris"
         },
         {
-          "prompt": "¿Has estado alguna vez en Japón?:",
+          "prompt": "Have you ever been to Japan?:",
           "words": [
             "Have",
             "you",
@@ -298,7 +298,7 @@
           "correct": "I have already finished"
         },
         {
-          "prompt": "Ella no ha visto la película todavía:",
+          "prompt": "She hasn't seen the movie yet:",
           "words": [
             "She",
             "hasn't",
@@ -310,7 +310,7 @@
           "correct": "She hasn't seen the movie yet"
         },
         {
-          "prompt": "Acabo de llegar:",
+          "prompt": "I just arrived:",
           "words": [
             "I",
             "have",
@@ -320,7 +320,7 @@
           "correct": "I have just arrived"
         },
         {
-          "prompt": "Él ha escrito tres libros:",
+          "prompt": "He has written three books:",
           "words": [
             "He",
             "has",
@@ -331,7 +331,7 @@
           "correct": "He has written three books"
         },
         {
-          "prompt": "¿Has hecho la tarea?:",
+          "prompt": "Have you done your homework?:",
           "words": [
             "Have",
             "you",
@@ -348,7 +348,7 @@
     "id": "m5-ch1-quiz",
     "type": "quiz",
     "title": "Quiz: Presente Perfecto",
-    "description": "Demuestra tu dominio del presente perfecto.",
+    "description": "Demonstrate your mastery of the present perfect.",
     "props": {
       "questions": [
         {
@@ -427,9 +427,9 @@
         {
           "id": "q8",
           "type": "fill-blank",
-          "question": "\"I've ___ arrived.\" (acabar de)",
+          "question": "\"I've ___ arrived.\" (finish)",
           "correct": "just",
-          "explanation": "just = acabar de (very recently)."
+          "explanation": "just = finish (very recently)."
         },
         {
           "id": "q9",
@@ -458,22 +458,22 @@
     "id": "m5-ch1-scramble",
     "type": "word-scramble",
     "title": "Presente Perfecto",
-    "description": "Descifra palabras clave del presente perfecto.",
+    "description": "Decipher key words from the present perfect.",
     "props": {
       "words": [
         {
           "word": "ALREADY",
-          "hint": "Ya; acción completada",
+          "hint": "Already; action completed",
           "category": "Present Perfect"
         },
         {
           "word": "YET",
-          "hint": "Todavía no; en preguntas y negativas",
+          "hint": "Not yet; in questions and refusals",
           "category": "Present Perfect"
         },
         {
           "word": "EVER",
-          "hint": "Alguna vez; en preguntas",
+          "hint": "Ever; in questions",
           "category": "Present Perfect"
         },
         {
@@ -483,12 +483,12 @@
         },
         {
           "word": "JUST",
-          "hint": "Acabar de; recién",
+          "hint": "finish; newly",
           "category": "Present Perfect"
         },
         {
           "word": "SINCE",
-          "hint": "Desde; punto en el tiempo",
+          "hint": "From; point in time",
           "category": "Present Perfect"
         }
       ]

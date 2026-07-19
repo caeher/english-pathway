@@ -2,8 +2,8 @@
   {
     "id": "m4-ch2-svg",
     "type": "svg-scene",
-    "title": "El Mundo de los Comparativos",
-    "description": "Visualiza cómo se forman los comparativos.",
+    "title": "The World of Comparatives",
+    "description": "Visualize how the comparisons are formed.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -115,8 +115,8 @@
   {
     "id": "m4-ch2-flash",
     "type": "flashcard",
-    "title": "Forma el Comparativo",
-    "description": "Practica convirtiendo adjetivos en comparativos.",
+    "title": "Form the Comparative",
+    "description": "Practice converting adjectives into comparatives.",
     "props": {
       "cards": [
         {
@@ -198,7 +198,7 @@
     "id": "m4-ch2-match",
     "type": "word-match",
     "title": "Adjetivo → Comparativo",
-    "description": "Empareja cada adjetivo con su comparativo.",
+    "description": "Match each adjective with its comparative.",
     "props": {
       "pairs": [
         {
@@ -240,11 +240,11 @@
     "id": "m4-ch2-sentence",
     "type": "sentence-builder",
     "title": "Compara Dos Cosas",
-    "description": "Ordena las palabras para formar comparaciones.",
+    "description": "Order the words to make comparisons.",
     "props": {
       "sentences": [
         {
-          "prompt": "Ella es más alta que él:",
+          "prompt": "She is taller than him:",
           "words": [
             "She",
             "is",
@@ -255,7 +255,7 @@
           "correct": "She is taller than him"
         },
         {
-          "prompt": "Este libro es más interesante:",
+          "prompt": "This book is more interesting:",
           "words": [
             "This",
             "book",
@@ -269,7 +269,7 @@
           "correct": "This book is more interesting than that one"
         },
         {
-          "prompt": "Mi casa es más grande:",
+          "prompt": "My house is bigger:",
           "words": [
             "My",
             "house",
@@ -281,7 +281,7 @@
           "correct": "My house is bigger than yours"
         },
         {
-          "prompt": "Ella es mejor que yo en matemáticas:",
+          "prompt": "She is better than me at math:",
           "words": [
             "She",
             "is",
@@ -294,7 +294,7 @@
           "correct": "She is better than me at math"
         },
         {
-          "prompt": "Este examen es más fácil:",
+          "prompt": "This exam is easier:",
           "words": [
             "This",
             "exam",
@@ -308,7 +308,7 @@
           "correct": "This exam is easier than the last one"
         },
         {
-          "prompt": "El coche rojo es más caro:",
+          "prompt": "The red car is more expensive:",
           "words": [
             "The",
             "red",
@@ -320,7 +320,7 @@
           "correct": "The red car is more expensive"
         },
         {
-          "prompt": "Hoy hace más calor que ayer:",
+          "prompt": "Today is hotter than yesterday:",
           "words": [
             "Today",
             "is",
@@ -331,7 +331,7 @@
           "correct": "Today is hotter than yesterday"
         },
         {
-          "prompt": "Ella es más feliz ahora:",
+          "prompt": "She is happier now:",
           "words": [
             "She",
             "is",
@@ -347,7 +347,7 @@
     "id": "m4-ch2-quiz",
     "type": "quiz",
     "title": "Quiz: Comparativos",
-    "description": "Demuestra tu dominio de los comparativos.",
+    "description": "Demonstrate your mastery of comparatives.",
     "props": {
       "questions": [
         {
@@ -457,37 +457,37 @@
     "id": "m4-ch2-scramble",
     "type": "word-scramble",
     "title": "Comparativos",
-    "description": "Descifra formas comparativas de adjetivos.",
+    "description": "Decipher comparative forms of adjectives.",
     "props": {
       "words": [
         {
           "word": "BIGGER",
-          "hint": "Más grande; comparative de big",
+          "hint": "Bigger; comparative of big",
           "category": "Comparative"
         },
         {
           "word": "SMALLER",
-          "hint": "Más pequeño; comparative de small",
+          "hint": "Smaller; comparative of small",
           "category": "Comparative"
         },
         {
           "word": "FASTER",
-          "hint": "Más rápido; comparative de fast",
+          "hint": "Faster; comparative of fast",
           "category": "Comparative"
         },
         {
           "word": "SLOWER",
-          "hint": "Más lento; comparative de slow",
+          "hint": "Slower; comparative of slow",
           "category": "Comparative"
         },
         {
           "word": "BETTER",
-          "hint": "Mejor; comparative de good",
+          "hint": "Better; comparative of good",
           "category": "Comparative"
         },
         {
           "word": "WORSE",
-          "hint": "Peor; comparative de bad",
+          "hint": "Worse; comparative of bad",
           "category": "Comparative"
         }
       ]

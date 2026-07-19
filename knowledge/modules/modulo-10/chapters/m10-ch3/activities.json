@@ -2,8 +2,8 @@
   {
     "id": "m10-ch3-quiz",
     "type": "quiz",
-    "title": "El Constructor de Puentes",
-    "description": "Elige el conector correcto para unir las dos oraciones.",
+    "title": "The Bridge Builder",
+    "description": "Choose the correct connector to join the two sentences.",
     "props": {
       "questions": [
         {
@@ -17,7 +17,7 @@
             "because"
           ],
           "correct": 0,
-          "explanation": "\"But\" expresa contraste entre querer salir y la lluvia."
+          "explanation": "\"But\" expresses contrast between wanting to go out and the rain."
         },
         {
           "id": "q2",
@@ -30,14 +30,14 @@
             "Because"
           ],
           "correct": 1,
-          "explanation": "\"Therefore\" indica resultado: estudió → aprobó."
+          "explanation": "\"Therefore\" indicates result: studied → passed."
         },
         {
           "id": "q3",
           "type": "fill-blank",
           "question": "I stayed home ___ I was feeling sick.",
           "correct": "because",
-          "explanation": "\"Because\" indica la causa de quedarse en casa."
+          "explanation": "\"Because\" indicates the reason for staying home."
         },
         {
           "id": "q4",
@@ -50,7 +50,7 @@
             "Therefore"
           ],
           "correct": 0,
-          "explanation": "\"Although\" expresa contraste: a pesar de ser caro, lo compró."
+          "explanation": "\"Although\" expresses contrast: despite it being expensive, he bought it."
         },
         {
           "id": "q5",
@@ -63,7 +63,7 @@
             "Because"
           ],
           "correct": 2,
-          "explanation": "\"First\" indica el primer paso en una secuencia."
+          "explanation": "\"First\" indicates the first step in a sequence."
         },
         {
           "id": "q6",
@@ -83,7 +83,7 @@
             "therefore"
           ],
           "correct": 2,
-          "explanation": "\"But\" contrasta el amor por el chocolate con la restricción."
+          "explanation": "\"But\" contrasts the love of chocolate with restriction."
         },
         {
           "id": "q8",
@@ -96,14 +96,14 @@
             "however"
           ],
           "correct": 2,
-          "explanation": "\"So\" indica resultado: llovía → tomé paraguas."
+          "explanation": "\"So\" indicates result: it was raining → I took an umbrella."
         },
         {
           "id": "q9",
           "type": "fill-blank",
           "question": "She speaks English. She ___ speaks French and German.",
           "correct": "also",
-          "explanation": "\"Also\" añade información adicional."
+          "explanation": "\"Also\" adds additional information."
         },
         {
           "id": "q10",
@@ -209,8 +209,8 @@
   {
     "id": "m10-ch3-match",
     "type": "word-match",
-    "title": "Conector → Función",
-    "description": "Empareja cada conector con su función comunicativa.",
+    "title": "Connector → Function",
+    "description": "Match each connector with its communicative function.",
     "props": {
       "pairs": [
         {
@@ -223,7 +223,7 @@
         },
         {
           "left": "moreover",
-          "right": "Adición ➕"
+          "right": "Addition ➕"
         },
         {
           "left": "because",
@@ -239,7 +239,7 @@
         },
         {
           "left": "although",
-          "right": "Concesión 🤝"
+          "right": "Concession 🤝"
         },
         {
           "left": "as a result",
@@ -251,68 +251,68 @@
   {
     "id": "m10-ch3-flash",
     "type": "flashcard",
-    "title": "Flashcards de Conectores",
-    "description": "Aprende cada conector con su categoría, uso y ejemplo.",
+    "title": "Connectors Flashcards",
+    "description": "Learn each connector with its category, use and example.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "HOWEVER 🔄 (Contraste)",
-          "back": "Sin embargo / No obstante — Conecta ideas contrastantes. Más formal que \"but\".",
+          "back": "However / However — Connect contrasting ideas. More formal than \"but.\"",
           "example": "The movie was long. However, it was very entertaining."
         },
         {
           "id": "f2",
           "front": "THEREFORE ➡️ (Resultado)",
-          "back": "Por lo tanto — Indica una conclusión o resultado lógico.",
+          "back": "Therefore — Indicates a logical conclusion or result.",
           "example": "She studied hard. Therefore, she passed the exam."
         },
         {
           "id": "f3",
-          "front": "MOREOVER ➕ (Adición)",
-          "back": "Además — Añade información con énfasis. Formal.",
+          "front": "MOREOVER ➕ (Addition)",
+          "back": "Additionally — Add information with emphasis. Formal.",
           "example": "The hotel is beautiful. Moreover, it is very affordable."
         },
         {
           "id": "f4",
-          "front": "ALTHOUGH 🤝 (Concesión)",
-          "back": "Aunque — Introduce una idea contraria a lo esperado.",
+          "front": "ALTHOUGH 🤝 (Concession)",
+          "back": "Although — Introduces an idea contrary to what was expected.",
           "example": "Although it was raining, we had a great time."
         },
         {
           "id": "f5",
           "front": "BECAUSE 🔍 (Causa)",
-          "back": "Porque — Explica la razón de algo.",
+          "back": "Because — Explains the reason for something.",
           "example": "I couldn't sleep because it was too noisy."
         },
         {
           "id": "f6",
-          "front": "DESPITE 🤝 (Concesión)",
-          "back": "A pesar de — Similar a although pero seguido de noun/-ing.",
+          "front": "BREAK 🤝 (Concession)",
+          "back": "Despite — Similar to although but followed by noun/-ing.",
           "example": "Despite the rain, we went to the park."
         },
         {
           "id": "f7",
-          "front": "IN ADDITION ➕ (Adición)",
-          "back": "Además — Añade información extra. Formal.",
+          "front": "IN ADDITION ➕",
+          "back": "Additionally — Adds extra information. Formal.",
           "example": "In addition, we offer free delivery."
         },
         {
           "id": "f8",
           "front": "AS A RESULT ➡️ (Resultado)",
-          "back": "Como resultado — Indica consecuencia. Formal.",
+          "back": "As a result — Indicates consequence. Formal.",
           "example": "The company grew. As a result, they hired more people."
         },
         {
           "id": "f9",
           "front": "SINCE 🔍 (Causa)",
-          "back": "Ya que / Puesto que — Causa conocida. Más formal que because.",
+          "back": "Since / Since — Known cause. More formal than because.",
           "example": "Since you're already here, let's start."
         },
         {
           "id": "f10",
           "front": "FOR INSTANCE 📌 (Ejemplo)",
-          "back": "Por ejemplo — Introduce un ejemplo concreto.",
+          "back": "For example — Enter a concrete example.",
           "example": "Many fruits are healthy. For instance, oranges have vitamin C."
         }
       ]
@@ -321,38 +321,38 @@
   {
     "id": "m10-ch3-scramble",
     "type": "word-scramble",
-    "title": "Conectores en Inglés",
-    "description": "Descifra conectores que organizan ideas en conversaciones profundas.",
+    "title": "Connectors in English",
+    "description": "Decipher connectors that organize ideas into deep conversations.",
     "props": {
       "words": [
         {
           "word": "HOWEVER",
-          "hint": "Sin embargo; contrasta ideas",
+          "hint": "However; contrast ideas",
           "category": "Connectors"
         },
         {
           "word": "ALTHOUGH",
-          "hint": "Aunque; introduce concesión",
+          "hint": "Although; introduce concession",
           "category": "Connectors"
         },
         {
           "word": "THEREFORE",
-          "hint": "Por lo tanto; indica resultado",
+          "hint": "Therefore; indicates result",
           "category": "Connectors"
         },
         {
           "word": "MOREOVER",
-          "hint": "Además; añade información (formal)",
+          "hint": "Besides; add information (formal)",
           "category": "Connectors"
         },
         {
           "word": "BECAUSE",
-          "hint": "Porque; explica la causa",
+          "hint": "Because; explain the cause",
           "category": "Connectors"
         },
         {
           "word": "DESPITE",
-          "hint": "A pesar de; concesión",
+          "hint": "Although; concession",
           "category": "Connectors"
         }
       ]

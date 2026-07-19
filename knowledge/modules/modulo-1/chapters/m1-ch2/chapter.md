@@ -1,58 +1,58 @@
 ---
 id: m1-ch2
-moduleId: modulo-1
+moduleId: module-1
 number: 2
-title: Saludos, Presentaciones y Vocabulario Esencial
-subtitle: Saluda, preséntate y aprende las palabras más usadas
+title: Greetings, Introductions and Essential Vocabulary
+subtitle: Say hello, introduce yourself and learn the most used words
 icon: 👋
 color: "#10b981"
 objectives:
-  - Saludar y despedirse en diferentes contextos (formal e informal)
-  - Presentarse y preguntar el nombre de otras personas
-  - "Dominar vocabulario cotidiano: familia, colores, comida, objetos"
+  - Greet and say goodbye in different contexts (formal and informal)
+  - Introduce yourself and ask other people's names
+  - "Master everyday vocabulary: family, colors, food, objects"
 xpReward: 120
 ---
 
-## Greetings & Introductions — Saludos y Presentaciones
+## Greetings & Introductions — Greetings and Introductions
 
-### Saludos informales
-- **Hi!** / **Hey!** — ¡Hola!
-- **What's up?** — ¿Qué tal?
-- **How's it going?** — ¿Cómo va?
+### Informal greetings
+- **Hi!** / **Hey!** — Hello!
+- **What's up?** — How are you?
+- **How's it going?** — How's it going?
 
-### Saludos formales
-- **Good morning** (mañana) / **Good afternoon** (tarde) / **Good evening** (noche)
-- **How do you do?** — Mucho gusto (muy formal)
+### Formal greetings
+- **Good morning** / **Good afternoon** / **Good evening**
+- **How ​​do you do?** — Nice to meet you (very formal)
 
-### Presentaciones
-- **My name is…** / **I'm…** — Me llamo… / Soy…
-- **Nice to meet you!** — ¡Encantado/a de conocerte!
-- **What's your name?** — ¿Cómo te llamas?
-- **Where are you from?** — ¿De dónde eres?
-- **I'm from…** — Soy de…
+### Presentations
+- **My name is…** / **I'm…** — My name is… / I am…
+- **Nice to meet you!** — Nice to meet you!
+- **What's your name?** — What's your name?
+- **Where are you from?** — Where are you from?
+- **I'm from…**
 
-### Despedidas
-- **Bye! / Goodbye!** — ¡Adiós!
-- **See you later!** — ¡Hasta luego!
-- **See you tomorrow!** — ¡Hasta mañana!
-- **Have a nice day!** — ¡Que tengas buen día!
+### Farewells
+- **Bye! / Goodbye!** — Goodbye!
+- **See you later!** — See you later!
+- **See you tomorrow!** — See you tomorrow!
+- **Have a nice day!** — Have a nice day!
 
-### Expresiones de cortesía
-- **Please** — Por favor
-- **Thank you / Thanks** — Gracias
-- **Excuse me** — Disculpe / Con permiso
-- **Sorry** — Lo siento / Perdón
+### Expressions of courtesy
+- **Please** — Please
+- **Thank you / Thanks** — Thank you
+- **Excuse me** — Excuse me / With permission
+- **Sorry** — Sorry / Sorry
 
-### Familia extendida
-- **uncle** (tío), **aunt** (tía), **cousin** (primo/a)
-- **grandfather / grandpa** (abuelo), **grandmother / grandma** (abuela)
-- **grandparents** (abuelos)
+### extended family
+- **uncle** (uncle), **aunt** (aunt), **cousin** (cousin)
+- **grandfather / grandpa** (grandfather), **grandmother / grandma** (grandmother)
+- **grandparents**
 
-### Más comida y objetos
-- **vegetables** (vegetales), **meat** (carne), **fish** (pescado), **dessert** (postre)
-- **chair** (silla), **desk** (escritorio), **lamp** (lámpara)
+### More food and objects
+- **vegetables**, **meat**, **fish**, **dessert**
+- **chair**, **desk**, **lamp**
 
-### Colores adicionales
-- **gray** (gris), **silver** (plateado), **gold** (dorado)
+### Additional colors
+- **gray**, **silver**, **gold**
 
-> 💡 **Tip:** En inglés es común preguntar "How are you?" como saludo. La respuesta estándar es "I'm fine, thanks. And you?"
+> 💡 **Tip:** In English it is common to ask "How are you?" as a greeting The standard response is "I'm fine, thanks. And you?"

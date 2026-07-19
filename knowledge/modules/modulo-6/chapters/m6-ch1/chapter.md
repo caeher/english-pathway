@@ -1,15 +1,15 @@
 ---
 id: m6-ch1
-moduleId: modulo-6
+moduleId: module-6
 number: 1
 title: Zero Conditional
-subtitle: If + simple present + simple present — Hechos y causa-efecto
+subtitle: If + simple present + simple present — Facts and cause-effect
 icon: ☀️
 color: "#22c55e"
 objectives:
-  - "Formar el condicional cero: If + present simple + present simple"
-  - Usarlo para hechos científicos, generalizaciones y causa-efecto directo
-  - Diferenciar el zero conditional del first conditional
+  - "Form the zero conditional: If + present simple + present simple"
+  - Use it for scientific facts, generalizations and direct cause-effect
+  - Differentiate the zero conditional from the first conditional
 xpReward: 160
 ---
 
@@ -23,21 +23,21 @@ xpReward: 160
 | If it **rains**, | the ground **gets** wet. |
 
 ### Uso: hechos, verdades y causa-efecto directo
-- **No se establece una condición compleja** — solo un hecho: si pasa X, pasa Y.
-- Hechos científicos: If you **heat** water to 100°C, it **boils**.
+- **No complex condition stated** — just a fact: if X passes, Y passes.
+- Scientific facts: If you **heat** water to 100°C, it **boils**.
 - Generalizaciones: If I **eat** too much, I **feel** sick.
 - Rutinas/preferencias: If I **have** free time, I **read**.
 - Reglas: If you **mix** red and blue, you **get** purple.
 
-### Diferencia con First Conditional
+### Difference with First Conditional
 | Zero Conditional | First Conditional |
 |-----------------|-------------------|
-| Hecho general, siempre cierto | Situación futura posible |
+| General fact, always true | Possible future situation |
 | If + present, **present** | If + present, **will** |
 | If it rains, the ground **gets** wet. | If it rains, I **will stay** home. |
-| (Cada vez que llueve) | (Si llueve en el futuro) |
+| (Every time it rains) | (If it rains in the future) |
 
-### When = If (a menudo intercambiables en zero)
+### When = If (often interchangeable at zero)
 - **When** you heat ice, it melts. = **If** you heat ice, it melts.
 - **When** I'm tired, I go to bed early.
 

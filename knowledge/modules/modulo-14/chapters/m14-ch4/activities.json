@@ -2,8 +2,8 @@
   {
     "id": "m14-ch4-quiz",
     "type": "quiz",
-    "title": "Diagnóstico de Necesidades",
-    "description": "Evalúa tus fortalezas, debilidades y preferencias para generar un plan personalizado.",
+    "title": "Needs Diagnosis",
+    "description": "Evaluate your strengths, weaknesses and preferences to generate a personalized plan.",
     "props": {
       "questions": [
         {
@@ -131,7 +131,7 @@
     "id": "m14-ch4-match",
     "type": "word-match",
     "title": "Recurso → Habilidad",
-    "description": "Empareja cada recurso con la habilidad que mejor desarrolla.",
+    "description": "Match each resource with the skill it best develops.",
     "props": {
       "pairs": [
         {
@@ -172,68 +172,68 @@
   {
     "id": "m14-ch4-flash",
     "type": "flashcard",
-    "title": "Vocabulario de Metacognición",
-    "description": "Aprende las palabras sobre aprendizaje para hablar sobre tu propio proceso en inglés.",
+    "title": "Metacognition Vocabulary",
+    "description": "Learn the words about learning to talk about your own process in English.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "SPACED REPETITION 🔄",
-          "back": "Técnica que revisa material a intervalos crecientes. Se basa en la curva del olvido. Apps como Anki la usan.",
+          "back": "Technique that reviews material at increasing intervals. It is based on the forgetting curve. Apps like Anki use it.",
           "example": "I use spaced repetition to memorize vocabulary — I review words at increasing intervals."
         },
         {
           "id": "f2",
           "front": "INPUT HYPOTHESIS (Krashen) 📥",
-          "back": "Adquirimos un idioma cuando recibimos input comprensible ligeramente por encima de nuestro nivel (i+1).",
+          "back": "We acquire a language when we receive comprehensible input slightly above our level (i+1).",
           "example": "Watching English shows with subtitles provides comprehensible input."
         },
         {
           "id": "f3",
           "front": "IMMERSION 🌊",
-          "back": "Rodearte del idioma: teléfono en inglés, series sin subtítulos, pensar en inglés.",
+          "back": "Surround yourself with the language: telephone in English, series without subtitles, think in English.",
           "example": "I created an immersion environment by changing all my devices to English."
         },
         {
           "id": "f4",
           "front": "FEEDBACK LOOP 🔁",
-          "back": "Ciclo de práctica → error → corrección → mejora. Sin feedback, no hay mejora.",
+          "back": "Cycle of practice → error → correction → improvement. Without feedback, there is no improvement.",
           "example": "iTalki provides a great feedback loop — my tutor corrects me in real time."
         },
         {
           "id": "f5",
           "front": "OUTPUT PRACTICE 📤",
-          "back": "Producir el idioma activamente (hablar, escribir), no solo recibirlo (leer, escuchar).",
+          "back": "Actively produce the language (speaking, writing), not just receiving it (reading, listening).",
           "example": "Writing a journal in English is great output practice."
         },
         {
           "id": "f6",
           "front": "SELF-ASSESSMENT 🪞",
-          "back": "Evaluar tu propio nivel y progreso. Clave para dirigir tu aprendizaje autónomo.",
+          "back": "Evaluate your own level and progress. Key to directing your autonomous learning.",
           "example": "Regular self-assessment helps me identify areas that need more practice."
         },
         {
           "id": "f7",
           "front": "SMART GOALS 🎯",
-          "back": "Metas: Specific, Measurable, Achievable, Relevant, Time-bound. Estructura para objetivos efectivos.",
+          "back": "Goals: Specific, Measurable, Achievable, Relevant, Time-bound. Structure for effective objectives.",
           "example": "My SMART goal: 3 conversations per week on iTalki for 2 months."
         },
         {
           "id": "f8",
           "front": "COMPREHENSIBLE INPUT 📥",
-          "back": "Material que puedes entender en su mayoría (90-95%) con algo nuevo. El \"sweet spot\" para aprender.",
+          "back": "Material you can understand mostly (90-95%) with something new. The \"sweet spot\" to learn.",
           "example": "Podcasts for intermediate learners provide comprehensible input at my level."
         },
         {
           "id": "f9",
           "front": "ACTIVE RECALL 🧠",
-          "back": "Intentar recordar información ANTES de verla. Más efectivo que simplemente releer.",
+          "back": "Try to remember information BEFORE seeing it. More effective than simply rereading.",
           "example": "I practice active recall by covering the English word and trying to remember it."
         },
         {
           "id": "f10",
           "front": "ACCOUNTABILITY PARTNER 🤝",
-          "back": "Persona que verifica tu progreso regularmente. Te mantiene comprometido.",
+          "back": "Person who checks your progress regularly. It keeps you engaged.",
           "example": "My accountability partner and I check in every Sunday to review our English goals."
         }
       ]
@@ -243,7 +243,7 @@
     "id": "m14-ch4-sentence",
     "type": "sentence-builder",
     "title": "Mi Plan SMART",
-    "description": "Construye metas SMART de aprendizaje en inglés.",
+    "description": "Build SMART learning goals in English.",
     "props": {
       "sentences": [
         {
@@ -359,8 +359,8 @@
   {
     "id": "m14-ch4-svg",
     "type": "svg-scene",
-    "title": "Mapa de Recursos por Nivel",
-    "description": "Explora los mejores recursos organizados por habilidad y nivel.",
+    "title": "Resource Map by Level",
+    "description": "Explore the best resources organized by skill and level.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -451,7 +451,7 @@
             "rx": 80,
             "ry": 35,
             "fill": "#fbbf24",
-            "label": "Todos los niveles: Anki",
+            "label": "All levels: Anki",
             "labelEn": "📚 All Levels: Anki"
           },
           {
@@ -472,38 +472,38 @@
   {
     "id": "m14-ch4-scramble",
     "type": "word-scramble",
-    "title": "Autoaprendizaje",
-    "description": "Descifra vocabulario de recursos.",
+    "title": "Self-directed learning",
+    "description": "Decipher resource vocabulary.",
     "props": {
       "words": [
         {
           "word": "RESOURCE",
-          "hint": "Recurso; material útil",
+          "hint": "Resource; useful material",
           "category": "Self-learning"
         },
         {
           "word": "ONLINE",
-          "hint": "En línea; por internet",
+          "hint": "Online; online",
           "category": "Self-learning"
         },
         {
           "word": "PRACTICE",
-          "hint": "Práctica; ejercicio",
+          "hint": "Practice; exercise",
           "category": "Self-learning"
         },
         {
           "word": "TUTORIAL",
-          "hint": "Tutorial; guía paso a paso",
+          "hint": "Tutorial; step by step guide",
           "category": "Self-learning"
         },
         {
           "word": "GUIDE",
-          "hint": "Guía; instructivo",
+          "hint": "Guide; instructive",
           "category": "Self-learning"
         },
         {
           "word": "STRATEGY",
-          "hint": "Estrategia; plan de acción",
+          "hint": "Strategy; plan of action",
           "category": "Self-learning"
         }
       ]

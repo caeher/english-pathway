@@ -2,8 +2,8 @@
   {
     "id": "m13-ch1-quiz",
     "type": "quiz",
-    "title": "La Entrevista Simulada",
-    "description": "Simula una entrevista de trabajo completa. Elige la mejor respuesta para cada pregunta.",
+    "title": "The Mock Interview",
+    "description": "Simulate a complete job interview. Choose the best answer for each question.",
     "props": {
       "questions": [
         {
@@ -131,7 +131,7 @@
     "id": "m13-ch1-sentence",
     "type": "sentence-builder",
     "title": "Estructura STAR",
-    "description": "Construye respuestas STAR ordenando las partes correctamente.",
+    "description": "Construct STAR answers by ordering the parts correctly.",
     "props": {
       "sentences": [
         {
@@ -248,80 +248,80 @@
   {
     "id": "m13-ch1-flash",
     "type": "flashcard",
-    "title": "Power Words para el CV",
-    "description": "Domina los verbos de acción profesionales para entrevistas y currículum.",
+    "title": "Power Words for CV",
+    "description": "Master professional action verbs for interviews and resumes.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "MANAGED ⚙️",
-          "back": "Gestioné / Administré — Para describir liderazgo y gestión de equipos o proyectos.",
+          "back": "Managed / Administered — To describe leadership and management of teams or projects.",
           "example": "I managed a team of 15 engineers across three departments."
         },
         {
           "id": "f2",
           "front": "IMPLEMENTED ⚙️",
-          "back": "Implementé / Puse en práctica — Para describir acciones concretas que ejecutaste.",
+          "back": "I implemented / I put into practice — To describe concrete actions that you carried out.",
           "example": "I implemented a new filing system that reduced processing time by 30%."
         },
         {
           "id": "f3",
           "front": "ACHIEVED 🏆",
-          "back": "Logré / Alcancé — Para resultados medibles y metas cumplidas.",
+          "back": "I Achieved / Achieved — For measurable results and accomplished goals.",
           "example": "I achieved a 25% increase in quarterly sales."
         },
         {
           "id": "f4",
           "front": "DEVELOPED 🔧",
-          "back": "Desarrollé / Creé — Para proyectos, programas o sistemas nuevos.",
+          "back": "Developed / Created — For new projects, programs or systems.",
           "example": "I developed a training program for new employees."
         },
         {
           "id": "f5",
           "front": "COORDINATED 🤝",
-          "back": "Coordiné — Para trabajo inter-equipos y organización.",
+          "back": "Coordinated — For inter-team work and organization.",
           "example": "I coordinated cross-department meetings to align our goals."
         },
         {
           "id": "f6",
           "front": "LED 👑",
-          "back": "Lideré / Dirigí — Más fuerte que \"managed\". Para roles de liderazgo.",
+          "back": "I led / Directed — Stronger than \"managed.\" For leadership roles.",
           "example": "I led the digital transformation initiative for the entire company."
         },
         {
           "id": "f7",
           "front": "STREAMLINED 📈",
-          "back": "Optimicé / Simplifiqué — Para mejoras de eficiencia.",
+          "back": "Optimize / Simplify — For efficiency improvements.",
           "example": "I streamlined the onboarding process, reducing it from 2 weeks to 3 days."
         },
         {
           "id": "f8",
           "front": "NEGOTIATED 🤝",
-          "back": "Negocié — Para acuerdos, contratos, condiciones.",
+          "back": "I negotiated — For agreements, contracts, conditions.",
           "example": "I negotiated a partnership deal worth $2 million."
         },
         {
           "id": "f9",
           "front": "RESOLVED 🔍",
-          "back": "Resolví — Para problemas y conflictos.",
+          "back": "I resolved — For problems and conflicts.",
           "example": "I resolved a critical client complaint that saved the account."
         },
         {
           "id": "f10",
           "front": "SPEARHEADED 🚀",
-          "back": "Encabecé / Lideré desde cero — Para iniciativas que tú empezaste.",
+          "back": "I spearheaded/led from scratch — For initiatives you started.",
           "example": "I spearheaded the launch of our mobile app."
         },
         {
           "id": "f11",
           "front": "RELIABLE 💎 (Adjective)",
-          "back": "Confiable — Cualidad que muestra que se puede contar contigo.",
+          "back": "Reliable — A quality that shows you can be counted on.",
           "example": "I'm a reliable team member who consistently meets deadlines."
         },
         {
           "id": "f12",
           "front": "PROACTIVE 🎯 (Adjective)",
-          "back": "Proactivo — Anticipas problemas y actúas sin que te lo pidan.",
+          "back": "Proactive — You anticipate problems and act without being asked.",
           "example": "I take a proactive approach to identifying potential issues."
         }
       ]
@@ -330,8 +330,8 @@
   {
     "id": "m13-ch1-match",
     "type": "word-match",
-    "title": "Pregunta → Tipo de Respuesta",
-    "description": "Empareja cada pregunta de entrevista con la estrategia de respuesta correcta.",
+    "title": "Question → Answer Type",
+    "description": "Match each interview question with the correct answer strategy.",
     "props": {
       "pairs": [
         {
@@ -372,8 +372,8 @@
   {
     "id": "m13-ch1-svg",
     "type": "svg-scene",
-    "title": "La Oficina de Entrevistas",
-    "description": "Recorre la oficina y practica en cada estación: saludo, small talk, entrevista y negociación.",
+    "title": "The Interview Office",
+    "description": "Walk around the office and practice at each station: greeting, small talk, interview and negotiation.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -387,7 +387,7 @@
             "width": 130,
             "height": 80,
             "fill": "#fef3c7",
-            "label": "Recepción — Saludo profesional",
+            "label": "Reception — Professional greeting",
             "labelEn": "🏢 Reception"
           },
           {
@@ -398,7 +398,7 @@
             "width": 130,
             "height": 80,
             "fill": "#e2e8f0",
-            "label": "Sala de espera — Small talk",
+            "label": "Waiting room — Small talk",
             "labelEn": "🪑 Waiting Area"
           },
           {
@@ -409,7 +409,7 @@
             "width": 160,
             "height": 120,
             "fill": "#93c5fd",
-            "label": "Sala de entrevista — Preguntas principales",
+            "label": "Interview room — Main questions",
             "labelEn": "💼 Interview Room"
           },
           {
@@ -420,7 +420,7 @@
             "width": 130,
             "height": 120,
             "fill": "#fbbf24",
-            "label": "Mesa de negociación — Salario y condiciones",
+            "label": "Negotiation table – Salary and conditions",
             "labelEn": "🤝 Negotiation"
           },
           {
@@ -431,7 +431,7 @@
             "width": 100,
             "height": 50,
             "fill": "#a3a3a3",
-            "label": "Escritorio del entrevistador",
+            "label": "Interviewer's desk",
             "labelEn": "🪑 Interviewer Desk"
           },
           {
@@ -452,18 +452,18 @@
   {
     "id": "m13-ch1-scramble",
     "type": "word-scramble",
-    "title": "Inglés para el Trabajo",
+    "title": "English for Work",
     "description": "Descifra vocabulario laboral.",
     "props": {
       "words": [
         {
           "word": "MEETING",
-          "hint": "Reunión; junta",
+          "hint": "Meeting; board",
           "category": "Work"
         },
         {
           "word": "DEADLINE",
-          "hint": "Fecha límite",
+          "hint": "Deadline",
           "category": "Work"
         },
         {
@@ -473,7 +473,7 @@
         },
         {
           "word": "COLLEAGUE",
-          "hint": "Colega; compañero de trabajo",
+          "hint": "Colleague; coworker",
           "category": "Work"
         },
         {

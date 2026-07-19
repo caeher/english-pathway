@@ -1,15 +1,15 @@
 ---
 id: m3-ch6
-moduleId: modulo-3
+moduleId: module-3
 number: 6
 title: Want to, Like to, Need to
-subtitle: Expresa deseos, gustos y necesidades
+subtitle: Express desires, tastes and needs
 icon: ❤️
 color: "#ec4899"
 objectives:
-  - "Usar \"want to\" para expresar deseos"
-  - "Usar \"like\" con -ing y con \"to\" para gustos"
-  - "Usar \"need to\" para necesidades y \"would like\" para deseos educados"
+  - "Use \"want to\" to express wishes"
+  - "Use \"like\" with -ing and with \"to\" for tastes"
+  - "Use \"need to\" for needs and \"would like\" for polite desires"
 xpReward: 160
 ---
 
@@ -31,7 +31,7 @@ xpReward: 160
 - **Neg:** You **don't need to** hurry. / He **doesn't need to** come.
 - **Q:** **Do** you **need to** leave? / **Does** she **need to** go?
 
-### Would like (me gustaría — más cortés que want)
+### Would like (more polite than want)
 - I**'d like** a coffee. = I **would like** a coffee.
 - I**'d like to** travel. = I **would like to** travel.
 - **Q:** **Would** you **like** some tea?
@@ -42,4 +42,4 @@ xpReward: 160
 | want to | I want to go. | Quiero ir. |
 | like + ing | I like reading. | Me gusta leer. |
 | need to | I need to study. | Necesito estudiar. |
-| would like | I'd like a coffee. | Me gustaría un café. |
+| would like | I'd like a coffee. | I would like a coffee. |

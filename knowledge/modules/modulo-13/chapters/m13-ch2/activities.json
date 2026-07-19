@@ -2,8 +2,8 @@
   {
     "id": "m13-ch2-quiz",
     "type": "quiz",
-    "title": "El Negociador",
-    "description": "Simula una negociación de negocios. Encuentra el balance entre firmeza y diplomacia.",
+    "title": "The Negotiator",
+    "description": "Simulates a business negotiation. Find the balance between firmness and diplomacy.",
     "props": {
       "questions": [
         {
@@ -24,7 +24,7 @@
           "type": "fill-blank",
           "question": "\"Could we perhaps ___ a middle ground on this issue?\"",
           "correct": "find",
-          "explanation": "\"Find a middle ground\" = encontrar un punto medio. Classic compromise phrase."
+          "explanation": "\"Find a middle ground\" = find a middle ground. Classic commitment phrase."
         },
         {
           "id": "q3",
@@ -124,8 +124,8 @@
   {
     "id": "m13-ch2-sentence",
     "type": "sentence-builder",
-    "title": "Reformula con Diplomacia",
-    "description": "Reconstruye frases directas usando lenguaje diplomático y profesional.",
+    "title": "Reformulate with Diplomacy",
+    "description": "Reconstruct direct sentences using diplomatic and professional language.",
     "props": {
       "sentences": [
         {
@@ -232,8 +232,8 @@
   {
     "id": "m13-ch2-match",
     "type": "word-match",
-    "title": "Directo → Diplomático",
-    "description": "Empareja frases directas con sus equivalentes diplomáticos.",
+    "title": "Direct → Diplomatic",
+    "description": "Match direct phrases with their diplomatic equivalents.",
     "props": {
       "pairs": [
         {
@@ -274,68 +274,68 @@
   {
     "id": "m13-ch2-flash",
     "type": "flashcard",
-    "title": "Arsenal del Negociador",
-    "description": "Domina las expresiones esenciales para cada fase de una negociación.",
+    "title": "Negotiator's Arsenal",
+    "description": "Master the essential expressions for each phase of a negotiation.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "I'D LIKE TO SUGGEST... 📋 (Proponer)",
-          "back": "Me gustaría sugerir... — Abre una propuesta de forma educada y profesional.",
+          "back": "I would like to suggest... — Open a proposal in a polite and professional manner.",
           "example": "I'd like to suggest we extend the deadline by two weeks."
         },
         {
           "id": "f2",
           "front": "COULD WE MEET HALFWAY? 🤝 (Compromiso)",
-          "back": "¿Podríamos encontrar un punto medio? — Para cuando ambas partes están lejos.",
+          "back": "Could we find a middle ground? — For when both parties are far away.",
           "example": "We're asking for 20%, you're offering 5%. Could we meet halfway at 12%?"
         },
         {
           "id": "f3",
-          "front": "I'M AFRAID THAT WON'T WORK ❌ (Rechazo diplomático)",
-          "back": "Me temo que eso no funcionará — Rechazo suave y profesional.",
+          "front": "I'M AFRAID THAT WON'T WORK ❌ (Diplomatic rejection)",
+          "back": "I'm afraid that won't work — Gentle, professional rejection.",
           "example": "I'm afraid that won't work for our timeline, but we could consider an alternative."
         },
         {
           "id": "f4",
           "front": "THAT SOUNDS FAIR ✅ (Aceptar)",
-          "back": "Eso suena justo — Aceptación neutral y profesional.",
+          "back": "That sounds fair — Neutral and professional acceptance.",
           "example": "That sounds fair. We can agree to those terms."
         },
         {
           "id": "f5",
           "front": "LET ME SUMMARIZE... 📝 (Cerrar)",
-          "back": "Permítanme resumir... — Para cerrar y confirmar lo acordado.",
+          "back": "Let me summarize... — To close and confirm what was agreed.",
           "example": "Let me summarize what we've discussed today."
         },
         {
           "id": "f6",
           "front": "WITH ALL DUE RESPECT... 🙏 (Diplomacia)",
-          "back": "Con todo respeto... — Precede un desacuerdo educado.",
+          "back": "With all due respect... — A polite disagreement precedes.",
           "example": "With all due respect, I think we need more data before deciding."
         },
         {
           "id": "f7",
-          "front": "IF I UNDERSTAND CORRECTLY... 👂 (Escucha activa)",
-          "back": "Si entiendo correctamente... — Demuestra que estás escuchando activamente.",
+          "front": "IF I UNDERSTAND CORRECTLY... 👂 (Active listening)",
+          "back": "If I understand correctly... — Show that you are actively listening.",
           "example": "If I understand correctly, you're suggesting we reduce the scope?"
         },
         {
           "id": "f8",
           "front": "THE DATA CLEARLY SHOWS... 📊 (Logos)",
-          "back": "Los datos muestran claramente... — Persuasión basada en evidencia.",
+          "back": "The data clearly shows... — Evidence-based persuasion.",
           "example": "The data clearly shows that this approach reduces costs by 25%."
         },
         {
           "id": "f9",
           "front": "IMAGINE HOW THIS COULD... 💭 (Pathos)",
-          "back": "Imagina cómo esto podría... — Persuasión emocional.",
+          "back": "Imagine how this could... — Emotional persuasion.",
           "example": "Imagine how this could improve your team's productivity and morale."
         },
         {
           "id": "f10",
-          "front": "SHALL WE PUT THIS IN WRITING? 📄 (Siguiente paso)",
-          "back": "¿Lo ponemos por escrito? — Formaliza el acuerdo alcanzado.",
+          "front": "SHALL WE PUT THIS IN WRITING? 📄 (Next step)",
+          "back": "Shall we put it in writing? — Formalizes the agreement reached.",
           "example": "Shall we put this in writing and share it with both teams?"
         }
       ]
@@ -344,8 +344,8 @@
   {
     "id": "m13-ch2-svg",
     "type": "svg-scene",
-    "title": "La Mesa de Negociaciones",
-    "description": "Explora la mesa de negociación y descubre las posiciones de cada parte.",
+    "title": "The Negotiating Table",
+    "description": "Explore the negotiation table and discover the positions of each party.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -359,7 +359,7 @@
             "rx": 70,
             "ry": 45,
             "fill": "#3b82f6",
-            "label": "Tu empresa — Propón y defiende",
+            "label": "Your company — Propose and defend",
             "labelEn": "🏢 Your Company"
           },
           {
@@ -370,7 +370,7 @@
             "rx": 70,
             "ry": 45,
             "fill": "#ef4444",
-            "label": "Cliente — Entiende su posición",
+            "label": "Client — Understands your position",
             "labelEn": "🏢 Client"
           },
           {
@@ -381,7 +381,7 @@
             "width": 300,
             "height": 80,
             "fill": "#92400e",
-            "label": "Mesa de negociación",
+            "label": "Negotiation table",
             "labelEn": "📋 Negotiation Table"
           },
           {
@@ -392,7 +392,7 @@
             "width": 140,
             "height": 50,
             "fill": "#fef3c7",
-            "label": "Documento — El acuerdo escrito",
+            "label": "Document — The written agreement",
             "labelEn": "📄 Agreement"
           },
           {
@@ -403,7 +403,7 @@
             "width": 200,
             "height": 30,
             "fill": "#34d399",
-            "label": "Indicador de acuerdo — ¡Hazlo subir!",
+            "label": "Deal Indicator — Make It Up!",
             "labelEn": "📊 Deal Meter"
           },
           {
@@ -413,7 +413,7 @@
             "cy": 370,
             "r": 25,
             "fill": "#fbbf24",
-            "label": "Apretón de manos — Acuerdo cerrado",
+            "label": "Handshake — Deal closed",
             "labelEn": "🤝 Handshake"
           }
         ]
@@ -423,8 +423,8 @@
   {
     "id": "m13-ch2-scramble",
     "type": "word-scramble",
-    "title": "Negociación y Persuasión",
-    "description": "Descifra vocabulario de negocios.",
+    "title": "Negotiation and Persuasion",
+    "description": "Decipher business vocabulary.",
     "props": {
       "words": [
         {

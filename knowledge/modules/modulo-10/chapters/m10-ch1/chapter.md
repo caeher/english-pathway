@@ -1,27 +1,27 @@
 ---
 id: m10-ch1
-moduleId: modulo-10
+moduleId: module-10
 number: 1
-title: El futuro te espera
-subtitle: "Practicando \"will\" y \"going to\" con predicciones y planes"
+title: The future awaits you
+subtitle: "Practicing \"will\" and \"going to\" with predictions and plans"
 icon: 🔮
 color: "#8b5cf6"
 objectives:
-  - "Expresar planes e intenciones usando \"going to\""
-  - "Hacer predicciones y decisiones espontáneas con \"will\""
-  - "Distinguir cuándo usar \"will\" vs \"going to\" según el contexto"
-  - "Formular ofertas y promesas con \"will\""
+  - "Express plans and intentions using \"going to\""
+  - "Make predictions and spontaneous decisions with \"will\""
+  - "Distinguish when to use \"will\" vs \"going to\" depending on the context"
+  - "Formulate offers and promises with \"will\""
 xpReward: 250
 ---
 
-## Will vs Going to — El futuro en inglés
+## Will vs Going to — The future in English
 
-En inglés hay dos formas principales de hablar del futuro: **will** y **going to**. Cada una tiene usos específicos.
+In English there are two main ways of talking about the future: **will** and **going to**. Each one has specific uses.
 
 ### Going to — Planes ya decididos + Evidencia presente
 
 Usamos **going to** cuando:
-- Ya hemos tomado una decisión: *"I'm going to study medicine."*
+- We have already made a decision: *"I'm going to study medicine."*
 - Hay evidencia visible: *"Look at those clouds. It's going to rain."*
 
 **Estructura:** Subject + am/is/are + going to + verb
@@ -32,27 +32,27 @@ Usamos **going to** cuando:
 | She | She's going to start a new job. |
 | They | They're going to move to a new city. |
 
-### Will — Decisiones espontáneas + Predicciones + Promesas
+### Will — Spontaneous decisions + Predictions + Promises
 
 Usamos **will** cuando:
-- Tomamos una decisión en el momento: *"The phone is ringing. I'll answer it."*
-- Hacemos una predicción sin evidencia: *"I think it will rain tomorrow."*
+- We make a decision in the moment: *"The phone is ringing. I'll answer it."*
+- We make a prediction without evidence: *"I think it will rain tomorrow."*
 - Hacemos ofertas o promesas: *"I'll help you with that."*
 
 **Estructura:** Subject + will + verb
 
 | Uso | Ejemplo |
 |---|---|
-| Decisión espontánea | "I'll have the chicken, please." |
-| Predicción | "I think she will pass the exam." |
+| Spontaneous decision | "I'll have the chicken, please." |
+| Prediction | "I think she will pass the exam." |
 | Promesa | "I will always love you." |
 | Oferta | "I'll carry your bags." |
 
-### ¿Cómo distinguirlos?
+### How to distinguish them?
 
-> 💡 **Tip:** Si el plan ya existía ANTES de hablar → **going to**. Si la decisión se toma EN EL MOMENTO de hablar → **will**.
+> 💡 **Tip:** If the plan already existed BEFORE speaking → **going to**. If the decision is made AT THE MOMENT of speaking → **will**.
 
 - 📅 "I'm **going to** go to the gym on Monday." (plan ya decidido)
-- 📞 "The phone is ringing. I**'ll** answer it." (decisión espontánea)
+- 📞 "The phone is ringing. I**'ll** answer it." (spontaneous decision)
 - ⛈️ "Look at those clouds. It's **going to** rain." (evidencia presente)
-- 🤔 "I think it **will** be sunny tomorrow." (predicción/opinión)
+- 🤔 "I think it **will** be sunny tomorrow." (prediction/opinion)

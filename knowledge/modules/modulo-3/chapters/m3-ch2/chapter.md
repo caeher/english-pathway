@@ -1,15 +1,15 @@
 ---
 id: m3-ch2
-moduleId: modulo-3
+moduleId: module-3
 number: 2
-title: Presente Simple vs. Presente Continuo
-subtitle: Cuándo usar cada uno — la diferencia clave
+title: Present Simple vs. Present Continuous
+subtitle: When to use each — the key difference
 icon: ⚖️
 color: "#10b981"
 objectives:
-  - Distinguir cuándo usar presente simple y cuándo presente continuo
-  - Identificar palabras clave de cada tiempo verbal
-  - Evitar errores comunes al mezclar ambos tiempos
+  - Distinguish when to use present simple and when present continuous
+  - Identify key words for each tense
+  - Avoid common mistakes when mixing both times
 xpReward: 160
 ---
 
@@ -23,7 +23,7 @@ xpReward: 160
 **Keywords:** always, usually, often, sometimes, never, every day/week/month
 
 ### Present Continuous → NOW, temporary, changing
-- I **am working** right now. (ahora mismo)
+- I **am working** right now. (right now)
 - She **is living** in Madrid this month. (temporal)
 - Prices **are rising**. (tendencia)
 

@@ -1,41 +1,41 @@
 ---
 id: m1-ch4
-moduleId: modulo-1
+moduleId: module-1
 number: 4
-title: "Sustantivos: Tipos, Clasificación y Artículos"
+title: "Nouns: Types, Classification and Articles"
 subtitle: Proper, common, concrete, abstract; a, an, the; singular/plural
 icon: 📦
 color: "#f59e0b"
 objectives:
-  - "Clasificar sustantivos: proper, common, concrete, abstract"
-  - "Usar correctamente los artículos \"a\", \"an\" y \"the\""
-  - Formar plurales regulares e irregulares
-  - Diferenciar sustantivos contables e incontables
-  - Identificar las 4 funciones del noun en la oración
-  - Identificar y usar appositives (sustantivos que modifican otros sustantivos)
+  - "Classify nouns: proper, common, concrete, abstract"
+  - "Correctly use the articles \"a\", \"an\" and \"the\""
+  - Form regular and irregular plurals
+  - Differentiate countable and uncountable nouns
+  - Identify the 4 functions of the noun in the sentence
+  - Identify and use appositives (nouns that modify other nouns)
 xpReward: 140
 ---
 
-## Nouns: Types, Classification & Articles — Sustantivos
+## Nouns: Types, Classification & Articles — Nouns
 
-### Tipos de sustantivos
-| Tipo | Descripción | Ejemplos |
+### Types of nouns
+| Tipo | Description | Ejemplos |
 |------|-------------|----------|
 | **Proper noun** | Nombres propios (capitalizados) | London, Maria, Christmas |
 | **Common noun** | Sustantivos generales | city, woman, holiday |
-| **Concrete noun** | Cosas que puedes tocar/ver | book, table, dog, water |
+| **Concrete noun** | Things you can touch/see | book, table, dog, water |
 | **Abstract noun** | Ideas, emociones, conceptos | love, happiness, freedom, time |
 | **Countable** | Se pueden contar (singular/plural) | book/books, child/children |
-| **Uncountable** | No se cuentan con números | water, rice, information |
+| **Uncountable** | There are no numbers | water, rice, information |
 
 ### Nouns that represent abstract ideas
-- **love, hate, fear** — emociones
-- **freedom, justice, peace** — conceptos
-- **time, luck, advice** — ideas abstractas
-- **music, art, education** — actividades/conceptos
+- **love, hate, fear** — emotions
+- **freedom, justice, peace** — concepts
+- **time, luck, advice** — abstract ideas
+- **music, art, education** — activities/concepts
 
-### Uncountable nouns — Uso con cuantificadores
-Los incontables no llevan *a/an* ni plural. Usa:
+### Uncountable nouns — Use with quantifiers
+Uncountables do not take *a/an* or plural. Use:
 
 | Cuantificador | Uso | Ejemplo |
 |---------------|-----|---------|
@@ -43,20 +43,20 @@ Los incontables no llevan *a/an* ni plural. Usa:
 | **any** | Negativo e interrogativo | *I don't have any money. Do you have any water?* |
 | **much** | Incontable (negativo/interrogativo) | *How much water? I don't have much time.* |
 | **many** | Contable (negativo/interrogativo) | *How many books? I don't have many friends.* |
-| **a lot of** | Afirmativo (ambos) | *I have a lot of work. She has a lot of friends.* |
+| **a lot of** | Affirmative (both) | *I have a lot of work. She has a lot of friends.* |
 
-**Incontables comunes:** *information, advice, news, furniture, homework, rice, water, milk, coffee, bread, money*
+**Common uncountables:** *information, advice, news, furniture, homework, rice, water, milk, coffee, bread, money*
 
-### Artículos indefinidos: A / AN
-- **A** → antes de consonante: *a book, a car, a dog*
-- **AN** → antes de vocal (sonido): *an apple, an egg, an umbrella*
-- ⚠️ Excepciones por sonido: *an hour* (h muda), *a university* (sonido /juː/)
+### Indefinite articles: A / AN
+- **A** → before consonant: *a book, a car, a dog*
+- **AN** → before vowel (sound): *an apple, an egg, an umbrella*
+- ⚠️ Exceptions by sound: *an hour* (silent h), *a university* (sound /juː/)
 
-### Artículo definido: THE
-- **THE** → algo específico o ya mencionado: *the sun, the book on the table*
-- No se usa con nombres propios generalmente: *Mexico* (no *the Mexico*)
+### Defined article: THE
+- **THE** → something specific or already mentioned: *the sun, the book on the table*
+- Not generally used with proper nouns: *Mexico* (not *the Mexico*)
 
-### Plurales regulares
+### regular plurals
 | Regla | Singular → Plural | Ejemplo |
 |-------|-------------------|---------|
 | +s | book → books | *two books* |
@@ -65,7 +65,7 @@ Los incontables no llevan *a/an* ni plural. Usa:
 | vocal + y → ys | boy → boys | *three boys* |
 | f/fe → ves | knife → knives | *two knives* |
 
-### Plurales irregulares
+### irregular plurals
 | Singular | Plural |
 |----------|--------|
 | man | men |
@@ -76,20 +76,20 @@ Los incontables no llevan *a/an* ni plural. Usa:
 | mouse | mice |
 | person | people |
 
-### Las 4 funciones del noun en la oración
-| Función | Ejemplo | Explicación |
+### The 4 functions of the noun in the sentence
+| Function | Ejemplo | Explanation |
 |---------|---------|-------------|
-| **Noun as subject of a verb** | **The dog** barks. | El sustantivo hace la acción |
-| **Noun as object of a verb** | I see **the dog**. | El sustantivo recibe la acción |
-| **Noun as object of a preposition** | I went to **the park**. | Sustantivo después de preposición |
-| **Predicate nominative** | She is **a teacher**. | Sustantivo que sigue a "be" y renombra al sujeto |
+| **Noun as subject of a verb** | **The dog** barks. | The noun does the action |
+| **Noun as object of a verb** | I see **the dog**. | The noun receives the action |
+| **Noun as object of a preposition** | I went to **the park**. | Noun after preposition |
+| **Predicate nominative** | She is **a teacher**. | Noun that follows "be" and renames the subject |
 
-### Appositives — Apositivos
-Un **appositive** es un sustantivo (o frase nominal) que **modifica o complementa** otro sustantivo, normalmente junto a él.
-- *Maria*, **my best friend**, is coming. (my best friend = appositive que explica quién es Maria)
+### Appositives
+An **appositive** is a noun (or noun phrase) that **modifies or complements** another noun, usually next to it.
+- *Maria*, **my best friend**, is coming. (my best friend = appositive which explains who Maria is)
 - *Paris*, **the capital of France**, is beautiful.
-- My brother **Carlos** lives in Madrid. (Carlos = appositive que identifica a "my brother")
+- My brother **Carlos** lives in Madrid. (Carlos = appositive that identifies "my brother")
 
-> 💡 Los appositives van entre comas cuando dan información extra. Van sin comas cuando son esenciales para identificar.
+> 💡 Appositives are enclosed in commas when they give extra information. They go without commas when they are essential for identification.
 
-> 💡 **Tip:** "A" y "An" dependen del **sonido**, no de la letra. "An hour" (h muda) pero "a hotel" (h sonora).
+> 💡 **Tip:** "A" and "An" depend on the **sound**, not the letter. "An hour" (silent h) but "a hotel" (voiced h).

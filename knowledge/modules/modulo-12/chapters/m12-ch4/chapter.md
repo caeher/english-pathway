@@ -1,26 +1,26 @@
 ---
 id: m12-ch4
-moduleId: modulo-12
+moduleId: module-12
 number: 4
-title: Hablando como un nativo
-subtitle: Reducciones y contracciones para una fluidez natural
+title: Speaking like a native
+subtitle: Reductions and contractions for natural fluidity
 icon: 🗣️
 color: "#f59e0b"
 objectives:
-  - "Reconocer reducciones fonéticas naturales: gonna, wanna, gotta, kinda, lemme, hafta"
-  - "Producir contracciones estándar con fluidez: I'm, don't, won't, they're"
-  - Distinguir cuándo usar reducciones (informal) vs formas completas (formal)
-  - "Comprender connected speech: linking, elision y assimilation"
+  - "Recognize natural phonetic reductions: gonna, wanna, gotta, kinda, lemme, hafta"
+  - "Produce standard contractions fluently: I'm, don't, won't, they're"
+  - Distinguish when to use reductions (informal) vs. full forms (formal)
+  - "Understanding connected speech: linking, elision and assimilation"
 xpReward: 260
 ---
 
-## Reducciones y Contracciones — Por qué "no entiendes" a los nativos
+## Reductions and Contractions — Why you "don't understand" natives
 
-La razón #1 por la que los estudiantes dicen "no entiendo a los nativos" es porque el inglés hablado usa **reducciones**: formas acortadas que suenan muy diferente a lo escrito.
+The #1 reason students say "I don't understand native speakers" is because spoken English uses **reductions**: shortened forms that sound very different from what is written.
 
 ### Reducciones Principales
 
-| Forma completa | Reducción | Ejemplo |
+| Complete form | Reduction | Example |
 |---|---|---|
 | going to | **gonna** | "I'm gonna help you." |
 | want to | **wanna** | "I wanna go home." |
@@ -34,23 +34,23 @@ La razón #1 por la que los estudiantes dicen "no entiendo a los nativos" es por
 
 ### ⚠️ Importante: Reducciones ≠ Errores
 
-- ✅ Son parte **natural** del habla fluida
-- ✅ Se usan en contextos **informales** (amigos, familia, casual)
-- ❌ En escritura formal **NO** se usan
-- ❌ En una entrevista de trabajo, usar formas completas
+- ✅ They are a **natural** part of fluent speech
+- ✅ They are used in **informal** contexts (friends, family, casual)
+- ❌ In formal writing **NOT** used
+- ❌ In a job interview, use complete forms
 
-### Connected Speech — El habla conectada
+### Connected Speech
 
-En el habla natural, las palabras se conectan y se transforman:
+In natural speech, words are connected and transformed:
 
-| Patrón | Ejemplo | Suena como |
+| Pattern | Ejemplo | It sounds like |
 |---|---|---|
 | **Linking** | "turn it off" | "tur-ni-toff" |
-| **Elision** | "next day" | "nex day" (la /t/ desaparece) |
+| **Elision** | "next day" | "nex day" (the /t/ disappears) |
 | **Assimilation** | "don't you" | "don'tchu" |
 | **Reduction** | "I can do it" | "I c'n do it" |
 
-### Espectro de Formalidad
+### Formality Spectrum
 
 | Nivel | Ejemplo |
 |---|---|
@@ -60,4 +60,4 @@ En el habla natural, las palabras se conectan y se transforman:
 | 😊 Informal | "I wanna talk to you about this." |
 | 🤙 Muy casual | "Wanna talk?" |
 
-> 💡 **Tip:** El objetivo es RECONOCER las reducciones siempre (comprensión) y PRODUCIRLAS solo en contextos apropiados (informal). En una entrevista de trabajo, usa las formas completas.
+> 💡 **Tip:** The goal is to always RECOGNIZE reductions (understanding) and PRODUCE THEM only in appropriate contexts (informal). In a job interview, use the full forms.

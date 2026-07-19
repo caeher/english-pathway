@@ -1,58 +1,58 @@
 ---
 id: m12-ch3
-moduleId: modulo-12
+moduleId: module-12
 number: 3
-title: Listening avanzado
-subtitle: Comprendiendo podcasts y videos con escucha activa
+title: Advanced listening
+subtitle: Understanding podcasts and videos with active listening
 icon: 🎧
 color: "#8b5cf6"
 objectives:
-  - Comprender contenido auditivo de nivel B1-B2 (podcasts, entrevistas)
-  - Identificar ideas principales, detalles específicos y opiniones del hablante
-  - Reconocer discourse markers que organizan el discurso
-  - "Aplicar estrategias de escucha: predicting, note-taking, inferring"
+  - Understand listening content at level B1-B2 (podcasts, interviews)
+  - Identify main ideas, specific details, and speaker's opinions
+  - Recognize discourse markers that organize discourse
+  - "Apply listening strategies: predicting, note-taking, inferring"
 xpReward: 320
 ---
 
-## Escucha Activa Multinivel — Más allá de "entender palabras"
+## Multilevel Active Listening — Beyond "understanding words"
 
-El listening avanzado no es solo captar palabras individuales. Es **comprender significado, intención y organización** del discurso.
+Advanced listening is not just about picking up individual words. It is **understanding meaning, intention and organization** of the speech.
 
-### Estrategias de Escucha Avanzada
+### Advanced Listening Strategies
 
-| Estrategia | Qué hacer | Ejemplo |
+| Estrategia | To do | Ejemplo |
 |---|---|---|
-| **Predicting** | Anticipar contenido antes de escuchar | Leer el título del podcast y predecir los temas |
+| **Predicting** | Anticipate content before listening | Read the podcast title and predict the topics |
 | **Note-taking** | Anotar puntos clave mientras escuchas | Escribir palabras clave, no oraciones completas |
-| **Inferring** | Deducir actitud por tono e entonación | "Actually..." (puede indicar corrección o sorpresa) |
-| **Discourse markers** | Detectar organizadores del discurso | "Firstly...", "However...", "In fact..." |
-| **Context clues** | Deducir palabras desconocidas por contexto | No detenerse, captar el significado general |
+| **Inferring** | Deducing attitude by tone and intonation | "Actually..." (can indicate correction or surprise) |
+| **Discourse markers** | Detect speech organizers | "Firstly...", "However...", "In fact..." |
+| **Context clues** | Deduce unknown words from context | Don't stop, grasp the general meaning |
 
-### Escucha en 3 Capas
+### Listen in 3 Layers
 
-1. **1ª escucha — Gist (idea general):** "¿De qué trata?"
-2. **2ª escucha — Detalles:** "¿Qué datos específicos mencionaron?"
-3. **3ª escucha — Análisis:** "¿Qué opina el hablante? ¿Cómo lo sabes?"
+1. **1st listen — Gist (general idea):** "What is it about?"
+2. **2nd listen — Details:** "What specific data did they mention?"
+3. **3rd listen — Analysis:** "What does the speaker think? How do you know?"
 
-### Discourse Markers — Las "señales de tráfico" del discurso
+### Discourse Markers — The "traffic signs" of discourse
 
-Estos marcadores te ayudan a seguir la estructura de lo que escuchas:
+These markers help you follow the structure of what you hear:
 
-| Marcador | Función | Señal |
+| Marcador | Function | Sign |
 |---|---|---|
-| **Firstly / To begin with** | Introduce el primer punto | 🟢 Inicio |
+| **Firstly / To begin with** | Enter the first point | 🟢 Inicio |
 | **However / On the other hand** | Introduce contraste | 🔄 Cambio |
-| **In fact / Actually** | Corrige o enfatiza | ⚡ Atención |
-| **For example / Such as** | Da un ejemplo | 📌 Detalle |
-| **To be honest / Frankly** | Opinión personal sincera | 💭 Honestidad |
-| **In conclusion / Overall** | Cierra el discurso | 🏁 Final |
+| **In fact / Actually** | Corrige o enfatiza | ⚡ Attention |
+| **For example / Such as** | Give an example | 📌 Detalle |
+| **To be honest / Frankly** | Honest personal opinion | 💭 Honestidad |
+| **In conclusion / Overall** | Close the speech | 🏁 Final |
 
-### Tipos de Audio Progresivos
+### Progressive Audio Types
 
 | Nivel | Tipo | Dificultad |
 |---|---|---|
-| 1 | Monólogo claro y estructurado (podcast educativo) | ⭐ |
-| 2 | Diálogo natural entre dos hablantes | ⭐⭐ |
-| 3 | Entrevista con múltiples hablantes | ⭐⭐⭐ |
+| 1 | Clear and structured monologue (educational podcast) | ⭐ |
+| 2 | Natural dialogue between two speakers | ⭐⭐ |
+| 3 | Interview with multiple speakers | ⭐⭐⭐ |
 
-> 💡 **Tip:** Si no entiendes una palabra, ¡no te detengas! Sigue escuchando y trata de deducir el significado por el contexto.
+> 💡 **Tip:** If you don't understand a word, don't stop! Keep listening and try to deduce the meaning from the context.

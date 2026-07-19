@@ -2,8 +2,8 @@
   {
     "id": "m9-ch3-quiz",
     "type": "quiz",
-    "title": "La Entrevista",
-    "description": "Descubre información sobre un personaje eligiendo la pregunta correcta.",
+    "title": "The Interview",
+    "description": "Discover information about a character by choosing the correct question.",
     "props": {
       "questions": [
         {
@@ -124,12 +124,12 @@
   {
     "id": "m9-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Formula la Pregunta",
-    "description": "Se te da la respuesta. ¡Construye la pregunta correcta!",
+    "title": "Ask the Question",
+    "description": "You are given the answer. Build the right question!",
     "props": {
       "sentences": [
         {
-          "prompt": "Respuesta: \"I live in Mexico City.\"",
+          "prompt": "Answer: \"I live in Mexico City.\"",
           "words": [
             "do",
             "Where",
@@ -139,7 +139,7 @@
           "correct": "Where do you live?"
         },
         {
-          "prompt": "Respuesta: \"She is a doctor.\"",
+          "prompt": "Answer: \"She is a doctor.\"",
           "words": [
             "is",
             "What",
@@ -149,7 +149,7 @@
           "correct": "What is her job?"
         },
         {
-          "prompt": "Respuesta: \"The party is on Friday.\"",
+          "prompt": "Answer: \"The party is on Friday.\"",
           "words": [
             "is",
             "When",
@@ -159,7 +159,7 @@
           "correct": "When is the party?"
         },
         {
-          "prompt": "Respuesta: \"He goes to work by bus.\"",
+          "prompt": "Answer: \"He goes to work by bus.\"",
           "words": [
             "does",
             "How",
@@ -171,7 +171,7 @@
           "correct": "How does he get to work?"
         },
         {
-          "prompt": "Respuesta: \"Yes, I do.\"",
+          "prompt": "Answer: \"Yes, I do.\"",
           "words": [
             "Do",
             "like",
@@ -181,7 +181,7 @@
           "correct": "Do you like pizza?"
         },
         {
-          "prompt": "Respuesta: \"Mr. Smith is my teacher.\"",
+          "prompt": "Answer: \"Mr. Smith is my teacher.\"",
           "words": [
             "is",
             "Who",
@@ -191,7 +191,7 @@
           "correct": "Who is your teacher?"
         },
         {
-          "prompt": "Respuesta: \"Because it's fun.\"",
+          "prompt": "Answer: \"Because it's fun.\"",
           "words": [
             "do",
             "Why",
@@ -202,7 +202,7 @@
           "correct": "Why do you like it?"
         },
         {
-          "prompt": "Respuesta: \"Yes, she does.\"",
+          "prompt": "Answer: \"Yes, she does.\"",
           "words": [
             "Does",
             "English?",
@@ -212,7 +212,7 @@
           "correct": "Does she speak English?"
         },
         {
-          "prompt": "Respuesta: \"I have two brothers.\"",
+          "prompt": "Answer: \"I have two brothers.\"",
           "words": [
             "many",
             "How",
@@ -224,7 +224,7 @@
           "correct": "How many brothers do you have?"
         },
         {
-          "prompt": "Respuesta: \"It's 3 o'clock.\"",
+          "prompt": "Answer: \"It's 3 o'clock.\"",
           "words": [
             "is",
             "What",
@@ -239,8 +239,8 @@
   {
     "id": "m9-ch3-match",
     "type": "word-match",
-    "title": "Wh- Word → Tipo de Información",
-    "description": "Empareja cada palabra interrogativa con el tipo de información que pide.",
+    "title": "Wh- Word → Type of Information",
+    "description": "Match each question word with the type of information it asks for.",
     "props": {
       "pairs": [
         {
@@ -289,8 +289,8 @@
   {
     "id": "m9-ch3-flash",
     "type": "flashcard",
-    "title": "Patrones de Preguntas",
-    "description": "Aprende los patrones de cada tipo de pregunta con ejemplos completos.",
+    "title": "Question Patterns",
+    "description": "Learn the patterns of each question type with complete examples.",
     "props": {
       "cards": [
         {
@@ -371,8 +371,8 @@
   {
     "id": "m9-ch3-svg",
     "type": "svg-scene",
-    "title": "¿Qué Quieres Saber?",
-    "description": "Haz clic en cada elemento de la reunión y descubre qué pregunta puedes hacer.",
+    "title": "What do you want to know?",
+    "description": "Click on each meeting item and find out what question you can ask.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 380",
@@ -472,7 +472,7 @@
             "cy": 200,
             "r": 18,
             "fill": "#fbbf24",
-            "label": "Música",
+            "label": "Music",
             "labelEn": "What are they listening to? — Pop music."
           },
           {
@@ -494,17 +494,17 @@
     "id": "m9-ch3-scramble",
     "type": "word-scramble",
     "title": "Preguntas y Respuestas",
-    "description": "Descifra términos de preguntas.",
+    "description": "Decipher question terms.",
     "props": {
       "words": [
         {
           "word": "QUESTION",
-          "hint": "Pregunta",
+          "hint": "Ask",
           "category": "Questions"
         },
         {
           "word": "ANSWER",
-          "hint": "Respuesta",
+          "hint": "Answer",
           "category": "Questions"
         },
         {

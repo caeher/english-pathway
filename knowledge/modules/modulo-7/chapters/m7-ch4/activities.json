@@ -2,8 +2,8 @@
   {
     "id": "m7-ch4-svg",
     "type": "svg-scene",
-    "title": "Galería de Idioms",
-    "description": "Visualiza los modismos más populares del inglés.",
+    "title": "Language Gallery",
+    "description": "View the most popular English idioms.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -160,19 +160,19 @@
     "id": "m7-ch4-flash",
     "type": "flashcard",
     "title": "Idioms: Significado y Uso",
-    "description": "Aprende cada idiom con su significado y ejemplo.",
+    "description": "Learn each idiom with its meaning and example.",
     "props": {
       "cards": [
         {
           "id": "c1",
           "front": "a piece of cake",
-          "back": "Muy fácil",
+          "back": "Very easy",
           "example": "The test was a piece of cake. (= super easy)"
         },
         {
           "id": "c2",
           "front": "break a leg",
-          "back": "¡Buena suerte! (en espectáculos)",
+          "back": "Good luck! (in shows)",
           "example": "You have a show? Break a leg!"
         },
         {
@@ -196,43 +196,43 @@
         {
           "id": "c6",
           "front": "let the cat out of the bag",
-          "back": "Revelar un secreto",
+          "back": "reveal a secret",
           "example": "She let the cat out of the bag about the party."
         },
         {
           "id": "c7",
           "front": "think outside the box",
-          "back": "Pensar de forma creativa",
+          "back": "Think creatively",
           "example": "We need to think outside the box to solve this."
         },
         {
           "id": "c8",
           "front": "see eye to eye",
-          "back": "Estar de acuerdo",
+          "back": "Agree",
           "example": "We don't always see eye to eye."
         },
         {
           "id": "c9",
           "front": "go the extra mile",
-          "back": "Hacer un esfuerzo extra",
+          "back": "Go the extra mile",
           "example": "She always goes the extra mile."
         },
         {
           "id": "c10",
           "front": "it's raining cats and dogs",
-          "back": "Llover a cántaros",
+          "back": "Pour",
           "example": "Don't go out! It's raining cats and dogs."
         },
         {
           "id": "c11",
           "front": "kill two birds with one stone",
-          "back": "Matar dos pájaros de un tiro",
+          "back": "Kill two birds with one stone",
           "example": "I combined the errands — kill two birds with one stone."
         },
         {
           "id": "c12",
           "front": "call it a day",
-          "back": "Dar por terminado / terminar por hoy",
+          "back": "finish / finish for today",
           "example": "I'm tired. Let's call it a day."
         }
       ]
@@ -242,7 +242,7 @@
     "id": "m7-ch4-match",
     "type": "word-match",
     "title": "Idiom → Significado",
-    "description": "Empareja cada idiom con su significado correcto.",
+    "description": "Match each idiom with its correct meaning.",
     "props": {
       "pairs": [
         {
@@ -283,12 +283,12 @@
   {
     "id": "m7-ch4-sentence",
     "type": "sentence-builder",
-    "title": "Usa Idioms en Contexto",
-    "description": "Ordena para formar oraciones con idioms.",
+    "title": "Use Languages ​​in Context",
+    "description": "Order to form sentences with idioms.",
     "props": {
       "sentences": [
         {
-          "prompt": "El examen fue muy fácil:",
+          "prompt": "The exam was very easy:",
           "words": [
             "The",
             "test",
@@ -314,7 +314,7 @@
           "correct": "I am feeling under the weather today"
         },
         {
-          "prompt": "Ese coche costó mucho dinero:",
+          "prompt": "That car cost a lot of money:",
           "words": [
             "That",
             "car",
@@ -328,7 +328,7 @@
           "correct": "That car cost an arm and a leg"
         },
         {
-          "prompt": "Está lloviendo a cántaros:",
+          "prompt": "It's pouring rain:",
           "words": [
             "It",
             "is",
@@ -358,8 +358,8 @@
   {
     "id": "m7-ch4-quiz",
     "type": "quiz",
-    "title": "Quiz: Expresiones Idiomáticas",
-    "description": "Demuestra tu conocimiento de los idioms.",
+    "title": "Quiz: Idiomatic Expressions",
+    "description": "Demonstrate your knowledge of languages.",
     "props": {
       "questions": [
         {
@@ -373,7 +373,7 @@
             "a hot potato"
           ],
           "correct": 1,
-          "explanation": "a piece of cake = muy fácil."
+          "explanation": "a piece of cake = very easy."
         },
         {
           "id": "q2",
@@ -426,7 +426,7 @@
             "Kick"
           ],
           "correct": 1,
-          "explanation": "Break a leg! = ¡Buena suerte!"
+          "explanation": "Break a leg! = Good luck!"
         },
         {
           "id": "q7",
@@ -446,14 +446,14 @@
             "bite the bullet"
           ],
           "correct": 1,
-          "explanation": "see eye to eye = estar de acuerdo."
+          "explanation": "see eye to eye = agree."
         },
         {
           "id": "q9",
           "type": "fill-blank",
           "question": "\"Let's ___ it a day.\" (= stop working)",
           "correct": "call",
-          "explanation": "call it a day = dar por terminado."
+          "explanation": "call it a day = call it a day."
         },
         {
           "id": "q10",
@@ -466,7 +466,7 @@
             "thunder / lightning"
           ],
           "correct": 0,
-          "explanation": "It's raining cats and dogs = llueve a cántaros."
+          "explanation": "It's raining cats and dogs = it's raining cats and dogs."
         }
       ]
     }
@@ -474,18 +474,18 @@
   {
     "id": "m7-ch4-scramble",
     "type": "word-scramble",
-    "title": "Expresiones Idiomáticas",
-    "description": "Descifra términos de modismos.",
+    "title": "Idiomatic Expressions",
+    "description": "Decipher idiom terms.",
     "props": {
       "words": [
         {
           "word": "IDIOM",
-          "hint": "Modismo; expresión fija",
+          "hint": "Idiom; fixed expression",
           "category": "Idioms"
         },
         {
           "word": "PHRASE",
-          "hint": "Frase; grupo de palabras",
+          "hint": "Phrase; group of words",
           "category": "Idioms"
         },
         {
@@ -500,12 +500,12 @@
         },
         {
           "word": "LITERAL",
-          "hint": "Literal; palabra por palabra",
+          "hint": "Literal; verbatim",
           "category": "Idioms"
         },
         {
           "word": "FIGURATIVE",
-          "hint": "Figurado; metafórico",
+          "hint": "Figurative; metaphorical",
           "category": "Idioms"
         }
       ]

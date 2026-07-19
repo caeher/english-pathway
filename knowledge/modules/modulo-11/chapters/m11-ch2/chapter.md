@@ -1,34 +1,34 @@
 ---
 id: m11-ch2
-moduleId: modulo-11
+moduleId: module-11
 number: 2
-title: Voz pasiva
-subtitle: Transformando oraciones para una comunicación más sofisticada
+title: passive voice
+subtitle: Transforming sentences for more sophisticated communication
 icon: 🔄
 color: "#6366f1"
 objectives:
-  - Transformar oraciones de voz activa a pasiva y viceversa
-  - Comprender cuándo y por qué se usa la voz pasiva (textos formales, noticias, ciencia)
-  - Aplicar la voz pasiva en diferentes tiempos verbales (presente, pasado, perfecto, futuro)
+  - Transform sentences from active to passive voice and vice versa
+  - Understand when and why the passive voice is used (formal texts, news, science)
+  - Apply the passive voice in different tenses (present, past, perfect, future)
 xpReward: 280
 ---
 
 ## Passive Voice — Otra perspectiva
 
-La voz pasiva cambia el enfoque de **quién hace** la acción a **qué recibe** la acción.
+The passive voice shifts the focus from **who does** the action to **what receives** the action.
 
-### ¿Por qué usar la pasiva?
-- Cuando **no sabemos** quién hizo algo: *"My bike was stolen."*
-- Cuando **el objeto es más importante**: *"The Mona Lisa was painted by Leonardo."*
-- En **textos formales, noticias y ciencia**: *"The experiment was conducted in 2023."*
+### Why use the passive?
+- When we **don't know** who did something: *"My bike was stolen."*
+- When **the object is more important**: *"The Mona Lisa was painted by Leonardo."*
+- In **formal texts, news and science**: *"The experiment was conducted in 2023."*
 
-### Fórmula
+### Formula
 | Voz | Estructura | Ejemplo |
 |-----|-----------|---------|
 | **Activa** | Subject + Verb + Object | *Shakespeare wrote Hamlet.* |
 | **Pasiva** | Object + be + Past Participle (+ by Subject) | *Hamlet was written by Shakespeare.* |
 
-### Pasiva en diferentes tiempos
+### Passive at different times
 
 | Tiempo | Estructura pasiva | Ejemplo |
 |--------|------------------|---------|
@@ -38,9 +38,9 @@ La voz pasiva cambia el enfoque de **quién hace** la acción a **qué recibe** 
 | Future (will) | will be + done | *The project will be completed tomorrow.* |
 | Modal | can/must be + done | *This can be fixed easily.* |
 
-### Cuándo omitir "by..."
-Se omite cuando el agente es **obvio, desconocido o no importante**:
+### When to omit "by..."
+Ignored when the agent is **obvious, unknown or unimportant**:
 - *"Rice is grown in Asia."* (no necesitamos decir "by farmers")
-- *"The building was destroyed."* (no sabemos por quién/qué)
+- *"The building was destroyed."* (we don't know by who/what)
 
-> 💡 Si el agente es importante o sorprendente, usamos **by**: *"This song was written by a 10-year-old."*
+> 💡 If the agent is important or surprising, we use *by**: *"This song was written by a 10-year-old."*

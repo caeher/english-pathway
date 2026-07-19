@@ -2,8 +2,8 @@
   {
     "id": "m7-ch6-svg",
     "type": "svg-scene",
-    "title": "Mapa de Todo el Curso",
-    "description": "Visualiza todos los módulos y temas cubiertos.",
+    "title": "Entire Course Map",
+    "description": "View all modules and topics covered.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -170,55 +170,55 @@
   {
     "id": "m7-ch6-flash",
     "type": "flashcard",
-    "title": "Repaso Rápido Integral",
-    "description": "Tarjetas de repaso con preguntas de todos los módulos.",
+    "title": "Comprehensive Quick Review",
+    "description": "Review cards with questions from all modules.",
     "props": {
       "cards": [
         {
           "id": "c1",
-          "front": "¿Cuál es la diferencia entre Present Simple y Present Continuous?",
-          "back": "Simple = hábitos/hechos (I work). Continuous = ahora/temporal (I am working).",
+          "front": "What is the difference between Present Simple and Present Continuous?",
+          "back": "Simple = habits/facts (I work). Continuous = now/temporary (I am working).",
           "example": "I work every day. / I am working right now."
         },
         {
           "id": "c2",
-          "front": "¿Cómo se forma el Present Perfect?",
+          "front": "How is the Present Perfect formed?",
           "back": "have/has + past participle",
           "example": "I have visited Paris. She has finished."
         },
         {
           "id": "c3",
-          "front": "¿Cuándo usar Past Simple vs Present Perfect?",
+          "front": "When to use Past Simple vs Present Perfect?",
           "back": "Past Simple = время definido (yesterday). Present Perfect = experiencia/resultado.",
           "example": "I went yesterday. / I have been there (alguna vez)."
         },
         {
           "id": "c4",
-          "front": "¿Cómo se forma el First Conditional?",
+          "front": "How is the First Conditional formed?",
           "back": "If + present simple, will + base verb",
           "example": "If it rains, I will stay home."
         },
         {
           "id": "c5",
-          "front": "¿Cómo se forma el Second Conditional?",
+          "front": "How is the Second Conditional formed?",
           "back": "If + past simple, would + base verb",
           "example": "If I had money, I would travel."
         },
         {
           "id": "c6",
-          "front": "¿Cómo se forma la Voz Pasiva?",
+          "front": "How is the Passive Voice formed?",
           "back": "be + past participle (+ by agent)",
           "example": "The book was written by Tolkien."
         },
         {
           "id": "c7",
-          "front": "¿Qué son defining vs non-defining relative clauses?",
+          "front": "What are defining vs non-defining relative clauses?",
           "back": "Defining = essential (no commas). Non-defining = extra info (with commas).",
           "example": "The man who called is my boss. / My boss, who is 40, called."
         },
         {
           "id": "c8",
-          "front": "¿Qué significa \"under the weather\"?",
+          "front": "What does \"under the weather\" mean?",
           "back": "Sentirse enfermo/mal",
           "example": "I'm feeling under the weather today."
         },
@@ -230,19 +230,19 @@
         },
         {
           "id": "c10",
-          "front": "¿Cuál es la diferencia entre \"make\" y \"do\"?",
-          "back": "Make = crear/producir. Do = realizar/actividad.",
+          "front": "What is the difference between \"make\" and \"do\"?",
+          "back": "Make = create/produce. Do = perform/activity.",
           "example": "make a decision / do homework"
         },
         {
           "id": "c11",
-          "front": "¿Cómo se transforma Direct → Reported Speech?",
+          "front": "How is Direct → Reported Speech transformed?",
           "back": "Change tense back (backshift), change pronouns/time words.",
           "example": "\"I am happy\" → He said he was happy."
         },
         {
           "id": "c12",
-          "front": "¿Qué diferencia \"interesting\" de \"interested\"?",
+          "front": "What is the difference between \"interesting\" and \"interested\"?",
           "back": "-ing = what causes. -ed = how you feel.",
           "example": "The movie is interesting. I am interested."
         }
@@ -253,7 +253,7 @@
     "id": "m7-ch6-match",
     "type": "word-match",
     "title": "Repaso Mixto: Emparejamiento",
-    "description": "Empareja conceptos de diferentes módulos.",
+    "description": "Match concepts from different modules.",
     "props": {
       "pairs": [
         {
@@ -294,8 +294,8 @@
   {
     "id": "m7-ch6-sentence",
     "type": "sentence-builder",
-    "title": "Construcción Mixta Avanzada",
-    "description": "Ordena oraciones de diferentes temas gramaticales.",
+    "title": "Advanced Mixed Construction",
+    "description": "Order sentences from different grammatical topics.",
     "props": {
       "sentences": [
         {
@@ -368,7 +368,7 @@
     "id": "m7-ch6-quiz",
     "type": "quiz",
     "title": "Quiz Final Integral",
-    "description": "Examen final con preguntas de todos los módulos.",
+    "description": "Final exam with questions from all modules.",
     "props": {
       "questions": [
         {
@@ -442,7 +442,7 @@
           "type": "fill-blank",
           "question": "\"It's ___ cats and dogs!\" (Idiom = raining hard)",
           "correct": "raining",
-          "explanation": "It's raining cats and dogs = llover a cántaros."
+          "explanation": "It's raining cats and dogs = raining cats and dogs."
         },
         {
           "id": "q8",
@@ -504,17 +504,17 @@
     "id": "m7-ch6-scramble",
     "type": "word-scramble",
     "title": "Repaso Final",
-    "description": "Descifra palabras del repaso integral.",
+    "description": "Unscramble words from the comprehensive review.",
     "props": {
       "words": [
         {
           "word": "REVIEW",
-          "hint": "Repaso; revisión",
+          "hint": "Review; revision",
           "category": "Review"
         },
         {
           "word": "PRACTICE",
-          "hint": "Práctica; ejercicio",
+          "hint": "Practice; exercise",
           "category": "Review"
         },
         {

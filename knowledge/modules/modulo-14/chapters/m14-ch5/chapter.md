@@ -1,83 +1,83 @@
 ---
 id: m14-ch5
-moduleId: modulo-14
+moduleId: module-14
 number: 5
-title: Manteniendo la Motivación
-subtitle: Estrategias para aprender inglés a largo plazo
+title: Maintaining Motivation
+subtitle: Strategies to learn English in the long term
 icon: 🔥
 color: "#f59e0b"
 objectives:
-  - Diseñar un sistema personal de motivación sostenible
-  - Identificar y superar las 5 barreras comunes del aprendizaje
-  - Aplicar la ciencia de hábitos (Atomic Habits) al estudio del inglés
-  - Adoptar un Growth Mindset para el aprendizaje continuo
+  - Design a personal sustainable motivation system
+  - Identify and overcome the 5 common barriers to learning
+  - Apply the science of habits (Atomic Habits) to the study of English
+  - Adopt a Growth Mindset for continuous learning
 xpReward: 300
 ---
 
-## Motivación Sostenible — El secreto para no abandonar
+## Sustainable Motivation — The secret to not giving up
 
-La mayoría de las personas abandonan el aprendizaje del inglés no por falta de capacidad, sino por **pérdida de motivación**. Este capítulo te da las herramientas para mantenerte en el camino.
+Most people abandon learning English not because of lack of ability, but because of **loss of motivation**. This chapter gives you the tools to stay on track.
 
-### Los 3 Tipos de Motivación
+### The 3 Types of Motivation
 
-| Tipo | Descripción | Ejemplo |
+| Tipo | Description | Ejemplo |
 |---|---|---|
-| 🎯 **Intrínseca** | Aprender porque te gusta y te satisface | "Disfruto entender canciones en inglés" |
-| 🏆 **Extrínseca** | Aprender para obtener un resultado | "Necesito inglés para mi trabajo" |
-| 👥 **Social** | Aprender para conectar con personas | "Quiero hablar con amigos internacionales" |
+| 🎯 **Intrinsic** | Learn why you like it and it satisfies you | "I enjoy understanding songs in English" |
+| 🏆 **Extrinsic** | Learn to obtain a result | "I need English for my job" |
+| 👥 **Social** | Learn to connect with people | "I want to talk to international friends" |
 
-> La motivación más sostenible **combina las tres**.
+> The most sustainable motivation **combines all three**.
 
-### Las 5 Barreras y Cómo Superarlas
+### The 5 Barriers and How to Overcome Them
 
-| Barrera | Síntoma | Estrategia |
+| Barrera | Symptom | Estrategia |
 |---|---|---|
-| 📊 **Plateau effect** | "Ya no avanzo" | Medir progreso con indicadores concretos, no con sensaciones |
-| 😰 **Perfectionism paralysis** | "No practico por miedo a equivocarme" | Normalizar el error. Ponerte una "cuota de errores" diaria |
-| ✨ **Shiny object syndrome** | "Cambio de app constantemente" | Comprometerte con UN sistema mínimo 90 días |
-| ⏰ **Life gets in the way** | "No tengo tiempo" | Micro-sesiones de 10 minutos > sesiones ideales de 1 hora |
-| 🪞 **Comparison trap** | "Otros hablan mejor que yo" | Compararte solo con tu YO de hace 3 meses |
+| 📊 **Plateau effect** | "Ya no avanzo" | Measure progress with concrete indicators, not with sensations |
+| 😰 **Perfectionism paralysis** | "I don't practice for fear of making mistakes" | Normalize the error. Set a daily "error quota" |
+| ✨ **Shiny object syndrome** | "I change apps constantly" | Commit to ONE system for at least 90 days |
+| ⏰ **Life gets in the way** | "No tengo tiempo" | 10 minute micro-sessions > ideal 1 hour sessions |
+| 🪞 **Comparison trap** | "Others speak better than me" | Compare yourself only to your SELF from 3 months ago |
 
-### Ciencia de Hábitos — Atomic Habits para el Inglés
+### Science of Habits — Atomic Habits for English
 
-| Componente | Cómo aplicarlo |
+| Componente | How to apply it |
 |---|---|
-| 🔔 **Señal (Cue)** | Después del café matutino = 10 min de inglés |
-| 💡 **Deseo (Craving)** | Elegir actividades que disfrutas (series, música, juegos) |
-| 🎬 **Respuesta (Response)** | Hacerlo ridículamente fácil: 1 flashcard > 0 flashcards |
-| 🎁 **Recompensa (Reward)** | Gamificación, streak tracking, celebrar logros |
+| 🔔 **Cue** | After morning coffee = 10 min of English |
+| 💡 **Deseo (Craving)** | Choose activities that you enjoy (series, music, games) |
+| 🎬 **Response** | Make it ridiculously easy: 1 flashcard > 0 flashcards |
+| 🎁 **Recompensa (Reward)** | Gamification, streak tracking, celebrating achievements |
 
-### "Don't Break the Chain" — El Método Seinfeld
+### "Don't Break the Chain" — The Seinfeld Method
 
-- Mantén una **racha diaria** de práctica
-- Marca cada día que practicas en un calendario
-- La racha es **más fácil de mantener** cuanto más larga es
-- Tu único objetivo: **no romper la cadena**
+- Maintain a **daily streak** of practice
+- Mark each day you practice on a calendar
+- The streak is **easier to maintain** the longer it is
+- Your only goal: **not break the chain**
 
 ### Growth Mindset vs. Fixed Mindset
 
 | Fixed Mindset ❌ | Growth Mindset ✅ |
 |---|---|
-| "No soy bueno para los idiomas" | "Aún no soy bueno, pero estoy mejorando" |
-| "Si me equivoco, es un fracaso" | "Cada error es una oportunidad de aprender" |
-| "Los nativos nunca me entenderán" | "Cada conversación me acerca a la fluidez" |
-| "Es demasiado tarde para aprender" | "Nunca es tarde. El mejor momento es AHORA" |
+| "I'm not good at languages" | "I'm not good yet, but I'm getting better" |
+| "If I'm wrong, it's a failure" | "Every mistake is an opportunity to learn" |
+| "The natives will never understand me" | "Every conversation brings me closer to fluency" |
+| "It's too late to learn" | "It's never too late. The best time is NOW" |
 
-> 💡 **Tip:** La palabra más poderosa del inglés para un estudiante es **"YET"**. "I can't speak fluently" → "I can't speak fluently **YET**." Esa pequeña palabra transforma una limitación en un proceso.
+> 💡 **Tip:** The most powerful word in English for a student is **"YET"**. "I can't speak fluently" → "I can't speak fluently **YET**." That little word transforms a limitation into a process.
 
 ---
 
-## 🎓 ¡Felicidades!
+## 🎓 Congratulations!
 
-Si has llegado hasta aquí, has completado los **7 módulos y 35 capítulos** del curso English Pathway. Ahora tienes:
+If you have made it this far, you have completed the **7 modules and 35 chapters** of the English Pathway course. Now you have:
 
-- ✅ Una base sólida de gramática y vocabulario (A1 → B2+)
-- ✅ Habilidades de pronunciación refinadas en 3 niveles
-- ✅ Capacidad de leer críticamente, escribir con estructura y hablar con fluidez
-- ✅ Experiencia en creación de contenido y presentaciones en inglés
-- ✅ Un plan de autoaprendizaje continuo personalizado
-- ✅ Herramientas motivacionales para mantener el estudio a largo plazo
+- ✅ A solid foundation of grammar and vocabulary (A1 → B2+)
+- ✅ Pronunciation skills refined in 3 levels
+- ✅ Ability to read critically, write with structure and speak fluently
+- ✅ Experience in content creation and presentations in English
+- ✅ A personalized continuous self-learning plan
+- ✅ Motivational tools to maintain long-term study
 
-**Tu siguiente paso:** Ejecuta tu plan del Capítulo 4, mantén tu streak diario, y recuerda:
+**Your next step:** Execute your Chapter 4 plan, maintain your daily streak, and remember:
 
 > *"You don't have to be great to start, but you have to start to be great."* 🚀

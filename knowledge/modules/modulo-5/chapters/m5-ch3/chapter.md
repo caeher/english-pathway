@@ -1,29 +1,29 @@
 ---
 id: m5-ch3
-moduleId: modulo-5
+moduleId: module-5
 number: 3
-title: Pasado Perfecto y Futuro Perfecto
-subtitle: Had + pp y will have + pp — Secuencias temporales
+title: Past Perfect and Future Perfect
+subtitle: Had + pp and will have + pp — Temporal sequences
 icon: ⏮️
 color: "#8b5cf6"
 objectives:
-  - "Formar el pasado perfecto: had + past participle"
-  - "Formar el futuro perfecto: will have + past participle"
-  - Usar by/by the time con ambos tiempos
-  - Combinar pasado perfecto con pasado simple en narrativas
+  - "Form the past perfect: had + past participle"
+  - "Form the future perfect: will have + past participle"
+  - Use by/by the time with both times
+  - Combine past perfect with past simple in narratives
 xpReward: 180
 ---
 
 ## Past Perfect — Pasado Perfecto
 
-### Formación: had + past participle
+### Formation: had + past participle
 | Subject | Had | Past Participle | Example |
 |---------|-----|-----------------|---------|
 | I / You / He / She / It / We / They | **had ('d)** | eaten | When I arrived, they **had** already **eaten**. |
 
-> 💡 "had" es igual para TODOS los sujetos.
+> 💡 "had" is the same for ALL subjects.
 
-### Uso principal: una acción ANTES de otra en el pasado
+### Primary use: one action BEFORE another in the past
 | First action (Past Perfect) | Second action (Past Simple) |
 |-----------------------------|------------------------------|
 | She **had left** | when I **arrived**. |
@@ -52,9 +52,9 @@ xpReward: 180
 | I arrived and he left. (same time or seq.) | When I arrived, he **had left**. (he left FIRST) |
 
 ### Future Perfect — Futuro Perfecto (Resumen)
-| Formación | will have + past participle |
+| Training | will have + past participle |
 |-----------|----------------------------|
-| Uso | Acción completada ANTES de un momento futuro |
+| Uso | Action completed BEFORE a future time |
 | Ejemplos | By Friday, I **will have finished** the project. By next year, she **will have graduated**. |
 | Keyword | **By** + future time (by Friday, by 2030, by the time you arrive) |
 | Neg/Int | I **won't have** finished. **Will** you **have** finished by then? |

@@ -2,8 +2,8 @@
   {
     "id": "m1-ch4-svg",
     "type": "svg-scene",
-    "title": "La Tienda de Artículos",
-    "description": "Explora la tienda y descubre cuándo usar a, an y the.",
+    "title": "The Item Shop",
+    "description": "Explore the store and find out when to use a, an and the.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 580",
@@ -28,7 +28,7 @@
             "width": 180,
             "height": 100,
             "fill": "#bbf7d0",
-            "label": "📗 A (antes de consonante)",
+            "label": "📗 A (before consonant)",
             "labelEn": "A book, A car, A dog, A table, A pen, A house"
           },
           {
@@ -39,7 +39,7 @@
             "width": 180,
             "height": 100,
             "fill": "#bfdbfe",
-            "label": "📘 AN (antes de vocal)",
+            "label": "📘 AN (before vowel)",
             "labelEn": "AN apple, AN egg, AN umbrella, AN orange, AN idea"
           },
           {
@@ -50,7 +50,7 @@
             "width": 180,
             "height": 100,
             "fill": "#fecaca",
-            "label": "📕 THE (específico)",
+            "label": "📕 THE (specific)",
             "labelEn": "THE sun (only one), THE book on the table (specific), THE President"
           },
           {
@@ -61,7 +61,7 @@
             "width": 280,
             "height": 70,
             "fill": "#fef9c3",
-            "label": "⚠️ Excepciones de sonido",
+            "label": "⚠️ Sound exceptions",
             "labelEn": "AN hour (silent H) / A university (sounds like \"yoo\") / AN honest person"
           },
           {
@@ -72,7 +72,7 @@
             "width": 290,
             "height": 70,
             "fill": "#e0e7ff",
-            "label": "📊 Plurales regulares",
+            "label": "📊 Regular plurals",
             "labelEn": "+s: books, cars / +es: buses, boxes / -y→ies: babies, cities"
           },
           {
@@ -83,7 +83,7 @@
             "width": 600,
             "height": 70,
             "fill": "#fce7f3",
-            "label": "🔀 Plurales irregulares",
+            "label": "🔀 Irregular plurals",
             "labelEn": "man→men, woman→women, child→children, tooth→teeth, foot→feet, mouse→mice, person→people"
           },
           {
@@ -94,7 +94,7 @@
             "width": 600,
             "height": 60,
             "fill": "#dcfce7",
-            "label": "🎯 4 funciones del noun",
+            "label": "🎯 4 functions of the noun",
             "labelEn": "Subject: The dog barks. Object: I see the dog. Object of prep: to the park. Predicate nominative: She is a teacher."
           },
           {
@@ -117,7 +117,7 @@
             "height": 45,
             "fill": "#e0e7ff",
             "label": "🧊 Uncountable: much/many/some/any",
-            "labelEn": "information, advice, rice, water. Much water. Many books. Some coffee."
+            "labelEn": "information, advice, rice, water. Lots of water. Many books. Some coffee."
           }
         ]
       }
@@ -126,62 +126,62 @@
   {
     "id": "m1-ch4-flash",
     "type": "flashcard",
-    "title": "A, An, The + Plurales",
-    "description": "Tarjetas para dominar artículos y plurales.",
+    "title": "A, An, The + Plurals",
+    "description": "Cards to master articles and plurals.",
     "props": {
       "cards": [
         {
           "id": "a1",
-          "front": "A",
-          "back": "Artículo indefinido: antes de CONSONANTE",
+          "front": "TO",
+          "back": "Indefinite article: before CONSONANT",
           "example": "a book, a car, a dog, a house, a pen"
         },
         {
           "id": "a2",
-          "front": "AN",
-          "back": "Artículo indefinido: antes de VOCAL (sonido)",
+          "front": "A.N.",
+          "back": "Indefinite article: before VOCAL (sound)",
           "example": "an apple, an egg, an umbrella, an orange"
         },
         {
           "id": "a3",
           "front": "THE",
-          "back": "Artículo definido: algo específico o único",
+          "back": "Definite article: something specific or unique",
           "example": "the sun, the moon, the book on the table"
         },
         {
           "id": "a4",
           "front": "A or AN? ___ hour",
-          "back": "AN hour (la H es muda)",
+          "back": "AN hour (H is silent)",
           "example": "I waited for an hour."
         },
         {
           "id": "a5",
-          "front": "A or AN? ___ university",
-          "back": "A university (suena /juː/)",
+          "front": "A or AN? ___university",
+          "back": "A university (sounds /juː/)",
           "example": "She goes to a university in London."
         },
         {
           "id": "p1",
           "front": "book → ?",
-          "back": "books (regla: +s)",
+          "back": "books (rule: +s)",
           "example": "I have three books."
         },
         {
           "id": "p2",
           "front": "bus → ?",
-          "back": "buses (regla: +es)",
+          "back": "buses (rule: +es)",
           "example": "There are two buses."
         },
         {
           "id": "p3",
           "front": "baby → ?",
-          "back": "babies (regla: -y → -ies)",
+          "back": "babies (rule: -y → -ies)",
           "example": "The babies are sleeping."
         },
         {
           "id": "p4",
           "front": "man → ?",
-          "back": "men (irregular)",
+          "back": "menu (irregular)",
           "example": "The men are working."
         },
         {
@@ -223,37 +223,37 @@
         {
           "id": "ap1",
           "front": "Appositive",
-          "back": "Sustantivo que modifica o complementa otro sustantivo",
+          "back": "Noun that modifies or complements another noun",
           "example": "Maria, my best friend, is coming. (my best friend = appositive)"
         },
         {
           "id": "ap2",
-          "front": "Appositive con comas",
-          "back": "Cuando da información extra (no esencial)",
+          "front": "Appositive with commas",
+          "back": "When you give extra (non-essential) information",
           "example": "Paris, the capital of France, is beautiful."
         },
         {
           "id": "ap3",
-          "front": "Appositive sin comas",
-          "back": "Cuando es esencial para identificar",
+          "front": "Appositive without commas",
+          "back": "When it is essential to identify",
           "example": "My brother Carlos lives in Madrid."
         },
         {
           "id": "uc1",
           "front": "Uncountable: information",
-          "back": "No plural. I need some information. (NOT: an information)",
+          "back": "Not plural. I need some information. (NOT: an information)",
           "example": "This is useful information."
         },
         {
           "id": "uc2",
           "front": "Uncountable: advice",
-          "back": "No plural. Can you give me some advice?",
+          "back": "Not plural. Can you give me some advice?",
           "example": "I need advice about my job."
         },
         {
           "id": "uc3",
           "front": "Much vs Many",
-          "back": "Much + incontable. Many + contable",
+          "back": "Much + uncountable. Many + accountant",
           "example": "How much water? How many books?"
         }
       ]
@@ -263,12 +263,12 @@
     "id": "m1-ch4-match",
     "type": "word-match",
     "title": "Singular → Plural",
-    "description": "Empareja cada sustantivo singular con su forma plural.",
+    "description": "Match each singular noun with its plural form.",
     "props": {
       "pairs": [
         {
           "left": "man",
-          "right": "men"
+          "right": "menu"
         },
         {
           "left": "child",
@@ -304,17 +304,17 @@
   {
     "id": "m1-ch4-func-match",
     "type": "word-match",
-    "title": "Función del Noun",
-    "description": "Empareja cada oración con la función del sustantivo destacado.",
+    "title": "Noun Function",
+    "description": "Match each sentence with the function of the highlighted noun.",
     "props": {
       "pairs": [
         {
           "left": "**The dog** barks.",
-          "right": "Subject (sujeto)"
+          "right": "Subject"
         },
         {
           "left": "I see **the dog**.",
-          "right": "Object (objeto)"
+          "right": "Object"
         },
         {
           "left": "I went to **the park**.",
@@ -330,32 +330,32 @@
   {
     "id": "m1-ch4-sentence",
     "type": "sentence-builder",
-    "title": "Elige el Artículo Correcto",
-    "description": "Construye oraciones usando a, an o the.",
+    "title": "Choose the Correct Item",
+    "description": "Make sentences using a, an or the.",
     "props": {
       "sentences": [
         {
-          "prompt": "Tengo una manzana:",
+          "prompt": "I have an apple:",
           "words": [
             "have",
-            "I",
+            "Yo",
             "an",
             "apple"
           ],
           "correct": "I have an apple"
         },
         {
-          "prompt": "Es un libro:",
+          "prompt": "It's a book:",
           "words": [
             "is",
-            "It",
-            "a",
+            "Item",
+            "to",
             "book"
           ],
           "correct": "It is a book"
         },
         {
-          "prompt": "El sol es amarillo:",
+          "prompt": "The sun is yellow:",
           "words": [
             "The",
             "is",
@@ -365,27 +365,27 @@
           "correct": "The sun is yellow"
         },
         {
-          "prompt": "Ella es una doctora:",
+          "prompt": "She is a doctor:",
           "words": [
             "is",
             "She",
-            "a",
+            "to",
             "doctor"
           ],
           "correct": "She is a doctor"
         },
         {
-          "prompt": "Es un huevo:",
+          "prompt": "It's an egg:",
           "words": [
             "is",
-            "It",
+            "Item",
             "an",
-            "egg"
+            "eggs"
           ],
           "correct": "It is an egg"
         },
         {
-          "prompt": "Los niños están jugando:",
+          "prompt": "The children are playing:",
           "words": [
             "children",
             "The",
@@ -395,17 +395,17 @@
           "correct": "The children are playing"
         },
         {
-          "prompt": "Tengo una idea:",
+          "prompt": "I have an idea:",
           "words": [
             "have",
-            "I",
+            "Yo",
             "an",
             "idea"
           ],
           "correct": "I have an idea"
         },
         {
-          "prompt": "El gato está en la mesa:",
+          "prompt": "The cat is on the table:",
           "words": [
             "The",
             "cat",
@@ -422,8 +422,8 @@
   {
     "id": "m1-ch4-quiz",
     "type": "quiz",
-    "title": "Quiz de Artículos y Plurales",
-    "description": "Pon a prueba tu conocimiento de a/an/the y los plurales.",
+    "title": "Articles and Plurals Quiz",
+    "description": "Test your knowledge of a/an/the and plurals.",
     "props": {
       "questions": [
         {
@@ -431,7 +431,7 @@
           "type": "multiple-choice",
           "question": "Choose: \"___ apple a day keeps the doctor away.\"",
           "options": [
-            "A",
+            "TO",
             "An",
             "The",
             "No article"
@@ -451,7 +451,7 @@
           "type": "multiple-choice",
           "question": "What is the plural of \"child\"?",
           "options": [
-            "childs",
+            "children",
             "childes",
             "children",
             "childrens"
@@ -471,7 +471,7 @@
           "type": "multiple-choice",
           "question": "What is the plural of \"bus\"?",
           "options": [
-            "buss",
+            "bus",
             "buses",
             "busies",
             "bus"
@@ -484,7 +484,7 @@
           "type": "multiple-choice",
           "question": "\"___ university\" — A or AN?",
           "options": [
-            "A",
+            "TO",
             "An"
           ],
           "correct": 0,
@@ -502,10 +502,10 @@
           "type": "multiple-choice",
           "question": "Which sentence is correct?",
           "options": [
-            "I see a elephant",
+            "I see an elephant",
             "I see an elephant",
             "I see the elephant an",
-            "I see elephant a"
+            "I see elephant"
           ],
           "correct": 1,
           "explanation": "\"An elephant\" — \"elephant\" starts with a vowel sound."
@@ -517,7 +517,7 @@
           "options": [
             "babys",
             "babies",
-            "babyes",
+            "babys",
             "babyies"
           ],
           "correct": 1,
@@ -527,7 +527,7 @@
           "id": "q10",
           "type": "fill-blank",
           "question": "The plural of \"man\" is ___",
-          "correct": "men",
+          "correct": "menu",
           "explanation": "Man → men (irregular plural)."
         },
         {
@@ -535,7 +535,7 @@
           "type": "multiple-choice",
           "question": "In \"The dog barks\", what is the function of \"The dog\"?",
           "options": [
-            "Object",
+            "object",
             "Subject",
             "Object of preposition",
             "Predicate nominative"
@@ -549,7 +549,7 @@
           "question": "In \"She is a teacher\", what is the function of \"a teacher\"?",
           "options": [
             "Subject",
-            "Object",
+            "object",
             "Object of preposition",
             "Predicate nominative"
           ],
@@ -562,7 +562,7 @@
           "question": "In \"Maria, my best friend, is coming\", what is \"my best friend\"?",
           "options": [
             "Subject",
-            "Object",
+            "object",
             "Appositive",
             "Predicate nominative"
           ],
@@ -575,12 +575,12 @@
           "question": "\"I need some ___.\" Which is correct?",
           "options": [
             "information",
-            "informations",
+            "information",
             "an information",
-            "informations"
+            "information"
           ],
           "correct": 0,
-          "explanation": "\"Information\" is uncountable — no plural, no \"an\"."
+          "explanation": "\"Information\" is uncountable — not plural, not \"an\"."
         },
         {
           "id": "q15",
@@ -601,38 +601,38 @@
   {
     "id": "m1-ch4-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Sustantivos",
-    "description": "Descifra términos sobre sustantivos y artículos.",
+    "title": "Vocabulary of Nouns",
+    "description": "Decipher terms about nouns and articles.",
     "props": {
       "words": [
         {
           "word": "NOUN",
-          "hint": "Sustantivo; nombre de persona, lugar o cosa",
+          "hint": "Noun; name of person, place or thing",
           "category": "Nouns"
         },
         {
           "word": "ARTICLE",
-          "hint": "Artículo; a, an, the",
+          "hint": "Article; a, an, the",
           "category": "Nouns"
         },
         {
           "word": "SINGULAR",
-          "hint": "Singular; uno solo",
+          "hint": "Singular; only one",
           "category": "Nouns"
         },
         {
           "word": "PLURAL",
-          "hint": "Plural; más de uno",
+          "hint": "Plural; more than one",
           "category": "Nouns"
         },
         {
           "word": "OBJECT",
-          "hint": "Objeto; cosa que recibe la acción",
+          "hint": "Object; thing that receives the action",
           "category": "Nouns"
         },
         {
           "word": "PERSON",
-          "hint": "Persona; ser humano",
+          "hint": "Person; human being",
           "category": "Nouns"
         }
       ]

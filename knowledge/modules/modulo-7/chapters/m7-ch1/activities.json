@@ -2,8 +2,8 @@
   {
     "id": "m7-ch1-svg",
     "type": "svg-scene",
-    "title": "Guía de Pronombres Relativos",
-    "description": "Visualiza cuándo usar cada pronombre relativo.",
+    "title": "Relative Pronoun Guide",
+    "description": "Visualize when to use each relative pronoun.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -137,8 +137,8 @@
   {
     "id": "m7-ch1-flash",
     "type": "flashcard",
-    "title": "Elige el Pronombre Relativo",
-    "description": "Practica eligiendo el pronombre relativo correcto.",
+    "title": "Choose the Relative Pronoun",
+    "description": "Practice choosing the correct relative pronoun.",
     "props": {
       "cards": [
         {
@@ -161,7 +161,7 @@
         },
         {
           "id": "c4",
-          "front": "The girl ___ bag was stolen called police. (posesión)",
+          "front": "The girl ___ bag was stolen called police. (possession)",
           "back": "The girl whose bag was stolen called the police.",
           "example": "whose = possession."
         },
@@ -208,7 +208,7 @@
     "id": "m7-ch1-match",
     "type": "word-match",
     "title": "Pronombre → Uso",
-    "description": "Empareja cada pronombre relativo con su uso.",
+    "description": "Match each relative pronoun with its use.",
     "props": {
       "pairs": [
         {
@@ -242,11 +242,11 @@
     "id": "m7-ch1-sentence",
     "type": "sentence-builder",
     "title": "Combina Oraciones",
-    "description": "Ordena para formar oraciones con cláusulas relativas.",
+    "description": "Order to form sentences with relative clauses.",
     "props": {
       "sentences": [
         {
-          "prompt": "La mujer que llamó es mi tía:",
+          "prompt": "The woman who called is my aunt:",
           "words": [
             "The",
             "woman",
@@ -259,7 +259,7 @@
           "correct": "The woman who called is my aunt"
         },
         {
-          "prompt": "El coche que compré es rojo:",
+          "prompt": "The car I bought is red:",
           "words": [
             "The",
             "car",
@@ -272,7 +272,7 @@
           "correct": "The car which I bought is red"
         },
         {
-          "prompt": "La ciudad donde nací es pequeña:",
+          "prompt": "The city where I was born is small:",
           "words": [
             "The",
             "city",
@@ -286,7 +286,7 @@
           "correct": "The city where I was born is small"
         },
         {
-          "prompt": "La chica cuyo bolso fue robado llamó a la policía:",
+          "prompt": "The girl whose purse was stolen called the police:",
           "words": [
             "The",
             "girl",
@@ -301,7 +301,7 @@
           "correct": "The girl whose bag was stolen called the police"
         },
         {
-          "prompt": "Conocí a un hombre que habla 5 idiomas:",
+          "prompt": "I met a man who speaks 5 languages:",
           "words": [
             "I",
             "met",
@@ -320,8 +320,8 @@
   {
     "id": "m7-ch1-quiz",
     "type": "quiz",
-    "title": "Quiz: Cláusulas Relativas",
-    "description": "Demuestra tu dominio de las cláusulas relativas.",
+    "title": "Quiz: Relative Clauses",
+    "description": "Demonstrate your mastery of relative clauses.",
     "props": {
       "questions": [
         {
@@ -347,7 +347,7 @@
         {
           "id": "q3",
           "type": "multiple-choice",
-          "question": "\"The girl ___ bag was stolen called police.\" (posesión)",
+          "question": "\"The girl ___ bag was stolen called police.\" (possession)",
           "options": [
             "who",
             "which",
@@ -418,28 +418,28 @@
   {
     "id": "m7-ch1-scramble",
     "type": "word-scramble",
-    "title": "Cláusulas Relativas",
-    "description": "Descifra pronombres y términos relativos.",
+    "title": "Relative Clauses",
+    "description": "Decipher pronouns and relative terms.",
     "props": {
       "words": [
         {
           "word": "WHICH",
-          "hint": "El cual/la cual; para cosas",
+          "hint": "which for things",
           "category": "Relative"
         },
         {
           "word": "WHOSE",
-          "hint": "Cuyo/cuya; posesión",
+          "hint": "Whose/whose; possession",
           "category": "Relative"
         },
         {
           "word": "WHOM",
-          "hint": "A quien; objeto de persona",
+          "hint": "Whom; person object",
           "category": "Relative"
         },
         {
           "word": "CLAUSE",
-          "hint": "Cláusula; oración subordinada",
+          "hint": "Clause; subordinate clause",
           "category": "Relative"
         },
         {
@@ -449,7 +449,7 @@
         },
         {
           "word": "RELATIVE",
-          "hint": "Relativo; que relaciona",
+          "hint": "Relative; that relates",
           "category": "Relative"
         }
       ]

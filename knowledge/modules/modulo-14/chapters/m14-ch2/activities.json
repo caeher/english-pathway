@@ -2,8 +2,8 @@
   {
     "id": "m14-ch2-quiz",
     "type": "quiz",
-    "title": "¿Qué Tipo de Creador Eres?",
-    "description": "Descubre qué formato de contenido se adapta mejor a tus fortalezas.",
+    "title": "What Kind of Creator Are You?",
+    "description": "Discover which content format best suits your strengths.",
     "props": {
       "questions": [
         {
@@ -124,8 +124,8 @@
   {
     "id": "m14-ch2-sentence",
     "type": "sentence-builder",
-    "title": "El Hook Perfecto",
-    "description": "Construye hooks atrapantes usando diferentes técnicas.",
+    "title": "The Perfect Hook",
+    "description": "Build catchy hooks using different techniques.",
     "props": {
       "sentences": [
         {
@@ -232,80 +232,80 @@
   {
     "id": "m14-ch2-flash",
     "type": "flashcard",
-    "title": "Vocabulario de Content Creator",
-    "description": "Domina la terminología profesional del mundo de creación de contenido.",
+    "title": "Content Creator Vocabulary",
+    "description": "Master the professional terminology of the content creation world.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "ENGAGEMENT 💬",
-          "back": "La interacción que tu audiencia tiene con tu contenido: likes, comments, shares. Alto engagement = contenido que conecta.",
+          "back": "The interaction that your audience has with your content: likes, comments, shares. High engagement = content that connects.",
           "example": "Our latest post had incredible engagement — over 500 comments!"
         },
         {
           "id": "f2",
           "front": "CALL TO ACTION (CTA) 📢",
-          "back": "Instrucción clara para que la audiencia haga algo: suscribirse, comentar, compartir, visitar un link.",
+          "back": "Clear instruction for the audience to do something: subscribe, comment, share, visit a link.",
           "example": "If you enjoyed this episode, please subscribe and leave a review!"
         },
         {
           "id": "f3",
           "front": "NICHE 🎯",
-          "back": "Tu tema o área de especialización como creador. Un nicho específico atrae audiencia fiel.",
+          "back": "Your topic or area of ​​expertise as a creator. A specific niche attracts a loyal audience.",
           "example": "My niche is sustainable fashion for young professionals."
         },
         {
           "id": "f4",
           "front": "TARGET AUDIENCE 👥",
-          "back": "El grupo específico de personas al que diriges tu contenido. Definirlo mejora tu comunicación.",
+          "back": "The specific group of people you target your content to. Defining it improves your communication.",
           "example": "My target audience is English learners aged 20-35."
         },
         {
           "id": "f5",
           "front": "THUMBNAIL 🖼️",
-          "back": "Imagen miniatura que representa tu video/contenido. Es lo primero que la gente ve.",
+          "back": "Thumbnail image that represents your video/content. It's the first thing people see.",
           "example": "A good thumbnail can increase your click-through rate by 30%."
         },
         {
           "id": "f6",
           "front": "SEO 🔍",
-          "back": "Search Engine Optimization — optimizar tu contenido para que aparezca en búsquedas de Google/YouTube.",
+          "back": "Search Engine Optimization — optimize your content to appear in Google/YouTube searches.",
           "example": "Good SEO helps your blog appear on the first page of Google results."
         },
         {
           "id": "f7",
           "front": "CONTENT CALENDAR 📅",
-          "back": "Plan de publicación organizado por fechas. Te mantiene consistente.",
+          "back": "Publication plan organized by dates. It keeps you consistent.",
           "example": "I use a content calendar to plan my posts two weeks in advance."
         },
         {
           "id": "f8",
           "front": "HOOK 🪝",
-          "back": "La primera frase o imagen que atrapa la atención. Sin un buen hook, nadie se queda.",
+          "back": "The first phrase or image that catches your attention. Without a good hook, no one stays.",
           "example": "The hook of my video was: 'What if I told you that you're learning English wrong?'"
         },
         {
           "id": "f9",
           "front": "MONETIZATION 💰",
-          "back": "Generar ingresos con tu contenido: ads, sponsors, membresías, productos.",
+          "back": "Generate income with your content: ads, sponsors, memberships, products.",
           "example": "She started monetizing her channel after reaching 10K subscribers."
         },
         {
           "id": "f10",
           "front": "ANALYTICS 📊",
-          "back": "Datos sobre el rendimiento de tu contenido: views, watch time, demographics.",
+          "back": "Data on the performance of your content: views, watch time, demographics.",
           "example": "According to my analytics, most of my audience watches from mobile devices."
         },
         {
           "id": "f11",
           "front": "SUBSCRIBER / FOLLOWER 👤",
-          "back": "Persona que sigue tu canal/cuenta para recibir tu contenido nuevo.",
+          "back": "Person who follows your channel/account to receive your new content.",
           "example": "We just reached 10,000 subscribers! Thank you all!"
         },
         {
           "id": "f12",
           "front": "VIRAL 🚀",
-          "back": "Contenido que se comparte masivamente en poco tiempo.",
+          "back": "Content that is shared massively in a short time.",
           "example": "My video about language learning went viral — 2 million views in one week!"
         }
       ]
@@ -314,8 +314,8 @@
   {
     "id": "m14-ch2-match",
     "type": "word-match",
-    "title": "Técnica de Hook → Ejemplo",
-    "description": "Empareja cada tipo de hook con su ejemplo concreto.",
+    "title": "Hook Technique → Example",
+    "description": "Match each type of hook with its specific example.",
     "props": {
       "pairs": [
         {
@@ -356,38 +356,38 @@
   {
     "id": "m14-ch2-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Creación de Contenido",
-    "description": "Descifra términos para crear tu propio contenido.",
+    "title": "Content Creation Vocabulary",
+    "description": "Decipher terms to create your own content.",
     "props": {
       "words": [
         {
           "word": "SCRIPT",
-          "hint": "Guion; texto escrito antes de grabar",
+          "hint": "Script; written text before recording",
           "category": "Content"
         },
         {
           "word": "FOOTAGE",
-          "hint": "Material grabado; vídeo o audio crudo",
+          "hint": "recorded material; raw video or audio",
           "category": "Content"
         },
         {
           "word": "CAPTION",
-          "hint": "Leyenda o subtítulo para una imagen o vídeo",
+          "hint": "Caption or subtitle for an image or video",
           "category": "Content"
         },
         {
           "word": "STORYBOARD",
-          "hint": "Guion visual; dibujos de cada escena",
+          "hint": "visual script; drawings of each scene",
           "category": "Content"
         },
         {
           "word": "HOOK",
-          "hint": "Gancho; algo que capta la atención al inicio",
+          "hint": "Hook; something that catches attention at the beginning",
           "category": "Content"
         },
         {
           "word": "EDITING",
-          "hint": "Edición; proceso de cortar y montar",
+          "hint": "Edition; cutting and assembly process",
           "category": "Content"
         }
       ]

@@ -1,21 +1,21 @@
 ---
 id: m11-ch1
-moduleId: modulo-11
+moduleId: module-11
 number: 1
-title: El presente perfecto
-subtitle: Contando experiencias y logros con timelines interactivas
+title: The present perfect
+subtitle: Counting experiences and achievements with interactive timelines
 icon: ⏳
 color: "#0ea5e9"
 objectives:
-  - Usar el presente perfecto (have/has + past participle) para hablar de experiencias, logros y acciones con relevancia presente
-  - Diferenciar cuándo usar presente perfecto vs. pasado simple según el contexto temporal
-  - Dominar los participios pasados irregulares más comunes (gone, seen, written…)
+  - Use the present perfect (have/has + past participle) to talk about experiences, achievements and actions with present relevance
+  - Differentiate when to use present perfect vs. past simple according to the temporal context
+  - Master the most common irregular past participles (gone, seen, written…)
 xpReward: 280
 ---
 
-## Present Perfect — El puente entre pasado y presente
+## Present Perfect — The bridge between past and present
 
-El presente perfecto conecta una acción del pasado con el presente:
+The present perfect connects an action from the past to the present:
 
 ### Estructura
 | Sujeto | Auxiliar | Participio | Ejemplo |
@@ -32,9 +32,9 @@ El presente perfecto conecta una acción del pasado con el presente:
 | **Acciones no terminadas** | *I have lived here for 5 years.* | for, since |
 
 ### ⚠️ Present Perfect vs. Past Simple
-- ✅ *"I have visited Paris."* (sin tiempo específico → present perfect)
-- ✅ *"I visited Paris last year."* (tiempo específico → past simple)
-- ❌ ~~"I have visited Paris last year."~~ (¡incorrecto!)
+- ✅ *"I have visited Paris."* (without specific tense → present perfect)
+- ✅ *"I visited Paris last year."* (specific time → past simple)
+- ❌ ~~"I have visited Paris last year."~~ (incorrect!)
 
 ### Marcadores temporales clave
 | Present Perfect | Past Simple |
@@ -45,4 +45,4 @@ El presente perfecto conecta una acción del pasado con el presente:
 | for, since | ago |
 | so far | when I was young |
 
-> 💡 Si puedes ponerle fecha, usa **pasado simple**. Si hablas de "en algún momento de tu vida", usa **presente perfecto**.
+> 💡 If you can date it, use **past simple**. If you're talking about "sometime in your life," use **present perfect**.

@@ -1,24 +1,24 @@
 ---
 id: m6-ch6
-moduleId: modulo-6
+moduleId: module-6
 number: 6
-title: "Reported Speech: Preguntas, Órdenes y Phrasal Verbs"
-subtitle: Asked if/what, told to, y verbos compuestos comunes
+title: "Reported Speech: Questions, Commands and Phrasal Verbs"
+subtitle: Asked if/what, told to, and common phrasal verbs
 icon: 🧩
 color: "#06b6d4"
 objectives:
-  - Reportar preguntas (asked if / asked what) y órdenes (told to)
-  - Aplicar backshift en preguntas reportadas
-  - Aprender los phrasal verbs más comunes del inglés
+  - Report questions (asked if / asked what) and orders (told to)
+  - Apply backshift on reported questions
+  - Learn the most common phrasal verbs in English
 xpReward: 180
 ---
 
 ## Reported Speech: Questions & Orders
 
 ### Reported Questions
-1. **No** se usan signos de interrogación.
-2. El **orden** cambia a afirmativo (no inversión).
-3. Se aplica **backshift** como en afirmaciones.
+1. **No** question marks are used.
+2. The **order** changes to affirmative (non-inversion).
+3. **backshift** is applied as in assertions.
 
 ### Yes/No → asked if / whether
 | Direct | Reported |
@@ -44,7 +44,7 @@ xpReward: 180
 
 ## Common Phrasal Verbs
 
-### Phrasal verb = verbo + partícula
+### Phrasal verb = verb + particle
 - **look** = mirar → **look after** = cuidar → **look for** = buscar
 
 ### Esenciales
@@ -58,6 +58,6 @@ xpReward: 180
 | **look after** | cuidar | She **looks after** her brother. |
 | **find out** | descubrir | I **found out** the truth. |
 | **pick up** | recoger | I'll **pick you up** at 5. |
-| **run out of** | quedarse sin | We **ran out of** milk. |
+| **run out of** | run out | We **ran out of** milk. |
 
 ### Separable + pronoun: **Turn it off.** (NOT Turn off it.)

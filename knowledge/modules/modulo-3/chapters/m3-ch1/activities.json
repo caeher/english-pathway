@@ -2,8 +2,8 @@
   {
     "id": "m3-ch1-svg",
     "type": "svg-scene",
-    "title": "Un Día en el Parque",
-    "description": "Observa qué está haciendo cada persona en el parque ahora mismo.",
+    "title": "A Day in the Park",
+    "description": "See what each person in the park is doing right now.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -61,7 +61,7 @@
             "width": 190,
             "height": 65,
             "fill": "#fecaca",
-            "label": "🍦 María",
+            "label": "🍦 Maria",
             "labelEn": "María IS EATING ice cream. She's SITTING on a bench."
           },
           {
@@ -126,8 +126,8 @@
   {
     "id": "m3-ch1-flash",
     "type": "flashcard",
-    "title": "Conjugaciones en Presente Continuo",
-    "description": "Practica la formación del presente continuo.",
+    "title": "Conjugations in Present Continuous",
+    "description": "Practice forming the present continuous.",
     "props": {
       "cards": [
         {
@@ -186,7 +186,7 @@
         },
         {
           "id": "c10",
-          "front": "___you / study? (pregunta)",
+          "front": "___you / study? (ask)",
           "back": "Are you studying?",
           "example": "Are you studying for the exam?"
         },
@@ -209,7 +209,7 @@
     "id": "m3-ch1-match",
     "type": "word-match",
     "title": "Verbo → Forma -ing",
-    "description": "Empareja cada verbo con su forma correcta en -ing.",
+    "description": "Match each verb with its correct -ing form.",
     "props": {
       "pairs": [
         {
@@ -250,12 +250,12 @@
   {
     "id": "m3-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Describe lo que Pasa Ahora",
-    "description": "Ordena las palabras para formar oraciones en presente continuo.",
+    "title": "Describe what happens now",
+    "description": "Order the words to form sentences in the present continuous.",
     "props": {
       "sentences": [
         {
-          "prompt": "Estoy estudiando inglés:",
+          "prompt": "I am studying English:",
           "words": [
             "I",
             "am",
@@ -265,7 +265,7 @@
           "correct": "I am studying English"
         },
         {
-          "prompt": "Ella está cocinando la cena:",
+          "prompt": "She is cooking dinner:",
           "words": [
             "She",
             "is",
@@ -275,7 +275,7 @@
           "correct": "She is cooking dinner"
         },
         {
-          "prompt": "Ellos están jugando fútbol:",
+          "prompt": "They are playing soccer:",
           "words": [
             "They",
             "are",
@@ -296,7 +296,7 @@
           "correct": "I am not working today"
         },
         {
-          "prompt": "¿Estás escuchando música?:",
+          "prompt": "Are you listening to music?:",
           "words": [
             "Are",
             "you",
@@ -307,7 +307,7 @@
           "correct": "Are you listening to music?"
         },
         {
-          "prompt": "Él está corriendo en el parque:",
+          "prompt": "He is running in the park:",
           "words": [
             "He",
             "is",
@@ -319,7 +319,7 @@
           "correct": "He is running in the park"
         },
         {
-          "prompt": "Nos reunimos mañana:",
+          "prompt": "We meet tomorrow:",
           "words": [
             "We",
             "are",
@@ -329,7 +329,7 @@
           "correct": "We are meeting tomorrow"
         },
         {
-          "prompt": "Ella no está leyendo:",
+          "prompt": "She is not reading:",
           "words": [
             "She",
             "is",
@@ -345,7 +345,7 @@
     "id": "m3-ch1-quiz",
     "type": "quiz",
     "title": "Quiz: Presente Continuo",
-    "description": "Demuestra que dominas el presente continuo.",
+    "description": "Show that you master the present continuous.",
     "props": {
       "questions": [
         {
@@ -460,8 +460,8 @@
   {
     "id": "m3-ch1-scramble",
     "type": "word-scramble",
-    "title": "Verbos en -ing",
-    "description": "Descifra verbos en presente continuo.",
+    "title": "-ing verbs",
+    "description": "Unscramble verbs in the present continuous.",
     "props": {
       "words": [
         {

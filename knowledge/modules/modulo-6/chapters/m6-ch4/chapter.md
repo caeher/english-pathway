@@ -1,34 +1,34 @@
 ---
 id: m6-ch4
-moduleId: modulo-6
+moduleId: module-6
 number: 4
 title: Mixed Conditional
-subtitle: Third conditional y mezcla de tiempos — Pasado y presente
+subtitle: Third conditional and mixture of tenses — Past and present
 icon: 🔀
 color: "#8b5cf6"
 objectives:
-  - "Formar el tercer condicional: if + past perfect, would have + past participle"
-  - Comprender los condicionales mixtos (mezcla de tiempos)
-  - Usar ambos para hablar de pasados irreales y sus efectos
+  - "Form the third conditional: if + past perfect, would have + past participle"
+  - Understanding mixed conditionals (mixture of tenses)
+  - Use both to talk about unreal pasts and their effects
 xpReward: 190
 ---
 
 ## Mixed Conditional — Condicional Mixto
 
-### Third Conditional (parte del Mixed)
+### Third Conditional (part of Mixed)
 | If clause | Result clause |
 |-----------|---------------|
 | If + **past perfect** (had + pp) | would have + **past participle** |
 | If I **had studied** harder, | I **would have passed** the exam. |
 | If she **had known**, | she **would have come**. |
 
-### Uso del Third: situaciones pasadas IRREALES
-- Hablamos de algo que **NO** pasó y sus consecuencias imaginarias.
-- If I **had woken up** earlier, I **wouldn't have been** late. (Pero NO me desperté.)
-- If he **had saved** money, he **would have bought** a car. (Pero NO ahorró.)
+### Use of Third: UNREAL past situations
+- We talk about something that **DID NOT** happen and its imaginary consequences.
+- If I **had woken up** earlier, I **wouldn't have been** late. (But I did NOT wake up.)
+- If he **had saved** money, he **would have bought** a car. (But he did NOT save.)
 
-### Mixed Conditional — Mezcla de tiempos
-Combinamos **condición en el pasado** con **resultado en el presente** (o viceversa):
+### Mixed Conditional — Mixing of tenses
+We combine **condition in the past** with **result in the present** (or vice versa):
 
 | Tipo | If clause | Result | Ejemplo |
 |------|-----------|--------|---------|
@@ -50,4 +50,4 @@ Combinamos **condición en el pasado** con **resultado en el presente** (o vicev
 | **2nd** | past | would | Unreal present |
 | **3rd/Mixed** | past perfect | would have / would | Unreal past / Mixed |
 
-> 💡 El "Third conditional" es un tipo de condicional mixto. Mixed abarca desde First (combinaciones) hasta Third.
+> 💡 The "Third conditional" is a type of mixed conditional. Mixed ranges from First (combinations) to Third.

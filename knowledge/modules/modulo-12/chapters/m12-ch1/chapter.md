@@ -1,62 +1,62 @@
 ---
 id: m12-ch1
-moduleId: modulo-12
+moduleId: module-12
 number: 1
-title: Escribiendo tu historia
-subtitle: Redacción de párrafos y textos cortos con guía interactiva
+title: Writing your story
+subtitle: Writing paragraphs and short texts with an interactive guide
 icon: ✍️
 color: "#e85d3a"
 objectives:
-  - Escribir párrafos bien estructurados con topic sentence, supporting details y concluding sentence
-  - "Aplicar el modelo \"Hamburger\" para organizar ideas en un párrafo"
-  - Redactar textos descriptivos, narrativos, de opinión y emails informales
-  - Usar conectores de escritura para dar cohesión a los textos
+  - Write well-structured paragraphs with topic sentence, supporting details and concluding sentence
+  - "Apply the \"Hamburger\" model to organize ideas in a paragraph"
+  - Write descriptive, narrative, opinion texts and informal emails
+  - Use writing connectors to give cohesion to texts
 xpReward: 300
 ---
 
-## Escritura Procesual — De la idea al texto
+## Procedural Writing — From idea to text
 
-Escribir bien en inglés no es cuestión de traducir del español. Se trata de seguir un **proceso** que te lleva de las ideas al texto final.
+Writing well in English is not a matter of translating from Spanish. It's about following a **process** that takes you from ideas to the final text.
 
-### El Proceso de Escritura
+### The Writing Process
 
-| Fase | Qué hacer |
+| Fase | To do |
 |---|---|
 | 🧠 **Pre-writing** | Brainstorming, organizar ideas, elegir tema |
-| ✏️ **Drafting** | Escribir el primer borrador sin buscar perfección |
-| 🔍 **Revising** | Revisar contenido, estructura y coherencia |
-| ✅ **Editing** | Corregir gramática, ortografía y puntuación |
-| 📤 **Publishing** | Versión final lista para compartir |
+| ✏️ **Drafting** | Write the first draft without seeking perfection |
+| 🔍 **Reviewing** | Review content, structure and coherence |
+| ✅ **Editing** | Correct grammar, spelling and punctuation |
+| 📤 **Publishing** | Final version ready to share |
 
-### Estructura de Párrafo — El Modelo Hamburger 🍔
+### Paragraph Structure — The Hamburger Model 🍔
 
-Cada párrafo bien escrito tiene tres partes:
+Every well-written paragraph has three parts:
 
-- 🍞 **Topic Sentence** — La idea principal del párrafo. Va al inicio.
-- 🥩 **Supporting Details** — 2-3 oraciones que desarrollan la idea con ejemplos, razones o evidencia.
-- 🍞 **Concluding Sentence** — Resumen o cierre que conecta con la topic sentence.
+- 🍞 **Topic Sentence** — The main idea of ​​the paragraph. Goes to the beginning.
+- 🥩 **Supporting Details** — 2-3 sentences that develop the idea with examples, reasons or evidence.
+- 🍞 **Concluding Sentence** — Summary or closure that connects to the topic sentence.
 
 ### Ejemplo
 
 > **Exercise has many benefits for our body and mind.** First, it improves cardiovascular health and reduces the risk of disease. Additionally, it reduces stress and anxiety, helping us feel more positive. **In conclusion, regular exercise is essential for a healthy life.**
 
-### Tipos de Texto
+### Text Types
 
-| Tipo | Propósito | Ejemplo |
+| Tipo | Purpose | Ejemplo |
 |---|---|---|
 | **Descriptivo** | Describir lugar, persona u objeto | "My hometown is a small city near the coast..." |
-| **Narrativo** | Contar una experiencia | "Last summer, I visited Paris for the first time..." |
-| **Opinión** | Expresar y justificar un punto de vista | "I believe that learning a second language is essential..." |
-| **Email informal** | Escribir a un amigo | "Hi Sarah! How are you? I wanted to tell you about..." |
+| **Narrativo** | tell an experience | "Last summer, I visited Paris for the first time..." |
+| **Opinion** | Express and justify a point of view | "I believe that learning a second language is essential..." |
+| **Email informal** | Write to a friend | "Hi Sarah! How are you? I wanted to tell you about..." |
 
-### Conectores útiles para escritura
+### Useful connectors for writing
 
-| Función | Conectores |
+| Function | Conectores |
 |---|---|
-| Añadir | furthermore, in addition, moreover, also |
+| Add | furthermore, in addition, moreover, also |
 | Contrastar | however, on the other hand, although, nevertheless |
 | Dar ejemplo | for example, for instance, such as |
 | Concluir | in conclusion, to sum up, all in all, in short |
 | Secuencia | first, second, then, finally, lastly |
 
-> 💡 **Tip:** Antes de escribir, siempre haz un mapa de ideas. Organizar ANTES de escribir mejora enormemente la calidad del texto.
+> 💡 **Tip:** Before writing, always make a map of ideas. Organizing BEFORE writing greatly improves the quality of the text.

@@ -1,15 +1,15 @@
 ---
 id: m4-ch6
-moduleId: modulo-4
+moduleId: module-4
 number: 6
-title: Preposiciones de Lugar y Tiempo
-subtitle: In, on, at — dónde y cuándo
+title: Prepositions of Place and Time
+subtitle: In, on, at — where and when
 icon: 📍
 color: "#06b6d4"
 objectives:
-  - Usar in, on, at para lugar
-  - Usar in, on, at para tiempo
-  - "Dominar otras preposiciones comunes: between, next to, behind, etc."
+  - Use in, on, at for place
+  - Use in, on, at for time
+  - "Master other common prepositions: between, next to, behind, etc."
 xpReward: 150
 ---
 
@@ -25,13 +25,13 @@ xpReward: 150
 ### More Place Prepositions
 | Preposition | Meaning | Example |
 |-------------|---------|---------|
-| **next to** | al lado de | The bank is next to the school. |
+| **next to** | beside | The bank is next to the school. |
 | **between** | entre | The park is between the bank and the church. |
-| **behind** | detrás de | The car is behind the house. |
-| **in front of** | delante de | The tree is in front of the house. |
-| **under** | debajo de | The cat is under the table. |
-| **above/over** | encima de | The clock is above the door. |
-| **near** | cerca de | The shop is near my house. |
+| **behind** | behind | The car is behind the house. |
+| **in front of** | in front of | The tree is in front of the house. |
+| **under** | below | The cat is under the table. |
+| **above/over** | above | The clock is above the door. |
+| **near** | nearly | The shop is near my house. |
 
 ### Prepositions of Time
 | | Use | Example |
@@ -45,4 +45,4 @@ xpReward: 150
 - at the **weekend** (British) / on the **weekend** (American)
 - at **noon** / at **midnight**
 
-> 💡 IN = grande (países, meses, años) / ON = mediano (días, fechas) / AT = pequeño (horas, puntos)
+> 💡 IN = large (countries, months, years) / ON = medium (days, dates) / AT = small (hours, points)

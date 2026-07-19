@@ -1,75 +1,75 @@
 ---
 id: m13-ch1
-moduleId: modulo-13
+moduleId: module-13
 number: 1
-title: Inglés para el trabajo
-subtitle: Vocabulario y frases clave en simulaciones de entrevistas
+title: English for work
+subtitle: Vocabulary and key phrases in interview simulations
 icon: 💼
 color: "#1e3a5f"
 objectives:
-  - Responder preguntas típicas de entrevista de trabajo en inglés
-  - Aplicar la técnica STAR (Situation, Task, Action, Result) para respuestas conductuales
-  - "Usar vocabulario profesional: verbos de acción, cualidades y frases formales"
-  - Evitar errores comunes en entrevistas (informalidad, negatividad, respuestas vagas)
+  - Answer typical job interview questions in English
+  - Apply the STAR (Situation, Task, Action, Result) technique for behavioral responses
+  - "Use professional vocabulary: action verbs, qualities and formal phrases"
+  - Avoid common mistakes in interviews (informality, negativity, vague answers)
 xpReward: 350
 ---
 
-## Entrevistas de Trabajo en Inglés — Preparación Estratégica
+## Job Interviews in English — Strategic Preparation
 
-La entrevista de trabajo es una de las situaciones más desafiantes para hablar en inglés. Pero con la preparación correcta, puedes destacar.
+The job interview is one of the most challenging situations to speak in English. But with the right preparation, you can stand out.
 
-### Las 7 Preguntas que Siempre Hacen
+### The 7 Questions They Always Ask
 
-| # | Pregunta | Estrategia |
+| # | Question | Strategy |
 |---|---|---|
-| 1 | "Tell me about yourself." | Resumen profesional de 60 segundos |
-| 2 | "What are your strengths?" | 3 cualidades con ejemplos |
-| 3 | "What are your weaknesses?" | 1 debilidad real + cómo la superas |
-| 4 | "Why are you interested in this position?" | Investigación + alineación |
-| 5 | "Where do you see yourself in 5 years?" | Proyección realista y ambiciosa |
-| 6 | "Tell me about a challenge you faced." | Respuesta STAR |
+| 1 | "Tell me about yourself." | 60 second professional summary |
+| 2 | "What are your strengths?" | 3 qualities with examples |
+| 3 | "What are your weaknesses?" | 1 real weakness + how you overcome it |
+| 4 | "Why are you interested in this position?" | Research + alignment |
+| 5 | "Where do you see yourself in 5 years?" | Realistic and ambitious projection |
+| 6 | "Tell me about a challenge you faced." | STAR Response |
 | 7 | "Do you have any questions for us?" | 2-3 preguntas inteligentes |
 
-### La Técnica STAR ⭐
+### The STAR Technique ⭐
 
-Para preguntas conductuales ("Tell me about a time when..."), usa STAR:
+For behavioral questions ("Tell me about a time when..."), use STAR:
 
 | Letra | Significado | Ejemplo |
 |---|---|---|
-| **S** — Situation | Describe el contexto | "In my previous role at a marketing agency..." |
+| **S** — Situation | Describe the context | "In my previous role at a marketing agency..." |
 | **T** — Task | Tu responsabilidad | "I was responsible for launching a new product campaign..." |
-| **A** — Action | Qué hiciste | "I coordinated with the design team and implemented a new strategy..." |
-| **R** — Result | El resultado | "As a result, we increased sales by 25% in three months." |
+| **A** — Action | what did you do | "I coordinated with the design team and implemented a new strategy..." |
+| **R** — Result | The result | "As a result, we increased sales by 25% in three months." |
 
 ### Vocabulario Profesional
 
 #### Cualidades (Adjectives)
-| Inglés | Español | Ejemplo |
+| English | Spanish | Ejemplo |
 |---|---|---|
 | reliable | confiable | "I'm a reliable team member." |
 | proactive | proactivo | "I take a proactive approach." |
 | detail-oriented | detallista | "I'm very detail-oriented." |
 | adaptable | adaptable | "I'm adaptable to change." |
-| team-player | trabajo en equipo | "I'm a strong team-player." |
+| team-player | teamwork | "I'm a strong team-player." |
 
-#### Verbos de Acción (Power Verbs)
-| Verbo | Español | Ejemplo |
+#### Action Verbs (Power Verbs)
+| Verbo | Spanish | Ejemplo |
 |---|---|---|
-| managed | gestioné | "I managed a team of 10." |
-| led | lideré | "I led the marketing department." |
-| implemented | implementé | "I implemented a new system." |
-| achieved | logré | "I achieved a 20% increase." |
-| developed | desarrollé | "I developed a training program." |
-| coordinated | coordiné | "I coordinated cross-team projects." |
+| managed | I managed | "I managed a team of 10." |
+| led | I led | "I led the marketing department." |
+| implemented | I implemented | "I implemented a new system." |
+| achieved | I managed | "I achieved a 20% increase." |
+| developed | I developed | "I developed a training program." |
+| coordinated | I coordinated | "I coordinated cross-team projects." |
 
 ### Frases Formales Esenciales
 
 | Frase | Uso |
 |---|---|
 | "I'm pleased to meet you." | Saludo inicial |
-| "In my previous role..." | Hablar de experiencia |
-| "I'd be happy to elaborate." | Ofrecer más detalles |
+| "In my previous role..." | Talk about experience |
+| "I'd be happy to elaborate." | Provide more details |
 | "That's an excellent question." | Ganar tiempo |
 | "Thank you for the opportunity." | Cierre |
 
-> 💡 **Tip:** NUNCA uses reducciones informales (gonna, wanna) en una entrevista. Usa siempre las formas completas y formales.
+> 💡 **Tip:** NEVER use informal reductions (gonna, wanna) in an interview. Always use complete and formal forms.

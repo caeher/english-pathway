@@ -2,8 +2,8 @@
   {
     "id": "m14-ch5-quiz",
     "type": "quiz",
-    "title": "¿Qué Me Detiene?",
-    "description": "Identifica tus barreras personales y recibe estrategias específicas para superarlas.",
+    "title": "What's Stopping Me?",
+    "description": "Identify your personal barriers and receive specific strategies to overcome them.",
     "props": {
       "questions": [
         {
@@ -130,8 +130,8 @@
   {
     "id": "m14-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Mi Compromiso con el Inglés",
-    "description": "Construye declaraciones de compromiso usando If-Then planning.",
+    "title": "My Commitment to English",
+    "description": "Build commitment statements using If-Then planning.",
     "props": {
       "sentences": [
         {
@@ -247,67 +247,67 @@
     "id": "m14-ch5-flash",
     "type": "flashcard",
     "title": "Growth Mindset Vocabulary",
-    "description": "Transforma tu vocabulario interno del fracaso al crecimiento.",
+    "description": "Transform your internal vocabulary from failure to growth.",
     "props": {
       "cards": [
         {
           "id": "f1",
           "front": "❌ \"I'm not good at English.\" (Fixed)",
-          "back": "✅ \"I'm not good at English YET.\" (Growth) — \"Yet\" transforma una limitación en un proceso de aprendizaje.",
+          "back": "✅ \"I'm not good at English YET.\" (Growth) — \"Yet\" transforms a limitation into a learning process.",
           "example": "I can't understand native speakers yet, but I'm improving every week."
         },
         {
           "id": "f2",
           "front": "GRIT 💪",
-          "back": "Perseverancia y pasión sostenida por metas a largo plazo. No es talento, es la decisión de no rendirse.",
+          "back": "Perseverance and sustained passion for long-term goals. It's not talent, it's the decision not to give up.",
           "example": "Learning a language requires grit — the willingness to keep going when it gets hard."
         },
         {
           "id": "f3",
           "front": "DELAYED GRATIFICATION ⏳",
-          "back": "Resistir una recompensa inmediata para obtener una mayor a largo plazo.",
+          "back": "Resist an immediate reward to obtain a greater one in the long term.",
           "example": "Choosing to study instead of watching TV is an act of delayed gratification."
         },
         {
           "id": "f4",
           "front": "ACCOUNTABILITY PARTNER 🤝",
-          "back": "Persona que verifica tu progreso regularmente. Te mantiene comprometido.",
+          "back": "Person who checks your progress regularly. It keeps you engaged.",
           "example": "My accountability partner and I check in every Sunday to review our English goals."
         },
         {
           "id": "f5",
           "front": "GROWTH MINDSET 🌱",
-          "back": "Creencia de que las habilidades se desarrollan con esfuerzo y práctica, no son fijas.",
+          "back": "Belief that skills are developed with effort and practice, they are not fixed.",
           "example": "With a growth mindset, every mistake is a learning opportunity."
         },
         {
           "id": "f6",
           "front": "RESILIENCE 🏔️",
-          "back": "Capacidad de recuperarte rápido de las dificultades. Esencial para el aprendizaje.",
+          "back": "Ability to recover quickly from difficulties. Essential for learning.",
           "example": "Resilience means getting back to studying even after a frustrating day."
         },
         {
           "id": "f7",
           "front": "PLATEAU 📊",
-          "back": "Período donde parece que no hay progreso. Es temporal y normal en todo aprendizaje.",
+          "back": "Period where there seems to be no progress. It is temporary and normal in all learning.",
           "example": "I'm going through a plateau, but I know it's just part of the process."
         },
         {
           "id": "f8",
           "front": "HABIT STACKING 🔗",
-          "back": "Conectar un hábito nuevo a uno existente. \"Después de X, haré Y.\"",
+          "back": "Connect a new habit to an existing one. \"After X, I will do Y.\"",
           "example": "After my morning coffee, I review 5 flashcards. That's habit stacking."
         },
         {
           "id": "f9",
           "front": "INTRINSIC MOTIVATION 🎯",
-          "back": "Motivación que viene de adentro: curiosidad, disfrute, satisfacción personal.",
+          "back": "Motivation that comes from within: curiosity, enjoyment, personal satisfaction.",
           "example": "My intrinsic motivation for English is that I genuinely enjoy watching movies without subtitles."
         },
         {
           "id": "f10",
           "front": "STREAK 🔥",
-          "back": "Racha o cadena de días consecutivos de práctica. Poderoso motivador.",
+          "back": "Streak or chain of consecutive days of practice. Powerful motivator.",
           "example": "I have a 30-day streak! I don't want to break the chain."
         },
         {
@@ -319,7 +319,7 @@
         {
           "id": "f12",
           "front": "MICRO-SESSIONS ⏱️",
-          "back": "Sesiones de estudio de 5-15 minutos. Más efectivas y sostenibles que sesiones largas irregulares.",
+          "back": "5-15 minute study sessions. More effective and sustainable than long irregular sessions.",
           "example": "Three 10-minute micro-sessions are better than one skipped 1-hour session."
         }
       ]
@@ -329,7 +329,7 @@
     "id": "m14-ch5-match",
     "type": "word-match",
     "title": "Barrera → Estrategia",
-    "description": "Empareja cada barrera motivacional con la estrategia más efectiva.",
+    "description": "Match each motivational barrier with the most effective strategy.",
     "props": {
       "pairs": [
         {
@@ -371,37 +371,37 @@
     "id": "m14-ch5-scramble",
     "type": "word-scramble",
     "title": "Vocabulario Motivacional",
-    "description": "Descifra palabras que te ayudan a mantener la motivación.",
+    "description": "Unscramble words that help you stay motivated.",
     "props": {
       "words": [
         {
           "word": "ACHIEVEMENT",
-          "hint": "Logro; algo que has conseguido",
+          "hint": "Achievement; something you have achieved",
           "category": "Motivation"
         },
         {
           "word": "CONFIDENCE",
-          "hint": "Confianza; creer en tu capacidad",
+          "hint": "Trust; believe in your ability",
           "category": "Motivation"
         },
         {
           "word": "PERSISTENCE",
-          "hint": "Persistencia; seguir intentando sin rendirte",
+          "hint": "Persistence; keep trying without giving up",
           "category": "Motivation"
         },
         {
           "word": "SUCCESS",
-          "hint": "Éxito; lograr tus metas",
+          "hint": "Success; achieve your goals",
           "category": "Motivation"
         },
         {
           "word": "FLUENT",
-          "hint": "Fluido; hablar con facilidad",
+          "hint": "Fluent; speak easily",
           "category": "Motivation"
         },
         {
           "word": "GOAL",
-          "hint": "Meta; objetivo que quieres alcanzar",
+          "hint": "Goal; goal you want to achieve",
           "category": "Motivation"
         }
       ]

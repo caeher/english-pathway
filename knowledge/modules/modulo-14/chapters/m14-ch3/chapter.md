@@ -1,57 +1,57 @@
 ---
 id: m14-ch3
-moduleId: modulo-14
+moduleId: module-14
 number: 3
-title: Evaluación de Nivel
-subtitle: Pruebas adaptativas para medir tu progreso real
+title: Level Assessment
+subtitle: Adaptive tests to measure your real progress
 icon: 📊
 color: "#0ea5e9"
 objectives:
-  - Evaluar tu nivel de inglés de forma integral en 5 áreas
-  - Identificar fortalezas y áreas de mejora con diagnóstico preciso
-  - Comprender los niveles CEFR (A1-C2) y ubicarte en ellos
-  - "Calibrar tu metacognición: saber lo que sabes y lo que no sabes"
+  - Evaluate your level of English comprehensively in 5 areas
+  - Identify strengths and areas of improvement with precise diagnosis
+  - Understand the CEFR levels (A1-C2) and place yourself in them
+  - "Calibrate your metacognition: know what you know and what you don't know"
 xpReward: 400
 ---
 
-## Evaluación Adaptativa — Tu espejo de progreso
+## Adaptive Assessment — Your mirror of progress
 
-Esta evaluación no es un examen punitivo. Es un **espejo** que muestra exactamente dónde estás y hacia dónde ir.
+This evaluation is not a punitive exam. It is a **mirror** that shows exactly where you are and where to go.
 
-### Las 5 Áreas de Evaluación
+### The 5 Areas of Evaluation
 
-| Área | Qué mide | Ejemplo |
+| Area | What does it measure? | Ejemplo |
 |---|---|---|
-| 📖 **Reading** | Comprensión de textos A1→C1 | Entender artículos, instrucciones, argumentos |
-| ✍️ **Writing/Grammar** | Gramática, vocabulario, producción | Formar oraciones simples hasta complejas |
-| 🗣️ **Speaking/Pronunciation** | Fluidez y precisión fonética | Pronunciación clara, entonación natural |
-| 👂 **Listening** | Comprensión auditiva | Entender diálogos, podcasts, acentos |
-| 🧠 **Critical Thinking** | Análisis y evaluación | Detectar argumentos, sesgos, técnicas retóricas |
+| 📖 **Reading** | Text comprehension A1→C1 | Understand articles, instructions, arguments |
+| ✍️ **Writing/Grammar** | Grammar, vocabulary, production | Formar oraciones simples hasta complejas |
+| 🗣️ **Speaking/Pronunciation** | Fluency and phonetic precision | Clear pronunciation, natural intonation |
+| 👂 **Listening** | Listening comprehension | Understand dialogues, podcasts, accents |
+| 🧠 **Critical Thinking** | Analysis and evaluation | Detect arguments, biases, rhetorical techniques |
 
-### Los Niveles CEFR
+### CEFR Levels
 
-| Nivel | Nombre | Descripción | Badge |
+| Nivel | Nombre | Description | Badge |
 |---|---|---|---|
-| **A1** | Beginner | Frases básicas, presentarse | 🌱 |
+| **A1** | Beginner | Basic phrases, introduce yourself | 🌱 |
 | **A2** | Elementary | Situaciones cotidianas, necesidades inmediatas | 🌿 |
-| **B1** | Intermediate | Viajes, trabajo básico, opiniones simples | 🌳 |
+| **B1** | Intermediate | Travel, basic work, simple opinions | 🌳 |
 | **B2** | Upper-Intermediate | Temas abstractos, fluidez natural, textos complejos | 🏔️ |
-| **C1** | Advanced | Uso flexible, textos exigentes, expresión fluida | ⭐ |
-| **C2** | Proficient | Comprensión total, producción precisa y sofisticada | 👑 |
+| **C1** | Advanced | Flexible use, demanding texts, fluid expression | ⭐ |
+| **C2** | Proficient | Total understanding, precise and sophisticated production | 👑 |
 
-### Cómo Funciona la Evaluación Adaptativa
+### How Adaptive Assessment Works
 
-1. **Empiezas en nivel medio** (B1)
-2. **Si aciertas**, la siguiente pregunta es más difícil
-3. **Si fallas**, la siguiente pregunta es más fácil
-4. **En 20-30 preguntas**, el sistema converge en tu nivel real
-5. **Resultado**: nivel por área + mapa de calor + recomendaciones
+1. **You start at medium level** (B1)
+2. **If you get it right**, the next question is more difficult
+3. **If you fail**, the next question is easier
+4. **In 20-30 questions**, the system converges on your real level
+5. **Result**: level by area + heat map + recommendations
 
-### Metacognición — ¿Sabes lo que sabes?
+### Metacognition — Do you know what you know?
 
-Un aspecto clave del aprendizaje es la **metacognición**: la capacidad de evaluar tu propio conocimiento con precisión.
+A key aspect of learning is **metacognition**: the ability to evaluate your own knowledge accurately.
 
-- ✅ **Buena metacognición:** "No estoy seguro de los conditionals" → Falla los conditionals → Confirma que necesita practicar
-- ❌ **Mala metacognición:** "Domino los phrasal verbs" → Falla los phrasal verbs → Sobreestimó su nivel
+- ✅ **Good metacognition:** "I'm not sure about the conditionals" → Fails the conditionals → Confirms that you need to practice
+- ❌ **Poor metacognition:** "I master phrasal verbs" → Fails phrasal verbs → Overestimated their level
 
-> 💡 **Tip:** Sé honesto contigo mismo en la autoevaluación. Saber lo que NO sabes es tan valioso como saber lo que sí sabes. Eso te permite enfocar tu estudio donde más impacto tendrá.
+> 💡 **Tip:** Be honest with yourself in self-assessment. Knowing what you DON'T know is as valuable as knowing what you do know. That allows you to focus your study where it will have the most impact.

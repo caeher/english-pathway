@@ -2,8 +2,8 @@
   {
     "id": "m8-ch4-svg",
     "type": "svg-scene",
-    "title": "El Mapa de Situaciones",
-    "description": "Visita cada lugar de la ciudad y descubre qué frases se usan ahí.",
+    "title": "The Situation Map",
+    "description": "Visit each place in the city and discover what phrases are used there.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -17,8 +17,8 @@
             "width": 120,
             "height": 90,
             "fill": "#92400e",
-            "label": "Café",
-            "labelEn": "☕ Café — \"I'd like a coffee, please\""
+            "label": "Coffee",
+            "labelEn": "☕ Coffee — \"I'd like a coffee, please\""
           },
           {
             "id": "airport",
@@ -93,43 +93,43 @@
   {
     "id": "m8-ch4-flash",
     "type": "flashcard",
-    "title": "Flashcards de Frases Cotidianas",
-    "description": "Aprende frases esenciales para cada situación de la vida diaria.",
+    "title": "Flashcards of Everyday Phrases",
+    "description": "Learn essential phrases for every situation in daily life.",
     "props": {
       "cards": [
         {
           "id": "lf1",
-          "front": "¿Cómo estás?",
+          "front": "How are you?",
           "back": "How are you?",
           "example": "Hi! How are you? — I'm fine, thanks!"
         },
         {
           "id": "lf2",
-          "front": "¿Podrías ayudarme?",
+          "front": "Could you help me?",
           "back": "Could you help me, please?",
           "example": "Excuse me, could you help me, please?"
         },
         {
           "id": "lf3",
-          "front": "¿Cuánto cuesta esto?",
+          "front": "How much does this cost?",
           "back": "How much is this?",
           "example": "How much is this T-shirt?"
         },
         {
           "id": "lf4",
-          "front": "¿Dónde está...?",
+          "front": "Where is...?",
           "back": "Where is the...?",
           "example": "Excuse me, where is the station?"
         },
         {
           "id": "lf5",
-          "front": "Quisiera un café",
+          "front": "I would like a coffee",
           "back": "I'd like a coffee, please",
           "example": "I'd like a coffee with milk, please."
         },
         {
           "id": "lf6",
-          "front": "¡Hasta luego!",
+          "front": "See you later!",
           "back": "See you later!",
           "example": "Bye! See you later!"
         },
@@ -141,13 +141,13 @@
         },
         {
           "id": "lf8",
-          "front": "Tengo una reservación",
+          "front": "I have a reservation",
           "back": "I have a reservation",
           "example": "Hello, I have a reservation under Smith."
         },
         {
           "id": "lf9",
-          "front": "¿Qué hermoso día!",
+          "front": "What a beautiful day!",
           "back": "What a beautiful day!",
           "example": "What a beautiful day! Let's go to the park."
         },
@@ -159,7 +159,7 @@
         },
         {
           "id": "lf11",
-          "front": "La cuenta, por favor",
+          "front": "The account please",
           "back": "Can I get the bill, please?",
           "example": "We're ready. Can I get the bill, please?"
         },
@@ -175,8 +175,8 @@
   {
     "id": "m8-ch4-match",
     "type": "word-match",
-    "title": "Frase → Situación",
-    "description": "Empareja cada frase con la situación donde se usaría.",
+    "title": "Phrase → Situation",
+    "description": "Match each phrase with the situation where it would be used.",
     "props": {
       "pairs": [
         {
@@ -189,7 +189,7 @@
         },
         {
           "left": "I'd like a coffee",
-          "right": "☕ Café"
+          "right": "☕ Coffee"
         },
         {
           "left": "I don't feel well",
@@ -209,8 +209,8 @@
   {
     "id": "m8-ch4-sentence",
     "type": "sentence-builder",
-    "title": "Reconstruye la Frase",
-    "description": "Ordena las palabras para reconstruir frases cotidianas en inglés.",
+    "title": "Reconstruct the Phrase",
+    "description": "Order the words to reconstruct everyday phrases in English.",
     "props": {
       "sentences": [
         {
@@ -225,7 +225,7 @@
           "correct": "Could you help me, please?"
         },
         {
-          "prompt": "En un café:",
+          "prompt": "In a cafe:",
           "words": [
             "a",
             "I'd",
@@ -246,7 +246,7 @@
           "correct": "How much is this?"
         },
         {
-          "prompt": "Preguntando dirección:",
+          "prompt": "Asking address:",
           "words": [
             "is",
             "the",
@@ -256,7 +256,7 @@
           "correct": "Where is the station?"
         },
         {
-          "prompt": "En el hotel:",
+          "prompt": "At the hotel:",
           "words": [
             "a",
             "have",
@@ -266,7 +266,7 @@
           "correct": "I have a reservation"
         },
         {
-          "prompt": "Despidiéndote:",
+          "prompt": "Saying goodbye:",
           "words": [
             "later!",
             "See",
@@ -275,7 +275,7 @@
           "correct": "See you later!"
         },
         {
-          "prompt": "Pidiendo la cuenta:",
+          "prompt": "Requesting the account:",
           "words": [
             "the",
             "get",
@@ -300,8 +300,8 @@
   {
     "id": "m8-ch4-quiz",
     "type": "quiz",
-    "title": "Quiz de Comprensión",
-    "description": "Demuestra que puedes identificar la frase correcta para cada situación.",
+    "title": "Comprehension Quiz",
+    "description": "Show that you can identify the correct phrase for each situation.",
     "props": {
       "questions": [
         {
@@ -403,17 +403,17 @@
     "id": "m8-ch4-scramble",
     "type": "word-scramble",
     "title": "A Escuchar",
-    "description": "Descifra palabras del listening.",
+    "description": "Unscramble listening words.",
     "props": {
       "words": [
         {
           "word": "LISTEN",
-          "hint": "Escuchar; prestar atención",
+          "hint": "Hear; pay attention",
           "category": "Listening"
         },
         {
           "word": "HEAR",
-          "hint": "Oír; percibir sonido",
+          "hint": "Hear; perceive sound",
           "category": "Listening"
         },
         {
@@ -423,17 +423,17 @@
         },
         {
           "word": "REPEAT",
-          "hint": "Repetir; decir de nuevo",
+          "hint": "Repeat; say again",
           "category": "Listening"
         },
         {
           "word": "PRACTICE",
-          "hint": "Práctica; ejercitar",
+          "hint": "Practice; exercise",
           "category": "Listening"
         },
         {
           "word": "AUDIO",
-          "hint": "Audio; sonido grabado",
+          "hint": "Audio; recorded sound",
           "category": "Listening"
         }
       ]

@@ -1,25 +1,25 @@
 ---
 id: m1-ch1
-moduleId: modulo-1
+moduleId: module-1
 number: 1
-title: El Alfabeto y los Sonidos Básicos
-subtitle: Aprende las 26 letras y sus sonidos en inglés
+title: The Alphabet and Basic Sounds
+subtitle: Learn the 26 letters and their sounds in English
 icon: 🔤
 color: "#3b82f6"
 objectives:
-  - Identificar y pronunciar las 26 letras del alfabeto en inglés
-  - Reconocer los sonidos vocálicos cortos y largos
-  - Deletrear palabras básicas en inglés (spelling)
-  - Diferenciar sonidos similares que confunden a hispanohablantes
+  - Identify and pronounce the 26 letters of the English alphabet
+  - Recognize short and long vowel sounds
+  - Spell basic words in English (spelling)
+  - Differentiate similar sounds that confuse Spanish speakers
 xpReward: 100
 ---
 
-## The English Alphabet — El Alfabeto Inglés
+## The English Alphabet
 
-El alfabeto inglés tiene **26 letras**: 5 vocales (A, E, I, O, U) y 21 consonantes.
+The English alphabet has **26 letters**: 5 vowels (A, E, I, O, U) and 21 consonants.
 
-### Vocales y sus sonidos
-| Letra | Sonido corto | Ejemplo | Sonido largo | Ejemplo |
+### Vowels and their sounds
+| Lyrics | Short sound | Example | Long sound | Example |
 |-------|-------------|---------|-------------|---------|
 | **A** | /æ/ | *cat, hat* | /eɪ/ | *cake, name* |
 | **E** | /ɛ/ | *bed, red* | /iː/ | *tree, me* |
@@ -27,21 +27,21 @@ El alfabeto inglés tiene **26 letras**: 5 vocales (A, E, I, O, U) y 21 consonan
 | **O** | /ɒ/ | *hot, dog* | /oʊ/ | *home, bone* |
 | **U** | /ʌ/ | *cup, bus* | /juː/ | *use, cute* |
 
-### Consonantes problemáticas para hispanohablantes
-- **H** → Se pronuncia (aspirada): *house, hello, happy*
-- **J** → Suena /dʒ/: *job, juice, jump* (NO como la J española)
-- **V** → Labio inferior + dientes: *very, voice, video* (NO es B)
-- **W** → Labios redondeados: *water, window, work*
-- **TH** → Lengua entre dientes: *the, think, three*
+### Problematic consonants for Spanish speakers
+- **H** → Pronounced (aspirated): *house, hello, happy*
+- **J** → Sounds /dʒ/: *job, juice, jump* (NOT like the Spanish J)
+- **V** → Lower lip + teeth: *very, voice, video* (NOT B)
+- **W** → Rounded lips: *water, window, work*
+- **TH** → Tongue between teeth: *the, think, three*
 
-### Minimal Pairs — Pares mínimos
-Palabras que suenan casi igual pero tienen un sonido diferente. Practica para evitar confusiones:
+### Minimal Pairs
+Words that sound almost the same but have a different sound. Practice to avoid confusion:
 
-| Par de sonidos | Ejemplo 1 | Ejemplo 2 |
+| pair of sounds | Ejemplo 1 | Ejemplo 2 |
 |----------------|-----------|-----------|
 | /b/ vs /v/ | *berry* (baya) | *very* (muy) |
 | /ʃ/ vs /tʃ/ | *ship* (barco) | *chip* (ficha) |
 | /s/ vs /z/ | *ice* (hielo) | *eyes* (ojos) |
 | /iː/ vs /ɪ/ | *seat* (asiento) | *sit* (sentarse) |
 
-> 💡 **Tip:** Practica el abecedario cantando la canción ABC. ¡Es la forma más rápida de memorizarlo!
+> 💡 **Tip:** Practice the alphabet by singing the ABC song. It's the fastest way to memorize it!

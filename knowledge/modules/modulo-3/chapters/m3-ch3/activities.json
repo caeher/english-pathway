@@ -2,8 +2,8 @@
   {
     "id": "m3-ch3-svg",
     "type": "svg-scene",
-    "title": "Anoche a las 9 PM",
-    "description": "¿Qué estaba haciendo cada persona anoche a las 9?",
+    "title": "Last night at 9 PM",
+    "description": "What was each person doing last night at 9?",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -126,8 +126,8 @@
   {
     "id": "m3-ch3-flash",
     "type": "flashcard",
-    "title": "Pasado Continuo: Práctica",
-    "description": "Practica la formación y usos del pasado continuo.",
+    "title": "Past Continuous: Practice",
+    "description": "Practice the formation and uses of the past continuous.",
     "props": {
       "cards": [
         {
@@ -197,7 +197,7 @@
     "id": "m3-ch3-match",
     "type": "word-match",
     "title": "When vs. While",
-    "description": "Empareja cada oración con la conjunción correcta.",
+    "description": "Match each sentence with the correct conjunction.",
     "props": {
       "pairs": [
         {
@@ -238,12 +238,12 @@
   {
     "id": "m3-ch3-sentence",
     "type": "sentence-builder",
-    "title": "Cuenta qué Estaba Pasando",
-    "description": "Ordena las palabras para formar oraciones en pasado continuo.",
+    "title": "Tell what was happening",
+    "description": "Arrange the words to form sentences in the past continuous.",
     "props": {
       "sentences": [
         {
-          "prompt": "Estaba viendo TV a las 9:",
+          "prompt": "I was watching TV at 9:",
           "words": [
             "I",
             "was",
@@ -255,7 +255,7 @@
           "correct": "I was watching TV at 9"
         },
         {
-          "prompt": "Ella estaba cocinando cuando él llegó:",
+          "prompt": "She was cooking when he arrived:",
           "words": [
             "She",
             "was",
@@ -267,7 +267,7 @@
           "correct": "She was cooking when he arrived"
         },
         {
-          "prompt": "Mientras llovía, leíamos:",
+          "prompt": "While it was raining, we read:",
           "words": [
             "While",
             "it",
@@ -289,7 +289,7 @@
           "correct": "They weren't studying"
         },
         {
-          "prompt": "¿Estabas durmiendo a medianoche?:",
+          "prompt": "Were you sleeping at midnight?:",
           "words": [
             "Were",
             "you",
@@ -300,7 +300,7 @@
           "correct": "Were you sleeping at midnight?"
         },
         {
-          "prompt": "El bebé dormía cuando llegué:",
+          "prompt": "The baby was sleeping when I arrived:",
           "words": [
             "The",
             "baby",
@@ -313,7 +313,7 @@
           "correct": "The baby was sleeping when I arrived"
         },
         {
-          "prompt": "¿Qué estabas haciendo?:",
+          "prompt": "What were you doing?:",
           "words": [
             "What",
             "were",
@@ -323,7 +323,7 @@
           "correct": "What were you doing?"
         },
         {
-          "prompt": "Él estaba corriendo en el parque:",
+          "prompt": "He was running in the park:",
           "words": [
             "He",
             "was",
@@ -341,7 +341,7 @@
     "id": "m3-ch3-quiz",
     "type": "quiz",
     "title": "Quiz: Pasado Continuo",
-    "description": "Demuestra que dominas el pasado continuo.",
+    "description": "Show that you master the past continuous.",
     "props": {
       "questions": [
         {
@@ -457,7 +457,7 @@
     "id": "m3-ch3-scramble",
     "type": "word-scramble",
     "title": "Pasado Continuo",
-    "description": "Descifra verbos en pasado continuo.",
+    "description": "Unscramble verbs in the past continuous.",
     "props": {
       "words": [
         {

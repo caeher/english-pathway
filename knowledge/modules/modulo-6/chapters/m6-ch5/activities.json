@@ -2,8 +2,8 @@
   {
     "id": "m6-ch5-svg",
     "type": "svg-scene",
-    "title": "De Directo a Indirecto",
-    "description": "Visualiza cómo transformar afirmaciones directas en indirectas.",
+    "title": "From Direct to Indirect",
+    "description": "Visualize how to transform direct statements into indirect ones.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 420",
@@ -40,7 +40,7 @@
             "height": 50,
             "fill": "#bfdbfe",
             "label": "📝 Reported Speech",
-            "labelEn": "She SAID she WAS happy. (sin comillas, backshift)"
+            "labelEn": "She SAID she WAS happy. (without quotes, backshift)"
           },
           {
             "id": "said",
@@ -171,7 +171,7 @@
     "id": "m6-ch5-flash",
     "type": "flashcard",
     "title": "Direct → Reported",
-    "description": "Convierte afirmaciones directas en estilo indirecto.",
+    "description": "Convert direct statements into indirect speech.",
     "props": {
       "cards": [
         {
@@ -228,8 +228,8 @@
   {
     "id": "m6-ch5-match",
     "type": "word-match",
-    "title": "Backshift de Tiempos",
-    "description": "Empareja el tiempo directo con su forma reportada.",
+    "title": "Time Backshift",
+    "description": "Match the direct tense with its reported form.",
     "props": {
       "pairs": [
         {
@@ -266,8 +266,8 @@
   {
     "id": "m6-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Reporta lo que Dijeron",
-    "description": "Ordena para formar oraciones en estilo indirecto.",
+    "title": "Report what they said",
+    "description": "Order to form sentences in indirect speech.",
     "props": {
       "sentences": [
         {
@@ -282,7 +282,7 @@
           "correct": "She said she was happy"
         },
         {
-          "prompt": "\"Me gusta el chocolate\" — él me dijo:",
+          "prompt": "\"I like chocolate\" — he told me:",
           "words": [
             "He",
             "told",
@@ -294,7 +294,7 @@
           "correct": "He told me he liked chocolate"
         },
         {
-          "prompt": "\"Te ayudaré\" — él dijo:",
+          "prompt": "\"I will help you\" — he said:",
           "words": [
             "He",
             "said",
@@ -317,7 +317,7 @@
           "correct": "She said she could swim"
         },
         {
-          "prompt": "\"Fui a París\" — ella dijo:",
+          "prompt": "\"I went to Paris\" — she said:",
           "words": [
             "She",
             "said",
@@ -336,7 +336,7 @@
     "id": "m6-ch5-quiz",
     "type": "quiz",
     "title": "Quiz: Reported Speech (Statements)",
-    "description": "Demuestra tu dominio del estilo indirecto.",
+    "description": "Demonstrate your mastery of indirect speech.",
     "props": {
       "questions": [
         {
@@ -432,12 +432,12 @@
     "id": "m6-ch5-scramble",
     "type": "word-scramble",
     "title": "Reported Speech",
-    "description": "Descifra verbos de estilo indirecto.",
+    "description": "Decipher indirect speech verbs.",
     "props": {
       "words": [
         {
           "word": "SAID",
-          "hint": "Dijo; sin persona después",
+          "hint": "Said; without person after",
           "category": "Reported Speech"
         },
         {
@@ -447,22 +447,22 @@
         },
         {
           "word": "EXPLAINED",
-          "hint": "Explicó",
+          "hint": "He explained",
           "category": "Reported Speech"
         },
         {
           "word": "MENTIONED",
-          "hint": "Mencionó",
+          "hint": "He mentioned",
           "category": "Reported Speech"
         },
         {
           "word": "STATED",
-          "hint": "Afirmó; declaró",
+          "hint": "He stated; declared",
           "category": "Reported Speech"
         },
         {
           "word": "CLAIMED",
-          "hint": "Sostuvo; afirmó",
+          "hint": "Held; stated",
           "category": "Reported Speech"
         }
       ]

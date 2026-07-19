@@ -2,8 +2,8 @@
   {
     "id": "m13-ch5-quiz",
     "type": "quiz",
-    "title": "Evaluación de Planificación",
-    "description": "Guía tu proyecto respondiendo las decisiones clave de planificación.",
+    "title": "Planning Evaluation",
+    "description": "Guide your project by answering key planning decisions.",
     "props": {
       "questions": [
         {
@@ -124,8 +124,8 @@
   {
     "id": "m13-ch5-sentence",
     "type": "sentence-builder",
-    "title": "Construyendo el Outline",
-    "description": "Construye las oraciones clave de cada sección de tu proyecto.",
+    "title": "Building the Outline",
+    "description": "Build the key sentences for each section of your project.",
     "props": {
       "sentences": [
         {
@@ -230,8 +230,8 @@
   {
     "id": "m13-ch5-flash",
     "type": "flashcard",
-    "title": "Toolkit del Proyecto",
-    "description": "Herramientas lingüísticas esenciales para tu proyecto final.",
+    "title": "Project Toolkit",
+    "description": "Essential linguistic tools for your final project.",
     "props": {
       "cards": [
         {
@@ -312,8 +312,8 @@
   {
     "id": "m13-ch5-svg",
     "type": "svg-scene",
-    "title": "Mapa del Proyecto",
-    "description": "Explora el tablero Kanban de tu proyecto y sigue el progreso de cada tarea.",
+    "title": "Project Map",
+    "description": "Explore your project's Kanban board and track the progress of each task.",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -327,7 +327,7 @@
             "width": 100,
             "height": 300,
             "fill": "#fca5a5",
-            "label": "Por hacer — Tareas pendientes",
+            "label": "To Do — Pending Tasks",
             "labelEn": "📋 To Do"
           },
           {
@@ -338,7 +338,7 @@
             "width": 100,
             "height": 300,
             "fill": "#fdba74",
-            "label": "Investigación — Lee fuentes",
+            "label": "Research — Read sources",
             "labelEn": "🔍 Research"
           },
           {
@@ -349,7 +349,7 @@
             "width": 100,
             "height": 300,
             "fill": "#fde68a",
-            "label": "Borrador — Escribe tu contenido",
+            "label": "Draft — Write your content",
             "labelEn": "✏️ Drafting"
           },
           {
@@ -360,7 +360,7 @@
             "width": 100,
             "height": 300,
             "fill": "#93c5fd",
-            "label": "Revisión — Edita y mejora",
+            "label": "Review — Edit and improve",
             "labelEn": "🔎 Review"
           },
           {
@@ -371,7 +371,7 @@
             "width": 100,
             "height": 300,
             "fill": "#86efac",
-            "label": "Completado — ¡Proyecto listo!",
+            "label": "Completed — Project ready!",
             "labelEn": "✅ Complete"
           },
           {
@@ -381,7 +381,7 @@
             "cy": 380,
             "r": 18,
             "fill": "#fbbf24",
-            "label": "¡Felicidades! Proyecto terminado",
+            "label": "Congratulations! Finished project",
             "labelEn": "⭐ Congratulations!"
           }
         ]
@@ -391,38 +391,38 @@
   {
     "id": "m13-ch5-scramble",
     "type": "word-scramble",
-    "title": "Vocabulario de Presentaciones",
-    "description": "Descifra palabras clave para tu proyecto final.",
+    "title": "Presentation Vocabulary",
+    "description": "Decipher keywords for your final project.",
     "props": {
       "words": [
         {
           "word": "AUDIENCE",
-          "hint": "Audiencia; las personas que te escuchan o leen",
+          "hint": "Audience; the people who listen to or read you",
           "category": "Projects"
         },
         {
           "word": "RESEARCH",
-          "hint": "Investigación; buscar información",
+          "hint": "Investigation; search information",
           "category": "Projects"
         },
         {
           "word": "CONCLUSION",
-          "hint": "Conclusión; cierre de tu proyecto",
+          "hint": "Conclusion; closing your project",
           "category": "Projects"
         },
         {
           "word": "PRESENTATION",
-          "hint": "Presentación; exponer ideas ante otros",
+          "hint": "Presentation; present ideas to others",
           "category": "Projects"
         },
         {
           "word": "PODCAST",
-          "hint": "Programa de audio episódico",
+          "hint": "Episodic audio program",
           "category": "Projects"
         },
         {
           "word": "TITLE",
-          "hint": "Título; nombre del proyecto o episodio",
+          "hint": "Qualification; project or episode name",
           "category": "Projects"
         }
       ]

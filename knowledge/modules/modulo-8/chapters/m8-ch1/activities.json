@@ -2,8 +2,8 @@
   {
     "id": "m8-ch1-svg",
     "type": "svg-scene",
-    "title": "Explora la Habitación",
-    "description": "Haz clic en cada objeto para descubrir su nombre en inglés. ¡Encuentra todos!",
+    "title": "Explore the Room",
+    "description": "Click on each object to discover its name in English. Find them all!",
     "props": {
       "scene": {
         "viewBox": "0 0 600 400",
@@ -48,7 +48,7 @@
             "width": 20,
             "height": 80,
             "fill": "#a3a3a3",
-            "label": "Lámpara",
+            "label": "Lamp",
             "labelEn": "Lamp"
           },
           {
@@ -186,8 +186,8 @@
   {
     "id": "m8-ch1-flash",
     "type": "flashcard",
-    "title": "Flashcards de Vocabulario",
-    "description": "Intenta recordar la palabra en inglés antes de voltear la tarjeta.",
+    "title": "Vocabulary Flashcards",
+    "description": "Try to remember the English word before turning the card over.",
     "props": {
       "cards": [
         {
@@ -228,7 +228,7 @@
         },
         {
           "id": "f7",
-          "front": "Lámpara",
+          "front": "Lamp",
           "back": "Lamp",
           "example": "Turn on the lamp."
         },
@@ -286,8 +286,8 @@
   {
     "id": "m8-ch1-match",
     "type": "word-match",
-    "title": "Conecta las Parejas",
-    "description": "Empareja cada palabra en inglés con su traducción. ¡Menos intentos = más estrellas!",
+    "title": "Connect Couples",
+    "description": "Match each English word with its translation. Less attempts = more stars!",
     "props": {
       "pairs": [
         {
@@ -316,7 +316,7 @@
         },
         {
           "left": "Lamp",
-          "right": "Lámpara"
+          "right": "Lamp"
         },
         {
           "left": "Cup",
@@ -328,12 +328,12 @@
   {
     "id": "m8-ch1-sentence",
     "type": "sentence-builder",
-    "title": "Describe la Habitación",
-    "description": "Crea oraciones simples sobre los objetos que encontraste.",
+    "title": "Describe the Room",
+    "description": "Create simple sentences about the objects you found.",
     "props": {
       "sentences": [
         {
-          "prompt": "El libro está en...",
+          "prompt": "The book is in...",
           "words": [
             "The",
             "book",
@@ -345,7 +345,7 @@
           "correct": "The book is on the table"
         },
         {
-          "prompt": "La taza está en...",
+          "prompt": "The cup is in...",
           "words": [
             "The",
             "cup",
@@ -357,7 +357,7 @@
           "correct": "The cup is on the table"
         },
         {
-          "prompt": "La planta está en...",
+          "prompt": "The plant is in...",
           "words": [
             "The",
             "plant",
@@ -369,7 +369,7 @@
           "correct": "The plant is in the pot"
         },
         {
-          "prompt": "La lámpara es...",
+          "prompt": "The lamp is...",
           "words": [
             "The",
             "lamp",
@@ -379,7 +379,7 @@
           "correct": "The lamp is yellow"
         },
         {
-          "prompt": "La alfombra es...",
+          "prompt": "The carpet is...",
           "words": [
             "The",
             "rug",
@@ -394,8 +394,8 @@
   {
     "id": "m8-ch1-quiz",
     "type": "quiz",
-    "title": "Quiz de Vocabulario",
-    "description": "¿Puedes identificar las palabras correctas? 10 preguntas para probar tu memoria.",
+    "title": "Vocabulary Quiz",
+    "description": "Can you identify the correct words? 10 questions to test your memory.",
     "props": {
       "questions": [
         {
@@ -506,7 +506,7 @@
         {
           "id": "q10",
           "type": "multiple-choice",
-          "question": "\"Lámpara\" in English is...",
+          "question": "\"Lamp\" in English is...",
           "options": [
             "Lamp",
             "Light",
@@ -514,7 +514,7 @@
             "Clock"
           ],
           "correct": 0,
-          "explanation": "Lámpara = Lamp."
+          "explanation": "Lamp = Lamp."
         }
       ]
     }
@@ -523,7 +523,7 @@
     "id": "m8-ch1-scramble",
     "type": "word-scramble",
     "title": "Primeras Palabras",
-    "description": "Descifra palabras básicas para empezar.",
+    "description": "Unscramble basic words to get started.",
     "props": {
       "words": [
         {
@@ -538,7 +538,7 @@
         },
         {
           "word": "WATER",
-          "hint": "Agua; líquido transparente",
+          "hint": "Water; transparent liquid",
           "category": "Basic"
         },
         {
@@ -548,7 +548,7 @@
         },
         {
           "word": "SCHOOL",
-          "hint": "Escuela; donde se estudia",
+          "hint": "School; where to study",
           "category": "Basic"
         },
         {

@@ -1,56 +1,56 @@
 ---
 id: m10-ch4
-moduleId: modulo-10
+moduleId: module-10
 number: 4
-title: Pronunciación de nivel 2
-subtitle: Modulando entonación y ritmo con patrones prosódicos
+title: level 2 pronunciation
+subtitle: Modulating intonation and rhythm with prosodic patterns
 icon: 🎵
 color: "#ec4899"
 objectives:
-  - "Identificar y producir patrones de entonación: ascendente, descendente, lista"
-  - Aplicar el acento tónico (word stress) en palabras multi-silábicas
-  - Diferenciar sentence stress para comunicar significados precisos
-  - Comprender que el inglés es stress-timed (no syllable-timed)
+  - "Identify and produce intonation patterns: rising, falling, ready"
+  - Apply word stress in multi-syllabic words
+  - Differentiate sentence stress to communicate precise meanings
+  - Understand that English is stress-timed (not syllable-timed)
 xpReward: 240
 ---
 
-## La Melodía del Inglés — Entonación, Ritmo y Acento
+## The Melody of English — Intonation, Rhythm and Accent
 
-La pronunciación no es solo sonidos individuales. La **prosodia** — entonación, ritmo y acento — es la "música" del inglés.
+Pronunciation is not just individual sounds. **Prosody** — intonation, rhythm, and accent — is the "music" of English.
 
-### Word Stress — Acento en palabras
+### Word Stress — Accent in words
 
-Cada palabra multi-silábica tiene una sílaba acentuada (más fuerte, más larga, tono más alto):
+Every multi-syllabic word has a stressed syllable (stronger, longer, higher pitch):
 
-| Palabra | Patrón | Acento |
+| Word | Pattern | Accent |
 |---|---|---|
-| PHO-to-graph | **O**oo | 1ª sílaba |
-| pho-TO-gra-phy | o**O**oo | 2ª sílaba |
-| pho-to-GRA-phic | oo**O**o | 3ª sílaba |
+| PHO-to-graph | **O**oo | 1st syllable |
+| pho-TO-gra-phy | o**O**oo | 2nd syllable |
+| pho-to-GRA-phic | oo**O**o | 3rd syllable |
 
-### Reglas comunes de word stress:
+### Common rules of word stress:
 
-- **Palabras en -tion / -sion:** acento en sílaba anterior → infor**MA**tion, deci**SION**
-- **Palabras en -ic:** acento en sílaba anterior → fan**TAS**tic, dra**MA**tic
-- **Compound nouns:** acento en primer elemento → **AIR**port, **FOOT**ball
+- **Words in -tion / -sion:** accent on previous syllable → infor**MA**tion, deci**SION**
+- **Words in -ic:** accent on previous syllable → fan**TAS**tic, dra**MA**tic
+- **Compound nouns:** accent on first element → **AIR**port, **FOOT**ball
 
-### Sentence Stress — Acento en oraciones
+### Sentence Stress — Accent in sentences
 
-En inglés, acentuamos las **palabras de contenido** (sustantivos, verbos, adjetivos, adverbios) y NO las **palabras funcionales** (artículos, preposiciones, pronombres):
+In English, we emphasize **content words** (nouns, verbs, adjectives, adverbs) and NOT **function words** (articles, prepositions, pronouns):
 
 > "I **WANT** to **GO** to the **PARK** to**MOR**row."
 
-### Patrones de entonación
+### intonation patterns
 
-| Patrón | Uso | Ejemplo |
+| Pattern | Uso | Ejemplo |
 |---|---|---|
-| ↘️ Descendente | Afirmaciones, órdenes | "I like coffee." ↘️ |
+| ↘️ Descendente | Affirmations, orders | "I like coffee." ↘️ |
 | ↗️ Ascendente | Preguntas Yes/No | "Do you like coffee?" ↗️ |
 | ↗️↗️↘️ Lista | Enumeraciones | "I bought apples↗️, oranges↗️, and bananas↘️" |
-| ↘️↗️ Fall-Rise | Duda, cortesía | "I'm not sure..." ↘️↗️ |
+| ↘️↗️ Fall-Rise | Doubt, courtesy | "I'm not sure..." ↘️↗️ |
 
-### El inglés es Stress-Timed
+### English is Stress-Timed
 
-> 💡 **Tip:** En español cada sílaba dura lo mismo (syllable-timed). En inglés, el tiempo entre acentos es similar, así que las sílabas no acentuadas se "comprimen":
-> - "**CATS** **EAT** **FISH**" (3 sílabas, ~1 segundo)
-> - "The **CATS** will **EAT** the **FISH**" (6 sílabas, ~1 segundo)
+> 💡 **Tip:** In Spanish each syllable lasts the same (syllable-timed). In English, the timing between accents is similar, so unstressed syllables are "compressed":
+> - "**CATS** **EAT** **FISH**" (3 syllables, ~1 second)
+> - "The **CATS** will **EAT** the **FISH**" (6 syllables, ~1 second)

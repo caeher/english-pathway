@@ -1,15 +1,15 @@
 ---
 id: m6-ch2
-moduleId: modulo-6
+moduleId: module-6
 number: 2
 title: First Conditional
 subtitle: If + present simple, will + base verb
 icon: 🌤️
 color: "#3b82f6"
 objectives:
-  - "Formar el primer condicional: if + present simple, will + base verb"
-  - Usarlo para situaciones reales y posibles en el futuro
-  - Distinguir entre las cláusulas if y resultado
+  - "Form the first conditional: if + present simple, will + base verb"
+  - Use it for real and possible situations in the future
+  - Distinguish between if and result clauses
 xpReward: 170
 ---
 
@@ -22,8 +22,8 @@ xpReward: 170
 | If it **rains**, | I **will stay** home. |
 | If you **study** hard, | you **will pass** the exam. |
 
-### Uso: situaciones reales y posibles en el futuro
-- Cosas que **probablemente** pasarán si se cumple la condición.
+### Use: real and possible situations in the future
+- Things that will **probably** happen if the condition is met.
 - If you eat too much, you **will feel** sick.
 - If she doesn't hurry, she **will be** late.
 

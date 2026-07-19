@@ -3,7 +3,7 @@
     "id": "m3-ch6-svg",
     "type": "svg-scene",
     "title": "Deseos, Gustos y Necesidades",
-    "description": "Explora las diferentes formas de expresar lo que quieres, te gusta y necesitas.",
+    "description": "Explore the different ways to express what you want, like and need.",
     "props": {
       "scene": {
         "viewBox": "0 0 700 400",
@@ -84,7 +84,7 @@
             "height": 55,
             "fill": "#dbeafe",
             "label": "✅ Would you like some tea?",
-            "labelEn": "Would you like…? = ¿Te gustaría…? (polite offer)"
+            "labelEn": "Would you like…? = Would you like...? (polite offer)"
           },
           {
             "id": "note",
@@ -105,7 +105,7 @@
     "id": "m3-ch6-flash",
     "type": "flashcard",
     "title": "Want, Like, Need y Would Like",
-    "description": "Practica expresar deseos, gustos y necesidades.",
+    "description": "Practice expressing desires, tastes and needs.",
     "props": {
       "cards": [
         {
@@ -116,7 +116,7 @@
         },
         {
           "id": "c2",
-          "front": "Ella quiere aprender inglés.",
+          "front": "She wants to learn English.",
           "back": "She WANTS TO learn English.",
           "example": "He/She/It → wants to."
         },
@@ -128,7 +128,7 @@
         },
         {
           "id": "c4",
-          "front": "¿Quieres jugar? (pregunta)",
+          "front": "Do you want to play? (ask)",
           "back": "DO you WANT TO play?",
           "example": "Do + subject + want to + verb."
         },
@@ -170,15 +170,15 @@
         },
         {
           "id": "c11",
-          "front": "Me gustaría un café. (cortés)",
+          "front": "I would like a coffee. (courteous)",
           "back": "I'D LIKE a coffee.",
-          "example": "I'd like = I would like (más cortés que want)."
+          "example": "I'd like = I would like (more polite than want)."
         },
         {
           "id": "c12",
-          "front": "¿Te gustaría un poco de té?",
+          "front": "Would you like some tea?",
           "back": "WOULD you LIKE some tea?",
-          "example": "Would you like...? = oferta cortés."
+          "example": "Would you like...? = polite offer."
         }
       ]
     }
@@ -186,8 +186,8 @@
   {
     "id": "m3-ch6-match",
     "type": "word-match",
-    "title": "Español → Inglés",
-    "description": "Empareja cada frase en español con su traducción.",
+    "title": "Spanish → English",
+    "description": "Match each phrase in Spanish with its translation.",
     "props": {
       "pairs": [
         {
@@ -203,11 +203,11 @@
           "right": "I need to study"
         },
         {
-          "left": "Me gustaría un café",
+          "left": "I would like a coffee",
           "right": "I'd like a coffee"
         },
         {
-          "left": "Ella quiere aprender",
+          "left": "She wants to learn",
           "right": "She wants to learn"
         },
         {
@@ -215,11 +215,11 @@
           "right": "I don't like running"
         },
         {
-          "left": "¿Quieres jugar?",
+          "left": "Do you want to play?",
           "right": "Do you want to play?"
         },
         {
-          "left": "¿Te gustaría té?",
+          "left": "Would you like tea?",
           "right": "Would you like some tea?"
         }
       ]
@@ -229,11 +229,11 @@
     "id": "m3-ch6-sentence",
     "type": "sentence-builder",
     "title": "Expresa tus Deseos",
-    "description": "Ordena las palabras para expresar deseos, gustos y necesidades.",
+    "description": "Order the words to express desires, tastes and needs.",
     "props": {
       "sentences": [
         {
-          "prompt": "Quiero viajar a Japón:",
+          "prompt": "I want to travel to Japan:",
           "words": [
             "I",
             "want",
@@ -254,7 +254,7 @@
           "correct": "I like swimming"
         },
         {
-          "prompt": "Necesito estudiar para el examen:",
+          "prompt": "I need to study for the exam:",
           "words": [
             "I",
             "need",
@@ -267,7 +267,7 @@
           "correct": "I need to study for the exam"
         },
         {
-          "prompt": "Me gustaría un vaso de agua:",
+          "prompt": "I would like a glass of water:",
           "words": [
             "I",
             "would",
@@ -291,7 +291,7 @@
           "correct": "She doesn't want to go"
         },
         {
-          "prompt": "¿Te gusta bailar?:",
+          "prompt": "Do you like to dance?:",
           "words": [
             "Do",
             "you",
@@ -301,7 +301,7 @@
           "correct": "Do you like dancing?"
         },
         {
-          "prompt": "Él necesita trabajar mañana:",
+          "prompt": "He needs to work tomorrow:",
           "words": [
             "He",
             "needs",
@@ -312,7 +312,7 @@
           "correct": "He needs to work tomorrow"
         },
         {
-          "prompt": "¿Te gustaría venir?:",
+          "prompt": "Would you like to come?:",
           "words": [
             "Would",
             "you",
@@ -329,7 +329,7 @@
     "id": "m3-ch6-quiz",
     "type": "quiz",
     "title": "Quiz: Want, Like, Need",
-    "description": "Demuestra que dominas estas expresiones.",
+    "description": "Show that you master these expressions.",
     "props": {
       "questions": [
         {
@@ -388,7 +388,7 @@
         {
           "id": "q6",
           "type": "fill-blank",
-          "question": "\"___ you like some tea?\" (oferta cortés)",
+          "question": "\"___ do you like some tea?\" (polite offer)",
           "correct": "Would",
           "explanation": "Would you like...? = polite offer."
         },
@@ -445,7 +445,7 @@
     "id": "m3-ch6-scramble",
     "type": "word-scramble",
     "title": "Want, Like, Need",
-    "description": "Descifra verbos de preferencia y necesidad.",
+    "description": "Unscramble verbs of preference and necessity.",
     "props": {
       "words": [
         {
@@ -455,7 +455,7 @@
         },
         {
           "word": "LIKE",
-          "hint": "Gustar; disfrutar de",
+          "hint": "Like; enjoy",
           "category": "Verbs"
         },
         {
@@ -465,7 +465,7 @@
         },
         {
           "word": "PREFER",
-          "hint": "Preferir; elegir una opción",
+          "hint": "Prefer; choose an option",
           "category": "Verbs"
         },
         {

@@ -1,43 +1,43 @@
 ---
 id: m8-ch1
-moduleId: modulo-8
+moduleId: module-8
 number: 1
-title: Desbloqueando tus primeras palabras
-subtitle: Vocabulario esencial nivel A1 con juegos de asociación
+title: Unlocking your first words
+subtitle: Essential vocabulary level A1 with association games
 icon: 🔤
 color: "#3b82f6"
 objectives:
-  - Reconocer y usar 50-80 palabras esenciales del nivel A1
-  - Asociar palabras con imágenes y contextos visuales
-  - "Dominar categorías: saludos, colores, números, objetos, familia"
+  - Recognize and use 50-80 essential words at level A1
+  - Associate words with images and visual contexts
+  - "Master categories: greetings, colors, numbers, objects, family"
 xpReward: 150
 ---
 
-## Aprende vocabulario explorando escenas
+## Learn vocabulary by exploring scenes
 
-Cada palabra se aprende **en contexto visual**. No memorices listas — **descubre** las palabras haciendo clic en los objetos de la escena.
+Each word is learned **in visual context**. Don't memorize lists — **discover** the words by clicking on objects in the scene.
 
-### ¿Por qué funciona el aprendizaje visual?
+### Why does visual learning work?
 
-Tu cerebro recuerda mejor cuando conecta palabras con imágenes. Ver un objeto (🪑) y su nombre (**chair**) al mismo tiempo crea una asociación más fuerte que solo leer listas de vocabulario. Las investigaciones muestran que el aprendizaje multisensorial (visual + textual) aumenta la retención hasta un 65%.
+Your brain remembers better when it connects words with images. Seeing an object (🪑) and its name (**chair**) at the same time creates a stronger association than just reading vocabulary lists. Research shows that multisensory learning (visual + textual) increases retention by up to 65%.
 
-### Ciclo de aprendizaje
-1. **Descubrimiento** — Explora la escena interactiva y haz clic en objetos
-2. **Reconocimiento** — Practica con flashcards
-3. **Asociación** — Juega Word Match para conectar palabras
-4. **Producción** — Construye oraciones simples
-5. **Evaluación** — Quiz final de vocabulario
+### Learning cycle
+1. **Discovery** — Explore the interactive scene and click on objects
+2. **Recognition** — Practice with flashcards
+3. **Association** — Play Word Match to connect words
+4. **Production** — Build simple sentences
+5. **Evaluation** — Final Vocabulary Quiz
 
-### Usa las palabras en contexto
+### Use words in context
 
-No solo aprendas *"table = mesa"*. Piensa en una **oración completa**: *"The book is on the table."* El contexto ayuda a tu memoria y te prepara para conversaciones reales. Cada vez que aprendas una palabra nueva, crea una imagen mental de cómo la usarías.
+Don't just learn *"table = table"*. Think of a **complete sentence**: *"The book is on the table."* Context helps your memory and prepares you for real conversations. Every time you learn a new word, create a mental image of how you would use it.
 
 ### Evita estos errores comunes
 
-❌ Traducir palabra por palabra: *"The table big"*  
-✅ Aprende el orden correcto: *"The big table"*
+❌ Translate word by word: *"The table big"*
+✅ Learn the correct order: *"The big table"*
 
-❌ Memorizar sin contexto: "chair, table, book..."  
+❌ Memorize without context: "chair, table, book..."
 ✅ Crear conexiones: "The book is on the table, the chair is red."
 
-> 💡 **Tip:** Los adjetivos van ANTES del sustantivo en inglés (big table ≠ table big). ¡También intenta recordar la palabra antes de hacer clic — tu cerebro aprende mejor cuando se esfuerza!
+> 💡 **Tip:** Adjectives come BEFORE the noun in English (big table ≠ table big). Also try to remember the word before you click — your brain learns best when it tries!

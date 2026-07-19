@@ -1,24 +1,24 @@
 ---
 id: m6-ch5
-moduleId: modulo-6
+moduleId: module-6
 number: 5
-title: "Reported Speech: Afirmaciones"
-subtitle: Said that, told me that — Lo que dijo
+title: "Reported Speech: Affirmations"
+subtitle: Said that, told me that — What he said
 icon: 🗣️
 color: "#f59e0b"
 objectives:
-  - Transformar afirmaciones directas en estilo indirecto
-  - Aplicar los cambios de tiempo verbal (backshift)
-  - "Usar \"said\" y \"told\" correctamente"
+  - Transform direct statements into indirect speech
+  - Apply tense changes (backshift)
+  - "Use \"said\" and \"told\" correctly"
 xpReward: 180
 ---
 
 ## Reported Speech — Estilo Indirecto (Statements)
 
-### ¿Qué es?
+### What is it?
 - **Direct:** "I **am** happy," she said.
 - **Reported:** She said (that) she **was** happy.
-- Reportamos lo que alguien dijo SIN usar comillas.
+- We report what someone said WITHOUT using quotes.
 
 ### Said vs. Told
 | Verb | Use | Example |
@@ -28,7 +28,7 @@ xpReward: 180
 - ❌ ~~She said me...~~ → ✅ She **told** me...
 - ❌ ~~She told that...~~ → ✅ She **said** that...
 
-### Backshift — Cambio de tiempos
+### Backshift — Change of times
 | Direct Speech | Reported Speech |
 |---------------|-----------------|
 | "I **am** happy." | She said she **was** happy. |
