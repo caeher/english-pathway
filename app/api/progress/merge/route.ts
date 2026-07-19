@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server'
-import { mergeProgressSchema } from '@/lib/api/progress-schemas'
-import { completeChapter } from '@/lib/dal/chapter-completions'
-import { mergeLearningProgress } from '@/lib/dal/learning-progress'
-import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
-import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
-import { resolveChapter } from '@/lib/content/resolve'
-import { getChapterProgress } from '@/lib/curriculum/progress'
+import {
+  completeChapter,
+  getCurriculumProgressSnapshot,
+  mergeLearningProgress,
+  mergeProgressSchema,
+} from '@/features/progress'
+import { resolveActivityByIdValidated } from '@/features/learn'
+import { resolveChapter, getChapterProgress } from '@/features/curriculum'
 import { createClient } from '@/lib/supabase/server'
 
 export async function POST(request: Request) {

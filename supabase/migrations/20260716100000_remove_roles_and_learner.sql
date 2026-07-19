@@ -20,15 +20,9 @@ DROP TABLE IF EXISTS public.achievements CASCADE;
 DROP FUNCTION IF EXISTS public.match_knowledge(vector, INTEGER, JSONB);
 DROP TABLE IF EXISTS public.knowledge_embeddings CASCADE;
 
--- Drop role-dependent triggers and functions
-DROP TRIGGER IF EXISTS profiles_protect_sensitive_fields ON public.profiles;
-DROP FUNCTION IF EXISTS public.protect_profile_sensitive_fields();
-DROP FUNCTION IF EXISTS public.add_user_xp(INTEGER);
-DROP FUNCTION IF EXISTS public.is_admin();
-DROP FUNCTION IF EXISTS public.is_staff();
-DROP FUNCTION IF EXISTS public.has_role(public.user_role);
-
--- Drop profile policies that reference roles
+-- Drop profile policies that reference roles before dropping the functions.
+-- PostgreSQL does not allow dropping a function while an RLS policy depends on it.
+-- These policies are recreated below with the simplified owner/public rules.
 DROP POLICY IF EXISTS "Profiles are viewable by owner" ON public.profiles;
 DROP POLICY IF EXISTS "Profiles updatable by owner" ON public.profiles;
 DROP POLICY IF EXISTS "Admins can update any profile" ON public.profiles;
@@ -36,7 +30,11 @@ DROP POLICY IF EXISTS "Admins can update any profile role" ON public.profiles;
 DROP POLICY IF EXISTS "Staff can view student profiles" ON public.profiles;
 DROP POLICY IF EXISTS "Teachers can update their student profiles" ON public.profiles;
 
--- Drop content staff policies
+DROP POLICY IF EXISTS "Published legal documents are viewable by everyone" ON public.legal_documents;
+DROP POLICY IF EXISTS "Admins can manage legal documents" ON public.legal_documents;
+DROP POLICY IF EXISTS "Users can view own consents" ON public.user_consents;
+
+-- Remove content policies that depend on is_staff() before dropping that function.
 DROP POLICY IF EXISTS "Published modules are viewable by everyone" ON public.modules;
 DROP POLICY IF EXISTS "Staff can manage modules" ON public.modules;
 DROP POLICY IF EXISTS "Published chapters are viewable by everyone" ON public.chapters;
@@ -46,11 +44,15 @@ DROP POLICY IF EXISTS "Staff can manage objectives" ON public.chapter_objectives
 DROP POLICY IF EXISTS "Published activities are viewable by everyone" ON public.activities;
 DROP POLICY IF EXISTS "Staff can manage activities" ON public.activities;
 DROP POLICY IF EXISTS "Staff can manage word search puzzles" ON public.word_search_puzzles;
+DROP POLICY IF EXISTS "Word search puzzles are viewable by everyone" ON public.word_search_puzzles;
 
--- Drop legal admin policies
-DROP POLICY IF EXISTS "Published legal documents are viewable by everyone" ON public.legal_documents;
-DROP POLICY IF EXISTS "Admins can manage legal documents" ON public.legal_documents;
-DROP POLICY IF EXISTS "Users can view own consents" ON public.user_consents;
+-- Drop role-dependent triggers and functions
+DROP TRIGGER IF EXISTS profiles_protect_sensitive_fields ON public.profiles;
+DROP FUNCTION IF EXISTS public.protect_profile_sensitive_fields();
+DROP FUNCTION IF EXISTS public.add_user_xp(INTEGER);
+DROP FUNCTION IF EXISTS public.is_admin();
+DROP FUNCTION IF EXISTS public.is_staff();
+DROP FUNCTION IF EXISTS public.has_role(public.user_role);
 
 -- Drop analytics admin policy
 DROP POLICY IF EXISTS "Admins read analytics" ON public.analytics_events;
