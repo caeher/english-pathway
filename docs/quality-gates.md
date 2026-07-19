@@ -21,6 +21,8 @@ Before release, test keyboard-only navigation, visible focus, form labels/errors
 
 ## Performance and observability
 
+`performance-budgets.json` defines the CSS, font, image, JavaScript, and Web Vitals budgets for public and authenticated critical routes. `pnpm performance:check` runs after the production build in CI and blocks regressions in global CSS, raster image weight, and `next/font` swap configuration. Capture field Web Vitals in release evidence and compare them with the documented route budgets.
+
 Budgets are encoded in `lib/quality/critical-routes.ts`:
 
 - public routes: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.10, client JS ≤ 220 kB;

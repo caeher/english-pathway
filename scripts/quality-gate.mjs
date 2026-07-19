@@ -7,6 +7,8 @@ const requiredFiles = [
   'lib/security/headers.ts',
   'lib/security/rate-limit.ts',
   'lib/quality/critical-routes.ts',
+  'performance-budgets.json',
+  'scripts/check-performance-budgets.mjs',
 ]
 
 const missingFiles = requiredFiles.filter((file) => !existsSync(file))

@@ -91,3 +91,6 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
+
+      - name: Check performance budgets
+        run: pnpm performance:check
