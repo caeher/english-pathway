@@ -1,5 +1,9 @@
 # English Pathway
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development workflow, validation, curriculum changes, and database migrations before opening a pull request.
+
 Plataforma interactiva y gamificada para aprender inglés. Construida con **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS v4** y **Supabase**.
 
 ## Requisitos
