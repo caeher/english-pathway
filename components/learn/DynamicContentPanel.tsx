@@ -1,10 +1,13 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { selectClearPanel, selectPanel, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { MarkdownWithTts } from '@/components/lesson/MarkdownWithTts'
 import ActivityRenderer, { type ActivityCompleteResult } from './ActivityRenderer'
 import { Button } from '@/components/ui/button'
+import { panelTransition } from '@/lib/motion/system'
+import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface DynamicContentPanelProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
@@ -15,6 +18,7 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
   const panel = useLearnSessionStore(selectPanel)
   const clearPanel = useLearnSessionStore(selectClearPanel)
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
     if (panel.kind !== 'empty') headingRef.current?.focus({ preventScroll: window.innerWidth >= 1024 })
@@ -46,7 +50,12 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
         )}
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={panel.kind === 'activity' ? `activity-${panel.activity.id}` : panel.kind}
+          className="flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6"
+          {...(reducedMotion ? motionProps(true) : panelTransition)}
+        >
         {panel.kind === 'grammar' && (
           <MarkdownWithTts
             content={panel.markdown}
@@ -90,7 +99,8 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
             )}
           </div>
         )}
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }
