@@ -41,6 +41,12 @@ Budgets are encoded in `lib/quality/critical-routes.ts`:
 
 Record Web Vitals, API status/latency, provider fallback, and session lifecycle counts only. Never send email, user IDs, transcripts, prompt content, memory content, access tokens, or raw provider errors to analytics.
 
+## API resilience contract
+
+Every API error uses `{ error, code }`. State-changing progress, engagement, SRS, and tutor-memory routes are rate-limited per client and route; `429 RATE_LIMITED` includes `Retry-After`. Route operations have a 10-second server response budget and return `504 TIMEOUT` when it expires.
+
+Progress writes are idempotent by `(user_id, activity_id)`: duplicate activity requests preserve the highest score, attempt count, and completed state. Engagement awards are idempotent by `(user_id, activity_id)`, so retries cannot award XP or increment daily activity counts twice.
+
 ## Security contract
 
 `next.config.ts` applies the security headers tested by the quality suite. Unsafe API requests are same-origin checked in middleware. Expensive tutor/assessment routes have a per-process fallback rate limit; the deployment edge must also enforce a distributed limit because serverless instances do not share memory. APIs validate request bodies with Zod and return generic client errors without provider secrets.

@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
       )
       if (!result.allowed) {
         return NextResponse.json(
-          { error: 'Too many requests. Please try again shortly.' },
+          { error: 'Too many requests. Please try again shortly.', code: 'RATE_LIMITED' },
           { status: 429, headers: { 'Retry-After': String(result.retryAfterSeconds) } },
         )
       }

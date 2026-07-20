@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { apiErrorSchema } from './contracts'
 
-export type DomainErrorCode = 'AUTHENTICATION_REQUIRED' | 'INVALID_INPUT' | 'NOT_FOUND' | 'CONFLICT' | 'DEPENDENCY_FAILURE'
+export type DomainErrorCode = 'AUTHENTICATION_REQUIRED' | 'INVALID_INPUT' | 'NOT_FOUND' | 'CONFLICT' | 'DEPENDENCY_FAILURE' | 'TIMEOUT'
 
 const statusByCode: Record<DomainErrorCode, number> = {
   AUTHENTICATION_REQUIRED: 401,
@@ -9,6 +9,7 @@ const statusByCode: Record<DomainErrorCode, number> = {
   NOT_FOUND: 404,
   CONFLICT: 409,
   DEPENDENCY_FAILURE: 503,
+  TIMEOUT: 504,
 }
 
 export class DomainError extends Error {
@@ -32,9 +33,10 @@ export function apiErrorResponse(error: unknown, fallbackMessage: string) {
   return NextResponse.json(apiErrorSchema.parse(response), { status: domainError?.status ?? 503 })
 }
 
-export async function respondWithApiErrors<T>(operation: () => Promise<T>, fallbackMessage: string, init?: ResponseInit) {
+export async function respondWithApiErrors<T>(operation: () => Promise<T>, fallbackMessage: string, init?: ResponseInit, timeoutMs = 10_000) {
   try {
-    return NextResponse.json(await operation(), init)
+    const { withApiTimeout } = await import('./timeout')
+    return NextResponse.json(await withApiTimeout(operation(), timeoutMs), init)
   } catch (error) {
     console.error(error)
     return apiErrorResponse(error, fallbackMessage)
