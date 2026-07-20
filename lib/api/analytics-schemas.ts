@@ -1,5 +1,10 @@
 import { z } from 'zod'
 
+const sensitivePropertyPattern = /(audio|answer|content|email|memory|message|prompt|summary|transcript|user)/i
+const analyticsPropertiesSchema = z.record(z.string().max(80), z.union([z.string().max(500), z.number(), z.boolean(), z.null()]))
+  .refine((value) => Object.keys(value).length <= 30, 'Too many analytics properties')
+  .refine((value) => Object.keys(value).every((key) => !sensitivePropertyPattern.test(key)), 'Analytics properties cannot contain learner content or identifiers')
+
 export const analyticsEventSchema = z.object({
   event_name: z.enum([
     'landing_cta_click', 'demo_activity_complete', 'demo_chapter_start', 'signup_complete', 'onboarding_step',
@@ -8,6 +13,6 @@ export const analyticsEventSchema = z.object({
     'game_complete', 'guest_signup_prompt_shown', 'guest_signup_prompt_click', 'learn_mode_select',
     'learn_microphone', 'learn_session_start', 'learn_session_end', 'learn_session_error',
   ]),
-  properties: z.record(z.string().max(80), z.union([z.string().max(500), z.number(), z.boolean(), z.null()])).default({}).refine((value) => Object.keys(value).length <= 30, 'Too many analytics properties'),
+  properties: analyticsPropertiesSchema.default({}),
   session_id: z.string().max(128).nullable().optional(),
 })

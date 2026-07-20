@@ -22,10 +22,16 @@ export function useTutorActivityActions() {
     sendUserMessage(`I finished activity ${result.activityId} (${result.activityType}) with ${pct}% score.`)
     trackEvent('activity_complete', { activity_id: result.activityId, activity_type: result.activityType, score_percent: pct })
     if (result.chapterId && result.moduleId) {
-      void saveActivityProgress({ activityId: result.activityId, activityType: result.activityType, chapterId: result.chapterId, moduleId: result.moduleId, status: 'completed', score: pct, attempts: 1 })
+      void saveActivityProgress({ activityId: result.activityId, activityType: result.activityType, chapterId: result.chapterId, moduleId: result.moduleId, status: 'completed', score: pct, attempts: 1 }).then((saved) => {
+        if (!saved) trackEvent('learn_session_error', { operation: 'progress_save', reason: 'request_failed', activity_type: result.activityType })
+      })
     }
-    void recordEngagementSession({ activityId: result.activityId, activityType: result.activityType as ActivityType, scorePercent: pct })
-    void enqueueSrsItems(result.reviewContentRefs ?? [])
+    void recordEngagementSession({ activityId: result.activityId, activityType: result.activityType as ActivityType, scorePercent: pct }).then((update) => {
+      if (!update) trackEvent('learn_session_error', { operation: 'engagement_record', reason: 'request_failed', activity_type: result.activityType })
+    })
+    void enqueueSrsItems(result.reviewContentRefs ?? []).then((enqueued) => {
+      if (result.reviewContentRefs?.length && !enqueued) trackEvent('learn_session_error', { operation: 'review_enqueue', reason: 'request_failed', activity_type: result.activityType })
+    }).catch(() => trackEvent('learn_session_error', { operation: 'review_enqueue', reason: 'request_failed', activity_type: result.activityType }))
     void saveTutorMemory({
       type: 'learner_memory',
       memoryKey: `activity:${result.activityId}`,

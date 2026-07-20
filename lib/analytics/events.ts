@@ -30,6 +30,12 @@ export interface AnalyticsEventProperties {
   [key: string]: string | number | boolean | null | undefined
 }
 
+const sensitivePropertyPattern = /(audio|answer|content|email|memory|message|prompt|summary|transcript|user)/i
+
+export function sanitizeAnalyticsProperties(properties: AnalyticsEventProperties): AnalyticsEventProperties {
+  return Object.fromEntries(Object.entries(properties).filter(([key]) => !sensitivePropertyPattern.test(key)))
+}
+
 function getSessionId(): string {
   if (typeof window === 'undefined') return ''
   const key = 'ie-analytics-session'
@@ -50,7 +56,7 @@ export function trackEvent(
 
   const payload = {
     event_name: eventName,
-    properties,
+    properties: sanitizeAnalyticsProperties(properties),
     session_id: getSessionId(),
     timestamp: new Date().toISOString(),
   }
