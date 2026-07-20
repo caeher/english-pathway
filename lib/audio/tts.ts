@@ -3,6 +3,12 @@
 const ENGLISH_LOCALES = ['en-US', 'en-GB', 'en']
 
 let preferredVoice: SpeechSynthesisVoice | null = null
+let activeText = ''
+const listeners = new Set<(text: string) => void>()
+
+function emitState() {
+  for (const listener of listeners) listener(activeText)
+}
 
 function isSupported(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window
@@ -25,6 +31,14 @@ export function getTtsSupported(): boolean {
 export function stopSpeaking(): void {
   if (!isSupported()) return
   window.speechSynthesis.cancel()
+  activeText = ''
+  emitState()
+}
+
+export function subscribeToTtsState(listener: (text: string) => void): () => void {
+  listeners.add(listener)
+  listener(activeText)
+  return () => listeners.delete(listener)
 }
 
 export function speak(
@@ -47,11 +61,18 @@ export function speak(
     utterance.voice = preferredVoice
   }
 
-  if (options?.onEnd) {
-    utterance.onend = () => options.onEnd?.()
+  activeText = text.trim()
+  utterance.onend = () => {
+    if (activeText === text.trim()) {
+      activeText = ''
+      emitState()
+    }
+    options?.onEnd?.()
   }
+  utterance.onerror = utterance.onend
 
   window.speechSynthesis.speak(utterance)
+  emitState()
   return true
 }
 

@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { Volume2, VolumeX } from 'lucide-react'
 import { cn } from '@/lib/helpers'
-import { getTtsSupported, speak, stopSpeaking } from '@/lib/audio/tts'
+import { getTtsSupported, speak, stopSpeaking, subscribeToTtsState } from '@/lib/audio/tts'
 
 interface SpeakButtonProps {
   text: string
@@ -15,6 +15,8 @@ interface SpeakButtonProps {
 export function SpeakButton({ text, label, size = 'sm', className }: SpeakButtonProps) {
   const [speaking, setSpeaking] = useState(false)
   const supported = getTtsSupported()
+
+  useEffect(() => subscribeToTtsState((activeText) => setSpeaking(activeText === text.trim())), [text])
 
   const handleClick = useCallback(
     (e: React.MouseEvent) => {
