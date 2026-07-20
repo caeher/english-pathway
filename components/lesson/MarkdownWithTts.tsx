@@ -3,10 +3,12 @@
 /* Markdown images are author-controlled content and cannot use a static Next Image loader. */
 /* eslint-disable @next/next/no-img-element */
 
+import { memo, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import { slugifyHeading } from '@/lib/content/markdown'
+import { stopSpeaking } from '@/lib/audio/tts'
 
 const ENGLISH_PATTERN = /\*([a-zA-Z][a-zA-Z\s',.-]{0,40})\*/g
 
@@ -52,12 +54,14 @@ function calloutClass(children: React.ReactNode): string {
   return label ? `markdown-callout markdown-callout-${label}` : 'markdown-blockquote'
 }
 
+const markdownPlugins = [remarkGfm]
+
 interface MarkdownWithTtsProps {
   content: string
   className?: string
 }
 
-export function MarkdownWithTts({ content, className }: MarkdownWithTtsProps) {
+const MarkdownDocument = memo(function MarkdownDocument({ content }: Pick<MarkdownWithTtsProps, 'content'>) {
   const headingCounts = new Map<string, number>()
   const headingId = (children: React.ReactNode) => {
     const baseId = slugifyHeading(plainChildren(children))
@@ -67,9 +71,9 @@ export function MarkdownWithTts({ content, className }: MarkdownWithTtsProps) {
   }
 
   return (
-    <div className={`markdown-content ${className ?? ''}`}>
+    <>
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={markdownPlugins}
         components={{
           h1: ({ children }) => <h1 id={headingId(children)}>{processChildren(children)}</h1>,
           h2: ({ children }) => <h2 id={headingId(children)}>{processChildren(children)}</h2>,
@@ -95,6 +99,11 @@ export function MarkdownWithTts({ content, className }: MarkdownWithTtsProps) {
       >
         {content}
       </ReactMarkdown>
-    </div>
+    </>
   )
+})
+
+export function MarkdownWithTts({ content, className }: MarkdownWithTtsProps) {
+  useEffect(() => () => stopSpeaking(), [content])
+  return <div className={`markdown-content ${className ?? ''}`}><MarkdownDocument content={content} /></div>
 }
