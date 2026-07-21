@@ -20,9 +20,11 @@ interface NavUserProps {
   collapsed?: boolean
   compact?: boolean
   showDashboard?: boolean
+  variant?: 'default' | 'hero'
 }
 
-export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false, showDashboard = true }: NavUserProps) {
+export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false, showDashboard = true, variant = 'default' }: NavUserProps) {
+  const isHero = variant === 'hero'
   const initials = (fullName || email || 'U')
     .split(' ')
     .map((n) => n[0])
@@ -34,7 +36,8 @@ export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          'flex items-center gap-3 rounded-xl p-2 hover:bg-(--bg-tertiary) transition-colors outline-none',
+          'flex items-center gap-3 rounded-xl p-2 transition-colors outline-none cursor-pointer',
+          isHero ? 'hover:bg-white/15 text-white' : 'hover:bg-(--bg-tertiary)',
           !compact && 'w-full',
           compact && 'max-w-48',
           collapsed && 'justify-center'
@@ -42,16 +45,27 @@ export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false
       >
         <Avatar className="h-8 w-8 shrink-0">
           <AvatarImage src={avatarUrl ?? undefined} alt={fullName ?? 'User'} />
-          <AvatarFallback className="bg-(--accent-soft) text-(--accent) text-xs font-bold">
+          <AvatarFallback className={cn(
+            'text-xs font-bold',
+            isHero ? 'bg-white text-(--accent) shadow-sm' : 'bg-(--accent-soft) text-(--accent)'
+          )}>
             {initials}
           </AvatarFallback>
         </Avatar>
         {!collapsed && (
           <div className="flex flex-col items-start min-w-0 text-left">
-            <span className="text-sm font-medium text-(--text-primary) truncate w-full">
+            <span className={cn(
+              'text-sm font-medium truncate w-full',
+              isHero ? 'text-white font-bold' : 'text-(--text-primary)'
+            )}>
               {fullName || 'User'}
             </span>
-            <span className="text-xs text-(--text-muted) truncate w-full">{email}</span>
+            <span className={cn(
+              'text-xs truncate w-full',
+              isHero ? 'text-white/80' : 'text-(--text-muted)'
+            )}>
+              {email}
+            </span>
           </div>
         )}
       </DropdownMenuTrigger>

@@ -12,7 +12,7 @@ const FAQ = [
 
 export default function FaqPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
+    <div className="mx-auto max-w-6xl px-6 py-16">
       <p className="font-display text-sm font-bold uppercase tracking-widest text-(--accent)">FAQ</p>
       <h1 className="mt-3 font-display text-4xl font-black text-(--text-primary)">Frequently asked questions</h1>
       <div className="mt-8 space-y-4">

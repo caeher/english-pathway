@@ -1,9 +1,7 @@
 'use client'
 
-import { Menu, Moon, Sun } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Switch } from '@/components/ui/switch'
-import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
 import { cn } from '@/lib/helpers'
 
 interface AppNavbarProps {
@@ -13,9 +11,6 @@ interface AppNavbarProps {
 }
 
 export function AppNavbar({ title, onToggleSidebar, className }: AppNavbarProps) {
-  const dark = useThemeStore(selectDark)
-  const toggle = useThemeStore(selectToggleTheme)
-
   return (
     <header
       className={cn(
@@ -38,15 +33,7 @@ export function AppNavbar({ title, onToggleSidebar, className }: AppNavbarProps)
           <h1 className="font-display font-bold text-lg text-(--text-primary)">{title}</h1>
         )}
       </div>
-
-      <div className="flex items-center gap-3">
-        {dark ? (
-          <Moon className="h-4 w-4 text-(--text-muted)" />
-        ) : (
-          <Sun className="h-4 w-4 text-(--reward)" />
-        )}
-        <Switch checked={dark} onCheckedChange={toggle} aria-label="Toggle theme" />
-      </div>
     </header>
   )
 }
+

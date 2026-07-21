@@ -2,13 +2,14 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type } from 'lucide-react'
+import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type, Palette, Sun, Moon } from 'lucide-react'
 import { Button, InlineError, SuccessState, Surface } from '@/components/ui'
 import { Label } from '@/components/ui/label'
 import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 import type { Database as DatabaseTypes } from '@/lib/supabase/database.types'
 import { clearCookieConsent } from '@/lib/consent/client'
+import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
 
 type Profile = DatabaseTypes['public']['Tables']['profiles']['Row']
 
@@ -18,6 +19,9 @@ interface SettingsPageProps {
 }
 
 export default function SettingsPage({ profile, email }: SettingsPageProps) {
+  const dark = useThemeStore(selectDark)
+  const toggleTheme = useThemeStore(selectToggleTheme)
+
   const [fullName, setFullName] = useState(profile.full_name ?? '')
   const [dailyGoalMinutes, setDailyGoalMinutes] = useState<5 | 10 | 20>(
     profile.daily_goal_minutes === 5 || profile.daily_goal_minutes === 10 || profile.daily_goal_minutes === 20
@@ -87,10 +91,10 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-8">
+    <div className="mx-auto max-w-6xl space-y-8">
       <div>
         <h1 className="flex items-center gap-2 font-display text-2xl font-black text-(--text-primary)"><Settings className="h-6 w-6" aria-hidden="true" /> Settings</h1>
-        <p className="mt-1 text-(--text-secondary)">Manage your profile, learning preferences, and account controls.</p>
+        <p className="mt-1 text-(--text-secondary)">Manage your profile, learning preferences, appearance, and account controls.</p>
       </div>
 
       {error && <InlineError message={error} onRetry={() => void handleSave()} />}
@@ -110,6 +114,49 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
           <Label htmlFor="email">Email</Label>
           <input id="email" value={email ?? 'Unavailable'} readOnly aria-describedby="email-help" className="mt-1 w-full rounded-xl border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-muted)" />
           <p id="email-help" className="mt-1 text-xs text-(--text-muted)">Email is managed by your authentication provider.</p>
+        </div>
+      </Surface>
+
+      {/* Appearance Section */}
+      <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="appearance-heading">
+        <div>
+          <h2 id="appearance-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)">
+            <Palette className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Appearance & Theme
+          </h2>
+          <p className="mt-1 text-sm text-(--text-secondary)">Customize the application display mode and theme experience.</p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <button
+            type="button"
+            onClick={() => { if (dark) toggleTheme() }}
+            className={`flex items-center gap-3 rounded-xl border p-4 text-left transition-all ${
+              !dark ? 'border-(--accent) bg-(--accent-soft) shadow-sm' : 'border-(--border-primary) hover:bg-(--bg-secondary)'
+            }`}
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+              <Sun className="h-5 w-5" />
+            </div>
+            <div>
+              <span className="font-bold text-(--text-primary)">Light Mode</span>
+              <span className="mt-0.5 block text-xs text-(--text-secondary)">Bright and clean visual theme</span>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => { if (!dark) toggleTheme() }}
+            className={`flex items-center gap-3 rounded-xl border p-4 text-left transition-all ${
+              dark ? 'border-(--accent) bg-(--accent-soft) shadow-sm' : 'border-(--border-primary) hover:bg-(--bg-secondary)'
+            }`}
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-800 text-amber-400">
+              <Moon className="h-5 w-5" />
+            </div>
+            <div>
+              <span className="font-bold text-(--text-primary)">Dark Mode</span>
+              <span className="mt-0.5 block text-xs text-(--text-secondary)">Sleek, low-light theme</span>
+            </div>
+          </button>
         </div>
       </Surface>
 
@@ -177,3 +224,4 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
     </div>
   )
 }
+
