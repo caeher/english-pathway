@@ -22,7 +22,7 @@ Keep your account credentials private and provide accurate information. Do not a
 
 ## 3. AI, voice, and third-party services
 
-Voice mode is optional. Your browser asks for microphone permission only after you choose voice mode and start a microphone check. The application does not save raw microphone audio or a full conversation transcript as learner memory. Voice and text sessions may be processed by the configured conversational AI provider, currently ElevenLabs when enabled; review that provider's terms and privacy information as well.
+Voice mode is optional. Your browser asks for microphone permission only after you choose voice mode and start a microphone check. The application does not save raw microphone audio or a full conversation transcript as learner memory. Voice and text sessions may be processed by the configured conversational AI provider: ElevenLabs when enabled, or OpenAI Realtime as the fallback voice provider. Review the applicable provider terms and privacy information as well.
 
 Text mode is available as an alternative when you do not want to use a microphone or when voice is unavailable. Curriculum retrieval may use OpenAI embeddings and Supabase-hosted shared curriculum data. Personalization uses only the private progress and bounded memory described in the Privacy Policy.
 
@@ -64,7 +64,7 @@ This product-facing summary explains what English Pathway processes. It is not a
 
 ## Voice, text, and AI processing
 
-The browser requests microphone access only after a user gesture in voice mode. The application uses a microphone stream for the active voice experience and stops its tracks when the session ends. The application does not store raw audio or a full transcript in its learner memory tables. ElevenLabs may process voice conversations when voice is enabled; OpenAI may process embedding requests for shared curriculum retrieval when configured. Supabase hosts authentication, database, and shared curriculum retrieval. The exact provider terms, locations, transfer mechanisms, and subprocessors must be confirmed by the operator before launch.
+The browser requests microphone access only after a user gesture in voice mode. The application uses a microphone stream for the active voice experience and stops its tracks when the session ends. The application does not store raw audio or a full transcript in its learner memory tables. ElevenLabs may process voice conversations when enabled; when it is not configured, OpenAI may process realtime voice conversations as well as embedding requests for shared curriculum retrieval. Supabase hosts authentication, database, and shared curriculum retrieval. The exact provider terms, locations, transfer mechanisms, and subprocessors must be confirmed by the operator before launch.
 
 Text mode is a functional alternative and does not request microphone access. Browser speech features used by optional activities follow the browser's own permission and provider behavior.
 

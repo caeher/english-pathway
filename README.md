@@ -101,9 +101,11 @@ Copia `.env.example` a `.env.local`:
 | `NEXT_PUBLIC_APP_URL` | URL de la app (p.ej. `http://localhost:3000`) |
 | `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `true` para mostrar botón Google |
 | `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `true` para mostrar botón GitHub |
-| `OPENAI_API_KEY` | Embeddings para RAG (`pnpm kb:embed`) |
+| `OPENAI_API_KEY` | Embeddings para RAG, asistente de chat y fallback de voz OpenAI |
 | `ELEVENLABS_API_KEY` | API key ElevenLabs (opcional) |
 | `NEXT_PUBLIC_ELEVENLABS_AGENT_ID` | ID del agente de conversación |
+| `OPENAI_REALTIME_MODEL` | Modelo de voz fallback; por defecto `gpt-realtime-2.1-mini` |
+| `OPENAI_REALTIME_VOICE` | Voz de OpenAI Realtime; por defecto `marin` |
 
 En local, genera `.env.local` con:
 

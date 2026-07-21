@@ -17,6 +17,7 @@ import EngagementSummary from '@/components/engagement/EngagementSummary'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
 import ProgressSync from '@/components/progress/ProgressSync'
+import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
 
 interface TutorControlsProps {
   mode: SessionMode
@@ -143,6 +144,18 @@ interface VoiceTutorProviderProps {
 }
 
 export default function VoiceTutorProvider({ children, initialActivityId }: VoiceTutorProviderProps) {
+  if (!process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID) {
+    return <OpenAiRealtimeTutorProvider initialActivityId={initialActivityId} />
+  }
+
+  return (
+    <ElevenLabsVoiceTutorProvider initialActivityId={initialActivityId}>
+      {children}
+    </ElevenLabsVoiceTutorProvider>
+  )
+}
+
+function ElevenLabsVoiceTutorProvider({ children, initialActivityId }: VoiceTutorProviderProps) {
   const [mode, setMode] = useState<SessionMode>('text')
   const sessionIdRef = useRef<string | null>(null)
   const voiceAvailable = useVoiceAvailability()
