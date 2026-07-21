@@ -50,9 +50,10 @@ export default function EnglishAssistant() {
         body: JSON.stringify({ messages: nextMessages.slice(-12) }),
       })
       const payload = (await response.json().catch(() => null)) as { answer?: string; error?: string } | null
-      if (!response.ok || !payload?.answer) throw new Error(payload?.error ?? 'Unable to get an answer.')
+      const answer = payload?.answer
+      if (!response.ok || !answer) throw new Error(payload?.error ?? 'Unable to get an answer.')
 
-      setMessages((current) => [...current, { role: 'assistant', content: payload.answer }])
+      setMessages((current) => [...current, { role: 'assistant', content: answer }])
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : 'Unable to get an answer.')
     } finally {

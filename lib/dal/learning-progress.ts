@@ -1,7 +1,12 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { ActivityProgressInput, ChapterProgressInput } from '@/lib/api/progress-schemas'
 import type { Database } from '@/lib/supabase/database.types'
-import type { CurriculumProgressSnapshot } from '@/lib/curriculum/progress'
+import type { CurriculumProgressSnapshot, ProgressStatus } from '@/lib/curriculum/progress'
+
+function toProgressStatus(status: string): ProgressStatus {
+  if (status === 'completed' || status === 'in_progress' || status === 'not_started') return status
+  return 'not_started'
+}
 
 type Client = SupabaseClient<Database>
 type ActivityRow = Database['public']['Tables']['activity_completions']['Row']
@@ -77,7 +82,10 @@ export async function getCurriculumProgressSnapshot(
 
   return {
     completedChapterIds: new Set((chapters.data ?? []).map((row) => row.chapter_id)),
-    activities: activities.data ?? [],
+    activities: (activities.data ?? []).map((row) => ({
+      ...row,
+      status: toProgressStatus(row.status),
+    })),
     lastChapterId: lastProgress?.last_chapter_id ?? null,
     lastActivityId: lastProgress?.last_activity_id ?? null,
   }

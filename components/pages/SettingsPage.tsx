@@ -28,7 +28,11 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
       ? profile.daily_goal_minutes
       : 10,
   )
-  const [preferredMode, setPreferredMode] = useState<'voice' | 'text'>(profile.preferred_mode ?? 'text')
+  const initialPreferredMode =
+    profile.preferred_mode === 'voice' || profile.preferred_mode === 'text'
+      ? profile.preferred_mode
+      : 'text'
+  const [preferredMode, setPreferredMode] = useState<'voice' | 'text'>(initialPreferredMode)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
   const [pending, setPending] = useState(false)
@@ -38,7 +42,7 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
   const initialValues = useMemo(() => ({
     fullName: profile.full_name ?? '',
     dailyGoalMinutes: profile.daily_goal_minutes === 5 || profile.daily_goal_minutes === 10 || profile.daily_goal_minutes === 20 ? profile.daily_goal_minutes : 10,
-    preferredMode: profile.preferred_mode ?? 'text',
+    preferredMode: initialPreferredMode,
   }), [profile])
   const dirty = fullName !== initialValues.fullName || dailyGoalMinutes !== initialValues.dailyGoalMinutes || preferredMode !== initialValues.preferredMode
 
