@@ -17,13 +17,24 @@ async function embedKnowledge() {
   console.log(`📚 Embedding ${chunks.length} chunks from ${modules.length} modules...`)
 
   let done = 0
-  for (const chunk of chunks) {
-    await upsertKnowledgeChunk(chunk)
-    done++
-    if (done % 25 === 0 || done === chunks.length) {
-      console.log(`  ${done}/${chunks.length}`)
+  const concurrency = 15
+  let index = 0
+
+  const workers = Array.from({ length: concurrency }, async () => {
+    while (index < chunks.length) {
+      const currentIndex = index++
+      const chunk = chunks[currentIndex]
+      if (chunk) {
+        await upsertKnowledgeChunk(chunk)
+        done++
+        if (done % 25 === 0 || done === chunks.length) {
+          console.log(`  ${done}/${chunks.length}`)
+        }
+      }
     }
-  }
+  })
+
+  await Promise.all(workers)
 
   console.log('✅ Knowledge embedding complete')
 }
