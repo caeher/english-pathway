@@ -62,25 +62,25 @@ export default function ReviewSession() {
   }
 
   if (loading) {
-    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." className="max-w-2xl px-6" />
+    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." className="mx-auto max-w-6xl px-6 py-12" />
   }
 
   if (error && !item) {
-    return <InlineError message={error} onRetry={() => void loadQueue()} className="mx-auto mt-12 max-w-2xl" />
+    return <InlineError message={error} onRetry={() => void loadQueue()} className="mx-auto mt-12 max-w-6xl px-6" />
   }
 
   if (!item) {
-    return <EmptyState className="mt-12 px-6" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
+    return <EmptyState className="mx-auto mt-12 max-w-6xl px-6" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
   }
 
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-2xl flex-col justify-center px-4 py-10 sm:px-6">
+    <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col justify-center px-4 py-10 sm:px-6">
       <div className="mb-5 flex items-center justify-between text-sm text-(--text-muted)">
         <span className="font-display font-bold">Review {index + 1} of {items.length}</span>
         <span>{item.content.chapterTitle}</span>
       </div>
 
-      <article className="border border-(--border-primary) bg-(--bg-card) p-6 shadow-sm sm:p-9">
+      <article className="rounded-3xl border border-(--border-primary) bg-(--bg-card) p-6 shadow-sm sm:p-9">
         <p className="text-xs font-display font-bold uppercase tracking-wide text-(--accent)">Recall</p>
         <h1 className="mt-3 text-2xl font-display font-black text-(--text-primary) sm:text-3xl">{item.content.prompt}</h1>
         {item.content.hint && <p className="mt-4 text-sm text-(--text-muted)">{item.content.hint}</p>}

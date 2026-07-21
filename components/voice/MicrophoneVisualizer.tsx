@@ -58,8 +58,8 @@ export default function MicrophoneVisualizer({ stream, active }: MicrophoneVisua
 
       let currentLevel = 0.08
       if (analyser && freqData && timeData) {
-        analyser.getByteTimeDomainData(timeData)
-        analyser.getByteFrequencyData(freqData)
+        analyser.getByteTimeDomainData(timeData as Uint8Array<ArrayBuffer>)
+        analyser.getByteFrequencyData(freqData as Uint8Array<ArrayBuffer>)
         const avg = getAverageAudioLevel(timeData)
         currentLevel = Math.max(0.08, Math.min(1, avg / 28))
       }

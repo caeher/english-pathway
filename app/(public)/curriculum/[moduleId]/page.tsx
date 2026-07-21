@@ -23,7 +23,7 @@ export default async function ModuleCurriculumPage({ params }: { params: Promise
   const nextChapter = next ? curriculumModule.chapters.find((chapter) => chapter.id === next.chapterId) : null
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
+    <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
       <Link href="/curriculum" className="text-sm font-bold text-(--accent) no-underline">← All modules</Link>
       <div className="mt-6 flex flex-wrap items-start justify-between gap-5">
         <div>

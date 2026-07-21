@@ -29,7 +29,7 @@ export default async function ChapterCurriculumPage({ params }: { params: Promis
   const practiceHref = learnHref({ moduleId: curriculumModule.id, chapterId: chapter.id, activityId: progress.nextActivityId ?? chapter.activities[0]?.id })
 
   return (
-    <div id="chapter-top" className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
+    <div id="chapter-top" className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
       <Link href={`/curriculum/${curriculumModule.id}`} className="text-sm font-bold text-(--accent) no-underline">← {curriculumModule.title}</Link>
       <header className="mt-7 rounded-3xl border border-(--border-primary) bg-(--bg-card) p-7 sm:p-10">
         <div className="flex flex-wrap items-start justify-between gap-5">

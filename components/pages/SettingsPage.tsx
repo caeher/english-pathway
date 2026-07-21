@@ -43,7 +43,7 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
     fullName: profile.full_name ?? '',
     dailyGoalMinutes: profile.daily_goal_minutes === 5 || profile.daily_goal_minutes === 10 || profile.daily_goal_minutes === 20 ? profile.daily_goal_minutes : 10,
     preferredMode: initialPreferredMode,
-  }), [profile])
+  }), [profile, initialPreferredMode])
   const dirty = fullName !== initialValues.fullName || dailyGoalMinutes !== initialValues.dailyGoalMinutes || preferredMode !== initialValues.preferredMode
 
   const handleSave = async () => {
