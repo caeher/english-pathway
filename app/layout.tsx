@@ -26,6 +26,17 @@ export const metadata: Metadata = {
     template: '%s | English Pathway',
   },
   description: 'Practice English with an AI tutor, a structured curriculum, and interactive activities.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   alternates: { canonical: '/' },
   openGraph: {
     title: 'English Pathway — Learn English with guided practice',
@@ -48,7 +59,9 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
 
   return (
     <html lang="en" className={`${outfit.variable} ${nunito.variable}`} suppressHydrationWarning>
