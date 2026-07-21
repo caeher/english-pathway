@@ -29,10 +29,12 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
     ? '/settings'
     : requestedDestination
 
+  const initialLevel = (profile.level === 'beginner' || profile.level === 'intermediate' || profile.level === 'advanced') ? profile.level : null
+
   return (
     <main className="min-h-screen bg-(--bg-primary) px-4 py-10 sm:px-6">
       <OnboardingWizard
-        initialLevel={profile.level}
+        initialLevel={initialLevel}
         initialDailyGoalMinutes={profile.daily_goal_minutes}
         initialPreferredMode={profile.preferred_mode}
         initialStep={profile.onboarding_step ?? 0}
