@@ -10,6 +10,10 @@ type ChatMessage = {
   content: string
 }
 
+type UsageCredits = {
+  assistantMessagesRemaining: number
+}
+
 const WELCOME_MESSAGE: ChatMessage = {
   role: 'assistant',
   content: 'Hi! I can help you practise English grammar, vocabulary, writing, and homework. What would you like to work on?',
@@ -21,6 +25,7 @@ export default function EnglishAssistant() {
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE])
   const [isSending, setIsSending] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [credits, setCredits] = useState<UsageCredits | null>(null)
   const endOfMessagesRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -31,6 +36,12 @@ export default function EnglishAssistant() {
   useEffect(() => {
     endOfMessagesRef.current?.scrollIntoView({ block: 'end' })
   }, [messages, isSending])
+
+  useEffect(() => {
+    void fetch('/api/credits').then(async (response) => {
+      if (response.ok) setCredits(await response.json() as UsageCredits)
+    }).catch(() => {})
+  }, [])
 
   async function sendMessage(event?: FormEvent<HTMLFormElement>) {
     event?.preventDefault()
@@ -49,11 +60,12 @@ export default function EnglishAssistant() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: nextMessages.slice(-12) }),
       })
-      const payload = (await response.json().catch(() => null)) as { answer?: string; error?: string } | null
+      const payload = (await response.json().catch(() => null)) as { answer?: string; error?: string; credits?: UsageCredits } | null
       const answer = payload?.answer
       if (!response.ok || !answer) throw new Error(payload?.error ?? 'Unable to get an answer.')
 
       setMessages((current) => [...current, { role: 'assistant', content: answer }])
+      if (payload.credits) setCredits(payload.credits)
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : 'Unable to get an answer.')
     } finally {
@@ -80,7 +92,7 @@ export default function EnglishAssistant() {
               <span className="grid size-9 place-items-center rounded-xl bg-(--accent) text-white"><Bot className="size-5" aria-hidden="true" /></span>
               <div>
                 <h2 className="font-display text-sm font-extrabold text-(--text-primary)">English helper</h2>
-                <p className="text-xs text-(--text-muted)">Grammar, examples, and practice</p>
+                <p className="text-xs text-(--text-muted)">Grammar, examples, and practice{credits ? ` · ${credits.assistantMessagesRemaining}/50 messages left` : ''}</p>
               </div>
             </div>
             <Button variant="ghost" size="icon" type="button" onClick={() => setOpen(false)} aria-label="Close English helper">
@@ -126,7 +138,7 @@ export default function EnglishAssistant() {
                 disabled={isSending}
                 className="min-h-11 flex-1 resize-none rounded-xl border border-(--border-primary) bg-(--bg-secondary) px-3 py-2 text-sm text-(--text-primary) placeholder:text-(--text-muted) focus:border-(--accent) focus:outline-none focus:ring-2 focus:ring-(--accent)/20 disabled:cursor-not-allowed disabled:opacity-50"
               />
-              <Button size="icon" type="submit" disabled={!draft.trim() || isSending} aria-label="Send question">
+              <Button size="icon" type="submit" disabled={!draft.trim() || isSending || credits?.assistantMessagesRemaining === 0} aria-label="Send question">
                 <Send className="size-4" aria-hidden="true" />
               </Button>
             </div>

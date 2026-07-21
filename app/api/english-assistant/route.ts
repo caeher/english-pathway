@@ -7,6 +7,7 @@ import {
   createEnglishAssistantPromptLog,
   failEnglishAssistantPromptLog,
 } from '@/lib/dal/english-assistant'
+import { consumeAssistantCredit } from '@/lib/credits/usage'
 
 export async function POST(request: Request) {
   const context = await getAuthenticatedContext()
@@ -27,13 +28,17 @@ export async function POST(request: Request) {
 
   return respondWithApiErrors(
     async () => {
+      const credit = await consumeAssistantCredit(context.supabase)
+      if (!credit.allowed) {
+        throw new DomainError('CREDITS_EXHAUSTED', 'Your 50 English assistant messages have been used.')
+      }
       const prompt = parsed.data.messages.at(-1)!.content
       const logId = await createEnglishAssistantPromptLog(context.userId, prompt)
 
       try {
         const answer = await askEnglishAssistant(parsed.data.messages)
         await completeEnglishAssistantPromptLog(logId, answer)
-        return { answer }
+        return { answer, credits: credit.credits }
       } catch (error) {
         await failEnglishAssistantPromptLog(logId)
         throw error
