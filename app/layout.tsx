@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Outfit, Nunito } from 'next/font/google'
 import ClientProviders from '@/components/ClientProviders'
+import { createClient } from '@/lib/supabase/server'
 import './globals.css'
 
 const outfit = Outfit({
@@ -45,11 +46,14 @@ export const viewport: Viewport = {
   themeColor: '#faf7f2',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
   return (
     <html lang="en" className={`${outfit.variable} ${nunito.variable}`} suppressHydrationWarning>
       <body>
-        <ClientProviders>{children}</ClientProviders>
+        <ClientProviders isAuthenticated={Boolean(user)}>{children}</ClientProviders>
       </body>
     </html>
   )

@@ -8,6 +8,7 @@ import { Toaster } from '@/components/ui/toaster'
 import { migratePersistKeys } from '@/lib/storage/migrate-persist'
 import PwaProvider from '@/components/PwaProvider'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
+import EnglishAssistant from '@/components/EnglishAssistant'
 
 function ThemeInit() {
   const dark = useThemeStore(selectDark)
@@ -37,7 +38,7 @@ function PersistMigration() {
   return null
 }
 
-export default function ClientProviders({ children }: { children: React.ReactNode }) {
+export default function ClientProviders({ children, isAuthenticated }: { children: React.ReactNode; isAuthenticated: boolean }) {
   return (
     <TooltipProvider delayDuration={300}>
       <ThemeInit />
@@ -46,6 +47,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       <PwaProvider />
       <CookieConsentBanner />
       {children}
+      {isAuthenticated && <EnglishAssistant />}
       <Toaster />
     </TooltipProvider>
   )

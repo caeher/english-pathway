@@ -11,6 +11,7 @@ type Bucket = {
 const buckets = new Map<string, Bucket>()
 
 export const expensiveRoutePolicies: Record<string, RateLimitPolicy> = {
+  '/api/english-assistant': { limit: 12, windowMs: 60_000 },
   '/api/tutor/context': { limit: 30, windowMs: 60_000 },
   '/api/tutor/session': { limit: 10, windowMs: 60_000 },
   '/api/onboarding/assessment': { limit: 20, windowMs: 60_000 },
