@@ -26,13 +26,15 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
   const reducedMotion = useReducedMotion()
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
 
+  const questionPrompt = panel.kind === 'question' ? panel.prompt : null
+
   useEffect(() => {
     if (panel.kind !== 'empty') headingRef.current?.focus({ preventScroll: window.innerWidth >= 1024 })
   }, [panel.kind])
 
   useEffect(() => {
     if (panel.kind === 'question') setSelectedOption(null)
-  }, [panel.kind, panel.kind === 'question' ? panel.prompt : null])
+  }, [panel.kind, questionPrompt])
 
   const stateLabel = getTutorStateLabel(tutorState)
 
