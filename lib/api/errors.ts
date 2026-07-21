@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server'
 import { apiErrorSchema } from './contracts'
 
-export type DomainErrorCode = 'AUTHENTICATION_REQUIRED' | 'INVALID_INPUT' | 'NOT_FOUND' | 'CONFLICT' | 'DEPENDENCY_FAILURE' | 'TIMEOUT'
+export type DomainErrorCode = 'AUTHENTICATION_REQUIRED' | 'INVALID_INPUT' | 'NOT_FOUND' | 'CONFLICT' | 'CREDITS_EXHAUSTED' | 'DEPENDENCY_FAILURE' | 'TIMEOUT'
 
 const statusByCode: Record<DomainErrorCode, number> = {
   AUTHENTICATION_REQUIRED: 401,
   INVALID_INPUT: 400,
   NOT_FOUND: 404,
   CONFLICT: 409,
+  CREDITS_EXHAUSTED: 429,
   DEPENDENCY_FAILURE: 503,
   TIMEOUT: 504,
 }

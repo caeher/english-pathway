@@ -185,6 +185,39 @@ export type Database = {
           },
         ]
       }
+      audio_credit_sessions: {
+        Row: {
+          closed_at: string | null
+          consumed_seconds: number | null
+          expires_at: string
+          id: string
+          max_seconds: number
+          started_at: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          closed_at?: string | null
+          consumed_seconds?: number | null
+          expires_at: string
+          id?: string
+          max_seconds: number
+          started_at?: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          closed_at?: string | null
+          consumed_seconds?: number | null
+          expires_at?: string
+          id?: string
+          max_seconds?: number
+          started_at?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       chapter_completions: {
         Row: {
           chapter_id: string
@@ -790,6 +823,27 @@ export type Database = {
         }
         Relationships: []
       }
+      user_usage_credits: {
+        Row: {
+          assistant_messages_used: number
+          audio_seconds_used: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          assistant_messages_used?: number
+          audio_seconds_used?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          assistant_messages_used?: number
+          audio_seconds_used?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       word_search_puzzles: {
         Row: {
           cols: number
@@ -825,6 +879,12 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      consume_assistant_credit: { Args: never; Returns: Json }
+      finish_audio_credit_session: {
+        Args: { p_seconds: number; p_session_id: string }
+        Returns: Json
+      }
+      get_usage_credits: { Args: never; Returns: Json }
       match_knowledge: {
         Args: { filter?: Json; match_count?: number; query_embedding: string }
         Returns: {
@@ -844,6 +904,7 @@ export type Database = {
         }
         Returns: Json
       }
+      start_audio_credit_session: { Args: never; Returns: Json }
     }
     Enums: {
       activity_type:
