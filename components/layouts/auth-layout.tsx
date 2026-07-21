@@ -18,7 +18,7 @@ export function AuthLayout({
   return (
     <div className={cn('flex min-h-screen', className)}>
       {/* Image panel — fixed, no scroll */}
-      <div className="relative hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 xl:w-[55%] shrink-0">
+      <div className="relative hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 xl:w-[55%] shrink-0 overflow-hidden bg-(--accent-soft)">
         <Image
           src="/images/auth-hero.svg"
           alt=""
@@ -27,6 +27,8 @@ export function AuthLayout({
           className="object-cover"
           sizes="(min-width: 1280px) 55vw, 50vw"
         />
+        {/* Brand color filter overlay */}
+        <div className="absolute inset-0 bg-(--accent) mix-blend-color opacity-30 pointer-events-none" />
         <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/35 to-black/70" />
         <div className="relative z-10 flex h-full w-full flex-col justify-between p-10 xl:p-14">
           <Link
