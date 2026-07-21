@@ -493,5 +493,154 @@
         }
       ]
     }
+  },
+  {
+    "id": "m4-ch6-listening",
+    "type": "listening",
+    "title": "Quiz: Preposiciones Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "The keys are in the box",
+          "question": "What did you hear?",
+          "options": [
+            "The keys are in the box",
+            "___ the box (dentro)",
+            "The book is on the table",
+            "___ the table (about)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The keys are in the box\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "___ the box (dentro)",
+          "question": "What did you hear?",
+          "options": [
+            "___ the box (dentro)",
+            "The keys are in the box",
+            "The book is on the table",
+            "___ the table (about)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"___ the box (dentro)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "The book is on the table",
+          "question": "What did you hear?",
+          "options": [
+            "The book is on the table",
+            "The keys are in the box",
+            "___ the box (dentro)",
+            "___ the table (about)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The book is on the table\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "The keys are in the box",
+          "hint": "From the chapter: The keys are..."
+        },
+        {
+          "id": "d2",
+          "audioText": "___ the box (dentro)",
+          "hint": "From the chapter: ___ the box..."
+        },
+        {
+          "id": "d3",
+          "audioText": "The book is on the table",
+          "hint": "From the chapter: The book is..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "The keys are in the box",
+          "hint": "Practice saying this phrase aloud — from m4-ch6."
+        },
+        {
+          "id": "p2",
+          "phrase": "___ the box (dentro)",
+          "hint": "Practice saying this phrase aloud — from m4-ch6."
+        },
+        {
+          "id": "p3",
+          "phrase": "The book is on the table",
+          "hint": "Practice saying this phrase aloud — from m4-ch6."
+        },
+        {
+          "id": "p4",
+          "phrase": "___ the table (about)",
+          "hint": "Practice saying this phrase aloud — from m4-ch6."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch6-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "The book is on the table:",
+          "words": [
+            "The",
+            "book",
+            "is",
+            "on",
+            "the",
+            "table"
+          ],
+          "correct": "The book is on the table"
+        },
+        {
+          "prompt": "I'm in the room:",
+          "words": [
+            "I",
+            "am",
+            "in",
+            "the",
+            "room"
+          ],
+          "correct": "I am in the room"
+        },
+        {
+          "prompt": "See you at 5:",
+          "words": [
+            "See",
+            "you",
+            "at",
+            "5",
+            "PM"
+          ],
+          "correct": "See you at 5 PM"
+        }
+      ]
+    }
   }
 ]

@@ -496,5 +496,150 @@
         }
       ]
     }
+  },
+  {
+    "id": "m3-ch1-listening",
+    "type": "listening",
+    "title": "Quiz: Presente Continuo Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I'm working from home today",
+          "question": "What did you hear?",
+          "options": [
+            "I'm working from home today",
+            "She's reading a novel",
+            "They're playing basketball",
+            "Drop -e + ing: make → making"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I'm working from home today\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "She's reading a novel",
+          "question": "What did you hear?",
+          "options": [
+            "She's reading a novel",
+            "I'm working from home today",
+            "They're playing basketball",
+            "Drop -e + ing: make → making"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She's reading a novel\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "They're playing basketball",
+          "question": "What did you hear?",
+          "options": [
+            "They're playing basketball",
+            "I'm working from home today",
+            "She's reading a novel",
+            "Drop -e + ing: make → making"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"They're playing basketball\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I'm working from home today",
+          "hint": "From the chapter: I'm working from..."
+        },
+        {
+          "id": "d2",
+          "audioText": "She's reading a novel",
+          "hint": "From the chapter: She's reading a..."
+        },
+        {
+          "id": "d3",
+          "audioText": "They're playing basketball",
+          "hint": "From the chapter: They're playing basketball..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I'm working from home today",
+          "hint": "Practice saying this phrase aloud — from m3-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "She's reading a novel",
+          "hint": "Practice saying this phrase aloud — from m3-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "They're playing basketball",
+          "hint": "Practice saying this phrase aloud — from m3-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "Drop -e + ing: make → making",
+          "hint": "Practice saying this phrase aloud — from m3-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I am studying English:",
+          "words": [
+            "I",
+            "am",
+            "studying",
+            "English"
+          ],
+          "correct": "I am studying English"
+        },
+        {
+          "prompt": "She is cooking dinner:",
+          "words": [
+            "She",
+            "is",
+            "cooking",
+            "dinner"
+          ],
+          "correct": "She is cooking dinner"
+        },
+        {
+          "prompt": "They are playing soccer:",
+          "words": [
+            "They",
+            "are",
+            "playing",
+            "football"
+          ],
+          "correct": "They are playing football"
+        }
+      ]
+    }
   }
 ]

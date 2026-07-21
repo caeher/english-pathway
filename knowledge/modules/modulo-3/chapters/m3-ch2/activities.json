@@ -493,5 +493,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m3-ch2-listening",
+    "type": "listening",
+    "title": "Quiz: Simple vs. Continuo Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Routine → Present Simple",
+          "question": "What did you hear?",
+          "options": [
+            "Routine → Present Simple",
+            "I ___ coffee every morning. (drink)",
+            "Happening now → Present Continuous",
+            "I ___ tea right now. (drink)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Routine → Present Simple\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I ___ coffee every morning. (drink)",
+          "question": "What did you hear?",
+          "options": [
+            "I ___ coffee every morning. (drink)",
+            "Routine → Present Simple",
+            "Happening now → Present Continuous",
+            "I ___ tea right now. (drink)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I ___ coffee every morning. (drink)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Happening now → Present Continuous",
+          "question": "What did you hear?",
+          "options": [
+            "Happening now → Present Continuous",
+            "Routine → Present Simple",
+            "I ___ coffee every morning. (drink)",
+            "I ___ tea right now. (drink)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Happening now → Present Continuous\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Routine → Present Simple",
+          "hint": "From the chapter: Routine → Present..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I ___ coffee every morning. (drink)",
+          "hint": "From the chapter: I ___ coffee..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Happening now → Present Continuous",
+          "hint": "From the chapter: Happening now →..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Routine → Present Simple",
+          "hint": "Practice saying this phrase aloud — from m3-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "I ___ coffee every morning. (drink)",
+          "hint": "Practice saying this phrase aloud — from m3-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "Happening now → Present Continuous",
+          "hint": "Practice saying this phrase aloud — from m3-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "I ___ tea right now. (drink)",
+          "hint": "Practice saying this phrase aloud — from m3-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I drink coffee every morning (routine):",
+          "words": [
+            "I",
+            "drink",
+            "coffee",
+            "every",
+            "morning"
+          ],
+          "correct": "I drink coffee every morning"
+        },
+        {
+          "prompt": "I'm drinking tea now (now):",
+          "words": [
+            "I",
+            "am",
+            "drinking",
+            "tea",
+            "now"
+          ],
+          "correct": "I am drinking tea now"
+        },
+        {
+          "prompt": "She works in a bank (permanent):",
+          "words": [
+            "She",
+            "works",
+            "at",
+            "a",
+            "bank"
+          ],
+          "correct": "She works at a bank"
+        }
+      ]
+    }
   }
 ]

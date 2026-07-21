@@ -492,5 +492,157 @@
         }
       ]
     }
+  },
+  {
+    "id": "m4-ch2-listening",
+    "type": "listening",
+    "title": "Quiz: Comparativos Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "She is taller than him",
+          "question": "What did you hear?",
+          "options": [
+            "She is taller than him",
+            "tall → ?",
+            "CVC → double: bigger",
+            "big → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She is taller than him\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "tall → ?",
+          "question": "What did you hear?",
+          "options": [
+            "tall → ?",
+            "She is taller than him",
+            "CVC → double: bigger",
+            "big → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"tall → ?\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "CVC → double: bigger",
+          "question": "What did you hear?",
+          "options": [
+            "CVC → double: bigger",
+            "She is taller than him",
+            "tall → ?",
+            "big → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"CVC → double: bigger\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "She is taller than him",
+          "hint": "From the chapter: She is taller..."
+        },
+        {
+          "id": "d2",
+          "audioText": "tall → ?",
+          "hint": "From the chapter: Tall → ?..."
+        },
+        {
+          "id": "d3",
+          "audioText": "CVC → double: bigger",
+          "hint": "From the chapter: CVC → double:..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "She is taller than him",
+          "hint": "Practice saying this phrase aloud — from m4-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "tall → ?",
+          "hint": "Practice saying this phrase aloud — from m4-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "CVC → double: bigger",
+          "hint": "Practice saying this phrase aloud — from m4-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "big → ?",
+          "hint": "Practice saying this phrase aloud — from m4-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "She is taller than him:",
+          "words": [
+            "She",
+            "is",
+            "taller",
+            "than",
+            "him"
+          ],
+          "correct": "She is taller than him"
+        },
+        {
+          "prompt": "This book is more interesting:",
+          "words": [
+            "This",
+            "book",
+            "is",
+            "more",
+            "interesting",
+            "than",
+            "that",
+            "one"
+          ],
+          "correct": "This book is more interesting than that one"
+        },
+        {
+          "prompt": "My house is bigger:",
+          "words": [
+            "My",
+            "house",
+            "is",
+            "bigger",
+            "than",
+            "yours"
+          ],
+          "correct": "My house is bigger than yours"
+        }
+      ]
+    }
   }
 ]

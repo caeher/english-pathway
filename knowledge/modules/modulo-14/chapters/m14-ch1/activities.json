@@ -473,5 +473,174 @@
         }
       ]
     }
+  },
+  {
+    "id": "m14-ch1-listening",
+    "type": "listening",
+    "title": "Escoge tu Aventura Corporativa Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "\"We need to talk about this ASAP\"",
+          "question": "What did you hear?",
+          "options": [
+            "\"We need to talk about this ASAP\"",
+            "Informal — entre colegas 🤝",
+            "\"I'd like to schedule a meeting to discuss this\"",
+            "Formal — with superiors 👔"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"\"We need to talk about this ASAP\"\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Informal — entre colegas 🤝",
+          "question": "What did you hear?",
+          "options": [
+            "Informal — entre colegas 🤝",
+            "\"We need to talk about this ASAP\"",
+            "\"I'd like to schedule a meeting to discuss this\"",
+            "Formal — with superiors 👔"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Informal — entre colegas 🤝\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "\"I'd like to schedule a meeting to discuss this\"",
+          "question": "What did you hear?",
+          "options": [
+            "\"I'd like to schedule a meeting to discuss this\"",
+            "\"We need to talk about this ASAP\"",
+            "Informal — entre colegas 🤝",
+            "Formal — with superiors 👔"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"\"I'd like to schedule a meeting to discuss this\"\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "\"We need to talk about this ASAP\"",
+          "hint": "From the chapter: \"We need to..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Informal — entre colegas 🤝",
+          "hint": "From the chapter: Informal — entre..."
+        },
+        {
+          "id": "d3",
+          "audioText": "\"I'd like to schedule a meeting to discuss this\"",
+          "hint": "From the chapter: \"I'd like to..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "\"We need to talk about this ASAP\"",
+          "hint": "Practice saying this phrase aloud — from m14-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "Informal — entre colegas 🤝",
+          "hint": "Practice saying this phrase aloud — from m14-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "\"I'd like to schedule a meeting to discuss this\"",
+          "hint": "Practice saying this phrase aloud — from m14-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "Formal — with superiors 👔",
+          "hint": "Practice saying this phrase aloud — from m14-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Give negative feedback diplomatically about a missed deadline",
+          "words": [
+            "I",
+            "appreciate",
+            "your",
+            "effort;",
+            "however,",
+            "we",
+            "need",
+            "to",
+            "discuss",
+            "the",
+            "timeline."
+          ],
+          "correct": "I appreciate your effort; however, we need to discuss the timeline."
+        },
+        {
+          "prompt": "Politely decline a request you cannot fulfill",
+          "words": [
+            "I'm",
+            "afraid",
+            "that",
+            "won't",
+            "be",
+            "possible,",
+            "but",
+            "I",
+            "can",
+            "suggest",
+            "an",
+            "alternative."
+          ],
+          "correct": "I'm afraid that won't be possible, but I can suggest an alternative."
+        },
+        {
+          "prompt": "Redirect a conversation professionally",
+          "words": [
+            "That's",
+            "a",
+            "valid",
+            "point.",
+            "Perhaps",
+            "we",
+            "could",
+            "discuss",
+            "this",
+            "in",
+            "more",
+            "detail",
+            "offline."
+          ],
+          "correct": "That's a valid point. Perhaps we could discuss this in more detail offline."
+        }
+      ]
+    }
   }
 ]

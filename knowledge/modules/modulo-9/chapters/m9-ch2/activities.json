@@ -595,5 +595,150 @@
         }
       ]
     }
+  },
+  {
+    "id": "m9-ch2-listening",
+    "type": "listening",
+    "title": "Presente Simple vs. Continuo Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "She is dancing",
+          "question": "What did you hear?",
+          "options": [
+            "She is dancing",
+            "He is reading a book",
+            "The children are playing",
+            "I am eating lunch"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She is dancing\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "He is reading a book",
+          "question": "What did you hear?",
+          "options": [
+            "He is reading a book",
+            "She is dancing",
+            "The children are playing",
+            "I am eating lunch"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"He is reading a book\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "The children are playing",
+          "question": "What did you hear?",
+          "options": [
+            "The children are playing",
+            "She is dancing",
+            "He is reading a book",
+            "I am eating lunch"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The children are playing\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "She is dancing",
+          "hint": "From the chapter: She is dancing..."
+        },
+        {
+          "id": "d2",
+          "audioText": "He is reading a book",
+          "hint": "From the chapter: He is reading..."
+        },
+        {
+          "id": "d3",
+          "audioText": "The children are playing",
+          "hint": "From the chapter: The children are..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "She is dancing",
+          "hint": "Practice saying this phrase aloud — from m9-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "He is reading a book",
+          "hint": "Practice saying this phrase aloud — from m9-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "The children are playing",
+          "hint": "Practice saying this phrase aloud — from m9-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "I am eating lunch",
+          "hint": "Practice saying this phrase aloud — from m9-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Nivel 1 — Afirmativa:",
+          "words": [
+            "is",
+            "She",
+            "dancing"
+          ],
+          "correct": "She is dancing"
+        },
+        {
+          "prompt": "Nivel 1 — Afirmativa:",
+          "words": [
+            "reading",
+            "is",
+            "He",
+            "a",
+            "book"
+          ],
+          "correct": "He is reading a book"
+        },
+        {
+          "prompt": "Nivel 1 — Afirmativa:",
+          "words": [
+            "playing",
+            "are",
+            "The",
+            "children"
+          ],
+          "correct": "The children are playing"
+        }
+      ]
+    }
   }
 ]

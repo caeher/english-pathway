@@ -334,5 +334,140 @@
         }
       ]
     }
+  },
+  {
+    "id": "m10-ch4-listening",
+    "type": "listening",
+    "title": "What Emotion/Intention? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Stress",
+          "question": "What did you hear?",
+          "options": [
+            "Stress",
+            "Rising",
+            "Falling",
+            "Syllable"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Stress\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Rising",
+          "question": "What did you hear?",
+          "options": [
+            "Rising",
+            "Stress",
+            "Falling",
+            "Syllable"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Rising\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Falling",
+          "question": "What did you hear?",
+          "options": [
+            "Falling",
+            "Stress",
+            "Rising",
+            "Syllable"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Falling\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Stress",
+          "hint": "From the chapter: Stress..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Rising",
+          "hint": "From the chapter: Rising..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Falling",
+          "hint": "From the chapter: Falling..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Stress",
+          "hint": "Practice saying this phrase aloud — from m10-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "Rising",
+          "hint": "Practice saying this phrase aloud — from m10-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "Falling",
+          "hint": "Practice saying this phrase aloud — from m10-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "Syllable",
+          "hint": "Practice saying this phrase aloud — from m10-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Drag and Match",
+    "description": "Drag items to their correct match.",
+    "props": {
+      "mode": "match",
+      "pairs": [
+        {
+          "left": "computer",
+          "right": "oOo (com-PU-ter)"
+        },
+        {
+          "left": "information",
+          "right": "ooOo (in-for-MA-tion)"
+        },
+        {
+          "left": "photograph",
+          "right": "Ooo (PHO-to-graph)"
+        },
+        {
+          "left": "Japanese",
+          "right": "ooO (ja-pa-NESE)"
+        },
+        {
+          "left": "fantastic",
+          "right": "oOo (fan-TAS-tic)"
+        }
+      ]
+    }
   }
 ]

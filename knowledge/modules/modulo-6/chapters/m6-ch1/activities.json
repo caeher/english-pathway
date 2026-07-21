@@ -398,5 +398,159 @@
         }
       ]
     }
+  },
+  {
+    "id": "m6-ch1-listening",
+    "type": "listening",
+    "title": "Quiz: Zero Conditional Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Fact: present in both clauses",
+          "question": "What did you hear?",
+          "options": [
+            "Fact: present in both clauses",
+            "If you heat ice, it ___.",
+            "Cause-effect: present + present",
+            "If it rains, the ground ___."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Fact: present in both clauses\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "If you heat ice, it ___.",
+          "question": "What did you hear?",
+          "options": [
+            "If you heat ice, it ___.",
+            "Fact: present in both clauses",
+            "Cause-effect: present + present",
+            "If it rains, the ground ___."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"If you heat ice, it ___.\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Cause-effect: present + present",
+          "question": "What did you hear?",
+          "options": [
+            "Cause-effect: present + present",
+            "Fact: present in both clauses",
+            "If you heat ice, it ___.",
+            "If it rains, the ground ___."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Cause-effect: present + present\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Fact: present in both clauses",
+          "hint": "From the chapter: Fact: present in..."
+        },
+        {
+          "id": "d2",
+          "audioText": "If you heat ice, it ___.",
+          "hint": "From the chapter: If you heat..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Cause-effect: present + present",
+          "hint": "From the chapter: Cause-effect: present +..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Fact: present in both clauses",
+          "hint": "Practice saying this phrase aloud — from m6-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "If you heat ice, it ___.",
+          "hint": "Practice saying this phrase aloud — from m6-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "Cause-effect: present + present",
+          "hint": "Practice saying this phrase aloud — from m6-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "If it rains, the ground ___.",
+          "hint": "Practice saying this phrase aloud — from m6-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Si calientas hielo, se derrite:",
+          "words": [
+            "If",
+            "you",
+            "heat",
+            "ice,",
+            "it",
+            "melts"
+          ],
+          "correct": "If you heat ice, it melts"
+        },
+        {
+          "prompt": "If it rains, the ground gets wet:",
+          "words": [
+            "If",
+            "it",
+            "rains,",
+            "the",
+            "ground",
+            "gets",
+            "wet"
+          ],
+          "correct": "If it rains, the ground gets wet"
+        },
+        {
+          "prompt": "Si comes demasiado, te sientes mal:",
+          "words": [
+            "If",
+            "you",
+            "eat",
+            "too",
+            "much,",
+            "you",
+            "feel",
+            "sick"
+          ],
+          "correct": "If you eat too much, you feel sick"
+        }
+      ]
+    }
   }
 ]

@@ -459,5 +459,167 @@
         }
       ]
     }
+  },
+  {
+    "id": "m13-ch3-listening",
+    "type": "listening",
+    "title": "The Literary Critic Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "The author supports their claim with statistical evidence",
+          "question": "What did you hear?",
+          "options": [
+            "The author supports their claim with statistical evidence",
+            "One limitation is that the article relies on a single study",
+            "The author uses an appeal to authority by citing the APA",
+            "This is a strong argument because it presents both sides"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The author supports their claim with statistical evidence\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "One limitation is that the article relies on a single study",
+          "question": "What did you hear?",
+          "options": [
+            "One limitation is that the article relies on a single study",
+            "The author supports their claim with statistical evidence",
+            "The author uses an appeal to authority by citing the APA",
+            "This is a strong argument because it presents both sides"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"One limitation is that the article relies on a single study\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "The author uses an appeal to authority by citing the APA",
+          "question": "What did you hear?",
+          "options": [
+            "The author uses an appeal to authority by citing the APA",
+            "The author supports their claim with statistical evidence",
+            "One limitation is that the article relies on a single study",
+            "This is a strong argument because it presents both sides"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The author uses an appeal to authority by citing the APA\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "The author supports their claim with statistical evidence",
+          "hint": "From the chapter: The author supports..."
+        },
+        {
+          "id": "d2",
+          "audioText": "One limitation is that the article relies on a single study",
+          "hint": "From the chapter: One limitation is..."
+        },
+        {
+          "id": "d3",
+          "audioText": "The author uses an appeal to authority by citing the APA",
+          "hint": "From the chapter: The author uses..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "The author supports their claim with statistical evidence",
+          "hint": "Practice saying this phrase aloud — from m13-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "One limitation is that the article relies on a single study",
+          "hint": "Practice saying this phrase aloud — from m13-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "The author uses an appeal to authority by citing the APA",
+          "hint": "Practice saying this phrase aloud — from m13-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "This is a strong argument because it presents both sides",
+          "hint": "Practice saying this phrase aloud — from m13-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Write about the author's main claim",
+          "words": [
+            "The",
+            "author",
+            "argues",
+            "that",
+            "excessive",
+            "social",
+            "media",
+            "use",
+            "increases",
+            "loneliness."
+          ],
+          "correct": "The author argues that excessive social media use increases loneliness."
+        },
+        {
+          "prompt": "Evaluate the evidence in the article",
+          "words": [
+            "The",
+            "author",
+            "supports",
+            "their",
+            "claim",
+            "with",
+            "statistical",
+            "evidence."
+          ],
+          "correct": "The author supports their claim with statistical evidence."
+        },
+        {
+          "prompt": "Identify a limitation of the text",
+          "words": [
+            "One",
+            "limitation",
+            "is",
+            "that",
+            "the",
+            "article",
+            "relies",
+            "on",
+            "a",
+            "single",
+            "study."
+          ],
+          "correct": "One limitation is that the article relies on a single study."
+        }
+      ]
+    }
   }
 ]

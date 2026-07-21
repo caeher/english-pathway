@@ -597,5 +597,80 @@
         }
       ]
     }
+  },
+  {
+    "id": "m1-ch6-listening",
+    "type": "listening",
+    "title": "Wh-Question Listening",
+    "description": "Listen to questions and identify the Wh-word used.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "What is your name",
+          "question": "Which Wh-word starts this question?",
+          "options": ["What", "Where", "When", "Who"],
+          "correct": 0,
+          "explanation": "What asks for information or things."
+        },
+        {
+          "id": "l2",
+          "audioText": "Where are you from",
+          "question": "Which Wh-word asks about place?",
+          "options": ["What", "Where", "Why", "How"],
+          "correct": 1,
+          "explanation": "Where asks about location or origin."
+        },
+        {
+          "id": "l3",
+          "audioText": "How old are you",
+          "question": "What information does this question ask for?",
+          "options": ["Name", "Age", "Price", "Distance"],
+          "correct": 1,
+          "explanation": "How old asks about someone's age."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-dictation",
+    "type": "dictation",
+    "title": "Question Dictation",
+    "description": "Listen and write the Wh-question you hear.",
+    "props": {
+      "items": [
+        { "id": "d1", "audioText": "When is your birthday", "hint": "Wh-word for time" },
+        { "id": "d2", "audioText": "Who is your teacher", "hint": "Wh-word for person" },
+        { "id": "d3", "audioText": "How many brothers do you have", "hint": "How many + countable noun" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-pronunciation",
+    "type": "pronunciation",
+    "title": "Wh-Question Pronunciation",
+    "description": "Practice pronouncing Wh-questions with correct intonation.",
+    "props": {
+      "items": [
+        { "id": "p1", "phrase": "What is your name", "hint": "Falling intonation at the end" },
+        { "id": "p2", "phrase": "Why are you happy", "hint": "WHY — /waɪ/ with rising then falling tone" },
+        { "id": "p3", "phrase": "How much is this", "hint": "How much for price or uncountable quantity" },
+        { "id": "p4", "phrase": "How often do you exercise", "hint": "How often asks about frequency" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch6-dragdrop",
+    "type": "drag-drop",
+    "title": "Build Wh-Questions",
+    "description": "Drag words into the correct question order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        { "prompt": "Ask for a name:", "words": ["name?", "your", "What", "is"], "correct": "What is your name?" },
+        { "prompt": "Ask about origin:", "words": ["from?", "you", "Where", "are"], "correct": "Where are you from?" },
+        { "prompt": "Ask about reason:", "words": ["happy?", "you", "Why", "are"], "correct": "Why are you happy?" }
+      ]
+    }
   }
 ]

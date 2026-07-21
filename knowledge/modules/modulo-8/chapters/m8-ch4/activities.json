@@ -438,5 +438,152 @@
         }
       ]
     }
+  },
+  {
+    "id": "m8-ch4-listening",
+    "type": "listening",
+    "title": "Comprehension Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Hi! How are you? — I'm fine, thanks",
+          "question": "What did you hear?",
+          "options": [
+            "Hi! How are you? — I'm fine, thanks",
+            "How are you?",
+            "Excuse me, could you help me, please",
+            "Could you help me?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Hi! How are you? — I'm fine, thanks\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "How are you?",
+          "question": "What did you hear?",
+          "options": [
+            "How are you?",
+            "Hi! How are you? — I'm fine, thanks",
+            "Excuse me, could you help me, please",
+            "Could you help me?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"How are you?\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Excuse me, could you help me, please",
+          "question": "What did you hear?",
+          "options": [
+            "Excuse me, could you help me, please",
+            "Hi! How are you? — I'm fine, thanks",
+            "How are you?",
+            "Could you help me?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Excuse me, could you help me, please\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Hi! How are you? — I'm fine, thanks",
+          "hint": "From the chapter: Hi! How are..."
+        },
+        {
+          "id": "d2",
+          "audioText": "How are you?",
+          "hint": "From the chapter: How are you?..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Excuse me, could you help me, please",
+          "hint": "From the chapter: Excuse me, could..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Hi! How are you? — I'm fine, thanks",
+          "hint": "Practice saying this phrase aloud — from m8-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "How are you?",
+          "hint": "Practice saying this phrase aloud — from m8-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "Excuse me, could you help me, please",
+          "hint": "Practice saying this phrase aloud — from m8-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "Could you help me?",
+          "hint": "Practice saying this phrase aloud — from m8-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Pidiendo ayuda:",
+          "words": [
+            "you",
+            "Could",
+            "please?",
+            "help",
+            "me,"
+          ],
+          "correct": "Could you help me, please?"
+        },
+        {
+          "prompt": "In a cafe:",
+          "words": [
+            "a",
+            "I'd",
+            "please",
+            "coffee,",
+            "like"
+          ],
+          "correct": "I'd like a coffee, please"
+        },
+        {
+          "prompt": "Preguntando precio:",
+          "words": [
+            "much",
+            "How",
+            "this?",
+            "is"
+          ],
+          "correct": "How much is this?"
+        }
+      ]
+    }
   }
 ]

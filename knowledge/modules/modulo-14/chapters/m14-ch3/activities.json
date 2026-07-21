@@ -481,5 +481,161 @@
         }
       ]
     }
+  },
+  {
+    "id": "m14-ch3-listening",
+    "type": "listening",
+    "title": "The Great Adaptive Test Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I go to school every day",
+          "question": "What did you hear?",
+          "options": [
+            "I go to school every day",
+            "Yesterday I went to the park with my friends",
+            "If it rains tomorrow, I will stay home",
+            "She has lived in London for five years"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I go to school every day\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Yesterday I went to the park with my friends",
+          "question": "What did you hear?",
+          "options": [
+            "Yesterday I went to the park with my friends",
+            "I go to school every day",
+            "If it rains tomorrow, I will stay home",
+            "She has lived in London for five years"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Yesterday I went to the park with my friends\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "If it rains tomorrow, I will stay home",
+          "question": "What did you hear?",
+          "options": [
+            "If it rains tomorrow, I will stay home",
+            "I go to school every day",
+            "Yesterday I went to the park with my friends",
+            "She has lived in London for five years"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"If it rains tomorrow, I will stay home\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I go to school every day",
+          "hint": "From the chapter: I go to..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Yesterday I went to the park with my friends",
+          "hint": "From the chapter: Yesterday I went..."
+        },
+        {
+          "id": "d3",
+          "audioText": "If it rains tomorrow, I will stay home",
+          "hint": "From the chapter: If it rains..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I go to school every day",
+          "hint": "Practice saying this phrase aloud — from m14-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "Yesterday I went to the park with my friends",
+          "hint": "Practice saying this phrase aloud — from m14-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "If it rains tomorrow, I will stay home",
+          "hint": "Practice saying this phrase aloud — from m14-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "She has lived in London for five years",
+          "hint": "Practice saying this phrase aloud — from m14-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "[A1] Make a simple sentence about your routine",
+          "words": [
+            "I",
+            "go",
+            "to",
+            "school",
+            "every",
+            "day."
+          ],
+          "correct": "I go to school every day."
+        },
+        {
+          "prompt": "[A2] Describe something that happened yesterday",
+          "words": [
+            "Yesterday",
+            "I",
+            "went",
+            "to",
+            "the",
+            "park",
+            "with",
+            "my",
+            "friends."
+          ],
+          "correct": "Yesterday I went to the park with my friends."
+        },
+        {
+          "prompt": "[B1] Create a first conditional sentence",
+          "words": [
+            "If",
+            "it",
+            "rains",
+            "tomorrow,",
+            "I",
+            "will",
+            "stay",
+            "home."
+          ],
+          "correct": "If it rains tomorrow, I will stay home."
+        }
+      ]
+    }
   }
 ]

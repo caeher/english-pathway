@@ -467,5 +467,155 @@
         }
       ]
     }
+  },
+  {
+    "id": "m6-ch5-listening",
+    "type": "listening",
+    "title": "Quiz: Reported Speech (Statements) Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "am → was",
+          "question": "What did you hear?",
+          "options": [
+            "am → was",
+            "\"I am happy,\" she said.",
+            "like → liked",
+            "\"I like chocolate,\" he said."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"am → was\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "\"I am happy,\" she said.",
+          "question": "What did you hear?",
+          "options": [
+            "\"I am happy,\" she said.",
+            "am → was",
+            "like → liked",
+            "\"I like chocolate,\" he said."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"\"I am happy,\" she said.\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "like → liked",
+          "question": "What did you hear?",
+          "options": [
+            "like → liked",
+            "am → was",
+            "\"I am happy,\" she said.",
+            "\"I like chocolate,\" he said."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"like → liked\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "am → was",
+          "hint": "From the chapter: Am → was..."
+        },
+        {
+          "id": "d2",
+          "audioText": "\"I am happy,\" she said.",
+          "hint": "From the chapter: \"I am happy,\"..."
+        },
+        {
+          "id": "d3",
+          "audioText": "like → liked",
+          "hint": "From the chapter: Like → liked..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "am → was",
+          "hint": "Practice saying this phrase aloud — from m6-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "\"I am happy,\" she said.",
+          "hint": "Practice saying this phrase aloud — from m6-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "like → liked",
+          "hint": "Practice saying this phrase aloud — from m6-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "\"I like chocolate,\" he said.",
+          "hint": "Practice saying this phrase aloud — from m6-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "\"Estoy feliz\" — ella dijo:",
+          "words": [
+            "She",
+            "said",
+            "she",
+            "was",
+            "happy"
+          ],
+          "correct": "She said she was happy"
+        },
+        {
+          "prompt": "\"I like chocolate\" — he told me:",
+          "words": [
+            "He",
+            "told",
+            "me",
+            "he",
+            "liked",
+            "chocolate"
+          ],
+          "correct": "He told me he liked chocolate"
+        },
+        {
+          "prompt": "\"I will help you\" — he said:",
+          "words": [
+            "He",
+            "said",
+            "he",
+            "would",
+            "help",
+            "me"
+          ],
+          "correct": "He said he would help me"
+        }
+      ]
+    }
   }
 ]

@@ -491,5 +491,168 @@
         }
       ]
     }
+  },
+  {
+    "id": "m12-ch2-listening",
+    "type": "listening",
+    "title": "What Comes Next? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Good morning. I'm going to talk about renewable energy",
+          "question": "What did you hear?",
+          "options": [
+            "Good morning. I'm going to talk about renewable energy",
+            "Moving on to my second point, let's look at the data",
+            "As you can see in this chart, sales increased by 20%",
+            "Does anyone have any questions about what I've presented"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Good morning. I'm going to talk about renewable energy\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Moving on to my second point, let's look at the data",
+          "question": "What did you hear?",
+          "options": [
+            "Moving on to my second point, let's look at the data",
+            "Good morning. I'm going to talk about renewable energy",
+            "As you can see in this chart, sales increased by 20%",
+            "Does anyone have any questions about what I've presented"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Moving on to my second point, let's look at the data\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "As you can see in this chart, sales increased by 20%",
+          "question": "What did you hear?",
+          "options": [
+            "As you can see in this chart, sales increased by 20%",
+            "Good morning. I'm going to talk about renewable energy",
+            "Moving on to my second point, let's look at the data",
+            "Does anyone have any questions about what I've presented"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"As you can see in this chart, sales increased by 20%\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Good morning. I'm going to talk about renewable energy",
+          "hint": "From the chapter: Good morning. I'm..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Moving on to my second point, let's look at the data",
+          "hint": "From the chapter: Moving on to..."
+        },
+        {
+          "id": "d3",
+          "audioText": "As you can see in this chart, sales increased by 20%",
+          "hint": "From the chapter: As you can..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Good morning. I'm going to talk about renewable energy",
+          "hint": "Practice saying this phrase aloud — from m12-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "Moving on to my second point, let's look at the data",
+          "hint": "Practice saying this phrase aloud — from m12-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "As you can see in this chart, sales increased by 20%",
+          "hint": "Practice saying this phrase aloud — from m12-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "Does anyone have any questions about what I've presented",
+          "hint": "Practice saying this phrase aloud — from m12-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Build the opening about renewable energy",
+          "words": [
+            "talk",
+            "going",
+            "Good",
+            "morning.",
+            "I'm",
+            "about",
+            "to",
+            "renewable",
+            "energy."
+          ],
+          "correct": "Good morning. I'm going to talk about renewable energy."
+        },
+        {
+          "prompt": "Build a transition to the second point",
+          "words": [
+            "on",
+            "Moving",
+            "second",
+            "to",
+            "my",
+            "point,",
+            "let's",
+            "look",
+            "at",
+            "the",
+            "data."
+          ],
+          "correct": "Moving on to my second point, let's look at the data."
+        },
+        {
+          "prompt": "Build the closing of your presentation",
+          "words": [
+            "summary,",
+            "In",
+            "the",
+            "key",
+            "takeaway",
+            "is",
+            "that",
+            "matters.",
+            "energy",
+            "renewable"
+          ],
+          "correct": "In summary, the key takeaway is that renewable energy matters."
+        }
+      ]
+    }
   }
 ]

@@ -413,5 +413,157 @@
         }
       ]
     }
+  },
+  {
+    "id": "m7-ch2-listening",
+    "type": "listening",
+    "title": "Quiz: Conectores Avanzados Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "but = pero (neutral)",
+          "question": "What did you hear?",
+          "options": [
+            "but = pero (neutral)",
+            "however = however (formal)",
+            "although/though = aunque",
+            "despite/in spite of + noun/-ing"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"but = pero (neutral)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "however = however (formal)",
+          "question": "What did you hear?",
+          "options": [
+            "however = however (formal)",
+            "but = pero (neutral)",
+            "although/though = aunque",
+            "despite/in spite of + noun/-ing"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"however = however (formal)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "although/though = aunque",
+          "question": "What did you hear?",
+          "options": [
+            "although/though = aunque",
+            "but = pero (neutral)",
+            "however = however (formal)",
+            "despite/in spite of + noun/-ing"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"although/though = aunque\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "but = pero (neutral)",
+          "hint": "From the chapter: But = pero..."
+        },
+        {
+          "id": "d2",
+          "audioText": "however = however (formal)",
+          "hint": "From the chapter: However = however..."
+        },
+        {
+          "id": "d3",
+          "audioText": "although/though = aunque",
+          "hint": "From the chapter: Although/though = aunque..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "but = pero (neutral)",
+          "hint": "Practice saying this phrase aloud — from m7-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "however = however (formal)",
+          "hint": "Practice saying this phrase aloud — from m7-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "although/though = aunque",
+          "hint": "Practice saying this phrase aloud — from m7-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "despite/in spite of + noun/-ing",
+          "hint": "Practice saying this phrase aloud — from m7-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I like tea, but not coffee (but):",
+          "words": [
+            "I",
+            "like",
+            "tea,",
+            "but",
+            "not",
+            "coffee"
+          ],
+          "correct": "I like tea, but not coffee"
+        },
+        {
+          "prompt": "Although it was raining, we went out (although):",
+          "words": [
+            "Although",
+            "it",
+            "rained,",
+            "we",
+            "went",
+            "out"
+          ],
+          "correct": "Although it rained, we went out"
+        },
+        {
+          "prompt": "It was raining, so I stayed (so):",
+          "words": [
+            "It",
+            "was",
+            "raining,",
+            "so",
+            "I",
+            "stayed",
+            "home"
+          ],
+          "correct": "It was raining, so I stayed home"
+        }
+      ]
+    }
   }
 ]

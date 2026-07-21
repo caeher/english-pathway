@@ -454,5 +454,160 @@
         }
       ]
     }
+  },
+  {
+    "id": "m7-ch1-listening",
+    "type": "listening",
+    "title": "Quiz: Relative Clauses Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "who = for people",
+          "question": "What did you hear?",
+          "options": [
+            "who = for people",
+            "which/that = for things",
+            "The car ___ I bought is red. (cosa)",
+            "where = for places"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"who = for people\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "which/that = for things",
+          "question": "What did you hear?",
+          "options": [
+            "which/that = for things",
+            "who = for people",
+            "The car ___ I bought is red. (cosa)",
+            "where = for places"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"which/that = for things\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "The car ___ I bought is red. (cosa)",
+          "question": "What did you hear?",
+          "options": [
+            "The car ___ I bought is red. (cosa)",
+            "who = for people",
+            "which/that = for things",
+            "where = for places"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The car ___ I bought is red. (cosa)\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "who = for people",
+          "hint": "From the chapter: Who = for..."
+        },
+        {
+          "id": "d2",
+          "audioText": "which/that = for things",
+          "hint": "From the chapter: Which/that = for..."
+        },
+        {
+          "id": "d3",
+          "audioText": "The car ___ I bought is red. (cosa)",
+          "hint": "From the chapter: The car ___..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "who = for people",
+          "hint": "Practice saying this phrase aloud — from m7-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "which/that = for things",
+          "hint": "Practice saying this phrase aloud — from m7-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "The car ___ I bought is red. (cosa)",
+          "hint": "Practice saying this phrase aloud — from m7-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "where = for places",
+          "hint": "Practice saying this phrase aloud — from m7-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "The woman who called is my aunt:",
+          "words": [
+            "The",
+            "woman",
+            "who",
+            "called",
+            "is",
+            "my",
+            "aunt"
+          ],
+          "correct": "The woman who called is my aunt"
+        },
+        {
+          "prompt": "The car I bought is red:",
+          "words": [
+            "The",
+            "car",
+            "which",
+            "I",
+            "bought",
+            "is",
+            "red"
+          ],
+          "correct": "The car which I bought is red"
+        },
+        {
+          "prompt": "The city where I was born is small:",
+          "words": [
+            "The",
+            "city",
+            "where",
+            "I",
+            "was",
+            "born",
+            "is",
+            "small"
+          ],
+          "correct": "The city where I was born is small"
+        }
+      ]
+    }
   }
 ]

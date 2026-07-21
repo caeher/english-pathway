@@ -460,5 +460,151 @@
         }
       ]
     }
+  },
+  {
+    "id": "m4-ch4-listening",
+    "type": "listening",
+    "title": "Quiz: Modales Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Must = obligation (strong)",
+          "question": "What did you hear?",
+          "options": [
+            "Must = obligation (strong)",
+            "You must wear a belt. (obligation)",
+            "mustn't = prohibition",
+            "You must not smoke here. (prohibition)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Must = obligation (strong)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "You must wear a belt. (obligation)",
+          "question": "What did you hear?",
+          "options": [
+            "You must wear a belt. (obligation)",
+            "Must = obligation (strong)",
+            "mustn't = prohibition",
+            "You must not smoke here. (prohibition)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"You must wear a belt. (obligation)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "mustn't = prohibition",
+          "question": "What did you hear?",
+          "options": [
+            "mustn't = prohibition",
+            "Must = obligation (strong)",
+            "You must wear a belt. (obligation)",
+            "You must not smoke here. (prohibition)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"mustn't = prohibition\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Must = obligation (strong)",
+          "hint": "From the chapter: Must = obligation..."
+        },
+        {
+          "id": "d2",
+          "audioText": "You must wear a belt. (obligation)",
+          "hint": "From the chapter: You must wear..."
+        },
+        {
+          "id": "d3",
+          "audioText": "mustn't = prohibition",
+          "hint": "From the chapter: Mustn't = prohibition..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Must = obligation (strong)",
+          "hint": "Practice saying this phrase aloud — from m4-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "You must wear a belt. (obligation)",
+          "hint": "Practice saying this phrase aloud — from m4-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "mustn't = prohibition",
+          "hint": "Practice saying this phrase aloud — from m4-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "You must not smoke here. (prohibition)",
+          "hint": "Practice saying this phrase aloud — from m4-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "You must wear a belt (obligatory):",
+          "words": [
+            "You",
+            "must",
+            "wear",
+            "a",
+            "seatbelt"
+          ],
+          "correct": "You must wear a seatbelt"
+        },
+        {
+          "prompt": "You should study more (advice):",
+          "words": [
+            "You",
+            "should",
+            "study",
+            "more"
+          ],
+          "correct": "You should study more"
+        },
+        {
+          "prompt": "It may rain (possibility):",
+          "words": [
+            "It",
+            "may",
+            "rain",
+            "later"
+          ],
+          "correct": "It may rain later"
+        }
+      ]
+    }
   }
 ]

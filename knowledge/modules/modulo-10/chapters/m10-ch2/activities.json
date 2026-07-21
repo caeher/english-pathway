@@ -469,5 +469,155 @@
         }
       ]
     }
+  },
+  {
+    "id": "m10-ch2-listening",
+    "type": "listening",
+    "title": "What Word Do You Need? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I need to make an appointment with the dentist",
+          "question": "What did you hear?",
+          "options": [
+            "I need to make an appointment with the dentist",
+            "APPOINTMENT 📅",
+            "We need to meet the deadline by Friday",
+            "DEADLINE ⏰"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I need to make an appointment with the dentist\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "APPOINTMENT 📅",
+          "question": "What did you hear?",
+          "options": [
+            "APPOINTMENT 📅",
+            "I need to make an appointment with the dentist",
+            "We need to meet the deadline by Friday",
+            "DEADLINE ⏰"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"APPOINTMENT 📅\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "We need to meet the deadline by Friday",
+          "question": "What did you hear?",
+          "options": [
+            "We need to meet the deadline by Friday",
+            "I need to make an appointment with the dentist",
+            "APPOINTMENT 📅",
+            "DEADLINE ⏰"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"We need to meet the deadline by Friday\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I need to make an appointment with the dentist",
+          "hint": "From the chapter: I need to..."
+        },
+        {
+          "id": "d2",
+          "audioText": "APPOINTMENT 📅",
+          "hint": "From the chapter: APPOINTMENT 📅..."
+        },
+        {
+          "id": "d3",
+          "audioText": "We need to meet the deadline by Friday",
+          "hint": "From the chapter: We need to..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I need to make an appointment with the dentist",
+          "hint": "Practice saying this phrase aloud — from m10-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "APPOINTMENT 📅",
+          "hint": "Practice saying this phrase aloud — from m10-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "We need to meet the deadline by Friday",
+          "hint": "Practice saying this phrase aloud — from m10-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "DEADLINE ⏰",
+          "hint": "Practice saying this phrase aloud — from m10-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "You feel sick. What do you tell the doctor?",
+          "words": [
+            "a",
+            "I",
+            "headache",
+            "have",
+            "terrible"
+          ],
+          "correct": "I have a terrible headache"
+        },
+        {
+          "prompt": "Ask someone to schedule a meeting",
+          "words": [
+            "need",
+            "We",
+            "a",
+            "to",
+            "make",
+            "reservation"
+          ],
+          "correct": "We need to make a reservation"
+        },
+        {
+          "prompt": "Tell your boss about the project",
+          "words": [
+            "meet",
+            "to",
+            "going",
+            "the",
+            "I'm",
+            "deadline"
+          ],
+          "correct": "I'm going to meet the deadline"
+        }
+      ]
+    }
   }
 ]

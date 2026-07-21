@@ -362,5 +362,159 @@
         }
       ]
     }
+  },
+  {
+    "id": "m13-ch4-listening",
+    "type": "listening",
+    "title": "The Hidden Meaning of Stress Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "We coulda won the game. (= We could have won the game.)",
+          "question": "What did you hear?",
+          "options": [
+            "We coulda won the game. (= We could have won the game.)",
+            "She mighta left already. (= She might have left already.)",
+            "I wouldn'ta done that. (= I wouldn't have done that.)",
+            "You oughta see a doctor. (= You ought to see a doctor.)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"We coulda won the game. (= We could have won the game.)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "She mighta left already. (= She might have left already.)",
+          "question": "What did you hear?",
+          "options": [
+            "She mighta left already. (= She might have left already.)",
+            "We coulda won the game. (= We could have won the game.)",
+            "I wouldn'ta done that. (= I wouldn't have done that.)",
+            "You oughta see a doctor. (= You ought to see a doctor.)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She mighta left already. (= She might have left already.)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "I wouldn'ta done that. (= I wouldn't have done that.)",
+          "question": "What did you hear?",
+          "options": [
+            "I wouldn'ta done that. (= I wouldn't have done that.)",
+            "We coulda won the game. (= We could have won the game.)",
+            "She mighta left already. (= She might have left already.)",
+            "You oughta see a doctor. (= You ought to see a doctor.)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I wouldn'ta done that. (= I wouldn't have done that.)\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "We coulda won the game. (= We could have won the game.)",
+          "hint": "From the chapter: We coulda won..."
+        },
+        {
+          "id": "d2",
+          "audioText": "She mighta left already. (= She might have left already.)",
+          "hint": "From the chapter: She mighta left..."
+        },
+        {
+          "id": "d3",
+          "audioText": "I wouldn'ta done that. (= I wouldn't have done that.)",
+          "hint": "From the chapter: I wouldn'ta done..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "We coulda won the game. (= We could have won the game.)",
+          "hint": "Practice saying this phrase aloud — from m13-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "She mighta left already. (= She might have left already.)",
+          "hint": "Practice saying this phrase aloud — from m13-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "I wouldn'ta done that. (= I wouldn't have done that.)",
+          "hint": "Practice saying this phrase aloud — from m13-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "You oughta see a doctor. (= You ought to see a doctor.)",
+          "hint": "Practice saying this phrase aloud — from m13-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Build a persuasive statement about climate action",
+          "words": [
+            "We",
+            "MUST",
+            "act",
+            "NOW",
+            "to",
+            "protect",
+            "our",
+            "future."
+          ],
+          "correct": "We MUST act NOW to protect our future."
+        },
+        {
+          "prompt": "Build an emphatic statement about teamwork",
+          "words": [
+            "TOGETHER,",
+            "we",
+            "can",
+            "achieve",
+            "ANYTHING."
+          ],
+          "correct": "TOGETHER, we can achieve ANYTHING."
+        },
+        {
+          "prompt": "Build a persuasive call to action",
+          "words": [
+            "The",
+            "TIME",
+            "for",
+            "change",
+            "is",
+            "NOW,",
+            "not",
+            "tomorrow."
+          ],
+          "correct": "The TIME for change is NOW, not tomorrow."
+        }
+      ]
+    }
   }
 ]

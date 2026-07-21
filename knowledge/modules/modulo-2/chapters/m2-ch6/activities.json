@@ -415,5 +415,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m2-ch6-listening",
+    "type": "listening",
+    "title": "Quiz: Presente vs Pasado Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "every day = present simple",
+          "question": "What did you hear?",
+          "options": [
+            "every day = present simple",
+            "I ___ (work) every day.",
+            "yesterday = past simple",
+            "I ___ (work) yesterday."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"every day = present simple\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I ___ (work) every day.",
+          "question": "What did you hear?",
+          "options": [
+            "I ___ (work) every day.",
+            "every day = present simple",
+            "yesterday = past simple",
+            "I ___ (work) yesterday."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I ___ (work) every day.\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "yesterday = past simple",
+          "question": "What did you hear?",
+          "options": [
+            "yesterday = past simple",
+            "every day = present simple",
+            "I ___ (work) every day.",
+            "I ___ (work) yesterday."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"yesterday = past simple\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "every day = present simple",
+          "hint": "From the chapter: Every day =..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I ___ (work) every day.",
+          "hint": "From the chapter: I ___ (work)..."
+        },
+        {
+          "id": "d3",
+          "audioText": "yesterday = past simple",
+          "hint": "From the chapter: Yesterday = past..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "every day = present simple",
+          "hint": "Practice saying this phrase aloud — from m2-ch6."
+        },
+        {
+          "id": "p2",
+          "phrase": "I ___ (work) every day.",
+          "hint": "Practice saying this phrase aloud — from m2-ch6."
+        },
+        {
+          "id": "p3",
+          "phrase": "yesterday = past simple",
+          "hint": "Practice saying this phrase aloud — from m2-ch6."
+        },
+        {
+          "id": "p4",
+          "phrase": "I ___ (work) yesterday.",
+          "hint": "Practice saying this phrase aloud — from m2-ch6."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch6-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "She works in a bank (nowadays):",
+          "words": [
+            "works",
+            "She",
+            "in",
+            "a",
+            "bank"
+          ],
+          "correct": "She works in a bank"
+        },
+        {
+          "prompt": "I worked yesterday:",
+          "words": [
+            "worked",
+            "I",
+            "yesterday"
+          ],
+          "correct": "I worked yesterday"
+        },
+        {
+          "prompt": "They go to the gym every day:",
+          "words": [
+            "go",
+            "They",
+            "to",
+            "the",
+            "gym",
+            "every",
+            "day"
+          ],
+          "correct": "They go to the gym every day"
+        }
+      ]
+    }
   }
 ]

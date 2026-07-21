@@ -539,5 +539,158 @@
         }
       ]
     }
+  },
+  {
+    "id": "m7-ch6-listening",
+    "type": "listening",
+    "title": "Quiz Final Integral Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I work every day. / I am working right now",
+          "question": "What did you hear?",
+          "options": [
+            "I work every day. / I am working right now",
+            "I have visited Paris. She has finished",
+            "How is the Present Perfect formed?",
+            "I went yesterday. / I have been there (alguna vez)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I work every day. / I am working right now\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I have visited Paris. She has finished",
+          "question": "What did you hear?",
+          "options": [
+            "I have visited Paris. She has finished",
+            "I work every day. / I am working right now",
+            "How is the Present Perfect formed?",
+            "I went yesterday. / I have been there (alguna vez)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I have visited Paris. She has finished\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "How is the Present Perfect formed?",
+          "question": "What did you hear?",
+          "options": [
+            "How is the Present Perfect formed?",
+            "I work every day. / I am working right now",
+            "I have visited Paris. She has finished",
+            "I went yesterday. / I have been there (alguna vez)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"How is the Present Perfect formed?\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I work every day. / I am working right now",
+          "hint": "From the chapter: I work every..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I have visited Paris. She has finished",
+          "hint": "From the chapter: I have visited..."
+        },
+        {
+          "id": "d3",
+          "audioText": "How is the Present Perfect formed?",
+          "hint": "From the chapter: How is the..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I work every day. / I am working right now",
+          "hint": "Practice saying this phrase aloud — from m7-ch6."
+        },
+        {
+          "id": "p2",
+          "phrase": "I have visited Paris. She has finished",
+          "hint": "Practice saying this phrase aloud — from m7-ch6."
+        },
+        {
+          "id": "p3",
+          "phrase": "How is the Present Perfect formed?",
+          "hint": "Practice saying this phrase aloud — from m7-ch6."
+        },
+        {
+          "id": "p4",
+          "phrase": "I went yesterday. / I have been there (alguna vez)",
+          "hint": "Practice saying this phrase aloud — from m7-ch6."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch6-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Present Perfect (experiencia):",
+          "words": [
+            "I",
+            "have",
+            "never",
+            "been",
+            "to",
+            "Japan"
+          ],
+          "correct": "I have never been to Japan"
+        },
+        {
+          "prompt": "First Conditional:",
+          "words": [
+            "If",
+            "you",
+            "study",
+            "hard",
+            "you",
+            "will",
+            "pass"
+          ],
+          "correct": "If you study hard you will pass"
+        },
+        {
+          "prompt": "Passive Voice:",
+          "words": [
+            "The",
+            "cake",
+            "was",
+            "made",
+            "by",
+            "my",
+            "grandmother"
+          ],
+          "correct": "The cake was made by my grandmother"
+        }
+      ]
+    }
   }
 ]

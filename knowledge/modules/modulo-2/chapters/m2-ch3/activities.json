@@ -474,5 +474,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m2-ch3-listening",
+    "type": "listening",
+    "title": "Quiz: Pasado Simple Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I worked all day yesterday",
+          "question": "What did you hear?",
+          "options": [
+            "I worked all day yesterday",
+            "work → ?",
+            "We went to the beach",
+            "go → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I worked all day yesterday\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "work → ?",
+          "question": "What did you hear?",
+          "options": [
+            "work → ?",
+            "I worked all day yesterday",
+            "We went to the beach",
+            "go → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"work → ?\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "We went to the beach",
+          "question": "What did you hear?",
+          "options": [
+            "We went to the beach",
+            "I worked all day yesterday",
+            "work → ?",
+            "go → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"We went to the beach\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I worked all day yesterday",
+          "hint": "From the chapter: I worked all..."
+        },
+        {
+          "id": "d2",
+          "audioText": "work → ?",
+          "hint": "From the chapter: Work → ?..."
+        },
+        {
+          "id": "d3",
+          "audioText": "We went to the beach",
+          "hint": "From the chapter: We went to..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I worked all day yesterday",
+          "hint": "Practice saying this phrase aloud — from m2-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "work → ?",
+          "hint": "Practice saying this phrase aloud — from m2-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "We went to the beach",
+          "hint": "Practice saying this phrase aloud — from m2-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "go → ?",
+          "hint": "Practice saying this phrase aloud — from m2-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Yesterday I walked to the park:",
+          "words": [
+            "walked",
+            "I",
+            "to",
+            "the",
+            "park",
+            "yesterday"
+          ],
+          "correct": "I walked to the park yesterday"
+        },
+        {
+          "prompt": "Fui al cine:",
+          "words": [
+            "went",
+            "I",
+            "to",
+            "the",
+            "cinema"
+          ],
+          "correct": "I went to the cinema"
+        },
+        {
+          "prompt": "I didn't sleep well:",
+          "words": [
+            "didn't",
+            "I",
+            "sleep",
+            "well"
+          ],
+          "correct": "I didn't sleep well"
+        }
+      ]
+    }
   }
 ]

@@ -575,5 +575,154 @@
         }
       ]
     }
+  },
+  {
+    "id": "m11-ch3-listening",
+    "type": "listening",
+    "title": "The Counselor Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "You must be quiet in the library",
+          "question": "What did you hear?",
+          "options": [
+            "You must be quiet in the library",
+            "You should take a break",
+            "It might rain tomorrow",
+            "She can speak three languages"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"You must be quiet in the library\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "You should take a break",
+          "question": "What did you hear?",
+          "options": [
+            "You should take a break",
+            "You must be quiet in the library",
+            "It might rain tomorrow",
+            "She can speak three languages"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"You should take a break\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "It might rain tomorrow",
+          "question": "What did you hear?",
+          "options": [
+            "It might rain tomorrow",
+            "You must be quiet in the library",
+            "You should take a break",
+            "She can speak three languages"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"It might rain tomorrow\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "You must be quiet in the library",
+          "hint": "From the chapter: You must be..."
+        },
+        {
+          "id": "d2",
+          "audioText": "You should take a break",
+          "hint": "From the chapter: You should take..."
+        },
+        {
+          "id": "d3",
+          "audioText": "It might rain tomorrow",
+          "hint": "From the chapter: It might rain..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "You must be quiet in the library",
+          "hint": "Practice saying this phrase aloud — from m11-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "You should take a break",
+          "hint": "Practice saying this phrase aloud — from m11-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "It might rain tomorrow",
+          "hint": "Practice saying this phrase aloud — from m11-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "She can speak three languages",
+          "hint": "Practice saying this phrase aloud — from m11-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Library rule:",
+          "words": [
+            "must",
+            "quiet",
+            "be",
+            "You",
+            "the",
+            "in",
+            "library"
+          ],
+          "correct": "You must be quiet in the library"
+        },
+        {
+          "prompt": "Advice for someone stressed:",
+          "words": [
+            "should",
+            "a",
+            "You",
+            "take",
+            "break"
+          ],
+          "correct": "You should take a break"
+        },
+        {
+          "prompt": "Posibilidad:",
+          "words": [
+            "might",
+            "It",
+            "tomorrow",
+            "rain"
+          ],
+          "correct": "It might rain tomorrow"
+        }
+      ]
+    }
   }
 ]

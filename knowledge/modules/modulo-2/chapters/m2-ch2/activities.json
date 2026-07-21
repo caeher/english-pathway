@@ -462,5 +462,151 @@
         }
       ]
     }
+  },
+  {
+    "id": "m2-ch2-listening",
+    "type": "listening",
+    "title": "Frequency Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I always drink water in the morning",
+          "question": "What did you hear?",
+          "options": [
+            "I always drink water in the morning",
+            "ALWAYS (100%)",
+            "She usually walks to school",
+            "USUALLY (90%)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I always drink water in the morning\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "ALWAYS (100%)",
+          "question": "What did you hear?",
+          "options": [
+            "ALWAYS (100%)",
+            "I always drink water in the morning",
+            "She usually walks to school",
+            "USUALLY (90%)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"ALWAYS (100%)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "She usually walks to school",
+          "question": "What did you hear?",
+          "options": [
+            "She usually walks to school",
+            "I always drink water in the morning",
+            "ALWAYS (100%)",
+            "USUALLY (90%)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She usually walks to school\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I always drink water in the morning",
+          "hint": "From the chapter: I always drink..."
+        },
+        {
+          "id": "d2",
+          "audioText": "ALWAYS (100%)",
+          "hint": "From the chapter: ALWAYS (100%)..."
+        },
+        {
+          "id": "d3",
+          "audioText": "She usually walks to school",
+          "hint": "From the chapter: She usually walks..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I always drink water in the morning",
+          "hint": "Practice saying this phrase aloud — from m2-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "ALWAYS (100%)",
+          "hint": "Practice saying this phrase aloud — from m2-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "She usually walks to school",
+          "hint": "Practice saying this phrase aloud — from m2-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "USUALLY (90%)",
+          "hint": "Practice saying this phrase aloud — from m2-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I always get up early:",
+          "words": [
+            "always",
+            "I",
+            "wake",
+            "up",
+            "early"
+          ],
+          "correct": "I always wake up early"
+        },
+        {
+          "prompt": "Ella generalmente desayuna:",
+          "words": [
+            "usually",
+            "She",
+            "has",
+            "breakfast"
+          ],
+          "correct": "She usually has breakfast"
+        },
+        {
+          "prompt": "Sometimes like out:",
+          "words": [
+            "sometimes",
+            "I",
+            "eat",
+            "out"
+          ],
+          "correct": "I sometimes eat out"
+        }
+      ]
+    }
   }
 ]

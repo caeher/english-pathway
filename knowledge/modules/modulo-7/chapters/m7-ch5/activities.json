@@ -470,5 +470,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m7-ch5-listening",
+    "type": "listening",
+    "title": "Quiz: Correct the Error Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "3rd person singular → has/does/is",
+          "question": "What did you hear?",
+          "options": [
+            "3rd person singular → has/does/is",
+            "❌ She have a car.",
+            "Age uses \"be\", not \"have\"",
+            "❌ I have 25 years."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"3rd person singular → has/does/is\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "❌ She have a car.",
+          "question": "What did you hear?",
+          "options": [
+            "❌ She have a car.",
+            "3rd person singular → has/does/is",
+            "Age uses \"be\", not \"have\"",
+            "❌ I have 25 years."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"❌ She have a car.\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Age uses \"be\", not \"have\"",
+          "question": "What did you hear?",
+          "options": [
+            "Age uses \"be\", not \"have\"",
+            "3rd person singular → has/does/is",
+            "❌ She have a car.",
+            "❌ I have 25 years."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Age uses \"be\", not \"have\"\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "3rd person singular → has/does/is",
+          "hint": "From the chapter: 3rd person singular..."
+        },
+        {
+          "id": "d2",
+          "audioText": "❌ She have a car.",
+          "hint": "From the chapter: ❌ She have..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Age uses \"be\", not \"have\"",
+          "hint": "From the chapter: Age uses \"be\",..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "3rd person singular → has/does/is",
+          "hint": "Practice saying this phrase aloud — from m7-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "❌ She have a car.",
+          "hint": "Practice saying this phrase aloud — from m7-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "Age uses \"be\", not \"have\"",
+          "hint": "Practice saying this phrase aloud — from m7-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "❌ I have 25 years.",
+          "hint": "Practice saying this phrase aloud — from m7-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "She has a car (correct):",
+          "words": [
+            "She",
+            "has",
+            "a",
+            "car"
+          ],
+          "correct": "She has a car"
+        },
+        {
+          "prompt": "I am 25 years old (correct):",
+          "words": [
+            "I",
+            "am",
+            "25",
+            "years",
+            "old"
+          ],
+          "correct": "I am 25 years old"
+        },
+        {
+          "prompt": "I always go to the gym (correct):",
+          "words": [
+            "I",
+            "always",
+            "go",
+            "to",
+            "the",
+            "gym"
+          ],
+          "correct": "I always go to the gym"
+        }
+      ]
+    }
   }
 ]

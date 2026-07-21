@@ -427,5 +427,167 @@
         }
       ]
     }
+  },
+  {
+    "id": "m13-ch5-listening",
+    "type": "listening",
+    "title": "Planning Evaluation Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "From my perspective, the key is finding a healthy balance",
+          "question": "What did you hear?",
+          "options": [
+            "From my perspective, the key is finding a healthy balance",
+            "Have you ever wondered how technology is shaping our future",
+            "INTRODUCING YOUR OPINION 💬",
+            "PRESENTING EVIDENCE 📊"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"From my perspective, the key is finding a healthy balance\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Have you ever wondered how technology is shaping our future",
+          "question": "What did you hear?",
+          "options": [
+            "Have you ever wondered how technology is shaping our future",
+            "From my perspective, the key is finding a healthy balance",
+            "INTRODUCING YOUR OPINION 💬",
+            "PRESENTING EVIDENCE 📊"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Have you ever wondered how technology is shaping our future\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "INTRODUCING YOUR OPINION 💬",
+          "question": "What did you hear?",
+          "options": [
+            "INTRODUCING YOUR OPINION 💬",
+            "From my perspective, the key is finding a healthy balance",
+            "Have you ever wondered how technology is shaping our future",
+            "PRESENTING EVIDENCE 📊"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"INTRODUCING YOUR OPINION 💬\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "From my perspective, the key is finding a healthy balance",
+          "hint": "From the chapter: From my perspective,..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Have you ever wondered how technology is shaping our future",
+          "hint": "From the chapter: Have you ever..."
+        },
+        {
+          "id": "d3",
+          "audioText": "INTRODUCING YOUR OPINION 💬",
+          "hint": "From the chapter: INTRODUCING YOUR OPINION..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "From my perspective, the key is finding a healthy balance",
+          "hint": "Practice saying this phrase aloud — from m13-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "Have you ever wondered how technology is shaping our future",
+          "hint": "Practice saying this phrase aloud — from m13-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "INTRODUCING YOUR OPINION 💬",
+          "hint": "Practice saying this phrase aloud — from m13-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "PRESENTING EVIDENCE 📊",
+          "hint": "Practice saying this phrase aloud — from m13-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m13-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Build a thesis statement about technology",
+          "words": [
+            "Although",
+            "technology",
+            "presents",
+            "challenges,",
+            "the",
+            "benefits",
+            "outweigh",
+            "the",
+            "risks."
+          ],
+          "correct": "Although technology presents challenges, the benefits outweigh the risks."
+        },
+        {
+          "prompt": "Build a topic sentence for your first body paragraph",
+          "words": [
+            "First,",
+            "the",
+            "most",
+            "important",
+            "advantage",
+            "is",
+            "the",
+            "accessibility",
+            "of",
+            "information."
+          ],
+          "correct": "First, the most important advantage is the accessibility of information."
+        },
+        {
+          "prompt": "Build a transitional sentence to the counterargument",
+          "words": [
+            "On",
+            "the",
+            "other",
+            "hand,",
+            "critics",
+            "argue",
+            "that",
+            "technology",
+            "creates",
+            "dependency."
+          ],
+          "correct": "On the other hand, critics argue that technology creates dependency."
+        }
+      ]
+    }
   }
 ]

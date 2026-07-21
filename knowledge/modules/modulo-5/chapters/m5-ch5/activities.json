@@ -493,5 +493,152 @@
         }
       ]
     }
+  },
+  {
+    "id": "m5-ch5-listening",
+    "type": "listening",
+    "title": "Quiz: Voz Pasiva Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "are + made (pp of make)",
+          "question": "What did you hear?",
+          "options": [
+            "are + made (pp of make)",
+            "was + stolen (pp of steal)",
+            "Someone stole my bike. (Past Simple)",
+            "has been + repaired"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"are + made (pp of make)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "was + stolen (pp of steal)",
+          "question": "What did you hear?",
+          "options": [
+            "was + stolen (pp of steal)",
+            "are + made (pp of make)",
+            "Someone stole my bike. (Past Simple)",
+            "has been + repaired"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"was + stolen (pp of steal)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Someone stole my bike. (Past Simple)",
+          "question": "What did you hear?",
+          "options": [
+            "Someone stole my bike. (Past Simple)",
+            "are + made (pp of make)",
+            "was + stolen (pp of steal)",
+            "has been + repaired"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Someone stole my bike. (Past Simple)\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "are + made (pp of make)",
+          "hint": "From the chapter: Are + made..."
+        },
+        {
+          "id": "d2",
+          "audioText": "was + stolen (pp of steal)",
+          "hint": "From the chapter: Was + stolen..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Someone stole my bike. (Past Simple)",
+          "hint": "From the chapter: Someone stole my..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "are + made (pp of make)",
+          "hint": "Practice saying this phrase aloud — from m5-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "was + stolen (pp of steal)",
+          "hint": "Practice saying this phrase aloud — from m5-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "Someone stole my bike. (Past Simple)",
+          "hint": "Practice saying this phrase aloud — from m5-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "has been + repaired",
+          "hint": "Practice saying this phrase aloud — from m5-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "The cars are made in Japan:",
+          "words": [
+            "Cars",
+            "are",
+            "made",
+            "in",
+            "Japan"
+          ],
+          "correct": "Cars are made in Japan"
+        },
+        {
+          "prompt": "Mi bicicleta fue robada:",
+          "words": [
+            "My",
+            "bike",
+            "was",
+            "stolen"
+          ],
+          "correct": "My bike was stolen"
+        },
+        {
+          "prompt": "The road has been repaired:",
+          "words": [
+            "The",
+            "road",
+            "has",
+            "been",
+            "repaired"
+          ],
+          "correct": "The road has been repaired"
+        }
+      ]
+    }
   }
 ]

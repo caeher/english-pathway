@@ -508,5 +508,174 @@
         }
       ]
     }
+  },
+  {
+    "id": "m14-ch4-listening",
+    "type": "listening",
+    "title": "Needs Diagnosis Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Anki (spaced repetition app)",
+          "question": "What did you hear?",
+          "options": [
+            "Anki (spaced repetition app)",
+            "Vocabulary retention 📚",
+            "iTalki (language exchange)",
+            "Speaking practice 🗣️"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Anki (spaced repetition app)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Vocabulary retention 📚",
+          "question": "What did you hear?",
+          "options": [
+            "Vocabulary retention 📚",
+            "Anki (spaced repetition app)",
+            "iTalki (language exchange)",
+            "Speaking practice 🗣️"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Vocabulary retention 📚\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "iTalki (language exchange)",
+          "question": "What did you hear?",
+          "options": [
+            "iTalki (language exchange)",
+            "Anki (spaced repetition app)",
+            "Vocabulary retention 📚",
+            "Speaking practice 🗣️"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"iTalki (language exchange)\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Anki (spaced repetition app)",
+          "hint": "From the chapter: Anki (spaced repetition..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Vocabulary retention 📚",
+          "hint": "From the chapter: Vocabulary retention 📚..."
+        },
+        {
+          "id": "d3",
+          "audioText": "iTalki (language exchange)",
+          "hint": "From the chapter: ITalki (language exchange)..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Anki (spaced repetition app)",
+          "hint": "Practice saying this phrase aloud — from m14-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "Vocabulary retention 📚",
+          "hint": "Practice saying this phrase aloud — from m14-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "iTalki (language exchange)",
+          "hint": "Practice saying this phrase aloud — from m14-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "Speaking practice 🗣️",
+          "hint": "Practice saying this phrase aloud — from m14-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Build a SMART goal for speaking practice",
+          "words": [
+            "I",
+            "will",
+            "have",
+            "three",
+            "30-minute",
+            "conversations",
+            "per",
+            "week",
+            "on",
+            "iTalki",
+            "for",
+            "two",
+            "months."
+          ],
+          "correct": "I will have three 30-minute conversations per week on iTalki for two months."
+        },
+        {
+          "prompt": "Build a sentence about your daily routine",
+          "words": [
+            "Every",
+            "morning",
+            "I",
+            "listen",
+            "to",
+            "a",
+            "podcast",
+            "during",
+            "my",
+            "commute."
+          ],
+          "correct": "Every morning I listen to a podcast during my commute."
+        },
+        {
+          "prompt": "Build a SMART goal for vocabulary",
+          "words": [
+            "I",
+            "will",
+            "learn",
+            "10",
+            "new",
+            "words",
+            "per",
+            "week",
+            "using",
+            "Anki",
+            "for",
+            "three",
+            "months."
+          ],
+          "correct": "I will learn 10 new words per week using Anki for three months."
+        }
+      ]
+    }
   }
 ]

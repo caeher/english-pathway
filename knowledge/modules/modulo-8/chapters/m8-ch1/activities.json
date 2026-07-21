@@ -558,5 +558,156 @@
         }
       ]
     }
+  },
+  {
+    "id": "m8-ch1-listening",
+    "type": "listening",
+    "title": "Vocabulary Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "The book is on the table",
+          "question": "What did you hear?",
+          "options": [
+            "The book is on the table",
+            "Mesa",
+            "Please sit on the chair",
+            "Silla"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The book is on the table\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Mesa",
+          "question": "What did you hear?",
+          "options": [
+            "Mesa",
+            "The book is on the table",
+            "Please sit on the chair",
+            "Silla"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Mesa\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Please sit on the chair",
+          "question": "What did you hear?",
+          "options": [
+            "Please sit on the chair",
+            "The book is on the table",
+            "Mesa",
+            "Silla"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Please sit on the chair\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "The book is on the table",
+          "hint": "From the chapter: The book is..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Mesa",
+          "hint": "From the chapter: Mesa..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Please sit on the chair",
+          "hint": "From the chapter: Please sit on..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "The book is on the table",
+          "hint": "Practice saying this phrase aloud — from m8-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "Mesa",
+          "hint": "Practice saying this phrase aloud — from m8-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "Please sit on the chair",
+          "hint": "Practice saying this phrase aloud — from m8-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "Silla",
+          "hint": "Practice saying this phrase aloud — from m8-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "The book is in...",
+          "words": [
+            "The",
+            "book",
+            "is",
+            "on",
+            "the",
+            "table"
+          ],
+          "correct": "The book is on the table"
+        },
+        {
+          "prompt": "The cup is in...",
+          "words": [
+            "The",
+            "cup",
+            "is",
+            "on",
+            "the",
+            "table"
+          ],
+          "correct": "The cup is on the table"
+        },
+        {
+          "prompt": "The plant is in...",
+          "words": [
+            "The",
+            "plant",
+            "is",
+            "in",
+            "the",
+            "pot"
+          ],
+          "correct": "The plant is in the pot"
+        }
+      ]
+    }
   }
 ]

@@ -654,5 +654,157 @@
         }
       ]
     }
+  },
+  {
+    "id": "m9-ch1-listening",
+    "type": "listening",
+    "title": "Travel Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "We arrived at the airport two hours early",
+          "question": "What did you hear?",
+          "options": [
+            "We arrived at the airport two hours early",
+            "Aeropuerto",
+            "Our flight departs at 9 AM",
+            "Vuelo"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"We arrived at the airport two hours early\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Aeropuerto",
+          "question": "What did you hear?",
+          "options": [
+            "Aeropuerto",
+            "We arrived at the airport two hours early",
+            "Our flight departs at 9 AM",
+            "Vuelo"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Aeropuerto\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Our flight departs at 9 AM",
+          "question": "What did you hear?",
+          "options": [
+            "Our flight departs at 9 AM",
+            "We arrived at the airport two hours early",
+            "Aeropuerto",
+            "Vuelo"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Our flight departs at 9 AM\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "We arrived at the airport two hours early",
+          "hint": "From the chapter: We arrived at..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Aeropuerto",
+          "hint": "From the chapter: Aeropuerto..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Our flight departs at 9 AM",
+          "hint": "From the chapter: Our flight departs..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "We arrived at the airport two hours early",
+          "hint": "Practice saying this phrase aloud — from m9-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "Aeropuerto",
+          "hint": "Practice saying this phrase aloud — from m9-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "Our flight departs at 9 AM",
+          "hint": "Practice saying this phrase aloud — from m9-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "Vuelo",
+          "hint": "Practice saying this phrase aloud — from m9-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Describe your morning plan:",
+          "words": [
+            "visit",
+            "the",
+            "I'll",
+            "morning",
+            "museum",
+            "in",
+            "the"
+          ],
+          "correct": "I'll visit the museum in the morning"
+        },
+        {
+          "prompt": "Ask about the station:",
+          "words": [
+            "is",
+            "Where",
+            "nearest",
+            "the",
+            "station?",
+            "subway"
+          ],
+          "correct": "Where is the nearest subway station?"
+        },
+        {
+          "prompt": "Check in at the hotel:",
+          "words": [
+            "to",
+            "like",
+            "I'd",
+            "please",
+            "in,",
+            "check"
+          ],
+          "correct": "I'd like to check in, please"
+        }
+      ]
+    }
   }
 ]

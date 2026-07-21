@@ -529,5 +529,150 @@
         }
       ]
     }
+  },
+  {
+    "id": "m9-ch3-listening",
+    "type": "listening",
+    "title": "The Interview Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Where do you live",
+          "question": "What did you hear?",
+          "options": [
+            "Where do you live",
+            "What is her job",
+            "When is the party",
+            "How does he get to work"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Where do you live\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "What is her job",
+          "question": "What did you hear?",
+          "options": [
+            "What is her job",
+            "Where do you live",
+            "When is the party",
+            "How does he get to work"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"What is her job\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "When is the party",
+          "question": "What did you hear?",
+          "options": [
+            "When is the party",
+            "Where do you live",
+            "What is her job",
+            "How does he get to work"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"When is the party\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Where do you live",
+          "hint": "From the chapter: Where do you..."
+        },
+        {
+          "id": "d2",
+          "audioText": "What is her job",
+          "hint": "From the chapter: What is her..."
+        },
+        {
+          "id": "d3",
+          "audioText": "When is the party",
+          "hint": "From the chapter: When is the..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Where do you live",
+          "hint": "Practice saying this phrase aloud — from m9-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "What is her job",
+          "hint": "Practice saying this phrase aloud — from m9-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "When is the party",
+          "hint": "Practice saying this phrase aloud — from m9-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "How does he get to work",
+          "hint": "Practice saying this phrase aloud — from m9-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Answer: \"I live in Mexico City.\"",
+          "words": [
+            "do",
+            "Where",
+            "live?",
+            "you"
+          ],
+          "correct": "Where do you live?"
+        },
+        {
+          "prompt": "Answer: \"She is a doctor.\"",
+          "words": [
+            "is",
+            "What",
+            "job?",
+            "her"
+          ],
+          "correct": "What is her job?"
+        },
+        {
+          "prompt": "Answer: \"The party is on Friday.\"",
+          "words": [
+            "is",
+            "When",
+            "party?",
+            "the"
+          ],
+          "correct": "When is the party?"
+        }
+      ]
+    }
   }
 ]

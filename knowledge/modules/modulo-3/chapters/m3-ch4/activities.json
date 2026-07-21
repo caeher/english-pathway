@@ -501,5 +501,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m3-ch4-listening",
+    "type": "listening",
+    "title": "Quiz: Future with Will and Going To Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Spontaneous decision → will",
+          "question": "What did you hear?",
+          "options": [
+            "Spontaneous decision → will",
+            "Already planned → going to",
+            "Prediction (opinion) → will",
+            "\"I think it ___ (rain) tomorrow.\""
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Spontaneous decision → will\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Already planned → going to",
+          "question": "What did you hear?",
+          "options": [
+            "Already planned → going to",
+            "Spontaneous decision → will",
+            "Prediction (opinion) → will",
+            "\"I think it ___ (rain) tomorrow.\""
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Already planned → going to\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Prediction (opinion) → will",
+          "question": "What did you hear?",
+          "options": [
+            "Prediction (opinion) → will",
+            "Spontaneous decision → will",
+            "Already planned → going to",
+            "\"I think it ___ (rain) tomorrow.\""
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Prediction (opinion) → will\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Spontaneous decision → will",
+          "hint": "From the chapter: Spontaneous decision →..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Already planned → going to",
+          "hint": "From the chapter: Already planned →..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Prediction (opinion) → will",
+          "hint": "From the chapter: Prediction (opinion) →..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Spontaneous decision → will",
+          "hint": "Practice saying this phrase aloud — from m3-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "Already planned → going to",
+          "hint": "Practice saying this phrase aloud — from m3-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "Prediction (opinion) → will",
+          "hint": "Practice saying this phrase aloud — from m3-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "\"I think it ___ (rain) tomorrow.\"",
+          "hint": "Practice saying this phrase aloud — from m3-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I will help you (offer):",
+          "words": [
+            "I",
+            "will",
+            "help",
+            "you"
+          ],
+          "correct": "I will help you"
+        },
+        {
+          "prompt": "I'm going to study tonight (plan):",
+          "words": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "study",
+            "tonight"
+          ],
+          "correct": "I am going to study tonight"
+        },
+        {
+          "prompt": "I think it will rain:",
+          "words": [
+            "I",
+            "think",
+            "it",
+            "will",
+            "rain"
+          ],
+          "correct": "I think it will rain"
+        }
+      ]
+    }
   }
 ]

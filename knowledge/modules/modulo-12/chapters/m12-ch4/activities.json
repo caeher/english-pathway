@@ -456,5 +456,155 @@
         }
       ]
     }
+  },
+  {
+    "id": "m12-ch4-listening",
+    "type": "listening",
+    "title": "What Did He Really Say? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "gonna",
+          "question": "What did you hear?",
+          "options": [
+            "gonna",
+            "going to",
+            "wanna",
+            "want to"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"gonna\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "going to",
+          "question": "What did you hear?",
+          "options": [
+            "going to",
+            "gonna",
+            "wanna",
+            "want to"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"going to\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "wanna",
+          "question": "What did you hear?",
+          "options": [
+            "wanna",
+            "gonna",
+            "going to",
+            "want to"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"wanna\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "gonna",
+          "hint": "From the chapter: Gonna..."
+        },
+        {
+          "id": "d2",
+          "audioText": "going to",
+          "hint": "From the chapter: Going to..."
+        },
+        {
+          "id": "d3",
+          "audioText": "wanna",
+          "hint": "From the chapter: Wanna..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "gonna",
+          "hint": "Practice saying this phrase aloud — from m12-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "going to",
+          "hint": "Practice saying this phrase aloud — from m12-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "wanna",
+          "hint": "Practice saying this phrase aloud — from m12-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "want to",
+          "hint": "Practice saying this phrase aloud — from m12-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Make natural: \"I do not know what I am going to do.\"",
+          "words": [
+            "I",
+            "dunno",
+            "what",
+            "I'm",
+            "gonna",
+            "do."
+          ],
+          "correct": "I dunno what I'm gonna do."
+        },
+        {
+          "prompt": "Make natural: \"I want to go to the movies.\"",
+          "words": [
+            "I",
+            "wanna",
+            "go",
+            "to",
+            "the",
+            "movies."
+          ],
+          "correct": "I wanna go to the movies."
+        },
+        {
+          "prompt": "Make natural: \"I have got to leave right now.\"",
+          "words": [
+            "I",
+            "gotta",
+            "leave",
+            "right",
+            "now."
+          ],
+          "correct": "I gotta leave right now."
+        }
+      ]
+    }
   }
 ]

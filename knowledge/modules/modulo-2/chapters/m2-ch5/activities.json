@@ -472,5 +472,150 @@
         }
       ]
     }
+  },
+  {
+    "id": "m2-ch5-listening",
+    "type": "listening",
+    "title": "Quiz: Have, Has, Had Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I/You/We/They → have",
+          "question": "What did you hear?",
+          "options": [
+            "I/You/We/They → have",
+            "I ___ a dog. (present)",
+            "He/She/It → has",
+            "She ___ blue eyes. (present)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I/You/We/They → have\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I ___ a dog. (present)",
+          "question": "What did you hear?",
+          "options": [
+            "I ___ a dog. (present)",
+            "I/You/We/They → have",
+            "He/She/It → has",
+            "She ___ blue eyes. (present)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I ___ a dog. (present)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "He/She/It → has",
+          "question": "What did you hear?",
+          "options": [
+            "He/She/It → has",
+            "I/You/We/They → have",
+            "I ___ a dog. (present)",
+            "She ___ blue eyes. (present)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"He/She/It → has\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I/You/We/They → have",
+          "hint": "From the chapter: I/You/We/They → have..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I ___ a dog. (present)",
+          "hint": "From the chapter: I ___ a..."
+        },
+        {
+          "id": "d3",
+          "audioText": "He/She/It → has",
+          "hint": "From the chapter: He/She/It → has..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I/You/We/They → have",
+          "hint": "Practice saying this phrase aloud — from m2-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "I ___ a dog. (present)",
+          "hint": "Practice saying this phrase aloud — from m2-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "He/She/It → has",
+          "hint": "Practice saying this phrase aloud — from m2-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "She ___ blue eyes. (present)",
+          "hint": "Practice saying this phrase aloud — from m2-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Tengo dos hermanos:",
+          "words": [
+            "I",
+            "have",
+            "two",
+            "brothers"
+          ],
+          "correct": "I have two brothers"
+        },
+        {
+          "prompt": "Ella tiene pelo largo:",
+          "words": [
+            "She",
+            "has",
+            "long",
+            "hair"
+          ],
+          "correct": "She has long hair"
+        },
+        {
+          "prompt": "I had a dog:",
+          "words": [
+            "I",
+            "had",
+            "a",
+            "dog"
+          ],
+          "correct": "I had a dog"
+        }
+      ]
+    }
   }
 ]

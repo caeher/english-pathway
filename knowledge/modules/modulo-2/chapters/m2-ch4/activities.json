@@ -488,5 +488,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m2-ch4-listening",
+    "type": "listening",
+    "title": "Quiz: Negaciones y Preguntas Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Usamos didn't + go (base form)",
+          "question": "What did you hear?",
+          "options": [
+            "Usamos didn't + go (base form)",
+            "She went to the store. (negativa)",
+            "Did + he + eat (base form)",
+            "I have ate lunch. (ask)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Usamos didn't + go (base form)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "She went to the store. (negativa)",
+          "question": "What did you hear?",
+          "options": [
+            "She went to the store. (negativa)",
+            "Usamos didn't + go (base form)",
+            "Did + he + eat (base form)",
+            "I have ate lunch. (ask)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She went to the store. (negativa)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Did + he + eat (base form)",
+          "question": "What did you hear?",
+          "options": [
+            "Did + he + eat (base form)",
+            "Usamos didn't + go (base form)",
+            "She went to the store. (negativa)",
+            "I have ate lunch. (ask)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Did + he + eat (base form)\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Usamos didn't + go (base form)",
+          "hint": "From the chapter: Usamos didn't +..."
+        },
+        {
+          "id": "d2",
+          "audioText": "She went to the store. (negativa)",
+          "hint": "From the chapter: She went to..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Did + he + eat (base form)",
+          "hint": "From the chapter: Did + he..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Usamos didn't + go (base form)",
+          "hint": "Practice saying this phrase aloud — from m2-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "She went to the store. (negativa)",
+          "hint": "Practice saying this phrase aloud — from m2-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "Did + he + eat (base form)",
+          "hint": "Practice saying this phrase aloud — from m2-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "I have ate lunch. (ask)",
+          "hint": "Practice saying this phrase aloud — from m2-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Did you go to the cinema?:",
+          "words": [
+            "Did",
+            "you",
+            "go",
+            "to",
+            "the",
+            "cinema?"
+          ],
+          "correct": "Did you go to the cinema?"
+        },
+        {
+          "prompt": "She didn't eat anything:",
+          "words": [
+            "She",
+            "didn't",
+            "eat",
+            "anything"
+          ],
+          "correct": "She didn't eat anything"
+        },
+        {
+          "prompt": "Did he talk to her?",
+          "words": [
+            "Did",
+            "he",
+            "speak",
+            "to",
+            "her?"
+          ],
+          "correct": "Did he speak to her?"
+        }
+      ]
+    }
   }
 ]

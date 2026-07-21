@@ -531,5 +531,82 @@
         }
       ]
     }
+  },
+  {
+    "id": "m1-ch5-listening",
+    "type": "listening",
+    "title": "Numbers and Dates Listening",
+    "description": "Listen to numbers, days and times, then choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "fifteen",
+          "question": "What number did you hear?",
+          "options": ["fifty", "fifteen", "five", "fourteen"],
+          "correct": 1,
+          "explanation": "Fifteen is the number 15."
+        },
+        {
+          "id": "l2",
+          "audioText": "Wednesday",
+          "question": "What day did you hear?",
+          "options": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "correct": 1,
+          "explanation": "Wednesday is the third day of the work week."
+        },
+        {
+          "id": "l3",
+          "audioText": "It's half past three",
+          "question": "What time is it?",
+          "options": ["3:00", "3:15", "3:30", "3:45"],
+          "correct": 2,
+          "explanation": "Half past three means 3:30."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch5-dictation",
+    "type": "dictation",
+    "title": "Calendar Dictation",
+    "description": "Listen and write the number, day or date you hear.",
+    "props": {
+      "items": [
+        { "id": "d1", "audioText": "March fifth", "hint": "Month + ordinal date" },
+        { "id": "d2", "audioText": "twenty first", "hint": "Ordinal number 21st" },
+        { "id": "d3", "audioText": "Saturday", "hint": "Day of the week" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Numbers and Dates Pronunciation",
+    "description": "Practice pronouncing numbers, days and time expressions.",
+    "props": {
+      "items": [
+        { "id": "p1", "phrase": "thirteen", "hint": "Stress on -TEEN: thir-TEEN (not thirty)" },
+        { "id": "p2", "phrase": "February", "hint": "Silent first r — /ˈfebruəri/" },
+        { "id": "p3", "phrase": "quarter past five", "hint": "Time expression — 5:15" },
+        { "id": "p4", "phrase": "twenty third", "hint": "Ordinal — 23rd" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Order the Days",
+    "description": "Drag the days of the week into the correct order.",
+    "props": {
+      "mode": "match",
+      "pairs": [
+        { "left": "1st day", "right": "Monday" },
+        { "left": "3rd day", "right": "Wednesday" },
+        { "left": "5th day", "right": "Friday" },
+        { "left": "6th day", "right": "Saturday" },
+        { "left": "7th day", "right": "Sunday" }
+      ]
+    }
   }
 ]

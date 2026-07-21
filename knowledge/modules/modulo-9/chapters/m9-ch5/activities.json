@@ -637,5 +637,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m9-ch5-listening",
+    "type": "listening",
+    "title": "Who is Who? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "a beautiful big red car",
+          "question": "What did you hear?",
+          "options": [
+            "a beautiful big red car",
+            "a lovely old French house",
+            "a small round wooden table",
+            "a beautiful Italian leather bag"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"a beautiful big red car\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "a lovely old French house",
+          "question": "What did you hear?",
+          "options": [
+            "a lovely old French house",
+            "a beautiful big red car",
+            "a small round wooden table",
+            "a beautiful Italian leather bag"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"a lovely old French house\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "a small round wooden table",
+          "question": "What did you hear?",
+          "options": [
+            "a small round wooden table",
+            "a beautiful big red car",
+            "a lovely old French house",
+            "a beautiful Italian leather bag"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"a small round wooden table\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "a beautiful big red car",
+          "hint": "From the chapter: A beautiful big..."
+        },
+        {
+          "id": "d2",
+          "audioText": "a lovely old French house",
+          "hint": "From the chapter: A lovely old..."
+        },
+        {
+          "id": "d3",
+          "audioText": "a small round wooden table",
+          "hint": "From the chapter: A small round..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "a beautiful big red car",
+          "hint": "Practice saying this phrase aloud — from m9-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "a lovely old French house",
+          "hint": "Practice saying this phrase aloud — from m9-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "a small round wooden table",
+          "hint": "Practice saying this phrase aloud — from m9-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "a beautiful Italian leather bag",
+          "hint": "Practice saying this phrase aloud — from m9-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m9-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Describe the car:",
+          "words": [
+            "red",
+            "a",
+            "car",
+            "big",
+            "beautiful"
+          ],
+          "correct": "a beautiful big red car"
+        },
+        {
+          "prompt": "Describe the house:",
+          "words": [
+            "house",
+            "a",
+            "French",
+            "old",
+            "lovely"
+          ],
+          "correct": "a lovely old French house"
+        },
+        {
+          "prompt": "Describe the table:",
+          "words": [
+            "wooden",
+            "table",
+            "round",
+            "a",
+            "small"
+          ],
+          "correct": "a small round wooden table"
+        }
+      ]
+    }
   }
 ]

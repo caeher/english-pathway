@@ -566,5 +566,80 @@
         }
       ]
     }
+  },
+  {
+    "id": "m1-ch3-listening",
+    "type": "listening",
+    "title": "To Be Listening",
+    "description": "Listen to sentences with the verb to be and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I am a student",
+          "question": "Which pronoun did you hear?",
+          "options": ["I", "You", "He", "They"],
+          "correct": 0,
+          "explanation": "I am is used with the first person singular."
+        },
+        {
+          "id": "l2",
+          "audioText": "She is a doctor",
+          "question": "What is she?",
+          "options": ["A teacher", "A doctor", "A student", "A nurse"],
+          "correct": 1,
+          "explanation": "She is a doctor — she is uses the third person singular."
+        },
+        {
+          "id": "l3",
+          "audioText": "They are happy",
+          "question": "How do they feel?",
+          "options": ["Sad", "Angry", "Happy", "Tired"],
+          "correct": 2,
+          "explanation": "They are happy — are is used with they."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch3-dictation",
+    "type": "dictation",
+    "title": "To Be Dictation",
+    "description": "Listen and write the sentence with the verb to be.",
+    "props": {
+      "items": [
+        { "id": "d1", "audioText": "He is tall", "hint": "Third person singular + adjective" },
+        { "id": "d2", "audioText": "We are ready", "hint": "First person plural" },
+        { "id": "d3", "audioText": "I am not sad", "hint": "Negative form with not" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "To Be Pronunciation",
+    "description": "Practice pronouncing contractions and short answers.",
+    "props": {
+      "items": [
+        { "id": "p1", "phrase": "I'm a student", "hint": "Contraction of I am — /aɪm/" },
+        { "id": "p2", "phrase": "She isn't here", "hint": "Negative contraction — isn't = is not" },
+        { "id": "p3", "phrase": "Are you ready", "hint": "Yes/No question with rising intonation" },
+        { "id": "p4", "phrase": "Yes I am", "hint": "Short affirmative answer" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build To Be Sentences",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        { "prompt": "Affirmative:", "words": ["am", "I", "happy"], "correct": "I am happy" },
+        { "prompt": "Question:", "words": ["a", "she", "Is", "teacher?"], "correct": "Is she a teacher?" },
+        { "prompt": "Negative:", "words": ["not", "They", "are", "ready."], "correct": "They are not ready." }
+      ]
+    }
   }
 ]

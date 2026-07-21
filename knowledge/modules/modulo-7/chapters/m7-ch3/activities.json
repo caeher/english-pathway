@@ -395,5 +395,160 @@
         }
       ]
     }
+  },
+  {
+    "id": "m7-ch3-listening",
+    "type": "listening",
+    "title": "Quiz: Investment and Emphasis Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Never + have + subject",
+          "question": "What did you hear?",
+          "options": [
+            "Never + have + subject",
+            "Not only + does + subject",
+            "Hardly + had + subject",
+            "No sooner + had + subject + than"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Never + have + subject\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Not only + does + subject",
+          "question": "What did you hear?",
+          "options": [
+            "Not only + does + subject",
+            "Never + have + subject",
+            "Hardly + had + subject",
+            "No sooner + had + subject + than"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Not only + does + subject\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Hardly + had + subject",
+          "question": "What did you hear?",
+          "options": [
+            "Hardly + had + subject",
+            "Never + have + subject",
+            "Not only + does + subject",
+            "No sooner + had + subject + than"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Hardly + had + subject\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Never + have + subject",
+          "hint": "From the chapter: Never + have..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Not only + does + subject",
+          "hint": "From the chapter: Not only +..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Hardly + had + subject",
+          "hint": "From the chapter: Hardly + had..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Never + have + subject",
+          "hint": "Practice saying this phrase aloud — from m7-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "Not only + does + subject",
+          "hint": "Practice saying this phrase aloud — from m7-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "Hardly + had + subject",
+          "hint": "Practice saying this phrase aloud — from m7-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "No sooner + had + subject + than",
+          "hint": "Practice saying this phrase aloud — from m7-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I have never seen such beauty (inversion):",
+          "words": [
+            "Never",
+            "have",
+            "I",
+            "seen",
+            "such",
+            "beauty"
+          ],
+          "correct": "Never have I seen such beauty"
+        },
+        {
+          "prompt": "He not only sings, but also dances:",
+          "words": [
+            "Not",
+            "only",
+            "does",
+            "she",
+            "sing,",
+            "but",
+            "she",
+            "also",
+            "dances"
+          ],
+          "correct": "Not only does she sing, but she also dances"
+        },
+        {
+          "prompt": "It was John who broke the window:",
+          "words": [
+            "It",
+            "was",
+            "John",
+            "who",
+            "broke",
+            "the",
+            "window"
+          ],
+          "correct": "It was John who broke the window"
+        }
+      ]
+    }
   }
 ]

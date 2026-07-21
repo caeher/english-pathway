@@ -484,5 +484,149 @@
         }
       ]
     }
+  },
+  {
+    "id": "m3-ch5-listening",
+    "type": "listening",
+    "title": "Quiz: Can & Could Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Can + base verb (no \"to\")",
+          "question": "What did you hear?",
+          "options": [
+            "Can + base verb (no \"to\")",
+            "Can for present skills",
+            "can't = cannot",
+            "Can to ask permission"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Can + base verb (no \"to\")\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Can for present skills",
+          "question": "What did you hear?",
+          "options": [
+            "Can for present skills",
+            "Can + base verb (no \"to\")",
+            "can't = cannot",
+            "Can to ask permission"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Can for present skills\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "can't = cannot",
+          "question": "What did you hear?",
+          "options": [
+            "can't = cannot",
+            "Can + base verb (no \"to\")",
+            "Can for present skills",
+            "Can to ask permission"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"can't = cannot\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Can + base verb (no \"to\")",
+          "hint": "From the chapter: Can + base..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Can for present skills",
+          "hint": "From the chapter: Can for present..."
+        },
+        {
+          "id": "d3",
+          "audioText": "can't = cannot",
+          "hint": "From the chapter: Can't = cannot..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Can + base verb (no \"to\")",
+          "hint": "Practice saying this phrase aloud — from m3-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "Can for present skills",
+          "hint": "Practice saying this phrase aloud — from m3-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "can't = cannot",
+          "hint": "Practice saying this phrase aloud — from m3-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "Can to ask permission",
+          "hint": "Practice saying this phrase aloud — from m3-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Puedo nadar:",
+          "words": [
+            "I",
+            "can",
+            "swim"
+          ],
+          "correct": "I can swim"
+        },
+        {
+          "prompt": "Ella no puede conducir:",
+          "words": [
+            "She",
+            "can't",
+            "drive"
+          ],
+          "correct": "She can't drive"
+        },
+        {
+          "prompt": "Can I use your phone?:",
+          "words": [
+            "Can",
+            "I",
+            "use",
+            "your",
+            "phone?"
+          ],
+          "correct": "Can I use your phone?"
+        }
+      ]
+    }
   }
 ]

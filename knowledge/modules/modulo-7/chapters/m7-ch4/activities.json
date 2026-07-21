@@ -510,5 +510,160 @@
         }
       ]
     }
+  },
+  {
+    "id": "m7-ch4-listening",
+    "type": "listening",
+    "title": "Quiz: Idiomatic Expressions Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "The test was a piece of cake. (= super easy)",
+          "question": "What did you hear?",
+          "options": [
+            "The test was a piece of cake. (= super easy)",
+            "a piece of cake",
+            "You have a show? Break a leg",
+            "break a leg"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The test was a piece of cake. (= super easy)\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "a piece of cake",
+          "question": "What did you hear?",
+          "options": [
+            "a piece of cake",
+            "The test was a piece of cake. (= super easy)",
+            "You have a show? Break a leg",
+            "break a leg"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"a piece of cake\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "You have a show? Break a leg",
+          "question": "What did you hear?",
+          "options": [
+            "You have a show? Break a leg",
+            "The test was a piece of cake. (= super easy)",
+            "a piece of cake",
+            "break a leg"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"You have a show? Break a leg\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "The test was a piece of cake. (= super easy)",
+          "hint": "From the chapter: The test was..."
+        },
+        {
+          "id": "d2",
+          "audioText": "a piece of cake",
+          "hint": "From the chapter: A piece of..."
+        },
+        {
+          "id": "d3",
+          "audioText": "You have a show? Break a leg",
+          "hint": "From the chapter: You have a..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "The test was a piece of cake. (= super easy)",
+          "hint": "Practice saying this phrase aloud — from m7-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "a piece of cake",
+          "hint": "Practice saying this phrase aloud — from m7-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "You have a show? Break a leg",
+          "hint": "Practice saying this phrase aloud — from m7-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "break a leg",
+          "hint": "Practice saying this phrase aloud — from m7-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m7-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "The exam was very easy:",
+          "words": [
+            "The",
+            "test",
+            "was",
+            "a",
+            "piece",
+            "of",
+            "cake"
+          ],
+          "correct": "The test was a piece of cake"
+        },
+        {
+          "prompt": "No me siento bien hoy:",
+          "words": [
+            "I",
+            "am",
+            "feeling",
+            "under",
+            "the",
+            "weather",
+            "today"
+          ],
+          "correct": "I am feeling under the weather today"
+        },
+        {
+          "prompt": "That car cost a lot of money:",
+          "words": [
+            "That",
+            "car",
+            "cost",
+            "an",
+            "arm",
+            "and",
+            "a",
+            "leg"
+          ],
+          "correct": "That car cost an arm and a leg"
+        }
+      ]
+    }
   }
 ]

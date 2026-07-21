@@ -357,5 +357,158 @@
         }
       ]
     }
+  },
+  {
+    "id": "m10-ch3-listening",
+    "type": "listening",
+    "title": "The Bridge Builder Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I like coffee, however, I don't drink it often",
+          "question": "What did you hear?",
+          "options": [
+            "I like coffee, however, I don't drink it often",
+            "I stayed home because I was sick",
+            "First, preheat the oven",
+            "It was cold, so I wore a jacket"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I like coffee, however, I don't drink it often\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I stayed home because I was sick",
+          "question": "What did you hear?",
+          "options": [
+            "I stayed home because I was sick",
+            "I like coffee, however, I don't drink it often",
+            "First, preheat the oven",
+            "It was cold, so I wore a jacket"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I stayed home because I was sick\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "First, preheat the oven",
+          "question": "What did you hear?",
+          "options": [
+            "First, preheat the oven",
+            "I like coffee, however, I don't drink it often",
+            "I stayed home because I was sick",
+            "It was cold, so I wore a jacket"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"First, preheat the oven\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I like coffee, however, I don't drink it often",
+          "hint": "From the chapter: I like coffee,..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I stayed home because I was sick",
+          "hint": "From the chapter: I stayed home..."
+        },
+        {
+          "id": "d3",
+          "audioText": "First, preheat the oven",
+          "hint": "From the chapter: First, preheat the..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I like coffee, however, I don't drink it often",
+          "hint": "Practice saying this phrase aloud — from m10-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "I stayed home because I was sick",
+          "hint": "Practice saying this phrase aloud — from m10-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "First, preheat the oven",
+          "hint": "Practice saying this phrase aloud — from m10-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "It was cold, so I wore a jacket",
+          "hint": "Practice saying this phrase aloud — from m10-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m10-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Connect: 'I like coffee' + 'I don't drink it often'",
+          "words": [
+            "I",
+            "like",
+            "coffee,",
+            "however,",
+            "I",
+            "don't",
+            "drink",
+            "it",
+            "often"
+          ],
+          "correct": "I like coffee, however, I don't drink it often"
+        },
+        {
+          "prompt": "Express cause: why you stayed home",
+          "words": [
+            "stayed",
+            "because",
+            "I",
+            "was",
+            "home",
+            "I",
+            "sick"
+          ],
+          "correct": "I stayed home because I was sick"
+        },
+        {
+          "prompt": "Give a sequence: first step of a recipe",
+          "words": [
+            "First,",
+            "the",
+            "preheat",
+            "oven"
+          ],
+          "correct": "First, preheat the oven"
+        }
+      ]
+    }
   }
 ]

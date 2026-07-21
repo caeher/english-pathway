@@ -488,5 +488,148 @@
         }
       ]
     }
+  },
+  {
+    "id": "m4-ch5-listening",
+    "type": "listening",
+    "title": "Quiz: The Imperative Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Stop running! Stop talking",
+          "question": "What did you hear?",
+          "options": [
+            "Stop running! Stop talking",
+            "For! (order)",
+            "Please makes it polite",
+            "Please sit down."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Stop running! Stop talking\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "For! (order)",
+          "question": "What did you hear?",
+          "options": [
+            "For! (order)",
+            "Stop running! Stop talking",
+            "Please makes it polite",
+            "Please sit down."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"For! (order)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Please makes it polite",
+          "question": "What did you hear?",
+          "options": [
+            "Please makes it polite",
+            "Stop running! Stop talking",
+            "For! (order)",
+            "Please sit down."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Please makes it polite\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Stop running! Stop talking",
+          "hint": "From the chapter: Stop running! Stop..."
+        },
+        {
+          "id": "d2",
+          "audioText": "For! (order)",
+          "hint": "From the chapter: For! (order)..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Please makes it polite",
+          "hint": "From the chapter: Please makes it..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Stop running! Stop talking",
+          "hint": "Practice saying this phrase aloud — from m4-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "For! (order)",
+          "hint": "Practice saying this phrase aloud — from m4-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "Please makes it polite",
+          "hint": "Practice saying this phrase aloud — from m4-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "Please sit down.",
+          "hint": "Practice saying this phrase aloud — from m4-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Open the door:",
+          "words": [
+            "Open",
+            "the",
+            "door"
+          ],
+          "correct": "Open the door"
+        },
+        {
+          "prompt": "Don't run in the hallway:",
+          "words": [
+            "Don't",
+            "run",
+            "in",
+            "the",
+            "hall"
+          ],
+          "correct": "Don't run in the hall"
+        },
+        {
+          "prompt": "Listen carefully:",
+          "words": [
+            "Listen",
+            "carefully"
+          ],
+          "correct": "Listen carefully"
+        }
+      ]
+    }
   }
 ]

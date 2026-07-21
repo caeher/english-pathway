@@ -401,5 +401,150 @@
         ]
       }
     }
+  },
+  {
+    "id": "m12-ch1-listening",
+    "type": "listening",
+    "title": "Identify the Structure Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Paragraph",
+          "question": "What did you hear?",
+          "options": [
+            "Paragraph",
+            "Thesis",
+            "Conclusion",
+            "Draft"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Paragraph\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Thesis",
+          "question": "What did you hear?",
+          "options": [
+            "Thesis",
+            "Paragraph",
+            "Conclusion",
+            "Draft"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Thesis\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Conclusion",
+          "question": "What did you hear?",
+          "options": [
+            "Conclusion",
+            "Paragraph",
+            "Thesis",
+            "Draft"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Conclusion\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Paragraph",
+          "hint": "From the chapter: Paragraph..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Thesis",
+          "hint": "From the chapter: Thesis..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Conclusion",
+          "hint": "From the chapter: Conclusion..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Paragraph",
+          "hint": "Practice saying this phrase aloud — from m12-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "Thesis",
+          "hint": "Practice saying this phrase aloud — from m12-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "Conclusion",
+          "hint": "Practice saying this phrase aloud — from m12-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "Draft",
+          "hint": "Practice saying this phrase aloud — from m12-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Arrange into a paragraph about exercise benefits",
+          "words": [
+            "In conclusion, regular exercise is essential for a healthy life.",
+            "First, it improves cardiovascular health.",
+            "Exercise has many benefits for our body and mind.",
+            "Additionally, it reduces stress and anxiety."
+          ],
+          "correct": "Exercise has many benefits for our body and mind. First, it improves cardiovascular health. Additionally, it reduces stress and anxiety. In conclusion, regular exercise is essential for a healthy life."
+        },
+        {
+          "prompt": "Arrange into a paragraph about reading",
+          "words": [
+            "For example, it improves vocabulary and critical thinking.",
+            "Reading is one of the best habits you can develop.",
+            "Therefore, everyone should try to read at least 20 minutes a day.",
+            "It also helps reduce stress and improve concentration."
+          ],
+          "correct": "Reading is one of the best habits you can develop. For example, it improves vocabulary and critical thinking. It also helps reduce stress and improve concentration. Therefore, everyone should try to read at least 20 minutes a day."
+        },
+        {
+          "prompt": "Arrange into a paragraph about learning languages",
+          "words": [
+            "All in all, learning a new language is a rewarding experience.",
+            "Learning a new language opens many doors in life.",
+            "Moreover, it helps you understand different cultures.",
+            "First, it can improve your career opportunities."
+          ],
+          "correct": "Learning a new language opens many doors in life. First, it can improve your career opportunities. Moreover, it helps you understand different cultures. All in all, learning a new language is a rewarding experience."
+        }
+      ]
+    }
   }
 ]

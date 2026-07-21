@@ -337,5 +337,157 @@
         }
       ]
     }
+  },
+  {
+    "id": "m6-ch6-listening",
+    "type": "listening",
+    "title": "Quiz: Reported + Phrasal Verbs Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Yes/No → asked if",
+          "question": "What did you hear?",
+          "options": [
+            "Yes/No → asked if",
+            "\"Do you like pizza?\" he asked.",
+            "Wh: no inversion",
+            "\"Where do you live?\" she asked."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Yes/No → asked if\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "\"Do you like pizza?\" he asked.",
+          "question": "What did you hear?",
+          "options": [
+            "\"Do you like pizza?\" he asked.",
+            "Yes/No → asked if",
+            "Wh: no inversion",
+            "\"Where do you live?\" she asked."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"\"Do you like pizza?\" he asked.\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Wh: no inversion",
+          "question": "What did you hear?",
+          "options": [
+            "Wh: no inversion",
+            "Yes/No → asked if",
+            "\"Do you like pizza?\" he asked.",
+            "\"Where do you live?\" she asked."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Wh: no inversion\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch6-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Yes/No → asked if",
+          "hint": "From the chapter: Yes/No → asked..."
+        },
+        {
+          "id": "d2",
+          "audioText": "\"Do you like pizza?\" he asked.",
+          "hint": "From the chapter: \"Do you like..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Wh: no inversion",
+          "hint": "From the chapter: Wh: no inversion..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch6-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Yes/No → asked if",
+          "hint": "Practice saying this phrase aloud — from m6-ch6."
+        },
+        {
+          "id": "p2",
+          "phrase": "\"Do you like pizza?\" he asked.",
+          "hint": "Practice saying this phrase aloud — from m6-ch6."
+        },
+        {
+          "id": "p3",
+          "phrase": "Wh: no inversion",
+          "hint": "Practice saying this phrase aloud — from m6-ch6."
+        },
+        {
+          "id": "p4",
+          "phrase": "\"Where do you live?\" she asked.",
+          "hint": "Practice saying this phrase aloud — from m6-ch6."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch6-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "\"Do you like pizza?\" → Report:",
+          "words": [
+            "He",
+            "asked",
+            "me",
+            "if",
+            "I",
+            "liked",
+            "pizza"
+          ],
+          "correct": "He asked me if I liked pizza"
+        },
+        {
+          "prompt": "\"Open the door\" → Report:",
+          "words": [
+            "She",
+            "told",
+            "me",
+            "to",
+            "open",
+            "the",
+            "door"
+          ],
+          "correct": "She told me to open the door"
+        },
+        {
+          "prompt": "I get up at 7:",
+          "words": [
+            "I",
+            "get",
+            "up",
+            "at",
+            "7"
+          ],
+          "correct": "I get up at 7"
+        }
+      ]
+    }
   }
 ]

@@ -498,5 +498,155 @@
         }
       ]
     }
+  },
+  {
+    "id": "m4-ch3-listening",
+    "type": "listening",
+    "title": "Quiz: Superlativos Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "She is the tallest in the class",
+          "question": "What did you hear?",
+          "options": [
+            "She is the tallest in the class",
+            "tall → superlative",
+            "CVC → double: the biggest",
+            "big → superlative"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She is the tallest in the class\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "tall → superlative",
+          "question": "What did you hear?",
+          "options": [
+            "tall → superlative",
+            "She is the tallest in the class",
+            "CVC → double: the biggest",
+            "big → superlative"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"tall → superlative\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "CVC → double: the biggest",
+          "question": "What did you hear?",
+          "options": [
+            "CVC → double: the biggest",
+            "She is the tallest in the class",
+            "tall → superlative",
+            "big → superlative"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"CVC → double: the biggest\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "She is the tallest in the class",
+          "hint": "From the chapter: She is the..."
+        },
+        {
+          "id": "d2",
+          "audioText": "tall → superlative",
+          "hint": "From the chapter: Tall → superlative..."
+        },
+        {
+          "id": "d3",
+          "audioText": "CVC → double: the biggest",
+          "hint": "From the chapter: CVC → double:..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "She is the tallest in the class",
+          "hint": "Practice saying this phrase aloud — from m4-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "tall → superlative",
+          "hint": "Practice saying this phrase aloud — from m4-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "CVC → double: the biggest",
+          "hint": "Practice saying this phrase aloud — from m4-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "big → superlative",
+          "hint": "Practice saying this phrase aloud — from m4-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "She is the tallest in the class:",
+          "words": [
+            "She",
+            "is",
+            "the",
+            "tallest",
+            "in",
+            "the",
+            "class"
+          ],
+          "correct": "She is the tallest in the class"
+        },
+        {
+          "prompt": "It is the best book I have ever read:",
+          "words": [
+            "It",
+            "is",
+            "the",
+            "best",
+            "book"
+          ],
+          "correct": "It is the best book"
+        },
+        {
+          "prompt": "Everest is the highest mountain:",
+          "words": [
+            "Everest",
+            "is",
+            "the",
+            "tallest",
+            "mountain"
+          ],
+          "correct": "Everest is the tallest mountain"
+        }
+      ]
+    }
   }
 ]

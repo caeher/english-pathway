@@ -480,5 +480,154 @@
         }
       ]
     }
+  },
+  {
+    "id": "m3-ch6-listening",
+    "type": "listening",
+    "title": "Quiz: Want, Like, Need Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "want to + base verb",
+          "question": "What did you hear?",
+          "options": [
+            "want to + base verb",
+            "Quiero viajar. (want)",
+            "He/She/It → wants to",
+            "She wants to learn English."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"want to + base verb\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Quiero viajar. (want)",
+          "question": "What did you hear?",
+          "options": [
+            "Quiero viajar. (want)",
+            "want to + base verb",
+            "He/She/It → wants to",
+            "She wants to learn English."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Quiero viajar. (want)\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "He/She/It → wants to",
+          "question": "What did you hear?",
+          "options": [
+            "He/She/It → wants to",
+            "want to + base verb",
+            "Quiero viajar. (want)",
+            "She wants to learn English."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"He/She/It → wants to\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch6-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "want to + base verb",
+          "hint": "From the chapter: Want to +..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Quiero viajar. (want)",
+          "hint": "From the chapter: Quiero viajar. (want)..."
+        },
+        {
+          "id": "d3",
+          "audioText": "He/She/It → wants to",
+          "hint": "From the chapter: He/She/It → wants..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch6-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "want to + base verb",
+          "hint": "Practice saying this phrase aloud — from m3-ch6."
+        },
+        {
+          "id": "p2",
+          "phrase": "Quiero viajar. (want)",
+          "hint": "Practice saying this phrase aloud — from m3-ch6."
+        },
+        {
+          "id": "p3",
+          "phrase": "He/She/It → wants to",
+          "hint": "Practice saying this phrase aloud — from m3-ch6."
+        },
+        {
+          "id": "p4",
+          "phrase": "She wants to learn English.",
+          "hint": "Practice saying this phrase aloud — from m3-ch6."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch6-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I want to travel to Japan:",
+          "words": [
+            "I",
+            "want",
+            "to",
+            "travel",
+            "to",
+            "Japan"
+          ],
+          "correct": "I want to travel to Japan"
+        },
+        {
+          "prompt": "Me gusta nadar:",
+          "words": [
+            "I",
+            "like",
+            "swimming"
+          ],
+          "correct": "I like swimming"
+        },
+        {
+          "prompt": "I need to study for the exam:",
+          "words": [
+            "I",
+            "need",
+            "to",
+            "study",
+            "for",
+            "the",
+            "exam"
+          ],
+          "correct": "I need to study for the exam"
+        }
+      ]
+    }
   }
 ]

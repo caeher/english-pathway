@@ -610,5 +610,162 @@
         }
       ]
     }
+  },
+  {
+    "id": "m11-ch5-listening",
+    "type": "listening",
+    "title": "The Interactive Debate Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I strongly believe that exercise is important",
+          "question": "What did you hear?",
+          "options": [
+            "I strongly believe that exercise is important",
+            "This is because it improves both physical and mental health",
+            "For example regular exercise reduces stress levels",
+            "I see your point but I disagree"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I strongly believe that exercise is important\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "This is because it improves both physical and mental health",
+          "question": "What did you hear?",
+          "options": [
+            "This is because it improves both physical and mental health",
+            "I strongly believe that exercise is important",
+            "For example regular exercise reduces stress levels",
+            "I see your point but I disagree"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"This is because it improves both physical and mental health\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "For example regular exercise reduces stress levels",
+          "question": "What did you hear?",
+          "options": [
+            "For example regular exercise reduces stress levels",
+            "I strongly believe that exercise is important",
+            "This is because it improves both physical and mental health",
+            "I see your point but I disagree"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"For example regular exercise reduces stress levels\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I strongly believe that exercise is important",
+          "hint": "From the chapter: I strongly believe..."
+        },
+        {
+          "id": "d2",
+          "audioText": "This is because it improves both physical and mental health",
+          "hint": "From the chapter: This is because..."
+        },
+        {
+          "id": "d3",
+          "audioText": "For example regular exercise reduces stress levels",
+          "hint": "From the chapter: For example regular..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I strongly believe that exercise is important",
+          "hint": "Practice saying this phrase aloud — from m11-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "This is because it improves both physical and mental health",
+          "hint": "Practice saying this phrase aloud — from m11-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "For example regular exercise reduces stress levels",
+          "hint": "Practice saying this phrase aloud — from m11-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "I see your point but I disagree",
+          "hint": "Practice saying this phrase aloud — from m11-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Opinion (O):",
+          "words": [
+            "believe",
+            "I",
+            "that",
+            "strongly",
+            "exercise",
+            "important",
+            "is"
+          ],
+          "correct": "I strongly believe that exercise is important"
+        },
+        {
+          "prompt": "Reason (R):",
+          "words": [
+            "because",
+            "This",
+            "is",
+            "it",
+            "both",
+            "mental",
+            "physical",
+            "health",
+            "and",
+            "improves"
+          ],
+          "correct": "This is because it improves both physical and mental health"
+        },
+        {
+          "prompt": "Ejemplo (E):",
+          "words": [
+            "example",
+            "For",
+            "reduces",
+            "regular",
+            "exercise",
+            "stress",
+            "levels"
+          ],
+          "correct": "For example regular exercise reduces stress levels"
+        }
+      ]
+    }
   }
 ]

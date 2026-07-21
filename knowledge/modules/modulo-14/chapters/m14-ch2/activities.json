@@ -392,5 +392,170 @@
         }
       ]
     }
+  },
+  {
+    "id": "m14-ch2-listening",
+    "type": "listening",
+    "title": "What Kind of Creator Are You? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "What if everything you knew about productivity was wrong",
+          "question": "What did you hear?",
+          "options": [
+            "What if everything you knew about productivity was wrong",
+            "Share this article with someone who needs to hear this",
+            "ENGAGEMENT 💬",
+            "CALL TO ACTION (CTA) 📢"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"What if everything you knew about productivity was wrong\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Share this article with someone who needs to hear this",
+          "question": "What did you hear?",
+          "options": [
+            "Share this article with someone who needs to hear this",
+            "What if everything you knew about productivity was wrong",
+            "ENGAGEMENT 💬",
+            "CALL TO ACTION (CTA) 📢"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Share this article with someone who needs to hear this\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "ENGAGEMENT 💬",
+          "question": "What did you hear?",
+          "options": [
+            "ENGAGEMENT 💬",
+            "What if everything you knew about productivity was wrong",
+            "Share this article with someone who needs to hear this",
+            "CALL TO ACTION (CTA) 📢"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"ENGAGEMENT 💬\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "What if everything you knew about productivity was wrong",
+          "hint": "From the chapter: What if everything..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Share this article with someone who needs to hear this",
+          "hint": "From the chapter: Share this article..."
+        },
+        {
+          "id": "d3",
+          "audioText": "ENGAGEMENT 💬",
+          "hint": "From the chapter: ENGAGEMENT 💬..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "What if everything you knew about productivity was wrong",
+          "hint": "Practice saying this phrase aloud — from m14-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "Share this article with someone who needs to hear this",
+          "hint": "Practice saying this phrase aloud — from m14-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "ENGAGEMENT 💬",
+          "hint": "Practice saying this phrase aloud — from m14-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "CALL TO ACTION (CTA) 📢",
+          "hint": "Practice saying this phrase aloud — from m14-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Build a hook using a rhetorical question about productivity",
+          "words": [
+            "What",
+            "if",
+            "everything",
+            "you",
+            "knew",
+            "about",
+            "productivity",
+            "was",
+            "wrong?"
+          ],
+          "correct": "What if everything you knew about productivity was wrong?"
+        },
+        {
+          "prompt": "Build a hook using a surprising statistic",
+          "words": [
+            "According",
+            "to",
+            "recent",
+            "studies,",
+            "we",
+            "spend",
+            "7",
+            "hours",
+            "daily",
+            "on",
+            "screens."
+          ],
+          "correct": "According to recent studies, we spend 7 hours daily on screens."
+        },
+        {
+          "prompt": "Build a hook using a hypothetical scenario",
+          "words": [
+            "Imagine",
+            "a",
+            "world",
+            "where",
+            "you",
+            "could",
+            "learn",
+            "any",
+            "language",
+            "in",
+            "30",
+            "days."
+          ],
+          "correct": "Imagine a world where you could learn any language in 30 days."
+        }
+      ]
+    }
   }
 ]

@@ -553,5 +553,156 @@
         }
       ]
     }
+  },
+  {
+    "id": "m11-ch2-listening",
+    "type": "listening",
+    "title": "Activa, Pasiva o Ambas Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "The meal is cooked by the chef",
+          "question": "What did you hear?",
+          "options": [
+            "The meal is cooked by the chef",
+            "The bridge was built in 1950",
+            "J.K. Rowling wrote the book",
+            "English is spoken worldwide"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The meal is cooked by the chef\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "The bridge was built in 1950",
+          "question": "What did you hear?",
+          "options": [
+            "The bridge was built in 1950",
+            "The meal is cooked by the chef",
+            "J.K. Rowling wrote the book",
+            "English is spoken worldwide"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The bridge was built in 1950\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "J.K. Rowling wrote the book",
+          "question": "What did you hear?",
+          "options": [
+            "J.K. Rowling wrote the book",
+            "The meal is cooked by the chef",
+            "The bridge was built in 1950",
+            "English is spoken worldwide"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"J.K. Rowling wrote the book\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "The meal is cooked by the chef",
+          "hint": "From the chapter: The meal is..."
+        },
+        {
+          "id": "d2",
+          "audioText": "The bridge was built in 1950",
+          "hint": "From the chapter: The bridge was..."
+        },
+        {
+          "id": "d3",
+          "audioText": "J.K. Rowling wrote the book",
+          "hint": "From the chapter: J.K. Rowling wrote..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "The meal is cooked by the chef",
+          "hint": "Practice saying this phrase aloud — from m11-ch2."
+        },
+        {
+          "id": "p2",
+          "phrase": "The bridge was built in 1950",
+          "hint": "Practice saying this phrase aloud — from m11-ch2."
+        },
+        {
+          "id": "p3",
+          "phrase": "J.K. Rowling wrote the book",
+          "hint": "Practice saying this phrase aloud — from m11-ch2."
+        },
+        {
+          "id": "p4",
+          "phrase": "English is spoken worldwide",
+          "hint": "Practice saying this phrase aloud — from m11-ch2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Activa → Pasiva: \"The chef cooks the meal.\"",
+          "words": [
+            "The",
+            "meal",
+            "is",
+            "cooked",
+            "by",
+            "the",
+            "chef"
+          ],
+          "correct": "The meal is cooked by the chef"
+        },
+        {
+          "prompt": "Activa → Pasiva: \"They built the bridge in 1950.\"",
+          "words": [
+            "The",
+            "bridge",
+            "was",
+            "built",
+            "in",
+            "1950"
+          ],
+          "correct": "The bridge was built in 1950"
+        },
+        {
+          "prompt": "Pasiva → Activa: \"The book was written by J.K. Rowling.\"",
+          "words": [
+            "J.K.",
+            "Rowling",
+            "wrote",
+            "the",
+            "book"
+          ],
+          "correct": "J.K. Rowling wrote the book"
+        }
+      ]
+    }
   }
 ]

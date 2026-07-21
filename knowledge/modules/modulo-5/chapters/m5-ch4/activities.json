@@ -414,5 +414,148 @@
         }
       ]
     }
+  },
+  {
+    "id": "m5-ch4-listening",
+    "type": "listening",
+    "title": "Quiz: Nature of Participles Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Perfect = have + pp. Passive = be + pp",
+          "question": "What did you hear?",
+          "options": [
+            "Perfect = have + pp. Passive = be + pp",
+            "Are participles verb tenses?",
+            "Used in: continuous (am working), gerund (Swimming is fun)",
+            "Present participle form?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Perfect = have + pp. Passive = be + pp\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Are participles verb tenses?",
+          "question": "What did you hear?",
+          "options": [
+            "Are participles verb tenses?",
+            "Perfect = have + pp. Passive = be + pp",
+            "Used in: continuous (am working), gerund (Swimming is fun)",
+            "Present participle form?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Are participles verb tenses?\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Used in: continuous (am working), gerund (Swimming is fun)",
+          "question": "What did you hear?",
+          "options": [
+            "Used in: continuous (am working), gerund (Swimming is fun)",
+            "Perfect = have + pp. Passive = be + pp",
+            "Are participles verb tenses?",
+            "Present participle form?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Used in: continuous (am working), gerund (Swimming is fun)\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Perfect = have + pp. Passive = be + pp",
+          "hint": "From the chapter: Perfect = have..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Are participles verb tenses?",
+          "hint": "From the chapter: Are participles verb..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Used in: continuous (am working), gerund (Swimming is fun)",
+          "hint": "From the chapter: Used in: continuous..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Perfect = have + pp. Passive = be + pp",
+          "hint": "Practice saying this phrase aloud — from m5-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "Are participles verb tenses?",
+          "hint": "Practice saying this phrase aloud — from m5-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "Used in: continuous (am working), gerund (Swimming is fun)",
+          "hint": "Practice saying this phrase aloud — from m5-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "Present participle form?",
+          "hint": "Practice saying this phrase aloud — from m5-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Ella ha comido (present participle or past participle?):",
+          "words": [
+            "She",
+            "has",
+            "eaten"
+          ],
+          "correct": "She has eaten"
+        },
+        {
+          "prompt": "He is working (what participle?):",
+          "words": [
+            "She",
+            "is",
+            "working"
+          ],
+          "correct": "She is working"
+        },
+        {
+          "prompt": "The car was stolen:",
+          "words": [
+            "The",
+            "car",
+            "was",
+            "stolen"
+          ],
+          "correct": "The car was stolen"
+        }
+      ]
+    }
   }
 ]

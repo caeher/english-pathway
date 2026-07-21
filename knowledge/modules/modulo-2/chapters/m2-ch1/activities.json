@@ -495,5 +495,151 @@
         }
       ]
     }
+  },
+  {
+    "id": "m2-ch1-listening",
+    "type": "listening",
+    "title": "Quiz: Presente Simple Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I work at a bank. She works at a school",
+          "question": "What did you hear?",
+          "options": [
+            "I work at a bank. She works at a school",
+            "I play tennis. He plays soccer",
+            "I watch TV. She watches movies",
+            "I study English. He studies math"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I work at a bank. She works at a school\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I play tennis. He plays soccer",
+          "question": "What did you hear?",
+          "options": [
+            "I play tennis. He plays soccer",
+            "I work at a bank. She works at a school",
+            "I watch TV. She watches movies",
+            "I study English. He studies math"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I play tennis. He plays soccer\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "I watch TV. She watches movies",
+          "question": "What did you hear?",
+          "options": [
+            "I watch TV. She watches movies",
+            "I work at a bank. She works at a school",
+            "I play tennis. He plays soccer",
+            "I study English. He studies math"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I watch TV. She watches movies\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I work at a bank. She works at a school",
+          "hint": "From the chapter: I work at..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I play tennis. He plays soccer",
+          "hint": "From the chapter: I play tennis...."
+        },
+        {
+          "id": "d3",
+          "audioText": "I watch TV. She watches movies",
+          "hint": "From the chapter: I watch TV...."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I work at a bank. She works at a school",
+          "hint": "Practice saying this phrase aloud — from m2-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "I play tennis. He plays soccer",
+          "hint": "Practice saying this phrase aloud — from m2-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "I watch TV. She watches movies",
+          "hint": "Practice saying this phrase aloud — from m2-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "I study English. He studies math",
+          "hint": "Practice saying this phrase aloud — from m2-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m2-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "She works in a hospital:",
+          "words": [
+            "works",
+            "She",
+            "in",
+            "a",
+            "hospital"
+          ],
+          "correct": "She works in a hospital"
+        },
+        {
+          "prompt": "I don't drink coffee:",
+          "words": [
+            "don't",
+            "I",
+            "drink",
+            "coffee"
+          ],
+          "correct": "I don't drink coffee"
+        },
+        {
+          "prompt": "Do you study English?:",
+          "words": [
+            "you",
+            "Do",
+            "study",
+            "English?"
+          ],
+          "correct": "Do you study English?"
+        }
+      ]
+    }
   }
 ]

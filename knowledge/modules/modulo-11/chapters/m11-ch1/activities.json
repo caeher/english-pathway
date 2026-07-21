@@ -574,5 +574,155 @@
         }
       ]
     }
+  },
+  {
+    "id": "m11-ch1-listening",
+    "type": "listening",
+    "title": "Past Simple or Present Perfect? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Have you ever been to Japan",
+          "question": "What did you hear?",
+          "options": [
+            "Have you ever been to Japan",
+            "She has just finished her homework",
+            "I have never tried sushi",
+            "We have lived here for five years"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Have you ever been to Japan\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "She has just finished her homework",
+          "question": "What did you hear?",
+          "options": [
+            "She has just finished her homework",
+            "Have you ever been to Japan",
+            "I have never tried sushi",
+            "We have lived here for five years"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She has just finished her homework\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "I have never tried sushi",
+          "question": "What did you hear?",
+          "options": [
+            "I have never tried sushi",
+            "Have you ever been to Japan",
+            "She has just finished her homework",
+            "We have lived here for five years"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I have never tried sushi\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Have you ever been to Japan",
+          "hint": "From the chapter: Have you ever..."
+        },
+        {
+          "id": "d2",
+          "audioText": "She has just finished her homework",
+          "hint": "From the chapter: She has just..."
+        },
+        {
+          "id": "d3",
+          "audioText": "I have never tried sushi",
+          "hint": "From the chapter: I have never..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Have you ever been to Japan",
+          "hint": "Practice saying this phrase aloud — from m11-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "She has just finished her homework",
+          "hint": "Practice saying this phrase aloud — from m11-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "I have never tried sushi",
+          "hint": "Practice saying this phrase aloud — from m11-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "We have lived here for five years",
+          "hint": "Practice saying this phrase aloud — from m11-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m11-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Travel question:",
+          "words": [
+            "you",
+            "Have",
+            "to",
+            "been",
+            "Japan?",
+            "ever"
+          ],
+          "correct": "Have you ever been to Japan?"
+        },
+        {
+          "prompt": "Talk about an achievement:",
+          "words": [
+            "has",
+            "She",
+            "finished",
+            "just",
+            "homework",
+            "her"
+          ],
+          "correct": "She has just finished her homework"
+        },
+        {
+          "prompt": "Speaks from experience:",
+          "words": [
+            "have",
+            "I",
+            "sushi",
+            "tried",
+            "never"
+          ],
+          "correct": "I have never tried sushi"
+        }
+      ]
+    }
   }
 ]

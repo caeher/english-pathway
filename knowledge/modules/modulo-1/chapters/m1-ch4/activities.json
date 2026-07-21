@@ -637,5 +637,82 @@
         }
       ]
     }
+  },
+  {
+    "id": "m1-ch4-listening",
+    "type": "listening",
+    "title": "Nouns and Articles Listening",
+    "description": "Listen and identify nouns and articles.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "an apple",
+          "question": "Which article did you hear?",
+          "options": ["a", "an", "the", "some"],
+          "correct": 1,
+          "explanation": "An is used before vowel sounds — an apple."
+        },
+        {
+          "id": "l2",
+          "audioText": "the book on the table",
+          "question": "Which article indicates something specific?",
+          "options": ["a", "an", "the", "some"],
+          "correct": 2,
+          "explanation": "The refers to a specific book already mentioned or known."
+        },
+        {
+          "id": "l3",
+          "audioText": "children",
+          "question": "What plural form did you hear?",
+          "options": ["childs", "children", "childes", "child"],
+          "correct": 1,
+          "explanation": "Children is the irregular plural of child."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch4-dictation",
+    "type": "dictation",
+    "title": "Noun Dictation",
+    "description": "Listen and write the noun phrase you hear.",
+    "props": {
+      "items": [
+        { "id": "d1", "audioText": "a book", "hint": "Indefinite article + consonant noun" },
+        { "id": "d2", "audioText": "an hour", "hint": "Silent h — use an" },
+        { "id": "d3", "audioText": "some water", "hint": "Uncountable noun with quantifier" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Article Pronunciation",
+    "description": "Practice pronouncing articles and plural forms.",
+    "props": {
+      "items": [
+        { "id": "p1", "phrase": "an umbrella", "hint": "AN before vowel sound /ʌ/" },
+        { "id": "p2", "phrase": "a university", "hint": "A before /juː/ sound — not a vowel" },
+        { "id": "p3", "phrase": "the sun", "hint": "THE for unique things — /ðə/ or /ðiː/" },
+        { "id": "p4", "phrase": "children", "hint": "Irregular plural — /ˈtʃɪldrən/" }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Match Noun Types",
+    "description": "Drag each noun to its correct category.",
+    "props": {
+      "mode": "match",
+      "pairs": [
+        { "left": "London", "right": "Proper noun" },
+        { "left": "happiness", "right": "Abstract noun" },
+        { "left": "book", "right": "Concrete noun" },
+        { "left": "water", "right": "Uncountable noun" },
+        { "left": "children", "right": "Irregular plural" }
+      ]
+    }
   }
 ]

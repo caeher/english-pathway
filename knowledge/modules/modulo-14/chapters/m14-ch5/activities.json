@@ -406,5 +406,174 @@
         }
       ]
     }
+  },
+  {
+    "id": "m14-ch5-listening",
+    "type": "listening",
+    "title": "What's Stopping Me? Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I can't speak fluently yet, but I am improving every day",
+          "question": "What did you hear?",
+          "options": [
+            "I can't speak fluently yet, but I am improving every day",
+            "I only compare myself with who I was three months ago",
+            "I have completed 35 chapters and I am proud of my progress",
+            "❌ \"I'm not good at English.\" (Fixed)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I can't speak fluently yet, but I am improving every day\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I only compare myself with who I was three months ago",
+          "question": "What did you hear?",
+          "options": [
+            "I only compare myself with who I was three months ago",
+            "I can't speak fluently yet, but I am improving every day",
+            "I have completed 35 chapters and I am proud of my progress",
+            "❌ \"I'm not good at English.\" (Fixed)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I only compare myself with who I was three months ago\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "I have completed 35 chapters and I am proud of my progress",
+          "question": "What did you hear?",
+          "options": [
+            "I have completed 35 chapters and I am proud of my progress",
+            "I can't speak fluently yet, but I am improving every day",
+            "I only compare myself with who I was three months ago",
+            "❌ \"I'm not good at English.\" (Fixed)"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I have completed 35 chapters and I am proud of my progress\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I can't speak fluently yet, but I am improving every day",
+          "hint": "From the chapter: I can't speak..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I only compare myself with who I was three months ago",
+          "hint": "From the chapter: I only compare..."
+        },
+        {
+          "id": "d3",
+          "audioText": "I have completed 35 chapters and I am proud of my progress",
+          "hint": "From the chapter: I have completed..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I can't speak fluently yet, but I am improving every day",
+          "hint": "Practice saying this phrase aloud — from m14-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "I only compare myself with who I was three months ago",
+          "hint": "Practice saying this phrase aloud — from m14-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "I have completed 35 chapters and I am proud of my progress",
+          "hint": "Practice saying this phrase aloud — from m14-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "❌ \"I'm not good at English.\" (Fixed)",
+          "hint": "Practice saying this phrase aloud — from m14-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m14-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Build a commitment using If-Then planning",
+          "words": [
+            "If",
+            "I",
+            "feel",
+            "like",
+            "skipping",
+            "practice,",
+            "then",
+            "I",
+            "will",
+            "do",
+            "just",
+            "one",
+            "flashcard."
+          ],
+          "correct": "If I feel like skipping practice, then I will do just one flashcard."
+        },
+        {
+          "prompt": "Build a sentence about why you learn English",
+          "words": [
+            "I",
+            "am",
+            "learning",
+            "English",
+            "because",
+            "I",
+            "want",
+            "to",
+            "connect",
+            "with",
+            "people",
+            "worldwide."
+          ],
+          "correct": "I am learning English because I want to connect with people worldwide."
+        },
+        {
+          "prompt": "Build a growth mindset statement",
+          "words": [
+            "I",
+            "can't",
+            "speak",
+            "fluently",
+            "yet,",
+            "but",
+            "I",
+            "am",
+            "improving",
+            "every",
+            "day."
+          ],
+          "correct": "I can't speak fluently yet, but I am improving every day."
+        }
+      ]
+    }
   }
 ]

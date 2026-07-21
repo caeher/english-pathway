@@ -492,5 +492,157 @@
         }
       ]
     }
+  },
+  {
+    "id": "m3-ch3-listening",
+    "type": "listening",
+    "title": "Quiz: Pasado Continuo Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I/He/She/It → was + -ing",
+          "question": "What did you hear?",
+          "options": [
+            "I/He/She/It → was + -ing",
+            "You/We/They → were + -ing",
+            "Continuous action interrupted by simple past",
+            "while + continuous, simple interrupts"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I/He/She/It → was + -ing\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "You/We/They → were + -ing",
+          "question": "What did you hear?",
+          "options": [
+            "You/We/They → were + -ing",
+            "I/He/She/It → was + -ing",
+            "Continuous action interrupted by simple past",
+            "while + continuous, simple interrupts"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"You/We/They → were + -ing\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Continuous action interrupted by simple past",
+          "question": "What did you hear?",
+          "options": [
+            "Continuous action interrupted by simple past",
+            "I/He/She/It → was + -ing",
+            "You/We/They → were + -ing",
+            "while + continuous, simple interrupts"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Continuous action interrupted by simple past\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I/He/She/It → was + -ing",
+          "hint": "From the chapter: I/He/She/It → was..."
+        },
+        {
+          "id": "d2",
+          "audioText": "You/We/They → were + -ing",
+          "hint": "From the chapter: You/We/They → were..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Continuous action interrupted by simple past",
+          "hint": "From the chapter: Continuous action interrupted..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I/He/She/It → was + -ing",
+          "hint": "Practice saying this phrase aloud — from m3-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "You/We/They → were + -ing",
+          "hint": "Practice saying this phrase aloud — from m3-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "Continuous action interrupted by simple past",
+          "hint": "Practice saying this phrase aloud — from m3-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "while + continuous, simple interrupts",
+          "hint": "Practice saying this phrase aloud — from m3-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m3-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I was watching TV at 9:",
+          "words": [
+            "I",
+            "was",
+            "watching",
+            "TV",
+            "at",
+            "9"
+          ],
+          "correct": "I was watching TV at 9"
+        },
+        {
+          "prompt": "She was cooking when he arrived:",
+          "words": [
+            "She",
+            "was",
+            "cooking",
+            "when",
+            "he",
+            "arrived"
+          ],
+          "correct": "She was cooking when he arrived"
+        },
+        {
+          "prompt": "While it was raining, we read:",
+          "words": [
+            "While",
+            "it",
+            "was",
+            "raining",
+            "we",
+            "were",
+            "reading"
+          ],
+          "correct": "While it was raining we were reading"
+        }
+      ]
+    }
   }
 ]

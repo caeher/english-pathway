@@ -405,5 +405,158 @@
         }
       ]
     }
+  },
+  {
+    "id": "m5-ch3-listening",
+    "type": "listening",
+    "title": "Quiz: Pasado Perfecto Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "She left BEFORE I arrived",
+          "question": "What did you hear?",
+          "options": [
+            "She left BEFORE I arrived",
+            "When I arrived, she ___ (leave).",
+            "Finished FIRST, then movie started",
+            "First experience: never...before"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She left BEFORE I arrived\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "When I arrived, she ___ (leave).",
+          "question": "What did you hear?",
+          "options": [
+            "When I arrived, she ___ (leave).",
+            "She left BEFORE I arrived",
+            "Finished FIRST, then movie started",
+            "First experience: never...before"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"When I arrived, she ___ (leave).\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Finished FIRST, then movie started",
+          "question": "What did you hear?",
+          "options": [
+            "Finished FIRST, then movie started",
+            "She left BEFORE I arrived",
+            "When I arrived, she ___ (leave).",
+            "First experience: never...before"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Finished FIRST, then movie started\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "She left BEFORE I arrived",
+          "hint": "From the chapter: She left BEFORE..."
+        },
+        {
+          "id": "d2",
+          "audioText": "When I arrived, she ___ (leave).",
+          "hint": "From the chapter: When I arrived,..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Finished FIRST, then movie started",
+          "hint": "From the chapter: Finished FIRST, then..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "She left BEFORE I arrived",
+          "hint": "Practice saying this phrase aloud — from m5-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "When I arrived, she ___ (leave).",
+          "hint": "Practice saying this phrase aloud — from m5-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "Finished FIRST, then movie started",
+          "hint": "Practice saying this phrase aloud — from m5-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "First experience: never...before",
+          "hint": "Practice saying this phrase aloud — from m5-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "When I arrived, she was already gone:",
+          "words": [
+            "When",
+            "I",
+            "arrived,",
+            "she",
+            "had",
+            "already",
+            "left"
+          ],
+          "correct": "When I arrived, she had already left"
+        },
+        {
+          "prompt": "They were finished before the movie started:",
+          "words": [
+            "They",
+            "had",
+            "finished",
+            "before",
+            "the",
+            "movie",
+            "started"
+          ],
+          "correct": "They had finished before the movie started"
+        },
+        {
+          "prompt": "I've never seen snow before:",
+          "words": [
+            "I",
+            "had",
+            "never",
+            "seen",
+            "snow",
+            "before"
+          ],
+          "correct": "I had never seen snow before"
+        }
+      ]
+    }
   }
 ]

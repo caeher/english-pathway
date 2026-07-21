@@ -348,5 +348,140 @@
         }
       ]
     }
+  },
+  {
+    "id": "m8-ch3-listening",
+    "type": "listening",
+    "title": "Minimal Pairs Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Place your tongue between your teeth and blow air gently",
+          "question": "What did you hear?",
+          "options": [
+            "Place your tongue between your teeth and blow air gently",
+            "Like /θ/ but with vibration in the throat",
+            "Open your mouth more than for \"e\" but less than for \"a\"",
+            "A relaxed and short \"a\". The mouth barely opens"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Place your tongue between your teeth and blow air gently\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Like /θ/ but with vibration in the throat",
+          "question": "What did you hear?",
+          "options": [
+            "Like /θ/ but with vibration in the throat",
+            "Place your tongue between your teeth and blow air gently",
+            "Open your mouth more than for \"e\" but less than for \"a\"",
+            "A relaxed and short \"a\". The mouth barely opens"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Like /θ/ but with vibration in the throat\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Open your mouth more than for \"e\" but less than for \"a\"",
+          "question": "What did you hear?",
+          "options": [
+            "Open your mouth more than for \"e\" but less than for \"a\"",
+            "Place your tongue between your teeth and blow air gently",
+            "Like /θ/ but with vibration in the throat",
+            "A relaxed and short \"a\". The mouth barely opens"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Open your mouth more than for \"e\" but less than for \"a\"\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Place your tongue between your teeth and blow air gently",
+          "hint": "From the chapter: Place your tongue..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Like /θ/ but with vibration in the throat",
+          "hint": "From the chapter: Like /θ/ but..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Open your mouth more than for \"e\" but less than for \"a\"",
+          "hint": "From the chapter: Open your mouth..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Place your tongue between your teeth and blow air gently",
+          "hint": "Practice saying this phrase aloud — from m8-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "Like /θ/ but with vibration in the throat",
+          "hint": "Practice saying this phrase aloud — from m8-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "Open your mouth more than for \"e\" but less than for \"a\"",
+          "hint": "Practice saying this phrase aloud — from m8-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "A relaxed and short \"a\". The mouth barely opens",
+          "hint": "Practice saying this phrase aloud — from m8-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Drag and Match",
+    "description": "Drag items to their correct match.",
+    "props": {
+      "mode": "match",
+      "pairs": [
+        {
+          "left": "/θ/",
+          "right": "think"
+        },
+        {
+          "left": "/ð/",
+          "right": "this"
+        },
+        {
+          "left": "/æ/",
+          "right": "cat"
+        },
+        {
+          "left": "/ʌ/",
+          "right": "cup"
+        },
+        {
+          "left": "/ɪ/",
+          "right": "ship"
+        }
+      ]
+    }
   }
 ]

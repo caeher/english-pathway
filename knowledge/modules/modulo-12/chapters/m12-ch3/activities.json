@@ -452,5 +452,159 @@
         }
       ]
     }
+  },
+  {
+    "id": "m12-ch3-listening",
+    "type": "listening",
+    "title": "Multilevel Understanding Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "The podcast discussed solutions to climate change",
+          "question": "What did you hear?",
+          "options": [
+            "The podcast discussed solutions to climate change",
+            "The speaker argued that individual action matters",
+            "It concluded by calling for policy changes",
+            "The experts agreed that technology enhances learning"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The podcast discussed solutions to climate change\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "The speaker argued that individual action matters",
+          "question": "What did you hear?",
+          "options": [
+            "The speaker argued that individual action matters",
+            "The podcast discussed solutions to climate change",
+            "It concluded by calling for policy changes",
+            "The experts agreed that technology enhances learning"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"The speaker argued that individual action matters\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "It concluded by calling for policy changes",
+          "question": "What did you hear?",
+          "options": [
+            "It concluded by calling for policy changes",
+            "The podcast discussed solutions to climate change",
+            "The speaker argued that individual action matters",
+            "The experts agreed that technology enhances learning"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"It concluded by calling for policy changes\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "The podcast discussed solutions to climate change",
+          "hint": "From the chapter: The podcast discussed..."
+        },
+        {
+          "id": "d2",
+          "audioText": "The speaker argued that individual action matters",
+          "hint": "From the chapter: The speaker argued..."
+        },
+        {
+          "id": "d3",
+          "audioText": "It concluded by calling for policy changes",
+          "hint": "From the chapter: It concluded by..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "The podcast discussed solutions to climate change",
+          "hint": "Practice saying this phrase aloud — from m12-ch3."
+        },
+        {
+          "id": "p2",
+          "phrase": "The speaker argued that individual action matters",
+          "hint": "Practice saying this phrase aloud — from m12-ch3."
+        },
+        {
+          "id": "p3",
+          "phrase": "It concluded by calling for policy changes",
+          "hint": "Practice saying this phrase aloud — from m12-ch3."
+        },
+        {
+          "id": "p4",
+          "phrase": "The experts agreed that technology enhances learning",
+          "hint": "Practice saying this phrase aloud — from m12-ch3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m12-ch3-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Summarize the podcast about climate change",
+          "words": [
+            "The",
+            "podcast",
+            "discussed",
+            "solutions",
+            "to",
+            "climate",
+            "change."
+          ],
+          "correct": "The podcast discussed solutions to climate change."
+        },
+        {
+          "prompt": "Summarize the speaker's main argument",
+          "words": [
+            "The",
+            "speaker",
+            "argued",
+            "that",
+            "individual",
+            "action",
+            "matters."
+          ],
+          "correct": "The speaker argued that individual action matters."
+        },
+        {
+          "prompt": "Summarize the conclusion",
+          "words": [
+            "It",
+            "concluded",
+            "by",
+            "calling",
+            "for",
+            "policy",
+            "changes."
+          ],
+          "correct": "It concluded by calling for policy changes."
+        }
+      ]
+    }
   }
 ]

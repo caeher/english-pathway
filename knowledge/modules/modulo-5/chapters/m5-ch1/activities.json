@@ -493,5 +493,153 @@
         }
       ]
     }
+  },
+  {
+    "id": "m5-ch1-listening",
+    "type": "listening",
+    "title": "Quiz: Presente Perfecto Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Regular: visit → visited",
+          "question": "What did you hear?",
+          "options": [
+            "Regular: visit → visited",
+            "Irregular: see → seen",
+            "Irregular: eat → eaten",
+            "Irregular: be → been"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Regular: visit → visited\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "Irregular: see → seen",
+          "question": "What did you hear?",
+          "options": [
+            "Irregular: see → seen",
+            "Regular: visit → visited",
+            "Irregular: eat → eaten",
+            "Irregular: be → been"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Irregular: see → seen\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Irregular: eat → eaten",
+          "question": "What did you hear?",
+          "options": [
+            "Irregular: eat → eaten",
+            "Regular: visit → visited",
+            "Irregular: see → seen",
+            "Irregular: be → been"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Irregular: eat → eaten\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Regular: visit → visited",
+          "hint": "From the chapter: Regular: visit →..."
+        },
+        {
+          "id": "d2",
+          "audioText": "Irregular: see → seen",
+          "hint": "From the chapter: Irregular: see →..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Irregular: eat → eaten",
+          "hint": "From the chapter: Irregular: eat →..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Regular: visit → visited",
+          "hint": "Practice saying this phrase aloud — from m5-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "Irregular: see → seen",
+          "hint": "Practice saying this phrase aloud — from m5-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "Irregular: eat → eaten",
+          "hint": "Practice saying this phrase aloud — from m5-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "Irregular: be → been",
+          "hint": "Practice saying this phrase aloud — from m5-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m5-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "I have visited Paris:",
+          "words": [
+            "I",
+            "have",
+            "visited",
+            "Paris"
+          ],
+          "correct": "I have visited Paris"
+        },
+        {
+          "prompt": "Have you ever been to Japan?:",
+          "words": [
+            "Have",
+            "you",
+            "ever",
+            "been",
+            "to",
+            "Japan?"
+          ],
+          "correct": "Have you ever been to Japan?"
+        },
+        {
+          "prompt": "Nunca he comido sushi:",
+          "words": [
+            "I",
+            "have",
+            "never",
+            "eaten",
+            "sushi"
+          ],
+          "correct": "I have never eaten sushi"
+        }
+      ]
+    }
   }
 ]

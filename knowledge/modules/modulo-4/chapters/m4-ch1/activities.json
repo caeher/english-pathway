@@ -469,5 +469,150 @@
         }
       ]
     }
+  },
+  {
+    "id": "m4-ch1-listening",
+    "type": "listening",
+    "title": "Quiz: Adjetivos y Adverbios Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "He drives slowly",
+          "question": "What did you hear?",
+          "options": [
+            "He drives slowly",
+            "slow → ?",
+            "She runs quickly",
+            "quick → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"He drives slowly\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "slow → ?",
+          "question": "What did you hear?",
+          "options": [
+            "slow → ?",
+            "He drives slowly",
+            "She runs quickly",
+            "quick → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"slow → ?\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "She runs quickly",
+          "question": "What did you hear?",
+          "options": [
+            "She runs quickly",
+            "He drives slowly",
+            "slow → ?",
+            "quick → ?"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"She runs quickly\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "He drives slowly",
+          "hint": "From the chapter: He drives slowly..."
+        },
+        {
+          "id": "d2",
+          "audioText": "slow → ?",
+          "hint": "From the chapter: Slow → ?..."
+        },
+        {
+          "id": "d3",
+          "audioText": "She runs quickly",
+          "hint": "From the chapter: She runs quickly..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "He drives slowly",
+          "hint": "Practice saying this phrase aloud — from m4-ch1."
+        },
+        {
+          "id": "p2",
+          "phrase": "slow → ?",
+          "hint": "Practice saying this phrase aloud — from m4-ch1."
+        },
+        {
+          "id": "p3",
+          "phrase": "She runs quickly",
+          "hint": "Practice saying this phrase aloud — from m4-ch1."
+        },
+        {
+          "id": "p4",
+          "phrase": "quick → ?",
+          "hint": "Practice saying this phrase aloud — from m4-ch1."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m4-ch1-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Ella canta bien:",
+          "words": [
+            "She",
+            "sings",
+            "well"
+          ],
+          "correct": "She sings well"
+        },
+        {
+          "prompt": "He is a good driver:",
+          "words": [
+            "He",
+            "is",
+            "a",
+            "good",
+            "driver"
+          ],
+          "correct": "He is a good driver"
+        },
+        {
+          "prompt": "She speaks Spanish fluently:",
+          "words": [
+            "She",
+            "speaks",
+            "Spanish",
+            "fluently"
+          ],
+          "correct": "She speaks Spanish fluently"
+        }
+      ]
+    }
   }
 ]

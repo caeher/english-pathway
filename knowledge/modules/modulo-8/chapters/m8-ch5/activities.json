@@ -489,5 +489,151 @@
         }
       ]
     }
+  },
+  {
+    "id": "m8-ch5-listening",
+    "type": "listening",
+    "title": "Conversational Quiz — Choose the Best Answer Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "I'd like a coffee, please",
+          "question": "What did you hear?",
+          "options": [
+            "I'd like a coffee, please",
+            "I have a reservation",
+            "My name is Carlos",
+            "I'm from Mexico"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I'd like a coffee, please\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "I have a reservation",
+          "question": "What did you hear?",
+          "options": [
+            "I have a reservation",
+            "I'd like a coffee, please",
+            "My name is Carlos",
+            "I'm from Mexico"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"I have a reservation\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "My name is Carlos",
+          "question": "What did you hear?",
+          "options": [
+            "My name is Carlos",
+            "I'd like a coffee, please",
+            "I have a reservation",
+            "I'm from Mexico"
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"My name is Carlos\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "I'd like a coffee, please",
+          "hint": "From the chapter: I'd like a..."
+        },
+        {
+          "id": "d2",
+          "audioText": "I have a reservation",
+          "hint": "From the chapter: I have a..."
+        },
+        {
+          "id": "d3",
+          "audioText": "My name is Carlos",
+          "hint": "From the chapter: My name is..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "I'd like a coffee, please",
+          "hint": "Practice saying this phrase aloud — from m8-ch5."
+        },
+        {
+          "id": "p2",
+          "phrase": "I have a reservation",
+          "hint": "Practice saying this phrase aloud — from m8-ch5."
+        },
+        {
+          "id": "p3",
+          "phrase": "My name is Carlos",
+          "hint": "Practice saying this phrase aloud — from m8-ch5."
+        },
+        {
+          "id": "p4",
+          "phrase": "I'm from Mexico",
+          "hint": "Practice saying this phrase aloud — from m8-ch5."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m8-ch5-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "Waiter: \"Here's the menu. What would you like?\"",
+          "words": [
+            "a",
+            "I'd",
+            "please",
+            "coffee,",
+            "like"
+          ],
+          "correct": "I'd like a coffee, please"
+        },
+        {
+          "prompt": "Receptionist: \"Good morning! How can I help you?\"",
+          "words": [
+            "have",
+            "a",
+            "I",
+            "reservation"
+          ],
+          "correct": "I have a reservation"
+        },
+        {
+          "prompt": "\"What's your name?\"",
+          "words": [
+            "is",
+            "name",
+            "My",
+            "Carlos"
+          ],
+          "correct": "My name is Carlos"
+        }
+      ]
+    }
   }
 ]

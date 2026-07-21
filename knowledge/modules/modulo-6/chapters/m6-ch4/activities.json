@@ -336,5 +336,167 @@
         }
       ]
     }
+  },
+  {
+    "id": "m6-ch4-listening",
+    "type": "listening",
+    "title": "Quiz: Mixed Conditional Listening",
+    "description": "Listen and choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Third: both past",
+          "question": "What did you hear?",
+          "options": [
+            "Third: both past",
+            "If I ___ (study) harder, I ___ (pass).",
+            "Third conditional",
+            "If she ___ (know), she ___ (come)."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Third: both past\"."
+        },
+        {
+          "id": "l2",
+          "audioText": "If I ___ (study) harder, I ___ (pass).",
+          "question": "What did you hear?",
+          "options": [
+            "If I ___ (study) harder, I ___ (pass).",
+            "Third: both past",
+            "Third conditional",
+            "If she ___ (know), she ___ (come)."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"If I ___ (study) harder, I ___ (pass).\"."
+        },
+        {
+          "id": "l3",
+          "audioText": "Third conditional",
+          "question": "What did you hear?",
+          "options": [
+            "Third conditional",
+            "Third: both past",
+            "If I ___ (study) harder, I ___ (pass).",
+            "If she ___ (know), she ___ (come)."
+          ],
+          "correct": 0,
+          "explanation": "You heard: \"Third conditional\"."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-dictation",
+    "type": "dictation",
+    "title": "Dictation Practice",
+    "description": "Listen and write what you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "Third: both past",
+          "hint": "From the chapter: Third: both past..."
+        },
+        {
+          "id": "d2",
+          "audioText": "If I ___ (study) harder, I ___ (pass).",
+          "hint": "From the chapter: If I ___..."
+        },
+        {
+          "id": "d3",
+          "audioText": "Third conditional",
+          "hint": "From the chapter: Third conditional..."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-pronunciation",
+    "type": "pronunciation",
+    "title": "Pronunciation Practice",
+    "description": "Listen and repeat the key phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Third: both past",
+          "hint": "Practice saying this phrase aloud — from m6-ch4."
+        },
+        {
+          "id": "p2",
+          "phrase": "If I ___ (study) harder, I ___ (pass).",
+          "hint": "Practice saying this phrase aloud — from m6-ch4."
+        },
+        {
+          "id": "p3",
+          "phrase": "Third conditional",
+          "hint": "Practice saying this phrase aloud — from m6-ch4."
+        },
+        {
+          "id": "p4",
+          "phrase": "If she ___ (know), she ___ (come).",
+          "hint": "Practice saying this phrase aloud — from m6-ch4."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m6-ch4-dragdrop",
+    "type": "drag-drop",
+    "title": "Build the Sentence",
+    "description": "Drag words into the correct order.",
+    "props": {
+      "mode": "sentence",
+      "sentences": [
+        {
+          "prompt": "If I had studied more, I would have passed:",
+          "words": [
+            "If",
+            "I",
+            "had",
+            "studied",
+            "harder,",
+            "I",
+            "would",
+            "have",
+            "passed"
+          ],
+          "correct": "If I had studied harder, I would have passed"
+        },
+        {
+          "prompt": "If she had known, she would have come:",
+          "words": [
+            "If",
+            "she",
+            "had",
+            "known,",
+            "she",
+            "would",
+            "have",
+            "come"
+          ],
+          "correct": "If she had known, she would have come"
+        },
+        {
+          "prompt": "If I had gone to bed earlier, I wouldn't be so tired:",
+          "words": [
+            "If",
+            "I",
+            "had",
+            "gone",
+            "to",
+            "bed",
+            "earlier,",
+            "I",
+            "wouldn't",
+            "be",
+            "so",
+            "tired"
+          ],
+          "correct": "If I had gone to bed earlier, I wouldn't be so tired"
+        }
+      ]
+    }
   }
 ]

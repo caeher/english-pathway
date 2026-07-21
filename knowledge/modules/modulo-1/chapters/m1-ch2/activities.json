@@ -618,5 +618,110 @@
         }
       ]
     }
+  },
+  {
+    "id": "m1-ch2-listening",
+    "type": "listening",
+    "title": "Greeting Listening",
+    "description": "Listen to greetings and introductions, then choose the correct answer.",
+    "props": {
+      "items": [
+        {
+          "id": "l1",
+          "audioText": "Good morning",
+          "question": "What greeting did you hear?",
+          "options": ["Good morning", "Good night", "Goodbye", "See you later"],
+          "correct": 0,
+          "explanation": "Good morning is used in the morning."
+        },
+        {
+          "id": "l2",
+          "audioText": "Nice to meet you",
+          "question": "What phrase did you hear?",
+          "options": ["Nice to meet you", "See you tomorrow", "How are you", "Thank you"],
+          "correct": 0,
+          "explanation": "Nice to meet you is said when meeting someone new."
+        },
+        {
+          "id": "l3",
+          "audioText": "Where are you from",
+          "question": "What question did you hear?",
+          "options": ["Where are you from", "What is your name", "How old are you", "How are you"],
+          "correct": 0,
+          "explanation": "Where are you from asks about someone's origin."
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch2-dictation",
+    "type": "dictation",
+    "title": "Greeting Dictation",
+    "description": "Listen and write the greeting or introduction you hear.",
+    "props": {
+      "items": [
+        {
+          "id": "d1",
+          "audioText": "My name is Ana",
+          "hint": "Introduction phrase"
+        },
+        {
+          "id": "d2",
+          "audioText": "I am from Colombia",
+          "hint": "Saying where you are from"
+        },
+        {
+          "id": "d3",
+          "audioText": "See you later",
+          "hint": "Informal farewell"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch2-pronunciation",
+    "type": "pronunciation",
+    "title": "Greeting Pronunciation",
+    "description": "Listen and repeat essential greeting phrases.",
+    "props": {
+      "items": [
+        {
+          "id": "p1",
+          "phrase": "Nice to meet you",
+          "hint": "Standard phrase when meeting someone new"
+        },
+        {
+          "id": "p2",
+          "phrase": "How are you",
+          "hint": "Common greeting question — stress on YOU"
+        },
+        {
+          "id": "p3",
+          "phrase": "Have a nice day",
+          "hint": "Polite farewell — link 'have-a' naturally"
+        },
+        {
+          "id": "p4",
+          "phrase": "Excuse me",
+          "hint": "Polite attention-getter — silent 'c' in excuse"
+        }
+      ]
+    }
+  },
+  {
+    "id": "m1-ch2-dragdrop",
+    "type": "drag-drop",
+    "title": "Match Greetings",
+    "description": "Drag each greeting to its correct reply.",
+    "props": {
+      "mode": "match",
+      "pairs": [
+        { "left": "Hello!", "right": "Hi there!" },
+        { "left": "How are you?", "right": "I'm fine, thanks." },
+        { "left": "What's your name?", "right": "My name is Pedro." },
+        { "left": "Nice to meet you!", "right": "Nice to meet you too!" },
+        { "left": "Goodbye!", "right": "See you later!" }
+      ]
+    }
   }
 ]
