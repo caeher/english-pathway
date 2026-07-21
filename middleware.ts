@@ -4,7 +4,15 @@ import { isSameOriginRequest, isUnsafeMethod } from '@/lib/security/request'
 import { consumeRateLimit, getClientKey, getRateLimitPolicy } from '@/lib/security/rate-limit'
 
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/api/')) {
+  const pathname = request.nextUrl.pathname
+
+  if (pathname.startsWith('/admin') || pathname.startsWith('/teacher')) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/'
+    return NextResponse.redirect(url)
+  }
+
+  if (pathname.startsWith('/api/')) {
     if (isUnsafeMethod(request.method) && !isSameOriginRequest(request)) {
       return NextResponse.json({ error: 'Cross-origin request rejected' }, { status: 403 })
     }
