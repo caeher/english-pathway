@@ -85,7 +85,7 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
                 ? 'relative flex h-full w-full items-center justify-center rounded-xl bg-white text-(--accent) font-black shadow-md'
                 : 'relative flex h-full w-full items-center justify-center rounded-xl bg-(--accent) text-white font-black shadow-sm'
             }>
-              <span className="font-display text-sm font-black tracking-tight">ie</span>
+              <span className="font-display text-sm font-black tracking-tight">ep</span>
             </div>
           </div>
           <span className={
