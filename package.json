@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "architecture:check": "node scripts/check-feature-boundaries.mjs",
     "activities:validate": "tsx scripts/validate-activities.ts",
+    "activities:enrich": "tsx scripts/enrich-activities.ts",
     "knowledge:validate": "tsx scripts/validate-knowledge.ts",
     "knowledge:language:validate": "node scripts/validate-knowledge-language.mjs",
     "test": "vitest run",
