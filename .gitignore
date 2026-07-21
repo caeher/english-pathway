@@ -29,3 +29,9 @@ supabase/.temp
 *.njsproj
 *.sln
 *.sw?
+
+# Promo video (heavy assets)
+videos/assets/captures/*.mp4
+videos/assets/captures/*.webm
+videos/dist/*.mp4
+videos/assets/audio/*.wav

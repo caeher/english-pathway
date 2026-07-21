@@ -26,6 +26,10 @@
     "db:types": "supabase gen types typescript --local > lib/supabase/database.types.ts",
     "db:seed": "tsx scripts/seed.ts",
     "kb:embed": "pnpm knowledge:validate && tsx scripts/embed-knowledge.ts",
+    "video:preview": "cd videos && npm run dev",
+    "video:check": "cd videos && npm run check",
+    "video:render": "cd videos && npm run render",
+    "video:poster": "ffmpeg -y -ss 4 -i videos/dist/english-pathway-promo-1080p.mp4 -frames:v 1 -update 1 videos/dist/english-pathway-promo-poster.jpg",
     "postinstall": "node ./node_modules/esbuild/install.js"
   },
   "dependencies": {
