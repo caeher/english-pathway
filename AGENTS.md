@@ -152,9 +152,13 @@ english-pathway/
 
 - Voice provider: [`components/voice/VoiceTutorProvider.tsx`](components/voice/VoiceTutorProvider.tsx)
 - Client tools: [`lib/learn/client-tools.ts`](lib/learn/client-tools.ts) — `showGrammar`, `showActivity`, `showQuestion`, `clearPanel`, `fetchCurriculumContext`
-- Activity components: [`components/games/`](components/games/) — Quiz, Flashcard, WordMatch, etc.
+- Activity components: [`components/games/`](components/games/) — Quiz, Flashcard, WordMatch, etc. (10 types)
 - Panel state: [`stores/useLearnSessionStore.ts`](stores/useLearnSessionStore.ts)
 - Scoring: [`lib/games/scoring.ts`](lib/games/scoring.ts)
+
+### Activity coverage (77 chapters)
+
+Each chapter has `activities.json` with 8–10 exercises. All 77 chapters include `listening`, `dictation`, `pronunciation`, and `drag-drop` in addition to core types (`quiz`, `flashcard`, `word-match`, `sentence-builder`, `word-scramble`, `svg-scene`). Authoring guide: [`knowledge/AUTHORING.md`](knowledge/AUTHORING.md). Validate with `pnpm activities:validate`; bulk-enrich missing audio/oral types with `pnpm activities:enrich`.
 
 ---
 
