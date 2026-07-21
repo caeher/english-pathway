@@ -14,6 +14,9 @@ import {
   Target,
   TrendingUp,
   Zap,
+  Volume2,
+  CheckCircle2,
+  Award,
 } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics/events'
 import { Badge, Surface } from '@/components/ui'
@@ -67,46 +70,121 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-(--accent) text-white" aria-labelledby="landing-title">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-white/[0.06]" aria-hidden="true" />
-        <div className="absolute -bottom-40 -left-40 h-[600px] w-[600px] rounded-full bg-black/[0.04]" aria-hidden="true" />
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-(--accent) via-amber-600 to-orange-600 text-white -mt-16" aria-labelledby="landing-title">
+        {/* Background decorative glow circles */}
+        <div className="absolute -right-24 -top-24 h-[550px] w-[550px] rounded-full bg-white/[0.08] blur-3xl" aria-hidden="true" />
+        <div className="absolute -bottom-36 -left-36 h-[600px] w-[600px] rounded-full bg-black/[0.12] blur-3xl" aria-hidden="true" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[800px] rounded-full bg-amber-400/[0.05] blur-2xl pointer-events-none" aria-hidden="true" />
 
-        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28 lg:py-32">
-          <div className="max-w-3xl">
-            <Badge variant="neutral" className="mb-6 border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90">
-              <Zap className="h-4 w-4" aria-hidden="true" /> A clearer path to confident English
-            </Badge>
-            <h1 id="landing-title" className="font-display text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-7xl">
-              Learn English by using it.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-white/85 sm:text-xl">
-              English Pathway brings an AI tutor, a structured curriculum, and focused practice into one calm learning space.
-            </p>
+        <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            {/* Left Content Column */}
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-300 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-300"></span>
+                </span>
+                <span className="text-xs font-bold tracking-wide uppercase text-white/90">Interactive AI Voice & Text Tutor</span>
+              </div>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                href={destination}
-                onClick={() => onCtaClick('primary', destination)}
-                className="group inline-flex min-h-12 items-center gap-3 rounded-2xl bg-white px-6 py-3.5 font-display text-base font-bold text-(--text-primary) no-underline shadow-xl shadow-black/10 transition-transform hover:-translate-y-0.5 hover:shadow-2xl"
-              >
-                {primaryLabel}
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
-              <Link
-                href="/curriculum"
-                onClick={() => onCtaClick('curriculum', '/curriculum')}
-                className="inline-flex min-h-12 items-center gap-3 rounded-2xl border border-white/25 bg-white/10 px-6 py-3.5 font-display text-base font-bold text-white no-underline transition-colors hover:bg-white/20"
-              >
-                Explore the curriculum <BookOpen className="h-5 w-5" aria-hidden="true" />
-              </Link>
+              <h1 id="landing-title" className="mt-6 font-display text-4xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-6xl">
+                Learn English by using it in real conversation.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-white/90 sm:text-xl">
+                English Pathway brings a natural AI voice tutor, a structured 77-chapter curriculum, and interactive activities into one calm learning space.
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href={destination}
+                  onClick={() => onCtaClick('primary', destination)}
+                  className="group inline-flex min-h-13 items-center gap-3 rounded-2xl bg-white px-7 py-4 font-display text-base font-bold text-(--text-primary) no-underline shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 hover:shadow-black/30"
+                >
+                  {primaryLabel}
+                  <ArrowRight className="h-5 w-5 text-(--accent) transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/curriculum"
+                  onClick={() => onCtaClick('curriculum', '/curriculum')}
+                  className="inline-flex min-h-13 items-center gap-3 rounded-2xl border border-white/30 bg-white/10 px-6 py-4 font-display text-base font-bold text-white no-underline backdrop-blur-sm transition-colors hover:bg-white/20"
+                >
+                  Explore curriculum <BookOpen className="h-5 w-5" aria-hidden="true" />
+                </Link>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="mt-8 flex flex-wrap items-center gap-6 text-sm font-semibold text-white/80">
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-amber-300" aria-hidden="true" /> Free interactive lessons
+                </span>
+                <span className="flex items-center gap-2">
+                  <Volume2 className="h-4 w-4 text-amber-300" aria-hidden="true" /> Real-time voice practice
+                </span>
+                <span className="flex items-center gap-2">
+                  <Award className="h-4 w-4 text-amber-300" aria-hidden="true" /> 14 Structured modules
+                </span>
+              </div>
             </div>
-            <p className="mt-5 flex items-center gap-2 text-sm text-white/75">
-              <Check className="h-4 w-4" aria-hidden="true" /> Start with text, add voice when you are ready.
-            </p>
+
+            {/* Right Column - Live Interactive Mockup Card */}
+            <div className="relative">
+              <div className="relative mx-auto w-full max-w-md rounded-3xl border border-white/25 bg-white/10 p-6 shadow-2xl backdrop-blur-xl sm:p-7">
+                {/* Header of Mockup */}
+                <div className="flex items-center justify-between border-b border-white/15 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-(--accent) font-black shadow-md">
+                      AI
+                      <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-400 border-2 border-orange-600" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-white">Pathway AI Tutor</p>
+                      <p className="text-xs text-white/70">Voice Active · Chapter 4</p>
+                    </div>
+                  </div>
+                  <Badge variant="neutral" className="border-white/20 bg-white/15 text-xs text-white">
+                    <Mic className="mr-1.5 h-3 w-3 animate-pulse text-amber-300" /> Speaking
+                  </Badge>
+                </div>
+
+                {/* Simulated Tutor Conversation Chat */}
+                <div className="my-5 space-y-3.5">
+                  {/* Tutor Message */}
+                  <div className="rounded-2xl border border-white/10 bg-white/15 p-3.5 text-xs sm:text-sm text-white/95 leading-relaxed shadow-sm">
+                    <p className="font-semibold text-amber-200 text-xs mb-1">AI TUTOR</p>
+                    "Great job! How would you describe your typical morning routine in English?"
+                  </div>
+
+                  {/* Learner Speech Bubble */}
+                  <div className="ml-6 rounded-2xl bg-white/90 p-3.5 text-xs sm:text-sm text-neutral-900 leading-relaxed shadow-lg">
+                    <p className="font-semibold text-(--accent) text-xs mb-1">YOU</p>
+                    "I <span className="underline decoration-amber-500 decoration-2 font-bold">usually</span> start my day with a hot cup of coffee and read news."
+                  </div>
+
+                  {/* Live Grammar Feedback Pill */}
+                  <div className="rounded-xl border border-amber-300/40 bg-amber-400/20 p-3 text-xs text-amber-100 backdrop-blur-sm flex items-start gap-2.5">
+                    <Sparkles className="h-4 w-4 shrink-0 text-amber-300 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white">Grammar Note:</span> "Usually" is an adverb of frequency placed before main verbs.
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer of Mockup */}
+                <div className="flex items-center justify-between rounded-xl bg-black/20 px-4 py-3 text-xs text-white/85 border border-white/10">
+                  <span className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-emerald-400" /> Activity unlocked: Flashcards
+                  </span>
+                  <span className="font-bold text-amber-300">+25 XP</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* The Method Section */}
       <section id="method" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 sm:py-24" aria-labelledby="method-title">
         <div className="max-w-2xl">
           <p className="font-display text-sm font-bold uppercase tracking-widest text-(--accent)">The method</p>
@@ -134,6 +212,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
         </div>
       </section>
 
+      {/* Journey Section */}
       <section id="journey" className="bg-(--bg-secondary)" aria-labelledby="journey-title">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
@@ -169,6 +248,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
         </div>
       </section>
 
+      {/* Curriculum Preview Section */}
       <section id="curriculum-preview" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 sm:py-24" aria-labelledby="curriculum-title">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
@@ -201,6 +281,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
         </div>
       </section>
 
+      {/* Practice Features Section */}
       <section className="mx-auto max-w-6xl px-6 pb-20 sm:pb-24" aria-labelledby="practice-title">
         <div className="grid gap-5 sm:grid-cols-3">
           {[
@@ -217,8 +298,9 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
         </div>
       </section>
 
-      <section className="mx-6 mb-20 rounded-3xl bg-(--accent) text-white sm:mb-24" aria-labelledby="final-cta-title">
-        <div className="mx-auto max-w-6xl px-6 py-12 sm:px-12 sm:py-16">
+      {/* Final CTA Section */}
+      <section className="mx-auto max-w-6xl px-6 pb-20 sm:pb-24" aria-labelledby="final-cta-title">
+        <div className="rounded-3xl bg-(--accent) text-white px-6 py-12 sm:px-12 sm:py-16 shadow-xl">
           <div className="max-w-2xl">
             <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/75"><Play className="h-4 w-4" aria-hidden="true" /> Your next step</p>
             <h2 id="final-cta-title" className="mt-4 font-display text-3xl font-black sm:text-4xl">Make today&apos;s English practice count.</h2>
@@ -234,6 +316,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-(--border-primary)" aria-label="Footer">
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="flex items-center gap-2.5 font-display font-bold text-(--text-primary) no-underline">
@@ -254,3 +337,4 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
     </>
   )
 }
+
