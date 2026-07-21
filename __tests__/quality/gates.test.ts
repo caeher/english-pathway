@@ -1,4 +1,4 @@
-import { describe, expect, it, beforeEach } from 'vitest'
+mport { describe, expect, it, beforeEach } from 'vitest'
 import { criticalJourneys, qualityBudgets } from '@/lib/quality/critical-routes'
 import { securityHeaders } from '@/lib/security/headers'
 import { consumeRateLimit, getRateLimitPolicy, resetRateLimitBuckets } from '@/lib/security/rate-limit'
@@ -34,6 +34,26 @@ describe('release quality gates', () => {
     expect(isSameOriginRequest(new Request('https://app.example/api/tutor/context', { headers: { origin: 'https://evil.example' } }))).toBe(false)
     expect(isSameOriginRequest(new Request('https://app.example/api/tutor/context', { headers: { origin: 'https://app.example' } }))).toBe(true)
     expect(isSameOriginRequest(new Request('https://app.example/api/tutor/context'))).toBe(true)
+  })
+
+  it('allows proxied same-origin requests and trusted app URL fallback', () => {
+    expect(isSameOriginRequest(new Request('http://0.0.0.0:3000/api/tutor/realtime', {
+      headers: {
+        origin: 'https://app.example',
+        'x-forwarded-host': 'app.example',
+        'x-forwarded-proto': 'https',
+      },
+    }))).toBe(true)
+
+    const previousAppUrl = process.env.NEXT_PUBLIC_APP_URL
+    process.env.NEXT_PUBLIC_APP_URL = 'https://app.example'
+    try {
+      expect(isSameOriginRequest(new Request('http://0.0.0.0:3000/api/tutor/realtime', {
+        headers: { origin: 'https://app.example' },
+      }))).toBe(true)
+    } finally {
+      process.env.NEXT_PUBLIC_APP_URL = previousAppUrl
+    }
   })
 
   it('rate limits expensive tutor and assessment endpoints', () => {
