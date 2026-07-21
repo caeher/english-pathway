@@ -6,744 +6,1002 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export type ActivityType =
-  | 'svg-scene'
-  | 'flashcard'
-  | 'word-match'
-  | 'sentence-builder'
-  | 'quiz'
-  | 'word-scramble'
-  | 'listening'
-  | 'dictation'
-  | 'pronunciation'
-  | 'drag-drop'
-
-export type LegalDocumentType = 'terms' | 'privacy' | 'cookies'
-
-export interface Database {
+export type Database = {
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          extensions?: Json
+          operationName?: string
+          query?: string
+          variables?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
   public: {
     Tables: {
+      achievements: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          icon: string
+          id: string
+          rule_key: string
+          rule_value: number
+          title: string
+          xp_reward: number
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description: string
+          icon?: string
+          id: string
+          rule_key: string
+          rule_value?: number
+          title: string
+          xp_reward?: number
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          icon?: string
+          id?: string
+          rule_key?: string
+          rule_value?: number
+          title?: string
+          xp_reward?: number
+        }
+        Relationships: []
+      }
+      activities: {
+        Row: {
+          chapter_id: string
+          created_at: string
+          description: string
+          id: string
+          position: number
+          props: Json
+          title: string
+          type: Database["public"]["Enums"]["activity_type"]
+          updated_at: string
+        }
+        Insert: {
+          chapter_id: string
+          created_at?: string
+          description?: string
+          id: string
+          position?: number
+          props?: Json
+          title: string
+          type: Database["public"]["Enums"]["activity_type"]
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string
+          created_at?: string
+          description?: string
+          id?: string
+          position?: number
+          props?: Json
+          title?: string
+          type?: Database["public"]["Enums"]["activity_type"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "activities_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      activity_completions: {
+        Row: {
+          activity_id: string
+          activity_type: string | null
+          attempts: number
+          chapter_id: string
+          completed_at: string | null
+          score: number | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          activity_id: string
+          activity_type?: string | null
+          attempts?: number
+          chapter_id: string
+          completed_at?: string | null
+          score?: number | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          activity_id?: string
+          activity_type?: string | null
+          attempts?: number
+          chapter_id?: string
+          completed_at?: string | null
+          score?: number | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      analytics_events: {
+        Row: {
+          created_at: string
+          event_name: string
+          id: string
+          properties: Json
+          session_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          event_name: string
+          id?: string
+          properties?: Json
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          event_name?: string
+          id?: string
+          properties?: Json
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "analytics_events_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chapter_completions: {
         Row: {
-          user_id: string
           chapter_id: string
           completed_at: string
+          user_id: string
         }
         Insert: {
-          user_id: string
           chapter_id: string
           completed_at?: string
+          user_id: string
         }
         Update: {
-          user_id?: string
           chapter_id?: string
           completed_at?: string
-        }
-        Relationships: []
-      }
-      user_progress: {
-        Row: {
-          user_id: string
-          last_module_id: string | null
-          last_chapter_id: string | null
-          last_activity_id: string | null
-          updated_at: string
-        }
-        Insert: {
-          user_id: string
-          last_module_id?: string | null
-          last_chapter_id?: string | null
-          last_activity_id?: string | null
-          updated_at?: string
-        }
-        Update: {
           user_id?: string
-          last_module_id?: string | null
-          last_chapter_id?: string | null
-          last_activity_id?: string | null
-          updated_at?: string
         }
         Relationships: []
       }
-      tutor_session_summaries: {
+      chapter_objectives: {
         Row: {
-          id: string
-          user_id: string
-          correlation_id: string
-          state: 'preparing' | 'context' | 'explaining' | 'activity_presented' | 'waiting_response' | 'evaluating' | 'help' | 'reinforcing' | 'next_step' | 'closed'
-          summary: string
-          last_activity_id: string | null
-          strategy_version: string
-          expires_at: string
+          chapter_id: string
           created_at: string
+          id: string
+          position: number
+          text: string
+        }
+        Insert: {
+          chapter_id: string
+          created_at?: string
+          id?: string
+          position?: number
+          text: string
+        }
+        Update: {
+          chapter_id?: string
+          created_at?: string
+          id?: string
+          position?: number
+          text?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_objectives_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chapters: {
+        Row: {
+          color: string
+          content: string
+          created_at: string
+          icon: string
+          id: string
+          module_id: string
+          number: number
+          position: number
+          published: boolean
+          slug: string
+          subtitle: string
+          title: string
+          updated_at: string
+          xp_reward: number
+        }
+        Insert: {
+          color?: string
+          content?: string
+          created_at?: string
+          icon?: string
+          id: string
+          module_id: string
+          number: number
+          position?: number
+          published?: boolean
+          slug: string
+          subtitle?: string
+          title: string
+          updated_at?: string
+          xp_reward?: number
+        }
+        Update: {
+          color?: string
+          content?: string
+          created_at?: string
+          icon?: string
+          id?: string
+          module_id?: string
+          number?: number
+          position?: number
+          published?: boolean
+          slug?: string
+          subtitle?: string
+          title?: string
+          updated_at?: string
+          xp_reward?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapters_module_id_fkey"
+            columns: ["module_id"]
+            isOneToOne: false
+            referencedRelation: "modules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      daily_sessions: {
+        Row: {
+          activities_completed: number
+          goal_met: boolean
+          minutes_studied: number
+          session_date: string
+          updated_at: string
+          user_id: string
+          xp_earned: number
+        }
+        Insert: {
+          activities_completed?: number
+          goal_met?: boolean
+          minutes_studied?: number
+          session_date: string
+          updated_at?: string
+          user_id: string
+          xp_earned?: number
+        }
+        Update: {
+          activities_completed?: number
+          goal_met?: boolean
+          minutes_studied?: number
+          session_date?: string
+          updated_at?: string
+          user_id?: string
+          xp_earned?: number
+        }
+        Relationships: []
+      }
+      engagement_activity_awards: {
+        Row: {
+          activity_id: string
+          awarded_at: string
+          user_id: string
+          xp_awarded: number
+        }
+        Insert: {
+          activity_id: string
+          awarded_at?: string
+          user_id: string
+          xp_awarded: number
+        }
+        Update: {
+          activity_id?: string
+          awarded_at?: string
+          user_id?: string
+          xp_awarded?: number
+        }
+        Relationships: []
+      }
+      english_assistant_prompt_logs: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          id: string
+          model: string
+          prompt: string
+          response: string | null
+          status: string
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          model: string
+          prompt: string
+          response?: string | null
+          status?: string
+          user_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          model?: string
+          prompt?: string
+          response?: string | null
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      knowledge_embeddings: {
+        Row: {
+          content: string
+          content_hash: string
+          created_at: string
+          embedding: string
+          id: string
+          metadata: Json
           updated_at: string
         }
         Insert: {
-          id?: string
-          user_id: string
-          correlation_id: string
-          state: 'preparing' | 'context' | 'explaining' | 'activity_presented' | 'waiting_response' | 'evaluating' | 'help' | 'reinforcing' | 'next_step' | 'closed'
-          summary: string
-          last_activity_id?: string | null
-          strategy_version?: string
-          expires_at?: string
+          content: string
+          content_hash: string
           created_at?: string
+          embedding: string
+          id?: string
+          metadata?: Json
           updated_at?: string
         }
         Update: {
-          id?: string
-          user_id?: string
-          correlation_id?: string
-          state?: 'preparing' | 'context' | 'explaining' | 'activity_presented' | 'waiting_response' | 'evaluating' | 'help' | 'reinforcing' | 'next_step' | 'closed'
-          summary?: string
-          last_activity_id?: string | null
-          strategy_version?: string
-          expires_at?: string
+          content?: string
+          content_hash?: string
           created_at?: string
+          embedding?: string
+          id?: string
+          metadata?: Json
           updated_at?: string
         }
         Relationships: []
       }
       learner_memory: {
         Row: {
-          id: string
-          user_id: string
-          memory_key: string
           content: string
-          source: 'activity_result' | 'help_request' | 'session_end' | 'preference_update'
-          strategy_version: string
           created_at: string
+          id: string
+          memory_key: string
+          source: string
+          strategy_version: string
           updated_at: string
+          user_id: string
         }
         Insert: {
-          id?: string
-          user_id: string
-          memory_key: string
           content: string
-          source: 'activity_result' | 'help_request' | 'session_end' | 'preference_update'
-          strategy_version?: string
           created_at?: string
+          id?: string
+          memory_key: string
+          source: string
+          strategy_version?: string
           updated_at?: string
+          user_id: string
         }
         Update: {
-          id?: string
-          user_id?: string
-          memory_key?: string
           content?: string
-          source?: 'activity_result' | 'help_request' | 'session_end' | 'preference_update'
-          strategy_version?: string
           created_at?: string
+          id?: string
+          memory_key?: string
+          source?: string
+          strategy_version?: string
           updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
-      activity_completions: {
+      legal_documents: {
         Row: {
-          user_id: string
-          activity_id: string
-          chapter_id: string
-          activity_type: string | null
-          status: 'not_started' | 'in_progress' | 'completed'
-          score: number | null
-          attempts: number
-          completed_at: string | null
+          content: string
+          created_at: string
+          id: string
+          locale: string
+          published_at: string | null
+          slug: string
+          title: string
+          type: Database["public"]["Enums"]["legal_document_type"]
+          updated_at: string
+          version: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          locale?: string
+          published_at?: string | null
+          slug: string
+          title: string
+          type: Database["public"]["Enums"]["legal_document_type"]
+          updated_at?: string
+          version?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          locale?: string
+          published_at?: string | null
+          slug?: string
+          title?: string
+          type?: Database["public"]["Enums"]["legal_document_type"]
+          updated_at?: string
+          version?: string
+        }
+        Relationships: []
+      }
+      modules: {
+        Row: {
+          color: string
+          created_at: string
+          description: string
+          icon: string
+          id: string
+          number: number
+          position: number
+          published: boolean
+          slug: string
+          title: string
           updated_at: string
         }
         Insert: {
-          user_id: string
-          activity_id: string
-          chapter_id: string
-          activity_type?: string | null
-          status?: 'not_started' | 'in_progress' | 'completed'
-          score?: number | null
-          attempts?: number
-          completed_at?: string | null
+          color?: string
+          created_at?: string
+          description?: string
+          icon?: string
+          id: string
+          number: number
+          position?: number
+          published?: boolean
+          slug: string
+          title: string
           updated_at?: string
         }
         Update: {
-          user_id?: string
-          activity_id?: string
-          chapter_id?: string
-          activity_type?: string | null
-          status?: 'not_started' | 'in_progress' | 'completed'
-          score?: number | null
-          attempts?: number
-          completed_at?: string | null
+          color?: string
+          created_at?: string
+          description?: string
+          icon?: string
+          id?: string
+          number?: number
+          position?: number
+          published?: boolean
+          slug?: string
+          title?: string
           updated_at?: string
         }
         Relationships: []
       }
       profiles: {
         Row: {
-          id: string
-          username: string | null
-          full_name: string | null
-          avatar_url: string | null
-          onboarding_completed_at: string | null
-          onboarding_status: 'pending' | 'completed' | 'skipped'
-          onboarding_step: number
-          assessment_recommended_level: 'beginner' | 'intermediate' | 'advanced' | null
-          assessment_confirmed_level: 'beginner' | 'intermediate' | 'advanced' | null
-          assessment_source: 'voice' | 'text' | 'self_assessment' | null
-          assessment_version: string | null
           assessment_completed_at: string | null
+          assessment_confirmed_level: string | null
+          assessment_recommended_level: string | null
+          assessment_source: string | null
+          assessment_version: string | null
+          avatar_url: string | null
+          created_at: string
           daily_goal_minutes: number | null
-          preferred_mode: 'voice' | 'text'
-          level: 'beginner' | 'intermediate' | 'advanced' | null
-          created_at: string
+          full_name: string | null
+          id: string
+          level: string | null
+          onboarding_completed_at: string | null
+          onboarding_status: string
+          onboarding_step: number
+          preferred_mode: string
           updated_at: string
+          username: string | null
         }
         Insert: {
-          id: string
-          username?: string | null
-          full_name?: string | null
-          avatar_url?: string | null
-          onboarding_completed_at?: string | null
-          onboarding_status?: 'pending' | 'completed' | 'skipped'
-          onboarding_step?: number
-          assessment_recommended_level?: 'beginner' | 'intermediate' | 'advanced' | null
-          assessment_confirmed_level?: 'beginner' | 'intermediate' | 'advanced' | null
-          assessment_source?: 'voice' | 'text' | 'self_assessment' | null
-          assessment_version?: string | null
           assessment_completed_at?: string | null
-          daily_goal_minutes?: number | null
-          preferred_mode?: 'voice' | 'text'
-          level?: 'beginner' | 'intermediate' | 'advanced' | null
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          username?: string | null
-          full_name?: string | null
-          avatar_url?: string | null
-          onboarding_completed_at?: string | null
-          onboarding_status?: 'pending' | 'completed' | 'skipped'
-          onboarding_step?: number
-          assessment_recommended_level?: 'beginner' | 'intermediate' | 'advanced' | null
-          assessment_confirmed_level?: 'beginner' | 'intermediate' | 'advanced' | null
-          assessment_source?: 'voice' | 'text' | 'self_assessment' | null
+          assessment_confirmed_level?: string | null
+          assessment_recommended_level?: string | null
+          assessment_source?: string | null
           assessment_version?: string | null
-          assessment_completed_at?: string | null
+          avatar_url?: string | null
+          created_at?: string
           daily_goal_minutes?: number | null
-          preferred_mode?: 'voice' | 'text'
-          level?: 'beginner' | 'intermediate' | 'advanced' | null
-          created_at?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      modules: {
-        Row: {
+          full_name?: string | null
           id: string
-          slug: string
-          number: number
-          title: string
-          description: string
-          icon: string
-          color: string
-          position: number
-          published: boolean
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          id: string
-          slug: string
-          number: number
-          title: string
-          description?: string
-          icon?: string
-          color?: string
-          position?: number
-          published?: boolean
-          created_at?: string
+          level?: string | null
+          onboarding_completed_at?: string | null
+          onboarding_status?: string
+          onboarding_step?: number
+          preferred_mode?: string
           updated_at?: string
+          username?: string | null
         }
         Update: {
-          id?: string
-          slug?: string
-          number?: number
-          title?: string
-          description?: string
-          icon?: string
-          color?: string
-          position?: number
-          published?: boolean
+          assessment_completed_at?: string | null
+          assessment_confirmed_level?: string | null
+          assessment_recommended_level?: string | null
+          assessment_source?: string | null
+          assessment_version?: string | null
+          avatar_url?: string | null
           created_at?: string
+          daily_goal_minutes?: number | null
+          full_name?: string | null
+          id?: string
+          level?: string | null
+          onboarding_completed_at?: string | null
+          onboarding_status?: string
+          onboarding_step?: number
+          preferred_mode?: string
           updated_at?: string
-        }
-        Relationships: []
-      }
-      chapters: {
-        Row: {
-          id: string
-          module_id: string
-          slug: string
-          number: number
-          title: string
-          subtitle: string
-          icon: string
-          color: string
-          content: string
-          xp_reward: number
-          position: number
-          published: boolean
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          id: string
-          module_id: string
-          slug: string
-          number: number
-          title: string
-          subtitle?: string
-          icon?: string
-          color?: string
-          content?: string
-          xp_reward?: number
-          position?: number
-          published?: boolean
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          module_id?: string
-          slug?: string
-          number?: number
-          title?: string
-          subtitle?: string
-          icon?: string
-          color?: string
-          content?: string
-          xp_reward?: number
-          position?: number
-          published?: boolean
-          created_at?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      chapter_objectives: {
-        Row: {
-          id: string
-          chapter_id: string
-          position: number
-          text: string
-          created_at: string
-        }
-        Insert: {
-          id?: string
-          chapter_id: string
-          position?: number
-          text: string
-          created_at?: string
-        }
-        Update: {
-          id?: string
-          chapter_id?: string
-          position?: number
-          text?: string
-          created_at?: string
-        }
-        Relationships: []
-      }
-      activities: {
-        Row: {
-          id: string
-          chapter_id: string
-          type: ActivityType
-          title: string
-          description: string
-          position: number
-          props: Json
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          id: string
-          chapter_id: string
-          type: ActivityType
-          title: string
-          description?: string
-          position?: number
-          props?: Json
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          chapter_id?: string
-          type?: ActivityType
-          title?: string
-          description?: string
-          position?: number
-          props?: Json
-          created_at?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      word_search_puzzles: {
-        Row: {
-          id: number
-          theme: string
-          rows: number
-          cols: number
-          grid: Json
-          word_positions: Json
-          created_at: string
-        }
-        Insert: {
-          id: number
-          theme: string
-          rows: number
-          cols: number
-          grid: Json
-          word_positions: Json
-          created_at?: string
-        }
-        Update: {
-          id?: number
-          theme?: string
-          rows?: number
-          cols?: number
-          grid?: Json
-          word_positions?: Json
-          created_at?: string
-        }
-        Relationships: []
-      }
-      legal_documents: {
-        Row: {
-          id: string
-          slug: string
-          type: LegalDocumentType
-          title: string
-          content: string
-          version: string
-          locale: string
-          published_at: string | null
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          id?: string
-          slug: string
-          type: LegalDocumentType
-          title: string
-          content: string
-          version?: string
-          locale?: string
-          published_at?: string | null
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          slug?: string
-          type?: LegalDocumentType
-          title?: string
-          content?: string
-          version?: string
-          locale?: string
-          published_at?: string | null
-          created_at?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_consents: {
-        Row: {
-          id: string
-          user_id: string
-          legal_document_id: string
-          document_version: string
-          consent_method: 'registration' | 'settings' | 'explicit_reconsent'
-          accepted_at: string
-        }
-        Insert: {
-          id?: string
-          user_id: string
-          legal_document_id: string
-          document_version: string
-          consent_method?: 'registration' | 'settings' | 'explicit_reconsent'
-          accepted_at?: string
-        }
-        Update: {
-          id?: string
-          user_id?: string
-          legal_document_id?: string
-          document_version?: string
-          consent_method?: 'registration' | 'settings' | 'explicit_reconsent'
-          accepted_at?: string
-        }
-        Relationships: []
-      }
-      knowledge_embeddings: {
-        Row: {
-          id: string
-          content: string
-          metadata: Json
-          content_hash: string
-          embedding: string
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          id?: string
-          content: string
-          metadata?: Json
-          content_hash: string
-          embedding: string
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          content?: string
-          metadata?: Json
-          content_hash?: string
-          embedding?: string
-          created_at?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      analytics_events: {
-        Row: {
-          id: string
-          user_id: string | null
-          session_id: string | null
-          event_name: string
-          properties: Json
-          created_at: string
-        }
-        Insert: {
-          id?: string
-          user_id?: string | null
-          session_id?: string | null
-          event_name: string
-          properties?: Json
-          created_at?: string
-        }
-        Update: {
-          id?: string
-          user_id?: string | null
-          session_id?: string | null
-          event_name?: string
-          properties?: Json
-          created_at?: string
+          username?: string | null
         }
         Relationships: []
       }
       srs_items: {
         Row: {
-          id: string
-          user_id: string
-          content_ref: string
           content: Json
+          content_ref: string
+          created_at: string
+          due_at: string
           ease_factor: number
+          id: string
           interval_days: number
           repetitions: number
-          due_at: string
-          created_at: string
           updated_at: string
+          user_id: string
         }
         Insert: {
-          id?: string
-          user_id: string
-          content_ref: string
           content: Json
+          content_ref: string
+          created_at?: string
+          due_at?: string
           ease_factor?: number
+          id?: string
           interval_days?: number
           repetitions?: number
-          due_at?: string
-          created_at?: string
           updated_at?: string
+          user_id: string
         }
         Update: {
-          id?: string
-          user_id?: string
-          content_ref?: string
           content?: Json
+          content_ref?: string
+          created_at?: string
+          due_at?: string
           ease_factor?: number
+          id?: string
           interval_days?: number
           repetitions?: number
-          due_at?: string
-          created_at?: string
           updated_at?: string
-        }
-        Relationships: []
-      }
-      user_engagement: {
-        Row: {
-          user_id: string
-          total_xp: number
-          current_streak: number
-          longest_streak: number
-          last_study_date: string | null
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          user_id: string
-          total_xp?: number
-          current_streak?: number
-          longest_streak?: number
-          last_study_date?: string | null
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
           user_id?: string
-          total_xp?: number
-          current_streak?: number
-          longest_streak?: number
-          last_study_date?: string | null
-          created_at?: string
-          updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "srs_items_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
-      daily_sessions: {
+      tutor_session_summaries: {
         Row: {
-          user_id: string
-          session_date: string
-          minutes_studied: number
-          xp_earned: number
-          activities_completed: number
-          goal_met: boolean
-          updated_at: string
-        }
-        Insert: {
-          user_id: string
-          session_date: string
-          minutes_studied?: number
-          xp_earned?: number
-          activities_completed?: number
-          goal_met?: boolean
-          updated_at?: string
-        }
-        Update: {
-          user_id?: string
-          session_date?: string
-          minutes_studied?: number
-          xp_earned?: number
-          activities_completed?: number
-          goal_met?: boolean
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      achievements: {
-        Row: {
-          id: string
-          title: string
-          description: string
-          icon: string
-          category: string
-          xp_reward: number
-          rule_key: string
-          rule_value: number
+          correlation_id: string
           created_at: string
+          expires_at: string
+          id: string
+          last_activity_id: string | null
+          state: string
+          strategy_version: string
+          summary: string
+          updated_at: string
+          user_id: string
         }
         Insert: {
-          id: string
-          title: string
-          description: string
-          icon?: string
-          category?: string
-          xp_reward?: number
-          rule_key: string
-          rule_value?: number
+          correlation_id: string
           created_at?: string
-        }
-        Update: {
+          expires_at?: string
           id?: string
-          title?: string
-          description?: string
-          icon?: string
-          category?: string
-          xp_reward?: number
-          rule_key?: string
-          rule_value?: number
+          last_activity_id?: string | null
+          state: string
+          strategy_version?: string
+          summary: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          correlation_id?: string
           created_at?: string
+          expires_at?: string
+          id?: string
+          last_activity_id?: string | null
+          state?: string
+          strategy_version?: string
+          summary?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
       user_achievements: {
         Row: {
-          user_id: string
           achievement_id: string
           earned_at: string
+          user_id: string
         }
         Insert: {
-          user_id: string
           achievement_id: string
           earned_at?: string
+          user_id: string
         }
         Update: {
-          user_id?: string
           achievement_id?: string
           earned_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_achievements_achievement_id_fkey"
+            columns: ["achievement_id"]
+            isOneToOne: false
+            referencedRelation: "achievements"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_consents: {
+        Row: {
+          accepted_at: string
+          consent_method: string
+          document_version: string
+          id: string
+          legal_document_id: string
+          user_id: string
+        }
+        Insert: {
+          accepted_at?: string
+          consent_method?: string
+          document_version?: string
+          id?: string
+          legal_document_id: string
+          user_id: string
+        }
+        Update: {
+          accepted_at?: string
+          consent_method?: string
+          document_version?: string
+          id?: string
+          legal_document_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_consents_legal_document_id_fkey"
+            columns: ["legal_document_id"]
+            isOneToOne: false
+            referencedRelation: "legal_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_consents_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_engagement: {
+        Row: {
+          created_at: string
+          current_streak: number
+          last_study_date: string | null
+          longest_streak: number
+          total_xp: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          current_streak?: number
+          last_study_date?: string | null
+          longest_streak?: number
+          total_xp?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          current_streak?: number
+          last_study_date?: string | null
+          longest_streak?: number
+          total_xp?: number
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
-      engagement_activity_awards: {
+      user_progress: {
         Row: {
+          last_activity_id: string | null
+          last_chapter_id: string | null
+          last_module_id: string | null
+          updated_at: string
           user_id: string
-          activity_id: string
-          xp_awarded: number
-          awarded_at: string
         }
         Insert: {
+          last_activity_id?: string | null
+          last_chapter_id?: string | null
+          last_module_id?: string | null
+          updated_at?: string
           user_id: string
-          activity_id: string
-          xp_awarded: number
-          awarded_at?: string
         }
         Update: {
+          last_activity_id?: string | null
+          last_chapter_id?: string | null
+          last_module_id?: string | null
+          updated_at?: string
           user_id?: string
-          activity_id?: string
-          xp_awarded?: number
-          awarded_at?: string
+        }
+        Relationships: []
+      }
+      word_search_puzzles: {
+        Row: {
+          cols: number
+          created_at: string
+          grid: Json
+          id: number
+          rows: number
+          theme: string
+          word_positions: Json
+        }
+        Insert: {
+          cols: number
+          created_at?: string
+          grid: Json
+          id: number
+          rows: number
+          theme: string
+          word_positions: Json
+        }
+        Update: {
+          cols?: number
+          created_at?: string
+          grid?: Json
+          id?: number
+          rows?: number
+          theme?: string
+          word_positions?: Json
         }
         Relationships: []
       }
     }
-    Views: Record<string, never>
+    Views: {
+      [_ in never]: never
+    }
     Functions: {
       match_knowledge: {
-        Args: {
-          query_embedding: string
-          match_count?: number
-          filter?: Json
-        }
-        Returns: Array<{
-          id: string
+        Args: { filter?: Json; match_count?: number; query_embedding: string }
+        Returns: {
           content: string
+          id: string
           metadata: Json
           similarity: number
-        }>
+        }[]
       }
       record_engagement_session: {
         Args: {
           p_activity_id: string
-          p_xp: number
-          p_minutes: number
           p_local_date: string
+          p_minutes: number
           p_score: number
+          p_xp: number
         }
         Returns: Json
       }
     }
     Enums: {
-      activity_type: ActivityType
-      legal_document_type: LegalDocumentType
+      activity_type:
+        | "svg-scene"
+        | "flashcard"
+        | "word-match"
+        | "sentence-builder"
+        | "quiz"
+        | "word-scramble"
+        | "listening"
+        | "dictation"
+        | "pronunciation"
+        | "drag-drop"
+      legal_document_type: "terms" | "privacy" | "cookies"
     }
-    CompositeTypes: Record<string, never>
+    CompositeTypes: {
+      [_ in never]: never
+    }
   }
 }
+
+type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
+
+export type Tables<
+  DefaultSchemaTableNameOrOptions extends
+    | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
+    | { schema: keyof DatabaseWithoutInternals },
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+    : never = never,
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+      Row: infer R
+    }
+    ? R
+    : never
+  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
+        DefaultSchema["Views"])
+    ? (DefaultSchema["Tables"] &
+        DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
+        Row: infer R
+      }
+      ? R
+      : never
+    : never
+
+export type TablesInsert<
+  DefaultSchemaTableNameOrOptions extends
+    | keyof DefaultSchema["Tables"]
+    | { schema: keyof DatabaseWithoutInternals },
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+      Insert: infer I
+    }
+    ? I
+    : never
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
+    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
+        Insert: infer I
+      }
+      ? I
+      : never
+    : never
+
+export type TablesUpdate<
+  DefaultSchemaTableNameOrOptions extends
+    | keyof DefaultSchema["Tables"]
+    | { schema: keyof DatabaseWithoutInternals },
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+      Update: infer U
+    }
+    ? U
+    : never
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
+    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
+        Update: infer U
+      }
+      ? U
+      : never
+    : never
+
+export type Enums<
+  DefaultSchemaEnumNameOrOptions extends
+    | keyof DefaultSchema["Enums"]
+    | { schema: keyof DatabaseWithoutInternals },
+  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    : never = never,
+> = DefaultSchemaEnumNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
+  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
+    ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
+    : never
+
+export type CompositeTypes<
+  PublicCompositeTypeNameOrOptions extends
+    | keyof DefaultSchema["CompositeTypes"]
+    | { schema: keyof DatabaseWithoutInternals },
+  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    : never = never,
+> = PublicCompositeTypeNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
+    ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
+    : never
+
+export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
+  public: {
+    Enums: {
+      activity_type: [
+        "svg-scene",
+        "flashcard",
+        "word-match",
+        "sentence-builder",
+        "quiz",
+        "word-scramble",
+        "listening",
+        "dictation",
+        "pronunciation",
+        "drag-drop",
+      ],
+      legal_document_type: ["terms", "privacy", "cookies"],
+    },
+  },
+} as const
+
