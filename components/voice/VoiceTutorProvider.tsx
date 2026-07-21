@@ -51,7 +51,7 @@ function TutorControls({
     start,
     end,
   } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onSessionEnded })
-  const { onActivityComplete, onActivityDifficult } = useTutorActivityActions()
+  const { onActivityComplete, onActivityDifficult } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
 
   const handleModeChange = (nextMode: SessionMode) => {
