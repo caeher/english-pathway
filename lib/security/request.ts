@@ -1,4 +1,4 @@
-onst unsafeMethods = new Set(['POST', 'PUT', 'PATCH', 'DELETE'])
+const unsafeMethods = new Set(['POST', 'PUT', 'PATCH', 'DELETE'])
 
 export function isUnsafeMethod(method: string): boolean {
   return unsafeMethods.has(method.toUpperCase())

@@ -1,4 +1,4 @@
-mport { describe, expect, it, beforeEach } from 'vitest'
+import { describe, expect, it, beforeEach } from 'vitest'
 import { criticalJourneys, qualityBudgets } from '@/lib/quality/critical-routes'
 import { securityHeaders } from '@/lib/security/headers'
 import { consumeRateLimit, getRateLimitPolicy, resetRateLimitBuckets } from '@/lib/security/rate-limit'
