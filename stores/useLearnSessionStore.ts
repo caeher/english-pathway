@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { z } from 'zod'
 import type { ChapterActivity } from '@/types'
-import type { TutorSessionState } from '@/lib/tutor/state'
+import { transitionTutorState, type TutorSessionState } from '@/lib/tutor/state'
 
 export interface ActivitySessionResult {
   activityId: string
@@ -90,18 +90,36 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
   persist(
     (set) => ({
       ...initialLearnSessionState,
-      setGrammar: (markdown, title) => set({ panel: { kind: 'grammar', markdown, title }, tutorState: 'explaining' }),
+      setGrammar: (markdown, title) =>
+        set((state) => ({
+          panel: { kind: 'grammar', markdown, title },
+          tutorState: transitionTutorState(state.tutorState, { type: 'explanation_shown' }),
+        })),
       setActivity: (activity, chapterId, moduleId) =>
-        set({
+        set((state) => ({
           panel: { kind: 'activity', activity, chapterId, moduleId },
           lastActivityId: activity.id,
-          tutorState: 'activity_presented',
-        }),
+          tutorState: transitionTutorState(state.tutorState, { type: 'activity_presented' }),
+        })),
       setQuestion: (prompt, options, correctIndex) =>
-        set({ panel: { kind: 'question', prompt, options, correctIndex }, tutorState: 'waiting_response' }),
-      clearPanel: () => set({ panel: { kind: 'empty' }, tutorState: 'next_step' }),
-      recordActivityResult: (result) => set({ tutorState: 'evaluating', lastActivityResult: result }),
-      requestHelp: () => set({ tutorState: 'help' }),
+        set((state) => ({
+          panel: { kind: 'question', prompt, options, correctIndex },
+          tutorState: transitionTutorState(state.tutorState, { type: 'answer_requested' }),
+        })),
+      clearPanel: () =>
+        set((state) => ({
+          panel: { kind: 'empty' },
+          tutorState: transitionTutorState(state.tutorState, { type: 'panel_cleared' }),
+        })),
+      recordActivityResult: (result) =>
+        set((state) => ({
+          tutorState: transitionTutorState(state.tutorState, { type: 'activity_result', scorePercent: result.scorePercent }),
+          lastActivityResult: result,
+        })),
+      requestHelp: () =>
+        set((state) => ({
+          tutorState: transitionTutorState(state.tutorState, { type: 'help_requested' }),
+        })),
       resetSession: () => set(initialLearnSessionState),
     }),
     {

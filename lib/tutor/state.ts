@@ -20,6 +20,7 @@ export type TutorSessionEvent =
   | { type: 'answer_requested' }
   | { type: 'activity_result'; scorePercent: number }
   | { type: 'help_requested' }
+  | { type: 'panel_cleared' }
   | { type: 'continue' }
   | { type: 'abandon' }
   | { type: 'close' }
@@ -32,6 +33,7 @@ export function transitionTutorState(state: TutorSessionState, event: TutorSessi
   if (event.type === 'answer_requested') return 'waiting_response'
   if (event.type === 'activity_result') return 'evaluating'
   if (event.type === 'help_requested') return 'help'
+  if (event.type === 'panel_cleared') return 'next_step'
   if (event.type === 'continue') {
     if (state === 'evaluating') return 'reinforcing'
     if (state === 'help') return 'waiting_response'

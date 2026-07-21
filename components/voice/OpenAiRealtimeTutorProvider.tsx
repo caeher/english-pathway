@@ -8,11 +8,25 @@ import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import type { SessionMode } from './session-types'
-import { clearPanel, fetchCurriculumContext, showActivity, showGrammar, showQuestion } from '@/lib/learn/client-tools'
-import { curriculumChapterHref } from '@/lib/curriculum/href'
-import { curriculumContextActionSchema, showActivityActionSchema, showGrammarActionSchema, showQuestionActionSchema } from '@/lib/tutor/schemas'
+import { showActivity } from '@/lib/learn/client-tools'
+import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
+
+type RealtimeEvent = {
+  type?: string
+  name?: string
+  call_id?: string
+  arguments?: string
+  response?: {
+    output?: Array<{
+      type?: string
+      name?: string
+      call_id?: string
+      arguments?: string
+    }>
+  }
+}
 
 function formatDuration(seconds: number) {
   return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
@@ -34,6 +48,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
   const maxSecondsRef = useRef(0)
   const endTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
+  const processedCallIdsRef = useRef<Set<string>>(new Set())
 
   const sendUserMessage = useCallback((text: string) => {
     const channel = channelRef.current
@@ -45,44 +60,29 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     channel.send(JSON.stringify({ type: 'response.create' }))
     return true
   }, [])
-  const executeClientTool = useCallback(async (name: string, rawArguments: unknown) => {
-    if (name === 'showGrammar') {
-      const parsed = showGrammarActionSchema.safeParse(rawArguments)
-      if (!parsed.success) return 'Grammar content was rejected because it was invalid or unsafe.'
-      showGrammar(parsed.data.markdown, parsed.data.title)
-      return 'Grammar content displayed.'
+
+  const handleFunctionCall = useCallback(async (name: string, callId: string, rawArguments: string | undefined) => {
+    if (processedCallIdsRef.current.has(callId)) return
+    processedCallIdsRef.current.add(callId)
+
+    const channel = channelRef.current
+    let argumentsValue: unknown = {}
+    try {
+      argumentsValue = rawArguments ? JSON.parse(rawArguments) : {}
+    } catch {
+      // Invalid tool arguments are rejected by the executor.
     }
-    if (name === 'showActivity') {
-      const parsed = showActivityActionSchema.safeParse(rawArguments)
-      if (!parsed.success) return 'Activity request was rejected because its ID was invalid.'
-      const result = await showActivity(parsed.data.activityId)
-      return `Activity "${result.title}" is now visible. Its chapter is available at ${result.curriculumUrl}.`
-    }
-    if (name === 'showQuestion') {
-      const parsed = showQuestionActionSchema.safeParse(rawArguments)
-      if (!parsed.success) return 'Question request was rejected because its payload was invalid.'
-      showQuestion(parsed.data.prompt, parsed.data.options, parsed.data.correctIndex)
-      return 'Question displayed.'
-    }
-    if (name === 'clearPanel') {
-      clearPanel()
-      return 'Panel cleared.'
-    }
-    if (name === 'fetchCurriculumContext') {
-      const parsed = curriculumContextActionSchema.safeParse(rawArguments)
-      if (!parsed.success) return 'Curriculum lookup was rejected because its payload was invalid.'
-      const matches = await fetchCurriculumContext(parsed.data)
-      if (!matches.length) return 'No relevant curriculum content found.'
-      return matches.map((item, index) => {
-        const moduleId = typeof item.metadata.moduleId === 'string' ? item.metadata.moduleId : undefined
-        const chapterId = typeof item.metadata.chapterId === 'string' ? item.metadata.chapterId : undefined
-        const source = moduleId && chapterId ? `\nSource: ${curriculumChapterHref(moduleId, chapterId)}` : ''
-        return `[${index + 1}] (similarity ${item.similarity.toFixed(2)})${source}\n${item.content}`
-      }).join('\n\n---\n\n')
-    }
-    return 'This tool is not available.'
+
+    const output = await executeTutorTool(name, argumentsValue)
+    if (!channel || channel.readyState !== 'open') return
+    channel.send(JSON.stringify({
+      type: 'conversation.item.create',
+      item: { type: 'function_call_output', call_id: callId, output },
+    }))
+    channel.send(JSON.stringify({ type: 'response.create' }))
   }, [])
-  const { onActivityComplete, onActivityDifficult } = useTutorActivityActions(sendUserMessage)
+
+  const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
 
   const loadCredits = useCallback(async () => {
     const response = await fetch('/api/credits')
@@ -107,6 +107,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     pcRef.current?.close()
     pcRef.current = null
     channelRef.current = null
+    processedCallIdsRef.current.clear()
     audioRef.current?.pause()
     if (audioRef.current) audioRef.current.srcObject = null
     setStream((current) => { current?.getTracks().forEach((track) => track.stop()); return null })
@@ -130,6 +131,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
   const start = useCallback(async () => {
     setError(null)
     setConnecting(true)
+    processedCallIdsRef.current.clear()
     try {
       const pc = new RTCPeerConnection()
       pcRef.current = pc
@@ -149,16 +151,23 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
       const channel = pc.createDataChannel('oai-events')
       channelRef.current = channel
       channel.onmessage = (event) => {
-        const payload = (() => { try { return JSON.parse(String(event.data)) as { type?: string; name?: string; call_id?: string; arguments?: string } } catch { return null } })()
-        if (!payload || payload.type !== 'response.function_call_arguments.done' || !payload.name || !payload.call_id) return
-        void (async () => {
-          let argumentsValue: unknown = {}
-          try { argumentsValue = payload.arguments ? JSON.parse(payload.arguments) : {} } catch { /* Invalid tool arguments are rejected below. */ }
-          const output = await executeClientTool(payload.name!, argumentsValue).catch(() => 'The requested client action could not be completed.')
-          if (channel.readyState !== 'open') return
-          channel.send(JSON.stringify({ type: 'conversation.item.create', item: { type: 'function_call_output', call_id: payload.call_id, output } }))
-          channel.send(JSON.stringify({ type: 'response.create' }))
+        const payload = (() => {
+          try { return JSON.parse(String(event.data)) as RealtimeEvent } catch { return null }
         })()
+        if (!payload?.type) return
+
+        if (payload.type === 'response.function_call_arguments.done' && payload.name && payload.call_id) {
+          void handleFunctionCall(payload.name, payload.call_id, payload.arguments)
+          return
+        }
+
+        if (payload.type === 'response.done' && Array.isArray(payload.response?.output)) {
+          for (const item of payload.response.output) {
+            if (item.type === 'function_call' && item.name && item.call_id) {
+              void handleFunctionCall(item.name, item.call_id, item.arguments)
+            }
+          }
+        }
       }
       const offer = await pc.createOffer()
       await pc.setLocalDescription(offer)
@@ -180,7 +189,10 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
         setError('Your voice credits are finished for this account.')
         void end()
       }, maxSeconds * 1_000)
-      channel.onopen = () => { sendUserMessage('Greet me briefly and ask what English skill I want to practise today.') }
+      channel.onopen = () => {
+        flushPendingMessages()
+        sendUserMessage('Greet me briefly, then use showGrammar to display a one-sentence welcome tip in the learning panel, and ask what English skill I want to practise today.')
+      }
     } catch (caughtError) {
       if (creditSessionIdRef.current) await end()
       else {
@@ -193,7 +205,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     } finally {
       setConnecting(false)
     }
-  }, [end, executeClientTool, mode, sendUserMessage])
+  }, [end, flushPendingMessages, handleFunctionCall, mode, sendUserMessage])
 
   const toggleMuted = () => {
     stream?.getAudioTracks().forEach((track) => { track.enabled = muted })
@@ -220,5 +232,6 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     </div>}
     onActivityComplete={onActivityComplete}
     onActivityDifficult={onActivityDifficult}
+    onQuestionAnswered={onQuestionAnswered}
   />
 }

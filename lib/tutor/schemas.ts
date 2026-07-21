@@ -23,6 +23,10 @@ export const curriculumContextActionSchema = z.object({
   chapterId: z.string().min(1).max(100).optional(),
 })
 
+export const listChapterActivitiesActionSchema = z.object({
+  chapterId: safeIdentifier,
+})
+
 export const tutorSessionStateSchema = z.enum([
   'preparing',
   'context',

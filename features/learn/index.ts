@@ -4,7 +4,10 @@ export {
   clearPanel,
   fetchActivityById,
   fetchCurriculumContext,
+  getPanelState,
+  listChapterActivities,
   showActivity,
   showGrammar,
   showQuestion,
 } from '@/lib/learn/client-tools'
+export { executeTutorTool } from '@/lib/learn/execute-tutor-tool'

@@ -2,21 +2,13 @@ import { createHash } from 'node:crypto'
 import { apiErrorResponse, DomainError } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
 import { finishAudioCreditSession, startAudioCreditSession } from '@/lib/credits/usage'
+import { buildTutorInstructions } from '@/lib/tutor/instructions'
+import { TUTOR_REALTIME_TOOLS } from '@/lib/tutor/realtime-tools'
 
 export const runtime = 'nodejs'
 
 const REALTIME_MODEL = process.env.OPENAI_REALTIME_MODEL || 'gpt-realtime-2.1-mini'
 const REALTIME_VOICE = process.env.OPENAI_REALTIME_VOICE || 'marin'
-
-const INSTRUCTIONS = `You are the friendly English Pathway voice tutor. Help the learner practise English through brief, natural conversation. Correct errors gently, give one clear improvement at a time, and keep the conversation in English unless the learner needs a short explanation in another language. Do not claim to be human or reveal implementation details.`
-
-const TOOLS = [
-  { type: 'function', name: 'showGrammar', description: 'Show a concise grammar explanation in the learning panel.', parameters: { type: 'object', properties: { title: { type: 'string' }, markdown: { type: 'string' } }, required: ['title', 'markdown'], additionalProperties: false } },
-  { type: 'function', name: 'showActivity', description: 'Show a curriculum activity by its validated ID.', parameters: { type: 'object', properties: { activityId: { type: 'string' } }, required: ['activityId'], additionalProperties: false } },
-  { type: 'function', name: 'showQuestion', description: 'Show a multiple-choice question in the learning panel.', parameters: { type: 'object', properties: { prompt: { type: 'string' }, options: { type: 'array', items: { type: 'string' } }, correctIndex: { type: 'integer' } }, required: ['prompt', 'options', 'correctIndex'], additionalProperties: false } },
-  { type: 'function', name: 'clearPanel', description: 'Clear the learning panel.', parameters: { type: 'object', properties: {}, additionalProperties: false } },
-  { type: 'function', name: 'fetchCurriculumContext', description: 'Retrieve relevant English Pathway curriculum context.', parameters: { type: 'object', properties: { query: { type: 'string' }, moduleId: { type: 'string' }, chapterId: { type: 'string' }, matchCount: { type: 'integer', minimum: 1, maximum: 5 } }, required: ['query'], additionalProperties: false } },
-]
 
 export async function POST(request: Request) {
   const context = await getAuthenticatedContext()
@@ -30,14 +22,25 @@ export async function POST(request: Request) {
     return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', credit.reason === 'active_session' ? 'A voice session is already active.' : 'Your 5 minutes of voice credits have been used.', 429), 'Voice credits exhausted')
   }
 
+  const [profile, progress] = await Promise.all([
+    context.supabase.from('profiles').select('level').eq('id', context.userId).maybeSingle(),
+    context.supabase.from('user_progress').select('last_chapter_id, last_activity_id').eq('user_id', context.userId).maybeSingle(),
+  ])
+
+  const instructions = buildTutorInstructions({
+    level: profile.data?.level ?? null,
+    lastChapterId: progress.data?.last_chapter_id ?? null,
+    lastActivityId: progress.data?.last_activity_id ?? null,
+  })
+
   const form = new FormData()
   form.set('sdp', sdp)
   form.set('session', JSON.stringify({
     type: 'realtime',
     model: REALTIME_MODEL,
-    instructions: INSTRUCTIONS,
+    instructions,
     audio: { output: { voice: REALTIME_VOICE } },
-    tools: TOOLS,
+    tools: TUTOR_REALTIME_TOOLS,
   }))
 
   try {

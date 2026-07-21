@@ -13,4 +13,9 @@ describe('tutor session state machine', () => {
     expect(transitionTutorState('help', { type: 'continue' })).toBe('waiting_response')
     expect(transitionTutorState('help', { type: 'abandon' })).toBe('closed')
   })
+
+  it('clears the panel into next_step', () => {
+    expect(transitionTutorState('explaining', { type: 'panel_cleared' })).toBe('next_step')
+    expect(transitionTutorState('activity_presented', { type: 'panel_cleared' })).toBe('next_step')
+  })
 })

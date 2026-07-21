@@ -3,13 +3,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useConversation } from '@elevenlabs/react'
 import { trackEvent } from '@/lib/analytics/events'
-import type { SessionConfig, SessionMode } from '@/components/voice/session-types'
+import type { SessionConfig, SessionMode, SessionOrchestration } from '@/components/voice/session-types'
 import { resolveSessionLaunch } from '@/components/voice/session-config'
 
 interface UseTutorSessionOptions {
   mode: SessionMode
   onCheckMicrophone: () => Promise<boolean>
-  onSessionStarted: (sessionId: string) => void
+  onSessionStarted: (sessionId: string, orchestration?: SessionOrchestration) => void
   onSessionEnded: () => void
 }
 
@@ -52,7 +52,7 @@ export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onS
         return false
       }
 
-      onSessionStarted(config.orchestration?.sessionId ?? crypto.randomUUID())
+      onSessionStarted(config.orchestration?.sessionId ?? crypto.randomUUID(), config.orchestration)
       if (launch.signedUrl) startSession({ signedUrl: launch.signedUrl, textOnly: launch.textOnly })
       else if (launch.agentId) startSession({ agentId: launch.agentId, textOnly: launch.textOnly })
       return true

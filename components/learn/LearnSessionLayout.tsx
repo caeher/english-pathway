@@ -7,12 +7,14 @@ interface LearnSessionLayoutProps {
   tutorSlot: React.ReactNode
   onActivityComplete?: (result: ActivityCompleteResult) => void
   onActivityDifficult?: (activityId: string) => void
+  onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
 }
 
 export default function LearnSessionLayout({
   tutorSlot,
   onActivityComplete,
   onActivityDifficult,
+  onQuestionAnswered,
 }: LearnSessionLayoutProps) {
   return (
     <div className="mx-auto w-full max-w-6xl">
@@ -21,7 +23,11 @@ export default function LearnSessionLayout({
           {tutorSlot}
         </section>
         <section className="min-h-[42dvh] flex-1 bg-(--bg-primary) lg:min-h-0">
-          <DynamicContentPanel onActivityComplete={onActivityComplete} onActivityDifficult={onActivityDifficult} />
+          <DynamicContentPanel
+            onActivityComplete={onActivityComplete}
+            onActivityDifficult={onActivityDifficult}
+            onQuestionAnswered={onQuestionAnswered}
+          />
         </section>
       </div>
     </div>

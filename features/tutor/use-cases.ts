@@ -6,12 +6,28 @@ import { resolveActivityByIdValidated } from '@/features/learn'
 import { resolveChapter, resolveModule } from '@/features/curriculum'
 import type { TutorContextRequest, TutorMemoryDeleteInput, TutorMemoryWriteInput } from './contracts'
 
-const allowedTools = ['showGrammar', 'showActivity', 'showQuestion', 'clearPanel', 'fetchCurriculumContext'] as const
+const allowedTools = ['showGrammar', 'showActivity', 'showQuestion', 'clearPanel', 'fetchCurriculumContext', 'listChapterActivities', 'getPanelState'] as const
 
 export async function getTutorActivityUseCase(activityId: string) {
   const resolved = resolveActivityByIdValidated(activityId)
   if (!resolved) throw new DomainError('NOT_FOUND', 'Activity not found')
   return { activity: resolved.activity, chapterId: resolved.chapter.id, moduleId: resolved.module.id }
+}
+
+export async function getTutorChapterActivitiesUseCase(chapterId: string) {
+  const resolved = await resolveChapter(chapterId)
+  if (!resolved) throw new DomainError('NOT_FOUND', 'Chapter not found')
+  return {
+    chapterId: resolved.chapter.id,
+    chapterTitle: resolved.chapter.title,
+    moduleId: resolved.module.id,
+    activities: resolved.chapter.activities.map((activity) => ({
+      id: activity.id,
+      type: activity.type,
+      title: activity.title,
+      description: activity.description,
+    })),
+  }
 }
 
 export async function buildTutorContextUseCase(context: AuthenticatedContext | null, input: TutorContextRequest) {
@@ -30,7 +46,13 @@ export async function buildTutorContextUseCase(context: AuthenticatedContext | n
       : `${match.citation.moduleId ?? 'module'}:${match.citation.chapterId ?? 'module'}:${index}`,
     content: match.content,
     similarity: match.similarity,
-    metadata: match.citation,
+    metadata: {
+      ...match.citation,
+      moduleId: match.citation.moduleId,
+      chapterId: match.citation.chapterId,
+      activityId: match.citation.activityId,
+      chunkType: match.citation.chunkType,
+    },
   }))
   return { matches, context: tutorContext }
 }

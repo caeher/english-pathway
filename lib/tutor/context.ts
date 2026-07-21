@@ -16,7 +16,15 @@ export interface TutorContextRequest {
 export interface TutorContextMatch {
   content: string
   similarity: number
-  citation: { source: 'curriculum' | 'personal'; moduleId?: string; chapterId?: string; heading?: string; memoryKey?: string }
+  citation: {
+    source: 'curriculum' | 'personal'
+    moduleId?: string
+    chapterId?: string
+    heading?: string
+    activityId?: string
+    chunkType?: string
+    memoryKey?: string
+  }
 }
 
 export interface TutorContext {
@@ -44,6 +52,8 @@ function toCitation(metadata: Record<string, unknown>): TutorContextMatch['citat
     moduleId: metadata.moduleId,
     ...(typeof metadata.chapterId === 'string' ? { chapterId: metadata.chapterId } : {}),
     ...(typeof metadata.heading === 'string' ? { heading: metadata.heading } : {}),
+    ...(typeof metadata.activityId === 'string' ? { activityId: metadata.activityId } : {}),
+    ...(typeof metadata.chunkType === 'string' ? { chunkType: metadata.chunkType } : {}),
   }
 }
 
@@ -63,12 +73,21 @@ export function getLocalTutorMatches(query: string, moduleId?: string, chapterId
   const terms = query.toLowerCase().split(/\s+/).filter((term) => term.length > 2).slice(0, 12)
   return chapters
     .flatMap(({ module, chapter }) => {
-      const sections = chapter.content.split(/\n(?=#{1,3}\s)/).filter(Boolean)
-      return sections.map((content) => {
+      const sectionMatches = chapter.content.split(/\n(?=#{1,3}\s)/).filter(Boolean).map((content) => {
         const lower = content.toLowerCase()
         const score = terms.filter((term) => lower.includes(term)).length
-        return { content: `${chapter.title}\n\n${content}`.slice(0, 1800), score, citation: { source: 'curriculum' as const, moduleId: module.id, chapterId: chapter.id } }
+        return { content: `${chapter.title}\n\n${content}`.slice(0, 1800), score, citation: { source: 'curriculum' as const, moduleId: module.id, chapterId: chapter.id, chunkType: 'content' } }
       })
+      const activityMatches = chapter.activities.map((activity) => {
+        const text = `${activity.title} ${activity.description} ${activity.type}`.toLowerCase()
+        const score = terms.filter((term) => text.includes(term)).length
+        return {
+          content: `Activity: ${activity.title}\nType: ${activity.type}\n${activity.description}`,
+          score,
+          citation: { source: 'curriculum' as const, moduleId: module.id, chapterId: chapter.id, activityId: activity.id, chunkType: 'activity_meta' },
+        }
+      })
+      return [...sectionMatches, ...activityMatches]
     })
     .filter((match) => match.score > 0)
     .sort((a, b) => b.score - a.score)

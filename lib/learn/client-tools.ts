@@ -1,4 +1,4 @@
-import { learnSessionActions } from '@/stores/useLearnSessionStore'
+import { learnSessionActions, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { curriculumChapterHref } from '@/lib/curriculum/href'
 import type { ChapterActivity } from '@/types'
 
@@ -53,4 +53,32 @@ export function showQuestion(prompt: string, options?: string[], correctIndex?: 
 
 export function clearPanel() {
   learnSessionActions.clearPanel()
+}
+
+export async function listChapterActivities(chapterId: string): Promise<{
+  chapterId: string
+  chapterTitle: string
+  moduleId: string
+  activities: Array<{ id: string; type: string; title: string; description: string }>
+}> {
+  const res = await fetch(`/api/tutor/chapter/${encodeURIComponent(chapterId)}/activities`)
+  if (!res.ok) {
+    throw new Error('Chapter not found')
+  }
+  return res.json()
+}
+
+export function getPanelState() {
+  const state = useLearnSessionStore.getState()
+  const panel = state.panel
+  return {
+    panelKind: panel.kind,
+    activityId: panel.kind === 'activity' ? panel.activity.id : undefined,
+    activityType: panel.kind === 'activity' ? panel.activity.type : undefined,
+    activityTitle: panel.kind === 'activity' ? panel.activity.title : undefined,
+    grammarTitle: panel.kind === 'grammar' ? panel.title : undefined,
+    questionPrompt: panel.kind === 'question' ? panel.prompt : undefined,
+    lastActivityResult: state.lastActivityResult,
+    tutorState: state.tutorState,
+  }
 }

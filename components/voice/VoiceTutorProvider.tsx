@@ -8,13 +8,14 @@ import MicrophoneVisualizer from './MicrophoneVisualizer'
 import { useMicrophoneAccess, useVoiceAvailability } from './hooks/useMicrophoneAccess'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import { useTutorSession } from './hooks/useTutorSession'
-import type { MicrophoneState, SessionMode } from './session-types'
+import type { MicrophoneState, SessionMode, SessionOrchestration } from './session-types'
 import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { showActivity } from '@/lib/learn/client-tools'
 import EngagementSummary from '@/components/engagement/EngagementSummary'
 import { saveTutorMemory } from '@/lib/tutor/client'
+import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
 import ProgressSync from '@/components/progress/ProgressSync'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
@@ -26,7 +27,7 @@ interface TutorControlsProps {
   microphoneStream: MediaStream | null
   onModeChange: (mode: SessionMode) => void
   onCheckMicrophone: () => Promise<boolean>
-  onSessionStarted: (sessionId: string) => void
+  onSessionStarted: (sessionId: string, orchestration?: SessionOrchestration) => void
   onSessionEnded: () => void
 }
 
@@ -40,6 +41,15 @@ function TutorControls({
   onSessionStarted,
   onSessionEnded,
 }: TutorControlsProps) {
+  const orchestrationRef = useRef<SessionOrchestration | undefined>(undefined)
+  const bootstrapSentRef = useRef(false)
+
+  const handleSessionStarted = useCallback((sessionId: string, orchestration?: SessionOrchestration) => {
+    orchestrationRef.current = orchestration
+    bootstrapSentRef.current = false
+    onSessionStarted(sessionId, orchestration)
+  }, [onSessionStarted])
+
   const {
     active,
     connecting,
@@ -51,9 +61,21 @@ function TutorControls({
     sendUserMessage,
     start,
     end,
-  } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onSessionEnded })
-  const { onActivityComplete, onActivityDifficult } = useTutorActivityActions(sendUserMessage)
+  } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted: handleSessionStarted, onSessionEnded })
+  const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    if (!active) {
+      bootstrapSentRef.current = false
+      return
+    }
+    if (bootstrapSentRef.current) return
+    bootstrapSentRef.current = true
+    flushPendingMessages()
+    const bootstrap = buildOrchestrationMessage(orchestrationRef.current)
+    if (bootstrap) sendUserMessage(bootstrap)
+  }, [active, flushPendingMessages, sendUserMessage])
 
   const handleModeChange = (nextMode: SessionMode) => {
     clearError()
@@ -134,6 +156,7 @@ function TutorControls({
       }
       onActivityComplete={onActivityComplete}
       onActivityDifficult={onActivityDifficult}
+      onQuestionAnswered={onQuestionAnswered}
     />
   )
 }
