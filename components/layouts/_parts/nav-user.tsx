@@ -44,11 +44,11 @@ export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false
           collapsed && 'justify-center'
         )}
       >
-        <Avatar className="h-8 w-8 shrink-0 aspect-square rounded-xl overflow-hidden">
-          <AvatarImage src={avatarUrl ?? undefined} alt={fullName ?? 'User'} className="aspect-square h-full w-full object-cover rounded-[inherit]" />
+        <Avatar className="h-8 w-8 shrink-0 border-none aspect-square rounded-xl overflow-hidden">
+          <AvatarImage src={avatarUrl ?? undefined} alt={fullName ?? 'User'} className="aspect-square h-full w-full object-cover" />
           <AvatarFallback className={cn(
             'text-xs font-bold rounded-[inherit]',
-            isHero ? 'bg-white text-(--accent) shadow-sm' : 'bg-(--accent-soft) text-(--accent)'
+            isHero ? 'bg-white text-(--accent)' : 'bg-(--accent-soft) text-(--accent)'
           )}>
             {initials}
           </AvatarFallback>

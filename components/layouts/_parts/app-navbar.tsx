@@ -14,7 +14,7 @@ export function AppNavbar({ title, onToggleSidebar, className }: AppNavbarProps)
   return (
     <header
       className={cn(
-        'flex h-(--app-header-h) shrink-0 items-center justify-between border-b border-(--border-primary) bg-(--bg-primary)/80 backdrop-blur-xl px-4 lg:px-6',
+        'flex h-(--app-header-h) shrink-0 items-center justify-between  bg-(--bg-primary)/80 backdrop-blur-xl px-4 lg:px-6',
         className
       )}
     >

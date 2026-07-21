@@ -70,7 +70,7 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
         ? isScrolled
           ? 'sticky top-0 z-40 border-b border-white/20 bg-orange-600/95 text-white backdrop-blur-xl transition-all duration-300 shadow-md'
           : 'sticky top-0 z-40 border-b-0 bg-transparent text-white shadow-none transition-all duration-300'
-        : 'sticky top-0 z-40 border-b border-(--border-primary)/60 bg-(--bg-primary)/90 text-(--text-primary) backdrop-blur-2xl transition-all duration-300 shadow-sm'
+        : 'sticky top-0 z-40 bg-(--bg-primary)/90 text-(--text-primary) backdrop-blur-2xl transition-all duration-300 shadow-sm'
     }>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="group flex items-center gap-3 no-underline">
@@ -98,26 +98,6 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
         </Link>
 
         <div className="flex items-center gap-3">
-          <nav className="hidden items-center gap-2 sm:flex" aria-label="Main navigation">
-            {navItems.map(({ href, label, icon }) => {
-              const Icon = icons[icon]
-              const active = isNavigationItemActive(pathname, href)
-              return (
-              <Link
-                key={href}
-                href={href}
-                aria-current={active ? 'page' : undefined}
-                className={
-                  isHomePage
-                    ? 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-bold text-white/90 no-underline transition-colors hover:bg-white/15 hover:text-white aria-[current=page]:bg-white/20 aria-[current=page]:text-amber-200'
-                    : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium text-(--text-secondary) no-underline transition-colors hover:text-(--accent) aria-[current=page]:text-(--accent)'
-                }
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" /> {label} {href === '/review' && <SrsBadge />}
-              </Link>
-              )
-            })}
-          </nav>
 
           {context.isAuthenticated ? (
             <NavUser email={context.email} fullName={context.fullName} avatarUrl={context.avatarUrl} compact showDashboard={context.onboardingCompleted} variant={isHomePage ? 'hero' : 'default'} />
