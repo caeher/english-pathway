@@ -2,6 +2,7 @@
 
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react'
 import { Bot, MessageCircle, Send, X } from 'lucide-react'
+import { Streamdown } from 'streamdown'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/helpers'
 
@@ -104,14 +105,16 @@ export default function EnglishAssistant() {
             {messages.map((message, index) => (
               <div
                 className={cn(
-                  'max-w-[88%] whitespace-pre-wrap rounded-2xl px-3 py-2.5 text-sm leading-relaxed',
+                  'max-w-[88%] rounded-2xl px-3 py-2.5 text-sm leading-relaxed',
                   message.role === 'user'
-                    ? 'ml-auto rounded-br-md bg-(--accent) text-white'
-                    : 'rounded-bl-md bg-(--bg-tertiary) text-(--text-primary)',
+                    ? 'ml-auto whitespace-pre-wrap rounded-br-md bg-(--accent) text-white'
+                    : 'english-assistant-markdown rounded-bl-md bg-(--bg-tertiary) text-(--text-primary)',
                 )}
                 key={`${message.role}-${index}`}
               >
-                {message.content}
+                {message.role === 'assistant'
+                  ? <Streamdown mode="streaming">{message.content}</Streamdown>
+                  : message.content}
               </div>
             ))}
             {isSending && (
