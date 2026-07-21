@@ -101,7 +101,8 @@
       "supabase"
     ],
     "overrides": {
-      "esbuild": "0.27.7"
+      "esbuild": "0.27.7",
+      "sharp": "0.35.3"
     }
   }
 }
