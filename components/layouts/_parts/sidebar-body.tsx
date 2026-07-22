@@ -7,6 +7,7 @@ import {
   FileText,
   GraduationCap,
   LayoutDashboard,
+  RotateCcw,
   Settings,
   Users,
   BarChart3,
@@ -14,12 +15,14 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/helpers'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { SrsBadge } from '@/components/layouts/_parts/srs-badge'
 import { isNavigationItemActive } from '@/lib/navigation-model'
 
 const NAV_ICONS = {
   LayoutDashboard,
   BookOpen,
   GraduationCap,
+  RotateCcw,
   Users,
   FileText,
   Settings,
@@ -32,6 +35,7 @@ export interface NavItem {
   label: string
   href: string
   icon: NavIconName
+  badge?: 'srs'
 }
 
 interface SidebarBodyProps {
@@ -58,12 +62,16 @@ export function SidebarBody({ items, collapsed }: SidebarBodyProps) {
                 isActive
                   ? 'bg-(--accent-soft) text-(--accent)'
                   : 'text-(--text-secondary) hover:bg-(--bg-tertiary) hover:text-(--text-primary)',
-                collapsed && 'justify-center px-2'
+                collapsed && 'justify-center px-2',
+                item.badge && !collapsed && 'justify-between'
               )}
               title={collapsed ? item.label : undefined}
             >
-              <Icon className="h-4 w-4 shrink-0" />
-              {!collapsed && <span className="truncate">{item.label}</span>}
+              <span className="flex items-center gap-3 min-w-0">
+                <Icon className="h-4 w-4 shrink-0" />
+                {!collapsed && <span className="truncate">{item.label}</span>}
+              </span>
+              {item.badge === 'srs' && !collapsed && <SrsBadge />}
             </Link>
           )
         })}

@@ -22,9 +22,10 @@ interface NavUserProps {
   compact?: boolean
   showDashboard?: boolean
   variant?: 'default' | 'hero'
+  menuVariant?: 'default' | 'sidebar'
 }
 
-export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false, showDashboard = true, variant = 'default' }: NavUserProps) {
+export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false, showDashboard = true, variant = 'default', menuVariant = 'default' }: NavUserProps) {
   const isHero = variant === 'hero'
   const initials = (fullName || email || 'U')
     .split(' ')
@@ -75,39 +76,44 @@ export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false
           <User className="mr-2 h-4 w-4 shrink-0 text-(--text-muted)" />
           <span className="truncate">{email || fullName || 'User'}</span>
         </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href="/curriculum" className="flex items-center cursor-pointer">
-            <BookOpen className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
-            <span>Curriculum</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href={showDashboard ? '/learn' : '/onboarding?next=%2Flearn'} className="flex items-center cursor-pointer">
-            <GraduationCap className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
-            <span>Learn</span>
-          </Link>
-        </DropdownMenuItem>
-        {showDashboard && (
-          <DropdownMenuItem asChild>
-            <Link href="/review" className="flex items-center justify-between w-full cursor-pointer">
-              <div className="flex items-center">
-                <RotateCcw className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
-                <span>Review</span>
-              </div>
-              <SrsBadge />
-            </Link>
-          </DropdownMenuItem>
+        {menuVariant === 'default' && (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem asChild>
+              <Link href="/curriculum" className="flex items-center cursor-pointer">
+                <BookOpen className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
+                <span>Curriculum</span>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href={showDashboard ? '/learn' : '/onboarding?next=%2Flearn'} className="flex items-center cursor-pointer">
+                <GraduationCap className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
+                <span>Learn</span>
+              </Link>
+            </DropdownMenuItem>
+            {showDashboard && (
+              <DropdownMenuItem asChild>
+                <Link href="/review" className="flex items-center justify-between w-full cursor-pointer">
+                  <div className="flex items-center">
+                    <RotateCcw className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
+                    <span>Review</span>
+                  </div>
+                  <SrsBadge />
+                </Link>
+              </DropdownMenuItem>
+            )}
+            {showDashboard && (
+              <DropdownMenuItem asChild>
+                <Link href="/dashboard" className="flex items-center cursor-pointer">
+                  <LayoutDashboard className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
+                  <span>Dashboard</span>
+                </Link>
+              </DropdownMenuItem>
+            )}
+            <DropdownMenuSeparator />
+          </>
         )}
-        {showDashboard && (
-          <DropdownMenuItem asChild>
-            <Link href="/dashboard" className="flex items-center cursor-pointer">
-              <LayoutDashboard className="mr-2 h-4 w-4 shrink-0 text-(--accent)" />
-              <span>Dashboard</span>
-            </Link>
-          </DropdownMenuItem>
-        )}
-        <DropdownMenuSeparator />
+        {menuVariant === 'sidebar' && <DropdownMenuSeparator />}
         <DropdownMenuItem asChild>
           <Link href="/settings" className="flex items-center cursor-pointer">
             <Settings className="mr-2 h-4 w-4 shrink-0 text-(--text-muted)" />

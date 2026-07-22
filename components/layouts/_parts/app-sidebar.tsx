@@ -49,6 +49,7 @@ export function AppSidebar({
             fullName={fullName}
             avatarUrl={avatarUrl}
             collapsed={collapsed}
+            menuVariant="sidebar"
           />
         </SidebarFooter>
       </aside>

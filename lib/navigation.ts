@@ -32,7 +32,20 @@ export async function getNavigationContext(): Promise<NavigationContext> {
   }
 }
 
-export const accountNavItems: NavItem[] = [
-  { label: 'Dashboard', href: '/dashboard', icon: 'LayoutDashboard' },
-  { label: 'Settings', href: '/settings', icon: 'Settings' },
+type AccountNavDefinition = NavItem & {
+  visible: (context: NavigationContext) => boolean
+}
+
+const accountNavDefinitions: AccountNavDefinition[] = [
+  { label: 'Dashboard', href: '/dashboard', icon: 'LayoutDashboard', visible: (context) => context.onboardingCompleted },
+  { label: 'Curriculum', href: '/curriculum', icon: 'BookOpen', visible: () => true },
+  { label: 'Learn', href: '/learn', icon: 'GraduationCap', visible: (context) => context.onboardingCompleted },
+  { label: 'Continue setup', href: '/onboarding?next=%2Flearn', icon: 'GraduationCap', visible: (context) => !context.onboardingCompleted },
+  { label: 'Review', href: '/review', icon: 'RotateCcw', visible: (context) => context.onboardingCompleted, badge: 'srs' },
 ]
+
+export function getAccountNavItems(context: NavigationContext): NavItem[] {
+  return accountNavDefinitions
+    .filter((item) => item.visible(context))
+    .map(({ visible: _, ...item }) => item)
+}
