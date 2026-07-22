@@ -25,15 +25,15 @@ export default function EngagementSummary() {
   useEffect(() => {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'
     Promise.all([
-      fetch('/api/engagement/streak').then((response) => response.ok ? response.json() as Promise<{ totalXp: number; currentStreak: number; longestStreak: number }> : null),
-      fetch(`/api/engagement/daily-progress?timezone=${encodeURIComponent(timezone)}`).then((response) => response.ok ? response.json() as Promise<{ progress: { dailyMinutes: number; dailyGoalMinutes: number } }> : null),
+      fetch(`/api/engagement/streak?timezone=${encodeURIComponent(timezone)}`).then((response) => response.ok ? response.json() as Promise<{ totalXp: number; currentStreak: number; longestStreak: number }> : null),
+      fetch(`/api/engagement/daily-progress?timezone=${encodeURIComponent(timezone)}`).then((response) => response.ok ? response.json() as Promise<{ progress: { minutesStudied: number; dailyGoalMinutes: number } }> : null),
     ]).then(([streak, daily]) => {
       if (streak && daily) {
         setSummary({
           totalXp: streak.totalXp,
           currentStreak: streak.currentStreak,
           longestStreak: streak.longestStreak,
-          dailyMinutes: daily.progress.dailyMinutes,
+          dailyMinutes: daily.progress.minutesStudied,
           dailyGoalMinutes: daily.progress.dailyGoalMinutes,
         })
       }

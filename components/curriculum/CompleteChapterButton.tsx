@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Check } from 'lucide-react'
 import { Button, InlineError } from '@/components/ui'
 import { saveChapterProgress } from '@/features/progress/client'
@@ -12,6 +13,7 @@ interface CompleteChapterButtonProps {
 }
 
 export function CompleteChapterButton({ chapterId, initialCompleted, canComplete }: CompleteChapterButtonProps) {
+  const router = useRouter()
   const [completed, setCompleted] = useState(initialCompleted)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -24,6 +26,7 @@ export function CompleteChapterButton({ chapterId, initialCompleted, canComplete
       const saved = await saveChapterProgress({ chapterId, status: 'completed' })
       if (!saved) throw new Error('Unable to save your chapter completion.')
       setCompleted(true)
+      router.refresh()
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'Unable to save your chapter completion.')
     } finally {

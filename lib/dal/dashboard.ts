@@ -3,21 +3,22 @@ import type { Database } from '@/lib/supabase/database.types'
 import { getTodayDateString } from '@/lib/engagement/daily-goal'
 import { getAchievements } from '@/lib/dal/engagement'
 import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
-import { resolveChapter } from '@/lib/content/resolve'
+import { resolveAllModules, resolveChapter } from '@/lib/content/resolve'
 
 type Client = SupabaseClient<Database>
 
 export async function getDashboardData(supabase: Client, userId: string) {
   const today = getTodayDateString()
-  const [profile, engagement, daily, progress, activities, chapters, due, achievements] = await Promise.all([
+  const [profile, engagement, daily, progress, activities, chapters, due, achievements, modules] = await Promise.all([
     supabase.from('profiles').select('full_name, daily_goal_minutes').eq('id', userId).maybeSingle(),
     supabase.from('user_engagement').select('*').eq('user_id', userId).maybeSingle(),
     supabase.from('daily_sessions').select('*').eq('user_id', userId).eq('session_date', today).maybeSingle(),
     supabase.from('user_progress').select('*').eq('user_id', userId).maybeSingle(),
     supabase.from('activity_completions').select('activity_id, chapter_id, score, status, updated_at').eq('user_id', userId).order('updated_at', { ascending: false }).limit(5),
-    supabase.from('chapter_completions').select('chapter_id, completed_at').eq('user_id', userId).order('completed_at', { ascending: false }).limit(5),
+    supabase.from('chapter_completions').select('*', { count: 'exact', head: true }).eq('user_id', userId),
     supabase.from('srs_items').select('*', { count: 'exact', head: true }).eq('user_id', userId).lte('due_at', new Date().toISOString()),
     getAchievements(supabase, userId),
+    resolveAllModules(),
   ])
 
   const errors = [profile, engagement, daily, progress, activities, chapters, due].filter((result) => result.error)
@@ -49,7 +50,8 @@ export async function getDashboardData(supabase: Client, userId: string) {
     },
     progress: progress.data,
     recentActivities,
-    completedChapters: chapters.data?.length ?? 0,
+    completedChapters: chapters.count ?? 0,
+    totalChapters: modules.reduce((total, curriculumModule) => total + curriculumModule.chapters.length, 0),
     dueReviews: due.count ?? 0,
     achievements: {
       earned: achievements.filter((achievement) => achievement.earned).length,

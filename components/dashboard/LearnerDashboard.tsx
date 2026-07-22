@@ -4,14 +4,16 @@ import { getLevelProgress } from '@/lib/engagement/xp'
 import { learnHref } from '@/lib/curriculum/href'
 import { Badge, SectionHeader, Surface } from '@/components/ui'
 import { getLearningContinuation } from '@/lib/learning/continuation'
+import { CurrentStreak } from './CurrentStreak'
 
 interface DashboardData {
   profile: { full_name: string | null; daily_goal_minutes: number | null } | null
-  engagement: { total_xp: number; current_streak: number; longest_streak: number } | null
+  engagement: { total_xp: number; current_streak: number; longest_streak: number; last_study_date: string | null } | null
   daily: { minutes: number; goalMinutes: number; goalMet: boolean }
   progress: { last_chapter_id: string | null; last_activity_id: string | null } | null
   recentActivities: Array<{ id: string; title: string; chapterTitle: string; score: number | null; status: string; updatedAt: string }>
   completedChapters: number
+  totalChapters: number
   dueReviews: number
   achievements: {
     earned: number
@@ -24,7 +26,6 @@ interface DashboardData {
 export default function LearnerDashboard({ data }: { data: DashboardData }) {
   const totalXp = data.engagement?.total_xp ?? 0
   const level = getLevelProgress(totalXp)
-  const streak = data.engagement?.current_streak ?? 0
   const dailyPct = data.daily.goalMinutes > 0 ? Math.min(100, Math.round((data.daily.minutes / data.daily.goalMinutes) * 100)) : 0
   const firstName = data.profile?.full_name?.split(' ')[0] ?? 'Learner'
   const resume = data.lastChapter
@@ -34,7 +35,7 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
       activityId: data.progress?.last_activity_id ?? null,
     }
     : null
-  const continuation = getLearningContinuation({ dueReviews: data.dueReviews, resume, completedChapters: data.completedChapters, totalChapters: 0 })
+  const continuation = getLearningContinuation({ dueReviews: data.dueReviews, resume, completedChapters: data.completedChapters, totalChapters: data.totalChapters })
 
   return (
     <div className="mx-auto max-w-6xl space-y-6">
@@ -54,13 +55,12 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
         </Surface>
         <Surface>
           <div className="flex items-center justify-between"><Flame className="h-5 w-5 text-(--accent)" /><Badge variant="accent">BEST {data.engagement?.longest_streak ?? 0}</Badge></div>
-          <p className="mt-4 text-2xl font-black text-(--text-primary)">{streak} days</p>
-          <p className="mt-2 text-xs text-(--text-muted)">A streak grows on each day you record learning activity.</p>
+          <CurrentStreak currentStreak={data.engagement?.current_streak ?? 0} longestStreak={data.engagement?.longest_streak ?? 0} lastStudyDate={data.engagement?.last_study_date ?? null} />
         </Surface>
         <Surface>
           <div className="flex items-center justify-between"><Trophy className="h-5 w-5 text-(--secondary)" /><Badge variant="secondary">CHAPTERS</Badge></div>
           <p className="mt-4 text-2xl font-black text-(--text-primary)">{data.completedChapters}</p>
-          <p className="mt-2 text-xs text-(--text-muted)">Completed chapters</p>
+          <p className="mt-2 text-xs text-(--text-muted)">of {data.totalChapters} chapters completed</p>
         </Surface>
         <Surface>
           <div className="flex items-center justify-between"><RotateCcw className="h-5 w-5 text-(--accent)" /><Badge variant="accent">SRS</Badge></div>

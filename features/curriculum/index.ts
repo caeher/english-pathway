@@ -3,6 +3,7 @@ export { resolveAllModules, resolveChapter, resolveChapterNav, resolveModule } f
 export { curriculumChapterHref, curriculumModuleHref, learnHref } from '@/lib/curriculum/href'
 export {
   getChapterProgress,
+  getCompletableChapterIds,
   getLearningTarget,
   getModuleProgress,
   type CurriculumProgressSnapshot,

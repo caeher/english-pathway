@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getChapterProgress, getLearningTarget, getModuleProgress } from '@/lib/curriculum/progress'
+import { getChapterProgress, getCompletableChapterIds, getLearningTarget, getModuleProgress } from '@/lib/curriculum/progress'
 import type { Chapter, Module } from '@/types'
 
 const chapter = (id: string, activities = ['a-1', 'a-2']): Chapter => ({
@@ -73,5 +73,32 @@ describe('curriculum progress', () => {
       lastChapterId: null,
       lastActivityId: null,
     })).toEqual({ moduleId: 'module-1', chapterId: 'chapter-1', activityId: 'a-1' })
+  })
+
+  it('does not resume an activity from a completed chapter', () => {
+    expect(getLearningTarget([curriculumModule], {
+      completedChapterIds: new Set(['chapter-1', 'chapter-2']),
+      activities: [
+        { activity_id: 'a-1', chapter_id: 'chapter-1', status: 'completed' },
+        { activity_id: 'a-2', chapter_id: 'chapter-1', status: 'completed' },
+      ],
+      lastChapterId: 'chapter-1',
+      lastActivityId: 'a-2',
+    })).toBeNull()
+  })
+
+  it('selects only unfinished chapters whose required activities are all complete', () => {
+    const first = chapter('chapter-1')
+    const second = chapter('chapter-2', ['b-1'])
+    expect(getCompletableChapterIds([first, second], {
+      completedChapterIds: new Set(['chapter-2']),
+      activities: [
+        { activity_id: 'a-1', chapter_id: 'chapter-1', status: 'completed' },
+        { activity_id: 'a-2', chapter_id: 'chapter-1', status: 'completed' },
+        { activity_id: 'b-1', chapter_id: 'chapter-2', status: 'completed' },
+      ],
+      lastChapterId: 'chapter-1',
+      lastActivityId: 'a-2',
+    })).toEqual(['chapter-1'])
   })
 })

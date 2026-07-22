@@ -93,6 +93,20 @@ export function getModuleProgress(
   }
 }
 
+/**
+ * Returns only chapters that can be safely persisted as complete. Completion
+ * remains derived from the curriculum definition, never a client-provided
+ * count, and already-completed chapters are excluded for idempotent callers.
+ */
+export function getCompletableChapterIds(
+  chapters: readonly Chapter[],
+  snapshot: CurriculumProgressSnapshot,
+): string[] {
+  return chapters
+    .filter((chapter) => getChapterProgress(chapter, snapshot).canComplete)
+    .map((chapter) => chapter.id)
+}
+
 export function getLearningTarget(
   modules: readonly Module[],
   snapshot: CurriculumProgressSnapshot,
@@ -100,7 +114,7 @@ export function getLearningTarget(
   if (snapshot.lastActivityId) {
     for (const curriculumModule of modules) {
       for (const chapter of curriculumModule.chapters) {
-        if (chapter.activities.some((activity) => activity.id === snapshot.lastActivityId)) {
+        if (!snapshot.completedChapterIds.has(chapter.id) && chapter.activities.some((activity) => activity.id === snapshot.lastActivityId)) {
           return { moduleId: curriculumModule.id, chapterId: chapter.id, activityId: snapshot.lastActivityId }
         }
       }
@@ -110,7 +124,7 @@ export function getLearningTarget(
   if (snapshot.lastChapterId) {
     for (const curriculumModule of modules) {
       const chapter = curriculumModule.chapters.find((item) => item.id === snapshot.lastChapterId)
-      if (chapter) {
+      if (chapter && !snapshot.completedChapterIds.has(chapter.id)) {
         return {
           moduleId: curriculumModule.id,
           chapterId: chapter.id,
