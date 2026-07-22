@@ -378,6 +378,27 @@ export type Database = {
         }
         Relationships: []
       }
+      engagement_activity_sessions: {
+        Row: {
+          activity_id: string
+          completed_at: string
+          session_date: string
+          user_id: string
+        }
+        Insert: {
+          activity_id: string
+          completed_at?: string
+          session_date: string
+          user_id: string
+        }
+        Update: {
+          activity_id?: string
+          completed_at?: string
+          session_date?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       english_assistant_prompt_logs: {
         Row: {
           completed_at: string | null

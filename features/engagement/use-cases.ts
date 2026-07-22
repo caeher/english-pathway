@@ -2,6 +2,7 @@ import type { AuthenticatedContext } from '@/lib/api/context'
 import { DomainError } from '@/lib/api/errors'
 import { getAchievements, getDailyProgress, getEngagementState, recordEngagementSession } from '@/lib/dal/engagement'
 import { getLocalDateString, isValidTimeZone } from '@/lib/engagement/daily-goal'
+import { getActiveStreak } from '@/lib/engagement/streak'
 import { getXpForActivity } from '@/lib/engagement/xp'
 import { resolveActivityByIdValidated } from '@/features/learn'
 import type { EngagementSessionInput } from './contracts'
@@ -27,10 +28,12 @@ export async function getDailyProgressUseCase(context: AuthenticatedContext, tim
   return getDailyProgress(context.supabase, context.userId, getLocalDateString(timezone))
 }
 
-export async function getStreakUseCase(context: AuthenticatedContext) {
+export async function getStreakUseCase(context: AuthenticatedContext, timezone: string) {
+  if (!isValidTimeZone(timezone)) throw new DomainError('INVALID_INPUT', 'Invalid timezone')
   const state = await getEngagementState(context.supabase, context.userId)
+  const localDate = getLocalDateString(timezone)
   return {
-    currentStreak: state?.current_streak ?? 0,
+    currentStreak: getActiveStreak(state?.current_streak ?? 0, state?.last_study_date ?? null, localDate),
     longestStreak: state?.longest_streak ?? 0,
     totalXp: state?.total_xp ?? 0,
     lastStudyDate: state?.last_study_date ?? null,
