@@ -41,10 +41,13 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // Do not cache authenticated or mutating API responses in a shared browser cache.
+  // Do not cache authenticated/mutating API responses or development server chunks
   if (
+    url.hostname === 'localhost' ||
+    url.hostname === '127.0.0.1' ||
     url.hostname.includes('supabase.co') ||
     url.pathname.startsWith('/_next/webpack-hmr') ||
+    url.pathname.includes('/dev/') ||
     url.pathname.startsWith('/api/')
   ) {
     if (url.pathname.startsWith('/api/')) {

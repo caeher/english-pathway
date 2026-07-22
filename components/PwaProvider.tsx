@@ -19,6 +19,16 @@ export default function PwaProvider() {
   useEffect(() => {
     if (!('serviceWorker' in navigator)) return
 
+    // In development mode, unregister any active service worker to prevent HMR chunk caching issues
+    if (process.env.NODE_ENV === 'development') {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (const registration of registrations) {
+          void registration.unregister()
+        }
+      }).catch(() => {})
+      return
+    }
+
     let cancelled = false
     const handleBeforeInstallPrompt = (event: Event) => {
       event.preventDefault()
