@@ -10,6 +10,7 @@ describe('engagement XP', () => {
   it('clamps invalid score values before calculating XP', () => {
     expect(getXpForActivity('quiz', -10)).toBe(12)
     expect(getXpForActivity('quiz', 150)).toBe(17)
+    expect(getXpForActivity('quiz', Number.NaN)).toBe(12)
   })
 
   it('computes a level bar from total XP', () => {
@@ -19,5 +20,6 @@ describe('engagement XP', () => {
       nextLevelXp: 300,
       progressPct: 45,
     })
+    expect(getLevelProgress(Number.NaN)).toMatchObject({ level: 1, currentLevelXp: 0, nextLevelXp: 100, progressPct: 0 })
   })
 })

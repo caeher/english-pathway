@@ -2,6 +2,8 @@ import type { ActivityType } from '@/types'
 
 export interface EngagementUpdate {
   xpAwarded: number
+  activityXpAwarded: number
+  achievementXpAwarded: number
   totalXp: number
   currentStreak: number
   longestStreak: number

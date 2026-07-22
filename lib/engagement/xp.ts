@@ -14,12 +14,14 @@ const BASE_XP: Record<ActivityType, number> = {
 }
 
 export function getXpForActivity(activityType: ActivityType, scorePercent: number): number {
-  const score = Math.max(0, Math.min(100, Math.round(scorePercent)))
+  const score = Number.isFinite(scorePercent)
+    ? Math.max(0, Math.min(100, Math.round(scorePercent)))
+    : 0
   return BASE_XP[activityType] + Math.round(score / 20)
 }
 
 export function getLevelProgress(totalXp: number) {
-  const safeXp = Math.max(0, Math.floor(totalXp))
+  const safeXp = Number.isFinite(totalXp) ? Math.max(0, Math.floor(totalXp)) : 0
   const level = Math.floor(safeXp / 100) + 1
   const currentLevelXp = (level - 1) * 100
   const nextLevelXp = level * 100

@@ -5,6 +5,8 @@ type Client = SupabaseClient<Database>
 
 export interface EngagementState {
   xpAwarded: number
+  activityXpAwarded: number
+  achievementXpAwarded: number
   totalXp: number
   currentStreak: number
   longestStreak: number
@@ -74,6 +76,8 @@ export function parseEngagementState(value: Json): EngagementState {
   const state = value as Partial<EngagementState>
   return {
     xpAwarded: Number(state.xpAwarded ?? 0),
+    activityXpAwarded: Number(state.activityXpAwarded ?? state.xpAwarded ?? 0),
+    achievementXpAwarded: Number(state.achievementXpAwarded ?? 0),
     totalXp: Number(state.totalXp ?? 0),
     currentStreak: Number(state.currentStreak ?? 0),
     longestStreak: Number(state.longestStreak ?? 0),
