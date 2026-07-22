@@ -9,6 +9,7 @@ import { migratePersistKeys } from '@/lib/storage/migrate-persist'
 import PwaProvider from '@/components/PwaProvider'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
 import EnglishAssistant from '@/components/EnglishAssistant'
+import ProgressSync from '@/components/progress/ProgressSync'
 
 function ThemeInit() {
   const dark = useThemeStore(selectDark)
@@ -47,7 +48,10 @@ export default function ClientProviders({ children, isAuthenticated }: { childre
       <PwaProvider />
       <CookieConsentBanner />
       {children}
-      {isAuthenticated && <EnglishAssistant />}
+      {isAuthenticated && <>
+        <ProgressSync />
+        <EnglishAssistant />
+      </>}
       <Toaster />
     </TooltipProvider>
   )

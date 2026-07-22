@@ -17,7 +17,6 @@ import EngagementSummary from '@/components/engagement/EngagementSummary'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
-import ProgressSync from '@/components/progress/ProgressSync'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
 
 interface TutorControlsProps {
@@ -219,7 +218,6 @@ function ElevenLabsVoiceTutorProvider({ children, initialActivityId }: VoiceTuto
   return (
     <ConversationProvider textOnly={mode === 'text'}>
       <EngagementSummary />
-      <ProgressSync />
       <ContinueLearningPrompt />
       <TutorClientTools />
       {children ?? <TutorControls mode={mode} voiceAvailable={voiceAvailable} microphoneState={microphoneState} microphoneStream={microphoneStream} onModeChange={handleModeChange} onCheckMicrophone={checkMicrophone} onSessionStarted={handleSessionStarted} onSessionEnded={handleSessionEnded} />}
