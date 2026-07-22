@@ -15,7 +15,11 @@ export function SrsBadge() {
 
     fetchCount()
     const interval = setInterval(fetchCount, 60_000)
-    return () => clearInterval(interval)
+    window.addEventListener('srs-queue-updated', fetchCount)
+    return () => {
+      clearInterval(interval)
+      window.removeEventListener('srs-queue-updated', fetchCount)
+    }
   }, [])
 
   if (count <= 0) return null

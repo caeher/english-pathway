@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Check, ChevronRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { Button, EmptyState, InlineError, LoadingState } from '@/components/ui'
@@ -22,20 +22,24 @@ export default function ReviewSession() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  async function loadQueue() {
+  const loadQueue = useCallback(async () => {
     setLoading(true)
     setError(null)
-    fetch('/api/srs/queue')
-      .then(async (response) => {
-        if (!response.ok) throw new Error('Unable to load your review queue.')
-        return response.json() as Promise<{ items: SrsQueueItem[] }>
-      })
-      .then((data) => setItems(data.items))
-      .catch((loadError: Error) => setError(loadError.message))
-      .finally(() => setLoading(false))
-  }
+    try {
+      const response = await fetch('/api/srs/queue')
+      if (!response.ok) throw new Error('Unable to load your review queue.')
+      const data = await response.json() as { items: SrsQueueItem[] }
+      setIndex(0)
+      setRevealed(false)
+      setItems(data.items)
+    } catch (loadError) {
+      setError(loadError instanceof Error ? loadError.message : 'Unable to load your review queue.')
+    } finally {
+      setLoading(false)
+    }
+  }, [])
 
-  useEffect(() => { void loadQueue() }, [])
+  useEffect(() => { void loadQueue() }, [loadQueue])
 
   const item = items[index]
 
@@ -51,8 +55,9 @@ export default function ReviewSession() {
       })
       if (!response.ok) throw new Error('Unable to save this review.')
       trackEvent('srs_review_complete', { quality, activity_id: item.content.activityId })
+      window.dispatchEvent(new Event('srs-queue-updated'))
       setRevealed(false)
-      if (index + 1 >= items.length) setItems([])
+      if (index + 1 >= items.length) void loadQueue()
       else setIndex((current) => current + 1)
     } catch (gradeError) {
       setError(gradeError instanceof Error ? gradeError.message : 'Unable to save this review.')

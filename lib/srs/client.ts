@@ -5,5 +5,6 @@ export async function enqueueSrsItems(contentRefs: string[]) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ action: 'enqueue', contentRefs }),
   })
+  if (response.ok && typeof window !== 'undefined') window.dispatchEvent(new Event('srs-queue-updated'))
   return response.ok
 }
