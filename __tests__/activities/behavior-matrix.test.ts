@@ -9,6 +9,8 @@ describe('activity behavior matrix', () => {
   it.each(activityTypes)('%s has the shared reset, retry, result, persistence, and review behavior', (type) => {
     expect(activityRegistry[type].behavior).toEqual({ reset: true, retry: true, result: true, persistence: true, review: true })
     expect(activityRegistry[type].capabilities).toContain('keyboard')
+    expect(activityRegistry[type].snapshot.version).toBe(1)
+    expect(typeof activityRegistry[type].snapshot.summarize).toBe('function')
   })
 
   it('has a valid curriculum fixture for every registered renderer', () => {
