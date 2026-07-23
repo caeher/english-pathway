@@ -4,25 +4,35 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, XCircle, ArrowRight } from 'lucide-react'
 import type { ListeningItem } from '@/types'
+import type { ListeningProgress } from '@/features/activities/snapshots/listening'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import { speak } from '@/lib/audio/tts'
 import { cn } from '@/lib/helpers'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
 interface ListeningProps {
   items: ListeningItem[]
+  initialProgress?: ListeningProgress
+  onProgressChange?: (progress: ListeningProgress) => void
   onComplete?: (result: { score: number; total: number; weakItemIndexes?: number[] }) => void
 }
 
-export default function Listening({ items, onComplete }: ListeningProps) {
-  const [current, setCurrent] = useState(0)
-  const [selected, setSelected] = useState<number | null>(null)
-  const [answered, setAnswered] = useState(false)
-  const [score, setScore] = useState(0)
+export default function Listening({ items, initialProgress, onProgressChange, onComplete }: ListeningProps) {
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [selected, setSelected] = useState<number | null>(initialProgress?.selected ?? null)
+  const [answered, setAnswered] = useState(initialProgress?.answered ?? false)
+  const [score, setScore] = useState(initialProgress?.score ?? 0)
   const [finished, setFinished] = useState(false)
   const [explanations, setExplanations] = useState<string[]>([])
-  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>([])
+  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>(initialProgress?.weakItemIndexes ?? [])
+
+  useDebouncedProgress(
+    { current, selected, answered, score, weakItemIndexes },
+    onProgressChange,
+    finished,
+  )
 
   const item = items[current]
 

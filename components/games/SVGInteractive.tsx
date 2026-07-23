@@ -1,22 +1,32 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import type { SVGScene, SVGSceneItem } from '../../types'
+import type { SvgSceneProgress } from '@/features/activities/snapshots/svg-scene'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import ActivityResult from './ActivityResult'
 import { svgSceneCoverage } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface SVGInteractiveProps {
   scene: SVGScene
+  initialProgress?: SvgSceneProgress
+  onProgressChange?: (progress: SvgSceneProgress) => void
   onItemClick?: (item: SVGSceneItem) => void
   onComplete?: (result: { score: number; total: number; discovered: number }) => void
 }
 
-export default function SVGInteractive({ scene, onItemClick, onComplete }: SVGInteractiveProps) {
+export default function SVGInteractive({ scene, initialProgress, onProgressChange, onItemClick, onComplete }: SVGInteractiveProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
-  const [discovered, setDiscovered] = useState<Set<string>>(new Set())
+  const [discovered, setDiscovered] = useState<Set<string>>(() => new Set(initialProgress?.discoveredIds ?? []))
   const [finished, setFinished] = useState(false)
   const reducedMotion = useReducedMotion()
+
+  useDebouncedProgress(
+    { discoveredIds: [...discovered] },
+    onProgressChange,
+    finished,
+  )
 
   const hovered = scene.items.find((i) => i.id === hoveredId)
 

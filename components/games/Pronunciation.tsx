@@ -3,10 +3,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowRight, Mic, MicOff, RotateCcw } from 'lucide-react'
 import type { PronunciationItem } from '@/types'
+import type { PronunciationProgress } from '@/features/activities/snapshots/pronunciation'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import { cn } from '@/lib/helpers'
 import ActivityResult from './ActivityResult'
 import { scorePronunciation, type PronunciationScore } from '@/lib/audio/pronunciation-scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
 interface SpeechRecognitionResultEvent {
   results: { [index: number]: { [index: number]: { transcript: string } } }
@@ -38,6 +40,8 @@ function getSpeechRecognition(): (new () => SpeechRecognitionInstance) | null {
 
 interface PronunciationProps {
   items: PronunciationItem[]
+  initialProgress?: PronunciationProgress
+  onProgressChange?: (progress: PronunciationProgress) => void
   onComplete?: (result: { score: number; total: number; scorePercent: number }) => void
 }
 
@@ -51,18 +55,26 @@ function recognitionErrorMessage(error?: string): string {
   return 'Speech recognition failed. Please try again or use text verification.'
 }
 
-export default function Pronunciation({ items, onComplete }: PronunciationProps) {
-  const [current, setCurrent] = useState(0)
+export default function Pronunciation({ items, initialProgress, onProgressChange, onComplete }: PronunciationProps) {
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
   const [listening, setListening] = useState(false)
   const [transcript, setTranscript] = useState('')
   const [typedText, setTypedText] = useState('')
   const [attemptScore, setAttemptScore] = useState<PronunciationScore | null>(null)
-  const [bestScores, setBestScores] = useState<number[]>(() => items.map(() => 0))
+  const [bestScores, setBestScores] = useState<number[]>(() =>
+    initialProgress?.bestScores ?? items.map(() => 0),
+  )
   const [finalScorePercent, setFinalScorePercent] = useState(0)
   const [finalPassedCount, setFinalPassedCount] = useState(0)
   const [error, setError] = useState<string | null>(null)
   const [finished, setFinished] = useState(false)
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
+
+  useDebouncedProgress(
+    { current, bestScores },
+    onProgressChange,
+    finished,
+  )
 
   const item = items[current]
   const SpeechRecognition = getSpeechRecognition()
