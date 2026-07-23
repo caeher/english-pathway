@@ -2,27 +2,52 @@ import { useState, useMemo } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { RotateCcw, CheckCircle } from 'lucide-react'
 import type { MatchPair } from '../../types'
+import type { WordMatchProgress } from '@/features/activities/snapshots/word-match'
 import { shuffleArray, cn } from '@/lib/helpers'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import ActivityResult from './ActivityResult'
 import { wordMatchAccuracy } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
 interface WordMatchProps {
   pairs: MatchPair[]
+  initialProgress?: WordMatchProgress
+  onProgressChange?: (progress: WordMatchProgress) => void
   onComplete?: (result: { score: number; total: number; attempts: number; pairCount: number }) => void
 }
 
-export default function WordMatch({ pairs, onComplete }: WordMatchProps) {
+function buildMatchedSet(leftIndices: number[], shuffledRight: { originalIdx: number }[]): Set<string> {
+  const matched = new Set<string>()
+  for (const leftIdx of leftIndices) {
+    const rightIdx = shuffledRight.findIndex((item) => item.originalIdx === leftIdx)
+    if (rightIdx >= 0) matched.add(`${leftIdx}-${rightIdx}`)
+  }
+  return matched
+}
+
+export default function WordMatch({ pairs, initialProgress, onProgressChange, onComplete }: WordMatchProps) {
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null)
   const [selectedRight, setSelectedRight] = useState<number | null>(null)
-  const [matched, setMatched] = useState<Set<string>>(new Set())
+  const shuffledRight = useMemo(() => shuffleArray(pairs.map((p, idx) => ({ text: p.right, originalIdx: idx }))), [pairs])
+  const [matched, setMatched] = useState<Set<string>>(() =>
+    buildMatchedSet(initialProgress?.matchedLeftIndices ?? [], shuffledRight),
+  )
   const [wrong, setWrong] = useState<{ left: number; right: number } | null>(null)
-  const [attempts, setAttempts] = useState(0)
+  const [attempts, setAttempts] = useState(initialProgress?.attempts ?? 0)
   const [finished, setFinished] = useState(false)
 
   const shouldReduceMotion = useReducedMotion()
 
-  const shuffledRight = useMemo(() => shuffleArray(pairs.map((p, idx) => ({ text: p.right, originalIdx: idx }))), [pairs])
+  const matchedLeftIndices = useMemo(
+    () => [...matched].map((key) => Number(key.split('-')[0])),
+    [matched],
+  )
+
+  useDebouncedProgress(
+    { matchedLeftIndices, attempts },
+    onProgressChange,
+    finished,
+  )
   const allMatched = matched.size === pairs.length
 
   const checkMatch = (leftIdx: number, rightIdx: number) => {

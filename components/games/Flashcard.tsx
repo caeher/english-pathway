@@ -2,22 +2,32 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react'
 import type { FlashcardData } from '../../types'
+import type { FlashcardProgress } from '@/features/activities/snapshots/flashcard'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import ActivityResult from './ActivityResult'
 import { flashcardCoverage } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface FlashcardProps {
   cards: FlashcardData[]
+  initialProgress?: FlashcardProgress
+  onProgressChange?: (progress: FlashcardProgress) => void
   onComplete?: (result: { score: number; total: number; known: number }) => void
 }
 
-export default function Flashcard({ cards, onComplete }: FlashcardProps) {
-  const [current, setCurrent] = useState(0)
-  const [flipped, setFlipped] = useState(false)
-  const [known, setKnown] = useState<Set<string>>(new Set())
+export default function Flashcard({ cards, initialProgress, onProgressChange, onComplete }: FlashcardProps) {
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [flipped, setFlipped] = useState(initialProgress?.flipped ?? false)
+  const [known, setKnown] = useState<Set<string>>(() => new Set(initialProgress?.knownIds ?? []))
   const [finished, setFinished] = useState(false)
   const reducedMotion = useReducedMotion()
+
+  useDebouncedProgress(
+    { current, flipped, knownIds: [...known] },
+    onProgressChange,
+    finished,
+  )
 
   const card = cards[current]
 

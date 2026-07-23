@@ -2,14 +2,18 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, RotateCcw } from 'lucide-react'
 import type { WordScrambleItem } from '../../types'
+import type { WordScrambleProgress } from '@/features/activities/snapshots/word-scramble'
 import { shuffleArray, cn } from '@/lib/helpers'
 import { useReducedMotion } from '@/lib/games/useReducedMotion'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
 interface WordScrambleProps {
   words: WordScrambleItem[]
+  initialProgress?: WordScrambleProgress
+  onProgressChange?: (progress: WordScrambleProgress) => void
   onComplete?: (result: { score: number; total: number }) => void
 }
 
@@ -18,14 +22,20 @@ function scrambleWord(word: string): string[] {
   return shuffleArray(letters)
 }
 
-export default function WordScramble({ words, onComplete }: WordScrambleProps) {
+export default function WordScramble({ words, initialProgress, onProgressChange, onComplete }: WordScrambleProps) {
   const reducedMotion = useReducedMotion()
-  const [current, setCurrent] = useState(0)
-  const [selected, setSelected] = useState<string[]>([])
-  const [placedIndices, setPlacedIndices] = useState<number[]>([])
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [selected, setSelected] = useState<string[]>(initialProgress?.selected ?? [])
+  const [placedIndices, setPlacedIndices] = useState<number[]>(initialProgress?.placedIndices ?? [])
   const [wrongIdx, setWrongIdx] = useState<number | null>(null)
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(initialProgress?.score ?? 0)
   const [done, setDone] = useState(false)
+
+  useDebouncedProgress(
+    { current, selected, placedIndices, score },
+    onProgressChange,
+    done,
+  )
 
   const item = words[current]
   const target = item.word.toUpperCase()
