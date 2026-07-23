@@ -77,7 +77,7 @@ export async function updateSession(request: NextRequest) {
       destination = '/settings'
     }
 
-    return redirectWithSession(destination, supabaseResponse)
+    return redirectWithSession(new URL(destination, request.nextUrl), supabaseResponse)
   }
 
   return supabaseResponse

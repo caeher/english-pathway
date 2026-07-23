@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 const TEMPORARY_REDIRECT_STATUS = 307
 
 export function redirectWithSession(
-  url: URL | string,
+  url: URL,
   sessionResponse: NextResponse
 ): NextResponse {
   const response = NextResponse.redirect(url, { status: TEMPORARY_REDIRECT_STATUS })
