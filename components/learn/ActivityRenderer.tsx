@@ -1,12 +1,21 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Component, useState, type ReactNode } from 'react'
+import { Component, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { ChapterActivity } from '@/types'
 import { activityRegistry, type ActivityTypeKey } from '@/features/activities'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { normalizeActivityResult } from '@/lib/games/result'
+import { isActivityCompleted } from '@/features/progress/client'
+import {
+  loadSnapshot,
+  purgeExpiredSnapshots,
+  removeSnapshot,
+  saveSnapshot,
+  summarizeSnapshot,
+} from '@/lib/storage/activity-snapshot'
 import { ActivityControlBar } from './ActivityControlBar'
+import ActivityResumePrompt from './ActivityResumePrompt'
 import type {
   DictationItem,
   FlashcardData,
@@ -74,28 +83,193 @@ interface ActivityRendererProps {
 }
 
 type GameResult = Record<string, unknown> & { score: number; total: number; scorePercent?: number; weakItemIndexes?: number[] }
-type RenderActivity = (props: unknown, onComplete: (result: GameResult) => void) => ReactNode
+type RenderActivity = (
+  props: unknown,
+  onComplete: (result: GameResult) => void,
+  progressProps: { initialProgress?: unknown; onProgressChange?: (progress: unknown) => void },
+) => ReactNode
 
 const renderers: Record<ActivityTypeKey, RenderActivity> = {
-  quiz: (props, onComplete) => <Quiz questions={(props as { questions: QuizQuestion[] }).questions} onComplete={(result) => onComplete({ ...result, scorePercent: result.scorePercent })} />,
-  flashcard: (props, onComplete) => <Flashcard cards={(props as { cards: FlashcardData[] }).cards} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  'word-match': (props, onComplete) => <WordMatch pairs={(props as { pairs: MatchPair[] }).pairs} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  'sentence-builder': (props, onComplete) => <SentenceBuilder sentences={(props as { sentences: SentenceChallenge[] }).sentences} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  'svg-scene': (props, onComplete) => <SVGInteractive scene={(props as { scene: SVGScene }).scene} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  'word-scramble': (props, onComplete) => <WordScramble words={(props as { words: WordScrambleItem[] }).words} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  listening: (props, onComplete) => <Listening items={(props as { items: ListeningItem[] }).items} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  dictation: (props, onComplete) => <Dictation items={(props as { items: DictationItem[] }).items} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  pronunciation: (props, onComplete) => <Pronunciation items={(props as { items: PronunciationItem[] }).items} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />,
-  'drag-drop': (props, onComplete) => {
+  quiz: (props, onComplete, progressProps) => (
+    <Quiz
+      questions={(props as { questions: QuizQuestion[] }).questions}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.scorePercent })}
+    />
+  ),
+  flashcard: (props, onComplete, progressProps) => (
+    <Flashcard
+      cards={(props as { cards: FlashcardData[] }).cards}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  'word-match': (props, onComplete, progressProps) => (
+    <WordMatch
+      pairs={(props as { pairs: MatchPair[] }).pairs}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  'sentence-builder': (props, onComplete, progressProps) => (
+    <SentenceBuilder
+      sentences={(props as { sentences: SentenceChallenge[] }).sentences}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  'svg-scene': (props, onComplete, progressProps) => (
+    <SVGInteractive
+      scene={(props as { scene: SVGScene }).scene}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  'word-scramble': (props, onComplete, progressProps) => (
+    <WordScramble
+      words={(props as { words: WordScrambleItem[] }).words}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  listening: (props, onComplete, progressProps) => (
+    <Listening
+      items={(props as { items: ListeningItem[] }).items}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  dictation: (props, onComplete, progressProps) => (
+    <Dictation
+      items={(props as { items: DictationItem[] }).items}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+    />
+  ),
+  pronunciation: (props, onComplete, progressProps) => (
+    <Pronunciation
+      items={(props as { items: PronunciationItem[] }).items}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.scorePercent })}
+    />
+  ),
+  'drag-drop': (props, onComplete, progressProps) => {
     const data = props as { mode: 'match' | 'sentence'; pairs?: MatchPair[]; sentences?: SentenceChallenge[] }
-    return <DragDrop mode={data.mode} pairs={data.pairs} sentences={data.sentences} onComplete={(result) => onComplete({ ...result, scorePercent: result.score })} />
+    return (
+      <DragDrop
+        mode={data.mode}
+        pairs={data.pairs}
+        sentences={data.sentences}
+        initialProgress={progressProps.initialProgress as never}
+        onProgressChange={progressProps.onProgressChange as never}
+        onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+      />
+    )
   },
 }
 
+type ResumeState = 'checking' | 'prompt' | 'playing'
+
 export default function ActivityRenderer({ activity, onComplete, onHelp, onExit }: ActivityRendererProps) {
   const [attempt, setAttempt] = useState(0)
+  const [resumeState, setResumeState] = useState<ResumeState>('checking')
+  const [savedSummary, setSavedSummary] = useState<string | null>(null)
+  const [restoredProgress, setRestoredProgress] = useState<unknown>(undefined)
+
   const type = activity.type as ActivityTypeKey
   const definition = activityRegistry[type]
+
+  useEffect(() => {
+    purgeExpiredSnapshots()
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function checkSnapshot() {
+      const snapshot = loadSnapshot(activity.id)
+      if (!snapshot || snapshot.activityType !== type) {
+        if (!cancelled) setResumeState('playing')
+        return
+      }
+
+      const completed = await isActivityCompleted(activity.id)
+      if (cancelled) return
+
+      if (completed) {
+        removeSnapshot(activity.id)
+        setResumeState('playing')
+        return
+      }
+
+      setSavedSummary(summarizeSnapshot(snapshot))
+      setResumeState('prompt')
+    }
+
+    setResumeState('checking')
+    setSavedSummary(null)
+    setRestoredProgress(undefined)
+    void checkSnapshot()
+
+    return () => {
+      cancelled = true
+    }
+  }, [activity.id, type, attempt])
+
+  const handleProgressChange = useCallback((payload: unknown) => {
+    saveSnapshot({
+      version: 1,
+      activityId: activity.id,
+      activityType: type,
+      payload,
+    })
+  }, [activity.id, type])
+
+  const clearSnapshot = useCallback(() => {
+    removeSnapshot(activity.id)
+  }, [activity.id])
+
+  const handleResume = useCallback(() => {
+    const snapshot = loadSnapshot(activity.id)
+    if (snapshot) {
+      setRestoredProgress(snapshot.payload)
+    }
+    setResumeState('playing')
+  }, [activity.id])
+
+  const handleStartOver = useCallback(() => {
+    clearSnapshot()
+    setRestoredProgress(undefined)
+    setAttempt((value) => value + 1)
+    setResumeState('playing')
+  }, [clearSnapshot])
+
+  const handleReset = useCallback(() => {
+    clearSnapshot()
+    setRestoredProgress(undefined)
+    setAttempt((value) => value + 1)
+    setResumeState('playing')
+  }, [clearSnapshot])
+
+  const handleExit = useCallback(() => {
+    clearSnapshot()
+    onExit?.()
+  }, [clearSnapshot, onExit])
+
+  const progressProps = useMemo(() => ({
+    initialProgress: restoredProgress,
+    onProgressChange: resumeState === 'playing' ? handleProgressChange : undefined,
+  }), [restoredProgress, resumeState, handleProgressChange])
+
   if (!definition) {
     return <p className="text-sm text-(--text-muted)">Unsupported activity type: {activity.type}</p>
   }
@@ -107,6 +281,7 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
   }
 
   const handleComplete = (result: GameResult) => {
+    clearSnapshot()
     const normalized = normalizeActivityResult(result)
     onComplete?.({
       activityId: activity.id,
@@ -126,10 +301,28 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
 
   return (
     <div>
-      <ActivityControlBar activityTitle={activity.title} activityType={activity.type} onHelp={onHelp ? () => onHelp(activity.id) : undefined} onReset={() => setAttempt((value) => value + 1)} onExit={onExit ?? (() => {})} />
-      <ActivityLoadBoundary onRetry={() => setAttempt((value) => value + 1)}>
-        <div key={attempt}>{renderers[definition.renderer](validated.data, handleComplete)}</div>
-      </ActivityLoadBoundary>
+      <ActivityControlBar
+        activityTitle={activity.title}
+        activityType={activity.type}
+        onHelp={onHelp ? () => onHelp(activity.id) : undefined}
+        onReset={handleReset}
+        onExit={handleExit}
+      />
+      {resumeState === 'checking' && (
+        <div className="min-h-24 animate-pulse rounded-2xl border border-(--border-primary) bg-(--bg-card) p-5" role="status" aria-live="polite">
+          Checking for saved progress…
+        </div>
+      )}
+      {resumeState === 'prompt' && savedSummary && (
+        <ActivityResumePrompt summary={savedSummary} onResume={handleResume} onStartOver={handleStartOver} />
+      )}
+      {resumeState === 'playing' && (
+        <ActivityLoadBoundary onRetry={() => setAttempt((value) => value + 1)}>
+          <div key={attempt}>
+            {renderers[definition.renderer](validated.data, handleComplete, progressProps)}
+          </div>
+        </ActivityLoadBoundary>
+      )}
     </div>
   )
 }

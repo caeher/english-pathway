@@ -1,5 +1,7 @@
 /** Browser-safe progress API. */
 export {
+  isActivityCompleted,
+  isGuestActivityCompleted,
   mergeGuestProgress,
   saveActivityProgress,
   saveChapterProgress,
