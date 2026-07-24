@@ -98,6 +98,8 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
             )}
             <ActivityRenderer
               activity={panel.activity}
+              chapterId={panel.chapterId}
+              moduleId={panel.moduleId}
               onHelp={onActivityDifficult}
               onExit={clearPanel}
               onComplete={(result) => onActivityComplete?.({
