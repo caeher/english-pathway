@@ -6,6 +6,7 @@ import {
   showGrammarActionSchema,
   showQuestionActionSchema,
 } from '@/lib/tutor/schemas'
+import { PANEL_REJECTION_NOTICE } from '@/lib/tutor/panel-content'
 import { useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import {
   clearPanel,
@@ -29,9 +30,10 @@ export async function executeTutorTool(name: string, rawArguments: unknown): Pro
     if (name === 'showGrammar') {
       const parsed = showGrammarActionSchema.safeParse(rawArguments)
       if (!parsed.success) {
-        result = 'Grammar content was rejected because it was invalid or unsafe.'
+        useLearnSessionStore.getState().setPanelNotice(PANEL_REJECTION_NOTICE)
+        result = 'Grammar content was rejected because it was invalid or unsafe. Use structured blocks with plain text only (heading, paragraph, example, list, emphasis).'
       } else {
-        showGrammar(parsed.data.markdown, parsed.data.title)
+        showGrammar(parsed.data.blocks, parsed.data.title)
         result = 'Grammar content displayed in the learning panel.'
       }
     } else if (name === 'showActivity') {
@@ -45,7 +47,8 @@ export async function executeTutorTool(name: string, rawArguments: unknown): Pro
     } else if (name === 'showQuestion') {
       const parsed = showQuestionActionSchema.safeParse(rawArguments)
       if (!parsed.success) {
-        result = 'Question request was rejected because its payload was invalid.'
+        useLearnSessionStore.getState().setPanelNotice(PANEL_REJECTION_NOTICE)
+        result = 'Question request was rejected because its payload was invalid or unsafe. Use plain text only.'
       } else {
         showQuestion(parsed.data.prompt, parsed.data.options, parsed.data.correctIndex)
         result = 'Question displayed in the learning panel. Wait for the learner to select an answer.'

@@ -191,7 +191,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
       }, maxSeconds * 1_000)
       channel.onopen = () => {
         flushPendingMessages()
-        sendUserMessage('Greet me briefly, then use showGrammar to display a one-sentence welcome tip in the learning panel, and ask what English skill I want to practise today.')
+        sendUserMessage('Greet me briefly, then use showGrammar with a short welcome tip as structured blocks (one paragraph block) in the learning panel, and ask what English skill I want to practise today.')
       }
     } catch (caughtError) {
       if (creditSessionIdRef.current) await end()

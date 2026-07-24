@@ -1,5 +1,6 @@
 import { learnSessionActions, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { curriculumChapterHref } from '@/lib/curriculum/href'
+import type { PanelBlock } from '@/lib/tutor/panel-content'
 import type { ChapterActivity } from '@/types'
 
 export async function fetchCurriculumContext(params: {
@@ -33,8 +34,8 @@ export async function fetchActivityById(activityId: string): Promise<{
   return res.json()
 }
 
-export function showGrammar(markdown: string, title?: string) {
-  learnSessionActions.setGrammar(markdown, title)
+export function showGrammar(blocks: PanelBlock[], title?: string) {
+  learnSessionActions.setExplanation(blocks, title)
 }
 
 export async function showActivity(activityId: string) {
@@ -76,8 +77,10 @@ export function getPanelState() {
     activityId: panel.kind === 'activity' ? panel.activity.id : undefined,
     activityType: panel.kind === 'activity' ? panel.activity.type : undefined,
     activityTitle: panel.kind === 'activity' ? panel.activity.title : undefined,
-    grammarTitle: panel.kind === 'grammar' ? panel.title : undefined,
+    explanationTitle: panel.kind === 'explanation' ? panel.title : undefined,
+    blockCount: panel.kind === 'explanation' ? panel.blocks.length : undefined,
     questionPrompt: panel.kind === 'question' ? panel.prompt : undefined,
+    panelNotice: state.panelNotice,
     lastActivityResult: state.lastActivityResult,
     tutorState: state.tutorState,
   }

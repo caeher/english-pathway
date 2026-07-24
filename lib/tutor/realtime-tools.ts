@@ -1,15 +1,32 @@
+const panelBlockProperties = {
+  type: 'object',
+  properties: {
+    type: { type: 'string', enum: ['heading', 'paragraph', 'example', 'list', 'emphasis'] },
+    level: { type: 'integer', enum: [2, 3] },
+    text: { type: 'string', maxLength: 2000 },
+    items: { type: 'array', items: { type: 'string', maxLength: 500 }, minItems: 1, maxItems: 12 },
+  },
+  required: ['type'],
+  additionalProperties: false,
+} as const
+
 export const TUTOR_REALTIME_TOOLS = [
   {
     type: 'function',
     name: 'showGrammar',
-    description: 'Show a concise grammar explanation in the learning panel on the right.',
+    description: 'Show a concise grammar explanation in the learning panel using structured content blocks (heading, paragraph, example, list, emphasis). Do not use markdown or HTML.',
     parameters: {
       type: 'object',
       properties: {
         title: { type: 'string', maxLength: 160 },
-        markdown: { type: 'string', maxLength: 12000 },
+        blocks: {
+          type: 'array',
+          minItems: 1,
+          maxItems: 24,
+          items: panelBlockProperties,
+        },
       },
-      required: ['title', 'markdown'],
+      required: ['title', 'blocks'],
       additionalProperties: false,
     },
   },
