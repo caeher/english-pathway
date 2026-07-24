@@ -2,29 +2,50 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, XCircle, ArrowRight } from 'lucide-react'
 import type { QuizQuestion, QuizResult } from '../../types'
+import type { QuizProgress } from '@/features/activities/snapshots/quiz'
 import { cn } from '@/lib/helpers'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface QuizProps {
   questions: QuizQuestion[]
+  initialProgress?: QuizProgress
+  onProgressChange?: (progress: QuizProgress) => void
   onComplete?: (result: QuizResult & { scorePercent: number; weakItemIndexes?: number[] }) => void
 }
 
-export default function Quiz({ questions, onComplete }: QuizProps) {
-  const [current, setCurrent] = useState(0)
-  const [selected, setSelected] = useState<number | null>(null)
-  const [fillValue, setFillValue] = useState('')
-  const [answered, setAnswered] = useState(false)
-  const [isCorrect, setIsCorrect] = useState(false)
-  const [score, setScore] = useState(0)
+export default function Quiz({ questions, initialProgress, onProgressChange, onComplete }: QuizProps) {
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [selected, setSelected] = useState<number | null>(initialProgress?.selected ?? null)
+  const [fillValue, setFillValue] = useState(initialProgress?.fillValue ?? '')
+  const [answered, setAnswered] = useState(initialProgress?.answered ?? false)
+  const [isCorrect, setIsCorrect] = useState(() => {
+    if (!initialProgress?.answered) return false
+    const question = questions[initialProgress.current]
+    if (!question) return false
+    if (question.type === 'multiple-choice' && initialProgress.selected !== null) {
+      return initialProgress.selected === question.correct
+    }
+    if (question.type === 'fill-blank') {
+      return initialProgress.fillValue.trim().toLowerCase() === question.correct.toLowerCase()
+    }
+    return false
+  })
+  const [score, setScore] = useState(initialProgress?.score ?? 0)
   const [finished, setFinished] = useState(false)
   const [wrongExplanations, setWrongExplanations] = useState<string[]>([])
-  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>([])
+  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>(initialProgress?.weakItemIndexes ?? [])
   const reducedMotion = useReducedMotion()
+
+  useDebouncedProgress(
+    { current, selected, fillValue, answered, score, weakItemIndexes },
+    onProgressChange,
+    finished,
+  )
 
   const q = questions[current]
 

@@ -6,6 +6,7 @@ import useThemeStore, { selectDark } from '@/stores/useThemeStore'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/toaster'
 import { migratePersistKeys } from '@/lib/storage/migrate-persist'
+import { purgeExpiredSnapshots } from '@/lib/storage/activity-snapshot'
 import PwaProvider from '@/components/PwaProvider'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
 import EnglishAssistant from '@/components/EnglishAssistant'
@@ -34,6 +35,7 @@ function ScrollToTop() {
 function PersistMigration() {
   useEffect(() => {
     migratePersistKeys()
+    purgeExpiredSnapshots()
   }, [])
 
   return null

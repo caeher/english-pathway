@@ -64,6 +64,21 @@ export async function getLastProgress(supabase: Client, userId: string): Promise
   return data
 }
 
+export async function getActivityCompletionStatus(
+  supabase: Client,
+  userId: string,
+  activityId: string,
+): Promise<boolean> {
+  const { data, error } = await supabase
+    .from('activity_completions')
+    .select('status')
+    .eq('user_id', userId)
+    .eq('activity_id', activityId)
+    .maybeSingle()
+  if (error) throw new Error(`Failed to load activity completion: ${error.message}`)
+  return data?.status === 'completed'
+}
+
 export async function getCurriculumProgressSnapshot(
   supabase: Client,
   userId: string,

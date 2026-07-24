@@ -2,24 +2,40 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, XCircle, RotateCcw } from 'lucide-react'
 import type { SentenceChallenge } from '../../types'
+import type { SentenceBuilderProgress } from '@/features/activities/snapshots/sentence-builder'
 import { shuffleArray } from '@/lib/helpers'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
 interface SentenceBuilderProps {
   sentences: SentenceChallenge[]
+  initialProgress?: SentenceBuilderProgress
+  onProgressChange?: (progress: SentenceBuilderProgress) => void
   onComplete?: (result: { score: number; total: number }) => void
 }
 
-export default function SentenceBuilder({ sentences, onComplete }: SentenceBuilderProps) {
-  const [current, setCurrent] = useState(0)
-  const [placed, setPlaced] = useState<number[]>([])
-  const [checked, setChecked] = useState(false)
-  const [isCorrect, setIsCorrect] = useState(false)
-  const [score, setScore] = useState(0)
+export default function SentenceBuilder({ sentences, initialProgress, onProgressChange, onComplete }: SentenceBuilderProps) {
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [placed, setPlaced] = useState<number[]>(initialProgress?.placed ?? [])
+  const [checked, setChecked] = useState(initialProgress?.checked ?? false)
+  const [isCorrect, setIsCorrect] = useState(() => {
+    if (!initialProgress?.checked) return false
+    const sentence = sentences[initialProgress.current]
+    if (!sentence) return false
+    const builtSentence = initialProgress.placed.map((id) => sentence.words[id]).join(' ')
+    return builtSentence === sentence.correct
+  })
+  const [score, setScore] = useState(initialProgress?.score ?? 0)
   const [finished, setFinished] = useState(false)
   const reducedMotion = useReducedMotion()
+
+  useDebouncedProgress(
+    { current, placed, checked, score },
+    onProgressChange,
+    finished,
+  )
 
   const sentence = sentences[current]
   const words = useMemo(() => shuffleArray(sentence.words.map((w, idx) => ({ text: w, id: idx }))), [sentence])

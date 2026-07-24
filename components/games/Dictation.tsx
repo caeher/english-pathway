@@ -3,11 +3,13 @@
 import { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import type { DictationItem } from '@/types'
+import type { DictationProgress } from '@/features/activities/snapshots/dictation'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import { speak } from '@/lib/audio/tts'
 import { cn } from '@/lib/helpers'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
 function similarity(a: string, b: string): boolean {
   const norm = (s: string) => s.trim().toLowerCase().replace(/[.,!?;:'"]/g, '')
@@ -16,18 +18,30 @@ function similarity(a: string, b: string): boolean {
 
 interface DictationProps {
   items: DictationItem[]
+  initialProgress?: DictationProgress
+  onProgressChange?: (progress: DictationProgress) => void
   onComplete?: (result: { score: number; total: number; weakItemIndexes?: number[] }) => void
 }
 
-export default function Dictation({ items, onComplete }: DictationProps) {
-  const [current, setCurrent] = useState(0)
-  const [value, setValue] = useState('')
-  const [answered, setAnswered] = useState(false)
-  const [isCorrect, setIsCorrect] = useState(false)
-  const [score, setScore] = useState(0)
+export default function Dictation({ items, initialProgress, onProgressChange, onComplete }: DictationProps) {
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [value, setValue] = useState(initialProgress?.value ?? '')
+  const [answered, setAnswered] = useState(initialProgress?.answered ?? false)
+  const [isCorrect, setIsCorrect] = useState(() => {
+    if (!initialProgress?.answered) return false
+    const item = items[initialProgress.current]
+    return item ? similarity(initialProgress.value, item.audioText) : false
+  })
+  const [score, setScore] = useState(initialProgress?.score ?? 0)
   const [finished, setFinished] = useState(false)
-  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>([])
+  const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>(initialProgress?.weakItemIndexes ?? [])
   const [explanations, setExplanations] = useState<string[]>([])
+
+  useDebouncedProgress(
+    { current, value, answered, score, weakItemIndexes },
+    onProgressChange,
+    finished,
+  )
 
   const item = items[current]
 

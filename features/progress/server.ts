@@ -1,5 +1,6 @@
 /** Server-side progress use cases and persistence operations. */
 export {
+  getActivityCompletionStatus,
   getCurriculumProgressSnapshot,
   getLastProgress,
   mergeLearningProgress,

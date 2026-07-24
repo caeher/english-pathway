@@ -58,6 +58,23 @@ export function saveGuestChapterProgress(progress: ChapterProgressInput) {
   writeProgress(current)
 }
 
+export function isGuestActivityCompleted(activityId: string): boolean {
+  return readProgress().activities[activityId]?.status === 'completed'
+}
+
+export async function isActivityCompleted(activityId: string): Promise<boolean> {
+  if (isGuestActivityCompleted(activityId)) return true
+
+  try {
+    const response = await fetch(`/api/progress/activity?activityId=${encodeURIComponent(activityId)}`)
+    if (!response.ok) return false
+    const data = (await response.json()) as { completed?: boolean }
+    return data.completed === true
+  } catch {
+    return false
+  }
+}
+
 export async function saveActivityProgress(progress: ActivityProgressInput) {
   try {
     const response = await fetch('/api/progress/activity', {

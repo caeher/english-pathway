@@ -4,37 +4,70 @@ import { useState, useMemo } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { CheckCircle, RotateCcw } from 'lucide-react'
 import type { MatchPair, SentenceChallenge } from '@/types'
+import type { DragDropProgress } from '@/features/activities/snapshots/drag-drop'
 import { shuffleArray, cn } from '@/lib/helpers'
 import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
 interface DragDropProps {
   mode: 'match' | 'sentence'
   pairs?: MatchPair[]
   sentences?: SentenceChallenge[]
+  initialProgress?: DragDropProgress
+  onProgressChange?: (progress: DragDropProgress) => void
   onComplete?: (result: { score: number; total: number }) => void
 }
 
-export default function DragDrop({ mode, pairs = [], sentences = [], onComplete }: DragDropProps) {
+export default function DragDrop({ mode, pairs = [], sentences = [], initialProgress, onProgressChange, onComplete }: DragDropProps) {
   if (mode === 'sentence') {
-    return <SentenceDragDrop sentences={sentences} onComplete={onComplete} />
+    return (
+      <SentenceDragDrop
+        sentences={sentences}
+        initialProgress={initialProgress?.mode === 'sentence' ? initialProgress : undefined}
+        onProgressChange={onProgressChange}
+        onComplete={onComplete}
+      />
+    )
   }
-  return <MatchDragDrop pairs={pairs} onComplete={onComplete} />
+  return (
+    <MatchDragDrop
+      pairs={pairs}
+      initialProgress={initialProgress?.mode === 'match' ? initialProgress : undefined}
+      onProgressChange={onProgressChange}
+      onComplete={onComplete}
+    />
+  )
 }
 
 function MatchDragDrop({
   pairs,
+  initialProgress,
+  onProgressChange,
   onComplete,
 }: {
   pairs: MatchPair[]
+  initialProgress?: Extract<DragDropProgress, { mode: 'match' }>
+  onProgressChange?: (progress: DragDropProgress) => void
   onComplete?: (result: { score: number; total: number }) => void
 }) {
   const [dragItem, setDragItem] = useState<string | null>(null)
-  const [matches, setMatches] = useState<Record<number, string>>({})
+  const [matches, setMatches] = useState<Record<number, string>>(() => {
+    if (!initialProgress?.matches) return {}
+    return Object.fromEntries(Object.entries(initialProgress.matches).map(([key, value]) => [Number(key), value]))
+  })
   const [wrongSlot, setWrongSlot] = useState<number | null>(null)
   const [finished, setFinished] = useState(false)
   const [selectedLeftIdx, setSelectedLeftIdx] = useState<number | null>(null)
   const [selectedRightText, setSelectedRightText] = useState<string | null>(null)
+
+  const matchedCount = Object.keys(matches).length
+
+  useDebouncedProgress(
+    { mode: 'match' as const, matches: Object.fromEntries(Object.entries(matches).map(([key, value]) => [String(key), value])), matchedCount },
+    onProgressChange,
+    finished,
+  )
 
   const shuffledRight = useMemo(
     () => shuffleArray(pairs.map((p) => p.right)),
@@ -52,7 +85,6 @@ function MatchDragDrop({
     setDragItem(null)
   }
 
-  const matchedCount = Object.keys(matches).length
   const allDone = matchedCount === pairs.length
 
   const handleFinish = () => {
@@ -204,16 +236,26 @@ function MatchDragDrop({
 
 function SentenceDragDrop({
   sentences,
+  initialProgress,
+  onProgressChange,
   onComplete,
 }: {
   sentences: SentenceChallenge[]
+  initialProgress?: Extract<DragDropProgress, { mode: 'sentence' }>
+  onProgressChange?: (progress: DragDropProgress) => void
   onComplete?: (result: { score: number; total: number }) => void
 }) {
-  const [current, setCurrent] = useState(0)
-  const [placed, setPlaced] = useState<string[]>([])
-  const [score, setScore] = useState(0)
+  const [current, setCurrent] = useState(initialProgress?.current ?? 0)
+  const [placed, setPlaced] = useState<string[]>(initialProgress?.placed ?? [])
+  const [score, setScore] = useState(initialProgress?.score ?? 0)
   const [finished, setFinished] = useState(false)
   const [dragWord, setDragWord] = useState<string | null>(null)
+
+  useDebouncedProgress(
+    { mode: 'sentence' as const, current, placed, score },
+    onProgressChange,
+    finished,
+  )
 
   const shouldReduceMotion = useReducedMotion()
   const initialScale = shouldReduceMotion ? 1 : 0.9
