@@ -25,5 +25,6 @@ describe('ActivityRenderer completion loop', () => {
     expect(renderer).toContain('resolveNextActivityId')
     expect(renderer).toContain('learnSessionActions.acknowledgeCompletion')
     expect(renderer).toContain('onRequestHelp')
+    expect(renderer).toContain('onPhaseChange')
   })
 })

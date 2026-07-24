@@ -13,10 +13,8 @@ import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { showActivity } from '@/lib/learn/client-tools'
-import EngagementSummary from '@/components/engagement/EngagementSummary'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
-import ContinueLearningPrompt from '@/components/progress/ContinueLearningPrompt'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
 
 interface TutorControlsProps {
@@ -52,7 +50,6 @@ function TutorControls({
   const {
     active,
     connecting,
-    status,
     error,
     clearError,
     isMuted,
@@ -82,7 +79,6 @@ function TutorControls({
     trackEvent('learn_mode_select', { mode: nextMode })
   }
 
-  const statusLabel = connecting ? 'Connecting to your tutor' : active ? mode === 'voice' ? 'Voice session active' : 'Text session active' : status === 'disconnected' ? 'Ready to start' : status
   const microphoneMessage = microphoneState === 'checking'
     ? 'Checking your microphone...'
     : microphoneState === 'ready'
@@ -97,6 +93,10 @@ function TutorControls({
 
   return (
     <LearnSessionLayout
+      sessionMode={mode}
+      tutorActive={active}
+      tutorConnecting={connecting}
+      showEngagement
       tutorSlot={
         <div className="flex h-full min-h-[360px] flex-col">
           <div className="border-b border-(--border-primary) p-4">
@@ -148,8 +148,6 @@ function TutorControls({
               {mode === 'voice' && <Button variant="outline" onClick={() => setMuted(!isMuted)} className="gap-2">{isMuted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{isMuted ? 'Unmute' : 'Mute'}</Button>}
               {mode === 'text' && <form onSubmit={(event) => { event.preventDefault(); if (message.trim()) { sendUserMessage(message.trim()); setMessage('') } }} className="mt-auto flex gap-2"><input value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Type a message..." aria-label="Message to tutor" className="min-w-0 flex-1 rounded-xl border border-(--border-primary) bg-(--bg-card) px-3 py-2 text-sm text-(--text-primary)" /><Button type="submit" size="sm">Send</Button></form>}
             </section>}
-
-            <p className="text-xs capitalize text-(--text-muted)" aria-live="polite">Status: {statusLabel}</p>
           </div>
         </div>
       }
@@ -217,8 +215,6 @@ function ElevenLabsVoiceTutorProvider({ children, initialActivityId }: VoiceTuto
 
   return (
     <ConversationProvider textOnly={mode === 'text'}>
-      <EngagementSummary />
-      <ContinueLearningPrompt />
       <TutorClientTools />
       {children ?? <TutorControls mode={mode} voiceAvailable={voiceAvailable} microphoneState={microphoneState} microphoneStream={microphoneStream} onModeChange={handleModeChange} onCheckMicrophone={checkMicrophone} onSessionStarted={handleSessionStarted} onSessionEnded={handleSessionEnded} />}
     </ConversationProvider>

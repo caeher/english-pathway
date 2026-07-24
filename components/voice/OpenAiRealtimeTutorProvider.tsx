@@ -216,6 +216,10 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
   const audioLabel = credits ? `${formatDuration(credits.audioSecondsRemaining)} voice remaining` : 'Voice credits loading…'
 
   return <LearnSessionLayout
+    sessionMode={mode}
+    tutorActive={active}
+    tutorConnecting={connecting}
+    showEngagement={false}
     tutorSlot={<div className="flex h-full min-h-[360px] flex-col">
       <div className="border-b border-(--border-primary) p-4"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
       <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
