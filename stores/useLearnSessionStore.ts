@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware'
 import { z } from 'zod'
 import type { ChapterActivity } from '@/types'
 import type { TutorHintContext } from '@/features/activities/hints'
+import type { PanelBlock } from '@/lib/tutor/panel-content'
 import { transitionTutorState, type TutorSessionState } from '@/lib/tutor/state'
 
 export interface ActivitySessionResult {
@@ -13,7 +14,7 @@ export interface ActivitySessionResult {
 
 export type LearnPanelState =
   | { kind: 'empty' }
-  | { kind: 'grammar'; title?: string; markdown: string }
+  | { kind: 'explanation'; title?: string; blocks: PanelBlock[] }
   | { kind: 'activity'; activity: ChapterActivity; chapterId: string; moduleId: string }
   | {
       kind: 'question'
@@ -29,11 +30,13 @@ export interface HintFallbackRequest {
 
 export interface LearnSessionStore {
   panel: LearnPanelState
+  panelNotice: string | null
   lastActivityId: string | null
   tutorState: TutorSessionState
   lastActivityResult: ActivitySessionResult | null
   hintFallbackRequest: HintFallbackRequest | null
-  setGrammar: (markdown: string, title?: string) => void
+  setExplanation: (blocks: PanelBlock[], title?: string) => void
+  setPanelNotice: (notice: string | null) => void
   setActivity: (activity: ChapterActivity, chapterId: string, moduleId: string) => void
   setQuestion: (prompt: string, options?: string[], correctIndex?: number) => void
   clearPanel: () => void
@@ -62,8 +65,12 @@ const persistedLearnSessionSchema = z.object({
   lastActivityResult: activityResultSchema.nullable(),
 })
 
-export const initialLearnSessionState: Pick<LearnSessionStore, 'panel' | 'lastActivityId' | 'tutorState' | 'lastActivityResult' | 'hintFallbackRequest'> = {
+export const initialLearnSessionState: Pick<
+  LearnSessionStore,
+  'panel' | 'panelNotice' | 'lastActivityId' | 'tutorState' | 'lastActivityResult' | 'hintFallbackRequest'
+> = {
   panel: { kind: 'empty' },
+  panelNotice: null,
   lastActivityId: null,
   tutorState: 'preparing',
   lastActivityResult: null,
@@ -85,10 +92,11 @@ export function migrateLearnSessionState(
 }
 
 export const selectPanel = (state: LearnSessionStore) => state.panel
+export const selectPanelNotice = (state: LearnSessionStore) => state.panelNotice
 export const selectLastActivityId = (state: LearnSessionStore) => state.lastActivityId
 export const selectLastActivityResult = (state: LearnSessionStore) => state.lastActivityResult
 export const selectTutorState = (state: LearnSessionStore) => state.tutorState
-export const selectSetGrammar = (state: LearnSessionStore) => state.setGrammar
+export const selectSetExplanation = (state: LearnSessionStore) => state.setExplanation
 export const selectSetActivity = (state: LearnSessionStore) => state.setActivity
 export const selectSetQuestion = (state: LearnSessionStore) => state.setQuestion
 export const selectClearPanel = (state: LearnSessionStore) => state.clearPanel
@@ -102,25 +110,30 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
   persist(
     (set) => ({
       ...initialLearnSessionState,
-      setGrammar: (markdown, title) =>
+      setExplanation: (blocks, title) =>
         set((state) => ({
-          panel: { kind: 'grammar', markdown, title },
+          panel: { kind: 'explanation', blocks, title },
+          panelNotice: null,
           tutorState: transitionTutorState(state.tutorState, { type: 'explanation_shown' }),
         })),
+      setPanelNotice: (notice) => set({ panelNotice: notice }),
       setActivity: (activity, chapterId, moduleId) =>
         set((state) => ({
           panel: { kind: 'activity', activity, chapterId, moduleId },
+          panelNotice: null,
           lastActivityId: activity.id,
           tutorState: transitionTutorState(state.tutorState, { type: 'activity_presented' }),
         })),
       setQuestion: (prompt, options, correctIndex) =>
         set((state) => ({
           panel: { kind: 'question', prompt, options, correctIndex },
+          panelNotice: null,
           tutorState: transitionTutorState(state.tutorState, { type: 'answer_requested' }),
         })),
       clearPanel: () =>
         set((state) => ({
           panel: { kind: 'empty' },
+          panelNotice: null,
           tutorState: transitionTutorState(state.tutorState, { type: 'panel_cleared' }),
         })),
       recordActivityResult: (result) =>
@@ -152,7 +165,9 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
 )
 
 export const learnSessionActions = {
-  setGrammar: (markdown: string, title?: string) => useLearnSessionStore.getState().setGrammar(markdown, title),
+  setExplanation: (blocks: PanelBlock[], title?: string) =>
+    useLearnSessionStore.getState().setExplanation(blocks, title),
+  setPanelNotice: (notice: string | null) => useLearnSessionStore.getState().setPanelNotice(notice),
   setActivity: (activity: ChapterActivity, chapterId: string, moduleId: string) =>
     useLearnSessionStore.getState().setActivity(activity, chapterId, moduleId),
   setQuestion: (prompt: string, options?: string[], correctIndex?: number) =>
