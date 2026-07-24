@@ -14,12 +14,14 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import type { ConversationSummary } from '@/features/english-assistant'
-import { buildActivityContextFromPanel } from '@/lib/english-assistant/context'
+import { buildActivityContextFromPanel, buildHintActivityContextFromPanel } from '@/lib/english-assistant/context'
 import { useVisualViewportHeight } from '@/lib/ui/use-visual-viewport-height'
 import { cn } from '@/lib/helpers'
 import {
+  selectHintFallbackRequest,
   selectLastActivityResult,
   selectPanel,
+  selectSetHintFallbackRequest,
   useLearnSessionStore,
 } from '@/stores/useLearnSessionStore'
 
@@ -47,6 +49,8 @@ export default function EnglishAssistant() {
   const pathname = usePathname()
   const panel = useLearnSessionStore(selectPanel)
   const lastActivityResult = useLearnSessionStore(selectLastActivityResult)
+  const hintFallbackRequest = useLearnSessionStore(selectHintFallbackRequest)
+  const setHintFallbackRequest = useLearnSessionStore(selectSetHintFallbackRequest)
 
   const [open, setOpen] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
@@ -160,6 +164,105 @@ export default function EnglishAssistant() {
     if (!open) return
     void initializeConversations()
   }, [open, initializeConversations])
+
+  const sendHintFallback = useCallback(async (message: string, conversationId: string) => {
+    const nextMessages = [...messages, { role: 'user' as const, content: message }]
+    setMessages(nextMessages)
+    setError(null)
+    setIsSending(true)
+
+    try {
+      const response = await fetch('/api/english-assistant', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          conversationId,
+          messages: nextMessages
+            .filter((entry) => !(entry.role === 'assistant' && entry.content === WELCOME_MESSAGE.content))
+            .slice(-12),
+        }),
+      })
+      const payload = (await response.json().catch(() => null)) as {
+        answer?: string
+        conversationId?: string
+        error?: string
+        credits?: UsageCredits
+      } | null
+      const answer = payload?.answer
+      if (!response.ok || !answer) throw new Error(payload?.error ?? 'Unable to get an answer.')
+
+      if (payload.conversationId) persistActiveConversationId(payload.conversationId)
+      setMessages((current) => [...current, { role: 'assistant', content: answer }])
+      if (payload.credits) setCredits(payload.credits)
+      await refreshConversations()
+    } catch (caughtError) {
+      setError(caughtError instanceof Error ? caughtError.message : 'Unable to get an answer.')
+      setMessages((current) => current.slice(0, -1))
+    } finally {
+      setIsSending(false)
+    }
+  }, [messages, persistActiveConversationId, refreshConversations])
+
+  useEffect(() => {
+    if (!hintFallbackRequest || pathname !== '/learn') return
+
+    const request = hintFallbackRequest
+    let cancelled = false
+
+    async function processHintFallback() {
+      setOpen(true)
+      setError(null)
+
+      let conversationId = activeConversationId
+      if (!conversationId) {
+        const response = await fetch('/api/english-assistant/conversations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title: 'Activity help' }),
+        })
+        const payload = await response.json().catch(() => null) as ConversationSummary & { error?: string } | null
+        if (!response.ok || !payload?.id) {
+          if (!cancelled) setError(payload?.error ?? 'Unable to start a help conversation.')
+          return
+        }
+        conversationId = payload.id
+        if (!cancelled) {
+          persistActiveConversationId(conversationId)
+          setMessages([WELCOME_MESSAGE])
+        }
+      }
+
+      const hintContext = buildHintActivityContextFromPanel(panel, lastActivityResult, request.context)
+      if (hintContext && conversationId) {
+        await fetch(`/api/english-assistant/conversations/${conversationId}/context`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ context: hintContext }),
+        })
+        if (!cancelled) setActivityContextAttached(true)
+      }
+
+      if (!cancelled) {
+        setHintFallbackRequest(null)
+        await sendHintFallback(request.message, conversationId)
+      }
+    }
+
+    void processHintFallback()
+
+    return () => {
+      cancelled = true
+    }
+  }, [
+    activeConversationId,
+    hintFallbackRequest,
+    lastActivityResult,
+    panel,
+    pathname,
+    persistActiveConversationId,
+    sendHintFallback,
+    setHintFallbackRequest,
+  ])
 
   async function createConversation() {
     setIsLoadingConversation(true)

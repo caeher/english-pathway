@@ -213,3 +213,15 @@ Activity types are registered in `features/activities/registry.ts` with a versio
 7. Extend `__tests__/activities/runtime-contract.test.ts` and `behavior-matrix.test.ts`
 
 Runtime events (`started`, `itemAnswered`, `hintRequested`, `completed`, `abandoned`) are validated in `features/activities/runtime-contract.ts` and emitted by `ActivityRenderer`.
+
+### Graduated hints (3 levels)
+
+Activities with the `hint` capability use editorial content for levels 1–3:
+
+| Level | UI label | Authoring |
+|-------|----------|-----------|
+| 1 | Reminder | `hint` field (and `category` for word-scramble) |
+| 2 | Partial | Derived by the shell (first letter/words) — no extra authoring |
+| 3 | Explanation | Full answer — learner must confirm before reveal |
+
+Set `hintLevels: 3` in the registry. Hint level is persisted in the activity snapshot for resume.

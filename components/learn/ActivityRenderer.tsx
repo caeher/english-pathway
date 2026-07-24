@@ -10,7 +10,16 @@ import {
   toActivityCompleteSummary,
   type ActivityRuntimeEvent,
   type ActivityTypeKey,
+  type ResolvedHint,
+  type TutorHintContext,
 } from '@/features/activities'
+import {
+  MAX_GRADUATED_HINT_LEVEL,
+  buildTutorHintRequest,
+  resolveEditorialHint,
+  type GraduatedHintLevel,
+} from '@/features/activities/hints'
+import { trackEvent } from '@/lib/analytics/events'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { normalizeActivityResult } from '@/lib/games/result'
 import { isActivityCompleted } from '@/features/progress/client'
@@ -30,7 +39,9 @@ import {
   saveSnapshot,
   summarizeSnapshot,
 } from '@/lib/storage/activity-snapshot'
+import type { ActivityHintMeta } from '@/features/activities/snapshot'
 import { ActivityControlBar } from './ActivityControlBar'
+import { ActivityHintTray } from './ActivityHintTray'
 import ActivityCompletionCard from './ActivityCompletionCard'
 import ActivityResumePrompt from './ActivityResumePrompt'
 import type {
@@ -100,7 +111,7 @@ interface ActivityRendererProps {
   chapterId?: string
   moduleId?: string
   onComplete?: (result: ActivityCompleteResult) => void
-  onHelp?: (activityId: string) => void
+  onHelp?: (activityId: string, context?: TutorHintContext) => void
   onExit?: () => void
   onPhaseChange?: (phase: ActivityUiPhase) => void
   onRuntimeEvent?: (event: ActivityRuntimeEvent) => void
@@ -232,6 +243,8 @@ export default function ActivityRenderer({
 }: ActivityRendererProps) {
   const [attempt, setAttempt] = useState(0)
   const [hintCount, setHintCount] = useState(0)
+  const [visibleHint, setVisibleHint] = useState<ResolvedHint | null>(null)
+  const [hintMeta, setHintMeta] = useState<ActivityHintMeta | undefined>(undefined)
   const startedEmittedRef = useRef(false)
   const [lastProgressPayload, setLastProgressPayload] = useState<unknown>(undefined)
   const [phase, setPhase] = useState<ActivityPhase>('playing')
@@ -249,9 +262,15 @@ export default function ActivityRenderer({
     onRuntimeEvent?.(event)
   }, [onRuntimeEvent])
 
-  const canRequestHelp = Boolean(
-    definition && hasActivityCapability(definition, 'hint') && onHelp,
-  )
+  const canRequestHelp = Boolean(definition && hasActivityCapability(definition, 'hint'))
+
+  const maxHintLevel = (definition?.capabilities.hintLevels ?? MAX_GRADUATED_HINT_LEVEL) as GraduatedHintLevel
+
+  const validatedProps = useMemo(() => {
+    if (!definition) return null
+    const parsed = definition.schema.safeParse(activity.props)
+    return parsed.success ? parsed.data : null
+  }, [activity.props, definition])
 
   const accessibilityCapabilities = useMemo(
     () => ACCESSIBILITY_CAPABILITIES.filter((capability) => definition?.capabilities.supports.has(capability)),
@@ -305,6 +324,8 @@ export default function ActivityRenderer({
     setCompletedResult(null)
     setFollowUpDecision(null)
     setHintCount(0)
+    setVisibleHint(null)
+    setHintMeta(undefined)
     setResumeState('checking')
     setSavedSummary(null)
     setRestoredProgress(undefined)
@@ -349,24 +370,37 @@ export default function ActivityRenderer({
       activityId: activity.id,
       activityType: type,
       payload,
+      hintMeta,
     })
-  }, [activity.id, definition, emitRuntimeEvent, lastProgressPayload, type])
+  }, [activity.id, definition, emitRuntimeEvent, hintMeta, lastProgressPayload, type])
 
   const clearSnapshot = useCallback(() => {
     removeSnapshot(activity.id)
   }, [activity.id])
 
+  const restoreHintFromSnapshot = useCallback((snapshot: ReturnType<typeof loadSnapshot>) => {
+    if (!snapshot?.hintMeta || !validatedProps) return
+    setHintMeta(snapshot.hintMeta)
+    setHintCount(snapshot.hintMeta.level)
+    const itemIndex = snapshot.hintMeta.itemIndex ?? 0
+    const hint = resolveEditorialHint(type, validatedProps, itemIndex, snapshot.hintMeta.level)
+    if (hint) setVisibleHint(hint)
+  }, [type, validatedProps])
+
   const handleResume = useCallback(() => {
     const snapshot = loadSnapshot(activity.id)
     if (snapshot) {
       setRestoredProgress(snapshot.payload)
+      restoreHintFromSnapshot(snapshot)
     }
     setResumeState('playing')
-  }, [activity.id])
+  }, [activity.id, restoreHintFromSnapshot])
 
   const handleStartOver = useCallback(() => {
     clearSnapshot()
     setRestoredProgress(undefined)
+    setVisibleHint(null)
+    setHintMeta(undefined)
     setAttempt((value) => value + 1)
     setResumeState('playing')
     setPhase('playing')
@@ -376,6 +410,8 @@ export default function ActivityRenderer({
   const handleReset = useCallback(() => {
     clearSnapshot()
     setRestoredProgress(undefined)
+    setVisibleHint(null)
+    setHintMeta(undefined)
     setAttempt((value) => value + 1)
     setResumeState('playing')
     setPhase('playing')
@@ -398,6 +434,8 @@ export default function ActivityRenderer({
     setRestoredProgress(undefined)
     setAttempt((value) => value + 1)
     setHintCount(0)
+    setVisibleHint(null)
+    setHintMeta(undefined)
     setPhase('playing')
     setCompletedResult(null)
     setFollowUpDecision(null)
@@ -463,30 +501,93 @@ export default function ActivityRenderer({
     }
   }, [activity.id, chapterId, followUpDecision, handleDeclineFollowUp, handleRetry, navigateToActivity])
 
-  const handleHelpDuringPlay = useCallback(() => {
-    const nextLevel = hintCount + 1
-    setHintCount(nextLevel)
+  const emitHintRequested = useCallback((level: number, itemIndex: number | undefined, source: 'editorial' | 'tutor') => {
+    trackEvent('hint_requested', {
+      activity_id: activity.id,
+      activity_type: type,
+      level,
+      source,
+      item_index: itemIndex,
+    })
     emitRuntimeEvent({
       type: 'hintRequested',
       activityId: activity.id,
       activityType: type,
-      itemIndex: extractItemIndexFromProgress(type, lastProgressPayload),
-      level: nextLevel,
+      itemIndex,
+      level,
     })
-    onHelp?.(activity.id)
-  }, [activity.id, emitRuntimeEvent, hintCount, lastProgressPayload, onHelp, type])
+  }, [activity.id, emitRuntimeEvent, type])
 
-  const handleRequestHelp = useCallback(() => {
-    const nextLevel = hintCount + 1
-    setHintCount(nextLevel)
-    emitRuntimeEvent({
-      type: 'hintRequested',
+  const invokeTutorFallback = useCallback((itemIndex: number, level: GraduatedHintLevel) => {
+    const context: TutorHintContext = {
       activityId: activity.id,
       activityType: type,
-      level: nextLevel,
-    })
-    onHelp?.(activity.id)
-  }, [activity.id, emitRuntimeEvent, hintCount, onHelp, type])
+      activityTitle: activity.title,
+      itemIndex,
+      level,
+      maxLevel: maxHintLevel,
+    }
+    learnSessionActions.requestHelp()
+    onHelp?.(activity.id, context)
+    emitHintRequested(level, itemIndex, 'tutor')
+  }, [activity.id, activity.title, emitHintRequested, maxHintLevel, onHelp, type])
+
+  const applyResolvedHint = useCallback((level: number, itemIndex: number, hint: ResolvedHint) => {
+    setHintCount(level)
+    setVisibleHint(hint)
+    const meta: ActivityHintMeta = { level, itemIndex }
+    setHintMeta(meta)
+    if (lastProgressPayload) {
+      saveSnapshot({
+        version: 1,
+        activityId: activity.id,
+        activityType: type,
+        payload: lastProgressPayload,
+        hintMeta: meta,
+      })
+    }
+    emitHintRequested(level, itemIndex, hint.source)
+  }, [activity.id, emitHintRequested, lastProgressPayload, type])
+
+  const requestNextHint = useCallback(() => {
+    if (!validatedProps) return
+
+    const itemIndex = extractItemIndexFromProgress(type, lastProgressPayload) ?? 0
+    const nextLevel = hintCount + 1
+
+    if (nextLevel > maxHintLevel) {
+      setHintCount(nextLevel)
+      invokeTutorFallback(itemIndex, maxHintLevel)
+      return
+    }
+
+    const resolved = resolveEditorialHint(type, validatedProps, itemIndex, nextLevel)
+    if (!resolved) {
+      setHintCount(nextLevel)
+      invokeTutorFallback(itemIndex, nextLevel as GraduatedHintLevel)
+      return
+    }
+
+    if (resolved.revealsAnswer) {
+      const confirmed = window.confirm(
+        'Showing the full answer reduces the practice benefit of this item. Continue anyway?',
+      )
+      if (!confirmed) return
+    }
+
+    applyResolvedHint(nextLevel, itemIndex, resolved)
+  }, [
+    applyResolvedHint,
+    hintCount,
+    invokeTutorFallback,
+    lastProgressPayload,
+    maxHintLevel,
+    type,
+    validatedProps,
+  ])
+
+  const handleHelpDuringPlay = requestNextHint
+  const handleRequestHelp = requestNextHint
 
   useEffect(() => {
     if (resumeState !== 'playing' || phase !== 'playing' || startedEmittedRef.current) return
@@ -588,6 +689,13 @@ export default function ActivityRenderer({
           onHelp={canRequestHelp ? handleHelpDuringPlay : undefined}
           onReset={handleReset}
           onExit={handleExit}
+        />
+      )}
+      {phase === 'playing' && visibleHint && (
+        <ActivityHintTray
+          hint={visibleHint}
+          maxLevel={maxHintLevel}
+          onMoreHelp={canRequestHelp ? requestNextHint : undefined}
         />
       )}
       {resumeState === 'checking' && phase === 'playing' && (

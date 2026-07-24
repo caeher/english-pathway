@@ -47,7 +47,7 @@ describe('activity runtime contract', () => {
     for (const type of activityTypes) {
       expect(hasActivityCapability(activityRegistry[type], 'hint')).toBe(hintTypes.has(type))
       if (hintTypes.has(type)) {
-        expect(activityRegistry[type].capabilities.hintLevels).toBe(1)
+        expect(activityRegistry[type].capabilities.hintLevels).toBe(3)
       }
     }
   })
