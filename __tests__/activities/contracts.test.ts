@@ -4,7 +4,7 @@ import { activityRegistry, validateActivityDocument, filterValidationErrors } fr
 
 describe('activity contracts and registry', () => {
   it('registers every renderer extension point with schema, evaluator, and capabilities', () => {
-    expect(Object.keys(activityRegistry)).toHaveLength(8)
+    expect(Object.keys(activityRegistry)).toHaveLength(9)
     for (const definition of Object.values(activityRegistry)) {
       expect(definition.schema).toBeDefined()
       expect(definition.renderer).toBeDefined()

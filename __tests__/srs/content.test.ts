@@ -20,4 +20,39 @@ describe('getReviewContentRefs', () => {
     }
     expect(getReviewContentRefs(activity)).toEqual(['cards-1:flashcard:cat', 'cards-1:flashcard:dog'])
   })
+
+  it('creates stable references for branching dialogue decision nodes', () => {
+    const activity: ChapterActivity = {
+      id: 'dialogue-1',
+      type: 'branching-dialogue',
+      title: 'Dialogue',
+      description: '',
+      props: {
+        setting: 'Office',
+        startNodeId: 'n1',
+        nodes: [
+          {
+            id: 'n1',
+            intention: 'Greet',
+            prompt: 'Hello',
+            choices: [
+              { id: 'a', text: 'Hi', nextNodeId: 'n2', pragmaticRating: 'optimal', explanation: 'Good' },
+              { id: 'b', text: 'Yo', nextNodeId: 'n2', pragmaticRating: 'inappropriate', explanation: 'Too casual' },
+            ],
+          },
+          {
+            id: 'n2',
+            intention: 'Close',
+            prompt: 'Bye',
+            choices: [
+              { id: 'c', text: 'See you', nextNodeId: 'end', pragmaticRating: 'optimal', explanation: 'Polite' },
+              { id: 'd', text: 'Later', nextNodeId: 'end', pragmaticRating: 'acceptable', explanation: 'Informal' },
+            ],
+          },
+          { id: 'end', intention: 'Done', prompt: 'Finished', isTerminal: true, choices: [] },
+        ],
+      },
+    }
+    expect(getReviewContentRefs(activity, [1])).toEqual(['dialogue-1:dialogue:n2'])
+  })
 })
