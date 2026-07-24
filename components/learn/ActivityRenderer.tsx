@@ -9,6 +9,11 @@ import { normalizeActivityResult } from '@/lib/games/result'
 import { isActivityCompleted } from '@/features/progress/client'
 import { listChapterActivities, showActivity } from '@/lib/learn/client-tools'
 import { resolveNextActivityId } from '@/lib/learn/next-activity'
+import {
+  planFollowUpPractice,
+  validateFollowUpActivityId,
+  type FollowUpDecision,
+} from '@/lib/learn/follow-up-planner'
 import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
 import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import {
@@ -79,6 +84,8 @@ export interface ActivityCompleteResult {
   nextAction?: 'continue' | 'retry' | 'review'
   metrics?: Record<string, number>
   explanations?: string[]
+  weakItemIndexes?: number[]
+  followUpDecision?: FollowUpDecision
 }
 
 interface ActivityRendererProps {
@@ -213,8 +220,10 @@ export default function ActivityRenderer({
   onPhaseChange,
 }: ActivityRendererProps) {
   const [attempt, setAttempt] = useState(0)
+  const [hintCount, setHintCount] = useState(0)
   const [phase, setPhase] = useState<ActivityPhase>('playing')
   const [completedResult, setCompletedResult] = useState<ActivityCompleteResult | null>(null)
+  const [followUpDecision, setFollowUpDecision] = useState<FollowUpDecision | null>(null)
   const [continueLoading, setContinueLoading] = useState(false)
   const [resumeState, setResumeState] = useState<ResumeState>('checking')
   const [savedSummary, setSavedSummary] = useState<string | null>(null)
@@ -268,6 +277,8 @@ export default function ActivityRenderer({
 
     setPhase('playing')
     setCompletedResult(null)
+    setFollowUpDecision(null)
+    setHintCount(0)
     setResumeState('checking')
     setSavedSummary(null)
     setRestoredProgress(undefined)
@@ -326,12 +337,22 @@ export default function ActivityRenderer({
     clearSnapshot()
     setRestoredProgress(undefined)
     setAttempt((value) => value + 1)
+    setHintCount(0)
     setPhase('playing')
     setCompletedResult(null)
+    setFollowUpDecision(null)
     setResumeState('playing')
   }, [clearSnapshot])
 
-  const handleContinue = useCallback(async () => {
+  const navigateToActivity = useCallback(async (activityId: string) => {
+    await showActivity(activityId)
+    setPhase('playing')
+    setCompletedResult(null)
+    setFollowUpDecision(null)
+    setAttempt((value) => value + 1)
+  }, [])
+
+  const handleDeclineFollowUp = useCallback(async () => {
     if (!chapterId) return
 
     setContinueLoading(true)
@@ -344,10 +365,7 @@ export default function ActivityRenderer({
       )
 
       if (nextActivityId) {
-        await showActivity(nextActivityId)
-        setPhase('playing')
-        setCompletedResult(null)
-        setAttempt((value) => value + 1)
+        await navigateToActivity(nextActivityId)
         return
       }
 
@@ -355,9 +373,38 @@ export default function ActivityRenderer({
     } finally {
       setContinueLoading(false)
     }
-  }, [activity.id, chapterId])
+  }, [activity.id, chapterId, navigateToActivity])
+
+  const handleAcceptFollowUp = useCallback(async () => {
+    if (!followUpDecision) return
+
+    if (followUpDecision.action === 'retry' && followUpDecision.activityId === activity.id) {
+      handleRetry()
+      return
+    }
+
+    if (!followUpDecision.activityId) {
+      learnSessionActions.acknowledgeCompletion()
+      return
+    }
+
+    if (!chapterId) return
+
+    setContinueLoading(true)
+    try {
+      const chapter = await listChapterActivities(chapterId)
+      if (!validateFollowUpActivityId(followUpDecision.activityId, chapter.activities)) {
+        await handleDeclineFollowUp()
+        return
+      }
+      await navigateToActivity(followUpDecision.activityId)
+    } finally {
+      setContinueLoading(false)
+    }
+  }, [activity.id, chapterId, followUpDecision, handleDeclineFollowUp, handleRetry, navigateToActivity])
 
   const handleRequestHelp = useCallback(() => {
+    setHintCount((value) => value + 1)
     onHelp?.(activity.id)
   }, [activity.id, onHelp])
 
@@ -376,10 +423,38 @@ export default function ActivityRenderer({
     return <p className="text-sm text-(--text-muted)">This activity could not be loaded. Invalid configuration.</p>
   }
 
-  const handleComplete = (result: GameResult) => {
+  const handleComplete = async (result: GameResult) => {
     clearSnapshot()
     const normalized = normalizeActivityResult(result)
     const explanations = extractExplanations(result)
+    let decision: FollowUpDecision | null = null
+
+    if (chapterId) {
+      try {
+        const chapter = await listChapterActivities(chapterId)
+        const completionEntries = await Promise.all(
+          chapter.activities.map(async (item) => [item.id, await isActivityCompleted(item.id)] as const),
+        )
+        const completedActivityIds = new Set(
+          completionEntries.filter(([, done]) => done).map(([id]) => id),
+        )
+        decision = planFollowUpPractice({
+          currentActivityId: activity.id,
+          currentActivityType: activity.type,
+          correctness: normalized.correctness,
+          scorePercent: normalized.scorePercent,
+          weakItemIndexes: normalized.weakItemIndexes,
+          attempt,
+          hintCount,
+          chapterActivities: chapter.activities,
+          completedActivityIds,
+        })
+        setFollowUpDecision(decision)
+      } catch {
+        setFollowUpDecision(null)
+      }
+    }
+
     const enriched: ActivityCompleteResult = {
       activityId: activity.id,
       activityType: activity.type,
@@ -391,6 +466,8 @@ export default function ActivityRenderer({
       nextAction: normalized.nextAction,
       metrics: normalized.metrics,
       explanations,
+      weakItemIndexes: normalized.weakItemIndexes,
+      followUpDecision: decision ?? undefined,
       chapterId,
       moduleId,
       reviewContentRefs: normalized.weakItemIndexes.length
@@ -426,8 +503,10 @@ export default function ActivityRenderer({
       {phase === 'completed' && completedResult && (
         <ActivityCompletionCard
           result={completedResult}
+          followUp={followUpDecision}
           explanations={completedResult.explanations}
-          onContinue={chapterId ? handleContinue : undefined}
+          onAcceptFollowUp={chapterId || followUpDecision ? handleAcceptFollowUp : undefined}
+          onDeclineFollowUp={chapterId ? handleDeclineFollowUp : undefined}
           onRetry={handleRetry}
           onRequestHelp={onHelp ? handleRequestHelp : undefined}
           continueLoading={continueLoading}

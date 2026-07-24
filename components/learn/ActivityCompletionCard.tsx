@@ -3,10 +3,11 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, HelpCircle, RotateCcw } from 'lucide-react'
+import { ArrowRight, HelpCircle, RotateCcw, Sparkles } from 'lucide-react'
 import ReactConfetti from 'react-confetti'
 import type { ActivityCompleteResult } from '@/components/learn/ActivityRenderer'
 import { buildCompletionSummary } from '@/lib/learn/activity-completion'
+import type { FollowUpDecision } from '@/lib/learn/follow-up-planner'
 import { cn } from '@/lib/helpers'
 import { useReducedMotion } from '@/lib/games/useReducedMotion'
 import { resultTransition } from '@/lib/motion/system'
@@ -14,8 +15,10 @@ import { passesThreshold, starsFromPercent } from '@/lib/games/scoring'
 
 export interface ActivityCompletionCardProps {
   result: ActivityCompleteResult
+  followUp?: FollowUpDecision | null
   explanations?: string[]
-  onContinue?: () => void
+  onAcceptFollowUp?: () => void
+  onDeclineFollowUp?: () => void
   onRetry?: () => void
   onRequestHelp?: () => void
   continueLoading?: boolean
@@ -23,8 +26,10 @@ export interface ActivityCompletionCardProps {
 
 export default function ActivityCompletionCard({
   result,
+  followUp = null,
   explanations = [],
-  onContinue,
+  onAcceptFollowUp,
+  onDeclineFollowUp,
   onRetry,
   onRequestHelp,
   continueLoading = false,
@@ -44,8 +49,9 @@ export default function ActivityCompletionCard({
     explanations,
     nextAction: result.nextAction ?? 'retry',
     metrics: result.metrics ?? {},
-    weakItemIndexes: [],
+    weakItemIndexes: result.weakItemIndexes ?? [],
     hasReviewRefs,
+    followUp,
   })
 
   const shouldConfetti = summary.variant === 'complete' && stars >= 2 && !reducedMotion
@@ -54,20 +60,16 @@ export default function ActivityCompletionCard({
     primaryRef.current?.focus({ preventScroll: true })
   }, [])
 
-  const primaryLabel = summary.primaryAction === 'continue'
-    ? 'Continue'
-    : summary.primaryAction === 'review'
-      ? 'Review weak items'
-      : 'Try again'
-
   const handlePrimary = () => {
-    if (summary.primaryAction === 'continue') onContinue?.()
-    else if (summary.primaryAction === 'retry') onRetry?.()
-    else if (summary.primaryAction === 'review' && hasReviewRefs) {
-      window.location.assign('/review')
-    } else {
-      onContinue?.()
+    if (summary.primaryAction === 'retry') {
+      onRetry?.()
+      return
     }
+    if (summary.primaryAction === 'review' && hasReviewRefs) {
+      window.location.assign('/review')
+      return
+    }
+    onAcceptFollowUp?.()
   }
 
   return (
@@ -127,9 +129,10 @@ export default function ActivityCompletionCard({
             disabled={continueLoading}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-(--accent) px-5 py-2.5 text-sm font-display font-bold text-white transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) disabled:opacity-60"
           >
+            {summary.primaryAction === 'follow-up' && <Sparkles className="h-4 w-4" />}
             {summary.primaryAction === 'continue' && <ArrowRight className="h-4 w-4" />}
             {summary.primaryAction === 'retry' && <RotateCcw className="h-4 w-4" />}
-            {primaryLabel}
+            {summary.primaryLabel}
           </button>
 
           {summary.showRetry && summary.primaryAction !== 'retry' && onRetry && (
@@ -152,15 +155,26 @@ export default function ActivityCompletionCard({
             </Link>
           )}
 
-          {summary.showContinue && summary.primaryAction !== 'continue' && onContinue && (
+          {summary.showTryAlternative && onDeclineFollowUp && (
             <button
               type="button"
-              onClick={onContinue}
+              onClick={onDeclineFollowUp}
               disabled={continueLoading}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-5 py-2.5 text-sm font-display font-bold text-(--text-primary) transition-colors hover:bg-(--bg-tertiary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) disabled:opacity-60"
             >
               <ArrowRight className="h-4 w-4" />
-              Continue
+              Try something else
+            </button>
+          )}
+
+          {summary.showContinueAnyway && onDeclineFollowUp && (
+            <button
+              type="button"
+              onClick={onDeclineFollowUp}
+              disabled={continueLoading}
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-5 py-2.5 text-sm font-display font-bold text-(--text-secondary) transition-colors hover:bg-(--bg-tertiary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) disabled:opacity-60"
+            >
+              Continue anyway
             </button>
           )}
 
