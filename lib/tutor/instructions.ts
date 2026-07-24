@@ -1,9 +1,12 @@
 import { PROMPT_INJECTION_POLICY } from '@/lib/security/prompt-trust'
+import type { SessionPlan } from '@/lib/learn/session-plan'
+import { buildSessionPlanInstruction } from '@/lib/learn/session-plan'
 
 export interface LearnerContext {
   level?: string | null
   lastChapterId?: string | null
   lastActivityId?: string | null
+  plan?: SessionPlan | null
 }
 
 const BASE_INSTRUCTIONS = `You are the friendly English Pathway voice tutor. Help the learner practise English through guided lessons.
@@ -67,5 +70,6 @@ export function buildTutorInstructions(learner?: LearnerContext | null): string 
   if (learner.level) parts.push(`Learner level: ${learner.level}.`)
   if (learner.lastChapterId) parts.push(`Last chapter studied: ${learner.lastChapterId}.`)
   if (learner.lastActivityId) parts.push(`Last activity completed: ${learner.lastActivityId}.`)
+  if (learner.plan) parts.push(`## Session plan\n${buildSessionPlanInstruction(learner.plan)}`)
   return parts.join('\n\n')
 }

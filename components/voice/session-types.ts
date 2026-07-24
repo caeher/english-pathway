@@ -1,3 +1,5 @@
+import type { SessionPlan } from '@/lib/learn/session-plan'
+
 export type SessionMode = 'voice' | 'text'
 
 export type MicrophoneState = 'idle' | 'checking' | 'ready' | 'denied' | 'unavailable' | 'error'
@@ -14,6 +16,7 @@ export interface SessionOrchestration {
     lastChapterId: string | null
     lastActivityId: string | null
   } | null
+  plan?: SessionPlan
 }
 
 export interface SessionConfig {

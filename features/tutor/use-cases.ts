@@ -2,8 +2,10 @@ import type { AuthenticatedContext } from '@/lib/api/context'
 import { DomainError } from '@/lib/api/errors'
 import { deletePrivateTutorData, deletePrivateTutorMemory, getPrivateTutorExport, savePrivateTutorMemory } from '@/lib/dal/tutor-memory'
 import { buildTutorContext } from '@/lib/tutor/context'
+import { buildSessionPlanSuggestions, sessionPlanSchema, validateSessionPlan } from '@/features/learn'
 import { resolveActivityByIdValidated } from '@/features/learn'
 import { resolveChapter, resolveModule } from '@/features/curriculum'
+import { getLearningContinuationUseCase } from '@/features/progress/use-cases'
 import type { TutorContextRequest, TutorMemoryDeleteInput, TutorMemoryWriteInput } from './contracts'
 
 const allowedTools = ['showGrammar', 'showActivity', 'showQuestion', 'clearPanel', 'fetchCurriculumContext', 'listChapterActivities', 'getPanelState'] as const
@@ -57,7 +59,41 @@ export async function buildTutorContextUseCase(context: AuthenticatedContext | n
   return { matches, context: tutorContext }
 }
 
-export async function getTutorSessionUseCase(context: AuthenticatedContext | null) {
+export async function getSessionPlanSuggestionsUseCase(
+  context: AuthenticatedContext | null,
+  mode?: 'voice' | 'text',
+) {
+  const [profile, continuation] = context
+    ? await Promise.all([
+      context.supabase.from('profiles').select('daily_goal_minutes, preferred_mode').eq('id', context.userId).maybeSingle(),
+      getLearningContinuationUseCase(context).catch(() => null),
+    ])
+    : [{ data: null }, null]
+
+  return buildSessionPlanSuggestions({
+    continuation,
+    dailyGoalMinutes: profile.data?.daily_goal_minutes ?? null,
+    preferredMode: profile.data?.preferred_mode ?? null,
+    mode,
+  })
+}
+
+export function parseSessionPlanQuery(planParam: string | null, mode?: 'voice' | 'text') {
+  if (!planParam) return null
+  try {
+    const parsed = sessionPlanSchema.safeParse(JSON.parse(planParam))
+    if (!parsed.success) throw new DomainError('INVALID_INPUT', 'Invalid session plan')
+    return mode ? validateSessionPlan({ ...parsed.data, mode }) : parsed.data
+  } catch (error) {
+    if (error instanceof DomainError) throw error
+    throw new DomainError('INVALID_INPUT', 'Invalid session plan')
+  }
+}
+
+export async function getTutorSessionUseCase(
+  context: AuthenticatedContext | null,
+  plan?: ReturnType<typeof validateSessionPlan> | null,
+) {
   const [profile, progress] = context
     ? await Promise.all([
       context.supabase.from('profiles').select('level, daily_goal_minutes, preferred_mode').eq('id', context.userId).maybeSingle(),
@@ -71,6 +107,7 @@ export async function getTutorSessionUseCase(context: AuthenticatedContext | nul
     instruction: 'Use only validated curriculum activity IDs and wait for an explicit activity result before advancing.',
     learner: profile.data ? { level: profile.data.level, dailyGoalMinutes: profile.data.daily_goal_minutes, preferredMode: profile.data.preferred_mode } : null,
     progress: progress.data ? { lastChapterId: progress.data.last_chapter_id, lastActivityId: progress.data.last_activity_id } : null,
+    ...(plan ? { plan } : {}),
   }
 
   const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID
