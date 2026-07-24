@@ -524,47 +524,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m8-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Waiter: \"Here's the menu. What would you like?\"",
-          "words": [
-            "a",
-            "I'd",
-            "please",
-            "coffee,",
-            "like"
-          ],
-          "correct": "I'd like a coffee, please"
-        },
-        {
-          "prompt": "Receptionist: \"Good morning! How can I help you?\"",
-          "words": [
-            "have",
-            "a",
-            "I",
-            "reservation"
-          ],
-          "correct": "I have a reservation"
-        },
-        {
-          "prompt": "\"What's your name?\"",
-          "words": [
-            "is",
-            "name",
-            "My",
-            "Carlos"
-          ],
-          "correct": "My name is Carlos"
-        }
-      ]
-    }
   }
 ]

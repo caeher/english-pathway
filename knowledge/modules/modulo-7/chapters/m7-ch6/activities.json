@@ -475,54 +475,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m7-ch6-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Present Perfect (experiencia):",
-          "words": [
-            "I",
-            "have",
-            "never",
-            "been",
-            "to",
-            "Japan"
-          ],
-          "correct": "I have never been to Japan"
-        },
-        {
-          "prompt": "First Conditional:",
-          "words": [
-            "If",
-            "you",
-            "study",
-            "hard",
-            "you",
-            "will",
-            "pass"
-          ],
-          "correct": "If you study hard you will pass"
-        },
-        {
-          "prompt": "Passive Voice:",
-          "words": [
-            "The",
-            "cake",
-            "was",
-            "made",
-            "by",
-            "my",
-            "grandmother"
-          ],
-          "correct": "The cake was made by my grandmother"
-        }
-      ]
-    }
   }
 ]

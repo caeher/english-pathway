@@ -406,46 +406,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m12-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Arrange into a paragraph about exercise benefits",
-          "words": [
-            "In conclusion, regular exercise is essential for a healthy life.",
-            "First, it improves cardiovascular health.",
-            "Exercise has many benefits for our body and mind.",
-            "Additionally, it reduces stress and anxiety."
-          ],
-          "correct": "Exercise has many benefits for our body and mind. First, it improves cardiovascular health. Additionally, it reduces stress and anxiety. In conclusion, regular exercise is essential for a healthy life."
-        },
-        {
-          "prompt": "Arrange into a paragraph about reading",
-          "words": [
-            "For example, it improves vocabulary and critical thinking.",
-            "Reading is one of the best habits you can develop.",
-            "Therefore, everyone should try to read at least 20 minutes a day.",
-            "It also helps reduce stress and improve concentration."
-          ],
-          "correct": "Reading is one of the best habits you can develop. For example, it improves vocabulary and critical thinking. It also helps reduce stress and improve concentration. Therefore, everyone should try to read at least 20 minutes a day."
-        },
-        {
-          "prompt": "Arrange into a paragraph about learning languages",
-          "words": [
-            "All in all, learning a new language is a rewarding experience.",
-            "Learning a new language opens many doors in life.",
-            "Moreover, it helps you understand different cultures.",
-            "First, it can improve your career opportunities."
-          ],
-          "correct": "Learning a new language opens many doors in life. First, it can improve your career opportunities. Moreover, it helps you understand different cultures. All in all, learning a new language is a rewarding experience."
-        }
-      ]
-    }
   }
 ]

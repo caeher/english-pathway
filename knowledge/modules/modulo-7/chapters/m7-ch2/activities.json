@@ -415,53 +415,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m7-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I like tea, but not coffee (but):",
-          "words": [
-            "I",
-            "like",
-            "tea,",
-            "but",
-            "not",
-            "coffee"
-          ],
-          "correct": "I like tea, but not coffee"
-        },
-        {
-          "prompt": "Although it was raining, we went out (although):",
-          "words": [
-            "Although",
-            "it",
-            "rained,",
-            "we",
-            "went",
-            "out"
-          ],
-          "correct": "Although it rained, we went out"
-        },
-        {
-          "prompt": "It was raining, so I stayed (so):",
-          "words": [
-            "It",
-            "was",
-            "raining,",
-            "so",
-            "I",
-            "stayed",
-            "home"
-          ],
-          "correct": "It was raining, so I stayed home"
-        }
-      ]
-    }
   }
 ]

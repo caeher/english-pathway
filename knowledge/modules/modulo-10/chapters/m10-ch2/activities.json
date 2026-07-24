@@ -463,51 +463,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m10-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "You feel sick. What do you tell the doctor?",
-          "words": [
-            "a",
-            "I",
-            "headache",
-            "have",
-            "terrible"
-          ],
-          "correct": "I have a terrible headache"
-        },
-        {
-          "prompt": "Ask someone to schedule a meeting",
-          "words": [
-            "need",
-            "We",
-            "a",
-            "to",
-            "make",
-            "reservation"
-          ],
-          "correct": "We need to make a reservation"
-        },
-        {
-          "prompt": "Tell your boss about the project",
-          "words": [
-            "meet",
-            "to",
-            "going",
-            "the",
-            "I'm",
-            "deadline"
-          ],
-          "correct": "I'm going to meet the deadline"
-        }
-      ]
-    }
   }
 ]

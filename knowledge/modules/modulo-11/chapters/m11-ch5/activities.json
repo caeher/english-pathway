@@ -601,58 +601,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m11-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Opinion (O):",
-          "words": [
-            "believe",
-            "I",
-            "that",
-            "strongly",
-            "exercise",
-            "important",
-            "is"
-          ],
-          "correct": "I strongly believe that exercise is important"
-        },
-        {
-          "prompt": "Reason (R):",
-          "words": [
-            "because",
-            "This",
-            "is",
-            "it",
-            "both",
-            "mental",
-            "physical",
-            "health",
-            "and",
-            "improves"
-          ],
-          "correct": "This is because it improves both physical and mental health"
-        },
-        {
-          "prompt": "Ejemplo (E):",
-          "words": [
-            "example",
-            "For",
-            "reduces",
-            "regular",
-            "exercise",
-            "stress",
-            "levels"
-          ],
-          "correct": "For example regular exercise reduces stress levels"
-        }
-      ]
-    }
   }
 ]

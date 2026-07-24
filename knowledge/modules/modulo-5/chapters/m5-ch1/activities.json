@@ -473,49 +473,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m5-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I have visited Paris:",
-          "words": [
-            "I",
-            "have",
-            "visited",
-            "Paris"
-          ],
-          "correct": "I have visited Paris"
-        },
-        {
-          "prompt": "Have you ever been to Japan?:",
-          "words": [
-            "Have",
-            "you",
-            "ever",
-            "been",
-            "to",
-            "Japan?"
-          ],
-          "correct": "Have you ever been to Japan?"
-        },
-        {
-          "prompt": "Nunca he comido sushi:",
-          "words": [
-            "I",
-            "have",
-            "never",
-            "eaten",
-            "sushi"
-          ],
-          "correct": "I have never eaten sushi"
-        }
-      ]
-    }
   }
 ]

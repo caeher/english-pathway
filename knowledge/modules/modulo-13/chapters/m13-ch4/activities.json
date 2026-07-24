@@ -466,55 +466,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m13-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Build a persuasive statement about climate action",
-          "words": [
-            "We",
-            "MUST",
-            "act",
-            "NOW",
-            "to",
-            "protect",
-            "our",
-            "future."
-          ],
-          "correct": "We MUST act NOW to protect our future."
-        },
-        {
-          "prompt": "Build an emphatic statement about teamwork",
-          "words": [
-            "TOGETHER,",
-            "we",
-            "can",
-            "achieve",
-            "ANYTHING."
-          ],
-          "correct": "TOGETHER, we can achieve ANYTHING."
-        },
-        {
-          "prompt": "Build a persuasive call to action",
-          "words": [
-            "The",
-            "TIME",
-            "for",
-            "change",
-            "is",
-            "NOW,",
-            "not",
-            "tomorrow."
-          ],
-          "correct": "The TIME for change is NOW, not tomorrow."
-        }
-      ]
-    }
   }
 ]

@@ -483,53 +483,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m4-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "She is taller than him:",
-          "words": [
-            "She",
-            "is",
-            "taller",
-            "than",
-            "him"
-          ],
-          "correct": "She is taller than him"
-        },
-        {
-          "prompt": "This book is more interesting:",
-          "words": [
-            "This",
-            "book",
-            "is",
-            "more",
-            "interesting",
-            "than",
-            "that",
-            "one"
-          ],
-          "correct": "This book is more interesting than that one"
-        },
-        {
-          "prompt": "My house is bigger:",
-          "words": [
-            "My",
-            "house",
-            "is",
-            "bigger",
-            "than",
-            "yours"
-          ],
-          "correct": "My house is bigger than yours"
-        }
-      ]
-    }
   }
 ]

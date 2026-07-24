@@ -511,46 +511,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m9-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Answer: \"I live in Mexico City.\"",
-          "words": [
-            "do",
-            "Where",
-            "live?",
-            "you"
-          ],
-          "correct": "Where do you live?"
-        },
-        {
-          "prompt": "Answer: \"She is a doctor.\"",
-          "words": [
-            "is",
-            "What",
-            "job?",
-            "her"
-          ],
-          "correct": "What is her job?"
-        },
-        {
-          "prompt": "Answer: \"The party is on Friday.\"",
-          "words": [
-            "is",
-            "When",
-            "party?",
-            "the"
-          ],
-          "correct": "When is the party?"
-        }
-      ]
-    }
   }
 ]

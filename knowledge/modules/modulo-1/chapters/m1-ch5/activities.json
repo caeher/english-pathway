@@ -155,6 +155,26 @@
         {
           "left": "13",
           "right": "thirteen"
+        },
+        {
+          "left": "1st day",
+          "right": "Monday"
+        },
+        {
+          "left": "3rd day",
+          "right": "Wednesday"
+        },
+        {
+          "left": "5th day",
+          "right": "Friday"
+        },
+        {
+          "left": "6th day",
+          "right": "Saturday"
+        },
+        {
+          "left": "7th day",
+          "right": "Sunday"
         }
       ]
     }
@@ -530,37 +550,6 @@
           "id": "p4",
           "phrase": "twenty third",
           "hint": "Ordinal — 23rd"
-        }
-      ]
-    }
-  },
-  {
-    "id": "m1-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Order the Days",
-    "description": "Drag the days of the week into the correct order.",
-    "props": {
-      "mode": "match",
-      "pairs": [
-        {
-          "left": "1st day",
-          "right": "Monday"
-        },
-        {
-          "left": "3rd day",
-          "right": "Wednesday"
-        },
-        {
-          "left": "5th day",
-          "right": "Friday"
-        },
-        {
-          "left": "6th day",
-          "right": "Saturday"
-        },
-        {
-          "left": "7th day",
-          "right": "Sunday"
         }
       ]
     }

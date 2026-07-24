@@ -465,49 +465,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m2-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Yesterday I walked to the park:",
-          "words": [
-            "walked",
-            "I",
-            "to",
-            "the",
-            "park",
-            "yesterday"
-          ],
-          "correct": "I walked to the park yesterday"
-        },
-        {
-          "prompt": "Fui al cine:",
-          "words": [
-            "went",
-            "I",
-            "to",
-            "the",
-            "cinema"
-          ],
-          "correct": "I went to the cinema"
-        },
-        {
-          "prompt": "I didn't sleep well:",
-          "words": [
-            "didn't",
-            "I",
-            "sleep",
-            "well"
-          ],
-          "correct": "I didn't sleep well"
-        }
-      ]
-    }
   }
 ]

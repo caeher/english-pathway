@@ -467,55 +467,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m12-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Summarize the podcast about climate change",
-          "words": [
-            "The",
-            "podcast",
-            "discussed",
-            "solutions",
-            "to",
-            "climate",
-            "change."
-          ],
-          "correct": "The podcast discussed solutions to climate change."
-        },
-        {
-          "prompt": "Summarize the speaker's main argument",
-          "words": [
-            "The",
-            "speaker",
-            "argued",
-            "that",
-            "individual",
-            "action",
-            "matters."
-          ],
-          "correct": "The speaker argued that individual action matters."
-        },
-        {
-          "prompt": "Summarize the conclusion",
-          "words": [
-            "It",
-            "concluded",
-            "by",
-            "calling",
-            "for",
-            "policy",
-            "changes."
-          ],
-          "correct": "It concluded by calling for policy changes."
-        }
-      ]
-    }
   }
 ]

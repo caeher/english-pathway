@@ -451,48 +451,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m8-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Pidiendo ayuda:",
-          "words": [
-            "you",
-            "Could",
-            "please?",
-            "help",
-            "me,"
-          ],
-          "correct": "Could you help me, please?"
-        },
-        {
-          "prompt": "In a cafe:",
-          "words": [
-            "a",
-            "I'd",
-            "please",
-            "coffee,",
-            "like"
-          ],
-          "correct": "I'd like a coffee, please"
-        },
-        {
-          "prompt": "Preguntando precio:",
-          "words": [
-            "much",
-            "How",
-            "this?",
-            "is"
-          ],
-          "correct": "How much is this?"
-        }
-      ]
-    }
   }
 ]

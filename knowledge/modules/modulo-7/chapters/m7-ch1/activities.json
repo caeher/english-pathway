@@ -423,56 +423,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m7-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "The woman who called is my aunt:",
-          "words": [
-            "The",
-            "woman",
-            "who",
-            "called",
-            "is",
-            "my",
-            "aunt"
-          ],
-          "correct": "The woman who called is my aunt"
-        },
-        {
-          "prompt": "The car I bought is red:",
-          "words": [
-            "The",
-            "car",
-            "which",
-            "I",
-            "bought",
-            "is",
-            "red"
-          ],
-          "correct": "The car which I bought is red"
-        },
-        {
-          "prompt": "The city where I was born is small:",
-          "words": [
-            "The",
-            "city",
-            "where",
-            "I",
-            "was",
-            "born",
-            "is",
-            "small"
-          ],
-          "correct": "The city where I was born is small"
-        }
-      ]
-    }
   }
 ]

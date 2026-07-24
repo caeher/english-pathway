@@ -461,54 +461,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m10-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Connect: 'I like coffee' + 'I don't drink it often'",
-          "words": [
-            "I",
-            "like",
-            "coffee,",
-            "however,",
-            "I",
-            "don't",
-            "drink",
-            "it",
-            "often"
-          ],
-          "correct": "I like coffee, however, I don't drink it often"
-        },
-        {
-          "prompt": "Express cause: why you stayed home",
-          "words": [
-            "stayed",
-            "because",
-            "I",
-            "was",
-            "home",
-            "I",
-            "sick"
-          ],
-          "correct": "I stayed home because I was sick"
-        },
-        {
-          "prompt": "Give a sequence: first step of a recipe",
-          "words": [
-            "First,",
-            "the",
-            "preheat",
-            "oven"
-          ],
-          "correct": "First, preheat the oven"
-        }
-      ]
-    }
   }
 ]

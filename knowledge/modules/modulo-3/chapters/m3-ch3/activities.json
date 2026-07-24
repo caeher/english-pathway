@@ -472,53 +472,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m3-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I was watching TV at 9:",
-          "words": [
-            "I",
-            "was",
-            "watching",
-            "TV",
-            "at",
-            "9"
-          ],
-          "correct": "I was watching TV at 9"
-        },
-        {
-          "prompt": "She was cooking when he arrived:",
-          "words": [
-            "She",
-            "was",
-            "cooking",
-            "when",
-            "he",
-            "arrived"
-          ],
-          "correct": "She was cooking when he arrived"
-        },
-        {
-          "prompt": "While it was raining, we read:",
-          "words": [
-            "While",
-            "it",
-            "was",
-            "raining",
-            "we",
-            "were",
-            "reading"
-          ],
-          "correct": "While it was raining we were reading"
-        }
-      ]
-    }
   }
 ]

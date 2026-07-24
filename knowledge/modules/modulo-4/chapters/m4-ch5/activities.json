@@ -468,44 +468,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m4-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Open the door:",
-          "words": [
-            "Open",
-            "the",
-            "door"
-          ],
-          "correct": "Open the door"
-        },
-        {
-          "prompt": "Don't run in the hallway:",
-          "words": [
-            "Don't",
-            "run",
-            "in",
-            "the",
-            "hall"
-          ],
-          "correct": "Don't run in the hall"
-        },
-        {
-          "prompt": "Listen carefully:",
-          "words": [
-            "Listen",
-            "carefully"
-          ],
-          "correct": "Listen carefully"
-        }
-      ]
-    }
   }
 ]

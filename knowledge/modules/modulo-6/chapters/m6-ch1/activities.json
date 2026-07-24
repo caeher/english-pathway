@@ -389,55 +389,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m6-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Si calientas hielo, se derrite:",
-          "words": [
-            "If",
-            "you",
-            "heat",
-            "ice,",
-            "it",
-            "melts"
-          ],
-          "correct": "If you heat ice, it melts"
-        },
-        {
-          "prompt": "If it rains, the ground gets wet:",
-          "words": [
-            "If",
-            "it",
-            "rains,",
-            "the",
-            "ground",
-            "gets",
-            "wet"
-          ],
-          "correct": "If it rains, the ground gets wet"
-        },
-        {
-          "prompt": "Si comes demasiado, te sientes mal:",
-          "words": [
-            "If",
-            "you",
-            "eat",
-            "too",
-            "much,",
-            "you",
-            "feel",
-            "sick"
-          ],
-          "correct": "If you eat too much, you feel sick"
-        }
-      ]
-    }
   }
 ]

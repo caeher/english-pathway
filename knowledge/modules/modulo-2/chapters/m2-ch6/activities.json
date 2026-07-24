@@ -417,49 +417,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m2-ch6-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "She works in a bank (nowadays):",
-          "words": [
-            "works",
-            "She",
-            "in",
-            "a",
-            "bank"
-          ],
-          "correct": "She works in a bank"
-        },
-        {
-          "prompt": "I worked yesterday:",
-          "words": [
-            "worked",
-            "I",
-            "yesterday"
-          ],
-          "correct": "I worked yesterday"
-        },
-        {
-          "prompt": "They go to the gym every day:",
-          "words": [
-            "go",
-            "They",
-            "to",
-            "the",
-            "gym",
-            "every",
-            "day"
-          ],
-          "correct": "They go to the gym every day"
-        }
-      ]
-    }
   }
 ]

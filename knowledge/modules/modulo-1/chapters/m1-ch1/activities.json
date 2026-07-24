@@ -227,6 +227,22 @@
         {
           "left": "W",
           "right": "Water 💧"
+        },
+        {
+          "left": "Apple",
+          "right": "Apple 🍎"
+        },
+        {
+          "left": "book",
+          "right": "Book 📖"
+        },
+        {
+          "left": "cat",
+          "right": "Cat 🐱"
+        },
+        {
+          "left": "dog",
+          "right": "Dog 🐕"
         }
       ]
     }
@@ -577,33 +593,6 @@
           "id": "p3",
           "phrase": "thank you",
           "hint": "Expression of gratitude"
-        }
-      ]
-    }
-  },
-  {
-    "id": "m1-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Drag and Match",
-    "description": "Drag the translations to the English words.",
-    "props": {
-      "mode": "match",
-      "pairs": [
-        {
-          "left": "Apple",
-          "right": "Apple 🍎"
-        },
-        {
-          "left": "book",
-          "right": "Book 📖"
-        },
-        {
-          "left": "cat",
-          "right": "Cat 🐱"
-        },
-        {
-          "left": "dog",
-          "right": "Dog 🐕"
         }
       ]
     }

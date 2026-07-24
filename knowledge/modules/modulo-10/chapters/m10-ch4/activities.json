@@ -371,36 +371,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m10-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Drag and Match",
-    "description": "Drag items to their correct match.",
-    "props": {
-      "mode": "match",
-      "pairs": [
-        {
-          "left": "computer",
-          "right": "oOo (com-PU-ter)"
-        },
-        {
-          "left": "information",
-          "right": "ooOo (in-for-MA-tion)"
-        },
-        {
-          "left": "photograph",
-          "right": "Ooo (PHO-to-graph)"
-        },
-        {
-          "left": "Japanese",
-          "right": "ooO (ja-pa-NESE)"
-        },
-        {
-          "left": "fantastic",
-          "right": "oOo (fan-TAS-tic)"
-        }
-      ]
-    }
   }
 ]

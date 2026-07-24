@@ -405,44 +405,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m5-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Ella ha comido (present participle or past participle?):",
-          "words": [
-            "She",
-            "has",
-            "eaten"
-          ],
-          "correct": "She has eaten"
-        },
-        {
-          "prompt": "He is working (what participle?):",
-          "words": [
-            "She",
-            "is",
-            "working"
-          ],
-          "correct": "She is working"
-        },
-        {
-          "prompt": "The car was stolen:",
-          "words": [
-            "The",
-            "car",
-            "was",
-            "stolen"
-          ],
-          "correct": "The car was stolen"
-        }
-      ]
-    }
   }
 ]

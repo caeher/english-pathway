@@ -473,47 +473,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m4-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "You must wear a belt (obligatory):",
-          "words": [
-            "You",
-            "must",
-            "wear",
-            "a",
-            "seatbelt"
-          ],
-          "correct": "You must wear a seatbelt"
-        },
-        {
-          "prompt": "You should study more (advice):",
-          "words": [
-            "You",
-            "should",
-            "study",
-            "more"
-          ],
-          "correct": "You should study more"
-        },
-        {
-          "prompt": "It may rain (possibility):",
-          "words": [
-            "It",
-            "may",
-            "rain",
-            "later"
-          ],
-          "correct": "It may rain later"
-        }
-      ]
-    }
   }
 ]

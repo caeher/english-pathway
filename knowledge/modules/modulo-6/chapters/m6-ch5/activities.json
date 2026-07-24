@@ -403,51 +403,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m6-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "\"Estoy feliz\" — ella dijo:",
-          "words": [
-            "She",
-            "said",
-            "she",
-            "was",
-            "happy"
-          ],
-          "correct": "She said she was happy"
-        },
-        {
-          "prompt": "\"I like chocolate\" — he told me:",
-          "words": [
-            "He",
-            "told",
-            "me",
-            "he",
-            "liked",
-            "chocolate"
-          ],
-          "correct": "He told me he liked chocolate"
-        },
-        {
-          "prompt": "\"I will help you\" — he said:",
-          "words": [
-            "He",
-            "said",
-            "he",
-            "would",
-            "help",
-            "me"
-          ],
-          "correct": "He said he would help me"
-        }
-      ]
-    }
   }
 ]

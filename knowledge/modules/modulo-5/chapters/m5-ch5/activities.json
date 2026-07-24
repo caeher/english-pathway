@@ -451,48 +451,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m5-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "The cars are made in Japan:",
-          "words": [
-            "Cars",
-            "are",
-            "made",
-            "in",
-            "Japan"
-          ],
-          "correct": "Cars are made in Japan"
-        },
-        {
-          "prompt": "Mi bicicleta fue robada:",
-          "words": [
-            "My",
-            "bike",
-            "was",
-            "stolen"
-          ],
-          "correct": "My bike was stolen"
-        },
-        {
-          "prompt": "The road has been repaired:",
-          "words": [
-            "The",
-            "road",
-            "has",
-            "been",
-            "repaired"
-          ],
-          "correct": "The road has been repaired"
-        }
-      ]
-    }
   }
 ]

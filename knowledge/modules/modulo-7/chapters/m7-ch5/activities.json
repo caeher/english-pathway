@@ -439,49 +439,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m7-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "She has a car (correct):",
-          "words": [
-            "She",
-            "has",
-            "a",
-            "car"
-          ],
-          "correct": "She has a car"
-        },
-        {
-          "prompt": "I am 25 years old (correct):",
-          "words": [
-            "I",
-            "am",
-            "25",
-            "years",
-            "old"
-          ],
-          "correct": "I am 25 years old"
-        },
-        {
-          "prompt": "I always go to the gym (correct):",
-          "words": [
-            "I",
-            "always",
-            "go",
-            "to",
-            "the",
-            "gym"
-          ],
-          "correct": "I always go to the gym"
-        }
-      ]
-    }
   }
 ]

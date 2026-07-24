@@ -203,6 +203,18 @@
         {
           "left": "Have a nice day!",
           "right": "You too! Thanks!"
+        },
+        {
+          "left": "Hello!",
+          "right": "Hi there!"
+        },
+        {
+          "left": "What's your name?",
+          "right": "My name is Pedro."
+        },
+        {
+          "left": "Goodbye!",
+          "right": "See you later!"
         }
       ]
     }
@@ -573,37 +585,6 @@
           "id": "p4",
           "phrase": "Excuse me",
           "hint": "Polite attention-getter — silent 'c' in excuse"
-        }
-      ]
-    }
-  },
-  {
-    "id": "m1-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Match Greetings",
-    "description": "Drag each greeting to its correct reply.",
-    "props": {
-      "mode": "match",
-      "pairs": [
-        {
-          "left": "Hello!",
-          "right": "Hi there!"
-        },
-        {
-          "left": "How are you?",
-          "right": "I'm fine, thanks."
-        },
-        {
-          "left": "What's your name?",
-          "right": "My name is Pedro."
-        },
-        {
-          "left": "Nice to meet you!",
-          "right": "Nice to meet you too!"
-        },
-        {
-          "left": "Goodbye!",
-          "right": "See you later!"
         }
       ]
     }

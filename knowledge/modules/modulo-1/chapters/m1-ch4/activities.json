@@ -173,6 +173,26 @@
         {
           "left": "baby",
           "right": "babies"
+        },
+        {
+          "left": "London",
+          "right": "Proper noun"
+        },
+        {
+          "left": "happiness",
+          "right": "Abstract noun"
+        },
+        {
+          "left": "book",
+          "right": "Concrete noun"
+        },
+        {
+          "left": "water",
+          "right": "Uncountable noun"
+        },
+        {
+          "left": "children",
+          "right": "Irregular plural"
         }
       ]
     }
@@ -614,37 +634,6 @@
           "id": "p4",
           "phrase": "children",
           "hint": "Irregular plural — /ˈtʃɪldrən/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "m1-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Match Noun Types",
-    "description": "Drag each noun to its correct category.",
-    "props": {
-      "mode": "match",
-      "pairs": [
-        {
-          "left": "London",
-          "right": "Proper noun"
-        },
-        {
-          "left": "happiness",
-          "right": "Abstract noun"
-        },
-        {
-          "left": "book",
-          "right": "Concrete noun"
-        },
-        {
-          "left": "water",
-          "right": "Uncountable noun"
-        },
-        {
-          "left": "children",
-          "right": "Irregular plural"
         }
       ]
     }
