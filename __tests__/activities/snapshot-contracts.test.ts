@@ -5,6 +5,7 @@ import {
   dictationSnapshot,
   flashcardSnapshot,
   listeningSnapshot,
+  minimalPairsSnapshot,
   pronunciationSnapshot,
   quizSnapshot,
   sentenceBuilderSnapshot,
@@ -26,6 +27,7 @@ describe('activity snapshot contracts', () => {
     expect(activityRegistry.dictation.snapshot).toBe(dictationSnapshot)
     expect(activityRegistry.pronunciation.snapshot).toBe(pronunciationSnapshot)
     expect(activityRegistry['branching-dialogue'].snapshot).toBe(branchingDialogueSnapshot)
+    expect(activityRegistry['minimal-pairs'].snapshot).toBe(minimalPairsSnapshot)
   })
 
   it('summarizes representative payloads for each contract', () => {
@@ -45,6 +47,16 @@ describe('activity snapshot contracts', () => {
       answered: false,
       awaitingContinue: false,
     })).toContain('Decision')
+    expect(minimalPairsSnapshot.summarize({
+      current: 1,
+      phase: 'discriminate',
+      playedVariant: 'A',
+      selected: null,
+      answered: false,
+      score: 1,
+      weakItemIndexes: [],
+      replaysUsed: 0,
+    })).toContain('Pair')
   })
 
   it('rejects pronunciation payloads that include transcripts', () => {

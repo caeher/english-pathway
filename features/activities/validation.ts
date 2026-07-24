@@ -110,6 +110,53 @@ function validatePronunciationSemantics(
   return issues
 }
 
+function validateMinimalPairsSemantics(
+  moduleId: string,
+  chapterId: string,
+  activityId: string,
+  props: {
+    pairs: Array<{
+      id: string
+      wordA: string
+      wordB: string
+      audioA?: { altText?: string }
+      audioB?: { altText?: string }
+    }>
+  },
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+  const seenIds = new Set<string>()
+
+  for (const [index, pair] of props.pairs.entries()) {
+    if (seenIds.has(pair.id)) {
+      issues.push({
+        moduleId,
+        chapterId,
+        activityId,
+        field: `props.pairs.${index}.id`,
+        message: `duplicate pair id "${pair.id}"`,
+        severity: 'error',
+      })
+    }
+    seenIds.add(pair.id)
+
+    for (const [field, audio] of [['audioA', pair.audioA], ['audioB', pair.audioB]] as const) {
+      if (audio && !audio.altText?.trim()) {
+        issues.push({
+          moduleId,
+          chapterId,
+          activityId,
+          field: `props.pairs.${index}.${field}.altText`,
+          message: 'curated minimal-pairs audio should include altText for post-answer feedback',
+          severity: 'warning',
+        })
+      }
+    }
+  }
+
+  return issues
+}
+
 function validateBranchingDialogueSemantics(
   moduleId: string,
   chapterId: string,
@@ -277,6 +324,10 @@ export function validateActivityDocument(moduleId: string, chapterId: string, ac
 
   if (parsed.data.type === 'branching-dialogue') {
     return validateBranchingDialogueSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  }
+
+  if (parsed.data.type === 'minimal-pairs') {
+    return validateMinimalPairsSemantics(moduleId, chapterId, activityId, parsed.data.props)
   }
 
   return []

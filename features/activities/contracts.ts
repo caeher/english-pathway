@@ -117,6 +117,40 @@ export const activityPropsSchemas = {
       }
     })).min(1),
   }),
+  'minimal-pairs': z.object({
+    pairs: z.array(contrastPairSchema.extend({
+      id: z.string().min(1),
+      meaningA: z.string().min(1).optional(),
+      meaningB: z.string().min(1).optional(),
+      audioA: curatedAudioSchema.optional(),
+      audioB: curatedAudioSchema.optional(),
+      maxReplays: z.number().int().min(1).max(5).optional(),
+    }).superRefine((pair, ctx) => {
+      if (pair.wordA.trim().toLowerCase() === pair.wordB.trim().toLowerCase()) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'wordA and wordB must be different',
+          path: ['wordB'],
+        })
+      }
+      if (!pair.meaningA?.trim() && !pair.meaningB?.trim()) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'at least one of meaningA or meaningB is required',
+          path: ['meaningA'],
+        })
+      }
+      for (const [field, audio] of [['audioA', pair.audioA], ['audioB', pair.audioB]] as const) {
+        if (audio && !isValidCuratedAudioSrc(audio.src)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'audio.src must start with /audio/ or http(s)://',
+            path: [field, 'src'],
+          })
+        }
+      }
+    })).min(2),
+  }),
   'branching-dialogue': z.object({
     setting: z.string().min(1),
     characters: z.array(z.object({
@@ -209,6 +243,7 @@ export const chapterActivitySchema = z.discriminatedUnion('type', [
   activityBase.extend({ type: z.literal('dictation'), props: activityPropsSchemas.dictation }),
   activityBase.extend({ type: z.literal('pronunciation'), props: activityPropsSchemas.pronunciation }),
   activityBase.extend({ type: z.literal('branching-dialogue'), props: activityPropsSchemas['branching-dialogue'] }),
+  activityBase.extend({ type: z.literal('minimal-pairs'), props: activityPropsSchemas['minimal-pairs'] }),
 ])
 
 export type ChapterActivityInput = z.infer<typeof chapterActivitySchema>
