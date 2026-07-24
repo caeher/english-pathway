@@ -49,4 +49,12 @@ describe('english assistant accessibility contract', () => {
     expect(sheet).toContain('@radix-ui/react-dialog')
     expect(sheet).toContain('SheetPrimitive.Content')
   })
+
+  it('exposes conversation history and opt-in activity context controls', () => {
+    expect(assistant).toContain('english-assistant-history')
+    expect(assistant).toContain('aria-label="Conversation history"')
+    expect(assistant).toContain('Use this activity as context')
+    expect(assistant).toContain('Activity context attached')
+    expect(assistant).toContain('Start new conversation')
+  })
 })
