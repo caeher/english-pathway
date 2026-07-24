@@ -13,7 +13,7 @@
     "knowledge:validate": "tsx scripts/validate-knowledge.ts",
     "knowledge:language:validate": "node scripts/validate-knowledge-language.mjs",
     "test": "vitest run",
-    "test:critical": "vitest run __tests__/quality __tests__/auth __tests__/onboarding __tests__/curriculum __tests__/tutor __tests__/audio __tests__/legal",
+    "test:critical": "vitest run __tests__/quality __tests__/auth __tests__/onboarding __tests__/curriculum __tests__/tutor __tests__/audio __tests__/legal __tests__/security",
     "test:watch": "vitest",
     "quality:check": "pnpm test:critical && node scripts/quality-gate.mjs",
     "performance:check": "node scripts/check-performance-budgets.mjs",

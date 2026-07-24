@@ -50,3 +50,5 @@ Progress writes are idempotent by `(user_id, activity_id)`: duplicate activity r
 ## Security contract
 
 `next.config.ts` applies the security headers tested by the quality suite. Unsafe API requests are same-origin checked in middleware. Expensive tutor/assessment routes have a per-process fallback rate limit; the deployment edge must also enforce a distributed limit because serverless instances do not share memory. APIs validate request bodies with Zod and return generic client errors without provider secrets.
+
+Prompt-injection trust boundaries, delimiter rules, and adversarial regression tests are documented in [`docs/security/prompt-trust.md`](security/prompt-trust.md) and enforced by `__tests__/security/`.
