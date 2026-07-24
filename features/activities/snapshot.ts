@@ -3,12 +3,18 @@ import type { ActivityTypeKey } from './contracts'
 
 export const ACTIVITY_SNAPSHOT_VERSION = 1 as const
 
+export interface ActivityHintMeta {
+  level: number
+  itemIndex?: number
+}
+
 export interface ActivityProgressSnapshot {
   version: typeof ACTIVITY_SNAPSHOT_VERSION
   activityId: string
   activityType: ActivityTypeKey
   savedAt: string
   payload: unknown
+  hintMeta?: ActivityHintMeta
 }
 
 export interface ActivitySnapshotContract<T = unknown> {
@@ -26,4 +32,8 @@ export const activityProgressSnapshotSchema = z.object({
   activityType: z.string().min(1).max(50),
   savedAt: z.string().min(1),
   payload: z.unknown(),
+  hintMeta: z.object({
+    level: z.number().int().min(0).max(10),
+    itemIndex: z.number().int().min(0).optional(),
+  }).optional(),
 })
