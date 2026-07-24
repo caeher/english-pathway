@@ -27,7 +27,7 @@ describe('activity snapshot contracts', () => {
   })
 
   it('summarizes representative payloads for each contract', () => {
-    expect(flashcardSnapshot.summarize({ current: 0, flipped: false, knownIds: ['a'] })).toContain('Card')
+    expect(flashcardSnapshot.summarize({ current: 0, revealed: false, answered: false, cardGrades: { a: 'recalled' }, weakItemIndexes: [] })).toContain('Card')
     expect(wordMatchSnapshot.summarize({ matchedLeftIndices: [0], attempts: 2 })).toContain('pairs matched')
     expect(sentenceBuilderSnapshot.summarize({ current: 0, placed: [1, 0], checked: false, score: 0 })).toContain('Sentence')
     expect(wordScrambleSnapshot.summarize({ current: 0, selected: ['H'], placedIndices: [0], score: 0 })).toContain('Word')

@@ -305,7 +305,7 @@
             "then",
             "than",
             "that",
-            "then"
+            "them"
           ],
           "correct": 1,
           "explanation": "Comparisons use \"than\" (not then)."

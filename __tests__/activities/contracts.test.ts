@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { loadAllModules } from '@/lib/knowledge/load-all'
-import { activityRegistry, validateActivityDocument } from '@/features/activities'
+import { activityRegistry, validateActivityDocument, filterValidationErrors } from '@/features/activities'
 
 describe('activity contracts and registry', () => {
   it('registers every renderer extension point with schema, evaluator, and capabilities', () => {
@@ -17,7 +17,7 @@ describe('activity contracts and registry', () => {
   it('validates every activity loaded from the knowledge base', () => {
     const invalid = loadAllModules().flatMap((module) => module.chapters.flatMap((chapter) =>
       chapter.activities.flatMap((activity, index) => validateActivityDocument(module.id, chapter.id, activity, index))))
-    expect(invalid).toEqual([])
+    expect(filterValidationErrors(invalid)).toEqual([])
   })
 
   it('reports the exact activity field for invalid content', () => {

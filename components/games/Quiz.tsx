@@ -7,6 +7,7 @@ import { cn } from '@/lib/helpers'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { scoreToPercent } from '@/lib/games/scoring'
+import { getExplanationForAnswer } from '@/lib/games/flashcard-recall'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
@@ -57,7 +58,7 @@ export default function Quiz({ questions, initialProgress, onProgressChange, onC
     if (correct) setScore((s) => s + 1)
     else {
       setWeakItemIndexes((indexes) => [...indexes, current])
-      setWrongExplanations((explanations) => [...explanations, q.explanation ?? `The correct answer is "${q.options[q.correct]}".`])
+      setWrongExplanations((explanations) => [...explanations, getExplanationForAnswer(q.explanation, q.options[q.correct])])
     }
   }
 
@@ -69,7 +70,7 @@ export default function Quiz({ questions, initialProgress, onProgressChange, onC
     setIsCorrect(correct)
     if (correct) setScore((s) => s + 1)
     else {
-      const exp = q.explanation ?? `The correct answer is "${q.correct}"`
+      const exp = getExplanationForAnswer(q.explanation, q.correct)
       setWrongExplanations((e) => [...e, exp])
       setWeakItemIndexes((indexes) => [...indexes, current])
     }
@@ -158,10 +159,12 @@ export default function Quiz({ questions, initialProgress, onProgressChange, onC
             </form>
           )}
 
-          {answered && q.explanation && isCorrect && (
+          {answered && (
             <motion.div {...(reducedMotion ? motionProps(true) : { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 } })}
               className="mt-4 p-4 bg-(--secondary-soft) border border-(--secondary)/20 rounded-xl text-sm text-(--text-secondary)">
-              💡 {q.explanation}
+              💡 {q.type === 'multiple-choice'
+                ? getExplanationForAnswer(q.explanation, q.options[q.correct])
+                : getExplanationForAnswer(q.explanation, q.correct)}
             </motion.div>
           )}
 

@@ -156,7 +156,7 @@
           "question": "Where is the stress in \"airport\" (compound noun)?",
           "options": [
             "AIR-port",
-            "air-PORT"
+            "port-AIR"
           ],
           "correct": 0,
           "explanation": "Compound nouns: accent on the first element → AIR-port."
