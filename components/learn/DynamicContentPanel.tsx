@@ -3,24 +3,29 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle, XCircle } from 'lucide-react'
-import { selectClearPanel, selectPanel, selectTutorState, useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { selectClearPanel, selectPanel, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { MarkdownWithTts } from '@/components/lesson/MarkdownWithTts'
 import ActivityRenderer, { type ActivityCompleteResult } from './ActivityRenderer'
 import { Button } from '@/components/ui/button'
 import { panelTransition } from '@/lib/motion/system'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
-import { getTutorStateLabel } from '@/lib/learn/tutor-state-label'
+import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
 import { cn } from '@/lib/helpers'
 
 interface DynamicContentPanelProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
   onActivityDifficult?: (activityId: string) => void
   onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
+  onActivityPhaseChange?: (phase: ActivityUiPhase) => void
 }
 
-export default function DynamicContentPanel({ onActivityComplete, onActivityDifficult, onQuestionAnswered }: DynamicContentPanelProps) {
+export default function DynamicContentPanel({
+  onActivityComplete,
+  onActivityDifficult,
+  onQuestionAnswered,
+  onActivityPhaseChange,
+}: DynamicContentPanelProps) {
   const panel = useLearnSessionStore(selectPanel)
-  const tutorState = useLearnSessionStore(selectTutorState)
   const clearPanel = useLearnSessionStore(selectClearPanel)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const reducedMotion = useReducedMotion()
@@ -35,8 +40,6 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
   useEffect(() => {
     if (panel.kind === 'question') setSelectedOption(null)
   }, [panel.kind, questionPrompt])
-
-  const stateLabel = getTutorStateLabel(tutorState)
 
   if (panel.kind === 'empty') {
     return (
@@ -59,18 +62,11 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
   return (
     <div className="flex min-h-full flex-col" aria-live="polite">
       <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-(--border-primary)">
-        <div className="flex min-w-0 items-center gap-2">
-          <h2 ref={headingRef} tabIndex={-1} className="font-display font-bold text-(--text-primary) text-sm truncate focus:outline-none">
-            {panel.kind === 'grammar' && (panel.title ?? 'Lesson')}
-            {panel.kind === 'activity' && panel.activity.title}
-            {panel.kind === 'question' && 'Quick check'}
-          </h2>
-          {stateLabel && (
-            <span className="shrink-0 rounded-full bg-(--accent-soft) px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-(--accent)">
-              {stateLabel}
-            </span>
-          )}
-        </div>
+        <h2 ref={headingRef} tabIndex={-1} className="min-w-0 flex-1 truncate font-display font-bold text-(--text-primary) text-sm focus:outline-none">
+          {panel.kind === 'grammar' && (panel.title ?? 'Lesson')}
+          {panel.kind === 'activity' && panel.activity.title}
+          {panel.kind === 'question' && 'Quick check'}
+        </h2>
         {panel.kind !== 'activity' && (
           <Button variant="ghost" size="sm" onClick={clearPanel}>
             Close
@@ -102,6 +98,7 @@ export default function DynamicContentPanel({ onActivityComplete, onActivityDiff
               moduleId={panel.moduleId}
               onHelp={onActivityDifficult}
               onExit={clearPanel}
+              onPhaseChange={onActivityPhaseChange}
               onComplete={(result) => onActivityComplete?.({
                 ...result,
                 chapterId: panel.chapterId,

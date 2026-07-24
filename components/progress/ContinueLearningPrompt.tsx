@@ -1,24 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import { ArrowRight, BookOpen, RotateCcw } from 'lucide-react'
-
-interface Continuation { kind: 'review' | 'resume' | 'start' | 'completed'; href: string; label: string; title: string; description: string }
+import { useContinuation } from '@/lib/learn/use-continuation'
 
 export default function ContinueLearningPrompt() {
-  const [continuation, setContinuation] = useState<Continuation | null>(null)
-
-  useEffect(() => {
-    fetch('/api/progress/continuation')
-      .then(async (response) => {
-        if (!response.ok) return null
-        const data = await response.json() as { continuation: Continuation }
-        return data.continuation
-      })
-      .then(setContinuation)
-      .catch(() => {})
-  }, [])
+  const continuation = useContinuation()
 
   if (!continuation) return null
 

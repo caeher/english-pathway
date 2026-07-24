@@ -9,6 +9,7 @@ import { normalizeActivityResult } from '@/lib/games/result'
 import { isActivityCompleted } from '@/features/progress/client'
 import { listChapterActivities, showActivity } from '@/lib/learn/client-tools'
 import { resolveNextActivityId } from '@/lib/learn/next-activity'
+import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
 import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import {
   loadSnapshot,
@@ -87,6 +88,7 @@ interface ActivityRendererProps {
   onComplete?: (result: ActivityCompleteResult) => void
   onHelp?: (activityId: string) => void
   onExit?: () => void
+  onPhaseChange?: (phase: ActivityUiPhase) => void
 }
 
 type GameResult = Record<string, unknown> & {
@@ -208,6 +210,7 @@ export default function ActivityRenderer({
   onComplete,
   onHelp,
   onExit,
+  onPhaseChange,
 }: ActivityRendererProps) {
   const [attempt, setAttempt] = useState(0)
   const [phase, setPhase] = useState<ActivityPhase>('playing')
@@ -223,6 +226,22 @@ export default function ActivityRenderer({
   useEffect(() => {
     purgeExpiredSnapshots()
   }, [])
+
+  useEffect(() => {
+    if (resumeState === 'checking') {
+      onPhaseChange?.('checking')
+      return
+    }
+    if (resumeState === 'prompt') {
+      onPhaseChange?.('resume-prompt')
+      return
+    }
+    if (phase === 'completed') {
+      onPhaseChange?.('completed')
+      return
+    }
+    onPhaseChange?.('playing')
+  }, [phase, resumeState, onPhaseChange])
 
   useEffect(() => {
     let cancelled = false
