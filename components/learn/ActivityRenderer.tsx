@@ -19,7 +19,7 @@ import {
   resolveEditorialHint,
   type GraduatedHintLevel,
 } from '@/features/activities/hints'
-import { trackEvent } from '@/lib/analytics/events'
+import { trackActivityRetry } from '@/lib/analytics/activity-runtime'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { normalizeActivityResult } from '@/lib/games/result'
 import { isActivityCompleted } from '@/features/progress/client'
@@ -436,6 +436,7 @@ export default function ActivityRenderer({
   }, [activity.id, clearSnapshot, emitRuntimeEvent, onExit, type])
 
   const handleRetry = useCallback(() => {
+    trackActivityRetry({ chapterId, moduleId }, activity.id, type)
     clearSnapshot()
     setRestoredProgress(undefined)
     setAttempt((value) => value + 1)
@@ -446,7 +447,7 @@ export default function ActivityRenderer({
     setCompletedResult(null)
     setFollowUpDecision(null)
     setResumeState('playing')
-  }, [clearSnapshot])
+  }, [activity.id, chapterId, clearSnapshot, moduleId, type])
 
   const navigateToActivity = useCallback(async (activityId: string) => {
     await showActivity(activityId)
@@ -508,19 +509,13 @@ export default function ActivityRenderer({
   }, [activity.id, chapterId, followUpDecision, handleDeclineFollowUp, handleRetry, navigateToActivity])
 
   const emitHintRequested = useCallback((level: number, itemIndex: number | undefined, source: 'editorial' | 'tutor') => {
-    trackEvent('hint_requested', {
-      activity_id: activity.id,
-      activity_type: type,
-      level,
-      source,
-      item_index: itemIndex,
-    })
     emitRuntimeEvent({
       type: 'hintRequested',
       activityId: activity.id,
       activityType: type,
       itemIndex,
       level,
+      source,
     })
   }, [activity.id, emitRuntimeEvent, type])
 

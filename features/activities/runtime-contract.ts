@@ -53,6 +53,7 @@ export const activityRuntimeEventSchema = z.discriminatedUnion('type', [
     activityType: z.string().min(1),
     itemIndex: z.number().int().min(0).optional(),
     level: z.number().int().min(1),
+    source: z.enum(['editorial', 'tutor']).optional(),
   }),
   z.object({
     type: z.literal('completed'),
