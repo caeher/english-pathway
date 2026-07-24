@@ -3,7 +3,7 @@ import path from 'node:path'
 import matter from 'gray-matter'
 import { load as loadYaml } from 'js-yaml'
 import { z } from 'zod'
-import { validateActivityList } from '@/features/activities'
+import { validateActivityList, filterValidationErrors } from '@/features/activities'
 
 const root = process.cwd()
 const modulesRoot = path.join(root, 'knowledge', 'modules')
@@ -76,7 +76,7 @@ if (catalog) {
         try {
           const activities = JSON.parse(fs.readFileSync(activitiesPath, 'utf8')) as unknown
           if (!Array.isArray(activities)) issue(activitiesPath, 'root', 'must be an array of activities')
-          else for (const activityIssue of validateActivityList(moduleId, chapterId, activities)) issue(activitiesPath, `${activityIssue.activityId}.${activityIssue.field}`, activityIssue.message)
+          else for (const activityIssue of filterValidationErrors(validateActivityList(moduleId, chapterId, activities))) issue(activitiesPath, `${activityIssue.activityId}.${activityIssue.field}`, activityIssue.message)
         } catch (error) { issue(activitiesPath, 'json', error instanceof Error ? error.message : 'Invalid JSON') }
       }
     }
