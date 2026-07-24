@@ -35,6 +35,17 @@ export {
   DialogTitle,
   DialogDescription,
 } from './dialog'
+export {
+  Sheet,
+  SheetPortal,
+  SheetOverlay,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from './sheet'
 export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from './popover'
 export {
   DropdownMenu,
