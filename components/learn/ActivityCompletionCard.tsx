@@ -106,6 +106,23 @@ export default function ActivityCompletionCard({
           %)
         </p>
 
+        {typeof result.metrics?.pragmaticScore === 'number' && typeof result.metrics?.grammaticalScore === 'number' && (
+          <div className="mb-4 grid gap-2 sm:grid-cols-2">
+            <p className="rounded-xl border border-(--border-primary) bg-(--bg-card) px-3 py-2 text-sm text-(--text-secondary)">
+              <span className="font-semibold text-(--text-primary)">Pragmatic fit:</span>
+              {' '}
+              {result.metrics.pragmaticScore}
+              %
+            </p>
+            <p className="rounded-xl border border-(--border-primary) bg-(--bg-card) px-3 py-2 text-sm text-(--text-secondary)">
+              <span className="font-semibold text-(--text-primary)">Grammar:</span>
+              {' '}
+              {result.metrics.grammaticalScore}
+              %
+            </p>
+          </div>
+        )}
+
         <p className="mb-4 text-sm font-medium text-(--text-primary)">{summary.recommendation}</p>
 
         {explanations.length > 0 && (

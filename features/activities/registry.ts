@@ -8,6 +8,7 @@ import {
 } from './runtime-contract'
 import type { AnyActivitySnapshotContract } from './snapshot'
 import {
+  branchingDialogueSnapshot,
   dictationSnapshot,
   flashcardSnapshot,
   listeningSnapshot,
@@ -86,6 +87,7 @@ export const activityRegistry = {
   listening: definition('listening', createActivityCapabilities('audio', 'itemFeedback'), listeningSnapshot),
   dictation: definition('dictation', createHintActivityCapabilities(3, 'audio'), dictationSnapshot),
   pronunciation: definition('pronunciation', createHintActivityCapabilities(3, 'microphone'), pronunciationSnapshot),
+  'branching-dialogue': definition('branching-dialogue', createActivityCapabilities('itemFeedback', 'audio'), branchingDialogueSnapshot),
 } satisfies Record<ActivityTypeKey, ActivityDefinition>
 
 export function getActivityDefinition(type: string): ActivityDefinition | null {

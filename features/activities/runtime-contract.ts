@@ -115,6 +115,9 @@ export function extractItemIndexFromProgress(
   if (activityType === 'flashcard' && typeof progress.currentIndex === 'number') {
     return progress.currentIndex
   }
+  if (typeof progress.decisionIndex === 'number' && progress.decisionIndex >= 0) {
+    return progress.decisionIndex
+  }
   return undefined
 }
 
