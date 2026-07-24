@@ -3,7 +3,7 @@ import type { ActivityType } from '@/types'
 
 const activityTypes: [ActivityType, ...ActivityType[]] = [
   'flashcard', 'word-match', 'sentence-builder', 'quiz',
-  'word-scramble', 'listening', 'dictation', 'pronunciation',
+  'word-scramble', 'listening', 'dictation', 'pronunciation', 'branching-dialogue',
 ]
 
 export const engagementSessionSchema = z.object({

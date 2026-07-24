@@ -577,5 +577,133 @@
         }
       ]
     }
+  },
+  {
+    "id": "m9-ch1-branching-dialogue",
+    "type": "branching-dialogue",
+    "title": "Hotel Check-in",
+    "description": "Navigate a travel situation at the hotel front desk with appropriate requests and responses.",
+    "props": {
+      "setting": "You arrive at a hotel after a long flight. The receptionist is ready to help you check in.",
+      "characters": [
+        { "id": "receptionist", "name": "Alex", "role": "Hotel receptionist" }
+      ],
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "receptionist",
+          "intention": "Greet the receptionist and explain why you are there.",
+          "prompt": "Good evening. Welcome to the Riverside Hotel. How can I help you?",
+          "choices": [
+            {
+              "id": "c1",
+              "text": "Good evening. I have a reservation under Ana Lopez.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Alex pulls up your reservation immediately.",
+              "explanation": "A polite greeting plus your reservation details is the standard check-in opener."
+            },
+            {
+              "id": "c2",
+              "text": "Room.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "incorrect",
+              "consequence": "Alex asks you to provide your name and reservation details.",
+              "explanation": "Room alone is too abrupt. Use a full sentence: I have a reservation..."
+            },
+            {
+              "id": "c3",
+              "text": "Give me a room now.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Alex stays polite but looks less welcoming.",
+              "explanation": "Demanding language sounds rude. Travel situations need courtesy."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "speakerId": "receptionist",
+          "intention": "Answer questions about your stay clearly.",
+          "prompt": "I found your booking for two nights. Would you like one key or two?",
+          "choices": [
+            {
+              "id": "c4",
+              "text": "One key, please. Could I also get the Wi-Fi password?",
+              "nextNodeId": "n3",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Alex hands you the key card and writes down the Wi-Fi details.",
+              "explanation": "Please and a clear follow-up request are natural at hotel check-in."
+            },
+            {
+              "id": "c5",
+              "text": "Two keys.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "correct",
+              "consequence": "Alex prepares two key cards.",
+              "explanation": "The answer works, but adding please sounds more polite."
+            },
+            {
+              "id": "c6",
+              "text": "Whatever.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Alex chooses one key and moves on quickly.",
+              "explanation": "Dismissive replies can make service interactions uncomfortable."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "speakerId": "receptionist",
+          "intention": "Ask for practical travel information politely.",
+          "prompt": "Your room is on the fourth floor. Breakfast starts at seven. Is there anything else?",
+          "choices": [
+            {
+              "id": "c7",
+              "text": "Yes, could you tell me the best way to get to the airport tomorrow morning?",
+              "nextNodeId": "end",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Alex explains the shuttle schedule and writes the times for you.",
+              "explanation": "Could you... is a polite way to request travel information."
+            },
+            {
+              "id": "c8",
+              "text": "Where airport?",
+              "nextNodeId": "end",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "incorrect",
+              "consequence": "Alex understands you but asks you to repeat the question more clearly.",
+              "explanation": "The question is missing words. Try: Where is the airport? or How do I get to the airport?"
+            },
+            {
+              "id": "c9",
+              "text": "No, that's all. Thank you very much.",
+              "nextNodeId": "end",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Alex wishes you a pleasant stay.",
+              "explanation": "Closing with thanks is always appropriate if you have no more questions."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "speakerId": "receptionist",
+          "intention": "End the check-in interaction positively.",
+          "prompt": "Enjoy your stay, and let us know if you need anything else.",
+          "isTerminal": true,
+          "choices": []
+        }
+      ]
+    }
   }
 ]

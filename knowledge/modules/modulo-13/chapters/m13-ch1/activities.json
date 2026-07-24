@@ -512,5 +512,133 @@
         }
       ]
     }
+  },
+  {
+    "id": "m13-ch1-branching-dialogue",
+    "type": "branching-dialogue",
+    "title": "Mock Interview Dialogue",
+    "description": "Practice pragmatically appropriate answers in a job interview scenario.",
+    "props": {
+      "setting": "You are in a formal job interview for a project manager role. The interviewer wants concise, professional answers.",
+      "characters": [
+        { "id": "interviewer", "name": "Mr. Chen", "role": "Interviewer" }
+      ],
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "interviewer",
+          "intention": "Answer the opening interview question professionally.",
+          "prompt": "Thanks for coming in today. Tell me about yourself.",
+          "choices": [
+            {
+              "id": "c1",
+              "text": "I'm a project manager with five years of experience leading cross-functional teams in logistics.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen nods and takes notes.",
+              "explanation": "A concise professional summary focused on relevant experience fits this classic interview opener."
+            },
+            {
+              "id": "c2",
+              "text": "I like movies and pizza.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen looks confused and redirects the question.",
+              "explanation": "Personal hobbies without professional relevance miss the pragmatic goal of this question."
+            },
+            {
+              "id": "c3",
+              "text": "I work many years in projects and teams and things like that.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "incorrect",
+              "consequence": "Mr. Chen asks you to be more specific.",
+              "explanation": "The idea is relevant, but the grammar is vague. Use clear past-tense statements with concrete details."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "speakerId": "interviewer",
+          "intention": "Describe a strength with evidence.",
+          "prompt": "What would you say is your greatest strength for this role?",
+          "choices": [
+            {
+              "id": "c4",
+              "text": "I'm highly organized, and I recently delivered a complex rollout two weeks ahead of schedule.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen asks a follow-up about that project.",
+              "explanation": "Naming a strength plus a brief example is the strongest interview pattern."
+            },
+            {
+              "id": "c5",
+              "text": "I'm perfect at everything.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen presses you for a concrete example.",
+              "explanation": "Overconfident claims without evidence sound unrealistic in interviews."
+            },
+            {
+              "id": "c6",
+              "text": "I am organized.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen waits for you to elaborate.",
+              "explanation": "Organized is a good start, but interviews expect a supporting example."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "speakerId": "interviewer",
+          "intention": "Close the interview politely and express continued interest.",
+          "prompt": "That is helpful. Do you have any questions for us before we finish?",
+          "choices": [
+            {
+              "id": "c7",
+              "text": "Yes. What does success look like in the first ninety days for this role?",
+              "nextNodeId": "end",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen gives a thoughtful answer and thanks you for your interest.",
+              "explanation": "A focused question about expectations shows preparation and professionalism."
+            },
+            {
+              "id": "c8",
+              "text": "How much vacation do I get?",
+              "nextNodeId": "end",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen answers briefly, but the tone shifts.",
+              "explanation": "Benefits questions are valid later in the process; early interviews usually focus on the role itself."
+            },
+            {
+              "id": "c9",
+              "text": "No questions.",
+              "nextNodeId": "end",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Mr. Chen ends the interview without further discussion.",
+              "explanation": "Having no questions can signal low interest. Prepare at least one thoughtful question."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "speakerId": "interviewer",
+          "intention": "Leave a positive final impression.",
+          "prompt": "Thank you for your time today. We'll be in touch soon.",
+          "isTerminal": true,
+          "choices": []
+        }
+      ]
+    }
   }
 ]

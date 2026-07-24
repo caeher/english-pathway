@@ -1,4 +1,5 @@
 import { validateActivityProps, type ActivityTypeKey } from '@/lib/content/schemas'
+import { getDecisionNodeIds } from '@/features/activities/branching-dialogue'
 import type { ChapterActivity } from '@/types'
 
 export function getReviewContentRefs(activity: ChapterActivity, weakItemIndexes?: number[]): string[] {
@@ -17,5 +18,14 @@ export function getReviewContentRefs(activity: ChapterActivity, weakItemIndexes?
     case 'listening': return pickWeak((props as unknown as { items: { id: string }[] }).items.map((item) => `${activity.id}:listening:${item.id}`))
     case 'dictation': return pickWeak((props as unknown as { items: { id: string }[] }).items.map((item) => `${activity.id}:dictation:${item.id}`))
     case 'pronunciation': return pickWeak((props as unknown as { items: { id: string }[] }).items.map((item) => `${activity.id}:pronunciation:${item.id}`))
+    case 'branching-dialogue': {
+      const dialogueProps = props as unknown as { startNodeId: string; nodes: Array<{ id: string; isTerminal?: boolean; choices: unknown[] }> }
+      const decisionNodeIds = getDecisionNodeIds({
+        setting: '',
+        startNodeId: dialogueProps.startNodeId,
+        nodes: dialogueProps.nodes as never,
+      })
+      return pickWeak(decisionNodeIds.map((nodeId) => `${activity.id}:dialogue:${nodeId}`))
+    }
   }
 }

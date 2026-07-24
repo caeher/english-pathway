@@ -588,5 +588,134 @@
         }
       ]
     }
+  },
+  {
+    "id": "m1-ch2-branching-dialogue",
+    "type": "branching-dialogue",
+    "title": "Office Introductions",
+    "description": "Choose appropriate greetings and introductions in a first-day office scenario.",
+    "props": {
+      "setting": "It is your first morning at a new company. A colleague greets you at the desk, and later your manager stops by.",
+      "characters": [
+        { "id": "colleague", "name": "Jordan", "role": "Colleague" },
+        { "id": "manager", "name": "Ms. Patel", "role": "Manager" }
+      ],
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "colleague",
+          "intention": "Respond warmly and introduce yourself.",
+          "prompt": "Hey! You must be the new hire. I'm Jordan.",
+          "choices": [
+            {
+              "id": "c1",
+              "text": "Hi Jordan! Nice to meet you. I'm Ana.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Jordan smiles and welcomes you to the team.",
+              "explanation": "A friendly greeting plus your name is the natural response when meeting a colleague."
+            },
+            {
+              "id": "c2",
+              "text": "Hello.",
+              "nextNodeId": "n2",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "correct",
+              "consequence": "Jordan nods, waiting for you to say more.",
+              "explanation": "Hello is polite, but adding your name helps continue the introduction."
+            },
+            {
+              "id": "c3",
+              "text": "Yeah, what do you want?",
+              "nextNodeId": "n2",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Jordan looks surprised by your tone.",
+              "explanation": "This sounds rude in a workplace greeting. Keep the tone friendly and cooperative."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "speakerId": "manager",
+          "intention": "Use a formal greeting with your manager.",
+          "prompt": "Good morning. I'm Ms. Patel, your manager. Welcome aboard.",
+          "choices": [
+            {
+              "id": "c4",
+              "text": "Good morning, Ms. Patel. It's a pleasure to meet you.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Ms. Patel appreciates your professional tone.",
+              "explanation": "A formal greeting with the person's title fits a manager introduction."
+            },
+            {
+              "id": "c5",
+              "text": "Hey! What's up?",
+              "nextNodeId": "n3",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Ms. Patel raises an eyebrow at the informal tone.",
+              "explanation": "Informal slang is too casual when meeting your manager for the first time."
+            },
+            {
+              "id": "c6",
+              "text": "Morning.",
+              "nextNodeId": "n3",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "correct",
+              "consequence": "Ms. Patel accepts the greeting but expects more professionalism.",
+              "explanation": "Morning is understandable, but Good morning and a full phrase sound more professional."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "speakerId": "manager",
+          "intention": "Show readiness and courtesy before the manager leaves.",
+          "prompt": "I'll show you around after the team meeting. Any questions before we start?",
+          "choices": [
+            {
+              "id": "c7",
+              "text": "Thank you. I'm excited to get started.",
+              "nextNodeId": "end",
+              "pragmaticRating": "optimal",
+              "grammaticalRating": "correct",
+              "consequence": "Ms. Patel nods approvingly and heads to the meeting room.",
+              "explanation": "Expressing gratitude and enthusiasm is appropriate when a manager offers help."
+            },
+            {
+              "id": "c8",
+              "text": "No.",
+              "nextNodeId": "end",
+              "pragmaticRating": "acceptable",
+              "grammaticalRating": "correct",
+              "consequence": "The conversation ends abruptly but without conflict.",
+              "explanation": "No is grammatically fine, but a warmer closing leaves a better first impression."
+            },
+            {
+              "id": "c9",
+              "text": "I already know everything.",
+              "nextNodeId": "end",
+              "pragmaticRating": "inappropriate",
+              "grammaticalRating": "correct",
+              "consequence": "Ms. Patel looks unconvinced and walks away quickly.",
+              "explanation": "Dismissive responses can damage rapport on your first day."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "speakerId": "manager",
+          "intention": "Close the conversation positively.",
+          "prompt": "Great. See you in the meeting room in ten minutes.",
+          "isTerminal": true,
+          "choices": []
+        }
+      ]
+    }
   }
 ]

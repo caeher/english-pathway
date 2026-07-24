@@ -50,6 +50,7 @@ import type {
   ListeningItem,
   MatchPair,
   PronunciationItem,
+  BranchingDialogueProps,
   QuizQuestion,
   SentenceChallenge,
   WordScrambleItem,
@@ -84,6 +85,7 @@ const WordScramble = dynamicActivity(() => import('@/components/games/WordScramb
 const Listening = dynamicActivity(() => import('@/components/games/Listening'))
 const Dictation = dynamicActivity(() => import('@/components/games/Dictation'))
 const Pronunciation = dynamicActivity(() => import('@/components/games/Pronunciation'))
+const BranchingDialogue = dynamicActivity(() => import('@/components/games/BranchingDialogue'))
 
 export interface ActivityCompleteResult {
   activityId: string
@@ -197,6 +199,18 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
       initialProgress={progressProps.initialProgress as never}
       onProgressChange={progressProps.onProgressChange as never}
       onComplete={(result) => onComplete({ ...result, scorePercent: result.scorePercent })}
+    />
+  ),
+  'branching-dialogue': (props, onComplete, progressProps) => (
+    <BranchingDialogue
+      {...(props as BranchingDialogueProps)}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({
+        ...result,
+        scorePercent: result.scorePercent,
+        metrics: result.metrics,
+      })}
     />
   ),
 }

@@ -16,11 +16,11 @@ import type { ActivityType } from '@/types'
 
 const activityTypes: ActivityType[] = [
   'quiz', 'flashcard', 'word-match', 'sentence-builder',
-  'word-scramble', 'listening', 'dictation', 'pronunciation',
+  'word-scramble', 'listening', 'dictation', 'pronunciation', 'branching-dialogue',
 ]
 
 const hintTypes = new Set<ActivityType>(['word-scramble', 'dictation', 'pronunciation'])
-const itemFeedbackTypes = new Set<ActivityType>(['quiz', 'listening', 'flashcard'])
+const itemFeedbackTypes = new Set<ActivityType>(['quiz', 'listening', 'flashcard', 'branching-dialogue'])
 
 describe('activity runtime contract', () => {
   it.each(activityTypes)('%s declares contract version 1 and required registry fields', (type) => {
@@ -101,6 +101,7 @@ describe('activity runtime contract', () => {
   it('extracts item indexes from known progress payloads', () => {
     expect(extractItemIndexFromProgress('quiz', { current: 2, answered: true })).toBe(2)
     expect(extractItemIndexFromProgress('flashcard', { currentIndex: 1 })).toBe(1)
+    expect(extractItemIndexFromProgress('branching-dialogue', { decisionIndex: 2, answered: true })).toBe(2)
     expect(extractItemIndexFromProgress('quiz', null)).toBeUndefined()
   })
 

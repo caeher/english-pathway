@@ -1,5 +1,6 @@
 import type { ChapterActivity, Module, Chapter } from '@/types'
 import type {
+  BranchingDialogueProps,
   DictationItem,
   FlashcardData,
   ListeningItem,
@@ -10,6 +11,7 @@ import type {
   WordScrambleItem,
 } from '@/types'
 import { validateActivityProps, type ActivityTypeKey } from '@/lib/content/schemas'
+import { getDecisionNodeIds } from '@/features/activities/branching-dialogue'
 import { loadAllModules } from '@/lib/knowledge/load-all'
 import type { ReviewContent, ReviewSourceItem } from './types'
 
@@ -72,6 +74,22 @@ export function extractReviewItems(activity: ChapterActivity, chapter: Chapter, 
       return (props as unknown as { items: DictationItem[] }).items.map((item) => source(activity, chapter, module, `dictation:${item.id}`, item.hint ?? 'Write what you hear', item.audioText))
     case 'pronunciation':
       return (props as unknown as { items: PronunciationItem[] }).items.map((item) => source(activity, chapter, module, `pronunciation:${item.id}`, item.hint ?? 'Say this phrase', item.phrase))
+    case 'branching-dialogue': {
+      const dialogueProps = props as unknown as BranchingDialogueProps
+      return getDecisionNodeIds(dialogueProps).map((nodeId) => {
+        const node = dialogueProps.nodes.find((candidate) => candidate.id === nodeId)
+        const optimal = node?.choices.find((choice) => choice.pragmaticRating === 'optimal')
+        return source(
+          activity,
+          chapter,
+          module,
+          `dialogue:${nodeId}`,
+          node?.intention ?? 'Choose an appropriate response',
+          optimal?.text ?? node?.choices[0]?.text ?? '',
+          optimal?.explanation,
+        )
+      })
+    }
   }
 }
 

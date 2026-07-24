@@ -1,4 +1,5 @@
 import { chapterActivitySchema } from './contracts'
+import { getDecisionNodeIds, isDecisionNode } from './branching-dialogue'
 
 export interface ActivityValidationIssue {
   moduleId: string
@@ -109,6 +110,116 @@ function validatePronunciationSemantics(
   return issues
 }
 
+function validateBranchingDialogueSemantics(
+  moduleId: string,
+  chapterId: string,
+  activityId: string,
+  props: {
+    startNodeId: string
+    nodes: Array<{
+      id: string
+      isTerminal?: boolean
+      choices: Array<{ nextNodeId: string; pragmaticRating: string; explanation?: string }>
+    }>
+  },
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+  const nodeMap = new Map(props.nodes.map((node) => [node.id, node]))
+  const reachable = new Set<string>()
+  const queue = [props.startNodeId]
+
+  while (queue.length > 0) {
+    const nodeId = queue.shift()
+    if (!nodeId || reachable.has(nodeId)) continue
+    reachable.add(nodeId)
+    const node = nodeMap.get(nodeId)
+    if (!node) continue
+    for (const choice of node.choices) {
+      if (!reachable.has(choice.nextNodeId)) queue.push(choice.nextNodeId)
+    }
+  }
+
+  for (const node of props.nodes) {
+    if (!reachable.has(node.id)) {
+      issues.push({
+        moduleId,
+        chapterId,
+        activityId,
+        field: `props.nodes.${node.id}`,
+        message: `node "${node.id}" is unreachable from startNodeId`,
+        severity: 'warning',
+      })
+    }
+  }
+
+  const hasTerminal = props.nodes.some((node) => node.isTerminal || node.choices.length === 0)
+  if (!hasTerminal) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'props.nodes',
+      message: 'branching dialogue should include at least one terminal node',
+      severity: 'error',
+    })
+  }
+
+  for (const [index, node] of props.nodes.entries()) {
+    if (!isDecisionNode(node as import('./branching-dialogue').BranchingDialogueNode)) continue
+
+    const hasViableChoice = node.choices.some(
+      (choice) => choice.pragmaticRating === 'optimal' || choice.pragmaticRating === 'acceptable',
+    )
+    if (!hasViableChoice) {
+      issues.push({
+        moduleId,
+        chapterId,
+        activityId,
+        field: `props.nodes.${index}.choices`,
+        message: 'decision nodes should include at least one optimal or acceptable choice',
+        severity: 'error',
+      })
+    }
+
+    if (node.choices.every((choice) => choice.pragmaticRating === 'inappropriate')) {
+      issues.push({
+        moduleId,
+        chapterId,
+        activityId,
+        field: `props.nodes.${index}.choices`,
+        message: 'decision nodes should not only contain inappropriate choices',
+        severity: 'warning',
+      })
+    }
+
+    for (const [choiceIndex, choice] of node.choices.entries()) {
+      if (!choice.explanation?.trim()) {
+        issues.push({
+          moduleId,
+          chapterId,
+          activityId,
+          field: `props.nodes.${index}.choices.${choiceIndex}.explanation`,
+          message: 'each choice should include pedagogical feedback in explanation',
+          severity: 'warning',
+        })
+      }
+    }
+  }
+
+  if (getDecisionNodeIds({ setting: '', startNodeId: props.startNodeId, nodes: props.nodes as import('./branching-dialogue').BranchingDialogueNode[] }).length < 2) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'props.nodes',
+      message: 'branching dialogue should include at least two decision nodes',
+      severity: 'warning',
+    })
+  }
+
+  return issues
+}
+
 export function validateCurriculumContrastPairs(
   activitiesByChapter: Array<{ moduleId: string; chapterId: string; activities: Array<{ type: string; props: unknown }> }>,
 ): ActivityValidationIssue[] {
@@ -162,6 +273,10 @@ export function validateActivityDocument(moduleId: string, chapterId: string, ac
 
   if (parsed.data.type === 'pronunciation') {
     return validatePronunciationSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  }
+
+  if (parsed.data.type === 'branching-dialogue') {
+    return validateBranchingDialogueSemantics(moduleId, chapterId, activityId, parsed.data.props)
   }
 
   return []

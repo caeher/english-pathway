@@ -93,6 +93,42 @@ export interface PronunciationItem {
   hint?: string
 }
 
+export type PragmaticRating = 'optimal' | 'acceptable' | 'inappropriate'
+export type GrammaticalRating = 'correct' | 'incorrect'
+
+export interface BranchingDialogueChoice {
+  id: string
+  text: string
+  nextNodeId: string
+  pragmaticRating: PragmaticRating
+  grammaticalRating?: GrammaticalRating
+  consequence?: string
+  explanation: string
+}
+
+export interface BranchingDialogueNode {
+  id: string
+  speakerId?: string
+  intention: string
+  prompt: string
+  audio?: CuratedAudio
+  choices: BranchingDialogueChoice[]
+  isTerminal?: boolean
+}
+
+export interface BranchingDialogueCharacter {
+  id: string
+  name: string
+  role?: string
+}
+
+export interface BranchingDialogueProps {
+  setting: string
+  characters?: BranchingDialogueCharacter[]
+  startNodeId: string
+  nodes: BranchingDialogueNode[]
+}
+
 export type ActivityType =
   | 'flashcard'
   | 'word-match'
@@ -102,6 +138,7 @@ export type ActivityType =
   | 'listening'
   | 'dictation'
   | 'pronunciation'
+  | 'branching-dialogue'
 
 // ── Chapter / Module ──
 export interface ChapterActivity {

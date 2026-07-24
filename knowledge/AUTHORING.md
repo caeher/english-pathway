@@ -195,10 +195,10 @@ Activity types are registered in `features/activities/registry.ts` with a versio
 | `hint` | The activity exposes editorial or graduated hints (`word-scramble`, `dictation`, `pronunciation`) |
 | `progress` | The activity reports per-item progress (all current types) |
 | `snapshot` | The activity supports pause/resume via snapshot payloads (all current types) |
-| `itemFeedback` | The activity can explain per-item results (`quiz`, `listening`) |
+| `itemFeedback` | The activity can explain per-item results (`quiz`, `listening`, `branching-dialogue`) |
 | `difficulty` | The activity supports adaptive variants (reserved for future types) |
 | `keyboard` | Keyboard-operable controls are available |
-| `audio` | Audio playback is required (`flashcard`, `listening`, `dictation`) |
+| `audio` | Audio playback is required (`flashcard`, `listening`, `dictation`) or optional (`branching-dialogue`) |
 | `microphone` | Microphone input is required (`pronunciation`) |
 | `review` | Weak items can feed spaced-repetition review queues |
 
@@ -225,3 +225,69 @@ Activities with the `hint` capability use editorial content for levels 1–3:
 | 3 | Explanation | Full answer — learner must confirm before reveal |
 
 Set `hintLevels: 3` in the registry. Hint level is persisted in the activity snapshot for resume.
+
+### `branching-dialogue`
+
+Use for situational and pragmatic practice: greetings, travel, interviews, negotiations.
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `setting` | Yes | Situational context shown throughout the activity |
+| `characters` | Optional | `{ id, name, role? }` for speaker labels |
+| `startNodeId` | Yes | Must match a node `id` |
+| `nodes` | Yes | 2–8 nodes; include at least two decision nodes and one terminal node |
+| `nodes[].intention` | Yes | Communicative goal shown as “Your goal” |
+| `nodes[].prompt` | Yes | Interlocutor line |
+| `nodes[].choices` | Yes on decision nodes | 2–4 options with `pragmaticRating`, `explanation`, and `nextNodeId` |
+| `nodes[].isTerminal` | Optional | Terminal nodes have no choices and close the dialogue |
+| `choices[].pragmaticRating` | Yes | `optimal`, `acceptable`, or `inappropriate` |
+| `choices[].grammaticalRating` | Optional | `correct` or `incorrect` — separates grammar from pragmatics in results |
+| `choices[].consequence` | Optional | Short narrative outcome after the choice |
+| `choices[].explanation` | Yes | Pedagogical feedback |
+
+Pilot chapters: `m1-ch2-branching-dialogue`, `m9-ch1-branching-dialogue`, `m13-ch1-branching-dialogue`.
+
+Example skeleton:
+
+```json
+{
+  "id": "m1-ch2-branching-dialogue",
+  "type": "branching-dialogue",
+  "title": "Office Introductions",
+  "description": "Choose appropriate greetings in a first-day scenario.",
+  "props": {
+    "setting": "First day at a new office.",
+    "startNodeId": "n1",
+    "nodes": [
+      {
+        "id": "n1",
+        "intention": "Respond warmly and introduce yourself.",
+        "prompt": "Hey! You must be the new hire.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Hi! Nice to meet you. I'm Ana.",
+            "nextNodeId": "end",
+            "pragmaticRating": "optimal",
+            "explanation": "Friendly and complete."
+          },
+          {
+            "id": "c2",
+            "text": "Yeah, what?",
+            "nextNodeId": "end",
+            "pragmaticRating": "inappropriate",
+            "explanation": "Too rude for a workplace greeting."
+          }
+        ]
+      },
+      {
+        "id": "end",
+        "intention": "Close positively.",
+        "prompt": "See you at the team meeting.",
+        "isTerminal": true,
+        "choices": []
+      }
+    ]
+  }
+}
+```
