@@ -1,8 +1,11 @@
 import { createHash } from 'node:crypto'
 import { apiErrorResponse, DomainError } from '@/lib/api/errors'
+import { withApiTimeout } from '@/lib/api/timeout'
 import { getAuthenticatedContext } from '@/lib/api/context'
 import { finishAudioCreditSession, startAudioCreditSession } from '@/lib/credits/usage'
 import { parseSessionPlanHeader } from '@/lib/learn/session-plan'
+import { enforceRateLimit } from '@/lib/security/enforce-rate-limit'
+import { hasActiveRealtimeSession } from '@/lib/security/realtime-concurrency'
 import { buildTutorInstructions } from '@/lib/tutor/instructions'
 import { TUTOR_REALTIME_TOOLS } from '@/lib/tutor/realtime-tools'
 
@@ -10,13 +13,28 @@ export const runtime = 'nodejs'
 
 const REALTIME_MODEL = process.env.OPENAI_REALTIME_MODEL || 'gpt-realtime-2.1-mini'
 const REALTIME_VOICE = process.env.OPENAI_REALTIME_VOICE || 'marin'
+const REALTIME_ROUTE = '/api/tutor/realtime'
 
 export async function POST(request: Request) {
   const context = await getAuthenticatedContext()
   if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Please sign in to use the voice tutor.'), 'Authentication required')
+
+  const limited = await enforceRateLimit({
+    request,
+    route: REALTIME_ROUTE,
+    userId: context.userId,
+    supabase: context.supabase,
+    surface: 'realtime',
+  })
+  if (limited) return limited
+
   if (!process.env.OPENAI_API_KEY) return apiErrorResponse(new DomainError('DEPENDENCY_FAILURE', 'OpenAI voice is not configured.'), 'Voice unavailable')
   const sdp = await request.text()
   if (!sdp || sdp.length > 200_000) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid realtime connection request.'), 'Invalid realtime connection request')
+
+  if (await hasActiveRealtimeSession(context.supabase, context.userId)) {
+    return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', 'A voice session is already active.', 429), 'Voice credits exhausted')
+  }
 
   const credit = await startAudioCreditSession(context.supabase)
   if (!credit.allowed || !credit.sessionId || !credit.maxSeconds) {
@@ -47,14 +65,14 @@ export async function POST(request: Request) {
   }))
 
   try {
-    const response = await fetch('https://api.openai.com/v1/realtime/calls', {
+    const response = await withApiTimeout(fetch('https://api.openai.com/v1/realtime/calls', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
         'OpenAI-Safety-Identifier': createHash('sha256').update(context.userId).digest('hex'),
       },
       body: form,
-    })
+    }), 10_000)
     const answerSdp = await response.text()
     if (!response.ok || !answerSdp) {
       await finishAudioCreditSession(context.supabase, credit.sessionId, 0).catch(() => {})
@@ -67,8 +85,11 @@ export async function POST(request: Request) {
         'X-Audio-Credit-Max-Seconds': String(credit.maxSeconds),
       },
     })
-  } catch {
+  } catch (error) {
     await finishAudioCreditSession(context.supabase, credit.sessionId, 0).catch(() => {})
+    if (error instanceof DomainError && error.code === 'TIMEOUT') {
+      return apiErrorResponse(error, 'Voice unavailable')
+    }
     return apiErrorResponse(new DomainError('DEPENDENCY_FAILURE', 'OpenAI voice could not start.'), 'Voice unavailable')
   }
 }

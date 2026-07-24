@@ -1,7 +1,30 @@
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import type { Database } from '@/lib/supabase/database.types'
 import { updateSession } from '@/lib/supabase/middleware'
 import { isSameOriginRequest, isUnsafeMethod } from '@/lib/security/request'
-import { consumeRateLimit, getClientKey, getRateLimitPolicy } from '@/lib/security/rate-limit'
+import { getClientKey, getRateLimitPolicy } from '@/lib/security/rate-limit'
+import { buildRateLimitKey } from '@/lib/security/rate-limit-keys'
+import { getRateLimitStore } from '@/lib/security/rate-limit-store'
+import { rateLimitResponse } from '@/lib/security/enforce-rate-limit'
+
+async function getApiUserId(request: NextRequest): Promise<string | null> {
+  const supabase = createServerClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll() {},
+      },
+    },
+  )
+
+  const { data: { user } } = await supabase.auth.getUser()
+  return user?.id ?? null
+}
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
@@ -17,17 +40,17 @@ export async function middleware(request: NextRequest) {
       return NextResponse.json({ error: 'Cross-origin request rejected' }, { status: 403 })
     }
 
-    const policy = getRateLimitPolicy(request.nextUrl.pathname)
+    const policy = getRateLimitPolicy(pathname)
     if (policy) {
-      const result = consumeRateLimit(
-        `${getClientKey(request)}:${request.nextUrl.pathname}`,
-        policy,
-      )
+      const userId = await getApiUserId(request)
+      const key = await buildRateLimitKey({
+        route: pathname,
+        userId,
+        clientIp: getClientKey(request),
+      })
+      const result = await getRateLimitStore().consume(key, policy)
       if (!result.allowed) {
-        return NextResponse.json(
-          { error: 'Too many requests. Please try again shortly.', code: 'RATE_LIMITED' },
-          { status: 429, headers: { 'Retry-After': String(result.retryAfterSeconds) } },
-        )
+        return rateLimitResponse(result.retryAfterSeconds)
       }
     }
   }

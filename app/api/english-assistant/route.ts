@@ -5,6 +5,7 @@ import { askEnglishAssistant } from '@/lib/english-assistant/openai'
 import { apiErrorResponse, DomainError, respondWithApiErrors } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
 import { classifyInjectionSignal } from '@/lib/security/prompt-trust'
+import { enforceRateLimit } from '@/lib/security/enforce-rate-limit'
 import {
   completeEnglishAssistantPromptLog,
   createEnglishAssistantPromptLog,
@@ -20,6 +21,15 @@ export async function POST(request: Request) {
       'Authentication required',
     )
   }
+
+  const limited = await enforceRateLimit({
+    request,
+    route: '/api/english-assistant',
+    userId: context.userId,
+    supabase: context.supabase,
+    surface: 'assistant',
+  })
+  if (limited) return limited
 
   const parsed = assistantRequestSchema.safeParse(await request.json().catch(() => null))
   if (!parsed.success) {
