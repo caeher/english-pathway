@@ -18,7 +18,7 @@ interface LearnSessionLayoutProps {
   tutorConnecting?: boolean
   showEngagement?: boolean
   onActivityComplete?: (result: ActivityCompleteResult) => void
-  onActivityDifficult?: (activityId: string) => void
+  onActivityDifficult?: (activityId: string, context?: import('@/features/activities/hints').TutorHintContext) => void
   onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
 }
 

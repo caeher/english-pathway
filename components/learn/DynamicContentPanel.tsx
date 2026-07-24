@@ -14,7 +14,7 @@ import { cn } from '@/lib/helpers'
 
 interface DynamicContentPanelProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
-  onActivityDifficult?: (activityId: string) => void
+  onActivityDifficult?: (activityId: string, context?: import('@/features/activities/hints').TutorHintContext) => void
   onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
   onActivityPhaseChange?: (phase: ActivityUiPhase) => void
 }

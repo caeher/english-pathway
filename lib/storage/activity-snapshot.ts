@@ -85,7 +85,9 @@ export function loadSnapshot(activityId: string): ActivityProgressSnapshot | nul
   return validated
 }
 
-export function saveSnapshot(snapshot: Omit<ActivityProgressSnapshot, 'savedAt'> & { savedAt?: string }) {
+export function saveSnapshot(
+  snapshot: Omit<ActivityProgressSnapshot, 'savedAt'> & { savedAt?: string },
+) {
   const definition = getActivityDefinition(snapshot.activityType)
   if (!definition) return
 
@@ -99,6 +101,7 @@ export function saveSnapshot(snapshot: Omit<ActivityProgressSnapshot, 'savedAt'>
     activityType: snapshot.activityType,
     savedAt: snapshot.savedAt ?? new Date().toISOString(),
     payload: payload.data,
+    hintMeta: snapshot.hintMeta,
   }
 
   store.snapshots[snapshot.activityId] = entry

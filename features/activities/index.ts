@@ -1,5 +1,6 @@
 /** Public API for validated activity contracts, extension metadata, and diagnostics. */
 export * from './contracts'
+export * from './hints'
 export * from './registry'
 export * from './runtime-contract'
 export * from './snapshot'

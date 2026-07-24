@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { z } from 'zod'
 import type { ChapterActivity } from '@/types'
+import type { TutorHintContext } from '@/features/activities/hints'
 import { transitionTutorState, type TutorSessionState } from '@/lib/tutor/state'
 
 export interface ActivitySessionResult {
@@ -21,11 +22,17 @@ export type LearnPanelState =
       correctIndex?: number
     }
 
+export interface HintFallbackRequest {
+  message: string
+  context: TutorHintContext
+}
+
 export interface LearnSessionStore {
   panel: LearnPanelState
   lastActivityId: string | null
   tutorState: TutorSessionState
   lastActivityResult: ActivitySessionResult | null
+  hintFallbackRequest: HintFallbackRequest | null
   setGrammar: (markdown: string, title?: string) => void
   setActivity: (activity: ChapterActivity, chapterId: string, moduleId: string) => void
   setQuestion: (prompt: string, options?: string[], correctIndex?: number) => void
@@ -33,6 +40,7 @@ export interface LearnSessionStore {
   recordActivityResult: (result: ActivitySessionResult) => void
   acknowledgeCompletion: () => void
   requestHelp: () => void
+  setHintFallbackRequest: (request: HintFallbackRequest | null) => void
   resetSession: () => void
 }
 
@@ -54,11 +62,12 @@ const persistedLearnSessionSchema = z.object({
   lastActivityResult: activityResultSchema.nullable(),
 })
 
-export const initialLearnSessionState: Pick<LearnSessionStore, 'panel' | 'lastActivityId' | 'tutorState' | 'lastActivityResult'> = {
+export const initialLearnSessionState: Pick<LearnSessionStore, 'panel' | 'lastActivityId' | 'tutorState' | 'lastActivityResult' | 'hintFallbackRequest'> = {
   panel: { kind: 'empty' },
   lastActivityId: null,
   tutorState: 'preparing',
   lastActivityResult: null,
+  hintFallbackRequest: null,
 }
 
 export function migrateLearnSessionState(
@@ -85,6 +94,8 @@ export const selectSetQuestion = (state: LearnSessionStore) => state.setQuestion
 export const selectClearPanel = (state: LearnSessionStore) => state.clearPanel
 export const selectRecordActivityResult = (state: LearnSessionStore) => state.recordActivityResult
 export const selectRequestHelp = (state: LearnSessionStore) => state.requestHelp
+export const selectHintFallbackRequest = (state: LearnSessionStore) => state.hintFallbackRequest
+export const selectSetHintFallbackRequest = (state: LearnSessionStore) => state.setHintFallbackRequest
 export const selectResetSession = (state: LearnSessionStore) => state.resetSession
 
 export const useLearnSessionStore = create<LearnSessionStore>()(
@@ -125,6 +136,7 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
         set((state) => ({
           tutorState: transitionTutorState(state.tutorState, { type: 'help_requested' }),
         })),
+      setHintFallbackRequest: (request) => set({ hintFallbackRequest: request }),
       resetSession: () => set(initialLearnSessionState),
     }),
     {
@@ -149,5 +161,7 @@ export const learnSessionActions = {
   recordActivityResult: (result: ActivitySessionResult) => useLearnSessionStore.getState().recordActivityResult(result),
   acknowledgeCompletion: () => useLearnSessionStore.getState().acknowledgeCompletion(),
   requestHelp: () => useLearnSessionStore.getState().requestHelp(),
+  setHintFallbackRequest: (request: HintFallbackRequest | null) =>
+    useLearnSessionStore.getState().setHintFallbackRequest(request),
   resetSession: () => useLearnSessionStore.getState().resetSession(),
 }

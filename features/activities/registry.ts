@@ -85,10 +85,10 @@ export const activityRegistry = {
   'word-match': definition('word-match', createActivityCapabilities(), wordMatchSnapshot),
   'sentence-builder': definition('sentence-builder', createActivityCapabilities(), sentenceBuilderSnapshot),
   'svg-scene': definition('svg-scene', createActivityCapabilities(), svgSceneSnapshot),
-  'word-scramble': definition('word-scramble', createHintActivityCapabilities(1), wordScrambleSnapshot),
+  'word-scramble': definition('word-scramble', createHintActivityCapabilities(3), wordScrambleSnapshot),
   listening: definition('listening', createActivityCapabilities('audio', 'itemFeedback'), listeningSnapshot),
-  dictation: definition('dictation', createHintActivityCapabilities(1, 'audio'), dictationSnapshot),
-  pronunciation: definition('pronunciation', createHintActivityCapabilities(1, 'microphone'), pronunciationSnapshot),
+  dictation: definition('dictation', createHintActivityCapabilities(3, 'audio'), dictationSnapshot),
+  pronunciation: definition('pronunciation', createHintActivityCapabilities(3, 'microphone'), pronunciationSnapshot),
   'drag-drop': definition('drag-drop', createActivityCapabilities(), dragDropSnapshot),
 } satisfies Record<ActivityTypeKey, ActivityDefinition>
 

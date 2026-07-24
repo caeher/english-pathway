@@ -12,6 +12,7 @@ import { saveActivityProgress } from '@/features/progress/client'
 import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import { formatFollowUpTutorMessage } from '@/lib/learn/follow-up-planner'
 import { saveTutorMemory } from '@/lib/tutor/client'
+import { buildTutorHintRequest, type TutorHintContext } from '@/features/activities/hints'
 
 export function useTutorActivityActions(sendMessage?: (message: string) => boolean | void) {
   const pendingMessagesRef = useRef<string[]>([])
@@ -55,13 +56,23 @@ export function useTutorActivityActions(sendMessage?: (message: string) => boole
     })
   }, [deliverMessage])
 
-  const onActivityDifficult = useCallback(async (activityId: string) => {
+  const onActivityDifficult = useCallback(async (activityId: string, hintContext?: TutorHintContext) => {
     try {
       const { activity } = await fetchActivityById(activityId)
       await enqueueSrsItems(getReviewContentRefs(activity))
-      learnSessionActions.requestHelp()
-      deliverMessage('I need a graduated hint for the current activity. Do not reveal the answer yet.')
-      void saveTutorMemory({ type: 'learner_memory', memoryKey: `help:${activityId}`, content: 'Learner requested a graduated hint for this activity.', source: 'help_request' })
+      const message = hintContext
+        ? buildTutorHintRequest(hintContext)
+        : 'I need a graduated hint for the current activity. Do not reveal the answer yet.'
+      const sent = deliverMessage(message)
+      if (!sent && hintContext) {
+        learnSessionActions.setHintFallbackRequest({ message, context: hintContext })
+      }
+      void saveTutorMemory({
+        type: 'learner_memory',
+        memoryKey: `help:${activityId}`,
+        content: `Learner requested a graduated hint (level ${hintContext?.level ?? 'unknown'}) for this activity.`,
+        source: 'help_request',
+      })
     } catch {
       // SRS is an enhancement; learning remains usable when it is unavailable.
     }

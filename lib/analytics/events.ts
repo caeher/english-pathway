@@ -27,6 +27,7 @@ export type AnalyticsEventName =
   | 'learn_session_error'
   | 'learn_tool_call'
   | 'learn_tool_error'
+  | 'hint_requested'
 
 export interface AnalyticsEventProperties {
   [key: string]: string | number | boolean | null | undefined
