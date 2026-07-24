@@ -46,6 +46,7 @@ const REINFORCEMENT_TYPES: Record<string, readonly string[]> = {
   listening: ['dictation', 'flashcard'],
   dictation: ['listening', 'word-scramble'],
   pronunciation: ['listening', 'flashcard'],
+  'branching-dialogue': ['listening', 'pronunciation'],
   'sentence-builder': ['word-scramble', 'word-match'],
 }
 
