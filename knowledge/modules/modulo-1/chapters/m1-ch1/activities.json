@@ -573,6 +573,68 @@
     }
   },
   {
+    "id": "m1-ch1-minimal-pairs",
+    "type": "minimal-pairs",
+    "title": "Minimal Pairs Practice",
+    "description": "Listen, discriminate between similar sounds, and optionally practice saying both words.",
+    "props": {
+      "pairs": [
+        {
+          "id": "mp-bv",
+          "label": "Consonant contrast",
+          "wordA": "berry",
+          "wordB": "very",
+          "phoneme": "/b/ vs /v/",
+          "tip": "For /b/, press both lips together and release. For /v/, touch your lower lip to your upper teeth and voice the sound.",
+          "meaningA": "small fruit",
+          "meaningB": "to a great degree",
+          "maxReplays": 3
+        },
+        {
+          "id": "mp-ship-chip",
+          "label": "Consonant contrast",
+          "wordA": "ship",
+          "wordB": "chip",
+          "phoneme": "/ʃ/ vs /tʃ/",
+          "tip": "Ship starts with a soft /ʃ/ (no voice). Chip starts with /tʃ/ — your tongue touches the ridge behind your teeth.",
+          "meaningA": "boat",
+          "meaningB": "small piece",
+          "audioA": {
+            "src": "/audio/curated/ship.mp3",
+            "transcript": "ship",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Soft /ʃ/ — lips rounded slightly forward, no voicing."
+          },
+          "maxReplays": 3
+        },
+        {
+          "id": "mp-ice-eyes",
+          "label": "Voicing contrast",
+          "wordA": "ice",
+          "wordB": "eyes",
+          "phoneme": "/s/ vs /z/",
+          "tip": "Ice ends with voiceless /s/. Eyes ends with voiced /z/ — feel vibration in your throat.",
+          "meaningA": "frozen water",
+          "meaningB": "organs of sight",
+          "maxReplays": 3
+        },
+        {
+          "id": "mp-seat-sit",
+          "label": "Vowel length contrast",
+          "wordA": "seat",
+          "wordB": "sit",
+          "phoneme": "/iː/ vs /ɪ/",
+          "tip": "Seat has a long tense /iː/. Sit has a short relaxed /ɪ/ — keep your mouth slightly more open.",
+          "meaningA": "chair",
+          "meaningB": "to rest on a chair",
+          "maxReplays": 3
+        }
+      ]
+    }
+  },
+  {
     "id": "m1-ch1-pronunciation",
     "type": "pronunciation",
     "title": "Practice Pronunciation",
