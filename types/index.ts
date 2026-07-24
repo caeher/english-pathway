@@ -129,6 +129,15 @@ export interface BranchingDialogueProps {
   nodes: BranchingDialogueNode[]
 }
 
+export interface MinimalPairItem extends ContrastPair {
+  id: string
+  meaningA?: string
+  meaningB?: string
+  audioA?: CuratedAudio
+  audioB?: CuratedAudio
+  maxReplays?: number
+}
+
 export type ActivityType =
   | 'flashcard'
   | 'word-match'
@@ -139,6 +148,7 @@ export type ActivityType =
   | 'dictation'
   | 'pronunciation'
   | 'branching-dialogue'
+  | 'minimal-pairs'
 
 // ── Chapter / Module ──
 export interface ChapterActivity {
