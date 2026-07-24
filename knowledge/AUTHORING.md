@@ -291,3 +291,48 @@ Example skeleton:
   }
 }
 ```
+
+### `minimal-pairs`
+
+Use for auditory discrimination and optional speaking practice with Spanish-learner contrast pairs (/b/–/v/, /ʃ/–/tʃ/, /s/–/z/, vowel length).
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `pairs` | Yes | Minimum 2 items per activity |
+| `pairs[].id` | Yes | Stable identifier for SRS |
+| `pairs[].label` | Yes | Short contrast label shown in the UI |
+| `pairs[].wordA`, `pairs[].wordB` | Yes | Must be distinct (case-insensitive) |
+| `pairs[].phoneme` | Yes | IPA or phonetic contrast label |
+| `pairs[].tip` | Yes | Concise articulatory hint revealed after answering |
+| `pairs[].meaningA`, `pairs[].meaningB` | At least one | Meaning contrast for comprehension |
+| `pairs[].audioA`, `pairs[].audioB` | Optional | Curated audio; TTS fallback uses the word text |
+| `pairs[].maxReplays` | Optional | Default 3; limits replay button use per item |
+
+**Modes:** discrimination is mandatory and scored; optional repetition does not affect the score (no validated phonetic engine). Use curated audio for pairs where browser TTS cannot distinguish sounds reliably (e.g. /b/ vs /v/).
+
+Pilot chapter: `m1-ch1-minimal-pairs`.
+
+Example skeleton:
+
+```json
+{
+  "id": "m1-ch1-minimal-pairs",
+  "type": "minimal-pairs",
+  "title": "Minimal Pairs Practice",
+  "description": "Listen, discriminate between similar sounds, and optionally practice saying both words.",
+  "props": {
+    "pairs": [
+      {
+        "id": "mp-bv",
+        "label": "Consonant contrast",
+        "wordA": "berry",
+        "wordB": "very",
+        "phoneme": "/b/ vs /v/",
+        "tip": "For /b/, press both lips together. For /v/, touch your lower lip to your upper teeth.",
+        "meaningA": "small fruit",
+        "meaningB": "to a great degree"
+      }
+    ]
+  }
+}
+```
