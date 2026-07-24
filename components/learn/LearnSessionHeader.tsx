@@ -25,12 +25,15 @@ export interface LearnSessionHeaderProps {
   snapshot: SessionUiSnapshot
   continuationHref?: string | null
   continuationLabel?: string | null
+  tutorActive?: boolean
+  planSheet?: React.ReactNode
 }
 
 export default function LearnSessionHeader({
   snapshot,
   continuationHref,
   continuationLabel,
+  planSheet,
 }: LearnSessionHeaderProps) {
   const showContinuationCta = snapshot.state === 'pre_session' && continuationHref && continuationLabel
 
@@ -66,6 +69,7 @@ export default function LearnSessionHeader({
         </div>
 
         <div className="flex min-w-0 items-center gap-3 sm:max-w-[45%] sm:justify-end">
+          {planSheet}
           <p
             className="min-w-0 flex-1 text-xs font-semibold text-(--text-primary) sm:text-right"
             aria-live="polite"

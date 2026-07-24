@@ -2,11 +2,13 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import EngagementSummary from '@/components/engagement/EngagementSummary'
+import SessionPlanSheet, { buildSessionPlanUpdateMessage } from '@/components/learn/SessionPlanSheet'
 import type { SessionMode } from '@/components/voice/session-types'
 import { resolveSessionUiState, shouldExpandEngagementMetrics } from '@/lib/learn/session-ui-state'
 import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
 import { useContinuation } from '@/lib/learn/use-continuation'
 import { selectPanel, selectTutorState, useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { selectSessionPlan, useSessionPlanStore } from '@/stores/useSessionPlanStore'
 import DynamicContentPanel from './DynamicContentPanel'
 import LearnSessionHeader from './LearnSessionHeader'
 import type { ActivityCompleteResult } from './ActivityRenderer'
@@ -20,6 +22,7 @@ interface LearnSessionLayoutProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
   onActivityDifficult?: (activityId: string, context?: import('@/features/activities/hints').TutorHintContext) => void
   onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
+  onPlanUpdated?: (message: string) => void
 }
 
 export default function LearnSessionLayout({
@@ -31,9 +34,11 @@ export default function LearnSessionLayout({
   onActivityComplete,
   onActivityDifficult,
   onQuestionAnswered,
+  onPlanUpdated,
 }: LearnSessionLayoutProps) {
   const panel = useLearnSessionStore(selectPanel)
   const tutorState = useLearnSessionStore(selectTutorState)
+  const sessionPlan = useSessionPlanStore(selectSessionPlan)
   const continuation = useContinuation()
   const [activityPhase, setActivityPhase] = useState<ActivityUiPhase | null>(null)
   const [questionAnswered, setQuestionAnswered] = useState(false)
@@ -76,6 +81,7 @@ export default function LearnSessionLayout({
     questionAnswered,
     continuation,
     completionScorePercent,
+    sessionPlan,
   }), [
     sessionMode,
     tutorActive,
@@ -86,7 +92,12 @@ export default function LearnSessionLayout({
     questionAnswered,
     continuation,
     completionScorePercent,
+    sessionPlan,
   ])
+
+  const handlePlanUpdated = useCallback((plan: NonNullable<typeof sessionPlan>) => {
+    onPlanUpdated?.(buildSessionPlanUpdateMessage(plan))
+  }, [onPlanUpdated])
 
   return (
     <div className="learn-session-shell mx-auto w-full max-w-6xl">
@@ -94,6 +105,8 @@ export default function LearnSessionLayout({
         snapshot={snapshot}
         continuationHref={continuation?.href}
         continuationLabel={continuation?.label}
+        tutorActive={tutorActive}
+        planSheet={tutorActive ? <SessionPlanSheet onPlanUpdated={handlePlanUpdated} /> : null}
       />
       {showEngagement && (
         <EngagementSummary defaultExpanded={shouldExpandEngagementMetrics(snapshot.state)} />

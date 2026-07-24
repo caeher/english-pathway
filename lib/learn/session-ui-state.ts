@@ -1,4 +1,5 @@
 import { buildCompletionSummary, correctnessFromPercent } from '@/lib/learn/activity-completion'
+import { formatSessionPlanLabel, formatSessionPlanNextStep, type SessionPlan } from '@/lib/learn/session-plan'
 import { getTutorStateLabel } from '@/lib/learn/tutor-state-label'
 import type { TutorSessionState } from '@/lib/tutor/state'
 import type { LearnPanelState } from '@/stores/useLearnSessionStore'
@@ -34,6 +35,7 @@ export interface SessionUiContext {
   questionAnswered?: boolean
   continuation?: ContinuationInfo | null
   completionScorePercent?: number | null
+  sessionPlan?: SessionPlan | null
 }
 
 export interface SessionUiSnapshot {
@@ -87,11 +89,15 @@ function resolveModeLabel(context: SessionUiContext): SessionModeLabel {
 }
 
 function resolveObjectiveLabel(context: SessionUiContext, state: SessionVisualState): string {
-  const { panel, continuation } = context
+  const { panel, continuation, sessionPlan } = context
 
   if (panel.kind === 'activity') return panel.activity.title
   if (panel.kind === 'explanation') return panel.title ?? 'Lesson'
   if (panel.kind === 'question') return 'Quick check'
+
+  if (sessionPlan && (state === 'pre_session' || state === 'connecting' || state === 'active_practice')) {
+    return formatSessionPlanLabel(sessionPlan)
+  }
 
   if (state === 'pre_session' && continuation) return continuation.title
   if (state === 'completed') return 'Activity finished'
@@ -100,7 +106,7 @@ function resolveObjectiveLabel(context: SessionUiContext, state: SessionVisualSt
 }
 
 function resolveNextActionLabel(context: SessionUiContext, state: SessionVisualState): string {
-  const { panel, continuation, completionScorePercent, tutorState } = context
+  const { panel, continuation, completionScorePercent, tutorState, sessionPlan } = context
 
   if (state === 'completed') {
     const scorePercent = completionScorePercent ?? 0
@@ -125,7 +131,14 @@ function resolveNextActionLabel(context: SessionUiContext, state: SessionVisualS
     return 'Review your response'
   }
 
-  if (state === 'connecting') return 'Wait while your tutor connects'
+  if (state === 'connecting') {
+    if (sessionPlan) return `${formatSessionPlanNextStep(sessionPlan)} · ${sessionPlan.durationMinutes} min`
+    return 'Wait while your tutor connects'
+  }
+
+  if (state === 'pre_session' && sessionPlan) {
+    return `${formatSessionPlanNextStep(sessionPlan)} · ${sessionPlan.durationMinutes} min`
+  }
 
   if (state === 'active_practice') {
     if (context.activityPhase === 'resume-prompt') return 'Resume or restart the activity'
@@ -143,11 +156,19 @@ function resolveStatusDetail(context: SessionUiContext, state: SessionVisualStat
   if (state === 'completed' && context.completionScorePercent != null) {
     return `Score: ${context.completionScorePercent}%`
   }
+  const planDetail = sessionPlanDetail(context, state)
+  if (planDetail) return planDetail
   if (state === 'pre_session' && context.continuation) return context.continuation.description
   if (state === 'active_practice' && context.panel.kind === 'activity' && context.panel.activity.description) {
     return context.panel.activity.description
   }
   return undefined
+}
+
+function sessionPlanDetail(context: SessionUiContext, state: SessionVisualState): string | undefined {
+  if (!context.sessionPlan) return undefined
+  if (state !== 'pre_session' && state !== 'connecting' && state !== 'active_practice') return undefined
+  return `${context.sessionPlan.durationMinutes}-minute ${context.sessionPlan.goal} session`
 }
 
 export function resolveSessionUiState(context: SessionUiContext): SessionUiSnapshot {
