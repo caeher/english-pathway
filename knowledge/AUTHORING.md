@@ -76,6 +76,18 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 
 ### Quality checklist
 
+Machine-readable rubric: `features/activities/quality/` (dimensions below). Run `pnpm activities:quality-report` for per-chapter scores. Sample editorial review: [`docs/activity-quality-review-sample.md`](../docs/activity-quality-review-sample.md).
+
+| Dimension | What good looks like |
+| --- | --- |
+| Observable objective | Title/description state a chapter-specific learning goal, not a template |
+| Comprehensible input | Listening/dictation phrases come from `chapter.md`; no filler duplicates across activities |
+| Learner response | Activity type supports a clear learner action and scored outcome |
+| Feedback | Quiz explanations, choice feedback, hints, or item-level feedback are present |
+| Difficulty | Item counts match the standard bundle (e.g. quiz 5–8, listening 3) |
+| Accessibility | Curated audio includes `altText`; keyboard/audio capabilities declared |
+| Mastery evidence | Completion produces score/weak items for follow-up and SRS |
+
 - [ ] Quiz questions reference vocabulary or rules from the same `chapter.md`
 - [ ] `explanation` fields are in English
 - [ ] `listening`/`dictation` use phrases from the chapter, not generic filler
