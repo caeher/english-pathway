@@ -4,7 +4,17 @@ import { getRateLimitPolicy } from '@/lib/security/rate-limit'
 
 describe('API resilience policy', () => {
   it('limits every critical mutation route', () => {
-    for (const route of ['/api/progress/activity', '/api/progress/chapter', '/api/progress/merge', '/api/engagement/session', '/api/srs', '/api/tutor/memory']) {
+    for (const route of [
+      '/api/progress/activity',
+      '/api/progress/chapter',
+      '/api/progress/merge',
+      '/api/engagement/session',
+      '/api/srs',
+      '/api/tutor/memory',
+      '/api/tutor/realtime',
+      '/api/tutor/realtime/finish',
+      '/api/english-assistant',
+    ]) {
       expect(getRateLimitPolicy(route), route).not.toBeNull()
     }
   })

@@ -43,12 +43,12 @@ Record Web Vitals, API status/latency, provider fallback, and session lifecycle 
 
 ## API resilience contract
 
-Every API error uses `{ error, code }`. State-changing progress, engagement, SRS, and tutor-memory routes are rate-limited per client and route; `429 RATE_LIMITED` includes `Retry-After`. Route operations have a 10-second server response budget and return `504 TIMEOUT` when it expires.
+Every API error uses `{ error, code }`. State-changing progress, engagement, SRS, tutor-memory, chat, and realtime routes are rate-limited per identity (or IP fallback) and route; `429 RATE_LIMITED` includes `Retry-After`. Route operations have a 10-second server response budget and return `504 TIMEOUT` when it expires.
 
 Progress writes are idempotent by `(user_id, activity_id)`: duplicate activity requests preserve the highest score, attempt count, and completed state. Engagement awards are idempotent by `(user_id, activity_id)`, so retries cannot award XP or increment daily activity counts twice.
 
 ## Security contract
 
-`next.config.ts` applies the security headers tested by the quality suite. Unsafe API requests are same-origin checked in middleware. Expensive tutor/assessment routes have a per-process fallback rate limit; the deployment edge must also enforce a distributed limit because serverless instances do not share memory. APIs validate request bodies with Zod and return generic client errors without provider secrets.
+`next.config.ts` applies the security headers tested by the quality suite. Unsafe API requests are same-origin checked in middleware. Expensive tutor, assistant, and assessment routes use a durable Supabase-backed rate-limit store with an in-memory fallback for local development. Authenticated requests are keyed by hashed user identity; anonymous traffic falls back to IP. APIs validate request bodies with Zod and return generic client errors without provider secrets.
 
-Prompt-injection trust boundaries, delimiter rules, and adversarial regression tests are documented in [`docs/security/prompt-trust.md`](security/prompt-trust.md) and enforced by `__tests__/security/`.
+Prompt-injection trust boundaries, delimiter rules, and adversarial regression tests are documented in [`docs/security/prompt-trust.md`](security/prompt-trust.md) and enforced by `__tests__/security/`. Distributed abuse controls for chat and realtime are documented in [`docs/security/rate-limiting.md`](security/rate-limiting.md).
