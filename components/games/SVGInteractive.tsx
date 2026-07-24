@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import type { SVGScene, SVGSceneItem } from '../../types'
 import type { SvgSceneProgress } from '@/features/activities/snapshots/svg-scene'
 import { SpeakButton } from '@/components/ui/SpeakButton'
-import ActivityResult from './ActivityResult'
 import { svgSceneCoverage } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
@@ -90,18 +89,7 @@ export default function SVGInteractive({ scene, initialProgress, onProgressChang
     }
   }
 
-  if (finished) {
-    const pct = svgSceneCoverage(discovered.size, scene.items.length)
-    return (
-      <ActivityResult
-        percent={pct}
-        score={discovered.size}
-        total={scene.items.length}
-        subtitle={`Descubriste ${discovered.size} de ${scene.items.length} elementos`}
-        onRetry={handleRestart}
-      />
-    )
-  }
+  if (finished) return null
 
   return (
     <div className="space-y-3" role="region" aria-label="Interactive scene">

@@ -7,6 +7,9 @@ import { activityRegistry, type ActivityTypeKey } from '@/features/activities'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { normalizeActivityResult } from '@/lib/games/result'
 import { isActivityCompleted } from '@/features/progress/client'
+import { listChapterActivities, showActivity } from '@/lib/learn/client-tools'
+import { resolveNextActivityId } from '@/lib/learn/next-activity'
+import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import {
   loadSnapshot,
   purgeExpiredSnapshots,
@@ -15,6 +18,7 @@ import {
   summarizeSnapshot,
 } from '@/lib/storage/activity-snapshot'
 import { ActivityControlBar } from './ActivityControlBar'
+import ActivityCompletionCard from './ActivityCompletionCard'
 import ActivityResumePrompt from './ActivityResumePrompt'
 import type {
   DictationItem,
@@ -73,16 +77,26 @@ export interface ActivityCompleteResult {
   correctness?: 'complete' | 'partial' | 'needs-practice'
   nextAction?: 'continue' | 'retry' | 'review'
   metrics?: Record<string, number>
+  explanations?: string[]
 }
 
 interface ActivityRendererProps {
   activity: ChapterActivity
+  chapterId?: string
+  moduleId?: string
   onComplete?: (result: ActivityCompleteResult) => void
   onHelp?: (activityId: string) => void
   onExit?: () => void
 }
 
-type GameResult = Record<string, unknown> & { score: number; total: number; scorePercent?: number; weakItemIndexes?: number[] }
+type GameResult = Record<string, unknown> & {
+  score: number
+  total: number
+  scorePercent?: number
+  weakItemIndexes?: number[]
+  explanations?: string[]
+}
+
 type RenderActivity = (
   props: unknown,
   onComplete: (result: GameResult) => void,
@@ -178,9 +192,27 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
 }
 
 type ResumeState = 'checking' | 'prompt' | 'playing'
+type ActivityPhase = 'playing' | 'completed'
 
-export default function ActivityRenderer({ activity, onComplete, onHelp, onExit }: ActivityRendererProps) {
+function extractExplanations(result: GameResult): string[] {
+  if (Array.isArray(result.explanations)) {
+    return result.explanations.filter((item): item is string => typeof item === 'string')
+  }
+  return []
+}
+
+export default function ActivityRenderer({
+  activity,
+  chapterId,
+  moduleId,
+  onComplete,
+  onHelp,
+  onExit,
+}: ActivityRendererProps) {
   const [attempt, setAttempt] = useState(0)
+  const [phase, setPhase] = useState<ActivityPhase>('playing')
+  const [completedResult, setCompletedResult] = useState<ActivityCompleteResult | null>(null)
+  const [continueLoading, setContinueLoading] = useState(false)
   const [resumeState, setResumeState] = useState<ResumeState>('checking')
   const [savedSummary, setSavedSummary] = useState<string | null>(null)
   const [restoredProgress, setRestoredProgress] = useState<unknown>(undefined)
@@ -215,6 +247,8 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
       setResumeState('prompt')
     }
 
+    setPhase('playing')
+    setCompletedResult(null)
     setResumeState('checking')
     setSavedSummary(null)
     setRestoredProgress(undefined)
@@ -251,6 +285,8 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
     setRestoredProgress(undefined)
     setAttempt((value) => value + 1)
     setResumeState('playing')
+    setPhase('playing')
+    setCompletedResult(null)
   }, [clearSnapshot])
 
   const handleReset = useCallback(() => {
@@ -258,6 +294,8 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
     setRestoredProgress(undefined)
     setAttempt((value) => value + 1)
     setResumeState('playing')
+    setPhase('playing')
+    setCompletedResult(null)
   }, [clearSnapshot])
 
   const handleExit = useCallback(() => {
@@ -265,10 +303,49 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
     onExit?.()
   }, [clearSnapshot, onExit])
 
+  const handleRetry = useCallback(() => {
+    clearSnapshot()
+    setRestoredProgress(undefined)
+    setAttempt((value) => value + 1)
+    setPhase('playing')
+    setCompletedResult(null)
+    setResumeState('playing')
+  }, [clearSnapshot])
+
+  const handleContinue = useCallback(async () => {
+    if (!chapterId) return
+
+    setContinueLoading(true)
+    try {
+      const nextActivityId = await resolveNextActivityId(
+        chapterId,
+        activity.id,
+        listChapterActivities,
+        isActivityCompleted,
+      )
+
+      if (nextActivityId) {
+        await showActivity(nextActivityId)
+        setPhase('playing')
+        setCompletedResult(null)
+        setAttempt((value) => value + 1)
+        return
+      }
+
+      learnSessionActions.acknowledgeCompletion()
+    } finally {
+      setContinueLoading(false)
+    }
+  }, [activity.id, chapterId])
+
+  const handleRequestHelp = useCallback(() => {
+    onHelp?.(activity.id)
+  }, [activity.id, onHelp])
+
   const progressProps = useMemo(() => ({
     initialProgress: restoredProgress,
-    onProgressChange: resumeState === 'playing' ? handleProgressChange : undefined,
-  }), [restoredProgress, resumeState, handleProgressChange])
+    onProgressChange: resumeState === 'playing' && phase === 'playing' ? handleProgressChange : undefined,
+  }), [restoredProgress, resumeState, phase, handleProgressChange])
 
   if (!definition) {
     return <p className="text-sm text-(--text-muted)">Unsupported activity type: {activity.type}</p>
@@ -283,7 +360,8 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
   const handleComplete = (result: GameResult) => {
     clearSnapshot()
     const normalized = normalizeActivityResult(result)
-    onComplete?.({
+    const explanations = extractExplanations(result)
+    const enriched: ActivityCompleteResult = {
       activityId: activity.id,
       activityType: activity.type,
       score: result.score,
@@ -293,30 +371,50 @@ export default function ActivityRenderer({ activity, onComplete, onHelp, onExit 
       correctness: normalized.correctness,
       nextAction: normalized.nextAction,
       metrics: normalized.metrics,
+      explanations,
+      chapterId,
+      moduleId,
       reviewContentRefs: normalized.weakItemIndexes.length
         ? getReviewContentRefs(activity, normalized.weakItemIndexes)
         : normalized.scorePercent < 100 ? getReviewContentRefs(activity) : [],
-    })
+    }
+
+    setCompletedResult(enriched)
+    setPhase('completed')
+    learnSessionActions.acknowledgeCompletion()
+    onComplete?.(enriched)
   }
 
   return (
     <div>
-      <ActivityControlBar
-        activityTitle={activity.title}
-        activityType={activity.type}
-        onHelp={onHelp ? () => onHelp(activity.id) : undefined}
-        onReset={handleReset}
-        onExit={handleExit}
-      />
-      {resumeState === 'checking' && (
+      {phase === 'playing' && (
+        <ActivityControlBar
+          activityTitle={activity.title}
+          activityType={activity.type}
+          onHelp={onHelp ? () => onHelp(activity.id) : undefined}
+          onReset={handleReset}
+          onExit={handleExit}
+        />
+      )}
+      {resumeState === 'checking' && phase === 'playing' && (
         <div className="min-h-24 animate-pulse rounded-2xl border border-(--border-primary) bg-(--bg-card) p-5" role="status" aria-live="polite">
           Checking for saved progress…
         </div>
       )}
-      {resumeState === 'prompt' && savedSummary && (
+      {resumeState === 'prompt' && savedSummary && phase === 'playing' && (
         <ActivityResumePrompt summary={savedSummary} onResume={handleResume} onStartOver={handleStartOver} />
       )}
-      {resumeState === 'playing' && (
+      {phase === 'completed' && completedResult && (
+        <ActivityCompletionCard
+          result={completedResult}
+          explanations={completedResult.explanations}
+          onContinue={chapterId ? handleContinue : undefined}
+          onRetry={handleRetry}
+          onRequestHelp={onHelp ? handleRequestHelp : undefined}
+          continueLoading={continueLoading}
+        />
+      )}
+      {phase === 'playing' && resumeState === 'playing' && (
         <ActivityLoadBoundary onRetry={() => setAttempt((value) => value + 1)}>
           <div key={attempt}>
             {renderers[definition.renderer](validated.data, handleComplete, progressProps)}

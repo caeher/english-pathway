@@ -6,7 +6,6 @@ import type { PronunciationItem } from '@/types'
 import type { PronunciationProgress } from '@/features/activities/snapshots/pronunciation'
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import { cn } from '@/lib/helpers'
-import ActivityResult from './ActivityResult'
 import { scorePronunciation, type PronunciationScore } from '@/lib/audio/pronunciation-scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
@@ -173,9 +172,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
     setFinished(false)
   }
 
-  if (finished) {
-    return <ActivityResult percent={finalScorePercent} score={finalPassedCount} total={items.length} onRetry={handleRestart} />
-  }
+  if (finished) return null
 
   return (
     <div className="max-w-2xl mx-auto" role="region" aria-label="Pronunciation activity">

@@ -5,7 +5,6 @@ import type { MatchPair } from '../../types'
 import type { WordMatchProgress } from '@/features/activities/snapshots/word-match'
 import { shuffleArray, cn } from '@/lib/helpers'
 import { SpeakButton } from '@/components/ui/SpeakButton'
-import ActivityResult from './ActivityResult'
 import { wordMatchAccuracy } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
@@ -103,16 +102,7 @@ export default function WordMatch({ pairs, initialProgress, onProgressChange, on
     setSelectedRight(null)
   }
 
-  if (finished) {
-    const pct = wordMatchAccuracy(attempts, pairs.length)
-    return (
-      <ActivityResult
-        percent={pct}
-        subtitle={`${attempts} attempts · ${pairs.length} pairs`}
-        onRetry={handleRestart}
-      />
-    )
-  }
+  if (finished) return null
 
   return (
     <div role="region" aria-label="Match words">

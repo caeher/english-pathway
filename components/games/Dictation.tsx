@@ -7,7 +7,6 @@ import type { DictationProgress } from '@/features/activities/snapshots/dictatio
 import { SpeakButton } from '@/components/ui/SpeakButton'
 import { speak } from '@/lib/audio/tts'
 import { cn } from '@/lib/helpers'
-import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
@@ -20,7 +19,7 @@ interface DictationProps {
   items: DictationItem[]
   initialProgress?: DictationProgress
   onProgressChange?: (progress: DictationProgress) => void
-  onComplete?: (result: { score: number; total: number; weakItemIndexes?: number[] }) => void
+  onComplete?: (result: { score: number; total: number; weakItemIndexes?: number[]; explanations?: string[] }) => void
 }
 
 export default function Dictation({ items, initialProgress, onProgressChange, onComplete }: DictationProps) {
@@ -62,7 +61,7 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
     if (current + 1 >= items.length) {
       setFinished(true)
       const pct = scoreToPercent(score, items.length)
-      onComplete?.({ score: pct, total: 100, weakItemIndexes })
+      onComplete?.({ score: pct, total: 100, weakItemIndexes, explanations })
       return
     }
     setCurrent((c) => c + 1)
@@ -83,18 +82,7 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
     setExplanations([])
   }
 
-  if (finished) {
-    const pct = scoreToPercent(score, items.length)
-    return (
-      <ActivityResult
-        percent={pct}
-        score={score}
-        total={items.length}
-        explanations={explanations}
-        onRetry={handleRestart}
-      />
-    )
-  }
+  if (finished) return null
 
   return (
     <div className="max-w-2xl mx-auto" role="region" aria-label="Dictation activity">

@@ -4,7 +4,6 @@ import { ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react'
 import type { FlashcardData } from '../../types'
 import type { FlashcardProgress } from '@/features/activities/snapshots/flashcard'
 import { SpeakButton } from '@/components/ui/SpeakButton'
-import ActivityResult from './ActivityResult'
 import { flashcardCoverage } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { useReducedMotion } from '@/lib/motion/useReducedMotion'
@@ -59,18 +58,7 @@ export default function Flashcard({ cards, initialProgress, onProgressChange, on
     setFinished(false)
   }
 
-  if (finished) {
-    const pct = flashcardCoverage(known.size, cards.length)
-    return (
-      <ActivityResult
-        percent={pct}
-        score={known.size}
-        total={cards.length}
-        subtitle={`You marked ${known.size} of ${cards.length} cards as known`}
-        onRetry={handleReset}
-      />
-    )
-  }
+  if (finished) return null
 
   return (
     <div className="max-w-md mx-auto space-y-5" role="region" aria-label="Vocabulary flashcards">

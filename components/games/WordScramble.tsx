@@ -6,7 +6,6 @@ import type { WordScrambleProgress } from '@/features/activities/snapshots/word-
 import { shuffleArray, cn } from '@/lib/helpers'
 import { useReducedMotion } from '@/lib/games/useReducedMotion'
 import { SpeakButton } from '@/components/ui/SpeakButton'
-import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
@@ -85,17 +84,7 @@ export default function WordScramble({ words, initialProgress, onProgressChange,
     setWrongIdx(null)
   }
 
-  if (done) {
-    const pct = scoreToPercent(score, words.length)
-    return (
-      <ActivityResult
-        percent={pct}
-        score={score}
-        total={words.length}
-        onRetry={handleRestart}
-      />
-    )
-  }
+  if (done) return null
 
   if (isComplete) {
     return (

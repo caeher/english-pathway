@@ -31,6 +31,7 @@ export interface LearnSessionStore {
   setQuestion: (prompt: string, options?: string[], correctIndex?: number) => void
   clearPanel: () => void
   recordActivityResult: (result: ActivitySessionResult) => void
+  acknowledgeCompletion: () => void
   requestHelp: () => void
   resetSession: () => void
 }
@@ -116,6 +117,10 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
           tutorState: transitionTutorState(state.tutorState, { type: 'activity_result', scorePercent: result.scorePercent }),
           lastActivityResult: result,
         })),
+      acknowledgeCompletion: () =>
+        set((state) => ({
+          tutorState: transitionTutorState(state.tutorState, { type: 'continue' }),
+        })),
       requestHelp: () =>
         set((state) => ({
           tutorState: transitionTutorState(state.tutorState, { type: 'help_requested' }),
@@ -142,6 +147,7 @@ export const learnSessionActions = {
     useLearnSessionStore.getState().setQuestion(prompt, options, correctIndex),
   clearPanel: () => useLearnSessionStore.getState().clearPanel(),
   recordActivityResult: (result: ActivitySessionResult) => useLearnSessionStore.getState().recordActivityResult(result),
+  acknowledgeCompletion: () => useLearnSessionStore.getState().acknowledgeCompletion(),
   requestHelp: () => useLearnSessionStore.getState().requestHelp(),
   resetSession: () => useLearnSessionStore.getState().resetSession(),
 }

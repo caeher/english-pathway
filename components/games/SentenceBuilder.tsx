@@ -4,7 +4,6 @@ import { CheckCircle, XCircle, RotateCcw } from 'lucide-react'
 import type { SentenceChallenge } from '../../types'
 import type { SentenceBuilderProgress } from '@/features/activities/snapshots/sentence-builder'
 import { shuffleArray } from '@/lib/helpers'
-import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
@@ -89,12 +88,7 @@ export default function SentenceBuilder({ sentences, initialProgress, onProgress
     setFinished(false)
   }
 
-  if (finished) {
-    const pct = scoreToPercent(score, sentences.length)
-    return (
-      <ActivityResult percent={pct} score={score} total={sentences.length} onRetry={handleRestart} />
-    )
-  }
+  if (finished) return null
 
   return (
     <div className="max-w-2xl mx-auto" role="region" aria-label="Build sentences">
