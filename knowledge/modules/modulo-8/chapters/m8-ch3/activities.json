@@ -251,47 +251,59 @@
     "id": "m8-ch3-listening",
     "type": "listening",
     "title": "Minimal Pairs Listening",
-    "description": "Listen and choose the correct answer.",
+    "description": "Listen to recorded audio and choose the word you hear.",
     "props": {
       "items": [
         {
           "id": "l1",
-          "audioText": "Place your tongue between your teeth and blow air gently",
-          "question": "What did you hear?",
-          "options": [
-            "Place your tongue between your teeth and blow air gently",
-            "Like /θ/ but with vibration in the throat",
-            "Open your mouth more than for \"e\" but less than for \"a\"",
-            "A relaxed and short \"a\". The mouth barely opens"
-          ],
+          "audioText": "ship",
+          "audio": {
+            "src": "/audio/curated/ship.mp3",
+            "transcript": "ship",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Short /ɪ/ vowel — keep your mouth relaxed and the sound brief."
+          },
+          "mode": "evaluation",
+          "question": "Which word did you hear?",
+          "options": ["ship", "sheep", "shop", "shape"],
           "correct": 0,
-          "explanation": "You heard: \"Place your tongue between your teeth and blow air gently\"."
+          "explanation": "You heard \"ship\" with the short /ɪ/ vowel."
         },
         {
           "id": "l2",
-          "audioText": "Like /θ/ but with vibration in the throat",
-          "question": "What did you hear?",
-          "options": [
-            "Like /θ/ but with vibration in the throat",
-            "Place your tongue between your teeth and blow air gently",
-            "Open your mouth more than for \"e\" but less than for \"a\"",
-            "A relaxed and short \"a\". The mouth barely opens"
-          ],
+          "audioText": "sheep",
+          "audio": {
+            "src": "/audio/curated/sheep.mp3",
+            "transcript": "sheep",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Long /iː/ vowel — stretch the sound slightly longer than in \"ship\"."
+          },
+          "mode": "evaluation",
+          "question": "Which word did you hear?",
+          "options": ["sheep", "ship", "chip", "cheap"],
           "correct": 0,
-          "explanation": "You heard: \"Like /θ/ but with vibration in the throat\"."
+          "explanation": "You heard \"sheep\" with the long /iː/ vowel."
         },
         {
           "id": "l3",
-          "audioText": "Open your mouth more than for \"e\" but less than for \"a\"",
-          "question": "What did you hear?",
-          "options": [
-            "Open your mouth more than for \"e\" but less than for \"a\"",
-            "Place your tongue between your teeth and blow air gently",
-            "Like /θ/ but with vibration in the throat",
-            "A relaxed and short \"a\". The mouth barely opens"
-          ],
+          "audioText": "cat",
+          "audio": {
+            "src": "/audio/curated/cat.mp3",
+            "transcript": "cat",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Open /æ/ vowel — drop your jaw a little more than for \"cut\"."
+          },
+          "mode": "evaluation",
+          "question": "Which word did you hear?",
+          "options": ["cat", "cut", "cot", "cart"],
           "correct": 0,
-          "explanation": "You heard: \"Open your mouth more than for \"e\" but less than for \"a\"\"."
+          "explanation": "You heard \"cat\" with the /æ/ vowel."
         }
       ]
     }
@@ -324,29 +336,89 @@
   {
     "id": "m8-ch3-pronunciation",
     "type": "pronunciation",
-    "title": "Pronunciation Practice",
-    "description": "Listen and repeat the key phrases.",
+    "title": "Speaking Practice",
+    "description": "Listen to the model audio and repeat each minimal pair aloud.",
     "props": {
       "items": [
         {
           "id": "p1",
-          "phrase": "Place your tongue between your teeth and blow air gently",
-          "hint": "Practice saying this phrase aloud — from m8-ch3."
+          "phrase": "ship",
+          "audio": {
+            "src": "/audio/curated/ship.mp3",
+            "transcript": "ship",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Contrast the short /ɪ/ in ship with the long /iː/ in sheep."
+          },
+          "contrastPair": {
+            "label": "Vowel length contrast",
+            "wordA": "ship",
+            "wordB": "sheep",
+            "phoneme": "/ɪ/ vs /iː/",
+            "tip": "Keep ship short and relaxed; stretch sheep slightly longer with a tense smile."
+          },
+          "hint": "Say ship with a short, relaxed vowel."
         },
         {
           "id": "p2",
-          "phrase": "Like /θ/ but with vibration in the throat",
-          "hint": "Practice saying this phrase aloud — from m8-ch3."
+          "phrase": "sheep",
+          "audio": {
+            "src": "/audio/curated/sheep.mp3",
+            "transcript": "sheep",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Pair sheep with ship to hear the vowel length difference."
+          },
+          "contrastPair": {
+            "label": "Vowel length contrast",
+            "wordA": "ship",
+            "wordB": "sheep",
+            "phoneme": "/ɪ/ vs /iː/",
+            "tip": "Stretch the vowel in sheep a little longer than in ship."
+          },
+          "hint": "Say sheep with a longer /iː/ sound."
         },
         {
           "id": "p3",
-          "phrase": "Open your mouth more than for \"e\" but less than for \"a\"",
-          "hint": "Practice saying this phrase aloud — from m8-ch3."
+          "phrase": "cat",
+          "audio": {
+            "src": "/audio/curated/cat.mp3",
+            "transcript": "cat",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Contrast the open /æ/ in cat with the relaxed /ʌ/ in cut."
+          },
+          "contrastPair": {
+            "label": "Vowel openness contrast",
+            "wordA": "cat",
+            "wordB": "cut",
+            "phoneme": "/æ/ vs /ʌ/",
+            "tip": "Open your mouth more for cat; relax and centralize the vowel for cut."
+          },
+          "hint": "Open your mouth a bit more for cat."
         },
         {
           "id": "p4",
-          "phrase": "A relaxed and short \"a\". The mouth barely opens",
-          "hint": "Practice saying this phrase aloud — from m8-ch3."
+          "phrase": "cut",
+          "audio": {
+            "src": "/audio/curated/cut.mp3",
+            "transcript": "cut",
+            "speaker": "Curated voice",
+            "accent": "US English",
+            "defaultRate": 1,
+            "altText": "Pair cut with cat to practice /ʌ/ versus /æ/."
+          },
+          "contrastPair": {
+            "label": "Vowel openness contrast",
+            "wordA": "cat",
+            "wordB": "cut",
+            "phoneme": "/æ/ vs /ʌ/",
+            "tip": "Keep cut shorter and more central than the open vowel in cat."
+          },
+          "hint": "Relax your jaw for the /ʌ/ sound in cut."
         }
       ]
     }

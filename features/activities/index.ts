@@ -1,4 +1,5 @@
 /** Public API for validated activity contracts, extension metadata, and diagnostics. */
+export * from './audio-schema'
 export * from './contracts'
 export * from './hints'
 export * from './registry'

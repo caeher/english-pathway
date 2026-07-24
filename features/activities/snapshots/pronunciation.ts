@@ -11,6 +11,6 @@ export type PronunciationProgress = z.infer<typeof pronunciationProgressSchema>
 export const pronunciationSnapshot: ActivitySnapshotContract<PronunciationProgress> = {
   version: ACTIVITY_SNAPSHOT_VERSION,
   schema: pronunciationProgressSchema,
-  summarize: (payload) => `Phrase ${payload.current + 1}`,
+  summarize: (payload) => `Speaking phrase ${payload.current + 1}`,
   isRestorable: (payload) => payload.current >= 0 && payload.bestScores.length > 0,
 }

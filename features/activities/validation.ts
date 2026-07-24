@@ -62,6 +62,80 @@ function validateQuizSemantics(
   return issues
 }
 
+function validateListeningSemantics(
+  moduleId: string,
+  chapterId: string,
+  activityId: string,
+  props: { items: Array<{ audio?: { src: string; altText?: string } }> },
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+
+  for (const [index, item] of props.items.entries()) {
+    if (item.audio && !item.audio.altText?.trim()) {
+      issues.push({
+        moduleId,
+        chapterId,
+        activityId,
+        field: `props.items.${index}.audio.altText`,
+        message: 'curated listening audio should include altText for post-answer feedback',
+        severity: 'warning',
+      })
+    }
+  }
+
+  return issues
+}
+
+function validatePronunciationSemantics(
+  moduleId: string,
+  chapterId: string,
+  activityId: string,
+  props: { items: Array<{ contrastPair?: unknown }> },
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+
+  const contrastCount = props.items.filter((item) => item.contrastPair).length
+  if (contrastCount > 0 && contrastCount < 2) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'props.items',
+      message: 'pronunciation activities with contrast pairs should include at least two items with contrastPair',
+      severity: 'warning',
+    })
+  }
+
+  return issues
+}
+
+export function validateCurriculumContrastPairs(
+  activitiesByChapter: Array<{ moduleId: string; chapterId: string; activities: Array<{ type: string; props: unknown }> }>,
+): ActivityValidationIssue[] {
+  let contrastPairCount = 0
+
+  for (const chapter of activitiesByChapter) {
+    for (const activity of chapter.activities) {
+      if (activity.type !== 'pronunciation' || !activity.props || typeof activity.props !== 'object') continue
+      const items = (activity.props as { items?: Array<{ contrastPair?: unknown }> }).items ?? []
+      contrastPairCount += items.filter((item) => item.contrastPair).length
+    }
+  }
+
+  if (contrastPairCount < 2) {
+    return [{
+      moduleId: 'curriculum',
+      chapterId: 'global',
+      activityId: 'pronunciation-contrast-pairs',
+      field: 'contrastPair',
+      message: 'curriculum should include at least two pronunciation contrastPair items',
+      severity: 'warning',
+    }]
+  }
+
+  return []
+}
+
 export function validateActivityDocument(moduleId: string, chapterId: string, activity: unknown, index: number): ActivityValidationIssue[] {
   const parsed = chapterActivitySchema.safeParse(activity)
   const raw = activity && typeof activity === 'object' ? activity as Record<string, unknown> : {}
@@ -80,6 +154,14 @@ export function validateActivityDocument(moduleId: string, chapterId: string, ac
 
   if (parsed.data.type === 'quiz') {
     return validateQuizSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  }
+
+  if (parsed.data.type === 'listening') {
+    return validateListeningSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  }
+
+  if (parsed.data.type === 'pronunciation') {
+    return validatePronunciationSemantics(moduleId, chapterId, activityId, parsed.data.props)
   }
 
   return []

@@ -1,4 +1,10 @@
 import { z } from 'zod'
+import {
+  audioPracticeModeSchema,
+  contrastPairSchema,
+  curatedAudioSchema,
+  isValidCuratedAudioSrc,
+} from './audio-schema'
 
 const quizQuestionSchema = z.discriminatedUnion('type', [
   z.object({
@@ -62,17 +68,54 @@ export const activityPropsSchemas = {
     items: z.array(z.object({
       id: z.string().min(1),
       audioText: z.string().min(1),
+      audio: curatedAudioSchema.optional(),
+      mode: audioPracticeModeSchema.optional(),
       question: z.string().min(1),
       options: z.array(z.string().min(1)).min(2),
       correct: z.number().int().min(0),
       explanation: z.string().optional(),
+    }).superRefine((item, ctx) => {
+      if (item.audio && !isValidCuratedAudioSrc(item.audio.src)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'audio.src must start with /audio/ or http(s)://',
+          path: ['audio', 'src'],
+        })
+      }
     })).min(1),
   }),
   dictation: z.object({
-    items: z.array(z.object({ id: z.string().min(1), audioText: z.string().min(1), hint: z.string().optional() })).min(1),
+    items: z.array(z.object({
+      id: z.string().min(1),
+      audioText: z.string().min(1),
+      audio: curatedAudioSchema.optional(),
+      hint: z.string().optional(),
+    }).superRefine((item, ctx) => {
+      if (item.audio && !isValidCuratedAudioSrc(item.audio.src)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'audio.src must start with /audio/ or http(s)://',
+          path: ['audio', 'src'],
+        })
+      }
+    })).min(1),
   }),
   pronunciation: z.object({
-    items: z.array(z.object({ id: z.string().min(1), phrase: z.string().min(1), hint: z.string().optional() })).min(1),
+    items: z.array(z.object({
+      id: z.string().min(1),
+      phrase: z.string().min(1),
+      audio: curatedAudioSchema.optional(),
+      contrastPair: contrastPairSchema.optional(),
+      hint: z.string().optional(),
+    }).superRefine((item, ctx) => {
+      if (item.audio && !isValidCuratedAudioSrc(item.audio.src)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'audio.src must start with /audio/ or http(s)://',
+          path: ['audio', 'src'],
+        })
+      }
+    })).min(1),
   }),
 } as const
 

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { validateActivityList } from '@/features/activities'
+import { validateActivityList, validateCurriculumContrastPairs } from '@/features/activities'
 
 type ActivityFileIssue = ReturnType<typeof validateActivityList>[number] & { filePath: string }
 
@@ -25,8 +25,24 @@ const issues = findActivityFiles(knowledgeRoot).flatMap((filePath) => {
   return validateActivityList(moduleId, chapterId, activities).map((issue) => ({ ...issue, filePath }))
 })
 
-const errors = issues.filter((issue): issue is ActivityFileIssue => issue.severity !== 'warning')
-const warnings = issues.filter((issue) => issue.severity === 'warning')
+const curriculumActivities = findActivityFiles(knowledgeRoot).map((filePath) => {
+  const relative = path.relative(knowledgeRoot, filePath).split(path.sep)
+  const moduleId = relative[0] ?? 'unknown-module'
+  const chapterId = relative[2] ?? 'unknown-chapter'
+  const raw = JSON.parse(fs.readFileSync(filePath, 'utf8')) as unknown
+  const activities = Array.isArray(raw) ? raw : []
+  return { moduleId, chapterId, activities: activities as Array<{ type: string; props: unknown }> }
+})
+
+const globalIssues = validateCurriculumContrastPairs(curriculumActivities).map((issue) => ({
+  ...issue,
+  filePath: path.join(knowledgeRoot, 'curriculum'),
+}))
+
+const allIssues = [...issues, ...globalIssues]
+
+const errors = allIssues.filter((issue): issue is ActivityFileIssue => issue.severity !== 'warning')
+const warnings = allIssues.filter((issue) => issue.severity === 'warning')
 
 if (warnings.length > 0) {
   console.warn(`Activity validation reported ${warnings.length} warning(s):`)
