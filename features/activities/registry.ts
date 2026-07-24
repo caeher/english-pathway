@@ -79,7 +79,7 @@ function definition(
 
 export const activityRegistry = {
   quiz: definition('quiz', createActivityCapabilities('itemFeedback'), quizSnapshot),
-  flashcard: definition('flashcard', createActivityCapabilities('audio'), flashcardSnapshot),
+  flashcard: definition('flashcard', createActivityCapabilities('audio', 'itemFeedback'), flashcardSnapshot),
   'word-match': definition('word-match', createActivityCapabilities(), wordMatchSnapshot),
   'sentence-builder': definition('sentence-builder', createActivityCapabilities(), sentenceBuilderSnapshot),
   'word-scramble': definition('word-scramble', createHintActivityCapabilities(3), wordScrambleSnapshot),

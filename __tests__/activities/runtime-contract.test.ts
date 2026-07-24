@@ -20,7 +20,7 @@ const activityTypes: ActivityType[] = [
 ]
 
 const hintTypes = new Set<ActivityType>(['word-scramble', 'dictation', 'pronunciation'])
-const itemFeedbackTypes = new Set<ActivityType>(['quiz', 'listening'])
+const itemFeedbackTypes = new Set<ActivityType>(['quiz', 'listening', 'flashcard'])
 
 describe('activity runtime contract', () => {
   it.each(activityTypes)('%s declares contract version 1 and required registry fields', (type) => {

@@ -8,6 +8,22 @@ const quizQuestionSchema = z.discriminatedUnion('type', [
     options: z.array(z.string().min(1)).min(2),
     correct: z.number().int().min(0),
     explanation: z.string().optional(),
+  }).superRefine((question, ctx) => {
+    if (question.correct >= question.options.length) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `correct index ${question.correct} is out of range for ${question.options.length} options`,
+        path: ['correct'],
+      })
+    }
+    const uniqueOptions = new Set(question.options.map((o) => o.trim().toLowerCase()))
+    if (uniqueOptions.size !== question.options.length) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'options must not contain duplicates',
+        path: ['options'],
+      })
+    }
   }),
   z.object({
     id: z.string().min(1),

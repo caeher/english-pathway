@@ -359,11 +359,11 @@
           "question": "Which letter always appears with \"U\"?",
           "options": [
             "Q",
-            "Q",
+            "K",
             "R",
-            "Yes"
+            "W"
           ],
-          "correct": 1,
+          "correct": 0,
           "explanation": "Q is always followed by U: Queen, Question, Quiet."
         }
       ]

@@ -349,10 +349,10 @@
           "options": [
             "children",
             "childes",
-            "children",
+            "childs",
             "childrens"
           ],
-          "correct": 2,
+          "correct": 0,
           "explanation": "Child → children (irregular plural)."
         },
         {
@@ -367,10 +367,10 @@
           "type": "multiple-choice",
           "question": "What is the plural of \"bus\"?",
           "options": [
-            "bus",
+            "buss",
             "buses",
             "busies",
-            "bus"
+            "busses"
           ],
           "correct": 1,
           "explanation": "Bus → buses (add -es after s)."
@@ -399,11 +399,11 @@
           "question": "Which sentence is correct?",
           "options": [
             "I see an elephant",
-            "I see an elephant",
+            "I see a elephant",
             "I see the elephant an",
             "I see elephant"
           ],
-          "correct": 1,
+          "correct": 0,
           "explanation": "\"An elephant\" — \"elephant\" starts with a vowel sound."
         },
         {
@@ -413,7 +413,7 @@
           "options": [
             "babys",
             "babies",
-            "babys",
+            "babyes",
             "babyies"
           ],
           "correct": 1,
@@ -471,9 +471,9 @@
           "question": "\"I need some ___.\" Which is correct?",
           "options": [
             "information",
-            "information",
+            "informations",
             "an information",
-            "information"
+            "some informations"
           ],
           "correct": 0,
           "explanation": "\"Information\" is uncountable — not plural, not \"an\"."

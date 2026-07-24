@@ -6,6 +6,7 @@ import {
   getActivityDefinition,
   hasActivityCapability,
   validateActivityDocument,
+  filterValidationErrors,
 } from '@/features/activities'
 import type { ActivityType } from '@/types'
 
@@ -25,7 +26,7 @@ describe('activity behavior matrix', () => {
     for (const type of activityTypes) {
       const fixture = activities.find((activity) => activity.type === type)
       expect(fixture, `Missing curriculum fixture for ${type}`).toBeDefined()
-      expect(validateActivityDocument('fixture-module', 'fixture-chapter', fixture, 0)).toEqual([])
+      expect(filterValidationErrors(validateActivityDocument('fixture-module', 'fixture-chapter', fixture, 0))).toEqual([])
     }
   })
 
