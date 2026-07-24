@@ -36,14 +36,14 @@ describe('learn session store boundaries', () => {
   })
 
   it('exposes stable selectors and resets persisted markers with the session', () => {
-    useLearnSessionStore.getState().setGrammar('A lesson')
+    useLearnSessionStore.getState().setExplanation([{ type: 'paragraph', text: 'A lesson' }])
     useLearnSessionStore.getState().recordActivityResult({
       activityId: 'quiz-1',
       scorePercent: 100,
       completedAt: '2026-01-01T00:00:00.000Z',
     })
 
-    expect(selectPanel(useLearnSessionStore.getState())).toMatchObject({ kind: 'grammar' })
+    expect(selectPanel(useLearnSessionStore.getState())).toMatchObject({ kind: 'explanation' })
     expect(selectLastActivityId(useLearnSessionStore.getState())).toBeNull()
     useLearnSessionStore.getState().resetSession()
     expect(selectPanel(useLearnSessionStore.getState())).toEqual({ kind: 'empty' })

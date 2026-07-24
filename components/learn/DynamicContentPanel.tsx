@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle, XCircle } from 'lucide-react'
-import { selectClearPanel, selectPanel, useLearnSessionStore } from '@/stores/useLearnSessionStore'
-import { MarkdownWithTts } from '@/components/lesson/MarkdownWithTts'
+import { selectClearPanel, selectPanel, selectPanelNotice, useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { StructuredPanelContent } from '@/components/learn/StructuredPanelContent'
 import ActivityRenderer, { type ActivityCompleteResult } from './ActivityRenderer'
 import { Button } from '@/components/ui/button'
 import { panelTransition } from '@/lib/motion/system'
@@ -26,6 +26,7 @@ export default function DynamicContentPanel({
   onActivityPhaseChange,
 }: DynamicContentPanelProps) {
   const panel = useLearnSessionStore(selectPanel)
+  const panelNotice = useLearnSessionStore(selectPanelNotice)
   const clearPanel = useLearnSessionStore(selectClearPanel)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const reducedMotion = useReducedMotion()
@@ -44,6 +45,11 @@ export default function DynamicContentPanel({
   if (panel.kind === 'empty') {
     return (
       <div className="flex flex-col items-center justify-center h-full min-h-[320px] text-center p-8">
+        {panelNotice && (
+          <p role="status" className="mb-4 max-w-sm rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200">
+            {panelNotice}
+          </p>
+        )}
         <p className="text-(--text-muted) text-sm max-w-sm">
           Your lesson content will appear here — grammar explanations, quizzes, and interactive
           activities guided by the AI tutor.
@@ -61,9 +67,17 @@ export default function DynamicContentPanel({
 
   return (
     <div className="flex min-h-full flex-col" aria-live="polite">
+      {panelNotice && (
+        <p
+          role="status"
+          className="mx-4 mt-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200 sm:mx-6"
+        >
+          {panelNotice}
+        </p>
+      )}
       <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-(--border-primary)">
         <h2 ref={headingRef} tabIndex={-1} className="min-w-0 flex-1 truncate font-display font-bold text-(--text-primary) text-sm focus:outline-none">
-          {panel.kind === 'grammar' && (panel.title ?? 'Lesson')}
+          {panel.kind === 'explanation' && (panel.title ?? 'Lesson')}
           {panel.kind === 'activity' && panel.activity.title}
           {panel.kind === 'question' && 'Quick check'}
         </h2>
@@ -80,11 +94,8 @@ export default function DynamicContentPanel({
           className="flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6"
           {...(reducedMotion ? motionProps(true) : panelTransition)}
         >
-        {panel.kind === 'grammar' && (
-          <MarkdownWithTts
-            content={panel.markdown}
-            className="prose prose-sm max-w-none text-(--text-secondary)"
-          />
+        {panel.kind === 'explanation' && (
+          <StructuredPanelContent blocks={panel.blocks} />
         )}
 
         {panel.kind === 'activity' && (

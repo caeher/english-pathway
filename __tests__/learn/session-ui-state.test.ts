@@ -54,9 +54,13 @@ describe('resolveSessionVisualState', () => {
     }))).toBe('active_practice')
   })
 
-  it('returns active_practice for grammar and question panels', () => {
+  it('returns active_practice for explanation and question panels', () => {
     expect(resolveSessionVisualState(baseContext({
-      panel: { kind: 'grammar', markdown: '# Tip', title: 'Welcome tip' },
+      panel: {
+        kind: 'explanation',
+        blocks: [{ type: 'paragraph', text: 'Welcome tip' }],
+        title: 'Welcome tip',
+      },
     }))).toBe('active_practice')
 
     expect(resolveSessionVisualState(baseContext({

@@ -58,7 +58,7 @@ export function shouldExpandEngagementMetrics(state: SessionVisualState): boolea
 }
 
 function panelHasPracticeContent(panel: LearnPanelState, activityPhase?: ActivityUiPhase | null): boolean {
-  if (panel.kind === 'grammar' || panel.kind === 'question') return true
+  if (panel.kind === 'explanation' || panel.kind === 'question') return true
   if (panel.kind !== 'activity') return false
   return activityPhase === 'playing' || activityPhase === 'resume-prompt'
 }
@@ -90,7 +90,7 @@ function resolveObjectiveLabel(context: SessionUiContext, state: SessionVisualSt
   const { panel, continuation } = context
 
   if (panel.kind === 'activity') return panel.activity.title
-  if (panel.kind === 'grammar') return panel.title ?? 'Lesson'
+  if (panel.kind === 'explanation') return panel.title ?? 'Lesson'
   if (panel.kind === 'question') return 'Quick check'
 
   if (state === 'pre_session' && continuation) return continuation.title
@@ -130,7 +130,7 @@ function resolveNextActionLabel(context: SessionUiContext, state: SessionVisualS
   if (state === 'active_practice') {
     if (context.activityPhase === 'resume-prompt') return 'Resume or restart the activity'
     if (panel.kind === 'activity') return 'Complete the activity'
-    if (panel.kind === 'grammar') return 'Read the lesson and practise'
+    if (panel.kind === 'explanation') return 'Read the lesson and practise'
     if (panel.kind === 'question') return 'Answer the quick check'
     return 'Follow your tutor and practise'
   }

@@ -8,5 +8,5 @@ export function buildOrchestrationMessage(orchestration?: SessionOrchestration):
   if (orchestration.progress?.lastChapterId) parts.push(`Last chapter studied: ${orchestration.progress.lastChapterId}.`)
   if (orchestration.progress?.lastActivityId) parts.push(`Last activity completed: ${orchestration.progress.lastActivityId}.`)
   if (parts.length === 0) return null
-  return `${parts.join(' ')} Greet me briefly, then use showGrammar to display a one-sentence welcome tip in the learning panel, and ask what English skill I want to practise today.`
+  return `${parts.join(' ')} Greet me briefly, then use showGrammar with a short welcome tip as structured blocks (one paragraph block) in the learning panel, and ask what English skill I want to practise today.`
 }

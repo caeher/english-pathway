@@ -1,12 +1,22 @@
 import { describe, expect, it } from 'vitest'
-import { curriculumContextActionSchema, showActivityActionSchema, showGrammarActionSchema } from '@/lib/tutor/schemas'
+import { curriculumContextActionSchema, showActivityActionSchema, showGrammarActionSchema, showQuestionActionSchema } from '@/lib/tutor/schemas'
 import { getLocalTutorMatches } from '@/lib/tutor/context'
+
+const validBlocks = [
+  { type: 'paragraph' as const, text: 'Use a before consonant sounds.' },
+]
 
 describe('tutor tool contracts', () => {
   it('rejects unsafe or unbounded client tool payloads', () => {
     expect(showActivityActionSchema.safeParse({ activityId: '' }).success).toBe(false)
+    expect(showGrammarActionSchema.safeParse({ blocks: [{ type: 'paragraph', text: '<script>alert(1)</script>' }] }).success).toBe(false)
     expect(showGrammarActionSchema.safeParse({ markdown: '<script>alert(1)</script>' }).success).toBe(false)
+    expect(showQuestionActionSchema.safeParse({ prompt: 'https://evil.com' }).success).toBe(false)
     expect(curriculumContextActionSchema.safeParse({ query: 'x'.repeat(501) }).success).toBe(false)
+  })
+
+  it('accepts structured grammar blocks', () => {
+    expect(showGrammarActionSchema.safeParse({ title: 'Articles', blocks: validBlocks }).success).toBe(true)
   })
 
   it('accepts bounded curriculum lookups', () => {

@@ -1,19 +1,35 @@
 import { z } from 'zod'
+import {
+  isSafePanelText,
+  panelContentSchema,
+  PANEL_CONTENT_LIMITS,
+} from '@/lib/tutor/panel-content'
 
 const safeIdentifier = z.string().min(1).max(160)
+
+const safePanelTextField = (maxLength: number) =>
+  z
+    .string()
+    .min(1)
+    .max(maxLength)
+    .refine((value) => isSafePanelText(value), 'Unsafe panel text')
 
 export const showActivityActionSchema = z.object({
   activityId: safeIdentifier,
 })
 
 export const showGrammarActionSchema = z.object({
-  markdown: z.string().min(1).max(12000).refine((value) => !/<script|javascript:|data:text\/html/i.test(value), 'Unsafe grammar content'),
-  title: z.string().max(160).optional(),
+  title: z
+    .string()
+    .max(PANEL_CONTENT_LIMITS.maxTitleChars)
+    .refine((value) => value.length === 0 || isSafePanelText(value), 'Unsafe panel title')
+    .optional(),
+  blocks: panelContentSchema,
 })
 
 export const showQuestionActionSchema = z.object({
-  prompt: z.string().min(1).max(1000),
-  options: z.array(z.string().min(1).max(300)).max(8).optional(),
+  prompt: safePanelTextField(1000),
+  options: z.array(safePanelTextField(300)).max(8).optional(),
   correctIndex: z.number().int().min(0).max(7).optional(),
 })
 
