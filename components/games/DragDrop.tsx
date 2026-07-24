@@ -6,7 +6,6 @@ import { CheckCircle, RotateCcw } from 'lucide-react'
 import type { MatchPair, SentenceChallenge } from '@/types'
 import type { DragDropProgress } from '@/features/activities/snapshots/drag-drop'
 import { shuffleArray, cn } from '@/lib/helpers'
-import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 
@@ -138,10 +137,7 @@ function MatchDragDrop({
 
   const usedRights = new Set(Object.values(matches))
 
-  if (finished) {
-    const pct = scoreToPercent(matchedCount, pairs.length)
-    return <ActivityResult percent={pct} score={matchedCount} total={pairs.length} onRetry={handleRestart} />
-  }
+  if (finished) return null
 
   return (
     <div role="region" aria-label="Match by dragging or selecting">
@@ -308,10 +304,7 @@ function SentenceDragDrop({
     setFinished(false)
   }
 
-  if (finished) {
-    const pct = scoreToPercent(score, sentences.length)
-    return <ActivityResult percent={pct} score={score} total={sentences.length} onRetry={handleRestart} />
-  }
+  if (finished) return null
 
   return (
     <div role="region" aria-label="Build a sentence by dragging or selecting">

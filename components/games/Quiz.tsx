@@ -6,7 +6,6 @@ import type { QuizProgress } from '@/features/activities/snapshots/quiz'
 import { cn } from '@/lib/helpers'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
-import ActivityResult from './ActivityResult'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
@@ -15,7 +14,7 @@ interface QuizProps {
   questions: QuizQuestion[]
   initialProgress?: QuizProgress
   onProgressChange?: (progress: QuizProgress) => void
-  onComplete?: (result: QuizResult & { scorePercent: number; weakItemIndexes?: number[] }) => void
+  onComplete?: (result: QuizResult & { scorePercent: number; weakItemIndexes?: number[]; explanations?: string[] }) => void
 }
 
 export default function Quiz({ questions, initialProgress, onProgressChange, onComplete }: QuizProps) {
@@ -80,7 +79,7 @@ export default function Quiz({ questions, initialProgress, onProgressChange, onC
     if (current + 1 >= questions.length) {
       setFinished(true)
       const pct = scoreToPercent(score, questions.length)
-      onComplete?.({ score, total: questions.length, scorePercent: pct, weakItemIndexes })
+      onComplete?.({ score, total: questions.length, scorePercent: pct, weakItemIndexes, explanations: wrongExplanations })
     } else {
       setCurrent((c) => c + 1)
       setSelected(null)
@@ -102,18 +101,7 @@ export default function Quiz({ questions, initialProgress, onProgressChange, onC
     setWeakItemIndexes([])
   }
 
-  if (finished) {
-    const pct = scoreToPercent(score, questions.length)
-    return (
-      <ActivityResult
-        percent={pct}
-        score={score}
-        total={questions.length}
-        explanations={wrongExplanations}
-        onRetry={handleRestart}
-      />
-    )
-  }
+  if (finished) return null
 
   return (
     <div className="max-w-2xl mx-auto" role="region" aria-label="Quiz">
