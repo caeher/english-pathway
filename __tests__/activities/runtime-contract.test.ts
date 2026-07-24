@@ -16,7 +16,7 @@ import type { ActivityType } from '@/types'
 
 const activityTypes: ActivityType[] = [
   'quiz', 'flashcard', 'word-match', 'sentence-builder',
-  'word-scramble', 'listening', 'dictation', 'pronunciation', 'drag-drop',
+  'word-scramble', 'listening', 'dictation', 'pronunciation',
 ]
 
 const hintTypes = new Set<ActivityType>(['word-scramble', 'dictation', 'pronunciation'])

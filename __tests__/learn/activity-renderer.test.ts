@@ -12,12 +12,11 @@ const ACTIVITY_TYPES: ActivityType[] = [
   'listening',
   'dictation',
   'pronunciation',
-  'drag-drop',
 ]
 
 describe('ActivityRenderer coverage', () => {
   it('lists all supported activity types', () => {
-    expect(ACTIVITY_TYPES).toHaveLength(9)
+    expect(ACTIVITY_TYPES).toHaveLength(8)
   })
 
   it('delegates post-activity feedback to the learn shell', () => {

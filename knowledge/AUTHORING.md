@@ -33,7 +33,7 @@ Each chapter has an `activities.json` file — a JSON array of activity objects 
 
 **ID convention:** `{chapterId}-{type}` (e.g. `m5-ch3-listening`). Never reuse IDs.
 
-### Standard bundle (7–9 activities per chapter)
+### Standard bundle (6–8 activities per chapter)
 
 | Order | Type | Purpose |
 |-------|------|---------|
@@ -45,7 +45,6 @@ Each chapter has an `activities.json` file — a JSON array of activity objects 
 | 6 | `listening` | 3 items with `audioText` from the chapter |
 | 7 | `dictation` | 3 short phrases aligned to the level |
 | 8 | `pronunciation` | 3–5 phrases with phonetic or usage hints |
-| 9 | `drag-drop` | `match` for vocab or `sentence` for word order |
 
 Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities.json`.
 
@@ -54,9 +53,9 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 | Chapter focus | Priority types |
 |---------------|----------------|
 | Alphabet / sounds / spelling | listening, dictation, pronunciation |
-| Thematic vocabulary | word-match, word-scramble, drag-drop match |
-| Grammar (tenses, modals) | quiz fill-blank, sentence-builder, drag-drop sentence |
-| Connectors / cohesion | quiz, drag-drop sentence, sentence-builder |
+| Thematic vocabulary | word-match, word-scramble |
+| Grammar (tenses, modals) | quiz fill-blank, sentence-builder |
+| Connectors / cohesion | quiz, sentence-builder |
 | Dialogues / situations | listening, pronunciation, quiz |
 | Advanced listening | listening (3+ items), quiz inferential, dictation |
 | Oral/written production | pronunciation, dictation, sentence-builder |
@@ -66,11 +65,11 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 | Module | Audio/oral requirement |
 |--------|------------------------|
 | 1 | listening + pronunciation + dictation in all 6 chapters |
-| 2–7 | listening in ≥4/6 chapters; drag-drop sentence in ≥4/6 |
+| 2–7 | listening in ≥4/6 chapters; sentence-builder in ≥4/6 |
 | 8 | all 4 audio/oral types in all 5 chapters |
 | 9 | listening + pronunciation in all; dictation in ch2, ch4 |
-| 10 | drag-drop sentence in ch3, ch4; listening in narrative chapters |
-| 11 | drag-drop + sentence-builder in all |
+| 10 | sentence-builder in ch3, ch4; listening in narrative chapters |
+| 11 | sentence-builder in all |
 | 12 | listening + pronunciation in all 5 chapters |
 | 13 | listening + pronunciation in ≥4; dictation in email/note chapters |
 | 14 | listening + pronunciation in ≥3 chapters |
@@ -140,43 +139,11 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 }
 ```
 
-**drag-drop match:**
-
-```json
-{
-  "id": "mX-chY-dragdrop",
-  "type": "drag-drop",
-  "title": "Drag and Match",
-  "description": "Drag items to their correct match.",
-  "props": {
-    "mode": "match",
-    "pairs": [{ "left": "Hello", "right": "Hi!" }]
-  }
-}
-```
-
-**drag-drop sentence:**
-
-```json
-{
-  "id": "mX-chY-dragdrop",
-  "type": "drag-drop",
-  "title": "Build the Sentence",
-  "description": "Drag words into the correct order.",
-  "props": {
-    "mode": "sentence",
-    "sentences": [
-      { "prompt": "Greeting:", "words": ["Hello", "how", "are", "you"], "correct": "Hello how are you" }
-    ]
-  }
-}
-```
-
 ### Authoring workflow
 
 1. Read `chapter.md` — extract objectives, tables, example phrases
 2. Compare with existing `activities.json` — note missing types
-3. Add 3–4 new activities (priority: listening, dictation, pronunciation, drag-drop)
+3. Add missing audio/oral activities (priority: listening, dictation, pronunciation)
 4. Run `pnpm activities:validate`
 5. Test: `/learn?moduleId=modulo-X&chapterId=mX-chY&activityId=mX-chY-listening`
 6. Run `pnpm kb:embed` only if chapter markdown changed

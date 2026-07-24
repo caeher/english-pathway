@@ -8,7 +8,7 @@ describe('activity renderer code splitting', () => {
   it('loads each activity renderer dynamically without server rendering it', () => {
     expect(source).toContain("import dynamic from 'next/dynamic'")
     expect(source).toContain('ssr: false')
-    for (const game of ['Quiz', 'Flashcard', 'WordMatch', 'SentenceBuilder', 'WordScramble', 'Listening', 'Dictation', 'Pronunciation', 'DragDrop']) {
+    for (const game of ['Quiz', 'Flashcard', 'WordMatch', 'SentenceBuilder', 'WordScramble', 'Listening', 'Dictation', 'Pronunciation']) {
       expect(source).toContain(`components/games/${game}`)
     }
   })
