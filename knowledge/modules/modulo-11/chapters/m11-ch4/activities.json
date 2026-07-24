@@ -645,51 +645,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m11-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I discovered the truth. →",
-          "words": [
-            "found",
-            "out",
-            "I",
-            "the",
-            "truth"
-          ],
-          "correct": "I found out the truth"
-        },
-        {
-          "prompt": "She tolerates his bad habits. →",
-          "words": [
-            "puts",
-            "up",
-            "with",
-            "She",
-            "his",
-            "bad",
-            "habits"
-          ],
-          "correct": "She puts up with his bad habits"
-        },
-        {
-          "prompt": "We postponed the meeting. →",
-          "words": [
-            "put",
-            "off",
-            "We",
-            "the",
-            "meeting"
-          ],
-          "correct": "We put off the meeting"
-        }
-      ]
-    }
   }
 ]

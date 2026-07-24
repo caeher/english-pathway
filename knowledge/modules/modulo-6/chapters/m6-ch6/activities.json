@@ -361,53 +361,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m6-ch6-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "\"Do you like pizza?\" → Report:",
-          "words": [
-            "He",
-            "asked",
-            "me",
-            "if",
-            "I",
-            "liked",
-            "pizza"
-          ],
-          "correct": "He asked me if I liked pizza"
-        },
-        {
-          "prompt": "\"Open the door\" → Report:",
-          "words": [
-            "She",
-            "told",
-            "me",
-            "to",
-            "open",
-            "the",
-            "door"
-          ],
-          "correct": "She told me to open the door"
-        },
-        {
-          "prompt": "I get up at 7:",
-          "words": [
-            "I",
-            "get",
-            "up",
-            "at",
-            "7"
-          ],
-          "correct": "I get up at 7"
-        }
-      ]
-    }
   }
 ]

@@ -476,46 +476,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m3-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I am studying English:",
-          "words": [
-            "I",
-            "am",
-            "studying",
-            "English"
-          ],
-          "correct": "I am studying English"
-        },
-        {
-          "prompt": "She is cooking dinner:",
-          "words": [
-            "She",
-            "is",
-            "cooking",
-            "dinner"
-          ],
-          "correct": "She is cooking dinner"
-        },
-        {
-          "prompt": "They are playing soccer:",
-          "words": [
-            "They",
-            "are",
-            "playing",
-            "football"
-          ],
-          "correct": "They are playing football"
-        }
-      ]
-    }
   }
 ]

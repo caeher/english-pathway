@@ -586,52 +586,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m9-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Describe tu desayuno:",
-          "words": [
-            "breakfast",
-            "ate",
-            "I",
-            "and",
-            "coffee",
-            "drank"
-          ],
-          "correct": "I ate breakfast and drank coffee"
-        },
-        {
-          "prompt": "Tell what you did:",
-          "words": [
-            "went",
-            "I",
-            "to",
-            "park",
-            "the",
-            "yesterday"
-          ],
-          "correct": "I went to the park yesterday"
-        },
-        {
-          "prompt": "Oracion negativa:",
-          "words": [
-            "didn't",
-            "I",
-            "to",
-            "go",
-            "work",
-            "yesterday"
-          ],
-          "correct": "I didn't go to work yesterday"
-        }
-      ]
-    }
   }
 ]

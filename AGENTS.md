@@ -158,7 +158,7 @@ english-pathway/
 
 ### Activity coverage (77 chapters)
 
-Each chapter has `activities.json` with 7–9 exercises. All 77 chapters include `listening`, `dictation`, `pronunciation`, and `drag-drop` in addition to core types (`quiz`, `flashcard`, `word-match`, `sentence-builder`, `word-scramble`). Authoring guide: [`knowledge/AUTHORING.md`](knowledge/AUTHORING.md). Validate with `pnpm activities:validate`; bulk-enrich missing audio/oral types with `pnpm activities:enrich`.
+Each chapter has `activities.json` with 6–8 exercises. All 77 chapters include `listening`, `dictation`, and `pronunciation` in addition to core types (`quiz`, `flashcard`, `word-match`, `sentence-builder`, `word-scramble`). Authoring guide: [`knowledge/AUTHORING.md`](knowledge/AUTHORING.md). Validate with `pnpm activities:validate`; bulk-enrich missing audio/oral types with `pnpm activities:enrich`.
 
 ---
 

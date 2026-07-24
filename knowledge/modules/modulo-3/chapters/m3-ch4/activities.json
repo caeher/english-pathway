@@ -481,49 +481,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m3-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I will help you (offer):",
-          "words": [
-            "I",
-            "will",
-            "help",
-            "you"
-          ],
-          "correct": "I will help you"
-        },
-        {
-          "prompt": "I'm going to study tonight (plan):",
-          "words": [
-            "I",
-            "am",
-            "going",
-            "to",
-            "study",
-            "tonight"
-          ],
-          "correct": "I am going to study tonight"
-        },
-        {
-          "prompt": "I think it will rain:",
-          "words": [
-            "I",
-            "think",
-            "it",
-            "will",
-            "rain"
-          ],
-          "correct": "I think it will rain"
-        }
-      ]
-    }
   }
 ]

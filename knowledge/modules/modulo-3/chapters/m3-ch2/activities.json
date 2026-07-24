@@ -484,49 +484,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m3-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I drink coffee every morning (routine):",
-          "words": [
-            "I",
-            "drink",
-            "coffee",
-            "every",
-            "morning"
-          ],
-          "correct": "I drink coffee every morning"
-        },
-        {
-          "prompt": "I'm drinking tea now (now):",
-          "words": [
-            "I",
-            "am",
-            "drinking",
-            "tea",
-            "now"
-          ],
-          "correct": "I am drinking tea now"
-        },
-        {
-          "prompt": "She works in a bank (permanent):",
-          "words": [
-            "She",
-            "works",
-            "at",
-            "a",
-            "bank"
-          ],
-          "correct": "She works at a bank"
-        }
-      ]
-    }
   }
 ]

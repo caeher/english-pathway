@@ -525,46 +525,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m9-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Nivel 1 — Afirmativa:",
-          "words": [
-            "is",
-            "She",
-            "dancing"
-          ],
-          "correct": "She is dancing"
-        },
-        {
-          "prompt": "Nivel 1 — Afirmativa:",
-          "words": [
-            "reading",
-            "is",
-            "He",
-            "a",
-            "book"
-          ],
-          "correct": "He is reading a book"
-        },
-        {
-          "prompt": "Nivel 1 — Afirmativa:",
-          "words": [
-            "playing",
-            "are",
-            "The",
-            "children"
-          ],
-          "correct": "The children are playing"
-        }
-      ]
-    }
   }
 ]

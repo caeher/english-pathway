@@ -407,54 +407,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m5-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "When I arrived, she was already gone:",
-          "words": [
-            "When",
-            "I",
-            "arrived,",
-            "she",
-            "had",
-            "already",
-            "left"
-          ],
-          "correct": "When I arrived, she had already left"
-        },
-        {
-          "prompt": "They were finished before the movie started:",
-          "words": [
-            "They",
-            "had",
-            "finished",
-            "before",
-            "the",
-            "movie",
-            "started"
-          ],
-          "correct": "They had finished before the movie started"
-        },
-        {
-          "prompt": "I've never seen snow before:",
-          "words": [
-            "I",
-            "had",
-            "never",
-            "seen",
-            "snow",
-            "before"
-          ],
-          "correct": "I had never seen snow before"
-        }
-      ]
-    }
   }
 ]

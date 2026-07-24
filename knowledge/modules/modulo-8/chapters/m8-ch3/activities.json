@@ -350,36 +350,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m8-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Drag and Match",
-    "description": "Drag items to their correct match.",
-    "props": {
-      "mode": "match",
-      "pairs": [
-        {
-          "left": "/θ/",
-          "right": "think"
-        },
-        {
-          "left": "/ð/",
-          "right": "this"
-        },
-        {
-          "left": "/æ/",
-          "right": "cat"
-        },
-        {
-          "left": "/ʌ/",
-          "right": "cup"
-        },
-        {
-          "left": "/ɪ/",
-          "right": "ship"
-        }
-      ]
-    }
   }
 ]

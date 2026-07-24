@@ -441,51 +441,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m5-ch6-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "The task must be done:",
-          "words": [
-            "The",
-            "homework",
-            "must",
-            "be",
-            "done"
-          ],
-          "correct": "The homework must be done"
-        },
-        {
-          "prompt": "They gave me a gift:",
-          "words": [
-            "I",
-            "was",
-            "given",
-            "a",
-            "present"
-          ],
-          "correct": "I was given a present"
-        },
-        {
-          "prompt": "It is said that he is rich:",
-          "words": [
-            "It",
-            "is",
-            "said",
-            "that",
-            "he",
-            "is",
-            "rich"
-          ],
-          "correct": "It is said that he is rich"
-        }
-      ]
-    }
   }
 ]

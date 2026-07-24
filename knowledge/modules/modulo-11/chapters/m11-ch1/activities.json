@@ -585,51 +585,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m11-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Travel question:",
-          "words": [
-            "you",
-            "Have",
-            "to",
-            "been",
-            "Japan?",
-            "ever"
-          ],
-          "correct": "Have you ever been to Japan?"
-        },
-        {
-          "prompt": "Talk about an achievement:",
-          "words": [
-            "has",
-            "She",
-            "finished",
-            "just",
-            "homework",
-            "her"
-          ],
-          "correct": "She has just finished her homework"
-        },
-        {
-          "prompt": "Speaks from experience:",
-          "words": [
-            "have",
-            "I",
-            "sushi",
-            "tried",
-            "never"
-          ],
-          "correct": "I have never tried sushi"
-        }
-      ]
-    }
   }
 ]

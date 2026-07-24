@@ -478,52 +478,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m8-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "The book is in...",
-          "words": [
-            "The",
-            "book",
-            "is",
-            "on",
-            "the",
-            "table"
-          ],
-          "correct": "The book is on the table"
-        },
-        {
-          "prompt": "The cup is in...",
-          "words": [
-            "The",
-            "cup",
-            "is",
-            "on",
-            "the",
-            "table"
-          ],
-          "correct": "The cup is on the table"
-        },
-        {
-          "prompt": "The plant is in...",
-          "words": [
-            "The",
-            "plant",
-            "is",
-            "in",
-            "the",
-            "pot"
-          ],
-          "correct": "The plant is in the pot"
-        }
-      ]
-    }
   }
 ]

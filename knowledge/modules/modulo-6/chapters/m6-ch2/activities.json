@@ -406,56 +406,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m6-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "If it rains, I'll stay home:",
-          "words": [
-            "If",
-            "it",
-            "rains,",
-            "I",
-            "will",
-            "stay",
-            "home"
-          ],
-          "correct": "If it rains, I will stay home"
-        },
-        {
-          "prompt": "If you study hard, you will pass:",
-          "words": [
-            "If",
-            "you",
-            "study",
-            "hard,",
-            "you",
-            "will",
-            "pass"
-          ],
-          "correct": "If you study hard, you will pass"
-        },
-        {
-          "prompt": "If you don't hurry, you'll be late:",
-          "words": [
-            "If",
-            "they",
-            "don't",
-            "hurry,",
-            "they",
-            "will",
-            "be",
-            "late"
-          ],
-          "correct": "If they don't hurry, they will be late"
-        }
-      ]
-    }
   }
 ]

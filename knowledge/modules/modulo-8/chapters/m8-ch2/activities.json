@@ -482,46 +482,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m8-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Form an affirmative sentence:",
-          "words": [
-            "breakfast",
-            "eats",
-            "She"
-          ],
-          "correct": "She eats breakfast"
-        },
-        {
-          "prompt": "Form an affirmative sentence:",
-          "words": [
-            "to",
-            "go",
-            "school",
-            "They"
-          ],
-          "correct": "They go to school"
-        },
-        {
-          "prompt": "Form a negative sentence:",
-          "words": [
-            "like",
-            "not",
-            "does",
-            "He",
-            "coffee"
-          ],
-          "correct": "He does not like coffee"
-        }
-      ]
-    }
   }
 ]

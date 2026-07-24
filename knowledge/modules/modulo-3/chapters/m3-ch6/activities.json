@@ -482,50 +482,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m3-ch6-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I want to travel to Japan:",
-          "words": [
-            "I",
-            "want",
-            "to",
-            "travel",
-            "to",
-            "Japan"
-          ],
-          "correct": "I want to travel to Japan"
-        },
-        {
-          "prompt": "Me gusta nadar:",
-          "words": [
-            "I",
-            "like",
-            "swimming"
-          ],
-          "correct": "I like swimming"
-        },
-        {
-          "prompt": "I need to study for the exam:",
-          "words": [
-            "I",
-            "need",
-            "to",
-            "study",
-            "for",
-            "the",
-            "exam"
-          ],
-          "correct": "I need to study for the exam"
-        }
-      ]
-    }
   }
 ]

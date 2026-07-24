@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest'
 import { activityRegistry } from '@/features/activities/registry'
 import {
   dictationSnapshot,
-  dragDropSnapshot,
   flashcardSnapshot,
   listeningSnapshot,
   pronunciationSnapshot,
@@ -25,7 +24,6 @@ describe('activity snapshot contracts', () => {
     expect(activityRegistry.listening.snapshot).toBe(listeningSnapshot)
     expect(activityRegistry.dictation.snapshot).toBe(dictationSnapshot)
     expect(activityRegistry.pronunciation.snapshot).toBe(pronunciationSnapshot)
-    expect(activityRegistry['drag-drop'].snapshot).toBe(dragDropSnapshot)
   })
 
   it('summarizes representative payloads for each contract', () => {
@@ -36,7 +34,6 @@ describe('activity snapshot contracts', () => {
     expect(listeningSnapshot.summarize({ current: 0, selected: 1, answered: true, score: 1, weakItemIndexes: [] })).toContain('Audio')
     expect(dictationSnapshot.summarize({ current: 0, value: 'hello', answered: false, score: 0, weakItemIndexes: [] })).toContain('Dictation')
     expect(pronunciationSnapshot.summarize({ current: 1, bestScores: [80, 0] })).toContain('Phrase')
-    expect(dragDropSnapshot.summarize({ mode: 'match', matches: { '0': 'cat' }, matchedCount: 1 })).toContain('pairs matched')
   })
 
   it('rejects pronunciation payloads that include transcripts', () => {

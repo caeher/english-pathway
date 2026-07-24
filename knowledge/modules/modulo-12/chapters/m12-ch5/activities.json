@@ -489,58 +489,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m12-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Friend says: \"I just booked a trip to Japan!\"",
-          "words": [
-            "That's",
-            "amazing!",
-            "We",
-            "should",
-            "try",
-            "authentic",
-            "sushi!"
-          ],
-          "correct": "That's amazing! We should try authentic sushi!"
-        },
-        {
-          "prompt": "Colleague says: \"We should organize a team dinner.\"",
-          "words": [
-            "idea!",
-            "Great",
-            "And",
-            "we",
-            "could",
-            "try",
-            "that",
-            "new",
-            "Italian",
-            "place."
-          ],
-          "correct": "Great idea! And we could try that new Italian place."
-        },
-        {
-          "prompt": "Friend says: \"I'm thinking about learning guitar.\"",
-          "words": [
-            "That's",
-            "awesome!",
-            "We",
-            "could",
-            "take",
-            "lessons",
-            "together!"
-          ],
-          "correct": "That's awesome! We could take lessons together!"
-        }
-      ]
-    }
   }
 ]

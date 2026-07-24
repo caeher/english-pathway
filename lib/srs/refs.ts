@@ -17,8 +17,5 @@ export function getReviewContentRefs(activity: ChapterActivity, weakItemIndexes?
     case 'listening': return pickWeak((props as unknown as { items: { id: string }[] }).items.map((item) => `${activity.id}:listening:${item.id}`))
     case 'dictation': return pickWeak((props as unknown as { items: { id: string }[] }).items.map((item) => `${activity.id}:dictation:${item.id}`))
     case 'pronunciation': return pickWeak((props as unknown as { items: { id: string }[] }).items.map((item) => `${activity.id}:pronunciation:${item.id}`))
-    case 'drag-drop': return (props as unknown as { mode: 'match' | 'sentence'; pairs?: unknown[]; sentences?: unknown[] }).mode === 'sentence'
-      ? pickWeak(((props as unknown as { sentences?: unknown[] }).sentences ?? []).map((_, index) => `${activity.id}:drag-sentence:${index}`))
-      : pickWeak(((props as unknown as { pairs?: unknown[] }).pairs ?? []).map((_, index) => `${activity.id}:drag-match:${index}`))
   }
 }

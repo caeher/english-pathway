@@ -30,6 +30,22 @@ function source(activity: ChapterActivity, chapter: Chapter, module: Module, uni
   return { contentRef: `${activity.id}:${unit}`, content }
 }
 
+export function normalizeLegacyContentRef(contentRef: string): string {
+  const dragMatch = contentRef.match(/^(.+)-dragdrop:drag-match:(\d+)$/)
+  if (dragMatch) {
+    const [, chapterPrefix, index] = dragMatch
+    return `${chapterPrefix}-match:match:${index}`
+  }
+
+  const dragSentence = contentRef.match(/^(.+)-dragdrop:drag-sentence:(\d+)$/)
+  if (dragSentence) {
+    const [, chapterPrefix, index] = dragSentence
+    return `${chapterPrefix}-sentence:sentence:${index}`
+  }
+
+  return contentRef
+}
+
 export function extractReviewItems(activity: ChapterActivity, chapter: Chapter, module: Module): ReviewSourceItem[] {
   const parsed = validateActivityProps(activity.type as ActivityTypeKey, activity.props)
   if (!parsed.success) return []
@@ -56,18 +72,15 @@ export function extractReviewItems(activity: ChapterActivity, chapter: Chapter, 
       return (props as unknown as { items: DictationItem[] }).items.map((item) => source(activity, chapter, module, `dictation:${item.id}`, item.hint ?? 'Write what you hear', item.audioText))
     case 'pronunciation':
       return (props as unknown as { items: PronunciationItem[] }).items.map((item) => source(activity, chapter, module, `pronunciation:${item.id}`, item.hint ?? 'Say this phrase', item.phrase))
-    case 'drag-drop':
-      return (props as unknown as { mode: 'match' | 'sentence'; pairs?: MatchPair[]; sentences?: SentenceChallenge[] }).mode === 'sentence'
-        ? ((props as unknown as { sentences?: SentenceChallenge[] }).sentences ?? []).map((sentence, index) => source(activity, chapter, module, `drag-sentence:${index}`, sentence.prompt ?? sentence.words.join(' '), sentence.correct))
-        : ((props as unknown as { pairs?: MatchPair[] }).pairs ?? []).map((pair, index) => source(activity, chapter, module, `drag-match:${index}`, pair.left, pair.right))
   }
 }
 
 export function findReviewItem(contentRef: string): ReviewSourceItem | null {
+  const normalizedRef = normalizeLegacyContentRef(contentRef)
   for (const curriculumModule of loadAllModules()) {
     for (const chapter of curriculumModule.chapters) {
       for (const activity of chapter.activities) {
-        const item = extractReviewItems(activity, chapter, curriculumModule).find((candidate) => candidate.contentRef === contentRef)
+        const item = extractReviewItems(activity, chapter, curriculumModule).find((candidate) => candidate.contentRef === normalizedRef)
         if (item) return item
       }
     }

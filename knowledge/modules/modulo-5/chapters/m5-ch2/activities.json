@@ -454,48 +454,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m5-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I have visited Paris (ever):",
-          "words": [
-            "I",
-            "have",
-            "visited",
-            "Paris"
-          ],
-          "correct": "I have visited Paris"
-        },
-        {
-          "prompt": "I visited Paris last year:",
-          "words": [
-            "I",
-            "visited",
-            "Paris",
-            "last",
-            "year"
-          ],
-          "correct": "I visited Paris last year"
-        },
-        {
-          "prompt": "Have you ever eaten sushi?:",
-          "words": [
-            "Have",
-            "you",
-            "ever",
-            "eaten",
-            "sushi?"
-          ],
-          "correct": "Have you ever eaten sushi?"
-        }
-      ]
-    }
   }
 ]

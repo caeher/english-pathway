@@ -544,52 +544,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m11-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Activa → Pasiva: \"The chef cooks the meal.\"",
-          "words": [
-            "The",
-            "meal",
-            "is",
-            "cooked",
-            "by",
-            "the",
-            "chef"
-          ],
-          "correct": "The meal is cooked by the chef"
-        },
-        {
-          "prompt": "Activa → Pasiva: \"They built the bridge in 1950.\"",
-          "words": [
-            "The",
-            "bridge",
-            "was",
-            "built",
-            "in",
-            "1950"
-          ],
-          "correct": "The bridge was built in 1950"
-        },
-        {
-          "prompt": "Pasiva → Activa: \"The book was written by J.K. Rowling.\"",
-          "words": [
-            "J.K.",
-            "Rowling",
-            "wrote",
-            "the",
-            "book"
-          ],
-          "correct": "J.K. Rowling wrote the book"
-        }
-      ]
-    }
   }
 ]

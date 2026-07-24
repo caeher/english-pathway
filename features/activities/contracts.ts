@@ -58,18 +58,6 @@ export const activityPropsSchemas = {
   pronunciation: z.object({
     items: z.array(z.object({ id: z.string().min(1), phrase: z.string().min(1), hint: z.string().optional() })).min(1),
   }),
-  'drag-drop': z.object({
-    mode: z.enum(['match', 'sentence']).default('match'),
-    pairs: z.array(pairSchema).optional(),
-    sentences: z.array(sentenceChallengeSchema).optional(),
-  }).superRefine((value, context) => {
-    if (value.mode === 'match' && (!value.pairs || value.pairs.length < 2)) {
-      context.addIssue({ code: 'custom', path: ['pairs'], message: 'At least two pairs are required for match mode.' })
-    }
-    if (value.mode === 'sentence' && (!value.sentences || value.sentences.length < 1)) {
-      context.addIssue({ code: 'custom', path: ['sentences'], message: 'At least one sentence is required for sentence mode.' })
-    }
-  }),
 } as const
 
 export type ActivityTypeKey = keyof typeof activityPropsSchemas
@@ -92,7 +80,6 @@ export const chapterActivitySchema = z.discriminatedUnion('type', [
   activityBase.extend({ type: z.literal('listening'), props: activityPropsSchemas.listening }),
   activityBase.extend({ type: z.literal('dictation'), props: activityPropsSchemas.dictation }),
   activityBase.extend({ type: z.literal('pronunciation'), props: activityPropsSchemas.pronunciation }),
-  activityBase.extend({ type: z.literal('drag-drop'), props: activityPropsSchemas['drag-drop'] }),
 ])
 
 export type ChapterActivityInput = z.infer<typeof chapterActivitySchema>

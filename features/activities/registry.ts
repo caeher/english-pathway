@@ -9,7 +9,6 @@ import {
 import type { AnyActivitySnapshotContract } from './snapshot'
 import {
   dictationSnapshot,
-  dragDropSnapshot,
   flashcardSnapshot,
   listeningSnapshot,
   pronunciationSnapshot,
@@ -87,7 +86,6 @@ export const activityRegistry = {
   listening: definition('listening', createActivityCapabilities('audio', 'itemFeedback'), listeningSnapshot),
   dictation: definition('dictation', createHintActivityCapabilities(3, 'audio'), dictationSnapshot),
   pronunciation: definition('pronunciation', createHintActivityCapabilities(3, 'microphone'), pronunciationSnapshot),
-  'drag-drop': definition('drag-drop', createActivityCapabilities(), dragDropSnapshot),
 } satisfies Record<ActivityTypeKey, ActivityDefinition>
 
 export function getActivityDefinition(type: string): ActivityDefinition | null {

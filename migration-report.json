@@ -1,0 +1,626 @@
+{
+  "generatedAt": "2026-07-24T05:59:15.905Z",
+  "dryRun": false,
+  "chaptersProcessed": 77,
+  "removed": 1,
+  "merged": 76,
+  "skipped": 0,
+  "chapters": [
+    {
+      "chapterId": "m1-ch1",
+      "moduleId": "modulo-1",
+      "dragDropId": "m1-ch1-dragdrop",
+      "mode": "match",
+      "action": "merged",
+      "detail": "Merged 4 unique pair(s) into word-match"
+    },
+    {
+      "chapterId": "m1-ch2",
+      "moduleId": "modulo-1",
+      "dragDropId": "m1-ch2-dragdrop",
+      "mode": "match",
+      "action": "merged",
+      "detail": "Merged 3 unique pair(s) into word-match"
+    },
+    {
+      "chapterId": "m1-ch3",
+      "moduleId": "modulo-1",
+      "dragDropId": "m1-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 2 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m1-ch4",
+      "moduleId": "modulo-1",
+      "dragDropId": "m1-ch4-dragdrop",
+      "mode": "match",
+      "action": "merged",
+      "detail": "Merged 5 unique pair(s) into word-match"
+    },
+    {
+      "chapterId": "m1-ch5",
+      "moduleId": "modulo-1",
+      "dragDropId": "m1-ch5-dragdrop",
+      "mode": "match",
+      "action": "merged",
+      "detail": "Merged 5 unique pair(s) into word-match"
+    },
+    {
+      "chapterId": "m1-ch6",
+      "moduleId": "modulo-1",
+      "dragDropId": "m1-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 1 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m10-ch1",
+      "moduleId": "modulo-10",
+      "dragDropId": "m10-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m10-ch2",
+      "moduleId": "modulo-10",
+      "dragDropId": "m10-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m10-ch3",
+      "moduleId": "modulo-10",
+      "dragDropId": "m10-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m10-ch4",
+      "moduleId": "modulo-10",
+      "dragDropId": "m10-ch4-dragdrop",
+      "mode": "match",
+      "action": "merged",
+      "detail": "Merged 0 unique pair(s) into word-match"
+    },
+    {
+      "chapterId": "m10-ch5",
+      "moduleId": "modulo-10",
+      "dragDropId": "m10-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m11-ch1",
+      "moduleId": "modulo-11",
+      "dragDropId": "m11-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m11-ch2",
+      "moduleId": "modulo-11",
+      "dragDropId": "m11-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m11-ch3",
+      "moduleId": "modulo-11",
+      "dragDropId": "m11-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m11-ch4",
+      "moduleId": "modulo-11",
+      "dragDropId": "m11-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m11-ch5",
+      "moduleId": "modulo-11",
+      "dragDropId": "m11-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m12-ch1",
+      "moduleId": "modulo-12",
+      "dragDropId": "m12-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m12-ch2",
+      "moduleId": "modulo-12",
+      "dragDropId": "m12-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m12-ch3",
+      "moduleId": "modulo-12",
+      "dragDropId": "m12-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m12-ch4",
+      "moduleId": "modulo-12",
+      "dragDropId": "m12-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m12-ch5",
+      "moduleId": "modulo-12",
+      "dragDropId": "m12-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m13-ch1",
+      "moduleId": "modulo-13",
+      "dragDropId": "m13-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m13-ch2",
+      "moduleId": "modulo-13",
+      "dragDropId": "m13-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m13-ch3",
+      "moduleId": "modulo-13",
+      "dragDropId": "m13-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m13-ch4",
+      "moduleId": "modulo-13",
+      "dragDropId": "m13-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m13-ch5",
+      "moduleId": "modulo-13",
+      "dragDropId": "m13-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m14-ch1",
+      "moduleId": "modulo-14",
+      "dragDropId": "m14-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m14-ch2",
+      "moduleId": "modulo-14",
+      "dragDropId": "m14-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m14-ch3",
+      "moduleId": "modulo-14",
+      "dragDropId": "m14-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m14-ch4",
+      "moduleId": "modulo-14",
+      "dragDropId": "m14-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m14-ch5",
+      "moduleId": "modulo-14",
+      "dragDropId": "m14-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m2-ch1",
+      "moduleId": "modulo-2",
+      "dragDropId": "m2-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m2-ch2",
+      "moduleId": "modulo-2",
+      "dragDropId": "m2-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m2-ch3",
+      "moduleId": "modulo-2",
+      "dragDropId": "m2-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m2-ch4",
+      "moduleId": "modulo-2",
+      "dragDropId": "m2-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m2-ch5",
+      "moduleId": "modulo-2",
+      "dragDropId": "m2-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m2-ch6",
+      "moduleId": "modulo-2",
+      "dragDropId": "m2-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m3-ch1",
+      "moduleId": "modulo-3",
+      "dragDropId": "m3-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m3-ch2",
+      "moduleId": "modulo-3",
+      "dragDropId": "m3-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m3-ch3",
+      "moduleId": "modulo-3",
+      "dragDropId": "m3-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m3-ch4",
+      "moduleId": "modulo-3",
+      "dragDropId": "m3-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m3-ch5",
+      "moduleId": "modulo-3",
+      "dragDropId": "m3-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m3-ch6",
+      "moduleId": "modulo-3",
+      "dragDropId": "m3-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m4-ch1",
+      "moduleId": "modulo-4",
+      "dragDropId": "m4-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m4-ch2",
+      "moduleId": "modulo-4",
+      "dragDropId": "m4-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m4-ch3",
+      "moduleId": "modulo-4",
+      "dragDropId": "m4-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m4-ch4",
+      "moduleId": "modulo-4",
+      "dragDropId": "m4-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m4-ch5",
+      "moduleId": "modulo-4",
+      "dragDropId": "m4-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m4-ch6",
+      "moduleId": "modulo-4",
+      "dragDropId": "m4-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m5-ch1",
+      "moduleId": "modulo-5",
+      "dragDropId": "m5-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m5-ch2",
+      "moduleId": "modulo-5",
+      "dragDropId": "m5-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m5-ch3",
+      "moduleId": "modulo-5",
+      "dragDropId": "m5-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m5-ch4",
+      "moduleId": "modulo-5",
+      "dragDropId": "m5-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m5-ch5",
+      "moduleId": "modulo-5",
+      "dragDropId": "m5-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m5-ch6",
+      "moduleId": "modulo-5",
+      "dragDropId": "m5-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m6-ch1",
+      "moduleId": "modulo-6",
+      "dragDropId": "m6-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m6-ch2",
+      "moduleId": "modulo-6",
+      "dragDropId": "m6-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m6-ch3",
+      "moduleId": "modulo-6",
+      "dragDropId": "m6-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m6-ch4",
+      "moduleId": "modulo-6",
+      "dragDropId": "m6-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "removed",
+      "detail": "Sentences identical to sentence-builder"
+    },
+    {
+      "chapterId": "m6-ch5",
+      "moduleId": "modulo-6",
+      "dragDropId": "m6-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m6-ch6",
+      "moduleId": "modulo-6",
+      "dragDropId": "m6-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m7-ch1",
+      "moduleId": "modulo-7",
+      "dragDropId": "m7-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m7-ch2",
+      "moduleId": "modulo-7",
+      "dragDropId": "m7-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m7-ch3",
+      "moduleId": "modulo-7",
+      "dragDropId": "m7-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m7-ch4",
+      "moduleId": "modulo-7",
+      "dragDropId": "m7-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m7-ch5",
+      "moduleId": "modulo-7",
+      "dragDropId": "m7-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m7-ch6",
+      "moduleId": "modulo-7",
+      "dragDropId": "m7-ch6-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m8-ch1",
+      "moduleId": "modulo-8",
+      "dragDropId": "m8-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m8-ch2",
+      "moduleId": "modulo-8",
+      "dragDropId": "m8-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m8-ch3",
+      "moduleId": "modulo-8",
+      "dragDropId": "m8-ch3-dragdrop",
+      "mode": "match",
+      "action": "merged",
+      "detail": "Merged 0 unique pair(s) into word-match"
+    },
+    {
+      "chapterId": "m8-ch4",
+      "moduleId": "modulo-8",
+      "dragDropId": "m8-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m8-ch5",
+      "moduleId": "modulo-8",
+      "dragDropId": "m8-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m9-ch1",
+      "moduleId": "modulo-9",
+      "dragDropId": "m9-ch1-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m9-ch2",
+      "moduleId": "modulo-9",
+      "dragDropId": "m9-ch2-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m9-ch3",
+      "moduleId": "modulo-9",
+      "dragDropId": "m9-ch3-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m9-ch4",
+      "moduleId": "modulo-9",
+      "dragDropId": "m9-ch4-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    },
+    {
+      "chapterId": "m9-ch5",
+      "moduleId": "modulo-9",
+      "dragDropId": "m9-ch5-dragdrop",
+      "mode": "sentence",
+      "action": "merged",
+      "detail": "Merged 0 unique sentence(s) into sentence-builder"
+    }
+  ]
+}

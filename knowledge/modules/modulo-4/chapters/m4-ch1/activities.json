@@ -471,46 +471,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m4-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Ella canta bien:",
-          "words": [
-            "She",
-            "sings",
-            "well"
-          ],
-          "correct": "She sings well"
-        },
-        {
-          "prompt": "He is a good driver:",
-          "words": [
-            "He",
-            "is",
-            "a",
-            "good",
-            "driver"
-          ],
-          "correct": "He is a good driver"
-        },
-        {
-          "prompt": "She speaks Spanish fluently:",
-          "words": [
-            "She",
-            "speaks",
-            "Spanish",
-            "fluently"
-          ],
-          "correct": "She speaks Spanish fluently"
-        }
-      ]
-    }
   }
 ]

@@ -464,47 +464,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m2-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "She works in a hospital:",
-          "words": [
-            "works",
-            "She",
-            "in",
-            "a",
-            "hospital"
-          ],
-          "correct": "She works in a hospital"
-        },
-        {
-          "prompt": "I don't drink coffee:",
-          "words": [
-            "don't",
-            "I",
-            "drink",
-            "coffee"
-          ],
-          "correct": "I don't drink coffee"
-        },
-        {
-          "prompt": "Do you study English?:",
-          "words": [
-            "you",
-            "Do",
-            "study",
-            "English?"
-          ],
-          "correct": "Do you study English?"
-        }
-      ]
-    }
   }
 ]

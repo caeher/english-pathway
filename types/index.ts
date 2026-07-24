@@ -78,7 +78,6 @@ export type ActivityType =
   | 'listening'
   | 'dictation'
   | 'pronunciation'
-  | 'drag-drop'
 
 // ── Chapter / Module ──
 export interface ChapterActivity {

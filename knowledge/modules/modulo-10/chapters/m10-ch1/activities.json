@@ -453,50 +453,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m10-ch1-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Express your plan for the weekend",
-          "words": [
-            "going",
-            "I'm",
-            "the",
-            "to",
-            "visit",
-            "museum"
-          ],
-          "correct": "I'm going to visit the museum"
-        },
-        {
-          "prompt": "Make a promise to your friend",
-          "words": [
-            "will",
-            "I",
-            "you",
-            "help",
-            "tomorrow"
-          ],
-          "correct": "I will help you tomorrow"
-        },
-        {
-          "prompt": "Predict the weather based on dark clouds",
-          "words": [
-            "to",
-            "going",
-            "is",
-            "rain",
-            "It"
-          ],
-          "correct": "It is going to rain"
-        }
-      ]
-    }
   }
 ]

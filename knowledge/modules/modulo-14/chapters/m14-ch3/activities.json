@@ -472,57 +472,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m14-ch3-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "[A1] Make a simple sentence about your routine",
-          "words": [
-            "I",
-            "go",
-            "to",
-            "school",
-            "every",
-            "day."
-          ],
-          "correct": "I go to school every day."
-        },
-        {
-          "prompt": "[A2] Describe something that happened yesterday",
-          "words": [
-            "Yesterday",
-            "I",
-            "went",
-            "to",
-            "the",
-            "park",
-            "with",
-            "my",
-            "friends."
-          ],
-          "correct": "Yesterday I went to the park with my friends."
-        },
-        {
-          "prompt": "[B1] Create a first conditional sentence",
-          "words": [
-            "If",
-            "it",
-            "rains",
-            "tomorrow,",
-            "I",
-            "will",
-            "stay",
-            "home."
-          ],
-          "correct": "If it rains tomorrow, I will stay home."
-        }
-      ]
-    }
   }
 ]

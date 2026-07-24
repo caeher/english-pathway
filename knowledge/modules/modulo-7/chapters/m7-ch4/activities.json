@@ -457,56 +457,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m7-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "The exam was very easy:",
-          "words": [
-            "The",
-            "test",
-            "was",
-            "a",
-            "piece",
-            "of",
-            "cake"
-          ],
-          "correct": "The test was a piece of cake"
-        },
-        {
-          "prompt": "No me siento bien hoy:",
-          "words": [
-            "I",
-            "am",
-            "feeling",
-            "under",
-            "the",
-            "weather",
-            "today"
-          ],
-          "correct": "I am feeling under the weather today"
-        },
-        {
-          "prompt": "That car cost a lot of money:",
-          "words": [
-            "That",
-            "car",
-            "cost",
-            "an",
-            "arm",
-            "and",
-            "a",
-            "leg"
-          ],
-          "correct": "That car cost an arm and a leg"
-        }
-      ]
-    }
   }
 ]

@@ -475,45 +475,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m3-ch5-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Puedo nadar:",
-          "words": [
-            "I",
-            "can",
-            "swim"
-          ],
-          "correct": "I can swim"
-        },
-        {
-          "prompt": "Ella no puede conducir:",
-          "words": [
-            "She",
-            "can't",
-            "drive"
-          ],
-          "correct": "She can't drive"
-        },
-        {
-          "prompt": "Can I use your phone?:",
-          "words": [
-            "Can",
-            "I",
-            "use",
-            "your",
-            "phone?"
-          ],
-          "correct": "Can I use your phone?"
-        }
-      ]
-    }
   }
 ]

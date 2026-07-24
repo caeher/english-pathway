@@ -479,49 +479,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m2-ch4-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "Did you go to the cinema?:",
-          "words": [
-            "Did",
-            "you",
-            "go",
-            "to",
-            "the",
-            "cinema?"
-          ],
-          "correct": "Did you go to the cinema?"
-        },
-        {
-          "prompt": "She didn't eat anything:",
-          "words": [
-            "She",
-            "didn't",
-            "eat",
-            "anything"
-          ],
-          "correct": "She didn't eat anything"
-        },
-        {
-          "prompt": "Did he talk to her?",
-          "words": [
-            "Did",
-            "he",
-            "speak",
-            "to",
-            "her?"
-          ],
-          "correct": "Did he speak to her?"
-        }
-      ]
-    }
   }
 ]

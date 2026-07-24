@@ -464,47 +464,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "m2-ch2-dragdrop",
-    "type": "drag-drop",
-    "title": "Build the Sentence",
-    "description": "Drag words into the correct order.",
-    "props": {
-      "mode": "sentence",
-      "sentences": [
-        {
-          "prompt": "I always get up early:",
-          "words": [
-            "always",
-            "I",
-            "wake",
-            "up",
-            "early"
-          ],
-          "correct": "I always wake up early"
-        },
-        {
-          "prompt": "Ella generalmente desayuna:",
-          "words": [
-            "usually",
-            "She",
-            "has",
-            "breakfast"
-          ],
-          "correct": "She usually has breakfast"
-        },
-        {
-          "prompt": "Sometimes like out:",
-          "words": [
-            "sometimes",
-            "I",
-            "eat",
-            "out"
-          ],
-          "correct": "I sometimes eat out"
-        }
-      ]
-    }
   }
 ]

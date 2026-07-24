@@ -1,6 +1,6 @@
 /**
  * Enriches chapter activities.json files with listening, dictation,
- * pronunciation, and drag-drop activities derived from existing content.
+ * and pronunciation activities derived from existing content.
  *
  * Usage: pnpm tsx scripts/enrich-activities.ts [--dry-run]
  */
@@ -21,7 +21,7 @@ type Activity = {
   props: Record<string, unknown>
 }
 
-const AUDIO_TYPES = ['listening', 'dictation', 'pronunciation', 'drag-drop'] as const
+const AUDIO_TYPES = ['listening', 'dictation', 'pronunciation'] as const
 
 function findActivityFiles(directory: string): string[] {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -69,28 +69,6 @@ function extractPhrases(activities: Activity[]): string[] {
   }
 
   return [...phrases].filter((p) => p.length >= 2 && p.length <= 60)
-}
-
-function extractPairs(activities: Activity[]): { left: string; right: string }[] {
-  const activity = activities.find((a) => a.type === 'word-match')
-  if (!activity) return []
-  return ((activity.props.pairs ?? []) as { left: string; right: string }[]).slice(0, 6)
-}
-
-function extractSentences(activities: Activity[]): { prompt?: string; words: string[]; correct: string }[] {
-  const activity = activities.find((a) => a.type === 'sentence-builder')
-  if (!activity) return []
-  return ((activity.props.sentences ?? []) as { prompt?: string; words: string[]; correct: string }[]).slice(0, 3)
-}
-
-function shuffleWords(sentence: string): string[] {
-  const words = sentence.replace(/[.!?]+$/, '').split(/\s+/)
-  const shuffled = [...words]
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
-  }
-  return shuffled.length >= 2 ? shuffled : words
 }
 
 function buildListening(chapterId: string, phrases: string[], title: string): Activity {
@@ -149,42 +127,6 @@ function buildPronunciation(chapterId: string, phrases: string[]): Activity {
   }
 }
 
-function buildDragDrop(chapterId: string, pairs: { left: string; right: string }[], sentences: { prompt?: string; words: string[]; correct: string }[]): Activity {
-  if (sentences.length >= 2) {
-    return {
-      id: `${chapterId}-dragdrop`,
-      type: 'drag-drop',
-      title: 'Build the Sentence',
-      description: 'Drag words into the correct order.',
-      props: {
-        mode: 'sentence',
-        sentences: sentences.map((s) => ({
-          prompt: s.prompt ?? 'Order the words:',
-          words: s.words.length >= 2 ? s.words : shuffleWords(s.correct),
-          correct: s.correct,
-        })),
-      },
-    }
-  }
-
-  const usePairs = pairs.length >= 2
-    ? pairs.slice(0, 5)
-    : [
-        { left: 'Hello', right: 'Greeting' },
-        { left: 'Goodbye', right: 'Farewell' },
-        { left: 'Thank you', right: 'Gratitude' },
-        { left: 'Please', right: 'Politeness' },
-      ]
-
-  return {
-    id: `${chapterId}-dragdrop`,
-    type: 'drag-drop',
-    title: 'Drag and Match',
-    description: 'Drag items to their correct match.',
-    props: { mode: 'match', pairs: usePairs },
-  }
-}
-
 function titleCase(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
@@ -207,8 +149,6 @@ function enrichFile(filePath: string): boolean {
   if (missing.length === 0) return false
 
   const phrases = extractPhrases(activities)
-  const pairs = extractPairs(activities)
-  const sentences = extractSentences(activities)
   const title = chapterTitle(activities)
 
   const newActivities: Activity[] = []
@@ -216,7 +156,6 @@ function enrichFile(filePath: string): boolean {
   if (missing.includes('listening')) newActivities.push(buildListening(chapterId, phrases, title))
   if (missing.includes('dictation')) newActivities.push(buildDictation(chapterId, phrases))
   if (missing.includes('pronunciation')) newActivities.push(buildPronunciation(chapterId, phrases))
-  if (missing.includes('drag-drop')) newActivities.push(buildDragDrop(chapterId, pairs, sentences))
 
   const enriched = [...activities, ...newActivities]
   const issues = validateActivityList(moduleId, chapterId, enriched)
