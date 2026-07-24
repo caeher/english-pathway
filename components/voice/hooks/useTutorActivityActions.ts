@@ -10,6 +10,7 @@ import { recordEngagementSession } from '@/lib/engagement/client'
 import type { ActivityType } from '@/types'
 import { saveActivityProgress } from '@/features/progress/client'
 import { learnSessionActions } from '@/stores/useLearnSessionStore'
+import { formatFollowUpTutorMessage } from '@/lib/learn/follow-up-planner'
 import { saveTutorMemory } from '@/lib/tutor/client'
 
 export function useTutorActivityActions(sendMessage?: (message: string) => boolean | void) {
@@ -30,7 +31,10 @@ export function useTutorActivityActions(sendMessage?: (message: string) => boole
   const onActivityComplete = useCallback((result: ActivityCompleteResult) => {
     const pct = result.scorePercent ?? Math.round((result.score / result.total) * 100)
     learnSessionActions.recordActivityResult({ activityId: result.activityId, scorePercent: pct, completedAt: new Date().toISOString() })
-    deliverMessage(`I finished activity ${result.activityId} (${result.activityType}) with ${pct}% score.`)
+    const followUpMessage = result.followUpDecision
+      ? formatFollowUpTutorMessage(result.followUpDecision)
+      : `I finished activity ${result.activityId} (${result.activityType}) with ${pct}% score.`
+    deliverMessage(followUpMessage)
     trackEvent('activity_complete', { activity_id: result.activityId, activity_type: result.activityType, score_percent: pct })
     if (result.chapterId && result.moduleId) {
       void saveActivityProgress({ activityId: result.activityId, activityType: result.activityType, chapterId: result.chapterId, moduleId: result.moduleId, status: 'completed', score: pct, attempts: 1 }).then((saved) => {
