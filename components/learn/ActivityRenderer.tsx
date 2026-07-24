@@ -142,7 +142,13 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
       cards={(props as { cards: FlashcardData[] }).cards}
       initialProgress={progressProps.initialProgress as never}
       onProgressChange={progressProps.onProgressChange as never}
-      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
+      onComplete={(result) => onComplete({
+        score: result.score,
+        total: result.total,
+        scorePercent: result.scorePercent,
+        weakItemIndexes: result.weakItemIndexes,
+        metrics: result.metrics,
+      })}
     />
   ),
   'word-match': (props, onComplete, progressProps) => (
