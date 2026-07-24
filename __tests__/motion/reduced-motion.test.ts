@@ -10,7 +10,7 @@ describe('reduced motion defaults', () => {
   })
 
   it('applies the shared preference to animation-heavy surfaces', () => {
-    for (const path of ['components/Header.tsx', 'components/voice/MicrophoneVisualizer.tsx', 'components/games/ActivityResult.tsx', 'components/games/Flashcard.tsx', 'components/games/Quiz.tsx', 'components/games/SentenceBuilder.tsx', 'components/games/SVGInteractive.tsx']) {
+    for (const path of ['components/Header.tsx', 'components/voice/MicrophoneVisualizer.tsx', 'components/games/ActivityResult.tsx', 'components/games/Flashcard.tsx', 'components/games/Quiz.tsx', 'components/games/SentenceBuilder.tsx', 'components/games/WordMatch.tsx']) {
       expect(readFileSync(resolve(process.cwd(), path), 'utf8')).toContain('useReducedMotion')
     }
   })

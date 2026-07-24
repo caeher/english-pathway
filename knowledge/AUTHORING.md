@@ -33,20 +33,19 @@ Each chapter has an `activities.json` file — a JSON array of activity objects 
 
 **ID convention:** `{chapterId}-{type}` (e.g. `m5-ch3-listening`). Never reuse IDs.
 
-### Standard bundle (8–10 activities per chapter)
+### Standard bundle (7–9 activities per chapter)
 
 | Order | Type | Purpose |
 |-------|------|---------|
-| 1 | `svg-scene` | Visual map of the concept |
-| 2 | `flashcard` | Key vocabulary or forms |
-| 3 | `word-match` | Associations from the chapter |
-| 4 | `quiz` | 5–8 MC + fill-blank questions from `chapter.md` |
-| 5 | `sentence-builder` | 3–5 sentences from the topic |
-| 6 | `word-scramble` | Chapter vocabulary |
-| 7 | `listening` | 3 items with `audioText` from the chapter |
-| 8 | `dictation` | 3 short phrases aligned to the level |
-| 9 | `pronunciation` | 3–5 phrases with phonetic or usage hints |
-| 10 | `drag-drop` | `match` for vocab or `sentence` for word order |
+| 1 | `flashcard` | Key vocabulary or forms |
+| 2 | `word-match` | Associations from the chapter |
+| 3 | `quiz` | 5–8 MC + fill-blank questions from `chapter.md` |
+| 4 | `sentence-builder` | 3–5 sentences from the topic |
+| 5 | `word-scramble` | Chapter vocabulary |
+| 6 | `listening` | 3 items with `audioText` from the chapter |
+| 7 | `dictation` | 3 short phrases aligned to the level |
+| 8 | `pronunciation` | 3–5 phrases with phonetic or usage hints |
+| 9 | `drag-drop` | `match` for vocab or `sentence` for word order |
 
 Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities.json`.
 
@@ -56,7 +55,7 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 |---------------|----------------|
 | Alphabet / sounds / spelling | listening, dictation, pronunciation |
 | Thematic vocabulary | word-match, word-scramble, drag-drop match |
-| Grammar (tenses, modals) | svg-scene, quiz fill-blank, sentence-builder, drag-drop sentence |
+| Grammar (tenses, modals) | quiz fill-blank, sentence-builder, drag-drop sentence |
 | Connectors / cohesion | quiz, drag-drop sentence, sentence-builder |
 | Dialogues / situations | listening, pronunciation, quiz |
 | Advanced listening | listening (3+ items), quiz inferential, dictation |

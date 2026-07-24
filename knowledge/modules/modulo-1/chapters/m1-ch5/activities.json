@@ -1,107 +1,5 @@
 [
   {
-    "id": "m1-ch5-svg",
-    "type": "svg-scene",
-    "title": "The Interactive Calendar",
-    "description": "Explore the calendar and learn numbers, days and months.",
-    "props": {
-      "scene": {
-        "viewBox": "0 0 700 450",
-        "bg": "#ecfeff",
-        "items": [
-          {
-            "id": "calendar",
-            "type": "rect",
-            "x": 25,
-            "y": 10,
-            "width": 650,
-            "height": 430,
-            "fill": "#cffafe",
-            "label": "📅The Interactive Calendar",
-            "labelEn": "Learn numbers, days, and months!"
-          },
-          {
-            "id": "nums1",
-            "type": "rect",
-            "x": 50,
-            "y": 50,
-            "width": 190,
-            "height": 80,
-            "fill": "#bfdbfe",
-            "label": "🔢 Numbers 1-10",
-            "labelEn": "1 one, 2 two, 3 three, 4 four, 5 five, 6 six, 7 seven, 8 eight, 9 nine, 10 ten"
-          },
-          {
-            "id": "nums2",
-            "type": "rect",
-            "x": 260,
-            "y": 50,
-            "width": 190,
-            "height": 80,
-            "fill": "#c4b5fd",
-            "label": "🔢 Numbers 11-20",
-            "labelEn": "11 eleven, 12 twelve, 13 thirteen, 14 fourteen, 15 fifteen, 16 sixteen, 17 seventeen, 18 eighteen, 19 nineteen, 20 twenty"
-          },
-          {
-            "id": "tens",
-            "type": "rect",
-            "x": 470,
-            "y": 50,
-            "width": 190,
-            "height": 80,
-            "fill": "#fde68a",
-            "label": "🔢 Dozens",
-            "labelEn": "10 ten, 20 twenty, 30 thirty, 40 forty, 50 fifty, 60 sixty, 70 seventy, 80 eighty, 90 ninety, 100 hundred"
-          },
-          {
-            "id": "days",
-            "type": "rect",
-            "x": 50,
-            "y": 160,
-            "width": 600,
-            "height": 70,
-            "fill": "#bbf7d0",
-            "label": "📅Days of the Week",
-            "labelEn": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — Always capitalized!"
-          },
-          {
-            "id": "months",
-            "type": "rect",
-            "x": 50,
-            "y": 250,
-            "width": 600,
-            "height": 70,
-            "fill": "#fecaca",
-            "label": "🗓️ Months of the Year",
-            "labelEn": "January, February, March, April, May, June, July, August, September, October, November, December"
-          },
-          {
-            "id": "time",
-            "type": "rect",
-            "x": 50,
-            "y": 350,
-            "width": 280,
-            "height": 70,
-            "fill": "#e0e7ff",
-            "label": "⏰ Telling the Time",
-            "labelEn": "3:00 three o'clock. 5:10 have past five. 6:45 quarter to seven. 9:20 twenty past nine."
-          },
-          {
-            "id": "ordinals",
-            "type": "rect",
-            "x": 360,
-            "y": 350,
-            "width": 290,
-            "height": 70,
-            "fill": "#fef3c7",
-            "label": "🏅 Ordinal Numbers",
-            "labelEn": "1st first, 2nd second, 3rd third, 4th fourth, 5th fifth, 10th tenth, 20th twentieth"
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "m1-ch5-flash",
     "type": "flashcard",
     "title": "Numbers, Days and Months",
@@ -543,7 +441,12 @@
           "id": "l1",
           "audioText": "fifteen",
           "question": "What number did you hear?",
-          "options": ["fifty", "fifteen", "five", "fourteen"],
+          "options": [
+            "fifty",
+            "fifteen",
+            "five",
+            "fourteen"
+          ],
           "correct": 1,
           "explanation": "Fifteen is the number 15."
         },
@@ -551,7 +454,12 @@
           "id": "l2",
           "audioText": "Wednesday",
           "question": "What day did you hear?",
-          "options": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "options": [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "correct": 1,
           "explanation": "Wednesday is the third day of the work week."
         },
@@ -559,7 +467,12 @@
           "id": "l3",
           "audioText": "It's half past three",
           "question": "What time is it?",
-          "options": ["3:00", "3:15", "3:30", "3:45"],
+          "options": [
+            "3:00",
+            "3:15",
+            "3:30",
+            "3:45"
+          ],
           "correct": 2,
           "explanation": "Half past three means 3:30."
         }
@@ -573,9 +486,21 @@
     "description": "Listen and write the number, day or date you hear.",
     "props": {
       "items": [
-        { "id": "d1", "audioText": "March fifth", "hint": "Month + ordinal date" },
-        { "id": "d2", "audioText": "twenty first", "hint": "Ordinal number 21st" },
-        { "id": "d3", "audioText": "Saturday", "hint": "Day of the week" }
+        {
+          "id": "d1",
+          "audioText": "March fifth",
+          "hint": "Month + ordinal date"
+        },
+        {
+          "id": "d2",
+          "audioText": "twenty first",
+          "hint": "Ordinal number 21st"
+        },
+        {
+          "id": "d3",
+          "audioText": "Saturday",
+          "hint": "Day of the week"
+        }
       ]
     }
   },
@@ -586,10 +511,26 @@
     "description": "Practice pronouncing numbers, days and time expressions.",
     "props": {
       "items": [
-        { "id": "p1", "phrase": "thirteen", "hint": "Stress on -TEEN: thir-TEEN (not thirty)" },
-        { "id": "p2", "phrase": "February", "hint": "Silent first r — /ˈfebruəri/" },
-        { "id": "p3", "phrase": "quarter past five", "hint": "Time expression — 5:15" },
-        { "id": "p4", "phrase": "twenty third", "hint": "Ordinal — 23rd" }
+        {
+          "id": "p1",
+          "phrase": "thirteen",
+          "hint": "Stress on -TEEN: thir-TEEN (not thirty)"
+        },
+        {
+          "id": "p2",
+          "phrase": "February",
+          "hint": "Silent first r — /ˈfebruəri/"
+        },
+        {
+          "id": "p3",
+          "phrase": "quarter past five",
+          "hint": "Time expression — 5:15"
+        },
+        {
+          "id": "p4",
+          "phrase": "twenty third",
+          "hint": "Ordinal — 23rd"
+        }
       ]
     }
   },
@@ -601,11 +542,26 @@
     "props": {
       "mode": "match",
       "pairs": [
-        { "left": "1st day", "right": "Monday" },
-        { "left": "3rd day", "right": "Wednesday" },
-        { "left": "5th day", "right": "Friday" },
-        { "left": "6th day", "right": "Saturday" },
-        { "left": "7th day", "right": "Sunday" }
+        {
+          "left": "1st day",
+          "right": "Monday"
+        },
+        {
+          "left": "3rd day",
+          "right": "Wednesday"
+        },
+        {
+          "left": "5th day",
+          "right": "Friday"
+        },
+        {
+          "left": "6th day",
+          "right": "Saturday"
+        },
+        {
+          "left": "7th day",
+          "right": "Sunday"
+        }
       ]
     }
   }

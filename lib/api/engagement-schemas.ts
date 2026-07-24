@@ -2,7 +2,7 @@ import { z } from 'zod'
 import type { ActivityType } from '@/types'
 
 const activityTypes: [ActivityType, ...ActivityType[]] = [
-  'svg-scene', 'flashcard', 'word-match', 'sentence-builder', 'quiz',
+  'flashcard', 'word-match', 'sentence-builder', 'quiz',
   'word-scramble', 'listening', 'dictation', 'pronunciation', 'drag-drop',
 ]
 

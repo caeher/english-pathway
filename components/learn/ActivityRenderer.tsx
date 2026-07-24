@@ -52,7 +52,6 @@ import type {
   PronunciationItem,
   QuizQuestion,
   SentenceChallenge,
-  SVGScene,
   WordScrambleItem,
 } from '@/types'
 
@@ -81,7 +80,6 @@ const Quiz = dynamicActivity(() => import('@/components/games/Quiz'))
 const Flashcard = dynamicActivity(() => import('@/components/games/Flashcard'))
 const WordMatch = dynamicActivity(() => import('@/components/games/WordMatch'))
 const SentenceBuilder = dynamicActivity(() => import('@/components/games/SentenceBuilder'))
-const SVGInteractive = dynamicActivity(() => import('@/components/games/SVGInteractive'))
 const WordScramble = dynamicActivity(() => import('@/components/games/WordScramble'))
 const Listening = dynamicActivity(() => import('@/components/games/Listening'))
 const Dictation = dynamicActivity(() => import('@/components/games/Dictation'))
@@ -159,14 +157,6 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
   'sentence-builder': (props, onComplete, progressProps) => (
     <SentenceBuilder
       sentences={(props as { sentences: SentenceChallenge[] }).sentences}
-      initialProgress={progressProps.initialProgress as never}
-      onProgressChange={progressProps.onProgressChange as never}
-      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
-    />
-  ),
-  'svg-scene': (props, onComplete, progressProps) => (
-    <SVGInteractive
-      scene={(props as { scene: SVGScene }).scene}
       initialProgress={progressProps.initialProgress as never}
       onProgressChange={progressProps.onProgressChange as never}
       onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}

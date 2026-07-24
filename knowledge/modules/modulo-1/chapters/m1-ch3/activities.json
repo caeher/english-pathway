@@ -1,144 +1,5 @@
 [
   {
-    "id": "m1-ch3-svg",
-    "type": "svg-scene",
-    "title": "Pronouns in Action",
-    "description": "Explore each pronoun and discover how it is used with the verb \"to be.\"",
-    "props": {
-      "scene": {
-        "viewBox": "0 0 700 470",
-        "bg": "#f5f3ff",
-        "items": [
-          {
-            "id": "title",
-            "type": "rect",
-            "x": 150,
-            "y": 10,
-            "width": 400,
-            "height": 40,
-            "fill": "#8b5cf6",
-            "label": "🧱 Pronouns + To Be",
-            "labelEn": "Click each pronoun to see how it works with \"to be\""
-          },
-          {
-            "id": "i",
-            "type": "circle",
-            "cx": 80,
-            "cy": 110,
-            "r": 45,
-            "fill": "#fecaca",
-            "label": "I (I)",
-            "labelEn": "I AM → I'm a student. I'm happy. I'm from Mexico."
-          },
-          {
-            "id": "you",
-            "type": "circle",
-            "cx": 220,
-            "cy": 110,
-            "r": 45,
-            "fill": "#bfdbfe",
-            "label": "YOU",
-            "labelEn": "YOU ARE → You're my friend. You're smart. You're welcome."
-          },
-          {
-            "id": "he",
-            "type": "circle",
-            "cx": 360,
-            "cy": 110,
-            "r": 45,
-            "fill": "#bbf7d0",
-            "label": "HE (He)",
-            "labelEn": "HE IS → He's tall. He's a doctor. He's 25 years old."
-          },
-          {
-            "id": "she",
-            "type": "circle",
-            "cx": 500,
-            "cy": 110,
-            "r": 45,
-            "fill": "#fce7f3",
-            "label": "SHE",
-            "labelEn": "SHE IS → She's beautiful. She's a teacher. She's from Spain."
-          },
-          {
-            "id": "it",
-            "type": "circle",
-            "cx": 640,
-            "cy": 110,
-            "r": 45,
-            "fill": "#fef3c7",
-            "label": "IT",
-            "labelEn": "IT IS → It's a cat. It's cold today. It's Monday."
-          },
-          {
-            "id": "we",
-            "type": "circle",
-            "cx": 250,
-            "cy": 250,
-            "r": 45,
-            "fill": "#d1fae5",
-            "label": "WE (We)",
-            "labelEn": "WE ARE → We're friends. We're ready. We're from Colombia."
-          },
-          {
-            "id": "they",
-            "type": "circle",
-            "cx": 450,
-            "cy": 250,
-            "r": 45,
-            "fill": "#e0e7ff",
-            "label": "THEY",
-            "labelEn": "THEY ARE → They're students. They're happy. They're here."
-          },
-          {
-            "id": "neg",
-            "type": "rect",
-            "x": 50,
-            "y": 330,
-            "width": 280,
-            "height": 60,
-            "fill": "#fecaca",
-            "label": "❌ Negative",
-            "labelEn": "I'm NOT sad. He ISN'T here. They AREN'T ready. (am not / isn't / aren't)"
-          },
-          {
-            "id": "quest",
-            "type": "rect",
-            "x": 370,
-            "y": 330,
-            "width": 280,
-            "height": 60,
-            "fill": "#ccfbf1",
-            "label": "❓ Question",
-            "labelEn": "AM I beat? IS she a teacher? ARE they ready? (invert subject + be)"
-          },
-          {
-            "id": "short",
-            "type": "rect",
-            "x": 50,
-            "y": 405,
-            "width": 300,
-            "height": 50,
-            "fill": "#bbf7d0",
-            "label": "✅ Short Answers",
-            "labelEn": "Are you happy? → Yes, I am. / No, I'm not."
-          },
-          {
-            "id": "tag",
-            "type": "rect",
-            "x": 370,
-            "y": 405,
-            "width": 280,
-            "height": 50,
-            "fill": "#fef9c3",
-            "label": "🏷️ Tag Questions",
-            "labelEn": "You're a student, aren't you? She's from Spain, isn't she?"
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "m1-ch3-flash",
     "type": "flashcard",
     "title": "Pronouns and \"To Be\"",
@@ -578,7 +439,12 @@
           "id": "l1",
           "audioText": "I am a student",
           "question": "Which pronoun did you hear?",
-          "options": ["I", "You", "He", "They"],
+          "options": [
+            "I",
+            "You",
+            "He",
+            "They"
+          ],
           "correct": 0,
           "explanation": "I am is used with the first person singular."
         },
@@ -586,7 +452,12 @@
           "id": "l2",
           "audioText": "She is a doctor",
           "question": "What is she?",
-          "options": ["A teacher", "A doctor", "A student", "A nurse"],
+          "options": [
+            "A teacher",
+            "A doctor",
+            "A student",
+            "A nurse"
+          ],
           "correct": 1,
           "explanation": "She is a doctor — she is uses the third person singular."
         },
@@ -594,7 +465,12 @@
           "id": "l3",
           "audioText": "They are happy",
           "question": "How do they feel?",
-          "options": ["Sad", "Angry", "Happy", "Tired"],
+          "options": [
+            "Sad",
+            "Angry",
+            "Happy",
+            "Tired"
+          ],
           "correct": 2,
           "explanation": "They are happy — are is used with they."
         }
@@ -608,9 +484,21 @@
     "description": "Listen and write the sentence with the verb to be.",
     "props": {
       "items": [
-        { "id": "d1", "audioText": "He is tall", "hint": "Third person singular + adjective" },
-        { "id": "d2", "audioText": "We are ready", "hint": "First person plural" },
-        { "id": "d3", "audioText": "I am not sad", "hint": "Negative form with not" }
+        {
+          "id": "d1",
+          "audioText": "He is tall",
+          "hint": "Third person singular + adjective"
+        },
+        {
+          "id": "d2",
+          "audioText": "We are ready",
+          "hint": "First person plural"
+        },
+        {
+          "id": "d3",
+          "audioText": "I am not sad",
+          "hint": "Negative form with not"
+        }
       ]
     }
   },
@@ -621,10 +509,26 @@
     "description": "Practice pronouncing contractions and short answers.",
     "props": {
       "items": [
-        { "id": "p1", "phrase": "I'm a student", "hint": "Contraction of I am — /aɪm/" },
-        { "id": "p2", "phrase": "She isn't here", "hint": "Negative contraction — isn't = is not" },
-        { "id": "p3", "phrase": "Are you ready", "hint": "Yes/No question with rising intonation" },
-        { "id": "p4", "phrase": "Yes I am", "hint": "Short affirmative answer" }
+        {
+          "id": "p1",
+          "phrase": "I'm a student",
+          "hint": "Contraction of I am — /aɪm/"
+        },
+        {
+          "id": "p2",
+          "phrase": "She isn't here",
+          "hint": "Negative contraction — isn't = is not"
+        },
+        {
+          "id": "p3",
+          "phrase": "Are you ready",
+          "hint": "Yes/No question with rising intonation"
+        },
+        {
+          "id": "p4",
+          "phrase": "Yes I am",
+          "hint": "Short affirmative answer"
+        }
       ]
     }
   },
@@ -636,9 +540,35 @@
     "props": {
       "mode": "sentence",
       "sentences": [
-        { "prompt": "Affirmative:", "words": ["am", "I", "happy"], "correct": "I am happy" },
-        { "prompt": "Question:", "words": ["a", "she", "Is", "teacher?"], "correct": "Is she a teacher?" },
-        { "prompt": "Negative:", "words": ["not", "They", "are", "ready."], "correct": "They are not ready." }
+        {
+          "prompt": "Affirmative:",
+          "words": [
+            "am",
+            "I",
+            "happy"
+          ],
+          "correct": "I am happy"
+        },
+        {
+          "prompt": "Question:",
+          "words": [
+            "a",
+            "she",
+            "Is",
+            "teacher?"
+          ],
+          "correct": "Is she a teacher?"
+        },
+        {
+          "prompt": "Negative:",
+          "words": [
+            "not",
+            "They",
+            "are",
+            "ready."
+          ],
+          "correct": "They are not ready."
+        }
       ]
     }
   }

@@ -15,7 +15,7 @@ import {
 import type { ActivityType } from '@/types'
 
 const activityTypes: ActivityType[] = [
-  'quiz', 'flashcard', 'word-match', 'sentence-builder', 'svg-scene',
+  'quiz', 'flashcard', 'word-match', 'sentence-builder',
   'word-scramble', 'listening', 'dictation', 'pronunciation', 'drag-drop',
 ]
 

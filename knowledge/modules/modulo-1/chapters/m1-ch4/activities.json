@@ -1,129 +1,5 @@
 [
   {
-    "id": "m1-ch4-svg",
-    "type": "svg-scene",
-    "title": "The Item Shop",
-    "description": "Explore the store and find out when to use a, an and the.",
-    "props": {
-      "scene": {
-        "viewBox": "0 0 700 580",
-        "bg": "#fffbeb",
-        "items": [
-          {
-            "id": "shop",
-            "type": "rect",
-            "x": 25,
-            "y": 10,
-            "width": 650,
-            "height": 570,
-            "fill": "#fef3c7",
-            "label": "🏪 The Article Shop",
-            "labelEn": "Welcome! Learn when to use A, AN, and THE."
-          },
-          {
-            "id": "a-zone",
-            "type": "rect",
-            "x": 50,
-            "y": 60,
-            "width": 180,
-            "height": 100,
-            "fill": "#bbf7d0",
-            "label": "📗 A (before consonant)",
-            "labelEn": "A book, A car, A dog, A table, A pen, A house"
-          },
-          {
-            "id": "an-zone",
-            "type": "rect",
-            "x": 260,
-            "y": 60,
-            "width": 180,
-            "height": 100,
-            "fill": "#bfdbfe",
-            "label": "📘 AN (before vowel)",
-            "labelEn": "AN apple, AN egg, AN umbrella, AN orange, AN idea"
-          },
-          {
-            "id": "the-zone",
-            "type": "rect",
-            "x": 470,
-            "y": 60,
-            "width": 180,
-            "height": 100,
-            "fill": "#fecaca",
-            "label": "📕 THE (specific)",
-            "labelEn": "THE sun (only one), THE book on the table (specific), THE President"
-          },
-          {
-            "id": "exception",
-            "type": "rect",
-            "x": 50,
-            "y": 190,
-            "width": 280,
-            "height": 70,
-            "fill": "#fef9c3",
-            "label": "⚠️ Sound exceptions",
-            "labelEn": "AN hour (silent H) / A university (sounds like \"yoo\") / AN honest person"
-          },
-          {
-            "id": "plural-reg",
-            "type": "rect",
-            "x": 360,
-            "y": 190,
-            "width": 290,
-            "height": 70,
-            "fill": "#e0e7ff",
-            "label": "📊 Regular plurals",
-            "labelEn": "+s: books, cars / +es: buses, boxes / -y→ies: babies, cities"
-          },
-          {
-            "id": "plural-irreg",
-            "type": "rect",
-            "x": 50,
-            "y": 290,
-            "width": 600,
-            "height": 70,
-            "fill": "#fce7f3",
-            "label": "🔀 Irregular plurals",
-            "labelEn": "man→men, woman→women, child→children, tooth→teeth, foot→feet, mouse→mice, person→people"
-          },
-          {
-            "id": "noun-func",
-            "type": "rect",
-            "x": 50,
-            "y": 380,
-            "width": 600,
-            "height": 60,
-            "fill": "#dcfce7",
-            "label": "🎯 4 functions of the noun",
-            "labelEn": "Subject: The dog barks. Object: I see the dog. Object of prep: to the park. Predicate nominative: She is a teacher."
-          },
-          {
-            "id": "appositive",
-            "type": "rect",
-            "x": 50,
-            "y": 455,
-            "width": 600,
-            "height": 50,
-            "fill": "#fef9c3",
-            "label": "📎 Appositives",
-            "labelEn": "Maria, my best friend, is coming. Paris, the capital of France, is beautiful."
-          },
-          {
-            "id": "uncountable",
-            "type": "rect",
-            "x": 50,
-            "y": 520,
-            "width": 600,
-            "height": 45,
-            "fill": "#e0e7ff",
-            "label": "🧊 Uncountable: much/many/some/any",
-            "labelEn": "information, advice, rice, water. Lots of water. Many books. Some coffee."
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "m1-ch4-flash",
     "type": "flashcard",
     "title": "A, An, The + Plurals",
@@ -649,7 +525,12 @@
           "id": "l1",
           "audioText": "an apple",
           "question": "Which article did you hear?",
-          "options": ["a", "an", "the", "some"],
+          "options": [
+            "a",
+            "an",
+            "the",
+            "some"
+          ],
           "correct": 1,
           "explanation": "An is used before vowel sounds — an apple."
         },
@@ -657,7 +538,12 @@
           "id": "l2",
           "audioText": "the book on the table",
           "question": "Which article indicates something specific?",
-          "options": ["a", "an", "the", "some"],
+          "options": [
+            "a",
+            "an",
+            "the",
+            "some"
+          ],
           "correct": 2,
           "explanation": "The refers to a specific book already mentioned or known."
         },
@@ -665,7 +551,12 @@
           "id": "l3",
           "audioText": "children",
           "question": "What plural form did you hear?",
-          "options": ["childs", "children", "childes", "child"],
+          "options": [
+            "childs",
+            "children",
+            "childes",
+            "child"
+          ],
           "correct": 1,
           "explanation": "Children is the irregular plural of child."
         }
@@ -679,9 +570,21 @@
     "description": "Listen and write the noun phrase you hear.",
     "props": {
       "items": [
-        { "id": "d1", "audioText": "a book", "hint": "Indefinite article + consonant noun" },
-        { "id": "d2", "audioText": "an hour", "hint": "Silent h — use an" },
-        { "id": "d3", "audioText": "some water", "hint": "Uncountable noun with quantifier" }
+        {
+          "id": "d1",
+          "audioText": "a book",
+          "hint": "Indefinite article + consonant noun"
+        },
+        {
+          "id": "d2",
+          "audioText": "an hour",
+          "hint": "Silent h — use an"
+        },
+        {
+          "id": "d3",
+          "audioText": "some water",
+          "hint": "Uncountable noun with quantifier"
+        }
       ]
     }
   },
@@ -692,10 +595,26 @@
     "description": "Practice pronouncing articles and plural forms.",
     "props": {
       "items": [
-        { "id": "p1", "phrase": "an umbrella", "hint": "AN before vowel sound /ʌ/" },
-        { "id": "p2", "phrase": "a university", "hint": "A before /juː/ sound — not a vowel" },
-        { "id": "p3", "phrase": "the sun", "hint": "THE for unique things — /ðə/ or /ðiː/" },
-        { "id": "p4", "phrase": "children", "hint": "Irregular plural — /ˈtʃɪldrən/" }
+        {
+          "id": "p1",
+          "phrase": "an umbrella",
+          "hint": "AN before vowel sound /ʌ/"
+        },
+        {
+          "id": "p2",
+          "phrase": "a university",
+          "hint": "A before /juː/ sound — not a vowel"
+        },
+        {
+          "id": "p3",
+          "phrase": "the sun",
+          "hint": "THE for unique things — /ðə/ or /ðiː/"
+        },
+        {
+          "id": "p4",
+          "phrase": "children",
+          "hint": "Irregular plural — /ˈtʃɪldrən/"
+        }
       ]
     }
   },
@@ -707,11 +626,26 @@
     "props": {
       "mode": "match",
       "pairs": [
-        { "left": "London", "right": "Proper noun" },
-        { "left": "happiness", "right": "Abstract noun" },
-        { "left": "book", "right": "Concrete noun" },
-        { "left": "water", "right": "Uncountable noun" },
-        { "left": "children", "right": "Irregular plural" }
+        {
+          "left": "London",
+          "right": "Proper noun"
+        },
+        {
+          "left": "happiness",
+          "right": "Abstract noun"
+        },
+        {
+          "left": "book",
+          "right": "Concrete noun"
+        },
+        {
+          "left": "water",
+          "right": "Uncountable noun"
+        },
+        {
+          "left": "children",
+          "right": "Irregular plural"
+        }
       ]
     }
   }

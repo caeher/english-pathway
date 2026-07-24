@@ -48,7 +48,6 @@ const REINFORCEMENT_TYPES: Record<string, readonly string[]> = {
   pronunciation: ['listening', 'flashcard'],
   'sentence-builder': ['drag-drop', 'word-scramble'],
   'drag-drop': ['sentence-builder', 'word-match'],
-  'svg-scene': ['quiz', 'flashcard'],
 }
 
 const SIMPLER_TYPES: readonly string[] = ['flashcard', 'word-match', 'quiz']

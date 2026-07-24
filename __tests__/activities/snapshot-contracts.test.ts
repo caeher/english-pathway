@@ -8,7 +8,6 @@ import {
   pronunciationSnapshot,
   quizSnapshot,
   sentenceBuilderSnapshot,
-  svgSceneSnapshot,
   wordMatchSnapshot,
   wordScrambleSnapshot,
 } from '@/features/activities/snapshots'
@@ -27,7 +26,6 @@ describe('activity snapshot contracts', () => {
     expect(activityRegistry.dictation.snapshot).toBe(dictationSnapshot)
     expect(activityRegistry.pronunciation.snapshot).toBe(pronunciationSnapshot)
     expect(activityRegistry['drag-drop'].snapshot).toBe(dragDropSnapshot)
-    expect(activityRegistry['svg-scene'].snapshot).toBe(svgSceneSnapshot)
   })
 
   it('summarizes representative payloads for each contract', () => {
@@ -39,7 +37,6 @@ describe('activity snapshot contracts', () => {
     expect(dictationSnapshot.summarize({ current: 0, value: 'hello', answered: false, score: 0, weakItemIndexes: [] })).toContain('Dictation')
     expect(pronunciationSnapshot.summarize({ current: 1, bestScores: [80, 0] })).toContain('Phrase')
     expect(dragDropSnapshot.summarize({ mode: 'match', matches: { '0': 'cat' }, matchedCount: 1 })).toContain('pairs matched')
-    expect(svgSceneSnapshot.summarize({ discoveredIds: ['item-1'] })).toContain('objects discovered')
   })
 
   it('rejects pronunciation payloads that include transcripts', () => {

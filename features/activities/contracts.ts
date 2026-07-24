@@ -39,13 +39,6 @@ export const activityPropsSchemas = {
   }),
   'word-match': z.object({ pairs: z.array(pairSchema).min(2) }),
   'sentence-builder': z.object({ sentences: z.array(sentenceChallengeSchema).min(1) }),
-  'svg-scene': z.object({
-    scene: z.object({
-      viewBox: z.string().min(1),
-      bg: z.string().optional(),
-      items: z.array(z.record(z.string(), z.unknown())).min(1),
-    }),
-  }),
   'word-scramble': z.object({
     words: z.array(z.object({ word: z.string().min(1), hint: z.string().min(1), category: z.string().optional() })).min(1),
   }),
@@ -95,7 +88,6 @@ export const chapterActivitySchema = z.discriminatedUnion('type', [
   activityBase.extend({ type: z.literal('flashcard'), props: activityPropsSchemas.flashcard }),
   activityBase.extend({ type: z.literal('word-match'), props: activityPropsSchemas['word-match'] }),
   activityBase.extend({ type: z.literal('sentence-builder'), props: activityPropsSchemas['sentence-builder'] }),
-  activityBase.extend({ type: z.literal('svg-scene'), props: activityPropsSchemas['svg-scene'] }),
   activityBase.extend({ type: z.literal('word-scramble'), props: activityPropsSchemas['word-scramble'] }),
   activityBase.extend({ type: z.literal('listening'), props: activityPropsSchemas.listening }),
   activityBase.extend({ type: z.literal('dictation'), props: activityPropsSchemas.dictation }),

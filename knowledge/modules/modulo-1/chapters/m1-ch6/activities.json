@@ -1,151 +1,5 @@
 [
   {
-    "id": "m1-ch6-svg",
-    "type": "svg-scene",
-    "title": "The Wall of Questions",
-    "description": "Explore each Wh-word and find out what type of information it is looking for.",
-    "props": {
-      "scene": {
-        "viewBox": "0 0 700 470",
-        "bg": "#fef2f2",
-        "items": [
-          {
-            "id": "wall",
-            "type": "rect",
-            "x": 25,
-            "y": 10,
-            "width": 650,
-            "height": 460,
-            "fill": "#fee2e2",
-            "label": "❓ The Question Wall",
-            "labelEn": "Master all Wh-Questions! Click each word."
-          },
-          {
-            "id": "what",
-            "type": "rect",
-            "x": 50,
-            "y": 55,
-            "width": 140,
-            "height": 80,
-            "fill": "#fecaca",
-            "label": "WHAT What?",
-            "labelEn": "What is your name? What time is it? What color is this?"
-          },
-          {
-            "id": "where",
-            "type": "rect",
-            "x": 210,
-            "y": 55,
-            "width": 140,
-            "height": 80,
-            "fill": "#bbf7d0",
-            "label": "WHERE Where?",
-            "labelEn": "Where are you from? Where is the library? Where do you live?"
-          },
-          {
-            "id": "when",
-            "type": "rect",
-            "x": 370,
-            "y": 55,
-            "width": 140,
-            "height": 80,
-            "fill": "#bfdbfe",
-            "label": "WHEN When?",
-            "labelEn": "When is your birthday? When is the test? When do you wake up?"
-          },
-          {
-            "id": "who",
-            "type": "rect",
-            "x": 530,
-            "y": 55,
-            "width": 140,
-            "height": 80,
-            "fill": "#e0e7ff",
-            "label": "WHO Who?",
-            "labelEn": "Who is your teacher? Who is she? Who are they?"
-          },
-          {
-            "id": "why",
-            "type": "rect",
-            "x": 50,
-            "y": 170,
-            "width": 140,
-            "height": 80,
-            "fill": "#fef3c7",
-            "label": "WHY Why?",
-            "labelEn": "Why are you sad? Why is he here? Answer: Because..."
-          },
-          {
-            "id": "how",
-            "type": "rect",
-            "x": 210,
-            "y": 170,
-            "width": 140,
-            "height": 80,
-            "fill": "#fce7f3",
-            "label": "HOW How?",
-            "labelEn": "How are you? How do you spell it? How is the weather?"
-          },
-          {
-            "id": "howold",
-            "type": "rect",
-            "x": 370,
-            "y": 170,
-            "width": 140,
-            "height": 80,
-            "fill": "#ccfbf1",
-            "label": "HOW OLD",
-            "labelEn": "How old are you? —I am 20 years old."
-          },
-          {
-            "id": "howmany",
-            "type": "rect",
-            "x": 530,
-            "y": 170,
-            "width": 140,
-            "height": 80,
-            "fill": "#d1fae5",
-            "label": "HOW MANY/MUCH",
-            "labelEn": "How many brothers? (countable) How much is this? (price/uncountable)"
-          },
-          {
-            "id": "yesno",
-            "type": "rect",
-            "x": 50,
-            "y": 300,
-            "width": 300,
-            "height": 80,
-            "fill": "#fed7aa",
-            "label": "✅❌ Yes/No Questions",
-            "labelEn": "Are you a student? → Yes, I am. / No, I'm not. Is she happy? → Yes, she is."
-          },
-          {
-            "id": "structure",
-            "type": "rect",
-            "x": 370,
-            "y": 300,
-            "width": 300,
-            "height": 80,
-            "fill": "#c4b5fd",
-            "label": "📐 Structure",
-            "labelEn": "Wh-word + BE + subject? What IS your name? Where ARE you from?"
-          },
-          {
-            "id": "howextra",
-            "type": "rect",
-            "x": 50,
-            "y": 400,
-            "width": 600,
-            "height": 50,
-            "fill": "#e0e7ff",
-            "label": "📏How far / How long / How tall",
-            "labelEn": "How far is the school? How long is the movie? How tall are you?"
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "m1-ch6-flash",
     "type": "flashcard",
     "title": "Essential Questions",
@@ -609,7 +463,12 @@
           "id": "l1",
           "audioText": "What is your name",
           "question": "Which Wh-word starts this question?",
-          "options": ["What", "Where", "When", "Who"],
+          "options": [
+            "What",
+            "Where",
+            "When",
+            "Who"
+          ],
           "correct": 0,
           "explanation": "What asks for information or things."
         },
@@ -617,7 +476,12 @@
           "id": "l2",
           "audioText": "Where are you from",
           "question": "Which Wh-word asks about place?",
-          "options": ["What", "Where", "Why", "How"],
+          "options": [
+            "What",
+            "Where",
+            "Why",
+            "How"
+          ],
           "correct": 1,
           "explanation": "Where asks about location or origin."
         },
@@ -625,7 +489,12 @@
           "id": "l3",
           "audioText": "How old are you",
           "question": "What information does this question ask for?",
-          "options": ["Name", "Age", "Price", "Distance"],
+          "options": [
+            "Name",
+            "Age",
+            "Price",
+            "Distance"
+          ],
           "correct": 1,
           "explanation": "How old asks about someone's age."
         }
@@ -639,9 +508,21 @@
     "description": "Listen and write the Wh-question you hear.",
     "props": {
       "items": [
-        { "id": "d1", "audioText": "When is your birthday", "hint": "Wh-word for time" },
-        { "id": "d2", "audioText": "Who is your teacher", "hint": "Wh-word for person" },
-        { "id": "d3", "audioText": "How many brothers do you have", "hint": "How many + countable noun" }
+        {
+          "id": "d1",
+          "audioText": "When is your birthday",
+          "hint": "Wh-word for time"
+        },
+        {
+          "id": "d2",
+          "audioText": "Who is your teacher",
+          "hint": "Wh-word for person"
+        },
+        {
+          "id": "d3",
+          "audioText": "How many brothers do you have",
+          "hint": "How many + countable noun"
+        }
       ]
     }
   },
@@ -652,10 +533,26 @@
     "description": "Practice pronouncing Wh-questions with correct intonation.",
     "props": {
       "items": [
-        { "id": "p1", "phrase": "What is your name", "hint": "Falling intonation at the end" },
-        { "id": "p2", "phrase": "Why are you happy", "hint": "WHY — /waɪ/ with rising then falling tone" },
-        { "id": "p3", "phrase": "How much is this", "hint": "How much for price or uncountable quantity" },
-        { "id": "p4", "phrase": "How often do you exercise", "hint": "How often asks about frequency" }
+        {
+          "id": "p1",
+          "phrase": "What is your name",
+          "hint": "Falling intonation at the end"
+        },
+        {
+          "id": "p2",
+          "phrase": "Why are you happy",
+          "hint": "WHY — /waɪ/ with rising then falling tone"
+        },
+        {
+          "id": "p3",
+          "phrase": "How much is this",
+          "hint": "How much for price or uncountable quantity"
+        },
+        {
+          "id": "p4",
+          "phrase": "How often do you exercise",
+          "hint": "How often asks about frequency"
+        }
       ]
     }
   },
@@ -667,9 +564,36 @@
     "props": {
       "mode": "sentence",
       "sentences": [
-        { "prompt": "Ask for a name:", "words": ["name?", "your", "What", "is"], "correct": "What is your name?" },
-        { "prompt": "Ask about origin:", "words": ["from?", "you", "Where", "are"], "correct": "Where are you from?" },
-        { "prompt": "Ask about reason:", "words": ["happy?", "you", "Why", "are"], "correct": "Why are you happy?" }
+        {
+          "prompt": "Ask for a name:",
+          "words": [
+            "name?",
+            "your",
+            "What",
+            "is"
+          ],
+          "correct": "What is your name?"
+        },
+        {
+          "prompt": "Ask about origin:",
+          "words": [
+            "from?",
+            "you",
+            "Where",
+            "are"
+          ],
+          "correct": "Where are you from?"
+        },
+        {
+          "prompt": "Ask about reason:",
+          "words": [
+            "happy?",
+            "you",
+            "Why",
+            "are"
+          ],
+          "correct": "Why are you happy?"
+        }
       ]
     }
   }

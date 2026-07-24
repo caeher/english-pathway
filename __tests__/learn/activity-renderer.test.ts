@@ -4,7 +4,6 @@ import { resolve } from 'node:path'
 import type { ActivityType } from '@/types'
 
 const ACTIVITY_TYPES: ActivityType[] = [
-  'svg-scene',
   'flashcard',
   'word-match',
   'sentence-builder',
@@ -18,7 +17,7 @@ const ACTIVITY_TYPES: ActivityType[] = [
 
 describe('ActivityRenderer coverage', () => {
   it('lists all supported activity types', () => {
-    expect(ACTIVITY_TYPES).toHaveLength(10)
+    expect(ACTIVITY_TYPES).toHaveLength(9)
   })
 
   it('delegates post-activity feedback to the learn shell', () => {

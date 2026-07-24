@@ -21,7 +21,3 @@ export function wordMatchAccuracy(correct: number, total: number): number {
 export function flashcardCoverage(reviewed: number, total: number): number {
   return scoreToPercent(reviewed, total)
 }
-
-export function svgSceneCoverage(completed: number, total: number): number {
-  return scoreToPercent(completed, total)
-}
