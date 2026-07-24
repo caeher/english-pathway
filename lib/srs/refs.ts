@@ -20,6 +20,5 @@ export function getReviewContentRefs(activity: ChapterActivity, weakItemIndexes?
     case 'drag-drop': return (props as unknown as { mode: 'match' | 'sentence'; pairs?: unknown[]; sentences?: unknown[] }).mode === 'sentence'
       ? pickWeak(((props as unknown as { sentences?: unknown[] }).sentences ?? []).map((_, index) => `${activity.id}:drag-sentence:${index}`))
       : pickWeak(((props as unknown as { pairs?: unknown[] }).pairs ?? []).map((_, index) => `${activity.id}:drag-match:${index}`))
-    case 'svg-scene': return pickWeak((props as unknown as { scene: { items: { id?: string }[] } }).scene.items.map((item, index) => `${activity.id}:scene:${typeof item.id === 'string' ? item.id : index}`))
   }
 }

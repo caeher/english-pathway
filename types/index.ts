@@ -42,31 +42,6 @@ export interface FlashcardData {
   example?: string
 }
 
-export interface SVGSceneItem {
-  id: string
-  type: 'circle' | 'ellipse' | 'rect' | 'polygon' | 'path'
-  label: string
-  labelEn: string
-  fill: string
-  cx?: number
-  cy?: number
-  r?: number
-  rx?: number
-  ry?: number
-  x?: number
-  y?: number
-  width?: number
-  height?: number
-  points?: string
-  d?: string
-}
-
-export interface SVGScene {
-  viewBox: string
-  bg?: string
-  items: SVGSceneItem[]
-}
-
 export interface WordScrambleItem {
   word: string
   hint: string
@@ -95,7 +70,6 @@ export interface PronunciationItem {
 }
 
 export type ActivityType =
-  | 'svg-scene'
   | 'flashcard'
   | 'word-match'
   | 'sentence-builder'

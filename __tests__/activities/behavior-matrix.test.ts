@@ -9,7 +9,7 @@ import {
 } from '@/features/activities'
 import type { ActivityType } from '@/types'
 
-const activityTypes: ActivityType[] = ['quiz', 'flashcard', 'word-match', 'sentence-builder', 'svg-scene', 'word-scramble', 'listening', 'dictation', 'pronunciation', 'drag-drop']
+const activityTypes: ActivityType[] = ['quiz', 'flashcard', 'word-match', 'sentence-builder', 'word-scramble', 'listening', 'dictation', 'pronunciation', 'drag-drop']
 
 describe('activity behavior matrix', () => {
   it.each(activityTypes)('%s has the shared reset, retry, result, persistence, and review behavior', (type) => {

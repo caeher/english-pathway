@@ -7,7 +7,6 @@ import type {
   PronunciationItem,
   QuizQuestion,
   SentenceChallenge,
-  SVGScene,
   WordScrambleItem,
 } from '@/types'
 import { validateActivityProps, type ActivityTypeKey } from '@/lib/content/schemas'
@@ -61,13 +60,6 @@ export function extractReviewItems(activity: ChapterActivity, chapter: Chapter, 
       return (props as unknown as { mode: 'match' | 'sentence'; pairs?: MatchPair[]; sentences?: SentenceChallenge[] }).mode === 'sentence'
         ? ((props as unknown as { sentences?: SentenceChallenge[] }).sentences ?? []).map((sentence, index) => source(activity, chapter, module, `drag-sentence:${index}`, sentence.prompt ?? sentence.words.join(' '), sentence.correct))
         : ((props as unknown as { pairs?: MatchPair[] }).pairs ?? []).map((pair, index) => source(activity, chapter, module, `drag-match:${index}`, pair.left, pair.right))
-    case 'svg-scene':
-      return (props as unknown as { scene: SVGScene }).scene.items.map((item, index) => {
-        const label = typeof item.label === 'string' ? item.label : `Scene item ${index + 1}`
-        const labelEn = typeof item.labelEn === 'string' ? item.labelEn : label
-        const id = typeof item.id === 'string' ? item.id : String(index)
-        return source(activity, chapter, module, `scene:${id}`, label, labelEn)
-      })
   }
 }
 

@@ -5,7 +5,6 @@ const BASE_XP: Record<ActivityType, number> = {
   'quiz': 12,
   'word-match': 10,
   'sentence-builder': 12,
-  'svg-scene': 10,
   'word-scramble': 10,
   'listening': 12,
   'dictation': 14,
