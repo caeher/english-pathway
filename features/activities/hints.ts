@@ -149,6 +149,44 @@ function resolvePronunciationHint(
   }
 }
 
+function resolveMinimalPairsHint(
+  props: { pairs: Array<{ phoneme: string; wordA: string; wordB: string; tip: string; playedVariant?: string }> },
+  itemIndex: number,
+  level: GraduatedHintLevel,
+  playedVariant?: 'A' | 'B' | null,
+): ResolvedHint | null {
+  const pair = props.pairs[itemIndex]
+  if (!pair) return null
+
+  const label = HINT_LABELS[level]
+  if (level === 1) {
+    return {
+      level,
+      label,
+      body: `Focus on the contrast: ${pair.phoneme}.`,
+      source: 'editorial',
+      revealsAnswer: false,
+    }
+  }
+  if (level === 2) {
+    return {
+      level,
+      label,
+      body: pair.tip,
+      source: 'editorial',
+      revealsAnswer: false,
+    }
+  }
+  const answer = playedVariant === 'A' ? pair.wordA : playedVariant === 'B' ? pair.wordB : pair.wordA
+  return {
+    level,
+    label,
+    body: `The word you heard was "${answer}".`,
+    source: 'editorial',
+    revealsAnswer: true,
+  }
+}
+
 export function resolveEditorialHint(
   activityType: ActivityTypeKey,
   props: unknown,
@@ -165,6 +203,12 @@ export function resolveEditorialHint(
       return resolveDictationHint(props as { items: Array<{ audioText: string; hint?: string }> }, itemIndex, hintLevel)
     case 'pronunciation':
       return resolvePronunciationHint(props as { items: Array<{ phrase: string; hint?: string }> }, itemIndex, hintLevel)
+    case 'minimal-pairs':
+      return resolveMinimalPairsHint(
+        props as { pairs: Array<{ phoneme: string; wordA: string; wordB: string; tip: string }> },
+        itemIndex,
+        hintLevel,
+      )
     default:
       return null
   }

@@ -12,6 +12,7 @@ import {
   dictationSnapshot,
   flashcardSnapshot,
   listeningSnapshot,
+  minimalPairsSnapshot,
   pronunciationSnapshot,
   quizSnapshot,
   sentenceBuilderSnapshot,
@@ -88,6 +89,7 @@ export const activityRegistry = {
   dictation: definition('dictation', createHintActivityCapabilities(3, 'audio'), dictationSnapshot),
   pronunciation: definition('pronunciation', createHintActivityCapabilities(3, 'microphone'), pronunciationSnapshot),
   'branching-dialogue': definition('branching-dialogue', createActivityCapabilities('itemFeedback', 'audio'), branchingDialogueSnapshot),
+  'minimal-pairs': definition('minimal-pairs', createHintActivityCapabilities(3, 'audio', 'itemFeedback', 'microphone'), minimalPairsSnapshot),
 } satisfies Record<ActivityTypeKey, ActivityDefinition>
 
 export function getActivityDefinition(type: string): ActivityDefinition | null {

@@ -51,6 +51,7 @@ import type {
   MatchPair,
   PronunciationItem,
   BranchingDialogueProps,
+  MinimalPairItem,
   QuizQuestion,
   SentenceChallenge,
   WordScrambleItem,
@@ -86,6 +87,7 @@ const Listening = dynamicActivity(() => import('@/components/games/Listening'))
 const Dictation = dynamicActivity(() => import('@/components/games/Dictation'))
 const Pronunciation = dynamicActivity(() => import('@/components/games/Pronunciation'))
 const BranchingDialogue = dynamicActivity(() => import('@/components/games/BranchingDialogue'))
+const MinimalPairs = dynamicActivity(() => import('@/components/games/MinimalPairs'))
 
 export interface ActivityCompleteResult {
   activityId: string
@@ -211,6 +213,14 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
         scorePercent: result.scorePercent,
         metrics: result.metrics,
       })}
+    />
+  ),
+  'minimal-pairs': (props, onComplete, progressProps) => (
+    <MinimalPairs
+      pairs={(props as { pairs: MinimalPairItem[] }).pairs}
+      initialProgress={progressProps.initialProgress as never}
+      onProgressChange={progressProps.onProgressChange as never}
+      onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
     />
   ),
 }
