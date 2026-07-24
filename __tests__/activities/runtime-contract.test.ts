@@ -16,11 +16,11 @@ import type { ActivityType } from '@/types'
 
 const activityTypes: ActivityType[] = [
   'quiz', 'flashcard', 'word-match', 'sentence-builder',
-  'word-scramble', 'listening', 'dictation', 'pronunciation', 'branching-dialogue',
+  'word-scramble', 'listening', 'dictation', 'pronunciation', 'branching-dialogue', 'minimal-pairs',
 ]
 
-const hintTypes = new Set<ActivityType>(['word-scramble', 'dictation', 'pronunciation'])
-const itemFeedbackTypes = new Set<ActivityType>(['quiz', 'listening', 'flashcard', 'branching-dialogue'])
+const hintTypes = new Set<ActivityType>(['word-scramble', 'dictation', 'pronunciation', 'minimal-pairs'])
+const itemFeedbackTypes = new Set<ActivityType>(['quiz', 'listening', 'flashcard', 'branching-dialogue', 'minimal-pairs'])
 
 describe('activity runtime contract', () => {
   it.each(activityTypes)('%s declares contract version 1 and required registry fields', (type) => {

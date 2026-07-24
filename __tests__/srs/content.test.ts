@@ -55,4 +55,37 @@ describe('getReviewContentRefs', () => {
     }
     expect(getReviewContentRefs(activity, [1])).toEqual(['dialogue-1:dialogue:n2'])
   })
+
+  it('creates stable references for minimal-pairs items', () => {
+    const activity: ChapterActivity = {
+      id: 'pairs-1',
+      type: 'minimal-pairs',
+      title: 'Pairs',
+      description: '',
+      props: {
+        pairs: [
+          {
+            id: 'mp1',
+            label: 'Contrast',
+            wordA: 'ship',
+            wordB: 'chip',
+            phoneme: '/ʃ/ vs /tʃ/',
+            tip: 'Tip',
+            meaningA: 'boat',
+          },
+          {
+            id: 'mp2',
+            label: 'Contrast',
+            wordA: 'ice',
+            wordB: 'eyes',
+            phoneme: '/s/ vs /z/',
+            tip: 'Tip',
+            meaningB: 'sight',
+          },
+        ],
+      },
+    }
+    expect(getReviewContentRefs(activity)).toEqual(['pairs-1:minimal-pair:mp1', 'pairs-1:minimal-pair:mp2'])
+    expect(getReviewContentRefs(activity, [0])).toEqual(['pairs-1:minimal-pair:mp1'])
+  })
 })
