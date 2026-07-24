@@ -48,9 +48,30 @@ export interface WordScrambleItem {
   category?: string
 }
 
+export interface CuratedAudio {
+  src: string
+  transcript: string
+  speaker?: string
+  accent?: string
+  defaultRate?: number
+  altText?: string
+}
+
+export type AudioPracticeMode = 'guided' | 'evaluation'
+
+export interface ContrastPair {
+  label: string
+  wordA: string
+  wordB: string
+  phoneme: string
+  tip: string
+}
+
 export interface ListeningItem {
   id: string
   audioText: string
+  audio?: CuratedAudio
+  mode?: AudioPracticeMode
   question: string
   options: string[]
   correct: number
@@ -60,12 +81,15 @@ export interface ListeningItem {
 export interface DictationItem {
   id: string
   audioText: string
+  audio?: CuratedAudio
   hint?: string
 }
 
 export interface PronunciationItem {
   id: string
   phrase: string
+  audio?: CuratedAudio
+  contrastPair?: ContrastPair
   hint?: string
 }
 
