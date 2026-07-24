@@ -84,7 +84,6 @@ const WordScramble = dynamicActivity(() => import('@/components/games/WordScramb
 const Listening = dynamicActivity(() => import('@/components/games/Listening'))
 const Dictation = dynamicActivity(() => import('@/components/games/Dictation'))
 const Pronunciation = dynamicActivity(() => import('@/components/games/Pronunciation'))
-const DragDrop = dynamicActivity(() => import('@/components/games/DragDrop'))
 
 export interface ActivityCompleteResult {
   activityId: string
@@ -194,19 +193,6 @@ const renderers: Record<ActivityTypeKey, RenderActivity> = {
       onComplete={(result) => onComplete({ ...result, scorePercent: result.scorePercent })}
     />
   ),
-  'drag-drop': (props, onComplete, progressProps) => {
-    const data = props as { mode: 'match' | 'sentence'; pairs?: MatchPair[]; sentences?: SentenceChallenge[] }
-    return (
-      <DragDrop
-        mode={data.mode}
-        pairs={data.pairs}
-        sentences={data.sentences}
-        initialProgress={progressProps.initialProgress as never}
-        onProgressChange={progressProps.onProgressChange as never}
-        onComplete={(result) => onComplete({ ...result, scorePercent: result.score })}
-      />
-    )
-  },
 }
 
 type ResumeState = 'checking' | 'prompt' | 'playing'
