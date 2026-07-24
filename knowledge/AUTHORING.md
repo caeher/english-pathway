@@ -129,15 +129,49 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 {
   "id": "mX-chY-pronunciation",
   "type": "pronunciation",
-  "title": "Practice Pronunciation",
-  "description": "Listen and repeat the phrases.",
+  "title": "Speaking Practice",
+  "description": "Listen to the model audio and repeat each phrase aloud.",
   "props": {
     "items": [
-      { "id": "p1", "phrase": "Nice to meet you", "hint": "Standard greeting when meeting someone new" }
+      {
+        "id": "p1",
+        "phrase": "ship",
+        "audio": {
+          "src": "/audio/curated/ship.mp3",
+          "transcript": "ship",
+          "speaker": "Curated voice",
+          "accent": "US English",
+          "defaultRate": 1,
+          "altText": "Short /ɪ/ vowel — revealed after the learner responds."
+        },
+        "contrastPair": {
+          "label": "Vowel length contrast",
+          "wordA": "ship",
+          "wordB": "sheep",
+          "phoneme": "/ɪ/ vs /iː/",
+          "tip": "Keep ship short; stretch sheep slightly longer."
+        },
+        "hint": "Say ship with a short, relaxed vowel."
+      }
     ]
   }
 }
 ```
+
+### Curated audio fields
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `audio.src` | When using curated audio | Must start with `/audio/` or `http(s)://` |
+| `audio.transcript` | Yes with curated audio | Revealed after the learner answers |
+| `audio.speaker` | Optional | Displayed in the player badge |
+| `audio.accent` | Optional | Displayed with speaker metadata |
+| `audio.defaultRate` | Optional | `0.75`, `1`, or `1.25` |
+| `audio.altText` | Recommended | Pedagogical note revealed post-answer |
+| `mode` | Optional on listening | `guided` (TTS practice) or `evaluation` (recorded audio) |
+| `contrastPair` | Optional on pronunciation | Include at least two contrast items per chapter when used |
+
+Keep `audioText` / `phrase` as TTS fallback text when curated audio is unavailable.
 
 ### Authoring workflow
 
