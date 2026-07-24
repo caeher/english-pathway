@@ -450,11 +450,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: 'english_assistant_messages_conversation_id_fkey'
-            columns: ['conversation_id']
+            foreignKeyName: "english_assistant_messages_conversation_id_fkey"
+            columns: ["conversation_id"]
             isOneToOne: false
-            referencedRelation: 'english_assistant_conversations'
-            referencedColumns: ['id']
+            referencedRelation: "english_assistant_conversations"
+            referencedColumns: ["id"]
           },
         ]
       }
@@ -692,6 +692,27 @@ export type Database = {
           preferred_mode?: string
           updated_at?: string
           username?: string | null
+        }
+        Relationships: []
+      }
+      rate_limit_buckets: {
+        Row: {
+          bucket_key: string
+          count: number
+          expires_at: string
+          window_start: string
+        }
+        Insert: {
+          bucket_key: string
+          count?: number
+          expires_at: string
+          window_start: string
+        }
+        Update: {
+          bucket_key?: string
+          count?: number
+          expires_at?: string
+          window_start?: string
         }
         Relationships: []
       }
@@ -960,6 +981,10 @@ export type Database = {
     }
     Functions: {
       consume_assistant_credit: { Args: never; Returns: Json }
+      consume_rate_limit: {
+        Args: { p_bucket_key: string; p_limit: number; p_window_ms: number }
+        Returns: Json
+      }
       finish_audio_credit_session: {
         Args: { p_seconds: number; p_session_id: string }
         Returns: Json
