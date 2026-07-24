@@ -27,15 +27,24 @@ describe('english assistant conversation contracts', () => {
     }).messages).toHaveLength(1)
   })
 
-  it('requires the final assistant request message to be from the user', () => {
+  it('accepts a single user message in assistant requests', () => {
+    expect(assistantRequestSchema.safeParse({
+      conversationId: '11111111-1111-4111-8111-111111111111',
+      message: 'Explain this activity.',
+    }).success).toBe(true)
+
+    expect(assistantRequestSchema.safeParse({
+      message: 'Explain present simple.',
+    }).success).toBe(true)
+
+    expect(assistantRequestSchema.safeParse({
+      message: '',
+    }).success).toBe(false)
+
     expect(assistantRequestSchema.safeParse({
       conversationId: '11111111-1111-4111-8111-111111111111',
       messages: [{ role: 'assistant', content: 'Hi' }],
     }).success).toBe(false)
-
-    expect(assistantRequestSchema.safeParse({
-      messages: [{ role: 'user', content: 'Explain this activity.' }],
-    }).success).toBe(true)
   })
 
   it('validates attachable activity context payloads', () => {

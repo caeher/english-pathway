@@ -28,6 +28,7 @@ export type AnalyticsEventName =
   | 'learn_tool_call'
   | 'learn_tool_error'
   | 'hint_requested'
+  | 'security_injection_signal'
 
 export interface AnalyticsEventProperties {
   [key: string]: string | number | boolean | null | undefined

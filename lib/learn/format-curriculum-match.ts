@@ -1,4 +1,5 @@
 import { curriculumChapterHref } from '@/lib/curriculum/href'
+import { wrapUntrustedContent } from '@/lib/security/prompt-trust'
 
 export interface CurriculumMatch {
   content: string
@@ -23,5 +24,6 @@ export function formatCurriculumMatch(match: CurriculumMatch, index: number): st
 
 export function formatCurriculumMatches(matches: CurriculumMatch[]): string {
   if (matches.length === 0) return 'No relevant curriculum content found.'
-  return matches.map((match, index) => formatCurriculumMatch(match, index)).join('\n\n---\n\n')
+  const body = matches.map((match, index) => formatCurriculumMatch(match, index)).join('\n\n---\n\n')
+  return wrapUntrustedContent('curriculum', body)
 }

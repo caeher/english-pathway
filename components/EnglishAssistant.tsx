@@ -177,9 +177,7 @@ export default function EnglishAssistant() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           conversationId,
-          messages: nextMessages
-            .filter((entry) => !(entry.role === 'assistant' && entry.content === WELCOME_MESSAGE.content))
-            .slice(-12),
+          message,
         }),
       })
       const payload = (await response.json().catch(() => null)) as {
@@ -356,9 +354,7 @@ export default function EnglishAssistant() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           conversationId: activeConversationId ?? undefined,
-          messages: nextMessages
-            .filter((message) => !(message.role === 'assistant' && message.content === WELCOME_MESSAGE.content))
-            .slice(-12),
+          message: question,
         }),
       })
       const payload = (await response.json().catch(() => null)) as {
