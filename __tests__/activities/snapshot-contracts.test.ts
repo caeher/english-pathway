@@ -33,7 +33,7 @@ describe('activity snapshot contracts', () => {
     expect(wordScrambleSnapshot.summarize({ current: 0, selected: ['H'], placedIndices: [0], score: 0 })).toContain('Word')
     expect(listeningSnapshot.summarize({ current: 0, selected: 1, answered: true, score: 1, weakItemIndexes: [] })).toContain('Audio')
     expect(dictationSnapshot.summarize({ current: 0, value: 'hello', answered: false, score: 0, weakItemIndexes: [] })).toContain('Dictation')
-    expect(pronunciationSnapshot.summarize({ current: 1, bestScores: [80, 0] })).toContain('Phrase')
+    expect(pronunciationSnapshot.summarize({ current: 1, bestScores: [80, 0] })).toContain('Speaking phrase')
   })
 
   it('rejects pronunciation payloads that include transcripts', () => {
