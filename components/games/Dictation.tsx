@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import type { DictationItem } from '@/types'
 import type { DictationProgress } from '@/features/activities/snapshots/dictation'
-import { SpeakButton } from '@/components/ui/SpeakButton'
-import { speak } from '@/lib/audio/tts'
+import { ActivityAudioPlayer } from '@/components/ui/ActivityAudioPlayer'
+import { formatAudioMetadata } from '@/lib/audio/curated-audio'
 import { cn } from '@/lib/helpers'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
@@ -35,6 +35,8 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
   const [finished, setFinished] = useState(false)
   const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>(initialProgress?.weakItemIndexes ?? [])
   const [explanations, setExplanations] = useState<string[]>([])
+  const [allowAutoPlay, setAllowAutoPlay] = useState(false)
+  const hasUserInteractedRef = useRef(false)
 
   useDebouncedProgress(
     { current, value, answered, score, weakItemIndexes },
@@ -43,17 +45,19 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
   )
 
   const item = items[current]
+  const expectedAnswer = item.audio?.transcript ?? item.audioText
+  const metadata = formatAudioMetadata(item.audio?.speaker, item.audio?.accent)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (answered || !value.trim()) return
-    const correct = similarity(value, item.audioText)
+    const correct = similarity(value, expectedAnswer)
     setAnswered(true)
     setIsCorrect(correct)
     if (correct) setScore((s) => s + 1)
     else {
       setWeakItemIndexes((indexes) => [...indexes, current])
-      setExplanations((items) => [...items, `Listen again, then compare your response with "${item.audioText}".`])
+      setExplanations((items) => [...items, `Listen again, then compare your response with "${expectedAnswer}".`])
     }
   }
 
@@ -68,24 +72,24 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
     setValue('')
     setAnswered(false)
     setIsCorrect(false)
-    speak(items[current + 1].audioText)
+    if (hasUserInteractedRef.current) {
+      setAllowAutoPlay(true)
+    }
   }
 
-  const handleRestart = () => {
-    setCurrent(0)
-    setValue('')
-    setAnswered(false)
-    setIsCorrect(false)
-    setScore(0)
-    setFinished(false)
-    setWeakItemIndexes([])
-    setExplanations([])
+  const handleAudioInteraction = () => {
+    hasUserInteractedRef.current = true
+    setAllowAutoPlay(false)
   }
 
   if (finished) return null
 
   return (
-    <div className="max-w-2xl mx-auto" role="region" aria-label="Dictation activity">
+    <div className="max-w-2xl mx-auto" role="region" aria-label="Dictation activity" aria-describedby="dictation-mode-description">
+      <p id="dictation-mode-description" className="sr-only">
+        Listen to the audio and write what you hear. The transcript is revealed after you check your answer.
+      </p>
+
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-display font-bold text-(--text-muted)">
           Dictation {current + 1} / {items.length}
@@ -95,16 +99,14 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
         </span>
       </div>
 
-      <div className="flex items-center gap-3 p-4 rounded-2xl bg-(--bg-tertiary) border border-(--border-primary) mb-5">
-        <SpeakButton text={item.audioText} size="md" />
-        <button
-          type="button"
-          onClick={() => speak(item.audioText)}
-          className="text-sm font-display font-bold text-(--accent) hover:underline cursor-pointer"
-        >
-          Listen
-        </button>
-        {item.hint && <span className="text-xs text-(--text-muted) ml-auto">💡 {item.hint}</span>}
+      <div className="p-4 rounded-2xl bg-(--bg-tertiary) border border-(--border-primary) mb-5">
+        <ActivityAudioPlayer
+          fallbackText={item.audioText}
+          curated={item.audio}
+          autoPlay={allowAutoPlay}
+          onUserInteraction={handleAudioInteraction}
+        />
+        {item.hint && <p className="text-xs text-(--text-muted) mt-3">💡 {item.hint}</p>}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -136,8 +138,17 @@ export default function Dictation({ items, initialProgress, onProgressChange, on
             Check
           </button>
         )}
-        {answered && !isCorrect && (
-          <p className="text-sm text-red-600 font-medium">Answer: &quot;{item.audioText}&quot;</p>
+        {answered && (
+          <div className="rounded-xl border border-(--border-primary) bg-(--bg-card) p-4 space-y-2" aria-live="polite">
+            <p className="text-sm font-display font-bold text-(--text-primary)">Transcript</p>
+            <p className={cn('text-sm font-medium', isCorrect ? 'text-(--success)' : 'text-red-600')}>
+              &quot;{expectedAnswer}&quot;
+            </p>
+            {metadata && <p className="text-xs text-(--text-muted)">{metadata}</p>}
+            {item.audio?.altText && (
+              <p className="text-sm text-(--text-secondary)">{item.audio.altText}</p>
+            )}
+          </div>
         )}
       </form>
 
