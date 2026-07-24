@@ -181,3 +181,35 @@ Reference implementation: `knowledge/modules/modulo-1/chapters/m1-ch1/activities
 4. Run `pnpm activities:validate`
 5. Test: `/learn?moduleId=modulo-X&chapterId=mX-chY&activityId=mX-chY-listening`
 6. Run `pnpm kb:embed` only if chapter markdown changed
+
+---
+
+## Activity runtime contract
+
+Activity types are registered in `features/activities/registry.ts` with a versioned runtime contract (`ACTIVITY_RUNTIME_CONTRACT_VERSION`). The shell in `/learn` reads declared capabilities to enable controls and emit normalized runtime events.
+
+### Capabilities
+
+| Capability | Declare when |
+|------------|--------------|
+| `hint` | The activity exposes editorial or graduated hints (`word-scramble`, `dictation`, `pronunciation`) |
+| `progress` | The activity reports per-item progress (all current types) |
+| `snapshot` | The activity supports pause/resume via snapshot payloads (all current types) |
+| `itemFeedback` | The activity can explain per-item results (`quiz`, `listening`) |
+| `difficulty` | The activity supports adaptive variants (reserved for future types) |
+| `keyboard` | Keyboard-operable controls are available |
+| `audio` | Audio playback is required (`flashcard`, `listening`, `dictation`) |
+| `microphone` | Microphone input is required (`pronunciation`) |
+| `review` | Weak items can feed spaced-repetition review queues |
+
+### Checklist for a new activity type
+
+1. Add props schema in `features/activities/contracts.ts`
+2. Implement renderer in `components/games/`
+3. Add snapshot contract in `features/activities/snapshots/`
+4. Register the type in `features/activities/registry.ts` with explicit capabilities
+5. Wire the renderer in `components/learn/ActivityRenderer.tsx`
+6. Add curriculum fixtures and run `pnpm activities:validate`
+7. Extend `__tests__/activities/runtime-contract.test.ts` and `behavior-matrix.test.ts`
+
+Runtime events (`started`, `itemAnswered`, `hintRequested`, `completed`, `abandoned`) are validated in `features/activities/runtime-contract.ts` and emitted by `ActivityRenderer`.

@@ -8,8 +8,9 @@ describe('activity contracts and registry', () => {
     for (const definition of Object.values(activityRegistry)) {
       expect(definition.schema).toBeDefined()
       expect(definition.renderer).toBeDefined()
+      expect(definition.contractVersion).toBe(1)
       expect(definition.evaluator({ score: 1, total: 2 }).scorePercent).toBe(50)
-      expect(definition.capabilities.length).toBeGreaterThan(0)
+      expect(definition.capabilities.supports.size).toBeGreaterThan(0)
     }
   })
 
