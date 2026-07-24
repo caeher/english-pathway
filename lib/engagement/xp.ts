@@ -10,6 +10,7 @@ const BASE_XP: Record<ActivityType, number> = {
   'dictation': 14,
   'pronunciation': 10,
   'branching-dialogue': 14,
+  'minimal-pairs': 12,
 }
 
 export function getXpForActivity(activityType: ActivityType, scorePercent: number): number {

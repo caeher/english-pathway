@@ -5,6 +5,7 @@ import type {
   FlashcardData,
   ListeningItem,
   MatchPair,
+  MinimalPairItem,
   PronunciationItem,
   QuizQuestion,
   SentenceChallenge,
@@ -90,6 +91,16 @@ export function extractReviewItems(activity: ChapterActivity, chapter: Chapter, 
         )
       })
     }
+    case 'minimal-pairs':
+      return (props as unknown as { pairs: MinimalPairItem[] }).pairs.map((pair) => source(
+        activity,
+        chapter,
+        module,
+        `minimal-pair:${pair.id}`,
+        `Which word did you hear: "${pair.wordA}" or "${pair.wordB}"?`,
+        pair.wordA,
+        pair.tip,
+      ))
   }
 }
 

@@ -27,5 +27,7 @@ export function getReviewContentRefs(activity: ChapterActivity, weakItemIndexes?
       })
       return pickWeak(decisionNodeIds.map((nodeId) => `${activity.id}:dialogue:${nodeId}`))
     }
+    case 'minimal-pairs':
+      return pickWeak((props as unknown as { pairs: { id: string }[] }).pairs.map((pair) => `${activity.id}:minimal-pair:${pair.id}`))
   }
 }
