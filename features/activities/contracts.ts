@@ -117,6 +117,75 @@ export const activityPropsSchemas = {
       }
     })).min(1),
   }),
+  'branching-dialogue': z.object({
+    setting: z.string().min(1),
+    characters: z.array(z.object({
+      id: z.string().min(1),
+      name: z.string().min(1),
+      role: z.string().optional(),
+    })).optional(),
+    startNodeId: z.string().min(1),
+    nodes: z.array(z.object({
+      id: z.string().min(1),
+      speakerId: z.string().optional(),
+      intention: z.string().min(1),
+      prompt: z.string().min(1),
+      audio: curatedAudioSchema.optional(),
+      choices: z.array(z.object({
+        id: z.string().min(1),
+        text: z.string().min(1),
+        nextNodeId: z.string().min(1),
+        pragmaticRating: z.enum(['optimal', 'acceptable', 'inappropriate']),
+        grammaticalRating: z.enum(['correct', 'incorrect']).optional(),
+        consequence: z.string().optional(),
+        explanation: z.string().min(1),
+      })).max(4),
+      isTerminal: z.boolean().optional(),
+    }).superRefine((node, ctx) => {
+      if (node.audio && !isValidCuratedAudioSrc(node.audio.src)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'audio.src must start with /audio/ or http(s)://',
+          path: ['audio', 'src'],
+        })
+      }
+      if (!node.isTerminal && (node.choices.length < 2 || node.choices.length > 4)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'non-terminal nodes must have 2–4 choices',
+          path: ['choices'],
+        })
+      }
+      if (node.isTerminal && node.choices.length > 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'terminal nodes must not include choices',
+          path: ['choices'],
+        })
+      }
+    })).min(2).max(8),
+  }).superRefine((props, ctx) => {
+    const nodeIds = new Set(props.nodes.map((node) => node.id))
+    if (!nodeIds.has(props.startNodeId)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'startNodeId must reference an existing node',
+        path: ['startNodeId'],
+      })
+    }
+
+    props.nodes.forEach((node, nodeIndex) => {
+      node.choices.forEach((choice, choiceIndex) => {
+        if (!nodeIds.has(choice.nextNodeId)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `nextNodeId "${choice.nextNodeId}" does not exist`,
+            path: ['nodes', nodeIndex, 'choices', choiceIndex, 'nextNodeId'],
+          })
+        }
+      })
+    })
+  }),
 } as const
 
 export type ActivityTypeKey = keyof typeof activityPropsSchemas
@@ -139,6 +208,7 @@ export const chapterActivitySchema = z.discriminatedUnion('type', [
   activityBase.extend({ type: z.literal('listening'), props: activityPropsSchemas.listening }),
   activityBase.extend({ type: z.literal('dictation'), props: activityPropsSchemas.dictation }),
   activityBase.extend({ type: z.literal('pronunciation'), props: activityPropsSchemas.pronunciation }),
+  activityBase.extend({ type: z.literal('branching-dialogue'), props: activityPropsSchemas['branching-dialogue'] }),
 ])
 
 export type ChapterActivityInput = z.infer<typeof chapterActivitySchema>
