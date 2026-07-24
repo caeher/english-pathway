@@ -56,18 +56,15 @@ export async function attachEnglishAssistantActivityContextUseCase(
 export async function resolveEnglishAssistantMessagesForModel(
   context: AuthenticatedContext,
   conversationId: string | undefined,
-  clientMessages: AssistantMessage[],
+  userMessage: string,
 ): Promise<{ conversationId: string; messages: AssistantMessage[]; activityContext: ActivityContext | null }> {
-  const latestClientMessage = clientMessages.at(-1)
-  if (!latestClientMessage || latestClientMessage.role !== 'user') {
-    throw new DomainError('INVALID_INPUT', 'The final message must be from the user.')
-  }
+  const latestUserMessage: AssistantMessage = { role: 'user', content: userMessage }
 
   if (!conversationId) {
     const created = await createEnglishAssistantConversation(context.supabase, context.userId)
     return {
       conversationId: created.id,
-      messages: clientMessages.slice(-12),
+      messages: [latestUserMessage],
       activityContext: null,
     }
   }
@@ -82,8 +79,8 @@ export async function resolveEnglishAssistantMessagesForModel(
   )
 
   const persistedLatest = messages.at(-1)
-  if (!persistedLatest || persistedLatest.role !== 'user' || persistedLatest.content !== latestClientMessage.content) {
-    messages.push(latestClientMessage)
+  if (!persistedLatest || persistedLatest.role !== 'user' || persistedLatest.content !== latestUserMessage.content) {
+    messages.push(latestUserMessage)
   }
 
   return {

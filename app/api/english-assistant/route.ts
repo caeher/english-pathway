@@ -1,8 +1,10 @@
 import { persistEnglishAssistantTurn, resolveEnglishAssistantMessagesForModel } from '@/features/english-assistant'
+import { recordSecurityInjectionSignal } from '@/lib/analytics/security-signal'
 import { assistantRequestSchema } from '@/lib/english-assistant/schema'
 import { askEnglishAssistant } from '@/lib/english-assistant/openai'
 import { apiErrorResponse, DomainError, respondWithApiErrors } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
+import { classifyInjectionSignal } from '@/lib/security/prompt-trust'
 import {
   completeEnglishAssistantPromptLog,
   createEnglishAssistantPromptLog,
@@ -34,10 +36,13 @@ export async function POST(request: Request) {
         throw new DomainError('CREDITS_EXHAUSTED', 'Your 50 English assistant messages have been used.')
       }
 
+      const injectionSignal = classifyInjectionSignal(parsed.data.message)
+      await recordSecurityInjectionSignal(context.supabase, context.userId, 'assistant', injectionSignal)
+
       const resolved = await resolveEnglishAssistantMessagesForModel(
         context,
         parsed.data.conversationId,
-        parsed.data.messages,
+        parsed.data.message,
       )
       const userMessage = resolved.messages.at(-1)!
       const logId = await createEnglishAssistantPromptLog(context.userId, userMessage.content)
