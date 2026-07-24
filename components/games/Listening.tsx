@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, XCircle, ArrowRight } from 'lucide-react'
 import type { ListeningItem } from '@/types'
 import type { ListeningProgress } from '@/features/activities/snapshots/listening'
-import { SpeakButton } from '@/components/ui/SpeakButton'
-import { speak } from '@/lib/audio/tts'
+import { ActivityAudioPlayer } from '@/components/ui/ActivityAudioPlayer'
+import { formatAudioMetadata } from '@/lib/audio/curated-audio'
 import { cn } from '@/lib/helpers'
 import { scoreToPercent } from '@/lib/games/scoring'
 import { useDebouncedProgress } from '@/lib/games/useDebouncedProgress'
@@ -26,6 +26,8 @@ export default function Listening({ items, initialProgress, onProgressChange, on
   const [finished, setFinished] = useState(false)
   const [explanations, setExplanations] = useState<string[]>([])
   const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>(initialProgress?.weakItemIndexes ?? [])
+  const [allowAutoPlay, setAllowAutoPlay] = useState(false)
+  const hasUserInteractedRef = useRef(false)
 
   useDebouncedProgress(
     { current, selected, answered, score, weakItemIndexes },
@@ -34,6 +36,8 @@ export default function Listening({ items, initialProgress, onProgressChange, on
   )
 
   const item = items[current]
+  const transcript = item.audio?.transcript ?? item.audioText
+  const metadata = formatAudioMetadata(item.audio?.speaker, item.audio?.accent)
 
   const handleSelect = (index: number) => {
     if (answered) return
@@ -57,23 +61,24 @@ export default function Listening({ items, initialProgress, onProgressChange, on
     setCurrent((c) => c + 1)
     setSelected(null)
     setAnswered(false)
-    speak(items[current + 1].audioText)
+    if (hasUserInteractedRef.current) {
+      setAllowAutoPlay(true)
+    }
   }
 
-  const handleRestart = () => {
-    setCurrent(0)
-    setSelected(null)
-    setAnswered(false)
-    setScore(0)
-    setFinished(false)
-    setExplanations([])
-    setWeakItemIndexes([])
+  const handleAudioInteraction = () => {
+    hasUserInteractedRef.current = true
+    setAllowAutoPlay(false)
   }
 
   if (finished) return null
 
   return (
-    <div className="max-w-2xl mx-auto" role="region" aria-label="Listening activity">
+    <div className="max-w-2xl mx-auto" role="region" aria-label="Listening activity" aria-describedby="listening-mode-description">
+      <p id="listening-mode-description" className="sr-only">
+        Listen to the audio before choosing an answer. The transcript is revealed after you respond.
+      </p>
+
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-display font-bold text-(--text-muted)">
           Audio {current + 1} / {items.length}
@@ -83,15 +88,14 @@ export default function Listening({ items, initialProgress, onProgressChange, on
         </span>
       </div>
 
-      <div className="flex items-center gap-3 p-4 rounded-2xl bg-(--bg-tertiary) border border-(--border-primary) mb-5">
-        <SpeakButton text={item.audioText} size="md" label="Play audio" />
-        <button
-          type="button"
-          onClick={() => speak(item.audioText)}
-          className="text-sm font-display font-bold text-(--accent) hover:underline cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
-        >
-          Listen again
-        </button>
+      <div className="p-4 rounded-2xl bg-(--bg-tertiary) border border-(--border-primary) mb-5">
+        <ActivityAudioPlayer
+          fallbackText={item.audioText}
+          curated={item.audio}
+          mode={item.mode}
+          autoPlay={allowAutoPlay}
+          onUserInteraction={handleAudioInteraction}
+        />
       </div>
 
       <h3 className="font-display text-lg font-bold text-(--text-primary) mb-4">{item.question}</h3>
@@ -125,6 +129,17 @@ export default function Listening({ items, initialProgress, onProgressChange, on
           )
         })}
       </div>
+
+      {answered && (
+        <div className="mt-5 rounded-xl border border-(--border-primary) bg-(--bg-card) p-4 space-y-2" aria-live="polite">
+          <p className="text-sm font-display font-bold text-(--text-primary)">Transcript</p>
+          <p className="text-sm text-(--text-secondary)">&quot;{transcript}&quot;</p>
+          {metadata && <p className="text-xs text-(--text-muted)">{metadata}</p>}
+          {item.audio?.altText && (
+            <p className="text-sm text-(--text-secondary)">{item.audio.altText}</p>
+          )}
+        </div>
+      )}
 
       {answered && (
         <div className="mt-5 flex justify-end">
