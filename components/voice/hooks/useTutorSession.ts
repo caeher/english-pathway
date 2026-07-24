@@ -5,6 +5,7 @@ import { useConversation } from '@elevenlabs/react'
 import { trackEvent } from '@/lib/analytics/events'
 import type { SessionConfig, SessionMode, SessionOrchestration } from '@/components/voice/session-types'
 import { resolveSessionLaunch } from '@/components/voice/session-config'
+import { selectSessionPlan, useSessionPlanStore } from '@/stores/useSessionPlanStore'
 
 interface UseTutorSessionOptions {
   mode: SessionMode
@@ -17,27 +18,37 @@ export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onS
   const { startSession, endSession, status, isMuted, setMuted, sendUserMessage } = useConversation()
   const [error, setError] = useState<string | null>(null)
   const sessionStartedAt = useRef<number | null>(null)
+  const sessionPlan = useSessionPlanStore(selectSessionPlan)
   const active = status === 'connected'
   const connecting = status === 'connecting'
 
   useEffect(() => {
     if (active && sessionStartedAt.current === null) {
       sessionStartedAt.current = Date.now()
-      trackEvent('learn_session_start', { mode })
+      trackEvent('learn_session_start', { mode, has_plan: Boolean(sessionPlan) })
     }
     if (status === 'disconnected' && sessionStartedAt.current !== null) {
-      trackEvent('learn_session_end', { mode, duration_seconds: Math.round((Date.now() - sessionStartedAt.current) / 1000) })
+      const durationSeconds = Math.round((Date.now() - sessionStartedAt.current) / 1000)
+      trackEvent('learn_session_end', { mode, duration_seconds: durationSeconds })
+      if (sessionPlan) {
+        trackEvent('session_plan_complete', {
+          goal: sessionPlan.goal,
+          duration_minutes: sessionPlan.durationMinutes,
+          activities_completed: 0,
+        })
+      }
       sessionStartedAt.current = null
       onSessionEnded()
     }
-  }, [active, mode, onSessionEnded, status])
+  }, [active, mode, onSessionEnded, sessionPlan, status])
 
   const start = useCallback(async () => {
     setError(null)
     if (mode === 'voice' && !(await onCheckMicrophone())) return false
 
     try {
-      const response = await fetch('/api/tutor/session')
+      const planQuery = sessionPlan ? `?mode=${mode}&plan=${encodeURIComponent(JSON.stringify({ ...sessionPlan, mode }))}` : `?mode=${mode}`
+      const response = await fetch(`/api/tutor/session${planQuery}`)
       if (!response.ok) throw new Error('session_config')
       const config = await response.json() as SessionConfig
       const launch = resolveSessionLaunch(config, mode)
@@ -61,7 +72,7 @@ export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onS
       trackEvent('learn_session_error', { mode, reason: 'session_config' })
       return false
     }
-  }, [mode, onCheckMicrophone, onSessionStarted, startSession])
+  }, [mode, onCheckMicrophone, onSessionStarted, sessionPlan, startSession])
 
   const end = useCallback(() => endSession(), [endSession])
 

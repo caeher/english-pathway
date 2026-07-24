@@ -29,6 +29,9 @@ export type AnalyticsEventName =
   | 'learn_tool_error'
   | 'hint_requested'
   | 'security_injection_signal'
+  | 'session_plan_select'
+  | 'session_plan_change'
+  | 'session_plan_complete'
 
 export interface AnalyticsEventProperties {
   [key: string]: string | number | boolean | null | undefined

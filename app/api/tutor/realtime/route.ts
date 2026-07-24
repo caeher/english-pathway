@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { apiErrorResponse, DomainError } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
 import { finishAudioCreditSession, startAudioCreditSession } from '@/lib/credits/usage'
+import { parseSessionPlanHeader } from '@/lib/learn/session-plan'
 import { buildTutorInstructions } from '@/lib/tutor/instructions'
 import { TUTOR_REALTIME_TOOLS } from '@/lib/tutor/realtime-tools'
 
@@ -27,10 +28,12 @@ export async function POST(request: Request) {
     context.supabase.from('user_progress').select('last_chapter_id, last_activity_id').eq('user_id', context.userId).maybeSingle(),
   ])
 
+  const sessionPlan = parseSessionPlanHeader(request.headers.get('X-Session-Plan'))
   const instructions = buildTutorInstructions({
     level: profile.data?.level ?? null,
     lastChapterId: progress.data?.last_chapter_id ?? null,
     lastActivityId: progress.data?.last_activity_id ?? null,
+    plan: sessionPlan,
   })
 
   const form = new FormData()

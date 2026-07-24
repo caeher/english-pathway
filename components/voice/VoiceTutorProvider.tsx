@@ -10,11 +10,14 @@ import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import { useTutorSession } from './hooks/useTutorSession'
 import type { MicrophoneState, SessionMode, SessionOrchestration } from './session-types'
 import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
+import SessionPlanPreflight from '@/components/learn/SessionPlanPreflight'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
+import { buildSessionPlanInstruction } from '@/lib/learn/session-plan'
 import { showActivity } from '@/lib/learn/client-tools'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
+import { selectSessionPlan, useSessionPlanStore } from '@/stores/useSessionPlanStore'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
 
 interface TutorControlsProps {
@@ -60,6 +63,7 @@ function TutorControls({
   } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted: handleSessionStarted, onSessionEnded })
   const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
+  const sessionPlan = useSessionPlanStore(selectSessionPlan)
 
   useEffect(() => {
     if (!active) {
@@ -69,9 +73,11 @@ function TutorControls({
     if (bootstrapSentRef.current) return
     bootstrapSentRef.current = true
     flushPendingMessages()
-    const bootstrap = buildOrchestrationMessage(orchestrationRef.current)
+    const bootstrap = sessionPlan
+      ? buildSessionPlanInstruction(sessionPlan)
+      : buildOrchestrationMessage(orchestrationRef.current)
     if (bootstrap) sendUserMessage(bootstrap)
-  }, [active, flushPendingMessages, sendUserMessage])
+  }, [active, flushPendingMessages, sendUserMessage, sessionPlan])
 
   const handleModeChange = (nextMode: SessionMode) => {
     clearError()
@@ -97,6 +103,7 @@ function TutorControls({
       tutorActive={active}
       tutorConnecting={connecting}
       showEngagement
+      onPlanUpdated={sendUserMessage}
       tutorSlot={
         <div className="flex h-full min-h-[360px] flex-col">
           <div className="border-b border-(--border-primary) p-4">
@@ -105,7 +112,9 @@ function TutorControls({
           </div>
 
           <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
-            {!active && <Surface as="section" padding="md" className="sm:p-5" aria-labelledby="session-preflight-heading">
+            {!active && <>
+              <SessionPlanPreflight mode={mode} disabled={connecting} />
+              <Surface as="section" padding="md" className="sm:p-5" aria-labelledby="session-preflight-heading">
               <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p>
               <h2 id="session-preflight-heading" className="mt-1 font-display text-xl font-black text-(--text-primary)">Choose your session mode</h2>
               <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">Voice mode lets you speak with the tutor. Text mode works without a microphone or audio permission.</p>
@@ -133,11 +142,12 @@ function TutorControls({
               </div>}
 
               {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}
-              <Button type="button" onClick={() => void start()} disabled={connecting} className="mt-5 w-full sm:w-auto">
+              <Button type="button" onClick={() => void start()} disabled={connecting || !sessionPlan} className="mt-5 w-full sm:w-auto">
                 {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
                 {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
               </Button>
-            </Surface>}
+            </Surface>
+            </>}
 
             {active && <section className="space-y-4" aria-labelledby="active-session-heading">
               <div className="flex flex-wrap items-center justify-between gap-3">
