@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
+import { PANEL_REJECTION_NOTICE } from '@/lib/tutor/panel-content'
 import { learnSessionActions, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 
 vi.mock('@/lib/analytics/events', () => ({
@@ -25,21 +26,43 @@ vi.mock('@/lib/learn/client-tools', async (importOriginal) => {
   }
 })
 
+const validBlocks = [
+  { type: 'paragraph' as const, text: 'Use a before consonant sounds.' },
+]
+
 describe('executeTutorTool', () => {
   beforeEach(() => {
     learnSessionActions.resetSession()
     vi.clearAllMocks()
   })
 
-  it('shows grammar in the panel', async () => {
-    const result = await executeTutorTool('showGrammar', { title: 'Tips', markdown: 'Use **a** before consonant sounds.' })
+  it('shows structured explanation in the panel', async () => {
+    const result = await executeTutorTool('showGrammar', { title: 'Tips', blocks: validBlocks })
     expect(result).toContain('Grammar content displayed')
     expect(useLearnSessionStore.getState().panel).toEqual({
-      kind: 'grammar',
+      kind: 'explanation',
       title: 'Tips',
-      markdown: 'Use **a** before consonant sounds.',
+      blocks: validBlocks,
     })
     expect(useLearnSessionStore.getState().tutorState).toBe('explaining')
+    expect(useLearnSessionStore.getState().panelNotice).toBeNull()
+  })
+
+  it('rejects unsafe grammar without mutating the panel', async () => {
+    learnSessionActions.setExplanation([{ type: 'paragraph', text: 'Safe content.' }], 'Existing')
+
+    const result = await executeTutorTool('showGrammar', {
+      title: 'Bad',
+      blocks: [{ type: 'paragraph', text: '<script>alert(1)</script>' }],
+    })
+
+    expect(result).toContain('rejected')
+    expect(useLearnSessionStore.getState().panel).toEqual({
+      kind: 'explanation',
+      title: 'Existing',
+      blocks: [{ type: 'paragraph', text: 'Safe content.' }],
+    })
+    expect(useLearnSessionStore.getState().panelNotice).toBe(PANEL_REJECTION_NOTICE)
   })
 
   it('rejects invalid activity IDs', async () => {
