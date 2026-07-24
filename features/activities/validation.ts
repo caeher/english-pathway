@@ -1,5 +1,11 @@
 import { chapterActivitySchema } from './contracts'
 import { getDecisionNodeIds, isDecisionNode } from './branching-dialogue'
+import {
+  findDuplicateContentAcrossChapter,
+  isGenericDescription,
+  isGenericTitle,
+  RETIRED_ACTIVITY_TYPES,
+} from './quality/rules'
 
 export interface ActivityValidationIssue {
   moduleId: string
@@ -267,6 +273,82 @@ function validateBranchingDialogueSemantics(
   return issues
 }
 
+function validateEditorialMetadata(
+  moduleId: string,
+  chapterId: string,
+  activityId: string,
+  activity: { id: string; title: string; description: string; type: string },
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+  const expectedId = `${chapterId}-${activity.type}`
+
+  if (RETIRED_ACTIVITY_TYPES.includes(activity.type as typeof RETIRED_ACTIVITY_TYPES[number])) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'type',
+      message: `activity type "${activity.type}" is retired`,
+      severity: 'error',
+    })
+  }
+
+  if (activity.id !== expectedId && !activity.id.startsWith(`${chapterId}-`)) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'id',
+      message: `activity id should follow ${chapterId}-{type}`,
+      severity: 'warning',
+    })
+  }
+
+  if (isGenericTitle(activity.title)) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'title',
+      message: 'title looks like a generic template',
+      severity: 'warning',
+    })
+  }
+
+  if (isGenericDescription(activity.description)) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'description',
+      message: 'description looks like a generic template',
+      severity: 'warning',
+    })
+  }
+
+  return issues
+}
+
+function validateChapterEditorialRules(
+  moduleId: string,
+  chapterId: string,
+  activities: Array<{ id: string; type: string; title: string; description: string; props: unknown }>,
+): ActivityValidationIssue[] {
+  const parsedActivities = activities.flatMap((activity) => {
+    const parsed = chapterActivitySchema.safeParse(activity)
+    return parsed.success ? [parsed.data] : []
+  })
+
+  return findDuplicateContentAcrossChapter(parsedActivities).map((finding) => ({
+    moduleId,
+    chapterId,
+    activityId: finding.activityId ?? 'chapter',
+    field: finding.field,
+    message: finding.message,
+    severity: 'warning' as const,
+  }))
+}
+
 export function validateCurriculumContrastPairs(
   activitiesByChapter: Array<{ moduleId: string; chapterId: string; activities: Array<{ type: string; props: unknown }> }>,
 ): ActivityValidationIssue[] {
@@ -298,6 +380,18 @@ export function validateActivityDocument(moduleId: string, chapterId: string, ac
   const parsed = chapterActivitySchema.safeParse(activity)
   const raw = activity && typeof activity === 'object' ? activity as Record<string, unknown> : {}
   const activityId = typeof raw.id === 'string' ? raw.id : `index:${index}`
+  const activityType = typeof raw.type === 'string' ? raw.type : 'unknown'
+
+  if (RETIRED_ACTIVITY_TYPES.includes(activityType as typeof RETIRED_ACTIVITY_TYPES[number])) {
+    return [{
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'type',
+      message: `activity type "${activityType}" is retired`,
+      severity: 'error',
+    }]
+  }
 
   if (!parsed.success) {
     return parsed.error.issues.map((issue) => ({
@@ -310,31 +404,34 @@ export function validateActivityDocument(moduleId: string, chapterId: string, ac
     }))
   }
 
+  const editorialIssues = validateEditorialMetadata(moduleId, chapterId, activityId, parsed.data)
+  let semanticIssues: ActivityValidationIssue[] = []
+
   if (parsed.data.type === 'quiz') {
-    return validateQuizSemantics(moduleId, chapterId, activityId, parsed.data.props)
+    semanticIssues = validateQuizSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  } else if (parsed.data.type === 'listening') {
+    semanticIssues = validateListeningSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  } else if (parsed.data.type === 'pronunciation') {
+    semanticIssues = validatePronunciationSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  } else if (parsed.data.type === 'branching-dialogue') {
+    semanticIssues = validateBranchingDialogueSemantics(moduleId, chapterId, activityId, parsed.data.props)
+  } else if (parsed.data.type === 'minimal-pairs') {
+    semanticIssues = validateMinimalPairsSemantics(moduleId, chapterId, activityId, parsed.data.props)
   }
 
-  if (parsed.data.type === 'listening') {
-    return validateListeningSemantics(moduleId, chapterId, activityId, parsed.data.props)
-  }
-
-  if (parsed.data.type === 'pronunciation') {
-    return validatePronunciationSemantics(moduleId, chapterId, activityId, parsed.data.props)
-  }
-
-  if (parsed.data.type === 'branching-dialogue') {
-    return validateBranchingDialogueSemantics(moduleId, chapterId, activityId, parsed.data.props)
-  }
-
-  if (parsed.data.type === 'minimal-pairs') {
-    return validateMinimalPairsSemantics(moduleId, chapterId, activityId, parsed.data.props)
-  }
-
-  return []
+  return [...editorialIssues, ...semanticIssues]
 }
 
 export function validateActivityList(moduleId: string, chapterId: string, activities: unknown[]): ActivityValidationIssue[] {
-  return activities.flatMap((activity, index) => validateActivityDocument(moduleId, chapterId, activity, index))
+  const perActivity = activities.flatMap((activity, index) => validateActivityDocument(moduleId, chapterId, activity, index))
+  const chapterLevel = validateChapterEditorialRules(
+    moduleId,
+    chapterId,
+    activities.filter((activity): activity is { id: string; type: string; title: string; description: string; props: unknown } => (
+      Boolean(activity && typeof activity === 'object')
+    )),
+  )
+  return [...perActivity, ...chapterLevel]
 }
 
 export function filterValidationErrors(issues: ActivityValidationIssue[]): ActivityValidationIssue[] {

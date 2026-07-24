@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle, XCircle } from 'lucide-react'
 import { selectClearPanel, selectPanel, selectPanelNotice, useLearnSessionStore } from '@/stores/useLearnSessionStore'
@@ -11,6 +11,7 @@ import { panelTransition } from '@/lib/motion/system'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
 import { cn } from '@/lib/helpers'
+import { createActivityRuntimeAnalyticsHandler } from '@/lib/analytics/activity-runtime'
 
 interface DynamicContentPanelProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
@@ -31,6 +32,16 @@ export default function DynamicContentPanel({
   const headingRef = useRef<HTMLHeadingElement>(null)
   const reducedMotion = useReducedMotion()
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
+
+  const activityRuntimeContext = useMemo(() => ({
+    chapterId: panel.kind === 'activity' ? panel.chapterId : null,
+    moduleId: panel.kind === 'activity' ? panel.moduleId : null,
+  }), [panel])
+
+  const handleRuntimeEvent = useMemo(
+    () => createActivityRuntimeAnalyticsHandler(activityRuntimeContext),
+    [activityRuntimeContext],
+  )
 
   const questionPrompt = panel.kind === 'question' ? panel.prompt : null
 
@@ -110,6 +121,7 @@ export default function DynamicContentPanel({
               onHelp={onActivityDifficult}
               onExit={clearPanel}
               onPhaseChange={onActivityPhaseChange}
+              onRuntimeEvent={handleRuntimeEvent}
               onComplete={(result) => onActivityComplete?.({
                 ...result,
                 chapterId: panel.chapterId,

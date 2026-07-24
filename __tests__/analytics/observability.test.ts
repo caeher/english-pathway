@@ -10,4 +10,17 @@ describe('first-party observability privacy contract', () => {
   it('rejects direct analytics payloads with sensitive property names', () => {
     expect(analyticsEventSchema.safeParse({ event_name: 'learn_session_error', properties: { transcript: 'private' } }).success).toBe(false)
   })
+
+  it('accepts activity lifecycle events with operational properties only', () => {
+    expect(analyticsEventSchema.safeParse({
+      event_name: 'activity_first_attempt',
+      properties: {
+        activity_id: 'm1-ch1-quiz',
+        activity_type: 'quiz',
+        chapter_id: 'm1-ch1',
+        item_index: 0,
+        correct: true,
+      },
+    }).success).toBe(true)
+  })
 })

@@ -12,6 +12,7 @@ export const analyticsEventSchema = z.object({
     'chapter_complete', 'activity_complete', 'daily_goal_met', 'streak_lost', 'streak_saved', 'srs_review_complete',
     'game_complete', 'guest_signup_prompt_shown', 'guest_signup_prompt_click', 'learn_mode_select',
     'learn_microphone', 'learn_session_start', 'learn_session_end', 'learn_session_error',
+    'activity_started', 'activity_first_attempt', 'activity_item_error', 'activity_abandon', 'activity_retry', 'hint_requested',
   ]),
   properties: analyticsPropertiesSchema.default({}),
   session_id: z.string().max(128).nullable().optional(),
