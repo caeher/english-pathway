@@ -25,6 +25,6 @@ describe('ActivityRenderer coverage', () => {
     const renderer = readFileSync(resolve(process.cwd(), 'components/learn/ActivityRenderer.tsx'), 'utf8')
     expect(renderer).toContain('ActivityCompletionCard')
     expect(renderer).toContain('handleRetry')
-    expect(renderer).toContain('handleContinue')
+    expect(renderer).toContain('handleAcceptFollowUp')
   })
 })
