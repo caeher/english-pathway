@@ -1,3 +1,4 @@
+import { persistEnglishAssistantTurn, resolveEnglishAssistantMessagesForModel } from '@/features/english-assistant'
 import { assistantRequestSchema } from '@/lib/english-assistant/schema'
 import { askEnglishAssistant } from '@/lib/english-assistant/openai'
 import { apiErrorResponse, DomainError, respondWithApiErrors } from '@/lib/api/errors'
@@ -32,13 +33,29 @@ export async function POST(request: Request) {
       if (!credit.allowed) {
         throw new DomainError('CREDITS_EXHAUSTED', 'Your 50 English assistant messages have been used.')
       }
-      const prompt = parsed.data.messages.at(-1)!.content
-      const logId = await createEnglishAssistantPromptLog(context.userId, prompt)
+
+      const resolved = await resolveEnglishAssistantMessagesForModel(
+        context,
+        parsed.data.conversationId,
+        parsed.data.messages,
+      )
+      const userMessage = resolved.messages.at(-1)!
+      const logId = await createEnglishAssistantPromptLog(context.userId, userMessage.content)
 
       try {
-        const answer = await askEnglishAssistant(parsed.data.messages)
+        const answer = await askEnglishAssistant(resolved.messages, resolved.activityContext)
         await completeEnglishAssistantPromptLog(logId, answer)
-        return { answer, credits: credit.credits }
+        await persistEnglishAssistantTurn(
+          context,
+          resolved.conversationId,
+          userMessage,
+          { role: 'assistant', content: answer },
+        )
+        return {
+          answer,
+          conversationId: resolved.conversationId,
+          credits: credit.credits,
+        }
       } catch (error) {
         await failEnglishAssistantPromptLog(logId)
         throw error

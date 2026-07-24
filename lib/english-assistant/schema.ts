@@ -6,6 +6,7 @@ export const assistantMessageSchema = z.object({
 })
 
 export const assistantRequestSchema = z.object({
+  conversationId: z.string().uuid().optional(),
   messages: z.array(assistantMessageSchema).min(1).max(12),
 }).refine((request) => request.messages.at(-1)?.role === 'user', {
   message: 'The final message must be from the user.',
