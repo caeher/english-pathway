@@ -1,9 +1,16 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Component, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { Component, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import type { ChapterActivity } from '@/types'
-import { activityRegistry, type ActivityTypeKey } from '@/features/activities'
+import {
+  activityRegistry,
+  extractItemIndexFromProgress,
+  hasActivityCapability,
+  toActivityCompleteSummary,
+  type ActivityRuntimeEvent,
+  type ActivityTypeKey,
+} from '@/features/activities'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { normalizeActivityResult } from '@/lib/games/result'
 import { isActivityCompleted } from '@/features/progress/client'
@@ -96,6 +103,7 @@ interface ActivityRendererProps {
   onHelp?: (activityId: string) => void
   onExit?: () => void
   onPhaseChange?: (phase: ActivityUiPhase) => void
+  onRuntimeEvent?: (event: ActivityRuntimeEvent) => void
 }
 
 type GameResult = Record<string, unknown> & {
@@ -210,6 +218,8 @@ function extractExplanations(result: GameResult): string[] {
   return []
 }
 
+const ACCESSIBILITY_CAPABILITIES = ['keyboard', 'audio', 'microphone'] as const
+
 export default function ActivityRenderer({
   activity,
   chapterId,
@@ -218,9 +228,12 @@ export default function ActivityRenderer({
   onHelp,
   onExit,
   onPhaseChange,
+  onRuntimeEvent,
 }: ActivityRendererProps) {
   const [attempt, setAttempt] = useState(0)
   const [hintCount, setHintCount] = useState(0)
+  const startedEmittedRef = useRef(false)
+  const [lastProgressPayload, setLastProgressPayload] = useState<unknown>(undefined)
   const [phase, setPhase] = useState<ActivityPhase>('playing')
   const [completedResult, setCompletedResult] = useState<ActivityCompleteResult | null>(null)
   const [followUpDecision, setFollowUpDecision] = useState<FollowUpDecision | null>(null)
@@ -231,6 +244,19 @@ export default function ActivityRenderer({
 
   const type = activity.type as ActivityTypeKey
   const definition = activityRegistry[type]
+
+  const emitRuntimeEvent = useCallback((event: ActivityRuntimeEvent) => {
+    onRuntimeEvent?.(event)
+  }, [onRuntimeEvent])
+
+  const canRequestHelp = Boolean(
+    definition && hasActivityCapability(definition, 'hint') && onHelp,
+  )
+
+  const accessibilityCapabilities = useMemo(
+    () => ACCESSIBILITY_CAPABILITIES.filter((capability) => definition?.capabilities.supports.has(capability)),
+    [definition],
+  )
 
   useEffect(() => {
     purgeExpiredSnapshots()
@@ -282,6 +308,8 @@ export default function ActivityRenderer({
     setResumeState('checking')
     setSavedSummary(null)
     setRestoredProgress(undefined)
+    startedEmittedRef.current = false
+    setLastProgressPayload(undefined)
     void checkSnapshot()
 
     return () => {
@@ -290,13 +318,39 @@ export default function ActivityRenderer({
   }, [activity.id, type, attempt])
 
   const handleProgressChange = useCallback((payload: unknown) => {
+    if (definition && hasActivityCapability(definition, 'itemFeedback')) {
+      const previousProgress = lastProgressPayload && typeof lastProgressPayload === 'object'
+        ? lastProgressPayload as Record<string, unknown>
+        : null
+      const progress = payload && typeof payload === 'object'
+        ? payload as Record<string, unknown>
+        : null
+      const answered = progress?.answered === true
+      const wasAnswered = previousProgress?.answered === true
+      const currentIndex = extractItemIndexFromProgress(type, payload)
+
+      if (answered && !wasAnswered && typeof currentIndex === 'number') {
+        const weakItemIndexes = Array.isArray(progress?.weakItemIndexes)
+          ? progress.weakItemIndexes.filter((value): value is number => typeof value === 'number')
+          : []
+        emitRuntimeEvent({
+          type: 'itemAnswered',
+          activityId: activity.id,
+          activityType: type,
+          itemIndex: currentIndex,
+          correct: !weakItemIndexes.includes(currentIndex),
+        })
+      }
+    }
+
+    setLastProgressPayload(payload)
     saveSnapshot({
       version: 1,
       activityId: activity.id,
       activityType: type,
       payload,
     })
-  }, [activity.id, type])
+  }, [activity.id, definition, emitRuntimeEvent, lastProgressPayload, type])
 
   const clearSnapshot = useCallback(() => {
     removeSnapshot(activity.id)
@@ -329,9 +383,15 @@ export default function ActivityRenderer({
   }, [clearSnapshot])
 
   const handleExit = useCallback(() => {
+    emitRuntimeEvent({
+      type: 'abandoned',
+      activityId: activity.id,
+      activityType: type,
+      reason: 'exit',
+    })
     clearSnapshot()
     onExit?.()
-  }, [clearSnapshot, onExit])
+  }, [activity.id, clearSnapshot, emitRuntimeEvent, onExit, type])
 
   const handleRetry = useCallback(() => {
     clearSnapshot()
@@ -403,10 +463,40 @@ export default function ActivityRenderer({
     }
   }, [activity.id, chapterId, followUpDecision, handleDeclineFollowUp, handleRetry, navigateToActivity])
 
-  const handleRequestHelp = useCallback(() => {
-    setHintCount((value) => value + 1)
+  const handleHelpDuringPlay = useCallback(() => {
+    const nextLevel = hintCount + 1
+    setHintCount(nextLevel)
+    emitRuntimeEvent({
+      type: 'hintRequested',
+      activityId: activity.id,
+      activityType: type,
+      itemIndex: extractItemIndexFromProgress(type, lastProgressPayload),
+      level: nextLevel,
+    })
     onHelp?.(activity.id)
-  }, [activity.id, onHelp])
+  }, [activity.id, emitRuntimeEvent, hintCount, lastProgressPayload, onHelp, type])
+
+  const handleRequestHelp = useCallback(() => {
+    const nextLevel = hintCount + 1
+    setHintCount(nextLevel)
+    emitRuntimeEvent({
+      type: 'hintRequested',
+      activityId: activity.id,
+      activityType: type,
+      level: nextLevel,
+    })
+    onHelp?.(activity.id)
+  }, [activity.id, emitRuntimeEvent, hintCount, onHelp, type])
+
+  useEffect(() => {
+    if (resumeState !== 'playing' || phase !== 'playing' || startedEmittedRef.current) return
+    startedEmittedRef.current = true
+    emitRuntimeEvent({
+      type: 'started',
+      activityId: activity.id,
+      activityType: type,
+    })
+  }, [activity.id, emitRuntimeEvent, phase, resumeState, type])
 
   const progressProps = useMemo(() => ({
     initialProgress: restoredProgress,
@@ -475,6 +565,13 @@ export default function ActivityRenderer({
         : normalized.scorePercent < 100 ? getReviewContentRefs(activity) : [],
     }
 
+    emitRuntimeEvent({
+      type: 'completed',
+      activityId: activity.id,
+      activityType: type,
+      result: toActivityCompleteSummary(enriched),
+    })
+
     setCompletedResult(enriched)
     setPhase('completed')
     learnSessionActions.acknowledgeCompletion()
@@ -487,7 +584,8 @@ export default function ActivityRenderer({
         <ActivityControlBar
           activityTitle={activity.title}
           activityType={activity.type}
-          onHelp={onHelp ? () => onHelp(activity.id) : undefined}
+          accessibilityCapabilities={accessibilityCapabilities}
+          onHelp={canRequestHelp ? handleHelpDuringPlay : undefined}
           onReset={handleReset}
           onExit={handleExit}
         />
@@ -508,7 +606,7 @@ export default function ActivityRenderer({
           onAcceptFollowUp={chapterId || followUpDecision ? handleAcceptFollowUp : undefined}
           onDeclineFollowUp={chapterId ? handleDeclineFollowUp : undefined}
           onRetry={handleRetry}
-          onRequestHelp={onHelp ? handleRequestHelp : undefined}
+          onRequestHelp={canRequestHelp ? handleRequestHelp : undefined}
           continueLoading={continueLoading}
         />
       )}

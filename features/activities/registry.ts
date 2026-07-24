@@ -1,5 +1,11 @@
 import { z } from 'zod'
 import { activityPropsSchemas, type ActivityTypeKey } from './contracts'
+import {
+  ACTIVITY_RUNTIME_CONTRACT_VERSION,
+  createActivityCapabilities,
+  createHintActivityCapabilities,
+  type ActivityCapabilities,
+} from './runtime-contract'
 import type { AnyActivitySnapshotContract } from './snapshot'
 import {
   dictationSnapshot,
@@ -28,10 +34,11 @@ export interface ActivityResultInput {
 }
 
 export interface ActivityDefinition {
+  contractVersion: typeof ACTIVITY_RUNTIME_CONTRACT_VERSION
   schema: z.ZodTypeAny
   renderer: ActivityTypeKey
   evaluator: (result: ActivityResultInput) => ActivityEvaluation
-  capabilities: readonly string[]
+  capabilities: ActivityCapabilities
   behavior: ActivityBehavior
   snapshot: AnyActivitySnapshotContract
 }
@@ -58,10 +65,11 @@ function evaluateScore(result: ActivityResultInput): ActivityEvaluation {
 
 function definition(
   type: ActivityTypeKey,
-  capabilities: readonly string[],
+  capabilities: ActivityCapabilities,
   snapshot: AnyActivitySnapshotContract,
 ): ActivityDefinition {
   return {
+    contractVersion: ACTIVITY_RUNTIME_CONTRACT_VERSION,
     schema: activityPropsSchemas[type],
     renderer: type,
     evaluator: evaluateScore,
@@ -72,18 +80,22 @@ function definition(
 }
 
 export const activityRegistry = {
-  quiz: definition('quiz', ['keyboard', 'review'], quizSnapshot),
-  flashcard: definition('flashcard', ['keyboard', 'audio', 'review'], flashcardSnapshot),
-  'word-match': definition('word-match', ['keyboard', 'review'], wordMatchSnapshot),
-  'sentence-builder': definition('sentence-builder', ['keyboard', 'review'], sentenceBuilderSnapshot),
-  'svg-scene': definition('svg-scene', ['keyboard', 'review'], svgSceneSnapshot),
-  'word-scramble': definition('word-scramble', ['keyboard', 'review'], wordScrambleSnapshot),
-  listening: definition('listening', ['keyboard', 'audio', 'review'], listeningSnapshot),
-  dictation: definition('dictation', ['keyboard', 'audio', 'review'], dictationSnapshot),
-  pronunciation: definition('pronunciation', ['keyboard', 'microphone', 'review'], pronunciationSnapshot),
-  'drag-drop': definition('drag-drop', ['keyboard', 'review'], dragDropSnapshot),
+  quiz: definition('quiz', createActivityCapabilities('itemFeedback'), quizSnapshot),
+  flashcard: definition('flashcard', createActivityCapabilities('audio'), flashcardSnapshot),
+  'word-match': definition('word-match', createActivityCapabilities(), wordMatchSnapshot),
+  'sentence-builder': definition('sentence-builder', createActivityCapabilities(), sentenceBuilderSnapshot),
+  'svg-scene': definition('svg-scene', createActivityCapabilities(), svgSceneSnapshot),
+  'word-scramble': definition('word-scramble', createHintActivityCapabilities(1), wordScrambleSnapshot),
+  listening: definition('listening', createActivityCapabilities('audio', 'itemFeedback'), listeningSnapshot),
+  dictation: definition('dictation', createHintActivityCapabilities(1, 'audio'), dictationSnapshot),
+  pronunciation: definition('pronunciation', createHintActivityCapabilities(1, 'microphone'), pronunciationSnapshot),
+  'drag-drop': definition('drag-drop', createActivityCapabilities(), dragDropSnapshot),
 } satisfies Record<ActivityTypeKey, ActivityDefinition>
 
 export function getActivityDefinition(type: string): ActivityDefinition | null {
   return type in activityRegistry ? activityRegistry[type as ActivityTypeKey] : null
+}
+
+export function getDeclaredCapabilities(type: ActivityTypeKey): ActivityCapabilities {
+  return activityRegistry[type].capabilities
 }

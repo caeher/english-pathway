@@ -2,17 +2,50 @@
 
 import { useState } from 'react'
 import { CircleHelp, RotateCcw, SkipForward, X } from 'lucide-react'
+import type { ActivityCapability } from '@/features/activities'
 import { Button } from '@/components/ui/button'
 
 interface ActivityControlBarProps {
   activityTitle: string
   activityType: string
+  accessibilityCapabilities?: readonly ActivityCapability[]
   onHelp?: () => void
   onReset: () => void
   onExit: () => void
 }
 
-export function ActivityControlBar({ activityTitle, activityType, onHelp, onReset, onExit }: ActivityControlBarProps) {
+function buildInstructionText(
+  activityType: string,
+  accessibilityCapabilities: readonly ActivityCapability[],
+): string {
+  const parts = [`Complete the ${activityType} activity at your pace.`]
+
+  if (accessibilityCapabilities.includes('keyboard')) {
+    parts.push('Use its labelled controls and keyboard shortcuts;')
+  } else {
+    parts.push('Use its labelled controls;')
+  }
+
+  if (accessibilityCapabilities.includes('audio')) {
+    parts.push('listen to audio prompts where available;')
+  }
+
+  if (accessibilityCapabilities.includes('microphone')) {
+    parts.push('allow microphone access for speaking practice;')
+  }
+
+  parts.push('restart clears only this attempt, while Skip and Exit keep the activity available to resume later.')
+  return parts.join(' ')
+}
+
+export function ActivityControlBar({
+  activityTitle,
+  activityType,
+  accessibilityCapabilities = ['keyboard'],
+  onHelp,
+  onReset,
+  onExit,
+}: ActivityControlBarProps) {
   const [showInstructions, setShowInstructions] = useState(false)
   const confirmReset = () => {
     if (window.confirm('Restart this activity? Your answers in the current attempt will be cleared.')) onReset()
@@ -30,7 +63,11 @@ export function ActivityControlBar({ activityTitle, activityType, onHelp, onRese
         <Button variant="ghost" size="sm" type="button" onClick={confirmExit}><SkipForward className="h-4 w-4" /> Skip</Button>
         <Button variant="ghost" size="sm" type="button" className="ml-auto" onClick={confirmExit}><X className="h-4 w-4" /> Exit</Button>
       </div>
-      {showInstructions && <p id="activity-instructions" className="mt-2 text-sm text-(--text-secondary)">Complete the {activityType} activity at your pace. Use its labelled controls and keyboard shortcuts; restart clears only this attempt, while Skip and Exit keep the activity available to resume later.</p>}
+      {showInstructions && (
+        <p id="activity-instructions" className="mt-2 text-sm text-(--text-secondary)">
+          {buildInstructionText(activityType, accessibilityCapabilities)}
+        </p>
+      )}
     </section>
   )
 }
