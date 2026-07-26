@@ -11,6 +11,20 @@ export interface RateLimitStore {
   consume(key: string, policy: RateLimitPolicy, now?: number): Promise<RateLimitConsumeResult>
 }
 
+type RateLimitRpcError = {
+  code?: string
+  message?: string
+}
+
+let durableRateLimitUnavailable = false
+
+export function isMissingRateLimitRpc(error: RateLimitRpcError): boolean {
+  if (error.code === 'PGRST202') return true
+
+  const message = error.message ?? ''
+  return message.includes('consume_rate_limit') || message.includes('schema cache')
+}
+
 export class InMemoryRateLimitStore implements RateLimitStore {
   async consume(key: string, policy: RateLimitPolicy, now = Date.now()): Promise<RateLimitConsumeResult> {
     return consumeRateLimit(key, policy, now)
@@ -18,7 +32,13 @@ export class InMemoryRateLimitStore implements RateLimitStore {
 }
 
 export class SupabaseRateLimitStore implements RateLimitStore {
-  async consume(key: string, policy: RateLimitPolicy): Promise<RateLimitConsumeResult> {
+  private readonly fallback = new InMemoryRateLimitStore()
+
+  async consume(key: string, policy: RateLimitPolicy, now = Date.now()): Promise<RateLimitConsumeResult> {
+    if (durableRateLimitUnavailable) {
+      return this.fallback.consume(key, policy, now)
+    }
+
     const admin = createAdminClient()
     const { data, error } = await admin.rpc('consume_rate_limit', {
       p_bucket_key: key,
@@ -27,6 +47,11 @@ export class SupabaseRateLimitStore implements RateLimitStore {
     })
 
     if (error) {
+      if (isMissingRateLimitRpc(error)) {
+        durableRateLimitUnavailable = true
+        return this.fallback.consume(key, policy, now)
+      }
+
       throw new Error(`Failed to consume rate limit: ${error.message}`)
     }
 
@@ -66,4 +91,5 @@ export function setRateLimitStore(store: RateLimitStore): void {
 
 export function resetRateLimitStore(): void {
   defaultStore = null
+  durableRateLimitUnavailable = false
 }

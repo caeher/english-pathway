@@ -1,8 +1,18 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { buildRateLimitKey } from '@/lib/security/rate-limit-keys'
 import { consumeRateLimit, getRateLimitPolicy, resetRateLimitBuckets } from '@/lib/security/rate-limit'
 import { rateLimitResponse } from '@/lib/security/enforce-rate-limit'
-import { InMemoryRateLimitStore, resetRateLimitStore, setRateLimitStore } from '@/lib/security/rate-limit-store'
+import {
+  InMemoryRateLimitStore,
+  isMissingRateLimitRpc,
+  resetRateLimitStore,
+  setRateLimitStore,
+  SupabaseRateLimitStore,
+} from '@/lib/security/rate-limit-store'
+
+vi.mock('@/lib/supabase/admin', () => ({
+  createAdminClient: vi.fn(),
+}))
 
 describe('durable rate limiting', () => {
   beforeEach(() => {
@@ -76,5 +86,36 @@ describe('durable rate limiting', () => {
       error: 'Too many requests. Please try again shortly.',
       code: 'RATE_LIMITED',
     })
+  })
+
+  it('detects missing durable rate limit RPC errors', () => {
+    expect(isMissingRateLimitRpc({
+      code: 'PGRST202',
+      message: 'Could not find the function public.consume_rate_limit(p_bucket_key, p_limit, p_window_ms) in the schema cache',
+    })).toBe(true)
+    expect(isMissingRateLimitRpc({ message: 'permission denied' })).toBe(false)
+  })
+
+  it('falls back to in-memory limits when the durable RPC is unavailable', async () => {
+    const { createAdminClient } = await import('@/lib/supabase/admin')
+    vi.mocked(createAdminClient).mockReturnValue({
+      rpc: vi.fn().mockResolvedValue({
+        data: null,
+        error: {
+          code: 'PGRST202',
+          message: 'Could not find the function public.consume_rate_limit(p_bucket_key, p_limit, p_window_ms) in the schema cache',
+        },
+      }),
+    } as never)
+
+    const store = new SupabaseRateLimitStore()
+    const policy = { limit: 1, windowMs: 60_000 }
+    const key = 'ip:203.0.113.1:/api/english-assistant'
+
+    const first = await store.consume(key, policy, 1_000)
+    const second = await store.consume(key, policy, 1_000)
+
+    expect(first.allowed).toBe(true)
+    expect(second.allowed).toBe(false)
   })
 })
