@@ -2,9 +2,11 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ArrowLeft, MessageCircle } from 'lucide-react'
-import { Button, InlineError, Surface } from '@/components/ui'
+import { ArrowLeft } from 'lucide-react'
+import { Button, InlineError } from '@/components/ui'
 import { ChatComposer } from '@/components/english-assistant/ChatComposer'
+import { ChatConversationHeader } from '@/components/english-assistant/ChatConversationHeader'
+import { ChatConversationShell } from '@/components/english-assistant/ChatConversationShell'
 import { ChatMessageThread } from '@/components/english-assistant/ChatMessageThread'
 import { useEnglishAssistantChat } from '@/hooks/useEnglishAssistantChat'
 
@@ -45,7 +47,7 @@ export default function ChatConversationPage({ conversationId }: ChatConversatio
 
   if (conversationNotFound && !isLoadingConversation) {
     return (
-      <div className="mx-auto flex max-w-4xl flex-col gap-6">
+      <div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-6">
         <Button asChild variant="ghost" size="sm" className="min-h-11 -ml-2 w-fit">
           <Link href="/chats">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
@@ -61,82 +63,60 @@ export default function ChatConversationPage({ conversationId }: ChatConversatio
   }
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col gap-6">
-      <div className="flex flex-wrap items-start gap-4">
-        <Button asChild variant="ghost" size="sm" className="min-h-11 -ml-2">
-          <Link href="/chats">
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            Back to chats
-          </Link>
-        </Button>
+    <ChatConversationShell
+      header={(
+        <ChatConversationHeader
+          title={title}
+          messagesRemaining={credits?.assistantMessagesRemaining}
+          canDelete={Boolean(conversation)}
+          deleteDisabled={isSending || isLoadingConversation}
+          onDelete={async () => {
+            await deleteConversation(conversationId)
+            router.push('/chats')
+          }}
+        />
+      )}
+      footer={(
+        <div className="mx-auto w-full max-w-3xl px-3 py-3 sm:px-4 sm:py-4">
+          <ChatComposer
+            draft={draft}
+            onDraftChange={setDraft}
+            onSubmit={sendMessage}
+            disabled={isSending || isLoadingConversation}
+            isSending={isSending}
+            sendDisabled={noCreditsRemaining}
+            error={error && messages.length > 1 ? error : noCreditsRemaining ? 'No messages remaining.' : null}
+            inputRef={inputRef}
+            inputId="chat-conversation-message"
+            variant="prompt"
+          />
+        </div>
+      )}
+    >
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {latestAssistantReply}
       </div>
-
-      <div>
-        <h1 className="flex items-center gap-2 font-display text-2xl font-black text-(--text-primary)">
-          <MessageCircle className="h-6 w-6" aria-hidden="true" />
-          <span className="truncate">{title}</span>
-        </h1>
-        {credits && (
-          <p className="mt-1 text-sm text-(--text-secondary)">
-            {credits.assistantMessagesRemaining}/50 messages left
-          </p>
-        )}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {sendingStatus}
       </div>
 
       {error && !isLoadingConversation && !conversationNotFound && messages.length <= 1 && (
-        <InlineError message={error} onRetry={() => void loadConversation(conversationId)} />
+        <div className="mx-auto w-full max-w-3xl px-3 pt-4 sm:px-4">
+          <InlineError message={error} onRetry={() => void loadConversation(conversationId)} />
+        </div>
       )}
 
-      <Surface as="section" padding="lg" className="flex flex-col gap-4" aria-labelledby="active-chat-heading">
+      <div className="mx-auto w-full max-w-3xl px-3 py-6 sm:px-4">
         <h2 id="active-chat-heading" className="sr-only">Active conversation</h2>
-
-        <div className="sr-only" aria-live="polite" aria-atomic="true">
-          {latestAssistantReply}
-        </div>
-        <div className="sr-only" aria-live="polite" aria-atomic="true">
-          {sendingStatus}
-        </div>
-
         <ChatMessageThread
           messages={messages}
           isLoading={isLoadingConversation}
           isStreaming={isStreaming}
           endRef={endOfMessagesRef}
-          className="min-h-[40vh] max-h-[50vh] rounded-xl border border-(--border-primary) bg-(--bg-secondary) p-4"
+          layout="prompt"
           ariaLabel="Chat messages"
         />
-
-        <ChatComposer
-          draft={draft}
-          onDraftChange={setDraft}
-          onSubmit={sendMessage}
-          disabled={isSending || isLoadingConversation}
-          isSending={isSending}
-          sendDisabled={noCreditsRemaining}
-          error={error && messages.length > 1 ? error : noCreditsRemaining ? 'No messages remaining.' : null}
-          inputRef={inputRef}
-          inputId="chat-conversation-message"
-          className="border-t border-(--border-primary) pt-4"
-        />
-
-        {conversation && (
-          <div className="flex justify-end border-t border-(--border-primary) pt-4">
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="text-red-600 hover:text-red-700"
-              onClick={async () => {
-                await deleteConversation(conversationId)
-                router.push('/chats')
-              }}
-              disabled={isSending || isLoadingConversation}
-            >
-              Delete conversation
-            </Button>
-          </div>
-        )}
-      </Surface>
-    </div>
+      </div>
+    </ChatConversationShell>
   )
 }

@@ -12,6 +12,7 @@ interface ChatMessageThreadProps {
   endRef?: RefObject<HTMLDivElement | null>
   className?: string
   ariaLabel?: string
+  layout?: 'bubble' | 'prompt'
 }
 
 export function ChatMessageThread({
@@ -21,14 +22,21 @@ export function ChatMessageThread({
   endRef,
   className,
   ariaLabel = 'English helper conversation',
+  layout = 'bubble',
 }: ChatMessageThreadProps) {
   const streamingMessageIndex = isStreaming
     ? messages.findLastIndex((message) => message.role === 'assistant')
     : -1
 
+  const isPromptLayout = layout === 'prompt'
+
   return (
     <div
-      className={cn('flex-1 space-y-3 overflow-y-auto', className)}
+      className={cn(
+        'flex-1',
+        isPromptLayout ? 'space-y-8' : 'space-y-3 overflow-y-auto',
+        className,
+      )}
       aria-label={ariaLabel}
     >
       {isLoading && (
@@ -38,6 +46,43 @@ export function ChatMessageThread({
         const isUser = message.role === 'user'
         const isStreamingMessage = index === streamingMessageIndex
         const showAssistantPlaceholder = !isUser && isStreamingMessage && message.content.length === 0
+
+        if (isPromptLayout) {
+          return (
+            <article
+              key={`${message.role}-${index}`}
+              role="article"
+              aria-label={isUser ? 'Your message' : 'Assistant reply'}
+              className={cn(
+                'flex w-full',
+                isUser ? 'justify-end' : 'justify-start',
+              )}
+            >
+              <div
+                className={cn(
+                  isUser
+                    ? 'max-w-[85%] whitespace-pre-wrap rounded-3xl bg-(--accent-soft) px-4 py-3 text-sm leading-relaxed text-(--text-primary)'
+                    : 'w-full text-sm leading-7 text-(--text-primary)',
+                )}
+              >
+                {isUser ? (
+                  message.content
+                ) : showAssistantPlaceholder ? (
+                  <span className="text-(--text-muted)">Thinking…</span>
+                ) : (
+                  <Streamdown
+                    className="english-assistant-markdown chat-prompt-markdown"
+                    mode={isStreamingMessage ? 'streaming' : 'static'}
+                    isAnimating={isStreamingMessage}
+                    animated={isStreamingMessage}
+                  >
+                    {message.content}
+                  </Streamdown>
+                )}
+              </div>
+            </article>
+          )
+        }
 
         return (
           <article

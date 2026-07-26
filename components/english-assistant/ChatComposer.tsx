@@ -3,6 +3,7 @@
 import { FormEvent, KeyboardEvent, RefObject } from 'react'
 import { Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/helpers'
 
 interface ChatComposerProps {
   draft: string
@@ -17,6 +18,7 @@ interface ChatComposerProps {
   inputId?: string
   placeholder?: string
   className?: string
+  variant?: 'default' | 'prompt'
 }
 
 export function ChatComposer({
@@ -32,6 +34,7 @@ export function ChatComposer({
   inputId = 'english-assistant-message',
   placeholder = 'Ask about English…',
   className,
+  variant = 'default',
 }: ChatComposerProps) {
   function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
     if (event.key === 'Enter' && !event.shiftKey) {
@@ -39,6 +42,8 @@ export function ChatComposer({
       void onSubmit()
     }
   }
+
+  const isPromptVariant = variant === 'prompt'
 
   return (
     <form className={className} onSubmit={onSubmit}>
@@ -48,7 +53,12 @@ export function ChatComposer({
         </p>
       )}
       <label className="sr-only" htmlFor={inputId}>Ask an English question</label>
-      <div className="flex items-end gap-2">
+      <div
+        className={cn(
+          'flex items-end gap-2',
+          isPromptVariant && 'rounded-3xl border border-(--border-primary) bg-(--bg-secondary) p-2 shadow-(--shadow-sm)',
+        )}
+      >
         <textarea
           id={inputId}
           ref={inputRef}
@@ -58,9 +68,14 @@ export function ChatComposer({
           onFocus={onInputFocus}
           placeholder={placeholder}
           maxLength={2_000}
-          rows={2}
+          rows={isPromptVariant ? 1 : 2}
           disabled={disabled}
-          className="min-h-11 flex-1 resize-none rounded-xl border border-(--border-primary) bg-(--bg-secondary) px-3 py-2 text-sm text-(--text-primary) placeholder:text-(--text-muted) focus:border-(--accent) focus:outline-none focus:ring-2 focus:ring-(--accent)/20 disabled:cursor-not-allowed disabled:opacity-50"
+          className={cn(
+            'min-h-11 flex-1 resize-none px-3 py-2 text-sm text-(--text-primary) placeholder:text-(--text-muted) disabled:cursor-not-allowed disabled:opacity-50',
+            isPromptVariant
+              ? 'border-0 bg-transparent focus:outline-none focus:ring-0'
+              : 'rounded-xl border border-(--border-primary) bg-(--bg-secondary) focus:border-(--accent) focus:outline-none focus:ring-2 focus:ring-(--accent)/20',
+          )}
         />
         <Button
           size="icon"
@@ -69,12 +84,14 @@ export function ChatComposer({
           loading={isSending}
           loadingLabel="Sending…"
           aria-label="Send question"
-          className="min-h-11 min-w-11"
+          className={cn('min-h-11 min-w-11', isPromptVariant && 'shrink-0 rounded-2xl')}
         >
           <Send className="size-4" aria-hidden="true" />
         </Button>
       </div>
-      <p className="mt-2 text-xs text-(--text-muted)">Press Enter to send · Shift + Enter for a new line</p>
+      <p className={cn('mt-2 text-xs text-(--text-muted)', isPromptVariant && 'text-center')}>
+        Press Enter to send · Shift + Enter for a new line
+      </p>
     </form>
   )
 }
