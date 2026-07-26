@@ -14,13 +14,15 @@ const PROVIDER_DEFINITIONS: Record<OAuthProvider, OAuthProviderConfig> = {
   github: { id: 'github', label: 'GitHub' },
 }
 
-const PROVIDER_FLAG_KEYS: Record<OAuthProvider, string> = {
-  google: 'NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED',
-  github: 'NEXT_PUBLIC_OAUTH_GITHUB_ENABLED',
+// This module is also imported by OAuthButtons, a client component. Next.js
+// only replaces NEXT_PUBLIC_* variables when their property access is static;
+// process.env[envKey] therefore becomes undefined in the browser bundle.
+function isGoogleOAuthEnabled(): boolean {
+  return process.env.NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED === 'true'
 }
 
-function isEnabled(envKey: string): boolean {
-  return process.env[envKey] === 'true'
+function isGithubOAuthEnabled(): boolean {
+  return process.env.NEXT_PUBLIC_OAUTH_GITHUB_ENABLED === 'true'
 }
 
 export function isOAuthProvider(provider: string): provider is OAuthProvider {
@@ -28,7 +30,14 @@ export function isOAuthProvider(provider: string): provider is OAuthProvider {
 }
 
 export function isOAuthProviderEnabled(provider: OAuthProvider): boolean {
-  return isEnabled(PROVIDER_FLAG_KEYS[provider])
+  switch (provider) {
+    case 'google':
+      return isGoogleOAuthEnabled()
+    case 'github':
+      return isGithubOAuthEnabled()
+    default:
+      return false
+  }
 }
 
 export function assertOAuthProviderAllowed(provider: string): asserts provider is OAuthProvider {
