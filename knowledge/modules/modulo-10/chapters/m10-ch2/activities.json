@@ -79,6 +79,10 @@
           "example": "I'd like to ask for a refund, please."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "a refund"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -237,6 +246,11 @@
           "explanation": "Do homework = do homework (collocation with do)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -318,6 +332,11 @@
           "correct": "She got a promotion yesterday"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -358,6 +377,11 @@
           "category": "Daily"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -407,6 +431,11 @@
           "explanation": "You heard: \"We need to meet the deadline by Friday\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -432,6 +461,11 @@
           "hint": "From the chapter: We need to..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -462,6 +496,11 @@
           "hint": "Practice saying this phrase aloud — from m10-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

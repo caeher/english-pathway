@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import type { ChapterActivity } from '@/types'
+import { defaultChapterActivityFields } from '../helpers/chapter-activity'
 
 const quiz: ChapterActivity = {
   id: 'review-quiz',
   type: 'quiz',
   title: 'Review quiz',
   description: '',
+  ...defaultChapterActivityFields,
   props: {
     questions: [
       { id: 'one', type: 'multiple-choice', question: 'One?', options: ['A', 'B'], correct: 0 },

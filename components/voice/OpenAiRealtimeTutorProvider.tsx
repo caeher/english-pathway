@@ -8,7 +8,6 @@ import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import type { SessionMode } from './session-types'
-import { showActivity } from '@/lib/learn/client-tools'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
@@ -32,7 +31,7 @@ function formatDuration(seconds: number) {
   return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
 }
 
-export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { initialActivityId?: string }) {
+export default function OpenAiRealtimeTutorProvider() {
   const mode: SessionMode = 'voice'
   const [active, setActive] = useState(false)
   const [connecting, setConnecting] = useState(false)
@@ -95,11 +94,6 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
   }, [])
 
   useEffect(() => { void loadCredits() }, [loadCredits])
-
-  useEffect(() => {
-    if (!initialActivityId) return
-    void showActivity(initialActivityId).catch(() => {})
-  }, [initialActivityId])
 
   const end = useCallback(async () => {
     if (endingRef.current) return

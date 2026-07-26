@@ -67,6 +67,10 @@
           "example": "Wh-question in past continuous."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -109,6 +113,11 @@
           "right": "When"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -211,6 +220,11 @@
           "correct": "He was running in the park"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -327,6 +341,11 @@
           "explanation": "They → Were they playing?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -367,6 +386,11 @@
           "category": "Past Continuous"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -416,6 +440,11 @@
           "explanation": "You heard: \"Continuous action interrupted by simple past\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -441,6 +470,11 @@
           "hint": "From the chapter: Continuous action interrupted..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -471,6 +505,11 @@
           "hint": "Practice saying this phrase aloud — from m3-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

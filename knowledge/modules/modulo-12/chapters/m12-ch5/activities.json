@@ -125,6 +125,11 @@
           "explanation": "Encourage and support. Reassurance with practical advice is the best approach."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -220,6 +225,11 @@
           "correct": "Definitely! Let's watch it this weekend."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -302,6 +312,10 @@
           "example": "Your flight was delayed again? How frustrating!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -344,6 +358,11 @@
           "right": "It's been forever! 👋"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -384,6 +403,11 @@
           "category": "Improv"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -433,6 +457,11 @@
           "explanation": "You heard: \"That's awesome! We could take lessons together\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -458,6 +487,11 @@
           "hint": "From the chapter: That's awesome! We..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -488,6 +522,11 @@
           "hint": "Practice saying this phrase aloud — from m12-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

@@ -57,6 +57,11 @@
           "correct": "Traveling is one of the most enriching experiences. It allows you to meet new people and learn about different cultures. In addition, it reduces stress and gives you a fresh perspective. To sum up, traveling is an investment in personal growth."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -179,6 +184,11 @@
           "explanation": "Brainstorming is the pre-writing phase where you generate and organize ideas before drafting."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -219,6 +229,11 @@
           "category": "Writing"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -301,6 +316,10 @@
           "example": "In short, technology has changed our lives forever."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -350,6 +369,11 @@
           "explanation": "You heard: \"Conclusion\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -375,6 +399,11 @@
           "hint": "From the chapter: Conclusion..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -405,6 +434,11 @@
           "hint": "Practice saying this phrase aloud — from m12-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

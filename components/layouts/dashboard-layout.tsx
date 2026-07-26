@@ -37,7 +37,7 @@ export function DashboardLayout({
 
   return (
     <div
-      className="flex h-dvh overflow-hidden bg-(--bg-primary)"
+      className="flex h-dvh max-h-dvh min-h-0 overflow-hidden bg-(--bg-primary)"
       style={PANEL_SHELL_STYLE}
     >
       <a

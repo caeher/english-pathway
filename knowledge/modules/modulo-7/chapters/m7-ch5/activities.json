@@ -67,6 +67,10 @@
           "example": "3rd person singular → does/doesn't."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -109,6 +113,11 @@
           "right": "He doesn't like it."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -172,6 +181,11 @@
           "correct": "He doesn't like it"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -294,6 +308,11 @@
           "explanation": "Professions need a/an: She is A teacher."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -334,6 +353,11 @@
           "category": "Grammar"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -383,6 +407,11 @@
           "explanation": "You heard: \"Age uses \"be\", not \"have\"\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -408,6 +437,11 @@
           "hint": "From the chapter: Age uses \"be\",..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -438,6 +472,11 @@
           "hint": "Practice saying this phrase aloud — from m7-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

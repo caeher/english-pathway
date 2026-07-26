@@ -3,6 +3,7 @@ import { buildFlashcardRecallResult, getExplanationForAnswer } from '@/lib/games
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { validateActivityDocument, filterValidationErrors } from '@/features/activities'
 import type { ChapterActivity } from '@/types'
+import { defaultChapterActivityFields, defaultCompletionPolicy } from '../helpers/chapter-activity'
 
 describe('flashcard recall scoring', () => {
   it('scores recalled cards and tracks weak indexes', () => {
@@ -43,6 +44,8 @@ describe('flashcard SRS references', () => {
     type: 'flashcard',
     title: 'Review flashcards',
     description: '',
+    required: true,
+    policy: defaultCompletionPolicy,
     props: {
       cards: [
         { id: 'one', front: 'A', back: '1' },

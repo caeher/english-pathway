@@ -97,6 +97,10 @@
           "example": "The plant is green."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -139,6 +143,11 @@
           "right": "Taza"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -205,6 +214,11 @@
           "correct": "The rug is purple"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -333,6 +347,11 @@
           "explanation": "Lamp = Lamp."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -373,6 +392,11 @@
           "category": "Basic"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -422,6 +446,11 @@
           "explanation": "You heard: \"Please sit on the chair\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -447,6 +476,11 @@
           "hint": "From the chapter: Please sit on..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -477,6 +511,11 @@
           "hint": "Practice saying this phrase aloud — from m8-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

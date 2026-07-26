@@ -43,6 +43,10 @@
           "example": "When/If often interchangeable in zero."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -77,6 +81,11 @@
           "right": "I go to bed early."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -154,6 +163,11 @@
           "correct": "When I have free time, I read"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -244,6 +258,11 @@
           "explanation": "Both clauses in present simple."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -284,6 +303,11 @@
           "category": "Conditionals"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -333,6 +357,11 @@
           "explanation": "You heard: \"Cause-effect: present + present\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -358,6 +387,11 @@
           "hint": "From the chapter: Cause-effect: present +..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -388,6 +422,11 @@
           "hint": "Practice saying this phrase aloud — from m6-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

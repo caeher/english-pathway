@@ -79,6 +79,10 @@
           "example": "Hi, I'm Ana. — Nice to meet you, Ana!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -113,6 +117,11 @@
           "right": "🌳 Park"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -204,6 +213,11 @@
           "correct": "How are you?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -306,6 +320,11 @@
           "explanation": "\"I don't feel well\" expresses that you're sick."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -346,6 +365,11 @@
           "category": "Listening"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -395,6 +419,11 @@
           "explanation": "You heard: \"Excuse me, could you help me, please\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -420,6 +449,11 @@
           "hint": "From the chapter: Excuse me, could..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -450,6 +484,11 @@
           "hint": "Practice saying this phrase aloud — from m8-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

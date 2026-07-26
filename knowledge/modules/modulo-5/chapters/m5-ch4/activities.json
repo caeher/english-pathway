@@ -55,6 +55,10 @@
           "example": "The car was stolen. The house is being built."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -97,6 +101,11 @@
           "right": "worked"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -164,6 +173,11 @@
           "correct": "an interesting book"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -260,6 +274,11 @@
           "explanation": "Continuous: be + -ing (present participle)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -300,6 +319,11 @@
           "category": "Participles"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -349,6 +373,11 @@
           "explanation": "You heard: \"Used in: continuous (am working), gerund (Swimming is fun)\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -374,6 +403,11 @@
           "hint": "From the chapter: Used in: continuous..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -404,6 +438,11 @@
           "hint": "Practice saying this phrase aloud — from m5-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

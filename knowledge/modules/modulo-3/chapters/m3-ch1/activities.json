@@ -79,6 +79,10 @@
           "example": "Prices are rising this year."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "eating"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -215,6 +224,11 @@
           "correct": "She is not reading"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -331,6 +345,11 @@
           "explanation": "ie → y + ing: die → dying."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -371,6 +390,11 @@
           "category": "Present Continuous"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -420,6 +444,11 @@
           "explanation": "You heard: \"They're playing basketball\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -445,6 +474,11 @@
           "hint": "From the chapter: They're playing basketball..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -475,6 +509,11 @@
           "hint": "Practice saying this phrase aloud — from m3-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

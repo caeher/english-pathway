@@ -79,6 +79,10 @@
           "example": "Long adj → more interesting."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "farther"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -228,6 +237,11 @@
           "correct": "She is happier now"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -338,6 +352,11 @@
           "explanation": "Long adj → more interesting."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -378,6 +397,11 @@
           "category": "Comparative"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -427,6 +451,11 @@
           "explanation": "You heard: \"CVC → double: bigger\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -452,6 +481,11 @@
           "hint": "From the chapter: CVC → double:..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -482,6 +516,11 @@
           "hint": "Practice saying this phrase aloud — from m4-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

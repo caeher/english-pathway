@@ -79,6 +79,10 @@
           "example": "She lives in Madrid. He speaks Spanish."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "flies"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -215,6 +224,11 @@
           "correct": "The sun rises in the east"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -319,6 +333,11 @@
           "explanation": "Water boils — universal truth in present simple."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -359,6 +378,11 @@
           "category": "Present Simple"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -408,6 +432,11 @@
           "explanation": "You heard: \"I watch TV. She watches movies\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -433,6 +462,11 @@
           "hint": "From the chapter: I watch TV...."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -463,6 +497,11 @@
           "hint": "Practice saying this phrase aloud — from m2-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

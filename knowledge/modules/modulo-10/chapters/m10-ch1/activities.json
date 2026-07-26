@@ -119,6 +119,11 @@
           "explanation": "Plan/hecho ya decidido → going to."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -196,6 +201,11 @@
           "correct": "I think they will win"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -266,6 +276,10 @@
           "example": "He's going to need a doctor."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -308,6 +322,11 @@
           "right": "GOING TO"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -348,6 +367,11 @@
           "category": "Future"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -397,6 +421,11 @@
           "explanation": "You heard: \"It is going to rain\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -422,6 +451,11 @@
           "hint": "From the chapter: It is going..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -452,6 +486,11 @@
           "hint": "Practice saying this phrase aloud — from m10-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

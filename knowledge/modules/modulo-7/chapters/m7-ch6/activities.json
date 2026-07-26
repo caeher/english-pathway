@@ -79,6 +79,10 @@
           "example": "The movie is interesting. I am interested."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "S-V Agreement"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -194,6 +203,11 @@
           "correct": "The teacher who helped me was kind"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -330,6 +344,11 @@
           "explanation": "Have + subject + ever + past participle?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -370,6 +389,11 @@
           "category": "Review"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -419,6 +443,11 @@
           "explanation": "You heard: \"How is the Present Perfect formed?\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -444,6 +473,11 @@
           "hint": "From the chapter: How is the..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -474,6 +508,11 @@
           "hint": "Practice saying this phrase aloud — from m7-ch6."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

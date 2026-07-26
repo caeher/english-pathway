@@ -67,6 +67,10 @@
           "example": "might + be + cancelled."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -101,6 +105,11 @@
           "right": "will be sent"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -180,6 +189,11 @@
           "correct": "The event might be cancelled"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -296,6 +310,11 @@
           "explanation": "\"arrive\" is intransitive — no object."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -336,6 +355,11 @@
           "category": "Passive"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -385,6 +409,11 @@
           "explanation": "You heard: \"Modal passive: modal + be + pp\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -410,6 +439,11 @@
           "hint": "From the chapter: Modal passive: modal..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -440,6 +474,11 @@
           "hint": "Practice saying this phrase aloud — from m5-ch6."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

@@ -79,6 +79,10 @@
           "example": "have breakfast = desayunar, have a shower = ducharse."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "Have breakfast"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -213,6 +222,11 @@
           "correct": "I didn't have money"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -329,6 +343,11 @@
           "explanation": "She doesn't have — doesn't + base form 'have'."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -369,6 +388,11 @@
           "category": "To Have"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -418,6 +442,11 @@
           "explanation": "You heard: \"He/She/It → has\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -443,6 +472,11 @@
           "hint": "From the chapter: He/She/It → has..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -473,6 +507,11 @@
           "hint": "Practice saying this phrase aloud — from m2-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

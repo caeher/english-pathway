@@ -187,6 +187,10 @@
           "example": "Please sit in this seat."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -245,6 +249,11 @@
           "right": "Dog 🐕"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -367,6 +376,11 @@
           "explanation": "Q is always followed by U: Queen, Question, Quiet."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -456,6 +470,11 @@
           "correct": "W A T E R"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -496,6 +515,11 @@
           "category": "Alphabet"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -545,6 +569,11 @@
           "explanation": "Hello starts with an aspirated H."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -570,6 +599,11 @@
           "hint": "The star that gives us light"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -632,6 +666,11 @@
           "maxReplays": 3
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -657,6 +696,11 @@
           "hint": "Expression of gratitude"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

@@ -37,6 +37,11 @@
           "category": "Pronunciation"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -162,6 +167,11 @@
           "explanation": "Compound nouns: accent on the first element → AIR-port."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -232,6 +242,10 @@
           "example": "This is a beautiful photograph."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -266,6 +280,11 @@
           "right": "ooOoo (u-ni-VER-si-ty)"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -315,6 +334,11 @@
           "explanation": "You heard: \"Falling\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -340,6 +364,11 @@
           "hint": "From the chapter: Falling..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -370,6 +399,11 @@
           "hint": "Practice saying this phrase aloud — from m10-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

@@ -79,6 +79,10 @@
           "example": "I'm tired. Let's call it a day."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "stop working for today"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -196,6 +205,11 @@
           "correct": "We need to think outside the box"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -312,6 +326,11 @@
           "explanation": "It's raining cats and dogs = it's raining cats and dogs."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -352,6 +371,11 @@
           "category": "Idioms"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -401,6 +425,11 @@
           "explanation": "You heard: \"You have a show? Break a leg\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -426,6 +455,11 @@
           "hint": "From the chapter: You have a..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -456,6 +490,11 @@
           "hint": "Practice saying this phrase aloud — from m7-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

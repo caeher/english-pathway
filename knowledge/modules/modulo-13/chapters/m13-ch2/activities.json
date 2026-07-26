@@ -119,6 +119,11 @@
           "explanation": "\"It might be worth considering...\" transforms a demand into a gentle suggestion."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -227,6 +232,11 @@
           "correct": "The data clearly shows a 30% improvement in efficiency."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -269,6 +279,11 @@
           "right": "Would it be possible to prioritize this?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -339,6 +354,10 @@
           "example": "Shall we put this in writing and share it with both teams?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -379,6 +398,11 @@
           "category": "Negotiation"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -428,6 +452,11 @@
           "explanation": "You heard: \"It might be worth considering an extension to the deadline\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -453,6 +482,11 @@
           "hint": "From the chapter: It might be..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -483,6 +517,11 @@
           "hint": "Practice saying this phrase aloud — from m13-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

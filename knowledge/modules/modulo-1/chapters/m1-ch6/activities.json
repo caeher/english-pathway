@@ -85,6 +85,10 @@
           "example": "How tall are you? — I am 1.75 meters."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -127,6 +131,11 @@
           "right": "I have two cats."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -157,6 +166,11 @@
           "right": "In December, the 15th."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -278,6 +292,11 @@
           "correct": "Why are you happy?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -420,6 +439,11 @@
           "explanation": "Context: greeting. Respond with \"I'm fine, thanks! And you?\""
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -460,6 +484,11 @@
           "category": "Questions"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -509,6 +538,11 @@
           "explanation": "How old asks about someone's age."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -534,6 +568,11 @@
           "hint": "How many + countable noun"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -564,6 +603,11 @@
           "hint": "How often asks about frequency"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

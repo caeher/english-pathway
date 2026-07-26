@@ -145,6 +145,11 @@
           "explanation": "\"Must\" for strong rules: \"You must be quiet in the library.\""
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -273,6 +278,11 @@
           "correct": "He could run very fast when he was young"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -307,6 +317,11 @@
           "right": "Not necessary ✅"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -377,6 +392,10 @@
           "example": "May I be excused? (formal) Can I go now? (informal)"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -417,6 +436,11 @@
           "category": "Modals"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -466,6 +490,11 @@
           "explanation": "You heard: \"It might rain tomorrow\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -491,6 +520,11 @@
           "hint": "From the chapter: It might rain..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -521,6 +555,11 @@
           "hint": "Practice saying this phrase aloud — from m11-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

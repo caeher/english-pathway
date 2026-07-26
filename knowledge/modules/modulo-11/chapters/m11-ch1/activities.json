@@ -139,6 +139,11 @@
           "explanation": "\"In 2019\" = specific time → past simple: \"They went to London in 2019.\""
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -268,6 +273,11 @@
           "correct": "He has just arrived home"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -398,6 +408,10 @@
           "example": "She has worn that dress three times."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -440,6 +454,11 @@
           "right": "Present Perfect"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -480,6 +499,11 @@
           "category": "Present Perfect"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -529,6 +553,11 @@
           "explanation": "You heard: \"I have never tried sushi\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -554,6 +583,11 @@
           "hint": "From the chapter: I have never..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -584,6 +618,11 @@
           "hint": "Practice saying this phrase aloud — from m11-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

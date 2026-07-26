@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { activityContextSchema, buildActivityContextFromPanel, formatActivityContextForPrompt } from '@/lib/english-assistant/context'
 import type { LearnPanelState } from '@/stores/useLearnSessionStore'
+import { defaultChapterActivityFields } from '../helpers/chapter-activity'
 
 describe('english assistant activity context', () => {
   const panel: LearnPanelState = {
@@ -12,6 +13,7 @@ describe('english assistant activity context', () => {
       type: 'quiz',
       title: 'Present simple',
       description: 'Choose the correct verb form.',
+      ...defaultChapterActivityFields,
       props: {
         questions: [{ id: 'q1', type: 'multiple-choice', question: 'She ___ to school.', options: ['go', 'goes'], correct: 1 }],
       },

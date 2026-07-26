@@ -27,7 +27,36 @@ Each chapter has an `activities.json` file — a JSON array of activity objects 
   "type": "listening",
   "title": "Listen and Choose",
   "description": "Listen and choose the correct answer.",
+  "required": true,
+  "policy": {
+    "mode": "score",
+    "passThreshold": 70
+  },
   "props": { }
+}
+```
+
+**Advance policy fields (required on every activity):**
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `required` | `boolean` | `true` = counts toward chapter completion; `false` = optional practice |
+| `policy.mode` | `"score"` \| `"completion"` | How the activity is approved |
+| `policy.passThreshold` | `number` (0–100) | Required when `mode` is `"score"`; omit when `mode` is `"completion"` |
+
+**Approval rules:**
+
+- **`score` mode:** learner must reach `passThreshold` (default 70% if omitted during parsing only — authoring must declare it explicitly).
+- **`completion` mode:** learner passes after a valid finish (e.g. flashcard deck completed); no score threshold applies.
+- Chapter completes automatically when all `required: true` activities are approved.
+- Optional activities never block chapter completion.
+
+Files may use a wrapper object instead of a bare array:
+
+```json
+{
+  "policyVersion": 1,
+  "activities": [ /* activity objects */ ]
 }
 ```
 
@@ -191,7 +220,7 @@ Keep `audioText` / `phrase` as TTS fallback text when curated audio is unavailab
 2. Compare with existing `activities.json` — note missing types
 3. Add missing audio/oral activities (priority: listening, dictation, pronunciation)
 4. Run `pnpm activities:validate`
-5. Test: `/learn?moduleId=modulo-X&chapterId=mX-chY&activityId=mX-chY-listening`
+5. Test in Curriculum (`/curriculum/modulo-X/mX-chY`) or ask the Learn tutor to invoke `showActivity` with a validated activity ID
 6. Run `pnpm kb:embed` only if chapter markdown changed
 
 ---

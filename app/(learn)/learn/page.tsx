@@ -1,8 +1,7 @@
 import { redirect } from 'next/navigation'
 import VoiceTutorProvider from '@/components/voice/VoiceTutorProvider'
 import { getCurrentProfile, getCurrentUser } from '@/lib/auth/actions'
-import { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
-import { resolveChapter } from '@/lib/content/resolve'
+import { LEARN_PATH } from '@/features/learn'
 
 export default async function LearnPage({ searchParams }: { searchParams: Promise<{ moduleId?: string; chapterId?: string; activityId?: string }> }) {
   const user = await getCurrentUser()
@@ -14,13 +13,9 @@ export default async function LearnPage({ searchParams }: { searchParams: Promis
   }
 
   const params = await searchParams
-  const activity = params.activityId ? resolveActivityByIdValidated(params.activityId) : null
-  const chapter = params.chapterId ? await resolveChapter(params.chapterId) : null
-  const validActivity = activity && (!params.moduleId || activity.module.id === params.moduleId) ? activity : null
-  const validChapter = chapter && (!params.moduleId || chapter.module.id === params.moduleId) ? chapter : null
-  const initialActivityId = validActivity && (!validChapter || validActivity.chapter.id === validChapter.chapter.id)
-    ? validActivity.activity.id
-    : validChapter?.chapter.activities[0]?.id
+  if (params.moduleId || params.chapterId || params.activityId) {
+    redirect(LEARN_PATH)
+  }
 
-  return <VoiceTutorProvider initialActivityId={initialActivityId} />
+  return <VoiceTutorProvider />
 }

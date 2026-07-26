@@ -119,6 +119,11 @@
           "explanation": "Discourse markers organize and signal the structure of spoken and written English."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -210,6 +215,11 @@
           "correct": "The main recommendation was to reduce screen time."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -252,6 +262,11 @@
           "right": "Convincing / Persuasive"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -322,6 +337,10 @@
           "example": "As I was saying, the results were quite surprising."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -362,6 +381,11 @@
           "category": "Listening"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -411,6 +435,11 @@
           "explanation": "You heard: \"It concluded by calling for policy changes\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -436,6 +465,11 @@
           "hint": "From the chapter: It concluded by..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -466,6 +500,11 @@
           "hint": "Practice saying this phrase aloud — from m12-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

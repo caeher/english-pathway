@@ -119,6 +119,11 @@
           "explanation": "Target audience = the specific group you aim to reach. Knowing them shapes your tone, topics, and style."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -227,6 +232,11 @@
           "correct": "Share this article with someone who needs to hear this!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -309,6 +319,10 @@
           "example": "My video about language learning went viral — 2 million views in one week!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -351,6 +365,11 @@
           "right": "Bold Promise ⚡"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -391,6 +410,11 @@
           "category": "Content"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -440,6 +464,11 @@
           "explanation": "You heard: \"ENGAGEMENT 💬\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -465,6 +494,11 @@
           "hint": "From the chapter: ENGAGEMENT 💬..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -495,6 +529,11 @@
           "hint": "Practice saying this phrase aloud — from m14-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

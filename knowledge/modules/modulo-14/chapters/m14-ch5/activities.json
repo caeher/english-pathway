@@ -125,6 +125,11 @@
           "explanation": "Combining all three motivation types creates a sustainable system. No single source of motivation is enough alone."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -241,6 +246,11 @@
           "correct": "I have completed 35 chapters and I am proud of my progress!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -323,6 +333,10 @@
           "example": "Three 10-minute micro-sessions are better than one skipped 1-hour session."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -365,6 +379,11 @@
           "right": "Use spaced repetition apps like Anki 🔄"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -405,6 +424,11 @@
           "category": "Motivation"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -454,6 +478,11 @@
           "explanation": "You heard: \"I have completed 35 chapters and I am proud of my progress\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -479,6 +508,11 @@
           "hint": "From the chapter: I have completed..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -509,6 +543,11 @@
           "hint": "Practice saying this phrase aloud — from m14-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

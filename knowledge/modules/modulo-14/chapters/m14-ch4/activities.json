@@ -125,6 +125,11 @@
           "explanation": "Immersion = surrounding yourself with the language in daily life. You can create immersion anywhere."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -167,6 +172,11 @@
           "right": "Exam preparation 🏆"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -237,6 +247,10 @@
           "example": "My accountability partner and I check in every Sunday to review our English goals."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -354,6 +368,11 @@
           "correct": "I will record myself speaking every month to track my progress."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -394,6 +413,11 @@
           "category": "Self-learning"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -443,6 +467,11 @@
           "explanation": "You heard: \"iTalki (language exchange)\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -468,6 +497,11 @@
           "hint": "From the chapter: ITalki (language exchange)..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -498,6 +532,11 @@
           "hint": "Practice saying this phrase aloud — from m14-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

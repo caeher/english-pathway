@@ -12,7 +12,6 @@ import type { MicrophoneState, SessionMode, SessionOrchestration } from './sessi
 import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
-import { showActivity } from '@/lib/learn/client-tools'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
@@ -162,10 +161,9 @@ function TutorControls({
 
 interface VoiceTutorProviderProps {
   children?: React.ReactNode
-  initialActivityId?: string
 }
 
-export default function VoiceTutorProvider({ children, initialActivityId }: VoiceTutorProviderProps) {
+export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps) {
   useEffect(() => {
     sessionStorage.removeItem('ep-session-plan')
   }, [])
@@ -173,19 +171,19 @@ export default function VoiceTutorProvider({ children, initialActivityId }: Voic
   if (!process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID) {
     return (
       <div className="h-full">
-        <OpenAiRealtimeTutorProvider initialActivityId={initialActivityId} />
+        <OpenAiRealtimeTutorProvider />
       </div>
     )
   }
 
   return (
-    <ElevenLabsVoiceTutorProvider initialActivityId={initialActivityId}>
+    <ElevenLabsVoiceTutorProvider>
       {children}
     </ElevenLabsVoiceTutorProvider>
   )
 }
 
-function ElevenLabsVoiceTutorProvider({ children, initialActivityId }: VoiceTutorProviderProps) {
+function ElevenLabsVoiceTutorProvider({ children }: VoiceTutorProviderProps) {
   const [mode, setMode] = useState<SessionMode>('text')
   const sessionIdRef = useRef<string | null>(null)
   const voiceAvailable = useVoiceAvailability()
@@ -215,13 +213,6 @@ function ElevenLabsVoiceTutorProvider({ children, initialActivityId }: VoiceTuto
     sessionIdRef.current = null
     stopMicrophone()
   }, [stopMicrophone])
-
-  useEffect(() => {
-    if (!initialActivityId) return
-    void showActivity(initialActivityId).catch(() => {
-      // A stale activity link should leave the tutor usable without a panel.
-    })
-  }, [initialActivityId])
 
   return (
     <div className="h-full">

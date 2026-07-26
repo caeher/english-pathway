@@ -55,6 +55,10 @@
           "example": "Last night = past"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -89,6 +93,11 @@
           "right": "Present Simple"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -168,6 +177,11 @@
           "correct": "Did you study last night?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -272,6 +286,11 @@
           "explanation": "usually = present, 3rd person + s"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -312,6 +331,11 @@
           "category": "Time Markers"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -361,6 +385,11 @@
           "explanation": "You heard: \"yesterday = past simple\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -386,6 +415,11 @@
           "hint": "From the chapter: Yesterday = past..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -416,6 +450,11 @@
           "hint": "Practice saying this phrase aloud — from m2-ch6."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

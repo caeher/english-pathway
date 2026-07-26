@@ -119,6 +119,11 @@
           "explanation": "gimme = give me. Very casual/informal expression."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -161,6 +166,11 @@
           "right": "have to"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -231,6 +241,10 @@
           "example": "Don'tchu think so? (= Don't you think so?)"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -335,6 +349,11 @@
           "correct": "I dunno, I wanna think about it."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -375,6 +394,11 @@
           "category": "Speaking"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -424,6 +448,11 @@
           "explanation": "You heard: \"wanna\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -449,6 +478,11 @@
           "hint": "From the chapter: Wanna..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -479,6 +513,11 @@
           "hint": "Practice saying this phrase aloud — from m12-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

@@ -143,6 +143,11 @@
           "correct": "The Mona Lisa was painted by Leonardo"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -265,6 +270,11 @@
           "explanation": "Correct passive: Object + was + past participle + by agent."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -299,6 +309,11 @@
           "right": "had been + done"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -399,6 +414,10 @@
           "example": "Agent omitted because it's unknown."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -439,6 +458,11 @@
           "category": "Passive"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -488,6 +512,11 @@
           "explanation": "You heard: \"J.K. Rowling wrote the book\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -513,6 +542,11 @@
           "hint": "From the chapter: J.K. Rowling wrote..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -543,6 +577,11 @@
           "hint": "Practice saying this phrase aloud — from m11-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

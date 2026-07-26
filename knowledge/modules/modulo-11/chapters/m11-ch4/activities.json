@@ -145,6 +145,11 @@
           "explanation": "\"Hand in\" = submit, give to a teacher or authority."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -187,6 +192,11 @@
           "right": "Postpone / Delay ⏰"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -310,6 +320,11 @@
           "correct": "She came up with a great idea"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -500,6 +515,10 @@
           "example": "I work out three times a week. / Everything worked out in the end."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -540,6 +559,11 @@
           "category": "Phrasal Verbs"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -589,6 +613,11 @@
           "explanation": "You heard: \"figure out\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -614,6 +643,11 @@
           "hint": "From the chapter: Figure out..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -644,6 +678,11 @@
           "hint": "Practice saying this phrase aloud — from m11-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

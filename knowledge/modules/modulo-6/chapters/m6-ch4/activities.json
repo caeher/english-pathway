@@ -37,6 +37,10 @@
           "example": "Third: unreal past."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -71,6 +75,11 @@
           "right": "Mixed Conditional"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -128,6 +137,11 @@
           "correct": "If I had gone to bed earlier, I wouldn't be so tired"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -204,6 +218,11 @@
           "explanation": "Mixed = past condition + present result."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -244,6 +263,11 @@
           "category": "Conditionals"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -293,6 +317,11 @@
           "explanation": "You heard: \"Third conditional\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -318,6 +347,11 @@
           "hint": "From the chapter: Third conditional..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -348,6 +382,11 @@
           "hint": "Practice saying this phrase aloud — from m6-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]
