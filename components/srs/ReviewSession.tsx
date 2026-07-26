@@ -67,19 +67,19 @@ export default function ReviewSession() {
   }
 
   if (loading) {
-    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." className="mx-auto max-w-6xl px-6 py-12" />
+    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." className="mx-auto max-w-6xl" />
   }
 
   if (error && !item) {
-    return <InlineError message={error} onRetry={() => void loadQueue()} className="mx-auto mt-12 max-w-6xl px-6" />
+    return <InlineError message={error} onRetry={() => void loadQueue()} className="mx-auto max-w-6xl" />
   }
 
   if (!item) {
-    return <EmptyState className="mx-auto mt-12 max-w-6xl px-6" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
+    return <EmptyState className="mx-auto max-w-6xl" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
   }
 
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col justify-center px-4 py-10 sm:px-6">
+    <section className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center">
       <div className="mb-5 flex items-center justify-between text-sm text-(--text-muted)">
         <span className="font-display font-bold">Review {index + 1} of {items.length}</span>
         <span>{item.content.chapterTitle}</span>
