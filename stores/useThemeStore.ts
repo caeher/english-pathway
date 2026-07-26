@@ -19,30 +19,16 @@ export function migrateThemeState(persistedState: unknown, version: number): { d
 export const selectDark = (state: ThemeState) => state.dark
 export const selectToggleTheme = (state: ThemeState) => state.toggle
 
-function applyDarkClass(dark: boolean) {
-  if (typeof document !== 'undefined') {
-    document.documentElement.classList.toggle('dark', dark)
-  }
-}
-
 const useThemeStore = create<ThemeState>()(
   persist(
     (set) => ({
       dark: false,
-      toggle: () =>
-        set((s) => {
-          const next = !s.dark
-          applyDarkClass(next)
-          return { dark: next }
-        }),
+      toggle: () => set((s) => ({ dark: !s.dark })),
     }),
     {
       name: 'english-pathway-theme',
       version: THEME_PERSIST_VERSION,
       migrate: migrateThemeState,
-      onRehydrateStorage: () => (state) => {
-        if (state?.dark) applyDarkClass(true)
-      },
     },
   ),
 )

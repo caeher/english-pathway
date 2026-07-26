@@ -3,6 +3,7 @@ import { Outfit, Nunito } from 'next/font/google'
 import ClientProviders from '@/components/ClientProviders'
 import { createClient } from '@/lib/supabase/server'
 import { getAppUrl } from '@/lib/auth/app-url'
+import { themeInitScript } from '@/lib/theme/theme-script'
 import './globals.css'
 
 const outfit = Outfit({
@@ -66,6 +67,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en" className={`${outfit.variable} ${nunito.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <ClientProviders isAuthenticated={Boolean(user)}>{children}</ClientProviders>
       </body>
