@@ -9,13 +9,21 @@ describe('LearnSessionHeader', () => {
     const header = readFileSync(resolve(root, 'components/learn/LearnSessionHeader.tsx'), 'utf8')
 
     expect(header).toContain('LearnSessionHeader')
-    expect(header).toContain('sticky top-16')
+    expect(header).toContain('sticky top-0')
     expect(header).toContain('aria-label="Current learning session"')
     expect(header).toContain('stateBadgeLabel')
     expect(header).toContain('objectiveLabel')
     expect(header).toContain('nextActionLabel')
     expect(header).toContain('aria-live="polite"')
     expect(header).toContain('--learn-session-header-height')
+  })
+
+  it('renders an accessible back link to the public home route', () => {
+    const header = readFileSync(resolve(root, 'components/learn/LearnSessionHeader.tsx'), 'utf8')
+
+    expect(header).toContain('Back to home')
+    expect(header).toContain('ArrowLeft')
+    expect(header).toContain('exitHref = \'/\'')
   })
 
   it('renders continuation CTA only during pre_session', () => {

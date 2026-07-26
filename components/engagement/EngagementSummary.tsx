@@ -78,7 +78,7 @@ export default function EngagementSummary({ defaultExpanded = true }: Engagement
   return (
     <>
       <aside
-        className="mx-auto w-full max-w-6xl px-4 pt-2 sm:px-6"
+        className="w-full px-4 pt-2 sm:px-6"
         aria-label="Learning progress"
         style={{ ['--learn-engagement-compact-height' as string]: '2.75rem' }}
       >
@@ -135,7 +135,7 @@ export default function EngagementSummary({ defaultExpanded = true }: Engagement
       {toast && (
         <div
           role="status"
-          className="fixed right-4 top-[calc(4rem+3.75rem+0.5rem)] z-40 flex items-center gap-3 rounded-2xl border border-(--border-primary) bg-(--bg-card) px-4 py-3 shadow-lg"
+          className="fixed right-4 top-[calc(var(--learn-session-header-height,3.75rem)+0.5rem)] z-40 flex items-center gap-3 rounded-2xl border border-(--border-primary) bg-(--bg-card) px-4 py-3 shadow-lg"
         >
           <Trophy className="h-5 w-5 text-(--reward)" />
           <span className="text-sm font-bold text-(--text-primary)">{toast.icon} {toast.title} unlocked</span>
