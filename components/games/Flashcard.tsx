@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import { ChevronRight } from 'lucide-react'
 import type { FlashcardData } from '../../types'
 import type { FlashcardProgress } from '@/features/activities/snapshots/flashcard'
 import { Button } from '@/components/ui/button'
@@ -29,7 +28,6 @@ const gradeButtons: { grade: CardGrade; label: string; variant: 'reward' | 'outl
 
 export default function Flashcard({ cards, initialProgress, onProgressChange, onComplete }: FlashcardProps) {
   const [current, setCurrent] = useState(initialProgress?.current ?? 0)
-  const [revealed, setRevealed] = useState(initialProgress?.revealed ?? false)
   const [answered, setAnswered] = useState(initialProgress?.answered ?? false)
   const [cardGrades, setCardGrades] = useState<Record<string, CardGrade>>(() => initialProgress?.cardGrades ?? {})
   const [weakItemIndexes, setWeakItemIndexes] = useState<number[]>(() => initialProgress?.weakItemIndexes ?? [])
@@ -38,6 +36,9 @@ export default function Flashcard({ cards, initialProgress, onProgressChange, on
 
   const card = cards[current]
   const cardIds = cards.map((c) => c.id)
+  // Flashcards now show the answer and its example immediately. Keep the
+  // persisted field for backwards-compatible activity snapshots.
+  const revealed = true
 
   const buildProgress = useCallback((): FlashcardProgress => ({
     current,
@@ -71,7 +72,6 @@ export default function Flashcard({ cards, initialProgress, onProgressChange, on
 
     setTimeout(() => {
       setCurrent((c) => c + 1)
-      setRevealed(false)
       setAnswered(false)
     }, 0)
   }, [card.id, cardGrades, cards.length, current, finishActivity, weakItemIndexes])
@@ -79,12 +79,7 @@ export default function Flashcard({ cards, initialProgress, onProgressChange, on
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (finished) return
-      if (!revealed && (event.key === 'Enter' || event.key === ' ')) {
-        event.preventDefault()
-        setRevealed(true)
-        return
-      }
-      if (revealed && !answered) {
+      if (!answered) {
         const gradeIndex = event.key === '1' ? 0 : event.key === '2' ? 1 : event.key === '3' ? 2 : -1
         if (gradeIndex >= 0) {
           event.preventDefault()
@@ -94,7 +89,7 @@ export default function Flashcard({ cards, initialProgress, onProgressChange, on
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [advanceAfterGrade, answered, finished, revealed])
+  }, [advanceAfterGrade, answered, finished])
 
   if (finished) return null
 
@@ -117,42 +112,36 @@ export default function Flashcard({ cards, initialProgress, onProgressChange, on
           <SpeakButton text={card.front} label={`Pronounce ${card.front}`} />
         </div>
 
-        {!revealed ? (
-          <Button className="mt-8 w-full" onClick={() => setRevealed(true)}>
-            Show answer <ChevronRight className="h-4 w-4" />
-          </Button>
-        ) : (
-          <div className="mt-8 border-t border-(--border-primary) pt-6">
-            <p className="text-xs font-display font-bold uppercase tracking-widest text-(--secondary)">Answer</p>
-            <p className="mt-2 text-center text-xl font-display font-bold text-(--text-primary)">{card.back}</p>
-            {card.example && (
-              <p className="mt-3 text-center text-sm italic text-(--text-secondary)">&quot;{card.example}&quot;</p>
-            )}
-            <div className="mt-4 flex justify-center">
-              <SpeakButton text={card.example ?? card.back} label={`Pronounce ${card.back}`} />
-            </div>
-            <div className="mt-6 grid gap-2">
-              {gradeButtons.map((btn, index) => (
-                <Button
-                  key={btn.grade}
-                  variant={btn.variant}
-                  size="sm"
-                  disabled={answered}
-                  onClick={() => advanceAfterGrade(btn.grade)}
-                  aria-keyshortcuts={`${index + 1}`}
-                >
-                  <span className="mr-2 font-mono text-xs opacity-60">{index + 1}</span>
-                  {btn.label}
-                </Button>
-              ))}
-            </div>
+        <div className="mt-8 border-t border-(--border-primary) pt-6">
+          <p className="text-xs font-display font-bold uppercase tracking-widest text-(--secondary)">Answer</p>
+          <p className="mt-2 text-center text-xl font-display font-bold text-(--text-primary)">{card.back}</p>
+          {card.example && (
+            <p className="mt-3 text-center text-sm italic text-(--text-secondary)">&quot;{card.example}&quot;</p>
+          )}
+          <div className="mt-4 flex justify-center">
+            <SpeakButton text={card.example ?? card.back} label={`Pronounce ${card.back}`} />
           </div>
-        )}
+          <div className="mt-6 grid gap-2">
+            {gradeButtons.map((btn, index) => (
+              <Button
+                key={btn.grade}
+                variant={btn.variant}
+                size="sm"
+                disabled={answered}
+                onClick={() => advanceAfterGrade(btn.grade)}
+                aria-keyshortcuts={`${index + 1}`}
+              >
+                <span className="mr-2 font-mono text-xs opacity-60">{index + 1}</span>
+                {btn.label}
+              </Button>
+            ))}
+          </div>
+        </div>
       </article>
 
       <p className="sr-only" aria-live="polite">
         Card {current + 1} of {cards.length}.
-        {revealed ? ' Answer shown. Rate your recall.' : ' Try to recall the answer before revealing.'}
+        Answer and example shown. Rate your recall.
         {recalledCount} recalled so far.
       </p>
     </div>
