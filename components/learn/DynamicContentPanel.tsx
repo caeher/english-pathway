@@ -55,7 +55,7 @@ export default function DynamicContentPanel({
 
   if (panel.kind === 'empty') {
     return (
-      <div className="flex flex-col items-center justify-center h-full min-h-[320px] text-center p-8">
+      <div className="flex h-full min-h-0 flex-col items-center justify-center text-center p-8">
         {panelNotice && (
           <p role="status" className="mb-4 max-w-sm rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200">
             {panelNotice}
@@ -77,16 +77,16 @@ export default function DynamicContentPanel({
   }
 
   return (
-    <div className="flex min-h-full flex-col" aria-live="polite">
+    <div className="flex h-full min-h-0 flex-col" aria-live="polite">
       {panelNotice && (
         <p
           role="status"
-          className="mx-4 mt-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200 sm:mx-6"
+          className="mx-4 mt-3 shrink-0 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200 sm:mx-6"
         >
           {panelNotice}
         </p>
       )}
-      <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-(--border-primary)">
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-(--border-primary) px-4 py-3">
         <h2 ref={headingRef} tabIndex={-1} className="min-w-0 flex-1 truncate font-display font-bold text-(--text-primary) text-sm focus:outline-none">
           {panel.kind === 'explanation' && (panel.title ?? 'Lesson')}
           {panel.kind === 'activity' && panel.activity.title}
@@ -102,7 +102,7 @@ export default function DynamicContentPanel({
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={panel.kind === 'activity' ? `activity-${panel.activity.id}` : panel.kind}
-          className="flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6"
+          className="min-h-0 flex-1 overflow-y-auto p-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-6 sm:pb-6"
           {...(reducedMotion ? motionProps(true) : panelTransition)}
         >
         {panel.kind === 'explanation' && (

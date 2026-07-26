@@ -84,6 +84,9 @@ export default function LearnSessionLayout({
     completionScorePercent,
   ])
 
+  // Height contract: shell fills viewport; header/metrics shrink; grid owns remaining space.
+  // Desktop: two fixed columns, content panel is the sole scroll owner.
+  // Mobile: stacked regions with dvh caps and safe-area padding.
   return (
     <div className="learn-session-shell flex h-full min-h-0 w-full flex-col">
       <LearnSessionHeader />
@@ -92,11 +95,11 @@ export default function LearnSessionLayout({
           <EngagementSummary defaultExpanded={shouldExpandEngagementMetrics(visualState)} />
         </div>
       )}
-      <div className="flex min-h-0 flex-1 flex-col divide-y divide-(--border-primary) lg:grid lg:grid-cols-2 lg:divide-x lg:divide-y-0">
-        <section className="min-h-[min(360px,calc(45dvh-env(safe-area-inset-bottom)))] max-h-[calc(45dvh-env(safe-area-inset-bottom))] overflow-y-auto bg-(--bg-secondary)/30 pb-[env(safe-area-inset-bottom)] lg:min-h-0 lg:max-h-none lg:pb-0">
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col divide-y divide-(--border-primary) lg:grid lg:grid-cols-2 lg:divide-x lg:divide-y-0 lg:overflow-hidden">
+        <section className="min-h-[min(360px,calc(45dvh-env(safe-area-inset-bottom)))] max-h-[calc(45dvh-env(safe-area-inset-bottom))] overflow-y-auto bg-(--bg-secondary)/30 pb-[env(safe-area-inset-bottom)] lg:min-h-0 lg:max-h-none lg:overflow-hidden lg:pb-0">
           {tutorSlot}
         </section>
-        <section className="min-h-[calc(42dvh-env(safe-area-inset-bottom))] flex-1 bg-(--bg-primary) pb-16 lg:min-h-0 lg:pb-0">
+        <section className="min-h-[calc(42dvh-env(safe-area-inset-bottom))] flex-1 bg-(--bg-primary) pb-16 lg:h-full lg:min-h-0 lg:overflow-hidden lg:pb-0">
           <DynamicContentPanel
             onActivityComplete={handleActivityComplete}
             onActivityDifficult={onActivityDifficult}

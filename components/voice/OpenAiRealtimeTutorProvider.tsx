@@ -229,9 +229,9 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     tutorActive={active}
     tutorConnecting={connecting}
     showEngagement={false}
-    tutorSlot={<div className="flex h-full min-h-[360px] flex-col">
-      <div className="border-b border-(--border-primary) p-4"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
-      <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
+    tutorSlot={<div className="flex h-full min-h-0 flex-col">
+      <div className="shrink-0 border-b border-(--border-primary) p-4 lg:p-3"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
+      <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
         {!active && <>
           <Surface as="section" padding="md" className="sm:p-5">
           <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">Start a voice lesson</h2>

@@ -98,13 +98,13 @@ function TutorControls({
       tutorConnecting={connecting}
       showEngagement
       tutorSlot={
-        <div className="flex h-full min-h-[360px] flex-col">
-          <div className="border-b border-(--border-primary) p-4">
+        <div className="flex h-full min-h-0 flex-col">
+          <div className="shrink-0 border-b border-(--border-primary) p-4 lg:p-3">
             <h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1>
             <p className="mt-1 text-xs text-(--text-muted)">Choose how you want to practice today.</p>
           </div>
 
-          <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
+          <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
             {!active && <>
               <Surface as="section" padding="md" className="sm:p-5" aria-labelledby="session-preflight-heading">
               <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p>

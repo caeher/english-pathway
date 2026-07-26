@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import LearnHelpDialog from '@/components/learn/LearnHelpDialog'
 
 export interface LearnSessionHeaderProps {
   exitHref?: string
@@ -14,7 +15,7 @@ export default function LearnSessionHeader({ exitHref = '/dashboard' }: LearnSes
       style={{ ['--learn-session-header-height' as string]: '2.75rem' }}
       aria-label="Current learning session"
     >
-      <div className="flex w-full items-center px-4 py-2 sm:px-6">
+      <div className="flex w-full items-center justify-between px-4 py-2 sm:px-6">
         <Link
           href={exitHref}
           aria-label="Back to dashboard"
@@ -24,6 +25,7 @@ export default function LearnSessionHeader({ exitHref = '/dashboard' }: LearnSes
           <span className="sr-only">Back to dashboard</span>
           <span aria-hidden="true">Dashboard</span>
         </Link>
+        <LearnHelpDialog />
       </div>
     </header>
   )

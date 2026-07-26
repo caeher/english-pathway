@@ -8,16 +8,28 @@ describe('mobile learning layout', () => {
   const panel = readFileSync(resolve(process.cwd(), 'components/learn/DynamicContentPanel.tsx'), 'utf8')
   const header = readFileSync(resolve(process.cwd(), 'components/learn/LearnSessionHeader.tsx'), 'utf8')
   const engagement = readFileSync(resolve(process.cwd(), 'components/engagement/EngagementSummary.tsx'), 'utf8')
+  const pageTransition = readFileSync(resolve(process.cwd(), 'components/transitions/PageTransition.tsx'), 'utf8')
+  const learnTemplate = readFileSync(resolve(process.cwd(), 'app/(learn)/template.tsx'), 'utf8')
 
   it('uses fullscreen shell and flex height model with mobile viewport regions', () => {
     expect(learnRouteLayout).toContain('h-dvh')
     expect(learnRouteLayout).not.toContain('Header')
+    expect(learnTemplate).toContain('layout="viewport"')
+    expect(pageTransition).toContain("viewport: 'flex h-full min-h-0 flex-col'")
     expect(layout).toContain('flex-1')
     expect(layout).toContain('min-h-0')
     expect(layout).toContain('45dvh')
     expect(layout).toContain('env(safe-area-inset-bottom)')
     expect(layout).toContain('lg:grid-cols-2')
     expect(layout).toContain('pb-16')
+  })
+
+  it('assigns desktop scroll ownership to the content panel column', () => {
+    expect(layout).toContain('lg:overflow-hidden')
+    expect(layout).toContain('lg:h-full')
+    expect(layout).toMatch(/lg:overflow-hidden lg:pb-0/)
+    expect(panel).toContain('h-full min-h-0 flex-col')
+    expect(panel).toContain('min-h-0 flex-1 overflow-y-auto')
   })
 
   it('mounts session header and collapsible engagement metrics above the learn grid', () => {
