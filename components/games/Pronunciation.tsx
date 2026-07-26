@@ -87,6 +87,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
   const [privacyAcknowledged, setPrivacyAcknowledged] = useState(false)
   const [recording, setRecording] = useState(false)
   const [transcribing, setTranscribing] = useState(false)
+  const [browserRecognitionUnavailable, setBrowserRecognitionUnavailable] = useState(false)
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const mediaStreamRef = useRef<MediaStream | null>(null)
@@ -104,6 +105,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
     && Boolean(navigator.mediaDevices?.getUserMedia)
     && typeof MediaRecorder !== 'undefined'
   const supportsSpeechInput = supportsMic || supportsRecording
+  const shouldOfferBrowserRecognition = supportsMic && !browserRecognitionUnavailable
   const hidePhraseUntilAttempt = Boolean(item.audio?.src)
 
   useEffect(() => () => {
@@ -147,6 +149,9 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
     }
     recognition.onerror = (event) => {
       if (event.error === 'aborted') return
+      if (event.error === 'network' || event.error === 'language-not-supported' || event.error === 'service-not-allowed') {
+        setBrowserRecognitionUnavailable(true)
+      }
       setError(recognitionErrorMessage(event.error))
       setListening(false)
     }
@@ -352,21 +357,6 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
             </div>
           ) : (
             <div className="space-y-3">
-              {supportsMic && (
-                <button
-                  type="button"
-                  onClick={startListening}
-                  disabled={listening || recording || transcribing || attemptScore !== null}
-                  className={cn(
-                    'w-full flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border-2 font-display font-bold text-sm cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
-                    listening ? 'border-(--accent) bg-(--accent-soft) text-(--accent)' : 'border-(--border-primary) bg-(--bg-card) hover:border-(--accent)/50'
-                  )}
-                >
-                  {listening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
-                  {listening ? 'Listening...' : 'Tap and speak'}
-                </button>
-              )}
-
               {supportsRecording && (
                 <button
                   type="button"
@@ -382,8 +372,25 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
                 </button>
               )}
 
+              {shouldOfferBrowserRecognition && (
+                <button
+                  type="button"
+                  onClick={startListening}
+                  disabled={listening || recording || transcribing || attemptScore !== null}
+                  className={cn(
+                    'w-full flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border font-display font-bold text-sm cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
+                    listening ? 'border-(--accent) bg-(--accent-soft) text-(--accent)' : 'border-(--border-primary) bg-(--bg-card) hover:border-(--accent)/50'
+                  )}
+                >
+                  {listening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+                  {listening ? 'Listening...' : 'Try browser speech recognition'}
+                </button>
+              )}
+
               <p className="text-center text-xs text-(--text-muted)">
-                Use recording mode if browser speech recognition does not work.
+                {browserRecognitionUnavailable
+                  ? 'Browser speech recognition is unavailable on this device. Recording mode remains available.'
+                  : 'Recording mode is the most reliable option. Browser speech recognition is optional.'}
               </p>
             </div>
           )}
