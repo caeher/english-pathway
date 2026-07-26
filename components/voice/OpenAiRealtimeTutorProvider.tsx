@@ -9,6 +9,7 @@ import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import type { SessionMode } from './session-types'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
+import { TUTOR_ACTIVITY_PRESENTED_EVENT } from '@/lib/learn/activity-voice-pause'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -48,6 +49,7 @@ export default function OpenAiRealtimeTutorProvider() {
   const endTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
   const processedCallIdsRef = useRef<Set<string>>(new Set())
+  const pausedForActivityRef = useRef(false)
 
   useEffect(() => {
     sessionStorage.removeItem('ep-session-plan')
@@ -210,6 +212,24 @@ export default function OpenAiRealtimeTutorProvider() {
     }
   }, [end, flushPendingMessages, handleFunctionCall, mode])
 
+  useEffect(() => {
+    const pauseForActivity = () => {
+      if (!active || pausedForActivityRef.current) return
+      pausedForActivityRef.current = true
+      window.setTimeout(() => { void end() }, 750)
+    }
+    window.addEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
+    return () => window.removeEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
+  }, [active, end])
+
+  const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
+    onActivityComplete(result)
+    if (pausedForActivityRef.current) {
+      pausedForActivityRef.current = false
+      window.setTimeout(() => { void start() }, 0)
+    }
+  }, [onActivityComplete, start])
+
   const toggleMuted = () => {
     stream?.getAudioTracks().forEach((track) => { track.enabled = muted })
     setMuted((current) => !current)
@@ -239,7 +259,7 @@ export default function OpenAiRealtimeTutorProvider() {
         </section>}
       </div>
     </div>}
-    onActivityComplete={onActivityComplete}
+    onActivityComplete={handleActivityComplete}
     onActivityDifficult={onActivityDifficult}
     onQuestionAnswered={onQuestionAnswered}
   />

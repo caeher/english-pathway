@@ -18,6 +18,7 @@ import {
   showQuestion,
 } from './client-tools'
 import { formatCurriculumMatches } from './format-curriculum-match'
+import { notifyTutorActivityPresented } from './activity-voice-pause'
 
 function stringifyToolOutput(output: unknown): string {
   return typeof output === 'string' ? output : JSON.stringify(output)
@@ -42,7 +43,8 @@ export async function executeTutorTool(name: string, rawArguments: unknown): Pro
         result = 'Activity request was rejected because its ID was invalid.'
       } else {
         const activity = await showActivity(parsed.data.activityId)
-        result = `Activity "${activity.title}" is now visible in the learning panel. Chapter: ${activity.curriculumUrl}.`
+        notifyTutorActivityPresented(parsed.data.activityId)
+        result = `Activity "${activity.title}" is now visible in the learning panel. Give one short completion instruction, then wait for its explicit result before continuing.`
       }
     } else if (name === 'showQuestion') {
       const parsed = showQuestionActionSchema.safeParse(rawArguments)

@@ -15,6 +15,7 @@ import { trackEvent } from '@/lib/analytics/events'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
+import { TUTOR_ACTIVITY_PRESENTED_EVENT } from '@/lib/learn/activity-voice-pause'
 
 interface TutorControlsProps {
   mode: SessionMode
@@ -59,6 +60,26 @@ function TutorControls({
   } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted: handleSessionStarted, onSessionEnded })
   const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
+  const pausedForActivityRef = useRef(false)
+
+  useEffect(() => {
+    if (mode !== 'voice') return
+    const pauseForActivity = () => {
+      if (!active || pausedForActivityRef.current) return
+      pausedForActivityRef.current = true
+      window.setTimeout(() => end(), 750)
+    }
+    window.addEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
+    return () => window.removeEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
+  }, [active, end, mode])
+
+  const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
+    onActivityComplete(result)
+    if (mode === 'voice' && pausedForActivityRef.current) {
+      pausedForActivityRef.current = false
+      window.setTimeout(() => { void start() }, 0)
+    }
+  }, [mode, onActivityComplete, start])
 
   useEffect(() => {
     if (!active) {
@@ -152,7 +173,7 @@ function TutorControls({
           </div>
         </div>
       }
-      onActivityComplete={onActivityComplete}
+      onActivityComplete={handleActivityComplete}
       onActivityDifficult={onActivityDifficult}
       onQuestionAnswered={onQuestionAnswered}
     />
