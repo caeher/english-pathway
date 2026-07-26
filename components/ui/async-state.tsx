@@ -3,18 +3,34 @@ import { AlertCircle, CheckCircle2, Inbox } from 'lucide-react'
 import { cn } from '@/lib/helpers'
 import { Button } from './button'
 import { FeedbackCard } from './feedback-card'
+import { PAGE_CONTAINER_CLASS } from './page-container'
 import { Surface } from './surface'
+
+type LoadingStateLayout = 'page' | 'compact' | 'fluid'
+
+const LOADING_STATE_LAYOUT_CLASS: Record<LoadingStateLayout, string> = {
+  page: PAGE_CONTAINER_CLASS,
+  compact: 'mx-auto w-full max-w-md',
+  fluid: 'w-full',
+}
 
 interface LoadingStateProps {
   title?: string
   description?: string
   className?: string
   lines?: number
+  layout?: LoadingStateLayout
 }
 
-export function LoadingState({ title = 'Loading', description, className, lines = 3 }: LoadingStateProps) {
+export function LoadingState({
+  title = 'Loading',
+  description,
+  className,
+  lines = 3,
+  layout = 'page',
+}: LoadingStateProps) {
   return (
-    <section className={cn('mx-auto w-full max-w-3xl space-y-4 py-10', className)} aria-busy="true" aria-live="polite" aria-label={title}>
+    <section className={cn(LOADING_STATE_LAYOUT_CLASS[layout], 'space-y-4 py-10', className)} aria-busy="true" aria-live="polite" aria-label={title}>
       <div className="flex items-center gap-3 text-sm font-bold text-(--text-secondary)">
         <span className="h-5 w-5 animate-spin rounded-full border-2 border-(--accent) border-t-transparent" aria-hidden="true" />
         <span>{title}</span>

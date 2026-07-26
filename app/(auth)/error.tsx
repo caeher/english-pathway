@@ -9,5 +9,5 @@ export default function AuthError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
-  return <FriendlyError error={error} reset={reset} title="Authentication error" />
+  return <FriendlyError error={error} reset={reset} title="Authentication error" layout="compact" />
 }
