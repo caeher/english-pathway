@@ -43,9 +43,10 @@ export async function updateSession(request: NextRequest) {
     pathname.startsWith('/reset-password')
 
   const isAccountRoute = pathname.startsWith('/settings') || pathname.startsWith('/dashboard') || pathname.startsWith('/chats')
+  const isCurriculumRoute = pathname.startsWith('/curriculum')
   const isReviewRoute = pathname.startsWith('/review')
   const isOnboardingRoute = pathname.startsWith('/onboarding')
-  const requiresAuth = isAccountRoute || isReviewRoute || isOnboardingRoute
+  const requiresAuth = isAccountRoute || isCurriculumRoute || isReviewRoute || isOnboardingRoute
 
   if (!user && requiresAuth) {
     const url = request.nextUrl.clone()

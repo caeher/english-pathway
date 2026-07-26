@@ -14,7 +14,7 @@ describe('async-state conventions', () => {
   })
 
   it('gives primary async routes loading and retryable error boundaries', () => {
-    for (const path of ['app/(account)/loading.tsx', 'app/(learn)/loading.tsx', 'app/(public)/curriculum/loading.tsx', 'app/(account)/error.tsx', 'app/(learn)/error.tsx', 'app/(public)/curriculum/error.tsx']) {
+    for (const path of ['app/(account)/loading.tsx', 'app/(learn)/loading.tsx', 'app/(account)/curriculum/loading.tsx', 'app/(account)/error.tsx', 'app/(learn)/error.tsx', 'app/(account)/curriculum/error.tsx']) {
       expect(readFileSync(resolve(process.cwd(), path), 'utf8')).toMatch(/LoadingState|FriendlyError/)
     }
   })

@@ -17,8 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/register',
 
     '/how-it-works',
-    '/curriculum',
-
     '/learn',
 
     '/faq',
