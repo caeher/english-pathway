@@ -107,6 +107,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Lock document scroll while the dashboard panel shell is mounted. */
+html.panel-shell,
+html.panel-shell body {
+  height: 100%;
+  overflow: hidden;
+}
+
+html.panel-shell body {
+  height: 100dvh;
+}
+
 /* Accessible focus ring for interactive elements */
 :focus-visible {
   outline: 2px solid var(--accent);

@@ -5,6 +5,8 @@ import {
   PANEL_CONTENT_COLUMN_CLASS,
   PANEL_FULL_BLEED_CLASS,
   PANEL_MAIN_CLASS,
+  PANEL_MAIN_SCROLL_CLASS,
+  PANEL_PAGE_FILL_CLASS,
   PANEL_SHELL_CSS_VARS,
 } from '@/lib/layout/panel-shell'
 
@@ -19,22 +21,31 @@ describe('panel shell constants', () => {
     expect(PANEL_SHELL_CSS_VARS['--app-panel-pb-lg']).toBe('2.5rem')
   })
 
-  it('defines a single vertical scroller with reinforced bottom gutter', () => {
+  it('defines a constrained main shell and a dedicated scroll region', () => {
     expect(PANEL_MAIN_CLASS).toContain('h-0')
     expect(PANEL_MAIN_CLASS).toContain('min-h-0')
-    expect(PANEL_MAIN_CLASS).toContain('overflow-y-auto')
-    expect(PANEL_MAIN_CLASS).toContain('overscroll-y-contain')
-    expect(PANEL_MAIN_CLASS).toContain('pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))]')
-    expect(PANEL_MAIN_CLASS).toContain('lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]')
+    expect(PANEL_MAIN_CLASS).toContain('overflow-hidden')
+    expect(PANEL_MAIN_SCROLL_CLASS).toContain('overflow-y-auto')
+    expect(PANEL_MAIN_SCROLL_CLASS).toContain('overscroll-y-contain')
+    expect(PANEL_MAIN_SCROLL_CLASS).toContain('pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))]')
+    expect(PANEL_MAIN_SCROLL_CLASS).toContain('lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]')
   })
 
   it('defines full-bleed offsets that cancel shell gutters', () => {
     expect(PANEL_FULL_BLEED_CLASS).toContain('-mx-[var(--app-panel-px)]')
     expect(PANEL_FULL_BLEED_CLASS).toContain('-mb-[var(--app-panel-pb)]')
-    expect(PANEL_FULL_BLEED_CLASS).toContain('var(--app-panel-pt)')
-    expect(PANEL_FULL_BLEED_CLASS).toContain('var(--app-panel-pb-lg)')
+    expect(PANEL_FULL_BLEED_CLASS).toContain('flex-1')
+    expect(PANEL_FULL_BLEED_CLASS).toContain('min-h-0')
+    expect(PANEL_FULL_BLEED_CLASS).not.toContain('100dvh')
     expect(PANEL_FULL_BLEED_CLASS).not.toContain('-mx-4')
     expect(PANEL_FULL_BLEED_CLASS).not.toContain('2rem')
+  })
+
+  it('defines a fill wrapper for full-bleed routes with constrained height', () => {
+    expect(PANEL_PAGE_FILL_CLASS).toContain('h-0')
+    expect(PANEL_PAGE_FILL_CLASS).toContain('min-h-0')
+    expect(PANEL_PAGE_FILL_CLASS).toContain('flex-1')
+    expect(PANEL_PAGE_FILL_CLASS).toContain('overflow-hidden')
   })
 
   it('allows the content column to shrink inside the viewport', () => {
@@ -73,6 +84,7 @@ describe('panel shell integration', () => {
     expect(dashboardLayout).toContain('PANEL_SHELL_STYLE')
     expect(dashboardLayout).toContain('PANEL_CONTENT_COLUMN_CLASS')
     expect(dashboardLayout).toContain('PANEL_MAIN_CLASS')
+    expect(dashboardLayout).toContain('PANEL_MAIN_SCROLL_CLASS')
     expect(dashboardLayout).toContain('id="main-content"')
     expect(dashboardLayout).toContain('Skip to main content')
     expect(dashboardLayout).toContain('h-dvh')
@@ -83,22 +95,24 @@ describe('panel shell integration', () => {
 
   it('uses shared full-bleed class in review and chat detail routes', () => {
     expect(reviewLayout).toContain('PANEL_FULL_BLEED_CLASS')
+    expect(reviewLayout).toContain('PANEL_PAGE_FILL_CLASS')
     expect(chatLayout).toContain('PANEL_FULL_BLEED_CLASS')
+    expect(chatLayout).toContain('PANEL_PAGE_FILL_CLASS')
     expect(reviewLayout).not.toContain('-mb-4')
     expect(chatLayout).not.toContain('-mb-4')
   })
 
   it('exposes explicit page transition layout modes', () => {
     expect(pageTransition).toContain("PageTransitionLayout = 'content' | 'fill' | 'viewport'")
-    expect(pageTransition).toContain("content: 'flex min-h-0 flex-col'")
+    expect(pageTransition).toContain("content: 'contents'")
     expect(pageTransition).toContain("fill: 'flex h-0 min-h-0 flex-1 flex-col overflow-hidden'")
     expect(pageTransition).toContain("viewport: 'flex h-full min-h-0 flex-col'")
     expect(pageTransition).toContain("layout = 'content'")
     expect(pageTransition).toContain('layoutClasses[layout]')
   })
 
-  it('assigns fill layout to account routes and viewport layout to learn routes', () => {
-    expect(accountTemplate).toContain('layout="fill"')
+  it('assigns content layout to account routes and viewport layout to learn routes', () => {
+    expect(accountTemplate).toContain('layout="content"')
     expect(learnTemplate).toContain('layout="viewport"')
   })
 })

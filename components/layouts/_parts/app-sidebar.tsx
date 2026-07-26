@@ -36,7 +36,7 @@ export function AppSidebar({
       )}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-50 flex flex-col border-r border-(--border-primary) bg-(--bg-card) transition-transform duration-300 lg:static lg:translate-x-0',
+          'fixed inset-y-0 left-0 z-50 flex flex-col border-r border-(--border-primary) bg-(--bg-card) transition-transform duration-300 lg:static lg:h-full lg:min-h-0 lg:translate-x-0',
           collapsed ? 'w-16' : 'w-64',
           mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         )}

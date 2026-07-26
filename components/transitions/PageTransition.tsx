@@ -8,7 +8,7 @@ import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 export type PageTransitionLayout = 'content' | 'fill' | 'viewport'
 
 const layoutClasses: Record<PageTransitionLayout, string> = {
-  content: 'flex min-h-0 flex-col',
+  content: 'contents',
   fill: 'flex h-0 min-h-0 flex-1 flex-col overflow-hidden',
   viewport: 'flex h-full min-h-0 flex-col',
 }
