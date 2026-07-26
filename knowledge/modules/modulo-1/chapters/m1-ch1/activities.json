@@ -200,54 +200,18 @@
     "description": "Match each letter with the word that begins with it.",
     "props": {
       "pairs": [
-        {
-          "left": "TO",
-          "right": "Apple 🍎"
-        },
-        {
-          "left": "b",
-          "right": "Book 📖"
-        },
-        {
-          "left": "d",
-          "right": "Dog 🐕"
-        },
-        {
-          "left": "F",
-          "right": "Fish 🐟"
-        },
-        {
-          "left": "h",
-          "right": "House 🏠"
-        },
-        {
-          "left": "Yes",
-          "right": "Sun ☀️"
-        },
-        {
-          "left": "T",
-          "right": "Tree 🌳"
-        },
-        {
-          "left": "W",
-          "right": "Water 💧"
-        },
-        {
-          "left": "Apple",
-          "right": "Apple 🍎"
-        },
-        {
-          "left": "book",
-          "right": "Book 📖"
-        },
-        {
-          "left": "cat",
-          "right": "Cat 🐱"
-        },
-        {
-          "left": "dog",
-          "right": "Dog 🐕"
-        }
+        { "left": "A", "right": "Apple 🍎" },
+        { "left": "B", "right": "Book 📖" },
+        { "left": "C", "right": "Cat 🐱" },
+        { "left": "D", "right": "Dog 🐕" },
+        { "left": "E", "right": "Egg 🥚" },
+        { "left": "F", "right": "Fish 🐟" },
+        { "left": "G", "right": "Girl 👧" },
+        { "left": "H", "right": "House 🏠" },
+        { "left": "I", "right": "Ice 🧊" },
+        { "left": "J", "right": "Juice 🧃" },
+        { "left": "K", "right": "Key 🔑" },
+        { "left": "L", "right": "Lion 🦁" }
       ]
     },
     "required": true,
