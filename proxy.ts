@@ -26,7 +26,7 @@ async function getApiUserId(request: NextRequest): Promise<string | null> {
   return user?.id ?? null
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   if (pathname.startsWith('/admin') || pathname.startsWith('/teacher')) {
