@@ -1,6 +1,6 @@
 import type { AppSupabaseClient } from '@/lib/api/context'
 
-export const AUDIO_CREDIT_SECONDS = 5 * 60
+export const AUDIO_CREDIT_SECONDS = 20 * 60
 export const ASSISTANT_MESSAGE_CREDITS = 50
 
 export type UsageCredits = {

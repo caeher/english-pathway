@@ -162,7 +162,7 @@ describe('english assistant API routes', () => {
     mockAuthenticatedClient()
     vi.mocked(consumeAssistantCredit).mockResolvedValue({
       allowed: true,
-      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 1200 },
     })
     vi.mocked(resolveEnglishAssistantMessagesForModel).mockRejectedValue(
       new DomainError('NOT_FOUND', 'Conversation not found'),
@@ -186,7 +186,7 @@ describe('english assistant API routes', () => {
     mockAuthenticatedClient()
     vi.mocked(consumeAssistantCredit).mockResolvedValue({
       allowed: true,
-      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 1200 },
     })
     vi.mocked(resolveEnglishAssistantMessagesForModel).mockResolvedValue({
       conversationId,
@@ -223,7 +223,7 @@ describe('english assistant API routes', () => {
     mockAuthenticatedClient()
     vi.mocked(consumeAssistantCredit).mockResolvedValue({
       allowed: true,
-      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 1200 },
     })
     vi.mocked(resolveEnglishAssistantMessagesForModel).mockResolvedValue({
       conversationId,
