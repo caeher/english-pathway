@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/helpers'
+import { getAccountPageTitle } from '@/lib/navigation'
 import { AppSidebar } from './_parts/app-sidebar'
 import { AppNavbar } from './_parts/app-navbar'
 import type { NavItem } from './_parts/sidebar-body'
@@ -23,6 +25,8 @@ export function DashboardLayout({
   fullName,
   avatarUrl,
 }: DashboardLayoutProps) {
+  const pathname = usePathname()
+  const resolvedTitle = title ?? getAccountPageTitle(pathname)
   const [collapsed, setCollapsed] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -50,7 +54,7 @@ export function DashboardLayout({
 
       <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
         <AppNavbar
-          title={title}
+          title={resolvedTitle}
           onToggleSidebar={() => {
             if (window.innerWidth < 1024) {
               setMobileOpen((v) => !v)
