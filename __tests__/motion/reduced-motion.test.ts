@@ -20,4 +20,10 @@ describe('reduced motion defaults', () => {
     expect(css).toContain('@media (prefers-reduced-motion: reduce)')
     expect(css).toContain('--motion-standard: 0ms')
   })
+
+  it('defers matchMedia reads until after mount for hydration safety', () => {
+    const source = readFileSync(resolve(process.cwd(), 'lib/motion/useReducedMotion.ts'), 'utf8')
+    expect(source).toContain('useState(false)')
+    expect(source).not.toContain('typeof window')
+  })
 })
