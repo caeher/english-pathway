@@ -4,6 +4,7 @@ export {
   getCurriculumProgressSnapshot,
   getLastProgress,
   mergeLearningProgress,
+  recordActivityAttempt,
   recordActivityProgress,
   recordChapterProgress,
   type LastProgress,

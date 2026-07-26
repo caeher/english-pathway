@@ -1,5 +1,5 @@
 import { completeChapterSchema } from '@/features/curriculum'
-import { completeCurriculumChapterUseCase, getCurriculumProgressUseCase } from '@/features/progress/use-cases'
+import { getCurriculumProgressUseCase } from '@/features/progress/use-cases'
 import { DomainError, apiErrorResponse, respondWithApiErrors } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
 
@@ -14,8 +14,8 @@ export async function POST(request: Request) {
   if (!payload.success) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid completion request'), 'Invalid completion request')
   const context = await getAuthenticatedContext()
   if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
-  return respondWithApiErrors(
-    async () => ({ ok: true as const, completion: await completeCurriculumChapterUseCase(context, payload.data.chapterId) }),
-    'Unable to save chapter completion',
+  return apiErrorResponse(
+    new DomainError('CONFLICT', 'Chapter completion is derived from approved exercises and cannot be set manually.'),
+    'Chapter completion is derived from approved exercises and cannot be set manually.',
   )
 }

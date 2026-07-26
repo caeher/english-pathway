@@ -3,7 +3,7 @@ import { CheckCircle2, ChevronRight, Circle, ListChecks } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { getCurrentUser } from '@/lib/auth/actions'
 import { resolveModule } from '@/lib/content/resolve'
-import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
+import { curriculumChapterHref } from '@/lib/curriculum/href'
 import { getChapterProgress } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
 import { PageContainer } from '@/components/ui/page-container'
@@ -36,7 +36,7 @@ export default async function ModuleCurriculumPage({ params }: { params: Promise
         <div className="rounded-xl bg-(--success-soft) px-4 py-3 text-sm font-bold text-(--success)"><CheckCircle2 className="mr-2 inline h-4 w-4" />{completedCount} of {curriculumModule.chapters.length} completed</div>
       </div>
 
-      {nextChapter && <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-(--accent)/30 bg-(--accent-soft) p-5"><div><p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Next up</p><p className="mt-1 font-display font-black text-(--text-primary)">{nextChapter.title}</p></div><Link href={learnHref({ moduleId: curriculumModule.id, chapterId: nextChapter.id, activityId: next?.nextActivityId })} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline">Practice in Learn <ChevronRight className="h-4 w-4" /></Link></div>}
+      {nextChapter && <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-(--accent)/30 bg-(--accent-soft) p-5"><div><p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Next up</p><p className="mt-1 font-display font-black text-(--text-primary)">{nextChapter.title}</p></div><Link href={curriculumChapterHref(curriculumModule.id, nextChapter.id)} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline">Continue chapter <ChevronRight className="h-4 w-4" /></Link></div>}
 
       <ol className="mt-10 space-y-3">
         {curriculumModule.chapters.map((chapter, index) => {
@@ -49,7 +49,7 @@ export default async function ModuleCurriculumPage({ params }: { params: Promise
                 <span className="min-w-0 flex-1">
                   <span className="block font-display font-bold text-(--text-primary)">{chapter.title}</span>
                   <span className="mt-1 block text-sm text-(--text-secondary)">{chapter.subtitle} · {chapter.activities.length} activities</span>
-                  <span className="mt-2 block text-xs font-bold text-(--text-muted)">{progress.completedActivities}/{progress.totalActivities} activities · {progress.completionPercent}%</span>
+                  <span className="mt-2 block text-xs font-bold text-(--text-muted)">{progress.passedRequiredActivities}/{progress.totalRequiredActivities} required exercises passed · {progress.completionPercent}%</span>
                 </span>
                 {completed ? <span className="hidden text-xs font-bold text-(--success) sm:block">Completed</span> : progress.status === 'in_progress' ? <ListChecks className="hidden h-4 w-4 text-(--accent) sm:block" /> : null}
                 <ChevronRight className="h-5 w-5 shrink-0 text-(--text-muted) transition-transform group-hover:translate-x-1" />

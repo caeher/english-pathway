@@ -1,5 +1,5 @@
-import { saveActivityProgressUseCase } from '@/features/progress/use-cases'
-import { activityProgressSchema } from '@/features/progress/contracts'
+import { saveActivityAttemptUseCase } from '@/features/progress/use-cases'
+import { activityAttemptSchema } from '@/features/progress/contracts'
 import { DomainError, apiErrorResponse, respondWithApiErrors } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
 import { getActivityCompletionStatus } from '@/features/progress'
@@ -18,14 +18,17 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const payload = activityProgressSchema.safeParse(await request.json().catch(() => null))
+  const payload = activityAttemptSchema.safeParse(await request.json().catch(() => null))
   if (!payload.success) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid activity progress'), 'Invalid activity progress')
 
   const context = await getAuthenticatedContext()
   if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Authentication required'), 'Authentication required')
 
   return respondWithApiErrors(
-    async () => ({ ok: true as const, progress: await saveActivityProgressUseCase(context, payload.data) }),
+    async () => {
+      const result = await saveActivityAttemptUseCase(context, payload.data)
+      return { ok: true as const, progress: result.progress, passed: result.approval.passed }
+    },
     'Unable to save activity progress',
   )
 }

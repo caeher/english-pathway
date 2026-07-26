@@ -111,6 +111,10 @@ interface ActivityRendererProps {
   activity: ChapterActivity
   chapterId?: string
   moduleId?: string
+  variant?: 'learn' | 'curriculum'
+  passThreshold?: number
+  approvalMode?: 'score' | 'completion'
+  onCurriculumContinue?: () => void
   onComplete?: (result: ActivityCompleteResult) => void
   onHelp?: (activityId: string, context?: TutorHintContext) => void
   onExit?: () => void
@@ -241,12 +245,19 @@ export default function ActivityRenderer({
   activity,
   chapterId,
   moduleId,
+  variant = 'learn',
+  passThreshold,
+  approvalMode,
+  onCurriculumContinue,
   onComplete,
   onHelp,
   onExit,
   onPhaseChange,
   onRuntimeEvent,
 }: ActivityRendererProps) {
+  const isCurriculum = variant === 'curriculum'
+  const resolvedPassThreshold = passThreshold ?? (activity.policy?.mode === 'score' ? activity.policy.passThreshold : 70)
+  const resolvedApprovalMode = approvalMode ?? activity.policy?.mode ?? 'score'
   const [attempt, setAttempt] = useState(0)
   const [hintCount, setHintCount] = useState(0)
   const [visibleHint, setVisibleHint] = useState<ResolvedHint | null>(null)
@@ -474,13 +485,17 @@ export default function ActivityRenderer({
         return
       }
 
-      learnSessionActions.acknowledgeCompletion()
+      if (!isCurriculum) learnSessionActions.acknowledgeCompletion()
     } finally {
       setContinueLoading(false)
     }
-  }, [activity.id, chapterId, navigateToActivity])
+  }, [activity.id, chapterId, isCurriculum, navigateToActivity])
 
   const handleAcceptFollowUp = useCallback(async () => {
+    if (isCurriculum) {
+      onCurriculumContinue?.()
+      return
+    }
     if (!followUpDecision) return
 
     if (followUpDecision.action === 'retry' && followUpDecision.activityId === activity.id) {
@@ -489,7 +504,7 @@ export default function ActivityRenderer({
     }
 
     if (!followUpDecision.activityId) {
-      learnSessionActions.acknowledgeCompletion()
+      if (!isCurriculum) learnSessionActions.acknowledgeCompletion()
       return
     }
 
@@ -506,7 +521,7 @@ export default function ActivityRenderer({
     } finally {
       setContinueLoading(false)
     }
-  }, [activity.id, chapterId, followUpDecision, handleDeclineFollowUp, handleRetry, navigateToActivity])
+  }, [activity.id, chapterId, followUpDecision, handleDeclineFollowUp, handleRetry, isCurriculum, navigateToActivity, onCurriculumContinue])
 
   const emitHintRequested = useCallback((level: number, itemIndex: number | undefined, source: 'editorial' | 'tutor') => {
     emitRuntimeEvent({
@@ -528,10 +543,10 @@ export default function ActivityRenderer({
       level,
       maxLevel: maxHintLevel,
     }
-    learnSessionActions.requestHelp()
+    if (!isCurriculum) learnSessionActions.requestHelp()
     onHelp?.(activity.id, context)
     emitHintRequested(level, itemIndex, 'tutor')
-  }, [activity.id, activity.title, emitHintRequested, maxHintLevel, onHelp, type])
+  }, [activity.id, activity.title, emitHintRequested, isCurriculum, maxHintLevel, onHelp, type])
 
   const applyResolvedHint = useCallback((level: number, itemIndex: number, hint: ResolvedHint) => {
     setHintCount(level)
@@ -621,7 +636,7 @@ export default function ActivityRenderer({
     const explanations = extractExplanations(result)
     let decision: FollowUpDecision | null = null
 
-    if (chapterId) {
+    if (chapterId && !isCurriculum) {
       try {
         const chapter = await listChapterActivities(chapterId)
         const completionEntries = await Promise.all(
@@ -676,7 +691,7 @@ export default function ActivityRenderer({
 
     setCompletedResult(enriched)
     setPhase('completed')
-    learnSessionActions.acknowledgeCompletion()
+    if (!isCurriculum) learnSessionActions.acknowledgeCompletion()
     onComplete?.(enriched)
   }
 
@@ -710,13 +725,15 @@ export default function ActivityRenderer({
       {phase === 'completed' && completedResult && (
         <ActivityCompletionCard
           result={completedResult}
-          followUp={followUpDecision}
+          followUp={isCurriculum ? null : followUpDecision}
           explanations={completedResult.explanations}
-          onAcceptFollowUp={chapterId || followUpDecision ? handleAcceptFollowUp : undefined}
-          onDeclineFollowUp={chapterId ? handleDeclineFollowUp : undefined}
+          onAcceptFollowUp={isCurriculum ? onCurriculumContinue : (chapterId || followUpDecision ? handleAcceptFollowUp : undefined)}
+          onDeclineFollowUp={isCurriculum ? undefined : (chapterId ? handleDeclineFollowUp : undefined)}
           onRetry={handleRetry}
-          onRequestHelp={canRequestHelp ? handleRequestHelp : undefined}
+          onRequestHelp={canRequestHelp && !isCurriculum ? handleRequestHelp : undefined}
           continueLoading={continueLoading}
+          passThreshold={resolvedPassThreshold}
+          approvalMode={resolvedApprovalMode}
         />
       )}
       {phase === 'playing' && resumeState === 'playing' && (

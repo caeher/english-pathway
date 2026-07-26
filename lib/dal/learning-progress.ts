@@ -1,5 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
-import type { ActivityProgressInput, ChapterProgressInput } from '@/lib/api/progress-schemas'
+import type { ActivityAttemptInput, ActivityProgressInput, ChapterProgressInput } from '@/lib/api/progress-schemas'
 import type { Database } from '@/lib/supabase/database.types'
 import type { CurriculumProgressSnapshot, ProgressStatus } from '@/lib/curriculum/progress'
 
@@ -19,9 +19,18 @@ export interface LastProgress {
   updated_at: string
 }
 
-interface ResolvedActivityProgress extends ActivityProgressInput {
+interface ResolvedActivityAttempt {
+  activityId: string
+  finished: boolean
   chapterId: string
   moduleId: string
+  activityType: string
+  passed: boolean
+  status: ProgressStatus
+  score: number | null
+  scorePercent?: number
+  total?: number
+  attempts?: number
 }
 
 interface ResolvedChapterProgress extends ChapterProgressInput {
@@ -71,12 +80,12 @@ export async function getActivityCompletionStatus(
 ): Promise<boolean> {
   const { data, error } = await supabase
     .from('activity_completions')
-    .select('status')
+    .select('passed')
     .eq('user_id', userId)
     .eq('activity_id', activityId)
     .maybeSingle()
   if (error) throw new Error(`Failed to load activity completion: ${error.message}`)
-  return data?.status === 'completed'
+  return data?.passed === true
 }
 
 export async function getCurriculumProgressSnapshot(
@@ -87,7 +96,7 @@ export async function getCurriculumProgressSnapshot(
     supabase.from('chapter_completions').select('chapter_id').eq('user_id', userId),
     supabase
       .from('activity_completions')
-      .select('activity_id, chapter_id, status, score, updated_at')
+      .select('activity_id, chapter_id, status, passed, score, attempts, updated_at')
       .eq('user_id', userId),
     getLastProgress(supabase, userId),
   ])
@@ -106,10 +115,10 @@ export async function getCurriculumProgressSnapshot(
   }
 }
 
-export async function recordActivityProgress(
+export async function recordActivityAttempt(
   supabase: Client,
   userId: string,
-  progress: ResolvedActivityProgress
+  progress: ResolvedActivityAttempt
 ) {
   const { data: existing, error: readError } = await supabase
     .from('activity_completions')
@@ -119,14 +128,18 @@ export async function recordActivityProgress(
     .maybeSingle()
   if (readError) throw new Error(`Failed to load activity progress: ${readError.message}`)
 
-  const status = existing?.status === 'completed' || progress.status === 'completed'
+  const attempts = Math.max(existing?.attempts ?? 0, progress.attempts ?? 0, progress.finished ? 1 : 0)
+  const score = progress.score === null
+    ? existing?.score ?? null
+    : Math.max(existing?.score ?? 0, progress.score ?? 0)
+  const passed = existing?.passed === true || progress.passed
+  const status: ProgressStatus = progress.finished || existing?.status === 'completed'
     ? 'completed'
-    : progress.status
-  const score = Math.max(existing?.score ?? 0, progress.score ?? 0)
-  const attempts = Math.max(existing?.attempts ?? 0, progress.attempts ?? 0, 1)
+    : 'in_progress'
   const completedAt = status === 'completed'
     ? existing?.completed_at ?? new Date().toISOString()
     : existing?.completed_at ?? null
+  const lastAttemptAt = progress.finished ? new Date().toISOString() : existing?.last_attempt_at ?? null
 
   const { data, error } = await supabase
     .from('activity_completions')
@@ -136,9 +149,11 @@ export async function recordActivityProgress(
       chapter_id: progress.chapterId,
       activity_type: progress.activityType ?? existing?.activity_type ?? null,
       status,
+      passed,
       score,
       attempts,
       completed_at: completedAt,
+      last_attempt_at: lastAttemptAt,
     }, { onConflict: 'user_id,activity_id' })
     .select('*')
     .single()
@@ -150,6 +165,15 @@ export async function recordActivityProgress(
     last_activity_id: progress.activityId,
   })
   return data
+}
+
+/** @deprecated Use recordActivityAttempt */
+export async function recordActivityProgress(
+  supabase: Client,
+  userId: string,
+  progress: ResolvedActivityAttempt,
+) {
+  return recordActivityAttempt(supabase, userId, progress)
 }
 
 export async function recordChapterProgress(
@@ -167,23 +191,25 @@ export async function recordChapterProgress(
 export async function mergeLearningProgress(
   supabase: Client,
   userId: string,
-  activities: ResolvedActivityProgress[],
+  activities: ResolvedActivityAttempt[],
   chapters: ResolvedChapterProgress[],
   lastActivity: { activityId: string; chapterId: string; moduleId: string } | null
 ) {
-  const activityMap = new Map<string, ResolvedActivityProgress>()
+  const activityMap = new Map<string, ResolvedActivityAttempt>()
   for (const activity of activities) {
     const existing = activityMap.get(activity.activityId)
     activityMap.set(activity.activityId, existing ? {
       ...activity,
-      status: existing.status === 'completed' || activity.status === 'completed' ? 'completed' : activity.status,
+      passed: existing.passed || activity.passed,
       score: Math.max(existing.score ?? 0, activity.score ?? 0),
       attempts: Math.max(existing.attempts ?? 0, activity.attempts ?? 0),
+      finished: existing.finished || activity.finished,
+      status: existing.status === 'completed' || activity.status === 'completed' ? 'completed' : activity.status,
     } : activity)
   }
 
   for (const activity of activityMap.values()) {
-    await recordActivityProgress(supabase, userId, activity)
+    await recordActivityAttempt(supabase, userId, activity)
   }
 
   const latestChapter = chapters.at(-1)

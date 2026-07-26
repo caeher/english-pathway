@@ -1,14 +1,15 @@
 import { DomainError } from '@/lib/api/errors'
 import type { AuthenticatedContext } from '@/lib/api/context'
-import type { ActivityProgressInput, ChapterProgressInput, MergeProgressInput } from './contracts'
+import type { ActivityAttemptInput, ActivityProgressInput, ChapterProgressInput, MergeProgressInput } from './contracts'
 import { resolveActivityByIdValidated } from '@/features/learn'
-import { curriculumChapterHref, getChapterProgress, getCompletableChapterIds, getLearningTarget, getModuleProgress, learnHref, resolveAllModules, resolveChapter } from '@/features/curriculum'
+import { curriculumChapterHref, getChapterProgress, getCompletableChapterIds, getLearningTarget, getModuleProgress, resolveAllModules, resolveChapter } from '@/features/curriculum'
+import { evaluateActivityApproval } from '@/lib/curriculum/approval'
 import {
   completeChapter,
   getCurriculumProgressSnapshot,
   getLastProgress,
   mergeLearningProgress,
-  recordActivityProgress,
+  recordActivityAttempt,
   recordChapterProgress,
 } from './server'
 import { getDueCount } from '@/lib/dal/srs'
@@ -34,19 +35,43 @@ async function completeEligibleChapters(context: AuthenticatedContext, chapterId
   return [...eligibleIds]
 }
 
-export async function saveActivityProgressUseCase(context: AuthenticatedContext, input: ActivityProgressInput) {
+function resolveScorePercent(input: ActivityAttemptInput): number | undefined {
+  if (typeof input.scorePercent === 'number') return input.scorePercent
+  if (typeof input.score === 'number' && typeof input.total === 'number' && input.total > 0) {
+    return Math.round((input.score / input.total) * 100)
+  }
+  if (typeof input.score === 'number') return input.score
+  return undefined
+}
+
+export async function saveActivityAttemptUseCase(context: AuthenticatedContext, input: ActivityAttemptInput) {
   const resolved = resolveActivityByIdValidated(input.activityId)
   if (!resolved || (input.chapterId && input.chapterId !== resolved.chapter.id)) {
     throw new DomainError('NOT_FOUND', 'Activity not found')
   }
-  const progress = await recordActivityProgress(context.supabase, context.userId, {
+
+  const scorePercent = resolveScorePercent(input)
+  const approval = evaluateActivityApproval(resolved.activity, {
+    finished: input.finished,
+    scorePercent,
+  })
+
+  const progress = await recordActivityAttempt(context.supabase, context.userId, {
     ...input,
     chapterId: resolved.chapter.id,
     moduleId: resolved.module.id,
     activityType: resolved.activity.type,
+    passed: approval.passed,
+    status: input.finished ? 'completed' : 'in_progress',
+    score: scorePercent ?? null,
   })
+
   await completeEligibleChapters(context, [resolved.chapter.id])
-  return progress
+  return { progress, approval }
+}
+
+export async function saveActivityProgressUseCase(context: AuthenticatedContext, input: ActivityProgressInput) {
+  return saveActivityAttemptUseCase(context, input)
 }
 
 export async function saveChapterProgressUseCase(context: AuthenticatedContext, input: ChapterProgressInput) {
@@ -56,19 +81,13 @@ export async function saveChapterProgressUseCase(context: AuthenticatedContext, 
   }
 
   if (input.status === 'completed') {
-    const snapshot = await getCurriculumProgressSnapshot(context.supabase, context.userId)
-    const summary = getChapterProgress(resolved.chapter, snapshot)
-    if (!summary.canComplete && !snapshot.completedChapterIds.has(resolved.chapter.id)) {
-      throw new DomainError('CONFLICT', 'Complete the chapter activities before finishing this chapter.')
-    }
+    throw new DomainError('CONFLICT', 'Chapter completion is derived from approved exercises and cannot be set manually.')
   }
 
-  const progress = await recordChapterProgress(context.supabase, context.userId, {
+  return recordChapterProgress(context.supabase, context.userId, {
     ...input,
     moduleId: resolved.module.id,
   })
-  if (input.status === 'completed') await completeChapter(context.supabase, context.userId, resolved.chapter.id)
-  return progress
 }
 
 async function resolveMergeInput(input: MergeProgressInput) {
@@ -78,11 +97,19 @@ async function resolveMergeInput(input: MergeProgressInput) {
     if (!resolved || (activity.chapterId && activity.chapterId !== resolved.chapter.id)) {
       throw new DomainError('INVALID_INPUT', `Activity not found: ${activity.activityId}`)
     }
+    const scorePercent = resolveScorePercent(activity)
+    const approval = evaluateActivityApproval(resolved.activity, {
+      finished: activity.finished,
+      scorePercent,
+    })
     activities.push({
       ...activity,
       chapterId: resolved.chapter.id,
       moduleId: resolved.module.id,
       activityType: resolved.activity.type,
+      passed: approval.passed,
+      status: activity.finished ? 'completed' as const : 'in_progress' as const,
+      score: scorePercent ?? null,
     })
   }
 
@@ -91,6 +118,9 @@ async function resolveMergeInput(input: MergeProgressInput) {
     const resolved = await resolveChapter(chapter.chapterId)
     if (!resolved || (chapter.moduleId && chapter.moduleId !== resolved.module.id)) {
       throw new DomainError('INVALID_INPUT', `Chapter not found: ${chapter.chapterId}`)
+    }
+    if (chapter.status === 'completed') {
+      throw new DomainError('CONFLICT', `Chapter completion cannot be merged manually: ${chapter.chapterId}`)
     }
     chapters.push({ ...chapter, moduleId: resolved.module.id })
   }
@@ -106,31 +136,8 @@ async function resolveMergeInput(input: MergeProgressInput) {
 
 export async function mergeProgressUseCase(context: AuthenticatedContext, input: MergeProgressInput) {
   const { activities, chapters, lastActivity } = await resolveMergeInput(input)
-  const existing = await getCurriculumProgressSnapshot(context.supabase, context.userId)
-
-  for (const chapter of chapters.filter((item) => item.status === 'completed')) {
-    const resolved = await resolveChapter(chapter.chapterId)
-    if (!resolved) continue
-    const candidateActivities = [
-      ...existing.activities,
-      ...activities.filter((item) => item.chapterId === resolved.chapter.id).map((item) => ({
-        activity_id: item.activityId,
-        chapter_id: item.chapterId,
-        status: item.status,
-        score: item.score,
-      })),
-    ]
-    const summary = getChapterProgress(resolved.chapter, { ...existing, activities: candidateActivities })
-    if (!summary.canComplete && !existing.completedChapterIds.has(resolved.chapter.id)) {
-      throw new DomainError('CONFLICT', `Complete the chapter activities before finishing: ${resolved.chapter.id}`)
-    }
-  }
-
   const result = await mergeLearningProgress(context.supabase, context.userId, activities, chapters, lastActivity)
-  await completeEligibleChapters(context, [
-    ...activities.map((activity) => activity.chapterId),
-    ...chapters.filter((chapter) => chapter.status === 'completed').map((chapter) => chapter.chapterId),
-  ])
+  await completeEligibleChapters(context, activities.map((activity) => activity.chapterId))
   return result
 }
 
@@ -147,11 +154,6 @@ export async function getLastProgressUseCase(context: AuthenticatedContext) {
     chapterTitle: chapter?.title ?? null,
     moduleTitle: resolvedModule?.title ?? null,
     curriculumUrl: resolvedModule && chapter ? curriculumChapterHref(resolvedModule.id, chapter.id) : null,
-    learnUrl: resolvedModule && chapter ? learnHref({
-      moduleId: resolvedModule.id,
-      chapterId: chapter.id,
-      activityId: resolvedActivity?.activity.id ?? null,
-    }) : null,
   }
 }
 
@@ -184,8 +186,8 @@ export async function completeCurriculumChapterUseCase(context: AuthenticatedCon
   const snapshot = await getCurriculumProgressSnapshot(context.supabase, context.userId)
   const summary = getChapterProgress(resolved.chapter, snapshot)
   if (!summary.canComplete && !snapshot.completedChapterIds.has(resolved.chapter.id)) {
-    throw new DomainError('CONFLICT', 'Complete the chapter activities before finishing this chapter.')
+    throw new DomainError('CONFLICT', 'Complete the required exercises before finishing this chapter.')
   }
-  await recordChapterProgress(context.supabase, context.userId, { chapterId: resolved.chapter.id, moduleId: resolved.module.id, status: 'completed' })
+  await recordChapterProgress(context.supabase, context.userId, { chapterId: resolved.chapter.id, moduleId: resolved.module.id, status: 'in_progress' })
   return completeChapter(context.supabase, context.userId, resolved.chapter.id)
 }
