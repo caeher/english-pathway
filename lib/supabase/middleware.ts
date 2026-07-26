@@ -43,12 +43,13 @@ export async function updateSession(request: NextRequest) {
     pathname.startsWith('/forgot-password') ||
     pathname.startsWith('/reset-password')
 
+  const isLearnRoute = pathname.startsWith('/learn')
   const isAccountRoute = pathname.startsWith('/settings') || pathname.startsWith('/dashboard') || pathname.startsWith('/chats')
   const isCurriculumRoute = pathname.startsWith('/curriculum')
   const isReviewRoute = pathname.startsWith('/review')
   const isOnboardingRoute = pathname.startsWith('/onboarding')
   const isLegalRoute = pathname.startsWith('/legal')
-  const requiresAuth = isAccountRoute || isCurriculumRoute || isReviewRoute || isOnboardingRoute
+  const requiresAuth = isAccountRoute || isCurriculumRoute || isReviewRoute || isOnboardingRoute || isLearnRoute
 
   if (user && requiresAuth && !isLegalRoute && !pathname.startsWith('/settings')) {
     const missingConsents = await getMissingLegalConsentsForClient(supabase, user.id)

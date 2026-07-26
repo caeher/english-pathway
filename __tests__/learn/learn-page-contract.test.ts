@@ -5,6 +5,11 @@ import { describe, expect, it } from 'vitest'
 const root = resolve(process.cwd())
 
 describe('Learn page contract', () => {
+  it('protects /learn in middleware auth guard', () => {
+    const middleware = readFileSync(resolve(root, 'lib/supabase/middleware.ts'), 'utf8')
+    expect(middleware).toContain("pathname.startsWith('/learn')")
+  })
+
   it('redirects legacy curriculum query params to the canonical Learn path', () => {
     const page = readFileSync(resolve(root, 'app/(learn)/learn/page.tsx'), 'utf8')
 
