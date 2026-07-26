@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
@@ -17,6 +18,7 @@ import {
   Volume2,
   CheckCircle2,
   Award,
+  Github,
 } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics/events'
 import { Badge, Surface } from '@/components/ui'
@@ -28,6 +30,9 @@ import {
   motionEase,
 } from '@/lib/motion/system'
 import { useReducedMotion } from '@/lib/motion/useReducedMotion'
+
+const CUBEPATH_REFERRAL_URL = 'https://my.cubepath.com/register?ref=HEAC.CRE4389'
+const REPOSITORY_URL = 'https://github.com/caeher/english-pathway'
 
 const METHOD = [
   {
@@ -425,6 +430,29 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
             <Link href="/legal/privacy" className="hover:text-(--accent)">Privacy</Link>
             <Link href="/legal/cookies" className="hover:text-(--accent)">Cookies</Link>
           </nav>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-(--text-muted)">
+            <a
+              href={REPOSITORY_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-(--border-primary) px-3 py-1.5 font-medium no-underline transition-colors hover:border-(--accent) hover:text-(--accent)"
+            >
+              <Github className="h-4 w-4" aria-hidden="true" />
+              Public repository
+            </a>
+            <a
+              href={CUBEPATH_REFERRAL_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 font-medium no-underline transition-opacity hover:opacity-80"
+              aria-label="Hosted on CubePath (opens in a new tab)"
+            >
+              <span className="rounded-md bg-white px-2 py-1 shadow-sm">
+                <Image src="/logo-light.png" alt="CubePath" width={120} height={24} className="h-5 w-auto" />
+              </span>
+              Hosted on CubePath
+            </a>
+          </div>
           <p className="text-sm text-(--text-muted)">© {new Date().getFullYear()} English Pathway</p>
         </div>
       </footer>

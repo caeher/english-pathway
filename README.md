@@ -6,6 +6,16 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development workflow, validation, cur
 
 Plataforma interactiva y gamificada para aprender inglés. Construida con **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS v4** y **Supabase**.
 
+## Repositorio público y alojamiento
+
+Este es un [repositorio público](https://github.com/caeher/english-pathway) con la documentación técnica y operativa del proyecto en este README.
+
+<a href="https://my.cubepath.com/register?ref=HEAC.CRE4389">
+  <img src="public/logo-light.png" alt="CubePath" width="240" />
+</a>
+
+English Pathway está alojado en [CubePath](https://my.cubepath.com/register?ref=HEAC.CRE4389).
+
 ## Requisitos
 
 - **Node.js 22+**
