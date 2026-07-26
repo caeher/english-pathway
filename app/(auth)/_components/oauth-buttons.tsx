@@ -1,9 +1,10 @@
 'use client'
 
-import { Github } from 'lucide-react'
+import { useState } from 'react'
+import { Github, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getEnabledOAuthProviders } from '@/lib/auth/oauth-providers'
-import { signInWithOAuthAction } from '@/lib/auth/actions'
+import { signInWithOAuthAction, signUpWithOAuthAction } from '@/lib/auth/actions'
 import type { OAuthProvider } from '@/lib/auth/oauth-providers'
 
 function GoogleIcon() {
@@ -35,17 +36,43 @@ const PROVIDER_ICONS: Record<OAuthProvider, React.ReactNode> = {
 }
 
 interface OAuthButtonsProps {
+  mode: 'login' | 'register'
   redirectTo?: string | null
+  acceptTerms?: boolean
 }
 
-export function OAuthButtons({ redirectTo }: OAuthButtonsProps) {
+export function OAuthButtons({ mode, redirectTo, acceptTerms = false }: OAuthButtonsProps) {
   const providers = getEnabledOAuthProviders()
+  const [termsError, setTermsError] = useState<string | null>(null)
+  const [pendingProvider, setPendingProvider] = useState<OAuthProvider | null>(null)
 
   if (providers.length === 0) return null
 
   const handleOAuth = async (provider: OAuthProvider) => {
-    await signInWithOAuthAction(provider, redirectTo)
+    if (pendingProvider) return
+
+    if (mode === 'register' && !acceptTerms) {
+      setTermsError('You must accept the terms and conditions')
+      return
+    }
+
+    setTermsError(null)
+    setPendingProvider(provider)
+
+    try {
+      if (mode === 'register') {
+        await signUpWithOAuthAction(provider, redirectTo, acceptTerms)
+        return
+      }
+
+      await signInWithOAuthAction(provider, redirectTo)
+    } finally {
+      setPendingProvider(null)
+    }
   }
+
+  const oauthDisabled = mode === 'register' && !acceptTerms
+  const pendingLabel = mode === 'register' ? 'Creating account...' : 'Signing in...'
 
   return (
     <div className="space-y-3">
@@ -58,19 +85,34 @@ export function OAuthButtons({ redirectTo }: OAuthButtonsProps) {
         </div>
       </div>
 
+      {termsError && (
+        <div
+          role="alert"
+          aria-live="polite"
+          className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400"
+        >
+          {termsError}
+        </div>
+      )}
+
       <div className="grid gap-2">
-        {providers.map((provider) => (
-          <Button
-            key={provider.id}
-            type="button"
-            variant="outline"
-            className="w-full"
-            onClick={() => handleOAuth(provider.id)}
-          >
-            {PROVIDER_ICONS[provider.id]}
-            {provider.label}
-          </Button>
-        ))}
+        {providers.map((provider) => {
+          const isPending = pendingProvider === provider.id
+
+          return (
+            <Button
+              key={provider.id}
+              type="button"
+              variant="outline"
+              className="w-full"
+              disabled={oauthDisabled || pendingProvider !== null}
+              onClick={() => void handleOAuth(provider.id)}
+            >
+              {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : PROVIDER_ICONS[provider.id]}
+              {isPending ? pendingLabel : provider.label}
+            </Button>
+          )
+        })}
       </div>
     </div>
   )

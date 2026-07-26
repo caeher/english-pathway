@@ -97,6 +97,7 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_APP_URL: https://ci.english-pathway.example
 
       - name: Check performance budgets
         run: pnpm performance:check

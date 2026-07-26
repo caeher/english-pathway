@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Outfit, Nunito } from 'next/font/google'
 import ClientProviders from '@/components/ClientProviders'
 import { createClient } from '@/lib/supabase/server'
+import { getAppUrl } from '@/lib/auth/app-url'
 import './globals.css'
 
 const outfit = Outfit({
@@ -20,7 +21,7 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(getAppUrl()),
   title: {
     default: 'English Pathway — Learn English with guided practice',
     template: '%s | English Pathway',

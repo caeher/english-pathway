@@ -15,6 +15,8 @@ describe('authentication redirects', () => {
     expect(isSafeRedirectPath('/curriculum')).toBe(true)
     expect(isSafeRedirectPath('/curriculum/modulo-1/m1-ch1')).toBe(true)
     expect(isSafeRedirectPath('/review')).toBe(true)
+    expect(isSafeRedirectPath('/chats')).toBe(true)
+    expect(isSafeRedirectPath('/chats/abc-123')).toBe(true)
     expect(isSafeRedirectPath('https://example.com')).toBe(false)
     expect(isSafeRedirectPath('//example.com')).toBe(false)
     expect(isSafeRedirectPath('/login')).toBe(false)
@@ -35,6 +37,8 @@ describe('authentication redirects', () => {
 
   it('preserves a valid destination for completed profiles and falls back safely', () => {
     expect(resolvePostAuthDestination('/learn', true)).toBe('/learn')
+    expect(resolvePostAuthDestination('/chats', true)).toBe('/chats')
+    expect(resolvePostAuthDestination('/chats/abc-123', true)).toBe('/chats/abc-123')
     expect(resolvePostAuthDestination('https://example.com', true)).toBe('/settings')
     expect(resolvePostAuthDestination(null, true)).toBe('/settings')
   })

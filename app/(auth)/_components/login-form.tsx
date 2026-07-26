@@ -8,31 +8,16 @@ import { Button } from '@/components/ui/button'
 import { loginSchema } from '@/lib/auth/schemas'
 import { signInAction, type AuthActionState } from '@/lib/auth/actions'
 import { appendRedirectTo, getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
+import { getOAuthErrorMessage } from '@/lib/auth/oauth-errors'
 import { OAuthButtons } from './oauth-buttons'
 import { useSearchParams } from 'next/navigation'
 
 const initialState: AuthActionState = {}
 
-const URL_ERROR_MESSAGES: Record<string, string> = {
-  auth_callback_error: 'Authentication could not be completed. Please try again.',
-  confirmation_error: 'The confirmation link expired or is invalid.',
-  oauth_start_error: 'Could not start sign-in with that provider. Please try again.',
-}
-
-function getUrlErrorMessage(errorParam: string | null): string | undefined {
-  if (!errorParam) return undefined
-  if (URL_ERROR_MESSAGES[errorParam]) return URL_ERROR_MESSAGES[errorParam]
-  try {
-    return decodeURIComponent(errorParam)
-  } catch {
-    return URL_ERROR_MESSAGES.auth_callback_error
-  }
-}
-
 export function LoginForm() {
   const searchParams = useSearchParams()
   const explicitRedirectTo = getExplicitRedirectParam(searchParams.get('redirectTo'))
-  const urlError = getUrlErrorMessage(searchParams.get('error'))
+  const urlError = getOAuthErrorMessage(searchParams.get('error'))
   const [state, formAction, pending] = useActionState(signInAction, initialState)
 
   const { values, errors, handleChange } = useForm({
@@ -104,7 +89,7 @@ export function LoginForm() {
         </Button>
       </form>
 
-      <OAuthButtons redirectTo={explicitRedirectTo} />
+      <OAuthButtons mode="login" redirectTo={explicitRedirectTo} />
     </div>
   )
 }
