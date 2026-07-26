@@ -3,13 +3,18 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { getAppUrl } from '@/lib/auth/oauth-providers'
-import type { OAuthProvider } from '@/lib/auth/oauth-providers'
+import { InvalidAppUrlError, buildAuthCallbackUrl, getAppUrl } from '@/lib/auth/app-url'
+import {
+  assertOAuthProviderAllowed,
+  type OAuthProvider,
+} from '@/lib/auth/oauth-providers'
 import {
   getExplicitRedirectParam,
   resolvePostAuthDestination,
 } from '@/lib/auth/resolve-redirect'
 import { recordUserConsents } from '@/lib/auth/consent'
+import { getOAuthErrorRedirectPath } from '@/lib/auth/oauth-errors'
+import { setOAuthRegistrationConsentCookie } from '@/lib/auth/oauth-registration-consent'
 import {
   loginSchema,
   registerSchema,
@@ -103,9 +108,16 @@ export async function signUpAction(
   const explicitRedirectTo = getExplicitRedirectParam(
     formData.get('redirectTo') as string | null
   )
-  const callbackNext = explicitRedirectTo
-    ? `?next=${encodeURIComponent(explicitRedirectTo)}`
-    : ''
+  let emailRedirectTo: string
+  try {
+    emailRedirectTo = buildAuthCallbackUrl(explicitRedirectTo)
+  } catch (error) {
+    if (error instanceof InvalidAppUrlError) {
+      console.error('[auth] sign up redirect URL misconfigured')
+      return { status: 'error', error: getSafeAuthError() }
+    }
+    throw error
+  }
 
   const supabase = await createClient()
   const { data, error } = await supabase.auth.signUp({
@@ -113,7 +125,7 @@ export async function signUpAction(
     password,
     options: {
       data: { full_name: fullName, accepted_terms: true },
-      emailRedirectTo: `${getAppUrl()}/auth/callback${callbackNext}`,
+      emailRedirectTo,
     },
   })
 
@@ -157,9 +169,20 @@ export async function forgotPasswordAction(
   const callbackParams = new URLSearchParams({ next: '/reset-password' })
   if (explicitRedirectTo) callbackParams.set('redirectTo', explicitRedirectTo)
 
+  let resetRedirectTo: string
+  try {
+    resetRedirectTo = `${getAppUrl()}/auth/callback?${callbackParams.toString()}`
+  } catch (error) {
+    if (error instanceof InvalidAppUrlError) {
+      console.error('[auth] password reset redirect URL misconfigured')
+      return { status: 'error', error: getSafeAuthError() }
+    }
+    throw error
+  }
+
   const supabase = await createClient()
   const { error } = await supabase.auth.resetPasswordForEmail(parsed.data.email, {
-    redirectTo: `${getAppUrl()}/auth/callback?${callbackParams.toString()}`,
+    redirectTo: resetRedirectTo,
   })
 
   if (error) {
@@ -202,27 +225,58 @@ export async function signInWithOAuthAction(
   provider: OAuthProvider,
   redirectTo?: string | null
 ) {
-  const explicitRedirectTo = getExplicitRedirectParam(redirectTo)
-  const callbackNext = explicitRedirectTo
-    ? `?next=${encodeURIComponent(explicitRedirectTo)}`
-    : ''
+  try {
+    assertOAuthProviderAllowed(provider)
+  } catch {
+    redirect(getOAuthErrorRedirectPath('oauth_provider_disabled'))
+  }
+
+  let oauthRedirectTo: string
+  try {
+    oauthRedirectTo = buildAuthCallbackUrl(redirectTo)
+  } catch (error) {
+    if (error instanceof InvalidAppUrlError) {
+      console.error('[auth] OAuth redirect URL misconfigured')
+      redirect(getOAuthErrorRedirectPath('oauth_start_error'))
+    }
+    throw error
+  }
 
   const supabase = await createClient()
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: `${getAppUrl()}/auth/callback${callbackNext}`,
+      redirectTo: oauthRedirectTo,
     },
   })
 
   if (error) {
     console.error('[auth] OAuth start failed', error)
-    redirect('/login?error=oauth_start_error')
+    redirect(getOAuthErrorRedirectPath('oauth_start_error'))
   }
 
   if (data.url) {
     redirect(data.url)
   }
+}
+
+export async function signUpWithOAuthAction(
+  provider: OAuthProvider,
+  redirectTo: string | null | undefined,
+  acceptTerms: boolean,
+) {
+  if (!acceptTerms) {
+    redirect(getOAuthErrorRedirectPath('oauth_terms_required'))
+  }
+
+  try {
+    assertOAuthProviderAllowed(provider)
+  } catch {
+    redirect(getOAuthErrorRedirectPath('oauth_provider_disabled'))
+  }
+
+  await setOAuthRegistrationConsentCookie(provider, redirectTo)
+  await signInWithOAuthAction(provider, redirectTo)
 }
 
 export async function getCurrentUser() {

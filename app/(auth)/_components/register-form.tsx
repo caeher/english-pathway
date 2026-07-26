@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { registerSchema } from '@/lib/auth/schemas'
 import { signUpAction, type AuthActionState } from '@/lib/auth/actions'
 import { appendRedirectTo, getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
+import { getOAuthErrorMessage } from '@/lib/auth/oauth-errors'
 import { OAuthButtons } from './oauth-buttons'
 import { useSearchParams } from 'next/navigation'
 
@@ -17,6 +18,7 @@ export function RegisterForm() {
   const searchParams = useSearchParams()
   const explicitRedirectTo = getExplicitRedirectParam(searchParams.get('redirectTo'))
   const referralCode = searchParams.get('ref')
+  const urlError = getOAuthErrorMessage(searchParams.get('error'))
   const [state, formAction, pending] = useActionState(signUpAction, initialState)
 
   const { values, errors, handleChange, reset: resetForm } = useForm({
@@ -52,6 +54,12 @@ export function RegisterForm() {
       {state.error && (
         <div role="alert" aria-live="polite" className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {state.error}
+        </div>
+      )}
+
+      {!state.error && urlError && (
+        <div role="alert" aria-live="polite" className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+          {urlError}
         </div>
       )}
 
@@ -137,7 +145,7 @@ export function RegisterForm() {
         </Button>
       </form>
 
-      <OAuthButtons redirectTo={explicitRedirectTo} />
+      <OAuthButtons mode="register" redirectTo={explicitRedirectTo} acceptTerms={values.acceptTerms} />
     </div>
   )
 }
