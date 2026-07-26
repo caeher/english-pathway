@@ -387,7 +387,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
       </section>
 
       {/* Final CTA Section */}
-      <section className="mx-auto max-w-6xl px-6 pb-20 sm:pb-24" aria-labelledby="final-cta-title">
+      <section className="mx-auto w-full max-w-6xl px-6 pb-20 sm:pb-24" aria-labelledby="final-cta-title">
         <motion.div
           initial={reducedMotion ? undefined : { opacity: 0, y: 20, scale: 0.98 }}
           whileInView={reducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
