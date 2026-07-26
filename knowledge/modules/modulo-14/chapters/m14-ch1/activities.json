@@ -125,6 +125,11 @@
           "explanation": "Redirect to the proper channel professionally. Never give unauthorized statements to press."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -245,6 +250,11 @@
           "correct": "I see your point. Could I share a different perspective on this?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -287,6 +297,11 @@
           "right": "Casual British — with colleagues 🇬🇧"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -357,6 +372,10 @@
           "example": "I want to make sure we're making the best use of everyone's time. Could we focus on the three key decisions we need to make?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -397,6 +416,11 @@
           "category": "Role-play"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -446,6 +470,11 @@
           "explanation": "You heard: \"\"I'd like to schedule a meeting to discuss this\"\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -471,6 +500,11 @@
           "hint": "From the chapter: \"I'd like to..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -501,6 +535,11 @@
           "hint": "Practice saying this phrase aloud — from m14-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

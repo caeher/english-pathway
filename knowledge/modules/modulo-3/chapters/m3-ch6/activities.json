@@ -79,6 +79,10 @@
           "example": "Would you like...? = polite offer."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "Would you like some tea?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -221,6 +230,11 @@
           "correct": "Would you like to come?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -337,6 +351,11 @@
           "explanation": "\"I like swim\" is wrong. Use: I like swimming / I like to swim."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -377,6 +396,11 @@
           "category": "Verbs"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -426,6 +450,11 @@
           "explanation": "You heard: \"He/She/It → wants to\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -451,6 +480,11 @@
           "hint": "From the chapter: He/She/It → wants..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -481,6 +515,11 @@
           "hint": "Practice saying this phrase aloud — from m3-ch6."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

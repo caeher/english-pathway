@@ -55,6 +55,10 @@
           "example": "Bought BEFORE she called."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -89,6 +93,11 @@
           "right": "I had never tried sushi before."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -166,6 +175,11 @@
           "correct": "She hadn't eaten breakfast, so she was hungry"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -262,6 +276,11 @@
           "explanation": "Past Perfect: had already + past participle."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -302,6 +321,11 @@
           "category": "Perfect Tenses"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -351,6 +375,11 @@
           "explanation": "You heard: \"Finished FIRST, then movie started\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -376,6 +405,11 @@
           "hint": "From the chapter: Finished FIRST, then..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -406,6 +440,11 @@
           "hint": "Practice saying this phrase aloud — from m5-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

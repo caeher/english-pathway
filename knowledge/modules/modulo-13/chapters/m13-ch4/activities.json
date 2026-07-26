@@ -125,6 +125,11 @@
           "explanation": "Intelligibility = being understood clearly. Your accent is part of your identity."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -195,6 +200,10 @@
           "example": "There's lotsa things to do here. (= There are lots of things to do.)"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -229,6 +238,11 @@
           "right": "American English 🇺🇸"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -321,6 +335,11 @@
           "correct": "Well... I'm not entirely sure about that approach."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -361,6 +380,11 @@
           "category": "Pronunciation"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -410,6 +434,11 @@
           "explanation": "You heard: \"I wouldn'ta done that. (= I wouldn't have done that.)\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -435,6 +464,11 @@
           "hint": "From the chapter: I wouldn'ta done..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -465,6 +499,11 @@
           "hint": "Practice saying this phrase aloud — from m13-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

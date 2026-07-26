@@ -119,6 +119,11 @@
           "explanation": "Funding source = potential bias. Critical thinking identifies conflicts of interest in evidence."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -215,6 +220,11 @@
           "correct": "The new policy was implemented by the management team."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -257,6 +267,11 @@
           "right": "Able to recover quickly (B2) 🏔️"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -327,6 +342,10 @@
           "example": "Never have I seen such a beautiful sunset."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -367,6 +386,11 @@
           "category": "Assessment"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -416,6 +440,11 @@
           "explanation": "You heard: \"If it rains tomorrow, I will stay home\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -441,6 +470,11 @@
           "hint": "From the chapter: If it rains..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -471,6 +505,11 @@
           "hint": "Practice saying this phrase aloud — from m14-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

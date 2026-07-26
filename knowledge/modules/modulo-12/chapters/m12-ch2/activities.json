@@ -103,6 +103,11 @@
           "correct": "Thank you for your attention. I'm happy to take questions."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -225,6 +230,11 @@
           "explanation": "\"For instance\" introduces a concrete, credible example."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -307,6 +317,10 @@
           "example": "Thank you for your attention. Any questions?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -349,6 +363,11 @@
           "right": "👏 Final"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -389,6 +408,11 @@
           "category": "Presentations"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -438,6 +462,11 @@
           "explanation": "You heard: \"As you can see in this chart, sales increased by 20%\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -463,6 +492,11 @@
           "hint": "From the chapter: As you can..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -493,6 +527,11 @@
           "hint": "Practice saying this phrase aloud — from m12-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

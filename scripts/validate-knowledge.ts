@@ -74,9 +74,8 @@ if (catalog) {
       }
       if (fs.existsSync(activitiesPath)) {
         try {
-          const activities = JSON.parse(fs.readFileSync(activitiesPath, 'utf8')) as unknown
-          if (!Array.isArray(activities)) issue(activitiesPath, 'root', 'must be an array of activities')
-          else for (const activityIssue of filterValidationErrors(validateActivityList(moduleId, chapterId, activities))) issue(activitiesPath, `${activityIssue.activityId}.${activityIssue.field}`, activityIssue.message)
+          const raw = JSON.parse(fs.readFileSync(activitiesPath, 'utf8')) as unknown
+          for (const activityIssue of filterValidationErrors(validateActivityList(moduleId, chapterId, raw))) issue(activitiesPath, `${activityIssue.activityId}.${activityIssue.field}`, activityIssue.message)
         } catch (error) { issue(activitiesPath, 'json', error instanceof Error ? error.message : 'Invalid JSON') }
       }
     }

@@ -133,6 +133,11 @@
           "explanation": "Past negative: \"She didn't like the food.\""
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -261,6 +266,11 @@
           "correct": "Did she finish the homework?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -311,6 +321,11 @@
           "right": "found"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -441,6 +456,10 @@
           "example": "I met my friend at the café."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -481,6 +500,11 @@
           "category": "Narrative"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -530,6 +554,11 @@
           "explanation": "You heard: \"I didn't go to work yesterday\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -555,6 +584,11 @@
           "hint": "From the chapter: I didn't go..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -585,6 +619,11 @@
           "hint": "Practice saying this phrase aloud — from m9-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

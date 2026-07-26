@@ -119,6 +119,11 @@
           "explanation": "\"Limitation\" identifies a weakness in the argument's evidence base."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -226,6 +231,11 @@
           "correct": "This is a strong argument because it presents both sides."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -268,6 +278,11 @@
           "right": "Counterargument 🔄"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -338,6 +353,10 @@
           "example": "In contrast, a European study found no significant correlation."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -378,6 +397,11 @@
           "category": "Critical Reading"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -427,6 +451,11 @@
           "explanation": "You heard: \"The author uses an appeal to authority by citing the APA\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -452,6 +481,11 @@
           "hint": "From the chapter: The author uses..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -482,6 +516,11 @@
           "hint": "Practice saying this phrase aloud — from m13-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

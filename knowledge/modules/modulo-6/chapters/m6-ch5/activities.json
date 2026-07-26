@@ -55,6 +55,10 @@
           "example": "are → were, today → that day."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -93,6 +97,11 @@
           "right": "had gone (past perf.)"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -162,6 +171,11 @@
           "correct": "She said she had gone to Paris"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -258,6 +272,11 @@
           "explanation": "tomorrow → the next day."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -298,6 +317,11 @@
           "category": "Reported Speech"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -347,6 +371,11 @@
           "explanation": "You heard: \"like → liked\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -372,6 +401,11 @@
           "hint": "From the chapter: Like → liked..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -402,6 +436,11 @@
           "hint": "Practice saying this phrase aloud — from m6-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

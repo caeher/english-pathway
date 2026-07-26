@@ -79,6 +79,10 @@
           "example": "Shall I...? = Do you want me to...? (suggestion)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "going to"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -220,6 +229,11 @@
           "correct": "I will call you tomorrow"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -336,6 +350,11 @@
           "explanation": "They're going to travel — correct form. (Not: will to, They going without 'are', or missing 'to')"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -376,6 +395,11 @@
           "category": "Future"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -425,6 +449,11 @@
           "explanation": "You heard: \"Prediction (opinion) → will\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -450,6 +479,11 @@
           "hint": "From the chapter: Prediction (opinion) →..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -480,6 +514,11 @@
           "hint": "Practice saying this phrase aloud — from m3-ch4."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

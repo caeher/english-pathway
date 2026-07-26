@@ -79,6 +79,10 @@
           "example": "Question: Be + subject + pp?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -113,6 +117,11 @@
           "right": "was/were being + pp"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -190,6 +199,11 @@
           "correct": "A house is being built"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -306,6 +320,11 @@
           "explanation": "Past Simple passive question: Was + subject + pp?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -346,6 +365,11 @@
           "category": "Passive Voice"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -395,6 +419,11 @@
           "explanation": "You heard: \"Someone stole my bike. (Past Simple)\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -420,6 +449,11 @@
           "hint": "From the chapter: Someone stole my..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -450,6 +484,11 @@
           "hint": "Practice saying this phrase aloud — from m5-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

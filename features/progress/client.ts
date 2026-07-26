@@ -3,6 +3,7 @@ export {
   isActivityCompleted,
   isGuestActivityCompleted,
   mergeGuestProgress,
+  saveActivityAttempt,
   saveActivityProgress,
   saveChapterProgress,
   saveGuestActivityProgress,

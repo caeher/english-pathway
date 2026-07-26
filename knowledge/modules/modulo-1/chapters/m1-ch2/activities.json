@@ -163,6 +163,10 @@
           "example": "Excuse me, where is the restroom? Sorry for being late."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -217,6 +221,11 @@
           "right": "See you later!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -301,6 +310,11 @@
           "correct": "Good morning"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -443,6 +457,11 @@
           "explanation": "\"Excuse me\" is used to get attention politely."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -483,6 +502,11 @@
           "category": "Greetings"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -532,6 +556,11 @@
           "explanation": "Where are you from asks about someone's origin."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -557,6 +586,11 @@
           "hint": "Informal farewell"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -587,6 +621,11 @@
           "hint": "Polite attention-getter — silent 'c' in excuse"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -597,8 +636,16 @@
     "props": {
       "setting": "It is your first morning at a new company. A colleague greets you at the desk, and later your manager stops by.",
       "characters": [
-        { "id": "colleague", "name": "Jordan", "role": "Colleague" },
-        { "id": "manager", "name": "Ms. Patel", "role": "Manager" }
+        {
+          "id": "colleague",
+          "name": "Jordan",
+          "role": "Colleague"
+        },
+        {
+          "id": "manager",
+          "name": "Ms. Patel",
+          "role": "Manager"
+        }
       ],
       "startNodeId": "n1",
       "nodes": [
@@ -716,6 +763,10 @@
           "choices": []
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   }
 ]

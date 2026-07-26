@@ -22,6 +22,8 @@ export interface ActivityCompletionCardProps {
   onRetry?: () => void
   onRequestHelp?: () => void
   continueLoading?: boolean
+  passThreshold?: number
+  approvalMode?: 'score' | 'completion'
 }
 
 export default function ActivityCompletionCard({
@@ -33,11 +35,13 @@ export default function ActivityCompletionCard({
   onRetry,
   onRequestHelp,
   continueLoading = false,
+  passThreshold = 70,
+  approvalMode = 'score',
 }: ActivityCompletionCardProps) {
   const reducedMotion = useReducedMotion()
   const primaryRef = useRef<HTMLButtonElement>(null)
   const scorePercent = result.scorePercent ?? Math.round((result.score / result.total) * 100)
-  const passed = passesThreshold(scorePercent)
+  const passed = approvalMode === 'completion' ? true : passesThreshold(scorePercent, passThreshold)
   const stars = starsFromPercent(scorePercent)
   const hasReviewRefs = (result.reviewContentRefs?.length ?? 0) > 0
 

@@ -1,4 +1,5 @@
 /** Public API for validated activity contracts, extension metadata, and diagnostics. */
+export * from './advance-policy'
 export * from './audio-schema'
 export * from './contracts'
 export * from './hints'

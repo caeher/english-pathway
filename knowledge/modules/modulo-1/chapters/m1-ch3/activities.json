@@ -91,6 +91,10 @@
           "example": "She is from Spain, isn't she? —Yes, she is."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -129,6 +133,11 @@
           "right": "are"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -275,6 +284,11 @@
           "correct": "They are not ready."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -405,6 +419,11 @@
           "explanation": "With 'You're' (affirmative), the tag is 'aren't you?' (negative)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -445,6 +464,11 @@
           "category": "Grammar"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -494,6 +518,11 @@
           "explanation": "They are happy — are is used with they."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -519,6 +548,11 @@
           "hint": "Negative form with not"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -549,6 +583,11 @@
           "hint": "Short affirmative answer"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

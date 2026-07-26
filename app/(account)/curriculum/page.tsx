@@ -37,7 +37,7 @@ export default async function CurriculumPage() {
     <PageContainer>
       <p className="font-display text-sm font-bold uppercase tracking-widest text-(--accent)">Curriculum</p>
       <h1 className="mt-3 font-display text-4xl font-black tracking-tight text-(--text-primary) sm:text-5xl">Choose your next chapter</h1>
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-(--text-secondary)">Follow the pathway at your own pace, then bring any chapter to your AI tutor.</p>
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-(--text-secondary)">Follow the structured pathway chapter by chapter, or open Learn anytime for guided conversation.</p>
       <div className="mt-8 flex flex-wrap items-center gap-3">
         <span className="inline-flex items-center gap-2 rounded-xl bg-(--accent-soft) px-4 py-2 text-sm font-bold text-(--accent)">
           <BookOpen className="h-4 w-4" aria-hidden="true" /> {modules.length} modules · {chapterCount} chapters

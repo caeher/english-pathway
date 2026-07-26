@@ -1,7 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
-import { chapterActivitySchema } from '@/lib/content/schemas'
+import {
+  chapterActivitySchema,
+  parseChapterActivitiesFile,
+  resolveActivityAdvanceFields,
+} from '@/features/activities'
 import type { Chapter, ChapterActivity } from '@/types'
 import { chapterDir } from './paths'
 
@@ -17,6 +21,26 @@ interface ChapterFrontmatter {
   xpReward: number
 }
 
+export function parseChapterActivities(raw: unknown): ChapterActivity[] {
+  const { activities: rawActivities } = parseChapterActivitiesFile(raw)
+  return rawActivities.map((act) => {
+    const parsed = chapterActivitySchema.parse(act)
+    const advance = resolveActivityAdvanceFields({
+      required: parsed.required,
+      policy: parsed.policy,
+    })
+    return {
+      id: parsed.id,
+      type: parsed.type,
+      title: parsed.title,
+      description: parsed.description,
+      required: advance.required,
+      policy: advance.policy,
+      props: parsed.props as Record<string, unknown>,
+    }
+  })
+}
+
 export function loadChapterFromDisk(moduleId: string, chapterId: string): Chapter {
   const dir = chapterDir(moduleId, chapterId)
   const mdPath = path.join(dir, 'chapter.md')
@@ -25,11 +49,8 @@ export function loadChapterFromDisk(moduleId: string, chapterId: string): Chapte
   const { data, content } = matter(fs.readFileSync(mdPath, 'utf8'))
   const fm = data as ChapterFrontmatter
 
-  const rawActivities = JSON.parse(fs.readFileSync(activitiesPath, 'utf8')) as unknown[]
-  const activities: ChapterActivity[] = rawActivities.map((act) => {
-    const parsed = chapterActivitySchema.parse(act)
-    return parsed as ChapterActivity
-  })
+  const rawActivities = JSON.parse(fs.readFileSync(activitiesPath, 'utf8')) as unknown
+  const activities = parseChapterActivities(rawActivities)
 
   return {
     id: fm.id,

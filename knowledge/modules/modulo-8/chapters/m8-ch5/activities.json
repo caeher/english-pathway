@@ -125,6 +125,11 @@
           "explanation": "A complete response + asking back is the most natural."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -259,6 +264,11 @@
           "correct": "I'm sorry! Excuse me!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -341,6 +351,10 @@
           "example": "I'm sorry, I'm late. — No problem!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -379,6 +393,11 @@
           "right": "I'm just looking, thanks."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -419,6 +438,11 @@
           "category": "Dialogue"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -468,6 +492,11 @@
           "explanation": "You heard: \"My name is Carlos\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -493,6 +522,11 @@
           "hint": "From the chapter: My name is..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -523,6 +557,11 @@
           "hint": "Practice saying this phrase aloud — from m8-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

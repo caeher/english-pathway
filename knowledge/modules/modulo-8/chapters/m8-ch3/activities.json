@@ -55,6 +55,10 @@
           "example": "Just a breath of air, like fogging up a mirror."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -97,6 +101,11 @@
           "right": "house"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -205,6 +214,11 @@
           "explanation": "Yes/no questions rise at the end: \"Do you like coffee?\" ↗️"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -245,6 +259,11 @@
           "category": "Intonation"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -267,7 +286,12 @@
           },
           "mode": "evaluation",
           "question": "Which word did you hear?",
-          "options": ["ship", "sheep", "shop", "shape"],
+          "options": [
+            "ship",
+            "sheep",
+            "shop",
+            "shape"
+          ],
           "correct": 0,
           "explanation": "You heard \"ship\" with the short /ɪ/ vowel."
         },
@@ -284,7 +308,12 @@
           },
           "mode": "evaluation",
           "question": "Which word did you hear?",
-          "options": ["sheep", "ship", "chip", "cheap"],
+          "options": [
+            "sheep",
+            "ship",
+            "chip",
+            "cheap"
+          ],
           "correct": 0,
           "explanation": "You heard \"sheep\" with the long /iː/ vowel."
         },
@@ -301,11 +330,21 @@
           },
           "mode": "evaluation",
           "question": "Which word did you hear?",
-          "options": ["cat", "cut", "cot", "cart"],
+          "options": [
+            "cat",
+            "cut",
+            "cot",
+            "cart"
+          ],
           "correct": 0,
           "explanation": "You heard \"cat\" with the /æ/ vowel."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -331,6 +370,11 @@
           "hint": "From the chapter: Open your mouth..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -421,6 +465,11 @@
           "hint": "Relax your jaw for the /ʌ/ sound in cut."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

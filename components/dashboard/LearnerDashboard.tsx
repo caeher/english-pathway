@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, CheckCircle2, Flame, Info, RotateCcw, Sparkles, Trophy } from 'lucide-react'
 import { getLevelProgress } from '@/lib/engagement/xp'
-import { learnHref } from '@/lib/curriculum/href'
+import { LEARN_PATH } from '@/features/learn'
 import { Badge, PageContainer, SectionHeader, Surface } from '@/components/ui'
 import { getLearningContinuation } from '@/lib/learning/continuation'
 import { CurrentStreak } from './CurrentStreak'
@@ -42,7 +42,7 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
       <SectionHeader
         eyebrow="Your learning hub"
         title={`Welcome back, ${firstName}`}
-        description="Keep your momentum going with a focused practice session."
+        description="Resume your structured pathway or open a free-form tutor session."
         className="[&_h2]:text-3xl"
       />
 
@@ -73,9 +73,12 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
         <Surface padding="lg">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div><p className="text-sm font-bold text-(--accent)">{continuation.kind === 'review' ? 'Review due' : 'Continue learning'}</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">{continuation.title}</h2><p className="mt-1 text-sm text-(--text-secondary)">{continuation.description}</p></div>
-            <Link href={continuation.href} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">{continuation.label} <ArrowRight className="h-4 w-4" /></Link>
+            <div className="flex flex-wrap items-center gap-2">
+              <Link href={continuation.href} className="inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">{continuation.label} <ArrowRight className="h-4 w-4" /></Link>
+              <Link href={LEARN_PATH} className="inline-flex items-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-4 py-2 text-sm font-bold text-(--text-primary) no-underline hover:bg-(--bg-secondary)">Practice with the tutor</Link>
+            </div>
           </div>
-          {data.lastChapter && <p className="mt-6 flex items-center gap-2 text-xs text-(--text-muted)"><BookOpen className="h-4 w-4" /> Your latest chapter is ready to resume.</p>}
+          {data.lastChapter && continuation.kind === 'resume' && <p className="mt-6 flex items-center gap-2 text-xs text-(--text-muted)"><BookOpen className="h-4 w-4" /> Your latest chapter is ready in Curriculum.</p>}
         </Surface>
         <Surface padding="lg">
           <div className="flex items-center justify-between"><div><p className="text-sm font-bold text-(--accent)">Daily goal</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">{data.daily.minutes}/{data.daily.goalMinutes} min</h2></div><div className="relative flex h-16 w-16 items-center justify-center rounded-full" style={{ background: `conic-gradient(var(--accent) ${dailyPct}%, var(--bg-tertiary) ${dailyPct}% 100%)` }}><div className="flex h-11 w-11 items-center justify-center rounded-full bg-(--bg-card) text-sm font-black text-(--text-primary)">{dailyPct}%</div></div></div>

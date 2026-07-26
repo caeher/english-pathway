@@ -119,6 +119,11 @@
           "explanation": "\"After\" indica secuencia temporal."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -204,6 +209,11 @@
           "correct": "Although she was tired, she kept working"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -246,6 +256,11 @@
           "right": "Consecuencia 📊"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -316,6 +331,10 @@
           "example": "Many fruits are healthy. For instance, oranges have vitamin C."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -356,6 +375,11 @@
           "category": "Connectors"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -405,6 +429,11 @@
           "explanation": "You heard: \"First, preheat the oven\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -430,6 +459,11 @@
           "hint": "From the chapter: First, preheat the..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -460,6 +494,11 @@
           "hint": "Practice saying this phrase aloud — from m10-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

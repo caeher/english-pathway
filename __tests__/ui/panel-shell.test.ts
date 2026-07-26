@@ -20,6 +20,7 @@ describe('panel shell constants', () => {
   })
 
   it('defines a single vertical scroller with reinforced bottom gutter', () => {
+    expect(PANEL_MAIN_CLASS).toContain('h-0')
     expect(PANEL_MAIN_CLASS).toContain('min-h-0')
     expect(PANEL_MAIN_CLASS).toContain('overflow-y-auto')
     expect(PANEL_MAIN_CLASS).toContain('overscroll-y-contain')
@@ -75,6 +76,7 @@ describe('panel shell integration', () => {
     expect(dashboardLayout).toContain('id="main-content"')
     expect(dashboardLayout).toContain('Skip to main content')
     expect(dashboardLayout).toContain('h-dvh')
+    expect(dashboardLayout).toContain('max-h-dvh')
     expect(dashboardLayout).not.toContain('h-screen')
     expect(dashboardLayout).not.toContain('p-4 lg:p-6')
   })
@@ -89,7 +91,7 @@ describe('panel shell integration', () => {
   it('exposes explicit page transition layout modes', () => {
     expect(pageTransition).toContain("PageTransitionLayout = 'content' | 'fill' | 'viewport'")
     expect(pageTransition).toContain("content: 'flex min-h-0 flex-col'")
-    expect(pageTransition).toContain("fill: 'flex min-h-0 flex-1 flex-col'")
+    expect(pageTransition).toContain("fill: 'flex h-0 min-h-0 flex-1 flex-col overflow-hidden'")
     expect(pageTransition).toContain("viewport: 'flex h-full min-h-0 flex-col'")
     expect(pageTransition).toContain("layout = 'content'")
     expect(pageTransition).toContain('layoutClasses[layout]')

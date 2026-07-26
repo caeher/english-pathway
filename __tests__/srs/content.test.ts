@@ -1,11 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import type { ChapterActivity } from '@/types'
+import { defaultChapterActivityFields, defaultCompletionPolicy } from '../helpers/chapter-activity'
 
 describe('getReviewContentRefs', () => {
   it('creates stable references for individual quiz questions', () => {
     const activity: ChapterActivity = {
-      id: 'quiz-1', type: 'quiz', title: 'Quiz', description: '', props: {
+      id: 'quiz-1', type: 'quiz', title: 'Quiz', description: '', ...defaultChapterActivityFields, props: {
         questions: [{ id: 'question-a', type: 'multiple-choice', question: 'Choose', options: ['A', 'B'], correct: 0 }],
       },
     }
@@ -14,7 +15,7 @@ describe('getReviewContentRefs', () => {
 
   it('creates one reference per flashcard', () => {
     const activity: ChapterActivity = {
-      id: 'cards-1', type: 'flashcard', title: 'Cards', description: '', props: {
+      id: 'cards-1', type: 'flashcard', title: 'Cards', description: '', required: true, policy: defaultCompletionPolicy, props: {
         cards: [{ id: 'cat', front: 'cat', back: 'gato' }, { id: 'dog', front: 'dog', back: 'perro' }],
       },
     }
@@ -27,6 +28,7 @@ describe('getReviewContentRefs', () => {
       type: 'branching-dialogue',
       title: 'Dialogue',
       description: '',
+      ...defaultChapterActivityFields,
       props: {
         setting: 'Office',
         startNodeId: 'n1',
@@ -62,6 +64,7 @@ describe('getReviewContentRefs', () => {
       type: 'minimal-pairs',
       title: 'Pairs',
       description: '',
+      ...defaultChapterActivityFields,
       props: {
         pairs: [
           {

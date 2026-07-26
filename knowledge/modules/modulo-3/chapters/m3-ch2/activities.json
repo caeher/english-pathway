@@ -79,6 +79,10 @@
           "example": "Stative verb → ALWAYS Simple."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "Present Continuous"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -217,6 +226,11 @@
           "correct": "The water is boiling"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -339,6 +353,11 @@
           "explanation": "\"Have\" as action (eating) → is having is OK!"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -379,6 +398,11 @@
           "category": "Tenses"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -428,6 +452,11 @@
           "explanation": "You heard: \"Happening now → Present Continuous\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -453,6 +482,11 @@
           "hint": "From the chapter: Happening now →..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -483,6 +517,11 @@
           "hint": "Practice saying this phrase aloud — from m3-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

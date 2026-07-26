@@ -79,6 +79,10 @@
           "example": "He is never late. They are usually tired."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -113,6 +117,11 @@
           "right": "0%"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -203,6 +212,11 @@
           "correct": "I rarely watch TV"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -319,6 +333,11 @@
           "explanation": "She is always happy — after \"to be\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -359,6 +378,11 @@
           "category": "Frequency"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -408,6 +432,11 @@
           "explanation": "You heard: \"She usually walks to school\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -433,6 +462,11 @@
           "hint": "From the chapter: She usually walks..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -463,6 +497,11 @@
           "hint": "Practice saying this phrase aloud — from m2-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

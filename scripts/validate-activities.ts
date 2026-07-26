@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { validateActivityList, validateCurriculumContrastPairs } from '@/features/activities'
+import { parseChapterActivitiesFile, validateActivityList, validateCurriculumContrastPairs } from '@/features/activities'
 
 type ActivityFileIssue = ReturnType<typeof validateActivityList>[number] & { filePath: string }
 
@@ -21,8 +21,7 @@ const issues = findActivityFiles(knowledgeRoot).flatMap((filePath) => {
   const moduleId = relative[0] ?? 'unknown-module'
   const chapterId = relative[2] ?? 'unknown-chapter'
   const raw = JSON.parse(fs.readFileSync(filePath, 'utf8')) as unknown
-  const activities = Array.isArray(raw) ? raw : []
-  return validateActivityList(moduleId, chapterId, activities).map((issue) => ({ ...issue, filePath }))
+  return validateActivityList(moduleId, chapterId, raw).map((issue) => ({ ...issue, filePath }))
 })
 
 const curriculumActivities = findActivityFiles(knowledgeRoot).map((filePath) => {
@@ -30,7 +29,7 @@ const curriculumActivities = findActivityFiles(knowledgeRoot).map((filePath) => 
   const moduleId = relative[0] ?? 'unknown-module'
   const chapterId = relative[2] ?? 'unknown-chapter'
   const raw = JSON.parse(fs.readFileSync(filePath, 'utf8')) as unknown
-  const activities = Array.isArray(raw) ? raw : []
+  const { activities } = parseChapterActivitiesFile(raw)
   return { moduleId, chapterId, activities: activities as Array<{ type: string; props: unknown }> }
 })
 

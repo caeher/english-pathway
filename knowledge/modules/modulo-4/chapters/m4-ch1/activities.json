@@ -79,6 +79,10 @@
           "example": "He arrived late. (NOT lately — that means \"recently\")"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -121,6 +125,11 @@
           "right": "terribly"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -210,6 +219,11 @@
           "correct": "He arrived late"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -326,6 +340,11 @@
           "explanation": "After \"is\" → adjective: She is GOOD at her job."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -366,6 +385,11 @@
           "category": "Adverbs"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -415,6 +439,11 @@
           "explanation": "You heard: \"She runs quickly\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -440,6 +469,11 @@
           "hint": "From the chapter: She runs quickly..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -470,6 +504,11 @@
           "hint": "Practice saying this phrase aloud — from m4-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

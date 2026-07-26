@@ -127,6 +127,10 @@
           "example": "I want to visit the museum."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -177,6 +181,11 @@
           "right": "Get maps and information"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -310,6 +319,11 @@
           "correct": "Check-out is at 11 AM"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -432,6 +446,11 @@
           "explanation": "Equipaje = Luggage."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -472,6 +491,11 @@
           "category": "Travel"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -521,6 +545,11 @@
           "explanation": "You heard: \"Our flight departs at 9 AM\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -546,6 +575,11 @@
           "hint": "From the chapter: Our flight departs..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -576,6 +610,11 @@
           "hint": "Practice saying this phrase aloud — from m9-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -586,7 +625,11 @@
     "props": {
       "setting": "You arrive at a hotel after a long flight. The receptionist is ready to help you check in.",
       "characters": [
-        { "id": "receptionist", "name": "Alex", "role": "Hotel receptionist" }
+        {
+          "id": "receptionist",
+          "name": "Alex",
+          "role": "Hotel receptionist"
+        }
       ],
       "startNodeId": "n1",
       "nodes": [
@@ -704,6 +747,10 @@
           "choices": []
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   }
 ]

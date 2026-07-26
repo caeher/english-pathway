@@ -67,6 +67,10 @@
           "example": "Present Perfect: \"just\" = finish."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -109,6 +113,11 @@
           "right": "Present Perfect"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -187,6 +196,11 @@
           "correct": "We bought a car two days ago"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -309,6 +323,11 @@
           "explanation": "Specific time + present perfect is wrong."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -349,6 +368,11 @@
           "category": "Tenses"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -398,6 +422,11 @@
           "explanation": "You heard: \"Present Perfect: no specific time mentioned\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -423,6 +452,11 @@
           "hint": "From the chapter: Present Perfect: no..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -453,6 +487,11 @@
           "hint": "Practice saying this phrase aloud — from m5-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

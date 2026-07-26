@@ -5,6 +5,7 @@ import {
   type SessionUiContext,
 } from '@/lib/learn/session-ui-state'
 import type { LearnPanelState } from '@/stores/useLearnSessionStore'
+import { defaultChapterActivityFields } from '../helpers/chapter-activity'
 
 const emptyPanel: LearnPanelState = { kind: 'empty' }
 
@@ -15,6 +16,7 @@ const activityPanel: LearnPanelState = {
     type: 'quiz',
     title: 'Greetings quiz',
     description: 'Practice greetings',
+    ...defaultChapterActivityFields,
     props: {},
   },
   chapterId: 'ch-1',

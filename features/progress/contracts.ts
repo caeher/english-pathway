@@ -1,10 +1,12 @@
 /** Progress request schemas and their inferred input types. */
 export {
+  activityAttemptSchema,
   activityProgressSchema,
   chapterProgressSchema,
   gameProgressSchema,
   lastActivitySchema,
   mergeProgressSchema,
+  type ActivityAttemptInput,
   type ActivityProgressInput,
   type ChapterProgressInput,
   type MergeProgressInput,

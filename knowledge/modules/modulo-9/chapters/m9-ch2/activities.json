@@ -108,6 +108,11 @@
           "correct": "What are you doing?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -230,6 +235,11 @@
           "explanation": "\"Look!\" → continuo. Make → making (drop -e): \"He is making a cake.\""
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -330,6 +340,10 @@
           "example": "I am studying for the exam."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -380,6 +394,11 @@
           "right": "lying"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -420,6 +439,11 @@
           "category": "Present Continuous"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -469,6 +493,11 @@
           "explanation": "You heard: \"The children are playing\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -494,6 +523,11 @@
           "hint": "From the chapter: The children are..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -524,6 +558,11 @@
           "hint": "Practice saying this phrase aloud — from m9-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

@@ -27,6 +27,7 @@ Use this checklist for every production release. Link the CI run, deployed previ
 - [ ] Text fallback works without ElevenLabs/RAG; voice permission denial is recoverable.
 - [ ] Legal pages v1.2, cookie choice, consent version/re-consent, export, and deletion behave as expected.
 - [ ] Desktop and 390px mobile checks show no console errors, repeated failed requests, or active microphone tracks after session end.
+- [ ] `/settings` has a single vertical scroller: complete [`docs/operations/settings-scroll-evidence.md`](operations/settings-scroll-evidence.md).
 - [ ] Keyboard/focus/contrast review and performance budgets have linked evidence.
 
 ## Go/no-go

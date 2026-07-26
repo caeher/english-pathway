@@ -23,7 +23,7 @@ describe('learning progress schemas', () => {
       lastActivity: { activityId: 'activity-1', chapterId: 'chapter-1', moduleId: 'module-1' },
     })
 
-    expect(result.activities[0]?.status).toBe('completed')
+    expect(result.activities[0]?.finished).toBe(true)
     expect(result.lastActivity?.activityId).toBe('activity-1')
   })
 

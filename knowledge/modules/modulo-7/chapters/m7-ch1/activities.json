@@ -67,6 +67,10 @@
           "example": "Subject → cannot omit."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -101,6 +105,11 @@
           "right": "people or things (defining)"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -180,6 +189,11 @@
           "correct": "I met a man who speaks 5 languages"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -278,6 +292,11 @@
           "explanation": "\"who\" is the subject → cannot omit."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -318,6 +337,11 @@
           "category": "Relative"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -367,6 +391,11 @@
           "explanation": "You heard: \"The car ___ I bought is red. (cosa)\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -392,6 +421,11 @@
           "hint": "From the chapter: The car ___..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -422,6 +456,11 @@
           "hint": "Practice saying this phrase aloud — from m7-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

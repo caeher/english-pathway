@@ -67,6 +67,10 @@
           "example": "in addition = in addition (formal)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -101,6 +105,11 @@
           "right": "owing to"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -174,6 +183,11 @@
           "correct": "I saved money so that I could travel"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -270,6 +284,11 @@
           "explanation": "In addition = in addition (formal)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -310,6 +329,11 @@
           "category": "Connectors"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -359,6 +383,11 @@
           "explanation": "You heard: \"although/though = aunque\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -384,6 +413,11 @@
           "hint": "From the chapter: Although/though = aunque..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -414,6 +448,11 @@
           "hint": "Practice saying this phrase aloud — from m7-ch2."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

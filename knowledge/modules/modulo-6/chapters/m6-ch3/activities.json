@@ -43,6 +43,10 @@
           "example": "Question: would + subject + base verb."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -77,6 +81,11 @@
           "right": "Second Conditional"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -149,6 +158,11 @@
           "correct": "If I didn't have to work, I would sleep all day"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -239,6 +253,11 @@
           "explanation": "Were for hypothetical (not was)."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -279,6 +298,11 @@
           "category": "Conditionals"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -328,6 +352,11 @@
           "explanation": "You heard: \"If I ___ you, I would study more.\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -353,6 +382,11 @@
           "hint": "From the chapter: If I ___..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -383,6 +417,11 @@
           "hint": "Practice saying this phrase aloud — from m6-ch3."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

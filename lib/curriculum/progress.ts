@@ -1,12 +1,17 @@
-import type { Chapter, Module } from '@/types'
+import type { Chapter, ChapterActivity, Module } from '@/types'
+import { isActivityPassed } from '@/lib/curriculum/approval'
 
 export type ProgressStatus = 'not_started' | 'in_progress' | 'completed'
+
+export type ExerciseSequenceState = 'locked' | 'current' | 'passed' | 'needs_retry'
 
 export interface ActivityProgressRecord {
   activity_id: string
   chapter_id: string
   status: ProgressStatus
+  passed?: boolean | null
   score?: number | null
+  attempts?: number | null
   updated_at?: string
 }
 
@@ -17,15 +22,28 @@ export interface CurriculumProgressSnapshot {
   lastActivityId: string | null
 }
 
+export interface ActivityExerciseState {
+  activityId: string
+  required: boolean
+  sequenceState: ExerciseSequenceState
+  passed: boolean
+  bestScore: number | null
+  attempts: number
+}
+
 export interface ChapterProgressSummary {
   chapterId: string
   moduleId: string
   status: ProgressStatus
+  passedRequiredActivities: number
+  totalRequiredActivities: number
   completedActivities: number
   totalActivities: number
   completionPercent: number
   canComplete: boolean
   nextActivityId: string | null
+  nextUnlockedActivityId: string | null
+  activityStates: ActivityExerciseState[]
 }
 
 export interface ModuleProgressSummary {
@@ -42,6 +60,49 @@ export interface LearningTarget {
   activityId: string | null
 }
 
+function getRequiredActivities(chapter: Chapter): ChapterActivity[] {
+  return chapter.activities.filter((activity) => activity.required)
+}
+
+function buildActivityStates(
+  chapter: Chapter,
+  progressByActivity: Map<string, ActivityProgressRecord>,
+  nextUnlockedActivityId: string | null,
+): ActivityExerciseState[] {
+  let previousRequiredPassed = true
+
+  return chapter.activities.map((activity) => {
+    const record = progressByActivity.get(activity.id)
+    const passed = isActivityPassed(activity, record)
+    const attempts = record?.attempts ?? 0
+    const bestScore = record?.score ?? null
+
+    let sequenceState: ExerciseSequenceState = 'locked'
+    if (!activity.required) {
+      sequenceState = passed ? 'passed' : attempts > 0 ? 'needs_retry' : 'current'
+    } else if (passed) {
+      sequenceState = 'passed'
+    } else if (activity.id === nextUnlockedActivityId) {
+      sequenceState = attempts > 0 ? 'needs_retry' : 'current'
+    } else if (previousRequiredPassed) {
+      sequenceState = attempts > 0 ? 'needs_retry' : 'current'
+    }
+
+    if (activity.required) {
+      previousRequiredPassed = passed
+    }
+
+    return {
+      activityId: activity.id,
+      required: activity.required,
+      sequenceState,
+      passed,
+      bestScore,
+      attempts,
+    }
+  })
+}
+
 export function getChapterProgress(
   chapter: Chapter,
   snapshot: CurriculumProgressSnapshot,
@@ -51,30 +112,49 @@ export function getChapterProgress(
       .filter((item) => item.chapter_id === chapter.id)
       .map((item) => [item.activity_id, item]),
   )
-  const completedActivities = chapter.activities.filter(
-    (activity) => progressByActivity.get(activity.id)?.status === 'completed',
-  ).length
-  const canComplete = chapter.activities.length === 0 || completedActivities === chapter.activities.length
+
+  const requiredActivities = getRequiredActivities(chapter)
+  const passedRequiredActivities = requiredActivities.filter((activity) => (
+    isActivityPassed(activity, progressByActivity.get(activity.id))
+  )).length
+  const totalRequiredActivities = requiredActivities.length
+
+  const nextActivityId = requiredActivities.find(
+    (activity) => !isActivityPassed(activity, progressByActivity.get(activity.id)),
+  )?.id ?? null
+
+  let nextUnlockedActivityId: string | null = null
+  for (const activity of requiredActivities) {
+    if (!isActivityPassed(activity, progressByActivity.get(activity.id))) {
+      nextUnlockedActivityId = activity.id
+      break
+    }
+  }
+
+  const activityStates = buildActivityStates(chapter, progressByActivity, nextUnlockedActivityId)
   const completed = snapshot.completedChapterIds.has(chapter.id)
-  const started = completedActivities > 0 || chapter.activities.some((activity) => progressByActivity.has(activity.id))
+  const started = passedRequiredActivities > 0
+    || chapter.activities.some((activity) => progressByActivity.has(activity.id))
   const status: ProgressStatus = completed ? 'completed' : started ? 'in_progress' : 'not_started'
-  const totalActivities = chapter.activities.length
+  const canComplete = !completed && totalRequiredActivities > 0 && passedRequiredActivities === totalRequiredActivities
 
   return {
     chapterId: chapter.id,
     moduleId: chapter.moduleId,
     status,
-    completedActivities,
-    totalActivities,
+    passedRequiredActivities,
+    totalRequiredActivities,
+    completedActivities: passedRequiredActivities,
+    totalActivities: totalRequiredActivities,
     completionPercent: completed
       ? 100
-      : totalActivities === 0
+      : totalRequiredActivities === 0
         ? 0
-        : Math.round((completedActivities / totalActivities) * 100),
-    canComplete: !completed && canComplete,
-    nextActivityId: chapter.activities.find(
-      (activity) => progressByActivity.get(activity.id)?.status !== 'completed',
-    )?.id ?? null,
+        : Math.round((passedRequiredActivities / totalRequiredActivities) * 100),
+    canComplete,
+    nextActivityId,
+    nextUnlockedActivityId,
+    activityStates,
   }
 }
 
@@ -82,8 +162,8 @@ export function getModuleProgress(
   curriculumModule: Module,
   snapshot: CurriculumProgressSnapshot,
 ): ModuleProgressSummary {
-  const chapters = curriculumModule.chapters.map((chapter) => getChapterProgress(chapter, snapshot))
-  const completedChapters = chapters.filter((chapter) => chapter.status === 'completed').length
+  const chapters = curriculumModule.chapters.map((item) => getChapterProgress(item, snapshot))
+  const completedChapters = chapters.filter((item) => item.status === 'completed').length
   return {
     moduleId: curriculumModule.id,
     completedChapters,
@@ -93,18 +173,13 @@ export function getModuleProgress(
   }
 }
 
-/**
- * Returns only chapters that can be safely persisted as complete. Completion
- * remains derived from the curriculum definition, never a client-provided
- * count, and already-completed chapters are excluded for idempotent callers.
- */
 export function getCompletableChapterIds(
   chapters: readonly Chapter[],
   snapshot: CurriculumProgressSnapshot,
 ): string[] {
   return chapters
-    .filter((chapter) => getChapterProgress(chapter, snapshot).canComplete)
-    .map((chapter) => chapter.id)
+    .filter((item) => getChapterProgress(item, snapshot).canComplete)
+    .map((item) => item.id)
 }
 
 export function getLearningTarget(
@@ -125,10 +200,11 @@ export function getLearningTarget(
     for (const curriculumModule of modules) {
       const chapter = curriculumModule.chapters.find((item) => item.id === snapshot.lastChapterId)
       if (chapter && !snapshot.completedChapterIds.has(chapter.id)) {
+        const progress = getChapterProgress(chapter, snapshot)
         return {
           moduleId: curriculumModule.id,
           chapterId: chapter.id,
-          activityId: chapter.activities[0]?.id ?? null,
+          activityId: progress.nextUnlockedActivityId ?? progress.nextActivityId,
         }
       }
     }
@@ -138,7 +214,11 @@ export function getLearningTarget(
     for (const chapter of curriculumModule.chapters) {
       const progress = getChapterProgress(chapter, snapshot)
       if (progress.status !== 'completed') {
-        return { moduleId: curriculumModule.id, chapterId: chapter.id, activityId: progress.nextActivityId }
+        return {
+          moduleId: curriculumModule.id,
+          chapterId: chapter.id,
+          activityId: progress.nextUnlockedActivityId ?? progress.nextActivityId,
+        }
       }
     }
   }

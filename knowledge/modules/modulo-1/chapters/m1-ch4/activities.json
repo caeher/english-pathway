@@ -133,6 +133,10 @@
           "example": "How much water? How many books?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -195,6 +199,11 @@
           "right": "Irregular plural"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -221,6 +230,11 @@
           "right": "Predicate nominative"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -313,6 +327,11 @@
           "correct": "The cat is on the table"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -492,6 +511,11 @@
           "explanation": "Use \"much\" with uncountable nouns like water."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -532,6 +556,11 @@
           "category": "Nouns"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -581,6 +610,11 @@
           "explanation": "Children is the irregular plural of child."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -606,6 +640,11 @@
           "hint": "Uncountable noun with quantifier"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -636,6 +675,11 @@
           "hint": "Irregular plural — /ˈtʃɪldrən/"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

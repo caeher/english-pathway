@@ -125,6 +125,11 @@
           "explanation": "Professional, warm, and grateful. First impressions matter enormously."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -243,6 +248,11 @@
           "correct": "Thank you for the opportunity. I'm very excited about this role."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -325,6 +335,10 @@
           "example": "I take a proactive approach to identifying potential issues."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -367,6 +381,11 @@
           "right": "2-3 thoughtful questions ❓"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -407,6 +426,11 @@
           "category": "Work"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -456,6 +480,11 @@
           "explanation": "You heard: \"IMPLEMENTED ⚙️\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -481,6 +510,11 @@
           "hint": "From the chapter: IMPLEMENTED ⚙️..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -511,6 +545,11 @@
           "hint": "Practice saying this phrase aloud — from m13-ch1."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -521,7 +560,11 @@
     "props": {
       "setting": "You are in a formal job interview for a project manager role. The interviewer wants concise, professional answers.",
       "characters": [
-        { "id": "interviewer", "name": "Mr. Chen", "role": "Interviewer" }
+        {
+          "id": "interviewer",
+          "name": "Mr. Chen",
+          "role": "Interviewer"
+        }
       ],
       "startNodeId": "n1",
       "nodes": [
@@ -639,6 +682,10 @@
           "choices": []
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   }
 ]

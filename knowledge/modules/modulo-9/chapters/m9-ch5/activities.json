@@ -119,6 +119,11 @@
           "explanation": "Wooden = of wood. It describes the material."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -261,6 +266,11 @@
           "correct": "The dog is very friendly"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -311,6 +321,11 @@
           "right": "Age ⏰"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -411,6 +426,10 @@
           "example": "The rich man helped the poor family."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -451,6 +470,11 @@
           "category": "Adjectives"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -500,6 +524,11 @@
           "explanation": "You heard: \"a small round wooden table\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -525,6 +554,11 @@
           "hint": "From the chapter: A small round..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -555,6 +589,11 @@
           "hint": "Practice saying this phrase aloud — from m9-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]

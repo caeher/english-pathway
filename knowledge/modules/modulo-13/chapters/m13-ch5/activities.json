@@ -119,6 +119,11 @@
           "explanation": "Authenticity matters most. Show YOUR voice, YOUR ideas, YOUR English. Progress, not perfection."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -225,6 +230,11 @@
           "correct": "Have you ever wondered how technology is shaping our future?"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -307,6 +317,10 @@
           "example": "It is clear that technology will continue to evolve rapidly."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "completion"
     }
   },
   {
@@ -347,6 +361,11 @@
           "category": "Projects"
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -396,6 +415,11 @@
           "explanation": "You heard: \"INTRODUCING YOUR OPINION 💬\"."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -421,6 +445,11 @@
           "hint": "From the chapter: INTRODUCING YOUR OPINION..."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   },
   {
@@ -451,6 +480,11 @@
           "hint": "Practice saying this phrase aloud — from m13-ch5."
         }
       ]
+    },
+    "required": true,
+    "policy": {
+      "mode": "score",
+      "passThreshold": 70
     }
   }
 ]
