@@ -330,6 +330,7 @@ export async function updateSettingsAction(
       full_name: parsed.data.fullName,
       daily_goal_minutes: parsed.data.dailyGoalMinutes,
       preferred_mode: parsed.data.preferredMode,
+      native_language: parsed.data.nativeLanguage ?? null,
     })
     .eq('id', user.id)
 

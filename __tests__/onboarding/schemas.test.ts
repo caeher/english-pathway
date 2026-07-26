@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { onboardingCompletionSchema } from '@/lib/onboarding/schemas'
 import { createClient } from '@/lib/supabase/server'
-import { completeOnboardingAction } from '@/lib/onboarding/actions'
+import { completeOnboardingAction, saveOnboardingDraftAction } from '@/lib/onboarding/actions'
 
 vi.mock('@/lib/supabase/server', () => ({ createClient: vi.fn() }))
 vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }))
@@ -30,6 +30,36 @@ describe('onboarding completion validation', () => {
 
   it('accepts skip without preferences', () => {
     expect(onboardingCompletionSchema.safeParse({ skipped: true }).success).toBe(true)
+  })
+
+  it('accepts optional native language on completion', () => {
+    expect(
+      onboardingCompletionSchema.safeParse({
+        level: 'beginner',
+        dailyGoalMinutes: 10,
+        nativeLanguage: 'es',
+        skipped: false,
+      }).success
+    ).toBe(true)
+    expect(
+      onboardingCompletionSchema.safeParse({
+        level: 'beginner',
+        dailyGoalMinutes: 10,
+        nativeLanguage: null,
+        skipped: false,
+      }).success
+    ).toBe(true)
+  })
+
+  it('rejects unsupported native language codes', () => {
+    expect(
+      onboardingCompletionSchema.safeParse({
+        level: 'beginner',
+        dailyGoalMinutes: 10,
+        nativeLanguage: 'en',
+        skipped: false,
+      }).success
+    ).toBe(false)
   })
 })
 
@@ -61,10 +91,57 @@ describe('onboarding completion persistence', () => {
         daily_goal_minutes: 10,
         onboarding_completed_at: expect.any(String),
         onboarding_status: 'completed',
-        onboarding_step: 4,
+        onboarding_step: 5,
       })
     )
     expect(eq).toHaveBeenCalledWith('id', 'user-1')
+  })
+
+  it('persists native language when completing onboarding', async () => {
+    const eq = vi.fn().mockResolvedValue({ error: null })
+    const update = vi.fn().mockReturnValue({ eq })
+    const maybeSingle = vi.fn().mockResolvedValue({ data: null })
+    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
+    createClientMock.mockResolvedValue({
+      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-3' } } }) },
+      from: vi.fn().mockReturnValue({ select, update }),
+    } as never)
+
+    const result = await completeOnboardingAction({
+      level: 'beginner',
+      dailyGoalMinutes: 5,
+      nativeLanguage: 'es',
+      skipped: false,
+    })
+
+    expect(result).toEqual({ success: true })
+    expect(update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        native_language: 'es',
+        onboarding_step: 5,
+      })
+    )
+  })
+
+  it('persists native language in onboarding drafts', async () => {
+    const eq = vi.fn().mockResolvedValue({ error: null })
+    const update = vi.fn().mockReturnValue({ eq })
+    createClientMock.mockResolvedValue({
+      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-4' } } }) },
+      from: vi.fn().mockReturnValue({ update }),
+    } as never)
+
+    const result = await saveOnboardingDraftAction({
+      step: 4,
+      nativeLanguage: 'pt',
+    })
+
+    expect(result).toEqual({ success: true })
+    expect(update).toHaveBeenCalledWith({
+      onboarding_step: 4,
+      native_language: 'pt',
+    })
+    expect(eq).toHaveBeenCalledWith('id', 'user-4')
   })
 
   it('persists completion when the user skips', async () => {

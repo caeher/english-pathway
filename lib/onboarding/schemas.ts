@@ -1,15 +1,17 @@
 import { z } from 'zod'
+import { optionalNativeLanguageSchema } from '@/lib/languages/schemas'
 
 export const onboardingLevelSchema = z.enum(['beginner', 'intermediate', 'advanced'])
 export const dailyGoalMinutesSchema = z.union([z.literal(5), z.literal(10), z.literal(20)])
 export const preferredModeSchema = z.enum(['voice', 'text'])
-export const onboardingStepSchema = z.number().int().min(0).max(4)
+export const onboardingStepSchema = z.number().int().min(0).max(5)
 
 export const onboardingCompletionSchema = z
   .object({
     level: onboardingLevelSchema.nullish(),
     dailyGoalMinutes: dailyGoalMinutesSchema.nullish(),
     preferredMode: preferredModeSchema.nullish(),
+    nativeLanguage: optionalNativeLanguageSchema,
     step: onboardingStepSchema.nullish(),
     skipped: z.boolean().default(false),
   })
@@ -43,4 +45,5 @@ export const onboardingDraftSchema = z.object({
   level: onboardingLevelSchema.nullish(),
   dailyGoalMinutes: dailyGoalMinutesSchema.nullish(),
   preferredMode: preferredModeSchema.nullish(),
+  nativeLanguage: optionalNativeLanguageSchema,
 })

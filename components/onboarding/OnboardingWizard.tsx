@@ -22,6 +22,8 @@ import {
   type OnboardingActionState,
 } from '@/lib/onboarding/actions'
 import type { DailyGoalMinutes, OnboardingLevel, PreferredMode } from '@/lib/onboarding/schemas'
+import { type NativeLanguageCode } from '@/lib/languages/native-languages'
+import { NativeLanguageField } from '@/components/profile/NativeLanguageSelect'
 
 const LEVELS: Array<{ value: OnboardingLevel; title: string; description: string }> = [
   { value: 'beginner', title: 'Beginner', description: 'I am starting from the basics.' },
@@ -41,6 +43,7 @@ interface OnboardingWizardProps {
   initialLevel: OnboardingLevel | null
   initialDailyGoalMinutes: number | null
   initialPreferredMode: PreferredMode | null
+  initialNativeLanguage: NativeLanguageCode | null
   initialStep: number
   destination: string
   reviewing?: boolean
@@ -87,12 +90,13 @@ export default function OnboardingWizard({
   initialLevel,
   initialDailyGoalMinutes,
   initialPreferredMode,
+  initialNativeLanguage,
   initialStep,
   destination,
   reviewing = false,
 }: OnboardingWizardProps) {
   const router = useRouter()
-  const [step, setStep] = useState(Math.max(0, Math.min(3, initialStep)))
+  const [step, setStep] = useState(Math.max(0, Math.min(4, initialStep)))
   const [level, setLevel] = useState<OnboardingLevel | null>(initialLevel)
   const [dailyGoalMinutes, setDailyGoalMinutes] = useState<DailyGoalMinutes | null>(
     initialDailyGoalMinutes === 5 || initialDailyGoalMinutes === 10 || initialDailyGoalMinutes === 20
@@ -100,13 +104,17 @@ export default function OnboardingWizard({
       : null
   )
   const [preferredMode, setPreferredMode] = useState<PreferredMode>(initialPreferredMode ?? 'text')
+  const [nativeLanguage, setNativeLanguage] = useState<NativeLanguageCode | null>(initialNativeLanguage)
   const [micState, setMicState] = useState<MicState>('idle')
   const [state, setState] = useState<OnboardingActionState>({})
   const [pending, setPending] = useState(false)
   const completedRef = useRef(false)
   const stepRef = useRef(step)
 
-  const stepName = useMemo(() => ['welcome', 'level', 'daily_goal', 'microphone'][step], [step])
+  const stepName = useMemo(
+    () => ['welcome', 'level', 'daily_goal', 'microphone', 'native_language'][step],
+    [step]
+  )
 
   useEffect(() => {
     stepRef.current = step
@@ -122,10 +130,19 @@ export default function OnboardingWizard({
   useEffect(() => {
     trackEvent('onboarding_step', {
       step: stepName,
-      selection: step === 1 ? level : step === 2 ? dailyGoalMinutes : step === 3 ? micState : null,
+      selection:
+        step === 1
+          ? level
+          : step === 2
+            ? dailyGoalMinutes
+            : step === 3
+              ? micState
+              : step === 4
+                ? nativeLanguage
+                : null,
       preferred_mode: step === 3 ? preferredMode : null,
     })
-  }, [dailyGoalMinutes, level, micState, preferredMode, step, stepName])
+  }, [dailyGoalMinutes, level, micState, nativeLanguage, preferredMode, step, stepName])
 
   const requestMicrophone = async () => {
     if (!navigator.mediaDevices?.getUserMedia) {
@@ -161,6 +178,7 @@ export default function OnboardingWizard({
       level: level ?? undefined,
       dailyGoalMinutes: dailyGoalMinutes ?? undefined,
       preferredMode,
+      nativeLanguage,
       step,
       skipped,
     })
@@ -181,7 +199,7 @@ export default function OnboardingWizard({
   }
 
   const advance = async () => {
-    const nextStep = Math.min(3, step + 1)
+    const nextStep = Math.min(4, step + 1)
     setPending(true)
     setState({})
     const result = await saveOnboardingDraftAction({
@@ -189,6 +207,7 @@ export default function OnboardingWizard({
       level: level ?? undefined,
       dailyGoalMinutes: dailyGoalMinutes ?? undefined,
       preferredMode,
+      nativeLanguage,
     })
     setPending(false)
     if (result.error) {
@@ -205,10 +224,10 @@ export default function OnboardingWizard({
       <div className="mb-8 flex items-center justify-between">
         <div>
           <p className="text-sm font-bold uppercase tracking-wider text-(--accent)">English Pathway</p>
-          <p className="mt-1 text-sm text-(--text-muted)">Step {step + 1} of 4</p>
+          <p className="mt-1 text-sm text-(--text-muted)">Step {step + 1} of 5</p>
         </div>
-        <div className="flex gap-1.5" aria-label={`Step ${step + 1} of 4`}>
-          {[0, 1, 2, 3].map((item) => (
+        <div className="flex gap-1.5" aria-label={`Step ${step + 1} of 5`}>
+          {[0, 1, 2, 3, 4].map((item) => (
             <span
               key={item}
               className={`h-2 w-8 rounded-full ${item <= step ? 'bg-(--accent)' : 'bg-(--border-primary)'}`}
@@ -343,6 +362,24 @@ export default function OnboardingWizard({
           </div>
         )}
 
+        {step === 4 && (
+          <div className="space-y-6">
+            <div>
+              <h1 className="font-display text-3xl font-black text-(--text-primary)">What is your native language?</h1>
+              <p className="mt-2 text-(--text-secondary)">
+                This helps us personalize explanations in future updates. You can skip this for now or change it later in Settings.
+              </p>
+            </div>
+            <NativeLanguageField
+              id="onboarding-native-language"
+              label="Native language"
+              hint="Choose the language you are most comfortable with. Select Not set if you prefer not to answer."
+              value={nativeLanguage}
+              onChange={setNativeLanguage}
+            />
+          </div>
+        )}
+
         {state.error && (
           <p role="alert" className="mt-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
             {state.error}
@@ -363,7 +400,7 @@ export default function OnboardingWizard({
             <Button type="button" variant="ghost" onClick={() => submit(true)} disabled={pending}>
               Skip for now
             </Button>
-            {step < 3 ? (
+            {step < 4 ? (
               <Button
                 type="button"
                 onClick={advance}

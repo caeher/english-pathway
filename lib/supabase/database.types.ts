@@ -648,6 +648,7 @@ export type Database = {
           full_name: string | null
           id: string
           level: string | null
+          native_language: string | null
           onboarding_completed_at: string | null
           onboarding_status: string
           onboarding_step: number
@@ -667,6 +668,7 @@ export type Database = {
           full_name?: string | null
           id: string
           level?: string | null
+          native_language?: string | null
           onboarding_completed_at?: string | null
           onboarding_status?: string
           onboarding_step?: number
@@ -686,6 +688,7 @@ export type Database = {
           full_name?: string | null
           id?: string
           level?: string | null
+          native_language?: string | null
           onboarding_completed_at?: string | null
           onboarding_status?: string
           onboarding_step?: number

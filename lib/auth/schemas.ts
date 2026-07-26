@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { optionalNativeLanguageSchema } from '@/lib/languages/schemas'
 
 export const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -43,6 +44,7 @@ export const settingsSchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
   dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(20)]),
   preferredMode: z.enum(['voice', 'text']),
+  nativeLanguage: optionalNativeLanguageSchema,
 })
 
 export type SettingsFormValues = z.infer<typeof settingsSchema>

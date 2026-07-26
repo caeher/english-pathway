@@ -37,10 +37,11 @@ export async function completeOnboardingAction(
     level?: typeof parsed.data.level
     daily_goal_minutes?: typeof parsed.data.dailyGoalMinutes
     preferred_mode?: 'voice' | 'text'
+    native_language?: string | null
   } = {
     onboarding_completed_at: currentProfile?.onboarding_completed_at ?? (parsed.data.skipped ? null : new Date().toISOString()),
     onboarding_status: parsed.data.skipped && !currentProfile?.onboarding_completed_at ? 'skipped' : 'completed',
-    onboarding_step: parsed.data.skipped ? (parsed.data.step ?? currentProfile?.onboarding_step ?? 0) : 4,
+    onboarding_step: parsed.data.skipped ? (parsed.data.step ?? currentProfile?.onboarding_step ?? 0) : 5,
   }
 
   // Leaving these fields untouched when they are omitted lets a user skip a
@@ -50,6 +51,7 @@ export async function completeOnboardingAction(
     updates.daily_goal_minutes = parsed.data.dailyGoalMinutes
   }
   if (parsed.data.preferredMode != null) updates.preferred_mode = parsed.data.preferredMode
+  if (parsed.data.nativeLanguage !== undefined) updates.native_language = parsed.data.nativeLanguage ?? null
 
   const { error } = await supabase.from('profiles').update(updates).eq('id', user.id)
   if (error) return { error: 'Could not save your onboarding preferences.' }
@@ -73,10 +75,12 @@ export async function saveOnboardingDraftAction(input: unknown): Promise<Onboard
     level?: 'beginner' | 'intermediate' | 'advanced'
     daily_goal_minutes?: 5 | 10 | 20
     preferred_mode?: 'voice' | 'text'
+    native_language?: string | null
   } = { onboarding_step: parsed.data.step }
   if (parsed.data.level != null) updates.level = parsed.data.level
   if (parsed.data.dailyGoalMinutes != null) updates.daily_goal_minutes = parsed.data.dailyGoalMinutes
   if (parsed.data.preferredMode != null) updates.preferred_mode = parsed.data.preferredMode
+  if (parsed.data.nativeLanguage !== undefined) updates.native_language = parsed.data.nativeLanguage ?? null
 
   const { error } = await supabase.from('profiles').update(updates).eq('id', user.id)
   if (error) return { error: 'Could not save your onboarding progress.' }
@@ -96,7 +100,7 @@ export async function getOnboardingProfile() {
 
   const { data } = await supabase
     .from('profiles')
-    .select('onboarding_completed_at, onboarding_status, onboarding_step, daily_goal_minutes, level, preferred_mode')
+    .select('onboarding_completed_at, onboarding_status, onboarding_step, daily_goal_minutes, level, preferred_mode, native_language')
     .eq('id', user.id)
     .maybeSingle()
 

@@ -10,6 +10,8 @@ import type { SettingsFormValues } from '@/lib/auth/schemas'
 import type { Database as DatabaseTypes } from '@/lib/supabase/database.types'
 import { clearCookieConsent } from '@/lib/consent/client'
 import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
+import { isNativeLanguageCode, type NativeLanguageCode } from '@/lib/languages/native-languages'
+import { NativeLanguageField } from '@/components/profile/NativeLanguageSelect'
 
 type Profile = DatabaseTypes['public']['Tables']['profiles']['Row']
 
@@ -33,6 +35,9 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
       ? profile.preferred_mode
       : 'text'
   const [preferredMode, setPreferredMode] = useState<'voice' | 'text'>(initialPreferredMode)
+  const initialNativeLanguage =
+    profile.native_language && isNativeLanguageCode(profile.native_language) ? profile.native_language : null
+  const [nativeLanguage, setNativeLanguage] = useState<NativeLanguageCode | null>(initialNativeLanguage)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
   const [pending, setPending] = useState(false)
@@ -43,15 +48,20 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
     fullName: profile.full_name ?? '',
     dailyGoalMinutes: profile.daily_goal_minutes === 5 || profile.daily_goal_minutes === 10 || profile.daily_goal_minutes === 20 ? profile.daily_goal_minutes : 10,
     preferredMode: initialPreferredMode,
-  }), [profile, initialPreferredMode])
-  const dirty = fullName !== initialValues.fullName || dailyGoalMinutes !== initialValues.dailyGoalMinutes || preferredMode !== initialValues.preferredMode
+    nativeLanguage: initialNativeLanguage,
+  }), [profile, initialPreferredMode, initialNativeLanguage])
+  const dirty =
+    fullName !== initialValues.fullName ||
+    dailyGoalMinutes !== initialValues.dailyGoalMinutes ||
+    preferredMode !== initialValues.preferredMode ||
+    nativeLanguage !== initialValues.nativeLanguage
 
   const handleSave = async () => {
     setPending(true)
     setError(null)
     setSuccess(false)
 
-    const data: SettingsFormValues = { fullName: fullName.trim(), dailyGoalMinutes, preferredMode }
+    const data: SettingsFormValues = { fullName: fullName.trim(), dailyGoalMinutes, preferredMode, nativeLanguage }
     const result = await updateSettingsAction(data)
     setPending(false)
     if (result.error) setError(result.error)
@@ -185,6 +195,13 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
             <option value="20">20 minutes</option>
           </select>
         </div>
+        <NativeLanguageField
+          id="settings-native-language"
+          label="Native language"
+          hint="Optional. Used to personalize your learning experience in future updates."
+          value={nativeLanguage}
+          onChange={setNativeLanguage}
+        />
       </Surface>
 
       <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="voice-heading">

@@ -4,6 +4,7 @@ import { getCurrentUser } from '@/lib/auth/actions'
 import { getOnboardingProfile } from '@/lib/onboarding/actions'
 import { PageContainer } from '@/components/ui'
 import OnboardingWizard from '@/components/onboarding/OnboardingWizard'
+import { isNativeLanguageCode } from '@/lib/languages/native-languages'
 
 export const metadata = {
   title: 'Welcome to English Pathway',
@@ -32,6 +33,8 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
 
   const initialLevel = (profile.level === 'beginner' || profile.level === 'intermediate' || profile.level === 'advanced') ? profile.level : null
   const initialPreferredMode = (profile.preferred_mode === 'text' || profile.preferred_mode === 'voice') ? profile.preferred_mode : null
+  const initialNativeLanguage =
+    profile.native_language && isNativeLanguageCode(profile.native_language) ? profile.native_language : null
 
   return (
     <main className="min-h-screen bg-(--bg-primary) py-10">
@@ -40,6 +43,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
         initialLevel={initialLevel}
         initialDailyGoalMinutes={profile.daily_goal_minutes}
         initialPreferredMode={initialPreferredMode}
+        initialNativeLanguage={initialNativeLanguage}
         initialStep={profile.onboarding_step ?? 0}
         destination={destination}
         reviewing={review}

@@ -8,6 +8,33 @@ describe('learning preferences contract', () => {
     expect(settingsSchema.safeParse({ fullName: 'A', dailyGoalMinutes: 15, preferredMode: 'audio' }).success).toBe(false)
   })
 
+  it('accepts optional native language values in settings', () => {
+    expect(
+      settingsSchema.safeParse({
+        fullName: 'Ada Learner',
+        dailyGoalMinutes: 10,
+        preferredMode: 'text',
+        nativeLanguage: 'es',
+      }).success
+    ).toBe(true)
+    expect(
+      settingsSchema.safeParse({
+        fullName: 'Ada Learner',
+        dailyGoalMinutes: 10,
+        preferredMode: 'text',
+        nativeLanguage: null,
+      }).success
+    ).toBe(true)
+    expect(
+      settingsSchema.safeParse({
+        fullName: 'Ada Learner',
+        dailyGoalMinutes: 10,
+        preferredMode: 'text',
+        nativeLanguage: 'en',
+      }).success
+    ).toBe(false)
+  })
+
   it('carries preferred mode through onboarding without making it an assessment result', () => {
     const result = onboardingCompletionSchema.safeParse({ level: 'intermediate', dailyGoalMinutes: 20, preferredMode: 'text', skipped: false })
     expect(result.success).toBe(true)
