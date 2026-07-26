@@ -85,7 +85,16 @@ Abre [http://localhost:3000](http://localhost:3000).
 1. Regístrate en `/register`.
 2. Abre [Mailpit](http://127.0.0.1:54324) y confirma el correo de verificación.
 3. Inicia sesión en `/login` → serás redirigido a `/settings`.
-4. Practica en `/learn` con el tutor IA (voz o texto).
+4. Explora el currículo en `/curriculum` (lectura y ejercicios) o abre `/learn` para practicar con el tutor IA (voz o texto).
+
+### Curriculum vs Learn
+
+| Route | Purpose |
+|-------|---------|
+| `/curriculum` | Structured pathway: chapter reading, required exercises, derived progress |
+| `/learn` | Agentic tutor session — always starts empty; the agent shows content via tools |
+
+Never link from Curriculum to `/learn` with `moduleId`, `chapterId`, or `activityId`. Resume or continue the pathway with `/curriculum/...`; open `/learn` only for a free tutor session.
 
 > **Confirmación de email en local:** los correos no salen a internet; se capturan en Mailpit.
 

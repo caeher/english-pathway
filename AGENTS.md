@@ -12,7 +12,7 @@ Context guide for AI agents and developers. Complements [README.md](README.md): 
 |--------|--------|
 | Audiences | Public visitors and registered users |
 | Auth | Login / register → `/settings` (profile only) |
-| Learning | `/learn` — AI voice/text tutor + dynamic activity panel |
+| Learning | `/learn` — agentic AI tutor (voice/text) + dynamic activity panel; `/curriculum` — structured pathway (reading, exercises, progress) |
 | Knowledge base | 14 modules / 77 chapters in [`knowledge/`](knowledge/) (markdown + JSON) |
 | RAG | `knowledge_embeddings` in Supabase — ingest via `pnpm kb:embed` |
 | UI language | English only (no i18n) |
@@ -149,6 +149,15 @@ english-pathway/
 ---
 
 ## 6. Tutor and activities
+
+### Curriculum vs Learn
+
+| Route | Responsibility |
+|-------|----------------|
+| `/curriculum` | Structured pathway: chapter reading, exercises, completion, and progress |
+| `/learn` | Agentic tutor session — always starts empty; the agent shows grammar, questions, and activities via client tools only |
+
+Never link from Curriculum to `/learn` with `moduleId`, `chapterId`, or `activityId` query params. Legacy URLs with those params redirect to canonical `/learn` without auto-launching content. Use `curriculumChapterHref` for resume/continue CTAs and `LEARN_PATH` from [`features/learn`](features/learn/index.ts) for tutor entry.
 
 - Voice provider: [`components/voice/VoiceTutorProvider.tsx`](components/voice/VoiceTutorProvider.tsx)
 - Client tools: [`lib/learn/client-tools.ts`](lib/learn/client-tools.ts) — `showGrammar`, `showActivity`, `showQuestion`, `clearPanel`, `fetchCurriculumContext`
