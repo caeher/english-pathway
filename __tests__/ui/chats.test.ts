@@ -47,8 +47,11 @@ describe('chats page accessibility contract', () => {
     expect(conversationShell).toContain('overflow-y-auto')
     expect(conversationShell).toContain('sticky bottom-0')
     expect(conversationHeader).toContain('sticky top-0')
-    expect(conversationHeader).toContain('Delete conversation')
-    expect(conversationHeader).toContain('DropdownMenu')
+    expect(conversationHeader).toContain('Sparkles')
+    expect(conversationHeader).toContain('Trash2')
+    expect(conversationHeader).toContain('DeleteConversationDialog')
+    expect(conversationHeader).not.toContain('DropdownMenu')
+    expect(conversationHeader).not.toContain('ArrowLeft')
   })
 
   it('uses accessible composer with loading state, alert errors and touch targets', () => {

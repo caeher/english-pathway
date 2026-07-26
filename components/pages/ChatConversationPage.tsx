@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft } from 'lucide-react'
@@ -16,6 +17,7 @@ interface ChatConversationPageProps {
 
 export default function ChatConversationPage({ conversationId }: ChatConversationPageProps) {
   const router = useRouter()
+  const [isDeleting, setIsDeleting] = useState(false)
   const {
     draft,
     setDraft,
@@ -67,12 +69,17 @@ export default function ChatConversationPage({ conversationId }: ChatConversatio
       header={(
         <ChatConversationHeader
           title={title}
-          messagesRemaining={credits?.assistantMessagesRemaining}
           canDelete={Boolean(conversation)}
           deleteDisabled={isSending || isLoadingConversation}
+          isDeleting={isDeleting}
           onDelete={async () => {
-            await deleteConversation(conversationId)
-            router.push('/chats')
+            setIsDeleting(true)
+            try {
+              await deleteConversation(conversationId)
+              router.push('/chats')
+            } finally {
+              setIsDeleting(false)
+            }
           }}
           className="mx-auto w-full max-w-3xl"
         />
