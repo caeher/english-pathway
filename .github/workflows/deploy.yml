@@ -93,11 +93,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - name: Create .env.local for build
+        run: node scripts/ci-env-local.mjs
+        env:
+          NODE_ENV: production
+
       - name: Build project
         run: pnpm build
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_APP_URL: https://ci.english-pathway.example
 
       - name: Check performance budgets
         run: pnpm performance:check
