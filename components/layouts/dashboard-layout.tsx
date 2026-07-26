@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/helpers'
-import { getAccountPageTitle } from '@/lib/navigation'
+import { getAccountPageTitle } from '@/lib/navigation-model'
 import { AppSidebar } from './_parts/app-sidebar'
 import { AppNavbar } from './_parts/app-navbar'
 import type { NavItem } from './_parts/sidebar-body'

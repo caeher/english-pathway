@@ -50,12 +50,3 @@ export function getAccountNavItems(context: NavigationContext): NavItem[] {
     .filter((item) => item.visible(context))
     .map(({ visible: _, ...item }) => item)
 }
-
-export function getAccountPageTitle(pathname: string): string {
-  if (pathname.startsWith('/curriculum')) return 'Curriculum'
-  if (pathname.startsWith('/dashboard')) return 'Dashboard'
-  if (pathname.startsWith('/chats')) return 'Chats'
-  if (pathname.startsWith('/review')) return 'Review'
-  if (pathname.startsWith('/settings')) return 'Settings'
-  return 'Account'
-}
