@@ -82,7 +82,7 @@ export function ChatComposer({
           type="submit"
           disabled={sendDisabled || !draft.trim() || disabled}
           loading={isSending}
-          loadingLabel="Sending…"
+          loadingLabel="Sending"
           aria-label="Send question"
           className={cn('min-h-11 min-w-11', isPromptVariant && 'shrink-0 rounded-2xl')}
         >

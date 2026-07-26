@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles, Trash2 } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowLeft, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DeleteConversationDialog } from '@/components/english-assistant/DeleteConversationDialog'
 import { cn } from '@/lib/helpers'
@@ -38,12 +39,16 @@ export function ChatConversationHeader({
           className,
         )}
       >
-        <div className="flex min-w-0 flex-1 items-center gap-2">
-          <Sparkles className="h-4 w-4 shrink-0 text-(--accent)" aria-hidden="true" />
-          <h1 className="min-w-0 truncate text-sm font-semibold text-(--text-primary) sm:text-base">
-            {title}
-          </h1>
-        </div>
+        <Button asChild variant="ghost" size="sm" className="min-h-11 shrink-0 -ml-1">
+          <Link href="/chats">
+            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            <span className="sr-only">Back to chats</span>
+          </Link>
+        </Button>
+
+        <h1 className="min-w-0 flex-1 truncate text-sm font-semibold text-(--text-primary) sm:text-base">
+          {title}
+        </h1>
 
         {canDelete ? (
           <Button

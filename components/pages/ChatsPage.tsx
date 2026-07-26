@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { MessageCircle } from 'lucide-react'
 import { InlineError, PageContainer } from '@/components/ui'
@@ -12,6 +12,7 @@ import { useEnglishAssistantChat } from '@/hooks/useEnglishAssistantChat'
 
 export default function ChatsPage() {
   const router = useRouter()
+  const [deletingConversationId, setDeletingConversationId] = useState<string | null>(null)
 
   const {
     draft,
@@ -24,6 +25,7 @@ export default function ChatsPage() {
     inputRef,
     initializeConversations,
     createAndSendConversation,
+    deleteConversation,
   } = useEnglishAssistantChat({ autoInitialize: true, mode: 'index' })
 
   const {
@@ -85,6 +87,15 @@ export default function ChatsPage() {
         isLoading={isLoadingConversation}
         error={null}
         onRetry={() => void initializeConversations()}
+        deletingConversationId={deletingConversationId}
+        onDelete={async (id) => {
+          setDeletingConversationId(id)
+          try {
+            await deleteConversation(id)
+          } finally {
+            setDeletingConversationId(null)
+          }
+        }}
         id="chats-history"
         variant="index"
       />

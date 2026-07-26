@@ -51,11 +51,11 @@ describe('chats page accessibility contract', () => {
     expect(conversationShell).toContain('overflow-y-auto')
     expect(conversationShell).toContain('sticky bottom-0')
     expect(conversationHeader).toContain('sticky top-0')
-    expect(conversationHeader).toContain('Sparkles')
+    expect(conversationHeader).toContain('ArrowLeft')
     expect(conversationHeader).toContain('Trash2')
     expect(conversationHeader).toContain('DeleteConversationDialog')
     expect(conversationHeader).not.toContain('DropdownMenu')
-    expect(conversationHeader).not.toContain('ArrowLeft')
+    expect(conversationHeader).not.toContain('Sparkles')
   })
 
   it('uses accessible composer with loading state, alert errors and touch targets', () => {
@@ -66,7 +66,7 @@ describe('chats page accessibility contract', () => {
     expect(composer).toContain('aria-label="Send question"')
     expect(composer).toContain('isSending')
     expect(composer).toContain('loading={isSending}')
-    expect(composer).toContain('loadingLabel="Sending…"')
+    expect(composer).toContain('loadingLabel="Sending"')
     expect(composer).toContain("variant?: 'default' | 'prompt'")
     expect(composer).toContain('rounded-3xl')
   })
@@ -77,6 +77,8 @@ describe('chats page accessibility contract', () => {
     expect(history).toContain('min-h-11')
     expect(history).toContain('variant === \'index\'')
     expect(history).toContain('href={`/chats/${conversation.id}`}')
+    expect(history).toContain('Sparkles')
+    expect(history).toContain('DeleteConversationDialog')
     expect(history).toContain('focus-visible:ring-2')
   })
 
