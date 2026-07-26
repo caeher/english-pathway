@@ -28,6 +28,11 @@ interface SpeechRecognitionInstance extends EventTarget {
   onend: (() => void) | null
 }
 
+type TranscriptionResponse = {
+  transcript?: unknown
+  error?: unknown
+}
+
 function getSpeechRecognition(): (new () => SpeechRecognitionInstance) | null {
   if (typeof window === 'undefined') return null
   const w = window as Window & {
@@ -57,7 +62,10 @@ function recognitionErrorMessage(error?: string): string {
     return 'Microphone access was denied. Allow microphone access in your browser settings or use text verification for practice only.'
   }
   if (error === 'audio-capture') return 'No microphone was found. Check your microphone or use text verification for practice only.'
-  return 'Speech recognition failed. Please try again or use text verification for practice only.'
+  if (error === 'no-speech') return 'No speech was detected. Check your microphone and try again.'
+  if (error === 'network') return 'Your browser speech-recognition service is unavailable. Use recording mode below to verify your pronunciation.'
+  if (error === 'language-not-supported') return 'Your browser cannot recognise English speech. Use recording mode below to verify your pronunciation.'
+  return 'Speech recognition failed. Try recording mode below or use text verification for practice only.'
 }
 
 export default function Pronunciation({ items, initialProgress, onProgressChange, onComplete }: PronunciationProps) {
@@ -77,7 +85,11 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
   const [error, setError] = useState<string | null>(null)
   const [finished, setFinished] = useState(false)
   const [privacyAcknowledged, setPrivacyAcknowledged] = useState(false)
+  const [recording, setRecording] = useState(false)
+  const [transcribing, setTranscribing] = useState(false)
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null)
+  const mediaStreamRef = useRef<MediaStream | null>(null)
 
   useDebouncedProgress(
     { current, bestScores },
@@ -88,10 +100,16 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
   const item = items[current]
   const SpeechRecognition = getSpeechRecognition()
   const supportsMic = SpeechRecognition !== null
+  const supportsRecording = typeof window !== 'undefined'
+    && Boolean(navigator.mediaDevices?.getUserMedia)
+    && typeof MediaRecorder !== 'undefined'
+  const supportsSpeechInput = supportsMic || supportsRecording
   const hidePhraseUntilAttempt = Boolean(item.audio?.src)
 
   useEffect(() => () => {
     recognitionRef.current?.stop()
+    mediaRecorderRef.current?.stop()
+    mediaStreamRef.current?.getTracks().forEach((track) => track.stop())
   }, [])
 
   const recordAttempt = useCallback((text: string, mode: 'oral' | 'text') => {
@@ -113,7 +131,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
   }, [current, item.phrase])
 
   const startListening = useCallback(() => {
-    if (!SpeechRecognition || listening || attemptScore) return
+    if (!SpeechRecognition || listening || recording || transcribing || attemptScore) return
 
     const recognition = new SpeechRecognition()
     recognitionRef.current = recognition
@@ -128,6 +146,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
       recordAttempt(event.results[0][0].transcript, 'oral')
     }
     recognition.onerror = (event) => {
+      if (event.error === 'aborted') return
       setError(recognitionErrorMessage(event.error))
       setListening(false)
     }
@@ -139,7 +158,73 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
       setError('Speech recognition could not start. Please try again.')
       setListening(false)
     }
-  }, [SpeechRecognition, attemptScore, listening, recordAttempt])
+  }, [SpeechRecognition, attemptScore, listening, recordAttempt, recording, transcribing])
+
+  const transcribeRecording = useCallback(async (audio: Blob) => {
+    setTranscribing(true)
+    setError(null)
+    try {
+      const body = new FormData()
+      body.set('audio', audio, 'pronunciation.webm')
+      const response = await fetch('/api/audio/transcribe', { method: 'POST', body })
+      const payload = await response.json().catch(() => ({})) as TranscriptionResponse
+      const transcript = typeof payload.transcript === 'string' ? payload.transcript.trim() : ''
+      if (!response.ok || !transcript) {
+        setError(typeof payload.error === 'string' ? payload.error : 'We could not transcribe that recording. Please try again.')
+        return
+      }
+      recordAttempt(transcript, 'oral')
+    } catch {
+      setError('We could not transcribe that recording. Check your connection and try again.')
+    } finally {
+      setTranscribing(false)
+    }
+  }, [recordAttempt])
+
+  const stopRecording = useCallback(() => {
+    const recorder = mediaRecorderRef.current
+    if (recorder?.state === 'recording') recorder.stop()
+  }, [])
+
+  const startRecording = useCallback(async () => {
+    if (!supportsRecording || listening || recording || transcribing || attemptScore) return
+
+    recognitionRef.current?.stop()
+    setError(null)
+    setTranscript('')
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      mediaStreamRef.current = stream
+      const preferredMimeType = ['audio/webm;codecs=opus', 'audio/webm'].find((mimeType) => MediaRecorder.isTypeSupported(mimeType))
+      const recorder = preferredMimeType
+        ? new MediaRecorder(stream, { mimeType: preferredMimeType })
+        : new MediaRecorder(stream)
+      const chunks: BlobPart[] = []
+      mediaRecorderRef.current = recorder
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) chunks.push(event.data)
+      }
+      recorder.onstop = () => {
+        mediaRecorderRef.current = null
+        mediaStreamRef.current?.getTracks().forEach((track) => track.stop())
+        mediaStreamRef.current = null
+        setRecording(false)
+        const audio = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' })
+        if (audio.size === 0) {
+          setError('No audio was recorded. Check your microphone and try again.')
+          return
+        }
+        void transcribeRecording(audio)
+      }
+      recorder.start()
+      setRecording(true)
+    } catch {
+      mediaStreamRef.current?.getTracks().forEach((track) => track.stop())
+      mediaStreamRef.current = null
+      setError('We could not start recording. Allow microphone access and try again.')
+    }
+  }, [attemptScore, listening, recording, supportsRecording, transcribeRecording, transcribing])
 
   const handleCheckText = () => {
     if (!typedText.trim() || attemptScore) return
@@ -149,6 +234,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
 
   const handleRetry = () => {
     recognitionRef.current?.stop()
+    stopRecording()
     setListening(false)
     setTranscript('')
     setTypedText('')
@@ -249,12 +335,12 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
         </div>
       )}
 
-      {supportsMic ? (
+      {supportsSpeechInput ? (
         <div className="space-y-4">
           {!privacyAcknowledged ? (
             <div className="space-y-3 rounded-xl border border-(--border-primary) bg-(--bg-card) p-4">
               <p className="text-sm text-(--text-secondary)">
-                Audio is processed locally by your browser; nothing is uploaded to English Pathway.
+                Browser recognition may be processed by your browser provider. Recording mode securely sends a short clip for transcription; it is used only to check this attempt.
               </p>
               <button
                 type="button"
@@ -265,18 +351,41 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
               </button>
             </div>
           ) : (
-            <button
-              type="button"
-              onClick={startListening}
-              disabled={listening || attemptScore !== null}
-              className={cn(
-                'w-full flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border-2 font-display font-bold text-sm cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
-                listening ? 'border-(--accent) bg-(--accent-soft) text-(--accent)' : 'border-(--border-primary) bg-(--bg-card) hover:border-(--accent)/50'
+            <div className="space-y-3">
+              {supportsMic && (
+                <button
+                  type="button"
+                  onClick={startListening}
+                  disabled={listening || recording || transcribing || attemptScore !== null}
+                  className={cn(
+                    'w-full flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border-2 font-display font-bold text-sm cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)',
+                    listening ? 'border-(--accent) bg-(--accent-soft) text-(--accent)' : 'border-(--border-primary) bg-(--bg-card) hover:border-(--accent)/50'
+                  )}
+                >
+                  {listening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+                  {listening ? 'Listening...' : 'Tap and speak'}
+                </button>
               )}
-            >
-              {listening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
-              {listening ? 'Listening...' : 'Tap and speak'}
-            </button>
+
+              {supportsRecording && (
+                <button
+                  type="button"
+                  onClick={recording ? stopRecording : () => void startRecording()}
+                  disabled={listening || transcribing || attemptScore !== null}
+                  className={cn(
+                    'w-full flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border font-display font-bold text-sm cursor-pointer transition-colors disabled:cursor-not-allowed disabled:opacity-60',
+                    recording ? 'border-red-400 bg-red-50 text-red-600 dark:bg-red-950/30 dark:text-red-300' : 'border-(--border-primary) bg-(--bg-card) hover:border-(--accent)/50'
+                  )}
+                >
+                  {recording ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+                  {transcribing ? 'Checking recording...' : recording ? 'Stop recording and check' : 'Record with secure transcription'}
+                </button>
+              )}
+
+              <p className="text-center text-xs text-(--text-muted)">
+                Use recording mode if browser speech recognition does not work.
+              </p>
+            </div>
           )}
           {transcript && <p className="text-sm text-(--text-secondary) text-center">I heard: &quot;{transcript}&quot;</p>}
         </div>
@@ -302,7 +411,7 @@ export default function Pronunciation({ items, initialProgress, onProgressChange
         </div>
       )}
 
-      {supportsMic && privacyAcknowledged && (
+      {supportsSpeechInput && privacyAcknowledged && (
         <div className="mt-4 space-y-3 rounded-xl border border-dashed border-(--border-primary) bg-(--bg-card) p-4">
           <p className="text-xs text-(--text-muted)">Text check is practice only — it does not measure speaking.</p>
           <div className="flex flex-col gap-2">
