@@ -40,6 +40,11 @@ export type DailyGoalMinutes = z.infer<typeof dailyGoalMinutesSchema>
 export type PreferredMode = z.infer<typeof preferredModeSchema>
 export type OnboardingCompletionInput = z.input<typeof onboardingCompletionSchema>
 
+export function parseOnboardingLevel(value: unknown): OnboardingLevel | null {
+  const parsed = onboardingLevelSchema.safeParse(value)
+  return parsed.success ? parsed.data : null
+}
+
 export const onboardingDraftSchema = z.object({
   step: onboardingStepSchema,
   level: onboardingLevelSchema.nullish(),

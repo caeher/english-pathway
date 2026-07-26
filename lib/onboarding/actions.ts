@@ -2,7 +2,14 @@
 
 import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
-import { onboardingCompletionSchema, onboardingDraftSchema } from './schemas'
+import {
+  dailyGoalMinutesSchema,
+  onboardingCompletionSchema,
+  onboardingDraftSchema,
+  parseOnboardingLevel,
+  preferredModeSchema,
+} from './schemas'
+import { isNativeLanguageCode } from '@/lib/languages/native-languages'
 
 export type OnboardingActionState = {
   error?: string
@@ -12,11 +19,6 @@ export type OnboardingActionState = {
 export async function completeOnboardingAction(
   input: unknown
 ): Promise<OnboardingActionState> {
-  const parsed = onboardingCompletionSchema.safeParse(input)
-  if (!parsed.success) {
-    return { error: parsed.error.issues[0]?.message ?? 'Invalid onboarding data.' }
-  }
-
   const supabase = await createClient()
   const {
     data: { user },
@@ -26,9 +28,33 @@ export async function completeOnboardingAction(
 
   const { data: currentProfile } = await supabase
     .from('profiles')
-    .select('onboarding_completed_at, onboarding_status, onboarding_step')
+    .select(
+      'onboarding_completed_at, onboarding_status, onboarding_step, level, daily_goal_minutes, preferred_mode, native_language'
+    )
     .eq('id', user.id)
     .maybeSingle()
+
+  const rawInput =
+    typeof input === 'object' && input !== null ? (input as Record<string, unknown>) : {}
+  const parsedDailyGoal = dailyGoalMinutesSchema.safeParse(currentProfile?.daily_goal_minutes)
+  const parsedPreferredMode = preferredModeSchema.safeParse(currentProfile?.preferred_mode)
+  const parsedNativeLanguage =
+    currentProfile?.native_language && isNativeLanguageCode(currentProfile.native_language)
+      ? currentProfile.native_language
+      : undefined
+
+  const mergedInput = {
+    ...rawInput,
+    level: rawInput.level ?? parseOnboardingLevel(currentProfile?.level) ?? undefined,
+    dailyGoalMinutes: rawInput.dailyGoalMinutes ?? (parsedDailyGoal.success ? parsedDailyGoal.data : undefined),
+    preferredMode: rawInput.preferredMode ?? (parsedPreferredMode.success ? parsedPreferredMode.data : undefined),
+    nativeLanguage: rawInput.nativeLanguage ?? parsedNativeLanguage,
+  }
+
+  const parsed = onboardingCompletionSchema.safeParse(mergedInput)
+  if (!parsed.success) {
+    return { error: parsed.error.issues[0]?.message ?? 'Invalid onboarding data.' }
+  }
 
   const updates: {
     onboarding_completed_at: string | null

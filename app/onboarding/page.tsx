@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getSafeRedirectPath } from '@/lib/auth/safe-redirect'
 import { getCurrentUser } from '@/lib/auth/actions'
 import { getOnboardingProfile } from '@/lib/onboarding/actions'
+import { parseOnboardingLevel } from '@/lib/onboarding/schemas'
 import { PageContainer } from '@/components/ui'
 import OnboardingWizard from '@/components/onboarding/OnboardingWizard'
 import { isNativeLanguageCode } from '@/lib/languages/native-languages'
@@ -31,7 +32,7 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
     ? '/settings'
     : requestedDestination
 
-  const initialLevel = (profile.level === 'beginner' || profile.level === 'intermediate' || profile.level === 'advanced') ? profile.level : null
+  const initialLevel = parseOnboardingLevel(profile.level)
   const initialPreferredMode = (profile.preferred_mode === 'text' || profile.preferred_mode === 'voice') ? profile.preferred_mode : null
   const initialNativeLanguage =
     profile.native_language && isNativeLanguageCode(profile.native_language) ? profile.native_language : null

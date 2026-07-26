@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { onboardingCompletionSchema } from '@/lib/onboarding/schemas'
+import { onboardingCompletionSchema, parseOnboardingLevel } from '@/lib/onboarding/schemas'
 import { createClient } from '@/lib/supabase/server'
 import { completeOnboardingAction, saveOnboardingDraftAction } from '@/lib/onboarding/actions'
 
@@ -9,6 +9,12 @@ vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }))
 const createClientMock = vi.mocked(createClient)
 
 describe('onboarding completion validation', () => {
+  it('parses CEFR and legacy onboarding levels', () => {
+    expect(parseOnboardingLevel('B1')).toBe('B1')
+    expect(parseOnboardingLevel('beginner')).toBe('beginner')
+    expect(parseOnboardingLevel('fluent')).toBeNull()
+  })
+
   it('accepts every supported level and daily goal', () => {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'beginner', 'intermediate', 'advanced']) {
       for (const dailyGoalMinutes of [5, 10, 20]) {
@@ -142,6 +148,43 @@ describe('onboarding completion persistence', () => {
       native_language: 'pt',
     })
     expect(eq).toHaveBeenCalledWith('id', 'user-4')
+  })
+
+  it('completes using persisted profile level when the client omits it', async () => {
+    const eq = vi.fn().mockResolvedValue({ error: null })
+    const update = vi.fn().mockReturnValue({ eq })
+    const maybeSingle = vi.fn().mockResolvedValue({
+      data: {
+        level: 'B1',
+        daily_goal_minutes: 10,
+        preferred_mode: 'text',
+        native_language: null,
+        onboarding_completed_at: null,
+        onboarding_status: 'pending',
+        onboarding_step: 4,
+      },
+    })
+    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
+    createClientMock.mockResolvedValue({
+      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-5' } } }) },
+      from: vi.fn().mockReturnValue({ select, update }),
+    } as never)
+
+    const result = await completeOnboardingAction({
+      dailyGoalMinutes: 10,
+      nativeLanguage: 'es',
+      skipped: false,
+    })
+
+    expect(result).toEqual({ success: true })
+    expect(update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        level: 'B1',
+        daily_goal_minutes: 10,
+        native_language: 'es',
+        onboarding_step: 5,
+      })
+    )
   })
 
   it('persists completion when the user skips', async () => {
