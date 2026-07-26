@@ -26,3 +26,12 @@ export function isNavigationItemActive(pathname: string, href: string): boolean 
   const path = href.split('?')[0]
   return pathname === path || (path !== '/' && pathname.startsWith(`${path}/`))
 }
+
+export function getAccountPageTitle(pathname: string): string {
+  if (pathname.startsWith('/curriculum')) return 'Curriculum'
+  if (pathname.startsWith('/dashboard')) return 'Dashboard'
+  if (pathname.startsWith('/chats')) return 'Chats'
+  if (pathname.startsWith('/review')) return 'Review'
+  if (pathname.startsWith('/settings')) return 'Settings'
+  return 'Account'
+}

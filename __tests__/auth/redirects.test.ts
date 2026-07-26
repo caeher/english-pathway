@@ -5,14 +5,16 @@ import {
   resolvePostAuthDestination,
 } from '@/lib/auth/resolve-redirect'
 import { isSafeRedirectPath } from '@/lib/auth/safe-redirect'
-import { getHeaderNavItems } from '@/lib/navigation-model'
-import { isNavigationItemActive } from '@/lib/navigation-model'
+import { getAccountPageTitle, getHeaderNavItems, isNavigationItemActive } from '@/lib/navigation-model'
 import type { NavigationContext } from '@/lib/navigation'
 
 describe('authentication redirects', () => {
   it('accepts internal destinations and rejects external or auth destinations', () => {
     expect(isSafeRedirectPath('/learn')).toBe(true)
     expect(isSafeRedirectPath('/learn?chapter=intro')).toBe(true)
+    expect(isSafeRedirectPath('/curriculum')).toBe(true)
+    expect(isSafeRedirectPath('/curriculum/modulo-1/m1-ch1')).toBe(true)
+    expect(isSafeRedirectPath('/review')).toBe(true)
     expect(isSafeRedirectPath('https://example.com')).toBe(false)
     expect(isSafeRedirectPath('//example.com')).toBe(false)
     expect(isSafeRedirectPath('/login')).toBe(false)
@@ -55,5 +57,15 @@ describe('authentication redirects', () => {
     expect(getHeaderNavItems(context({})).map((item) => item.label)).toEqual(['Curriculum', 'Learn'])
     expect(getHeaderNavItems(context({ isAuthenticated: true })).map((item) => item.label)).toEqual(['Curriculum', 'Continue setup'])
     expect(getHeaderNavItems(context({ isAuthenticated: true, onboardingCompleted: true })).map((item) => item.label)).toEqual(['Curriculum', 'Learn', 'Review', 'Dashboard'])
+  })
+
+  it('maps account routes to navbar titles', () => {
+    expect(getAccountPageTitle('/curriculum')).toBe('Curriculum')
+    expect(getAccountPageTitle('/curriculum/modulo-1/m1-ch1')).toBe('Curriculum')
+    expect(getAccountPageTitle('/dashboard')).toBe('Dashboard')
+    expect(getAccountPageTitle('/chats/abc')).toBe('Chats')
+    expect(getAccountPageTitle('/review')).toBe('Review')
+    expect(getAccountPageTitle('/settings')).toBe('Settings')
+    expect(getAccountPageTitle('/unknown')).toBe('Account')
   })
 })

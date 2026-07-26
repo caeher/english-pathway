@@ -12,7 +12,6 @@ export default async function AccountLayout({ children }: { children: React.Reac
   return (
     <DashboardLayout
       navItems={getAccountNavItems(navigation)}
-      title="Account"
       email={user.email}
       fullName={profile?.full_name}
       avatarUrl={profile?.avatar_url}

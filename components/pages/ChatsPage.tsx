@@ -52,7 +52,7 @@ export default function ChatsPage() {
   }
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col gap-6">
+    <div className="mx-auto flex max-w-6xl flex-col gap-6">
       <div>
         <h1 className="flex items-center gap-2 font-display text-2xl font-black text-(--text-primary)">
           <MessageCircle className="h-6 w-6" aria-hidden="true" /> Chats

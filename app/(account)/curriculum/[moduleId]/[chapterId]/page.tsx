@@ -1,26 +1,27 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Headphones, ListChecks } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { getCurrentUser } from '@/lib/auth/actions'
 import { CompleteChapterButton } from '@/components/curriculum/CompleteChapterButton'
 import { MarkdownWithTts } from '@/components/lesson/MarkdownWithTts'
 import { resolveModule, resolveChapterNav } from '@/lib/content/resolve'
 import { extractMarkdownHeadings } from '@/lib/content/markdown'
 import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
-import { getChapterProgress, type CurriculumProgressSnapshot } from '@/lib/curriculum/progress'
+import { getChapterProgress } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
 import { createClient } from '@/lib/supabase/server'
 
 export default async function ChapterCurriculumPage({ params }: { params: Promise<{ moduleId: string; chapterId: string }> }) {
+  const user = await getCurrentUser()
+  if (!user) return null
+
   const { moduleId, chapterId } = await params
   const curriculumModule = await resolveModule(moduleId)
   const chapter = curriculumModule?.chapters.find((candidate) => candidate.id === chapterId)
   if (!curriculumModule || !chapter) notFound()
 
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  const snapshot: CurriculumProgressSnapshot = user
-    ? await getCurriculumProgressSnapshot(supabase, user.id)
-    : { completedChapterIds: new Set(), activities: [], lastChapterId: null, lastActivityId: null }
+  const snapshot = await getCurriculumProgressSnapshot(supabase, user.id)
   const progress = getChapterProgress(chapter, snapshot)
   const headings = extractMarkdownHeadings(chapter.content).filter((heading) => heading.level >= 2)
   const navigation = resolveChapterNav(chapter.id)
@@ -29,7 +30,7 @@ export default async function ChapterCurriculumPage({ params }: { params: Promis
   const practiceHref = learnHref({ moduleId: curriculumModule.id, chapterId: chapter.id, activityId: progress.nextActivityId ?? chapter.activities[0]?.id })
 
   return (
-    <div id="chapter-top" className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+    <div id="chapter-top" className="mx-auto max-w-6xl">
       <Link href={`/curriculum/${curriculumModule.id}`} className="text-sm font-bold text-(--accent) no-underline">← {curriculumModule.title}</Link>
       <header className="mt-7 rounded-3xl border border-(--border-primary) bg-(--bg-card) p-7 sm:p-10">
         <div className="flex flex-wrap items-start justify-between gap-5">
@@ -41,7 +42,9 @@ export default async function ChapterCurriculumPage({ params }: { params: Promis
           {progress.status === 'completed' && <span className="inline-flex items-center gap-2 rounded-xl bg-(--success-soft) px-3 py-2 text-sm font-bold text-(--success)"><CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Completed</span>}
         </div>
         <div className="mt-7 flex flex-wrap gap-3 text-sm font-bold text-(--text-secondary)"><span className="inline-flex items-center gap-2 rounded-lg bg-(--bg-tertiary) px-3 py-2"><ListChecks className="h-4 w-4 text-(--accent)" aria-hidden="true" /> {chapter.activities.length} activities</span><span className="inline-flex items-center gap-2 rounded-lg bg-(--bg-tertiary) px-3 py-2"><Headphones className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Use speaker buttons for highlighted phrases</span></div>
-        {user ? <><div className="mt-5 h-2 overflow-hidden rounded-full bg-(--bg-tertiary)" role="progressbar" aria-label="Chapter activity progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress.completionPercent}><div className="h-full rounded-full bg-(--accent)" style={{ width: `${progress.completionPercent}%` }} /></div><p className="mt-2 text-sm text-(--text-secondary)">{progress.completedActivities} of {progress.totalActivities} activities complete</p><div className="mt-5"><CompleteChapterButton chapterId={chapter.id} initialCompleted={progress.status === 'completed'} canComplete={progress.canComplete} /></div></> : <p className="mt-7 text-sm text-(--text-secondary)"><Link href={`/login?redirectTo=${encodeURIComponent(`/curriculum/${curriculumModule.id}/${chapter.id}`)}`} className="font-bold text-(--accent)">Sign in</Link> to save activity and chapter progress.</p>}
+        <div className="mt-5 h-2 overflow-hidden rounded-full bg-(--bg-tertiary)" role="progressbar" aria-label="Chapter activity progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress.completionPercent}><div className="h-full rounded-full bg-(--accent)" style={{ width: `${progress.completionPercent}%` }} /></div>
+        <p className="mt-2 text-sm text-(--text-secondary)">{progress.completedActivities} of {progress.totalActivities} activities complete</p>
+        <div className="mt-5"><CompleteChapterButton chapterId={chapter.id} initialCompleted={progress.status === 'completed'} canComplete={progress.canComplete} /></div>
         <Link href={practiceHref} className="mt-5 inline-flex items-center gap-2 rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline hover:bg-(--accent-hover)">Practice this chapter in Learn <ArrowRight className="h-4 w-4" /></Link>
       </header>
 
