@@ -46,8 +46,8 @@ describe('chats page accessibility contract', () => {
   })
 
   it('uses full-height conversation route layout without nested cards', () => {
-    expect(conversationLayout).toContain('-mx-4')
-    expect(conversationLayout).toContain('min-h-[calc(100dvh-var(--app-header-h)-2rem)]')
+    expect(conversationLayout).toContain('PANEL_FULL_BLEED_CLASS')
+    expect(conversationLayout).toContain("from '@/lib/layout/panel-shell'")
     expect(conversationShell).toContain('overflow-y-auto')
     expect(conversationShell).toContain('sticky bottom-0')
     expect(conversationHeader).toContain('sticky top-0')

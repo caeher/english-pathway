@@ -3,6 +3,11 @@
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/helpers'
+import {
+  PANEL_CONTENT_COLUMN_CLASS,
+  PANEL_MAIN_CLASS,
+  PANEL_SHELL_STYLE,
+} from '@/lib/layout/panel-shell'
 import { getAccountPageTitle } from '@/lib/navigation-model'
 import { AppSidebar } from './_parts/app-sidebar'
 import { AppNavbar } from './_parts/app-navbar'
@@ -33,7 +38,7 @@ export function DashboardLayout({
   return (
     <div
       className="flex h-screen overflow-hidden bg-(--bg-primary)"
-      style={{ '--app-header-h': '4rem' } as React.CSSProperties}
+      style={PANEL_SHELL_STYLE}
     >
       <a
         href="#main-content"
@@ -52,7 +57,7 @@ export function DashboardLayout({
         onCloseMobile={() => setMobileOpen(false)}
       />
 
-      <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
+      <div className={PANEL_CONTENT_COLUMN_CLASS}>
         <AppNavbar
           title={resolvedTitle}
           onToggleSidebar={() => {
@@ -63,7 +68,7 @@ export function DashboardLayout({
             }
           }}
         />
-        <main id="main-content" tabIndex={-1} className={cn('flex-1 overflow-y-auto p-4 lg:p-6 outline-none')}>{children}</main>
+        <main id="main-content" tabIndex={-1} className={cn(PANEL_MAIN_CLASS)}>{children}</main>
       </div>
     </div>
   )

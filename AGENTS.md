@@ -206,6 +206,11 @@ Use [`PageContainer`](components/ui/page-container.tsx) (`mx-auto w-full max-w-6
 - Account routes inside `DashboardLayout` should use `PageContainer` with default `padding="none"`; public/legal/onboarding routes can use `padding="page"`.
 - Auth split-screen forms and `/learn` remain exceptions to the `max-w-6xl` page shell.
 
+### Panel shell gutters
+
+- Account panel scroll and gutters are defined in [`lib/layout/panel-shell.ts`](lib/layout/panel-shell.ts) and applied by [`DashboardLayout`](components/layouts/dashboard-layout.tsx).
+- Full-bleed account routes (`/review`, `/chats/[id]`) must use `PANEL_FULL_BLEED_CLASS` instead of duplicating negative margins or `min-h` calculations.
+
 ---
 
 ## 9. PR checklist

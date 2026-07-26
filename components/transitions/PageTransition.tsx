@@ -8,7 +8,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
   const reducedMotion = useReducedMotion()
 
   return (
-    <motion.div className="flex h-full min-h-0 flex-1 flex-col" {...(reducedMotion ? motionProps(true) : pageTransition)}>
+    <motion.div className="flex min-h-0 flex-col" {...(reducedMotion ? motionProps(true) : pageTransition)}>
       {children}
     </motion.div>
   )
