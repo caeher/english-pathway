@@ -99,8 +99,8 @@ Copia `.env.example` a `.env.local`:
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clave anónima pública |
 | `SUPABASE_SERVICE_ROLE_KEY` | Clave de servicio (solo servidor/seeds) |
 | `NEXT_PUBLIC_APP_URL` | URL de la app (p.ej. `http://localhost:3000`) |
-| `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `true` para mostrar botón Google |
-| `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `true` para mostrar botón GitHub |
+| `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `true` para mostrar botón Google (solo cuando el proveedor esté configurado en Supabase) |
+| `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `true` para mostrar botón GitHub (solo cuando el proveedor esté configurado en Supabase) |
 | `OPENAI_API_KEY` | Embeddings para RAG, asistente de chat y fallback de voz OpenAI |
 | `ELEVENLABS_API_KEY` | API key ElevenLabs (opcional) |
 | `NEXT_PUBLIC_ELEVENLABS_AGENT_ID` | ID del agente de conversación |
@@ -188,5 +188,19 @@ lib/knowledge/       # Carga y chunking del currículo
 ## Autenticación
 
 - Email y contraseña vía Supabase Auth
-- OAuth dinámico (Google, GitHub)
+- OAuth dinámico (Google, GitHub) — botones visibles solo con `NEXT_PUBLIC_OAUTH_*_ENABLED=true`
 - `/settings` requiere sesión; `/learn` es público
+
+### OAuth (Google y GitHub)
+
+Los Client Secrets viven en Supabase o en un gestor de secretos — **nunca** en el repositorio.
+
+| Entorno | `NEXT_PUBLIC_APP_URL` | Callback en Google/GitHub |
+|---------|----------------------|---------------------------|
+| Local | `http://localhost:3000` | `http://127.0.0.1:54321/auth/v1/callback` |
+| Staging | `https://<staging-domain>` | `https://<staging-ref>.supabase.co/auth/v1/callback` |
+| Producción | `https://<prod-domain>` | `https://<prod-ref>.supabase.co/auth/v1/callback` |
+
+En Supabase, allowlist `{NEXT_PUBLIC_APP_URL}/**` como Redirect URL. Activa cada flag OAuth solo cuando el proveedor correspondiente esté configurado en ese entorno.
+
+Guía completa (matriz, rotación, verificación): [docs/operations/oauth-setup.md](docs/operations/oauth-setup.md).

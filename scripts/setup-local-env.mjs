@@ -15,6 +15,12 @@ const lines = [
   'NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED=false',
   'NEXT_PUBLIC_OAUTH_GITHUB_ENABLED=false',
   '',
+  '# Optional local OAuth (see docs/operations/oauth-setup.md)',
+  '# GOOGLE_CLIENT_ID=',
+  '# GOOGLE_CLIENT_SECRET=',
+  '# GITHUB_CLIENT_ID=',
+  '# GITHUB_CLIENT_SECRET=',
+  '',
 ]
 
 const envPath = resolve(process.cwd(), '.env.local')

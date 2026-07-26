@@ -18,11 +18,22 @@ port = 54324
 enabled = true
 site_url = "http://localhost:3000"
 additional_redirect_urls = [
-  "http://localhost:3000/auth/callback",
-  "http://localhost:3000/auth/callback?next=/reset-password",
-  "http://localhost:3000/auth/confirm",
-  "http://localhost:3000/reset-password",
+  "http://localhost:3000/**",
+  "http://127.0.0.1:3000/**",
 ]
+
+# OAuth providers for local development. Set enabled = true after adding
+# GOOGLE_* / GITHUB_* to .env.local (names must not start with SUPABASE_).
+[auth.external.google]
+enabled = false
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+skip_nonce_check = true
+
+[auth.external.github]
+enabled = false
+client_id = "env(GITHUB_CLIENT_ID)"
+secret = "env(GITHUB_CLIENT_SECRET)"
 
 [auth.email]
 enable_signup = true

@@ -18,6 +18,10 @@ Use this checklist for every production release. Link the CI run, deployed previ
 - [ ] Environment variables are present: Supabase URL/anon key and app URL; ElevenLabs and OpenAI behavior is tested both configured and absent.
 - [ ] Visitor → registration/confirmation → onboarding → Learn succeeds.
 - [ ] Login/logout and password reset succeed.
+- [ ] OAuth buttons appear only when `NEXT_PUBLIC_OAUTH_*_ENABLED=true` for configured providers.
+- [ ] Google OAuth: sign-in returns via `/auth/callback` → onboarding or `/settings`.
+- [ ] GitHub OAuth: same flow as Google.
+- [ ] OAuth with `?redirectTo=/learn` lands on `/learn` after onboarding is complete.
 - [ ] Curriculum activity completion and resume survive a reload.
 - [ ] Text fallback works without ElevenLabs/RAG; voice permission denial is recoverable.
 - [ ] Legal pages, cookie choice, consent version, export, and deletion behave as expected.

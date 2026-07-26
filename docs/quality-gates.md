@@ -8,6 +8,7 @@ This document is the release contract for English Pathway. Every pull request mu
 | --- | --- | --- | --- |
 | Visitor → registration/confirmation → onboarding → Learn | auth redirects, onboarding schemas, assessment rubric | Supabase email confirmation | desktop + 390px viewport recording or screenshots |
 | Login/logout and password reset | auth redirect tests | Supabase Auth + Mailpit/cloud email | successful login, logout, reset link |
+| OAuth (Google / GitHub) | oauth provider flag tests | Supabase Auth + provider credentials in staging | callback to `/auth/callback`, onboarding or `/settings`, optional `?redirectTo=` |
 | Curriculum → activity → progress → resume | curriculum href/progress/activity tests | Supabase progress persistence | reload after completion and resume |
 | Learn without ElevenLabs or RAG | tutor state, fallback, memory, and schema tests | none required | text mode works with provider variables absent |
 | Voice with and without microphone | microphone and tutor lifecycle tests | ElevenLabs agent | permission denied, stop session, no active track |
