@@ -15,6 +15,7 @@ describe('chats page accessibility contract', () => {
 
   it('renders chats index with prompt input and flat history below', () => {
     expect(chatsPage).toContain('ChatsPage')
+    expect(chatsPage).toContain('PageContainer')
     expect(chatsPage).toContain('ChatComposer')
     expect(chatsPage).toContain('ConversationHistory')
     expect(chatsPage).toContain('NameConversationDialog')
@@ -30,6 +31,9 @@ describe('chats page accessibility contract', () => {
     expect(conversationPage).toContain('ChatComposer')
     expect(conversationPage).toContain('ChatConversationHeader')
     expect(conversationPage).toContain('ChatConversationShell')
+    expect(conversationPage).toContain('PageContainer')
+    expect(conversationPage).toContain('CHAT_THREAD_CLASS')
+    expect(conversationPage).toContain('max-w-3xl')
     expect(conversationPage).toContain('layout="prompt"')
     expect(conversationPage).toContain('variant="prompt"')
     expect(conversationPage).not.toContain('Surface')

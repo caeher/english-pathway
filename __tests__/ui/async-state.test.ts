@@ -11,6 +11,9 @@ describe('async-state conventions', () => {
     expect(source).toContain('export function SuccessState')
     expect(source).toContain('aria-busy="true"')
     expect(source).toContain('role="alert"')
+    expect(source).toContain("layout?: LoadingStateLayout")
+    expect(source).toContain('PAGE_CONTAINER_CLASS')
+    expect(source).toContain("layout = 'page'")
   })
 
   it('gives primary async routes loading and retryable error boundaries', () => {
