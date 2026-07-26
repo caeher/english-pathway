@@ -121,6 +121,8 @@ export type Database = {
           attempts: number
           chapter_id: string
           completed_at: string | null
+          last_attempt_at: string | null
+          passed: boolean
           score: number | null
           status: string
           updated_at: string
@@ -132,6 +134,8 @@ export type Database = {
           attempts?: number
           chapter_id: string
           completed_at?: string | null
+          last_attempt_at?: string | null
+          passed?: boolean
           score?: number | null
           status?: string
           updated_at?: string
@@ -143,6 +147,8 @@ export type Database = {
           attempts?: number
           chapter_id?: string
           completed_at?: string | null
+          last_attempt_at?: string | null
+          passed?: boolean
           score?: number | null
           status?: string
           updated_at?: string
