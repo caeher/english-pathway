@@ -395,7 +395,7 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
           transition={{ duration: 0.45, ease: motionEase }}
           className="rounded-3xl bg-(--accent) text-white px-6 py-12 sm:px-12 sm:py-16 shadow-xl relative overflow-hidden"
         >
-          <div className="max-w-2xl relative z-10">
+          <div className="max-w-6xl relative z-10">
             <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/75"><Play className="h-4 w-4" aria-hidden="true" /> Your next step</p>
             <h2 id="final-cta-title" className="mt-4 font-display text-3xl font-black sm:text-4xl">Make today&apos;s English practice count.</h2>
             <p className="mt-4 text-lg leading-relaxed text-white/80">Open a lesson, find your starting point, and let the pathway take care of what comes next.</p>
