@@ -32,6 +32,8 @@ export type AnalyticsEventName =
   | 'activity_retry'
   | 'learn_tool_call'
   | 'learn_tool_error'
+  | 'session_plan_select'
+  | 'session_plan_change'
   | 'hint_requested'
   | 'security_injection_signal'
 
