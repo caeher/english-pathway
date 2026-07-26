@@ -351,3 +351,22 @@ export async function updateSettingsAction(
   revalidatePath('/', 'layout')
   return { success: true }
 }
+
+export type LegalReconsentActionState = {
+  error?: string
+  success?: boolean
+}
+
+export async function acceptUpdatedLegalDocumentsAction(): Promise<LegalReconsentActionState> {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (!user) return { error: 'You must be signed in.' }
+
+  await recordUserConsents(user.id, 'explicit_reconsent')
+  revalidatePath('/settings')
+  revalidatePath('/', 'layout')
+  return { success: true }
+}

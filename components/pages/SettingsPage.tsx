@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type, Palette, Sun, Moon } from 'lucide-react'
 import { Button, InlineError, PageContainer, SuccessState, Surface } from '@/components/ui'
 import { Label } from '@/components/ui/label'
-import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
+import { signOutAction, updateSettingsAction, acceptUpdatedLegalDocumentsAction } from '@/lib/auth/actions'
+import type { MissingLegalConsent } from '@/lib/auth/required-consent'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 import type { Database as DatabaseTypes } from '@/lib/supabase/database.types'
 import { clearCookieConsent } from '@/lib/consent/client'
@@ -18,9 +19,16 @@ type Profile = DatabaseTypes['public']['Tables']['profiles']['Row']
 interface SettingsPageProps {
   profile: Profile
   email?: string | null
+  missingLegalConsents?: MissingLegalConsent[]
+  showReconsentPrompt?: boolean
 }
 
-export default function SettingsPage({ profile, email }: SettingsPageProps) {
+export default function SettingsPage({
+  profile,
+  email,
+  missingLegalConsents = [],
+  showReconsentPrompt = false,
+}: SettingsPageProps) {
   const dark = useThemeStore(selectDark)
   const toggleTheme = useThemeStore(selectToggleTheme)
 
@@ -43,6 +51,8 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
   const [pending, setPending] = useState(false)
   const [dataPending, setDataPending] = useState(false)
   const [dataMessage, setDataMessage] = useState<string | null>(null)
+  const [reconsentPending, setReconsentPending] = useState(false)
+  const [reconsentMessage, setReconsentMessage] = useState<string | null>(null)
 
   const initialValues = useMemo(() => ({
     fullName: profile.full_name ?? '',
@@ -104,6 +114,15 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
     }
   }
 
+  const acceptUpdatedLegalDocuments = async () => {
+    setReconsentPending(true)
+    setReconsentMessage(null)
+    const result = await acceptUpdatedLegalDocumentsAction()
+    setReconsentPending(false)
+    if (result.error) setReconsentMessage(result.error)
+    else setReconsentMessage('Updated terms accepted. You can continue using English Pathway.')
+  }
+
   return (
     <PageContainer className="space-y-8">
       <div>
@@ -114,6 +133,30 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
       {error && <InlineError message={error} onRetry={() => void handleSave()} />}
       {success && <SuccessState title="Settings saved" description="Your preferences will be used in your next learning session." />}
       {dirty && <p role="status" className="text-sm text-(--text-muted)">You have unsaved changes.</p>}
+
+      {showReconsentPrompt && missingLegalConsents.length > 0 && (
+        <Surface as="section" padding="lg" className="space-y-4 border-(--accent)/30 bg-(--accent-soft)/40" aria-labelledby="reconsent-heading">
+          <h2 id="reconsent-heading" className="font-display font-bold text-(--text-primary)">Updated legal terms</h2>
+          <p className="text-sm leading-relaxed text-(--text-secondary)">
+            We updated our legal documents. Review the current{' '}
+            {missingLegalConsents.map((document, index) => (
+              <span key={document.legalDocumentId}>
+                {index > 0 ? ' and ' : ''}
+                <Link href={`/legal/${document.slug}`} className="font-bold text-(--accent)">
+                  {document.title} (v{document.version})
+                </Link>
+              </span>
+            ))}{' '}
+            and accept them to continue using authenticated features.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Button type="button" onClick={() => void acceptUpdatedLegalDocuments()} loading={reconsentPending} loadingLabel="Saving...">
+              Accept updated terms
+            </Button>
+          </div>
+          {reconsentMessage && <p role="status" className="text-sm text-(--text-secondary)">{reconsentMessage}</p>}
+        </Surface>
+      )}
 
       <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="profile-heading">
         <div>
@@ -235,7 +278,7 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
 
       <Surface as="section" padding="lg" className="space-y-4" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><Database className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Privacy and data</h2>
-        <p className="text-sm leading-relaxed text-(--text-secondary)">English Pathway uses your profile preferences and learning activity to personalize sessions and show progress. Audio and full transcripts are not stored as tutor memory.</p>
+        <p className="text-sm leading-relaxed text-(--text-secondary)">English Pathway uses your profile preferences, learning activity, English Assistant chats, and bounded tutor memory to personalize sessions and show progress. Audio and full tutor transcripts are not stored as tutor memory.</p>
         <div className="flex flex-wrap gap-3"><Button type="button" variant="outline" onClick={() => void exportTutorData()} disabled={dataPending}><Download className="h-4 w-4" aria-hidden="true" /> Export tutor data</Button><Button type="button" variant="outline" onClick={() => void deleteTutorData()} disabled={dataPending}><Trash2 className="h-4 w-4" aria-hidden="true" /> Delete tutor memory</Button><Button type="button" variant="ghost" onClick={clearCookieConsent}>Change analytics choice</Button></div>
         {dataMessage && <p role="status" className="text-sm text-(--text-secondary)">{dataMessage}</p>}
         <div className="flex flex-wrap gap-4 text-sm font-bold text-(--accent)"><Link href="/legal/privacy">Privacy policy</Link><Link href="/legal/terms">Terms</Link><Link href="/legal/cookies">Cookies</Link></div>

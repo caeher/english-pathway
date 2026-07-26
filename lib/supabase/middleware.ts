@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import type { Database } from './database.types'
+import { getMissingLegalConsentsForClient } from '@/lib/auth/required-consent'
 import {
   buildReturnPath,
   getExplicitRedirectParam,
@@ -46,7 +47,19 @@ export async function updateSession(request: NextRequest) {
   const isCurriculumRoute = pathname.startsWith('/curriculum')
   const isReviewRoute = pathname.startsWith('/review')
   const isOnboardingRoute = pathname.startsWith('/onboarding')
+  const isLegalRoute = pathname.startsWith('/legal')
   const requiresAuth = isAccountRoute || isCurriculumRoute || isReviewRoute || isOnboardingRoute
+
+  if (user && requiresAuth && !isLegalRoute && !pathname.startsWith('/settings')) {
+    const missingConsents = await getMissingLegalConsentsForClient(supabase, user.id)
+    if (missingConsents.length > 0) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/settings'
+      url.search = ''
+      url.searchParams.set('reconsent', '1')
+      return temporaryRedirect(url)
+    }
+  }
 
   if (!user && requiresAuth) {
     const url = request.nextUrl.clone()
