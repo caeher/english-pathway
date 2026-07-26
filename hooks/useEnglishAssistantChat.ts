@@ -9,21 +9,32 @@ import {
   WELCOME_MESSAGE,
   toDisplayMessages,
 } from '@/lib/english-assistant/constants'
+import { createAssistantStreamParser } from '@/lib/english-assistant/stream-events'
 
 interface UseEnglishAssistantChatOptions {
   persistActiveId?: boolean
   autoInitialize?: boolean
+  mode?: 'index' | 'conversation'
+  conversationId?: string | null
 }
 
 export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions = {}) {
-  const { persistActiveId = false, autoInitialize = false } = options
+  const {
+    persistActiveId = false,
+    autoInitialize = false,
+    mode = 'conversation',
+    conversationId: initialConversationId = null,
+  } = options
 
   const [draft, setDraft] = useState('')
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE])
   const [conversations, setConversations] = useState<ConversationSummary[]>([])
   const [activeConversationId, setActiveConversationId] = useState<string | null>(null)
+  const [conversationTitle, setConversationTitle] = useState<string | null>(null)
+  const [conversationNotFound, setConversationNotFound] = useState(false)
   const [activityContextAttached, setActivityContextAttached] = useState(false)
   const [isSending, setIsSending] = useState(false)
+  const [isStreaming, setIsStreaming] = useState(false)
   const [isLoadingConversation, setIsLoadingConversation] = useState(false)
   const [isAttachingContext, setIsAttachingContext] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -42,7 +53,7 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
 
   useEffect(() => {
     endOfMessagesRef.current?.scrollIntoView({ block: 'end' })
-  }, [messages, isSending])
+  }, [messages, isSending, isStreaming])
 
   useEffect(() => {
     void fetch('/api/credits').then(async (response) => {
@@ -63,20 +74,30 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
   const loadConversation = useCallback(async (conversationId: string) => {
     setIsLoadingConversation(true)
     setError(null)
+    setConversationNotFound(false)
     try {
       const response = await fetch(`/api/english-assistant/conversations/${conversationId}`)
       const payload = await response.json().catch(() => null) as {
         id?: string
+        title?: string
         messages?: ChatMessage[]
         activityContext?: unknown
         error?: string
+        code?: string
       } | null
+
+      if (response.status === 404) {
+        setConversationNotFound(true)
+        setConversationTitle(null)
+        throw new Error(payload?.error ?? 'Conversation not found')
+      }
 
       if (!response.ok || !payload?.id) {
         throw new Error(payload?.error ?? 'Unable to load conversation.')
       }
 
       persistActiveConversationId(payload.id)
+      setConversationTitle(payload.title ?? 'Conversation')
       setMessages(toDisplayMessages(payload.messages ?? []))
       setActivityContextAttached(payload.activityContext != null)
     } catch (caughtError) {
@@ -97,35 +118,101 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
   const initializeConversations = useCallback(async () => {
     setIsLoadingConversation(true)
     setError(null)
+    setConversationNotFound(false)
     try {
       const list = await refreshConversations()
+
+      if (mode === 'index') {
+        return list
+      }
+
       const storedId = persistActiveId ? window.localStorage.getItem(ACTIVE_CONVERSATION_KEY) : null
-      const preferredId = storedId && list.some((conversation) => conversation.id === storedId)
-        ? storedId
-        : list[0]?.id
+      const preferredId = initialConversationId
+        ?? (storedId && list.some((conversation) => conversation.id === storedId)
+          ? storedId
+          : list[0]?.id)
 
       if (preferredId) {
         await loadConversation(preferredId)
       } else {
         persistActiveConversationId(null)
+        setConversationTitle(null)
         setMessages([WELCOME_MESSAGE])
         setActivityContextAttached(false)
       }
+
+      return list
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : 'Unable to load conversations.')
+      return []
     } finally {
       setIsLoadingConversation(false)
     }
-  }, [loadConversation, persistActiveConversationId, persistActiveId, refreshConversations])
+  }, [initialConversationId, loadConversation, mode, persistActiveConversationId, persistActiveId, refreshConversations])
 
   useEffect(() => {
     if (!autoInitialize) return
     void initializeConversations()
   }, [autoInitialize, initializeConversations])
 
+  useEffect(() => {
+    if (!initialConversationId || mode !== 'conversation') return
+    void refreshConversations()
+    void loadConversation(initialConversationId)
+  }, [initialConversationId, loadConversation, mode, refreshConversations])
+
+  const consumeAssistantStream = useCallback(async (response: Response) => {
+    if (!response.ok) {
+      const payload = await response.json().catch(() => null) as { error?: string } | null
+      throw new Error(payload?.error ?? 'Unable to get an answer.')
+    }
+
+    if (!response.body) {
+      throw new Error('Unable to get an answer.')
+    }
+
+    const parser = createAssistantStreamParser()
+    const reader = response.body.getReader()
+    const decoder = new TextDecoder()
+    let streamError: Error | null = null
+    let donePayload: { conversationId: string; credits: UsageCredits } | null = null
+
+    setIsStreaming(true)
+
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+
+      const events = parser.push(decoder.decode(value, { stream: true }))
+      for (const event of events) {
+        if (event.event === 'delta') {
+          setMessages((current) => {
+            const last = current.at(-1)
+            if (!last || last.role !== 'assistant') return current
+            return [...current.slice(0, -1), { role: 'assistant', content: event.data.text }]
+          })
+        } else if (event.event === 'done') {
+          donePayload = event.data
+        } else if (event.event === 'error') {
+          streamError = new Error(event.data.error)
+        }
+      }
+    }
+
+    setIsStreaming(false)
+
+    if (streamError) throw streamError
+    if (!donePayload) throw new Error('Unable to get an answer.')
+
+    return donePayload
+  }, [])
+
   const sendMessageWithContent = useCallback(async (question: string, conversationId?: string | null) => {
-    const nextMessages = [...messages, { role: 'user' as const, content: question }]
-    setMessages(nextMessages)
+    setMessages((current) => [
+      ...current,
+      { role: 'user', content: question },
+      { role: 'assistant', content: '' },
+    ])
     setError(null)
     setIsSending(true)
 
@@ -138,27 +225,27 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
           message: question,
         }),
       })
-      const payload = (await response.json().catch(() => null)) as {
-        answer?: string
-        conversationId?: string
-        error?: string
-        credits?: UsageCredits
-      } | null
-      const answer = payload?.answer
-      if (!response.ok || !answer) throw new Error(payload?.error ?? 'Unable to get an answer.')
 
-      if (payload.conversationId) persistActiveConversationId(payload.conversationId)
-      setMessages((current) => [...current, { role: 'assistant', content: answer }])
-      if (payload.credits) setCredits(payload.credits)
+      const donePayload = await consumeAssistantStream(response)
+
+      if (donePayload.conversationId) persistActiveConversationId(donePayload.conversationId)
+      setCredits(donePayload.credits)
       await refreshConversations()
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : 'Unable to get an answer.')
-      setMessages((current) => current.slice(0, -1))
+      setMessages((current) => {
+        const last = current.at(-1)
+        if (last?.role === 'assistant' && last.content === '') {
+          return current.slice(0, -2)
+        }
+        return current.slice(0, -1)
+      })
       throw caughtError
     } finally {
       setIsSending(false)
+      setIsStreaming(false)
     }
-  }, [activeConversationId, messages, persistActiveConversationId, refreshConversations])
+  }, [activeConversationId, consumeAssistantStream, persistActiveConversationId, refreshConversations])
 
   const sendMessage = useCallback(async (event?: FormEvent<HTMLFormElement>) => {
     event?.preventDefault()
@@ -188,6 +275,7 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
       }
 
       persistActiveConversationId(payload.id)
+      setConversationTitle(payload.title)
       setMessages([WELCOME_MESSAGE])
       setActivityContextAttached(false)
       await refreshConversations()
@@ -199,6 +287,30 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
       setIsLoadingConversation(false)
     }
   }, [persistActiveConversationId, refreshConversations])
+
+  const createAndSendConversation = useCallback(async (
+    title: string,
+    prompt: string,
+    existingConversationId?: string | null,
+  ): Promise<string> => {
+    let conversationId = existingConversationId ?? null
+    if (!conversationId) {
+      const conversation = await createConversation(title)
+      if (!conversation) throw new Error('Unable to create conversation.')
+      conversationId = conversation.id
+    }
+
+    try {
+      await sendMessageWithContent(prompt, conversationId)
+      return conversationId
+    } catch (caughtError) {
+      const error = new Error(
+        caughtError instanceof Error ? caughtError.message : 'Could not save conversation. Try again.',
+      ) as Error & { conversationId?: string }
+      error.conversationId = conversationId
+      throw error
+    }
+  }, [createConversation, sendMessageWithContent])
 
   const deleteConversation = useCallback(async (conversationId: string) => {
     setError(null)
@@ -216,13 +328,16 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
         if (remaining[0]) {
           await loadConversation(remaining[0].id)
         } else {
-          await createConversation()
+          persistActiveConversationId(null)
+          setConversationTitle(null)
+          setMessages([WELCOME_MESSAGE])
+          setActivityContextAttached(false)
         }
       }
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : 'Unable to delete conversation.')
     }
-  }, [activeConversationId, createConversation, loadConversation, refreshConversations])
+  }, [activeConversationId, loadConversation, persistActiveConversationId, refreshConversations])
 
   const attachActivityContext = useCallback(async (context: unknown) => {
     if (!activeConversationId || !context) return false
@@ -258,9 +373,12 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
     setMessages,
     conversations,
     activeConversationId,
+    conversationTitle,
+    conversationNotFound,
     activityContextAttached,
     setActivityContextAttached,
     isSending,
+    isStreaming,
     isLoadingConversation,
     isAttachingContext,
     error,
@@ -280,5 +398,6 @@ export function useEnglishAssistantChat(options: UseEnglishAssistantChatOptions 
     sendMessageWithContent,
     attachActivityContext,
     persistActiveConversationId,
+    createAndSendConversation,
   }
 }

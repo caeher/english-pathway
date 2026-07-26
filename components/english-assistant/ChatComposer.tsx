@@ -10,6 +10,7 @@ interface ChatComposerProps {
   onSubmit: (event?: FormEvent<HTMLFormElement>) => void
   disabled?: boolean
   sendDisabled?: boolean
+  isSending?: boolean
   error?: string | null
   inputRef?: RefObject<HTMLTextAreaElement | null>
   onInputFocus?: () => void
@@ -24,6 +25,7 @@ export function ChatComposer({
   onSubmit,
   disabled = false,
   sendDisabled = false,
+  isSending = false,
   error = null,
   inputRef,
   onInputFocus,
@@ -64,6 +66,8 @@ export function ChatComposer({
           size="icon"
           type="submit"
           disabled={sendDisabled || !draft.trim() || disabled}
+          loading={isSending}
+          loadingLabel="Sending…"
           aria-label="Send question"
           className="min-h-11 min-w-11"
         >

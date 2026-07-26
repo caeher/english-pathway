@@ -200,6 +200,27 @@ describe('english assistant conversations DAL', () => {
     expect(updateBuilder.eq).toHaveBeenCalledWith('user_id', userId)
   })
 
+  it('does not overwrite a user-chosen conversation title when appending messages', async () => {
+    const verifyBuilder = createQueryBuilder({
+      data: { id: conversationId, title: 'Grammar questions' },
+      error: null,
+    })
+    const insertBuilder = createQueryBuilder({ data: null, error: null })
+    const updateBuilder = createQueryBuilder({ data: null, error: null })
+
+    const supabase = createMockSupabase({
+      english_assistant_conversations: () => verifyBuilder,
+      english_assistant_messages: () => insertBuilder,
+    })
+
+    await appendEnglishAssistantMessages(supabase, userId, conversationId, [
+      { role: 'user', content: 'Explain present simple in one sentence.' },
+      { role: 'assistant', content: 'Present simple describes habits and facts.' },
+    ])
+
+    expect(updateBuilder.update).not.toHaveBeenCalled()
+  })
+
   it('throws when appending messages to a missing conversation', async () => {
     const verifyBuilder = createQueryBuilder({ data: null, error: null })
     const supabase = createMockSupabase({

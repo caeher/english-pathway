@@ -4,6 +4,10 @@ import { GET as listConversations, POST as createConversation } from '@/app/api/
 import { GET as getConversation, DELETE as deleteConversation } from '@/app/api/english-assistant/conversations/[id]/route'
 import { POST as sendAssistantMessage } from '@/app/api/english-assistant/route'
 import { getEnglishAssistantConversation } from '@/lib/dal/english-assistant-conversations'
+import { resolveEnglishAssistantMessagesForModel } from '@/features/english-assistant'
+import { streamEnglishAssistant } from '@/lib/english-assistant/openai'
+import { consumeAssistantCredit } from '@/lib/credits/usage'
+import { createAssistantStreamParser } from '@/lib/english-assistant/stream-events'
 
 vi.mock('@/lib/supabase/server', () => ({ createClient: vi.fn() }))
 vi.mock('@/lib/dal/english-assistant-conversations', () => ({
@@ -16,6 +20,33 @@ vi.mock('@/lib/dal/english-assistant-conversations', () => ({
   })),
   getEnglishAssistantConversation: vi.fn(),
   deleteEnglishAssistantConversation: vi.fn(async () => undefined),
+  appendEnglishAssistantMessages: vi.fn(async () => undefined),
+  getEnglishAssistantConversationMessagesForModel: vi.fn(async () => []),
+}))
+vi.mock('@/features/english-assistant', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/features/english-assistant')>()
+  return {
+    ...actual,
+    resolveEnglishAssistantMessagesForModel: vi.fn(),
+    persistEnglishAssistantTurn: vi.fn(async () => undefined),
+  }
+})
+vi.mock('@/lib/english-assistant/openai', () => ({
+  streamEnglishAssistant: vi.fn(),
+}))
+vi.mock('@/lib/credits/usage', () => ({
+  consumeAssistantCredit: vi.fn(),
+}))
+vi.mock('@/lib/dal/english-assistant', () => ({
+  createEnglishAssistantPromptLog: vi.fn(async () => 'log-1'),
+  completeEnglishAssistantPromptLog: vi.fn(async () => undefined),
+  failEnglishAssistantPromptLog: vi.fn(async () => undefined),
+}))
+vi.mock('@/lib/analytics/security-signal', () => ({
+  recordSecurityInjectionSignal: vi.fn(async () => undefined),
+}))
+vi.mock('@/lib/security/enforce-rate-limit', () => ({
+  enforceRateLimit: vi.fn(async () => null),
 }))
 
 const conversationId = '11111111-1111-4111-8111-111111111111'
@@ -109,5 +140,39 @@ describe('english assistant API routes', () => {
     expect(payload).toMatchObject({
       code: 'INVALID_INPUT',
     })
+  })
+
+  it('streams assistant replies as SSE delta and done events', async () => {
+    mockAuthenticatedClient()
+    vi.mocked(consumeAssistantCredit).mockResolvedValue({
+      allowed: true,
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
+    })
+    vi.mocked(resolveEnglishAssistantMessagesForModel).mockResolvedValue({
+      conversationId,
+      messages: [{ role: 'user', content: 'Explain present simple.' }],
+      activityContext: null,
+    })
+    vi.mocked(streamEnglishAssistant).mockImplementation(async (_messages, _context, onDelta) => {
+      onDelta('Present simple', 'Present simple')
+      return 'Present simple'
+    })
+
+    const response = await sendAssistantMessage(new Request('http://localhost/api/english-assistant', {
+      method: 'POST',
+      body: JSON.stringify({
+        conversationId,
+        message: 'Explain present simple.',
+      }),
+      headers: { 'content-type': 'application/json' },
+    }))
+
+    expect(response.status).toBe(200)
+    expect(response.headers.get('content-type')).toContain('text/event-stream')
+
+    const body = await response.text()
+    const events = createAssistantStreamParser().push(body)
+    expect(events.some((event) => event.event === 'delta' && event.data.text === 'Present simple')).toBe(true)
+    expect(events.some((event) => event.event === 'done' && event.data.conversationId === conversationId)).toBe(true)
   })
 })
