@@ -40,8 +40,8 @@ describe('authentication redirects', () => {
     expect(resolvePostAuthDestination('/learn', true)).toBe('/learn')
     expect(resolvePostAuthDestination('/chats', true)).toBe('/chats')
     expect(resolvePostAuthDestination('/chats/abc-123', true)).toBe('/chats/abc-123')
-    expect(resolvePostAuthDestination('https://example.com', true)).toBe('/settings')
-    expect(resolvePostAuthDestination(null, true)).toBe('/settings')
+    expect(resolvePostAuthDestination('https://example.com', true)).toBe('/dashboard')
+    expect(resolvePostAuthDestination(null, true)).toBe('/dashboard')
   })
 
   it('only appends safe redirect parameters to auth links', () => {
