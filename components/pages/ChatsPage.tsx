@@ -54,7 +54,7 @@ export default function ChatsPage() {
   }
 
   return (
-    <PageContainer className="flex flex-col gap-6">
+    <PageContainer size="narrow" className="flex flex-col gap-6">
       <div>
         <h1 className="flex items-center gap-2 font-display text-2xl font-black text-(--text-primary)">
           <MessageCircle className="h-6 w-6" aria-hidden="true" /> Chats

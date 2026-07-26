@@ -199,12 +199,14 @@ All user-facing strings are **hardcoded English** in components. There is no i18
 
 ### Page width convention
 
-Use [`PageContainer`](components/ui/page-container.tsx) (`mx-auto w-full max-w-6xl`) as the **single outer content wrapper** on every user-facing route except `/learn`, which keeps a fluid viewport layout.
+Use [`PageContainer`](components/ui/page-container.tsx) (`mx-auto w-full max-w-6xl`) as the **single outer content wrapper** on every user-facing route except documented intentional exceptions.
 
 - Apply `PageContainer` to successful pages, route `loading.tsx` boundaries (via `LoadingState layout="page"`), and route `error.tsx` boundaries (via `FriendlyError`).
 - Smaller widths (`max-w-3xl`, `max-w-md`, etc.) belong on **inner** elements only: forms, error cards, chat threads, dialogs, games, and activities.
 - Account routes inside `DashboardLayout` should use `PageContainer` with default `padding="none"`; public/legal/onboarding routes can use `padding="page"`.
 - Auth split-screen forms and `/learn` remain exceptions to the `max-w-6xl` page shell.
+- `/chats` (index) uses `PageContainer size="narrow"` (`max-w-3xl`) as an intentional exception for a focused prompting layout.
+- `/chats/[id]` keeps the standard `max-w-6xl` outer shell; the thread, header, and composer use inner `max-w-3xl` wrappers.
 
 ### Panel shell gutters
 

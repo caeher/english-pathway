@@ -11,6 +11,12 @@ describe('PageContainer convention', () => {
     expect(source).toContain('export function PageContainer')
   })
 
+  it('supports a narrow page width variant for focused layouts', () => {
+    expect(source).toContain("narrow: 'max-w-3xl'")
+    expect(source).toContain("default: 'max-w-6xl'")
+    expect(source).toContain('/chats')
+  })
+
   it('supports optional public page padding', () => {
     expect(source).toContain("page: 'px-6'")
     expect(source).toContain('px-6')
