@@ -1,6 +1,7 @@
 import { getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
 
 const LOCAL_FALLBACK = 'http://localhost:3000'
+const UNSPECIFIED_HOSTS = new Set(['0.0.0.0', '[::]', '::'])
 
 export class InvalidAppUrlError extends Error {
   constructor(message = 'invalid_app_url') {
@@ -18,6 +19,9 @@ export function parseAppUrl(
   try {
     const url = new URL(value.trim())
     if (url.protocol !== 'http:' && url.protocol !== 'https:') return null
+    // 0.0.0.0/:: are bind addresses for servers, not browser-reachable hosts.
+    // Accepting either here makes OAuth redirect users to the container itself.
+    if (UNSPECIFIED_HOSTS.has(url.hostname)) return null
 
     if (options.requireProduction) {
       if (url.protocol !== 'https:') return null

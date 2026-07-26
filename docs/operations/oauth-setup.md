@@ -114,7 +114,7 @@ For each Supabase project:
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | Always; must match the Supabase project for this deployment |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Always |
-| `NEXT_PUBLIC_APP_URL` | Always; exact public URL including `https://` in deployed envs (required in production; no localhost fallback) |
+| `NEXT_PUBLIC_APP_URL` | Always; exact public URL including `https://` in deployed envs (required in production; no localhost, `0.0.0.0`, or container bind address) |
 | `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `true` only after Google is configured in Supabase for this env |
 | `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `true` only after GitHub is configured in Supabase for this env |
 
@@ -177,6 +177,7 @@ Attach screenshots or short notes to the release PR. Use [oauth-smoke-evidence.m
 | Button visible but login always fails | Flag `true` before Supabase provider ready | Set flag `true` only after end-to-end test |
 | Local Google fails with nonce error | Google local dev quirk | Keep `skip_nonce_check = true` in `config.toml` for local Google |
 | Env vars ignored locally | Name starts with `SUPABASE_` | Use `GOOGLE_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, etc. |
+| Redirect lands on `0.0.0.0:3000` | Deployment URL or Supabase Site URL uses the container bind address | Set both to the public HTTPS domain, rebuild the app, and add `{APP_URL}/**` to Supabase Redirect URLs |
 
 ## Related code
 

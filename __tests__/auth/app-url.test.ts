@@ -54,6 +54,13 @@ describe('app url', () => {
     expect(() => getAppUrl()).toThrow(InvalidAppUrlError)
   })
 
+  it('throws in production for an unspecified bind address', () => {
+    setTestEnv('NODE_ENV', 'production')
+    setTestEnv('NEXT_PUBLIC_APP_URL', 'https://0.0.0.0:3000')
+
+    expect(() => getAppUrl()).toThrow(InvalidAppUrlError)
+  })
+
   it('accepts a valid https production URL', () => {
     setTestEnv('NODE_ENV', 'production')
     setTestEnv('NEXT_PUBLIC_APP_URL', 'https://app.example')
@@ -73,5 +80,6 @@ describe('app url', () => {
   it('rejects invalid URLs in parseAppUrl', () => {
     expect(parseAppUrl('not-a-url')).toBeNull()
     expect(parseAppUrl('ftp://app.example')).toBeNull()
+    expect(parseAppUrl('https://0.0.0.0:3000')).toBeNull()
   })
 })
