@@ -1,14 +1,31 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { cn } from '@/lib/helpers'
 import { pageTransition } from '@/lib/motion/page-transition'
 import { motionProps, useReducedMotion } from '@/lib/motion/useReducedMotion'
 
-export default function PageTransition({ children }: { children: React.ReactNode }) {
+export type PageTransitionLayout = 'content' | 'fill' | 'viewport'
+
+const layoutClasses: Record<PageTransitionLayout, string> = {
+  content: 'flex min-h-0 flex-col',
+  fill: 'flex min-h-0 flex-1 flex-col',
+  viewport: 'flex h-full min-h-0 flex-col',
+}
+
+interface PageTransitionProps {
+  children: React.ReactNode
+  layout?: PageTransitionLayout
+}
+
+export default function PageTransition({ children, layout = 'content' }: PageTransitionProps) {
   const reducedMotion = useReducedMotion()
 
   return (
-    <motion.div className="flex min-h-0 flex-col" {...(reducedMotion ? motionProps(true) : pageTransition)}>
+    <motion.div
+      className={cn(layoutClasses[layout])}
+      {...(reducedMotion ? motionProps(true) : pageTransition)}
+    >
       {children}
     </motion.div>
   )

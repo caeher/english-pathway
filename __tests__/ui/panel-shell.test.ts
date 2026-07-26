@@ -22,8 +22,9 @@ describe('panel shell constants', () => {
   it('defines a single vertical scroller with reinforced bottom gutter', () => {
     expect(PANEL_MAIN_CLASS).toContain('min-h-0')
     expect(PANEL_MAIN_CLASS).toContain('overflow-y-auto')
-    expect(PANEL_MAIN_CLASS).toContain('pb-[var(--app-panel-pb)]')
-    expect(PANEL_MAIN_CLASS).toContain('lg:pb-[var(--app-panel-pb-lg)]')
+    expect(PANEL_MAIN_CLASS).toContain('overscroll-y-contain')
+    expect(PANEL_MAIN_CLASS).toContain('pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))]')
+    expect(PANEL_MAIN_CLASS).toContain('lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]')
   })
 
   it('defines full-bleed offsets that cancel shell gutters', () => {
@@ -46,6 +47,14 @@ describe('panel shell integration', () => {
     resolve(process.cwd(), 'components/layouts/dashboard-layout.tsx'),
     'utf8',
   )
+  const accountTemplate = readFileSync(
+    resolve(process.cwd(), 'app/(account)/template.tsx'),
+    'utf8',
+  )
+  const learnTemplate = readFileSync(
+    resolve(process.cwd(), 'app/(learn)/template.tsx'),
+    'utf8',
+  )
   const reviewLayout = readFileSync(
     resolve(process.cwd(), 'app/(account)/review/layout.tsx'),
     'utf8',
@@ -65,6 +74,8 @@ describe('panel shell integration', () => {
     expect(dashboardLayout).toContain('PANEL_MAIN_CLASS')
     expect(dashboardLayout).toContain('id="main-content"')
     expect(dashboardLayout).toContain('Skip to main content')
+    expect(dashboardLayout).toContain('h-dvh')
+    expect(dashboardLayout).not.toContain('h-screen')
     expect(dashboardLayout).not.toContain('p-4 lg:p-6')
   })
 
@@ -75,9 +86,17 @@ describe('panel shell integration', () => {
     expect(chatLayout).not.toContain('-mb-4')
   })
 
-  it('avoids forcing full viewport height in account page transitions', () => {
-    expect(pageTransition).toContain('flex min-h-0 flex-col')
-    expect(pageTransition).not.toContain('h-full')
-    expect(pageTransition).not.toContain('flex-1')
+  it('exposes explicit page transition layout modes', () => {
+    expect(pageTransition).toContain("PageTransitionLayout = 'content' | 'fill' | 'viewport'")
+    expect(pageTransition).toContain("content: 'flex min-h-0 flex-col'")
+    expect(pageTransition).toContain("fill: 'flex min-h-0 flex-1 flex-col'")
+    expect(pageTransition).toContain("viewport: 'flex h-full min-h-0 flex-col'")
+    expect(pageTransition).toContain("layout = 'content'")
+    expect(pageTransition).toContain('layoutClasses[layout]')
+  })
+
+  it('assigns fill layout to account routes and viewport layout to learn routes', () => {
+    expect(accountTemplate).toContain('layout="fill"')
+    expect(learnTemplate).toContain('layout="viewport"')
   })
 })

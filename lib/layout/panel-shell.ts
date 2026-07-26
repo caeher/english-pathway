@@ -20,9 +20,9 @@ export const PANEL_CONTENT_COLUMN_CLASS =
   'flex min-h-0 flex-1 flex-col min-w-0 overflow-hidden'
 
 export const PANEL_MAIN_CLASS =
-  'flex min-h-0 flex-1 flex-col overflow-y-auto outline-none ' +
-  'px-[var(--app-panel-px)] pt-[var(--app-panel-pt)] pb-[var(--app-panel-pb)] ' +
-  'lg:px-[var(--app-panel-px-lg)] lg:pt-[var(--app-panel-pt-lg)] lg:pb-[var(--app-panel-pb-lg)]'
+  'flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-y-contain outline-none ' +
+  'px-[var(--app-panel-px)] pt-[var(--app-panel-pt)] pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))] ' +
+  'lg:px-[var(--app-panel-px-lg)] lg:pt-[var(--app-panel-pt-lg)] lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]'
 
 /** Cancels shell gutters for routes that need edge-to-edge height inside the panel. */
 export const PANEL_FULL_BLEED_CLASS =
