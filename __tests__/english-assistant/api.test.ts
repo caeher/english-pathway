@@ -146,7 +146,7 @@ describe('english assistant API routes', () => {
     mockAuthenticatedClient()
     vi.mocked(consumeAssistantCredit).mockResolvedValue({
       allowed: true,
-      credits: { assistantMessagesRemaining: 49 },
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
     })
     vi.mocked(resolveEnglishAssistantMessagesForModel).mockResolvedValue({
       conversationId,
