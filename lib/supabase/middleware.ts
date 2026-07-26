@@ -42,7 +42,7 @@ export async function updateSession(request: NextRequest) {
     pathname.startsWith('/forgot-password') ||
     pathname.startsWith('/reset-password')
 
-  const isAccountRoute = pathname.startsWith('/settings') || pathname.startsWith('/dashboard')
+  const isAccountRoute = pathname.startsWith('/settings') || pathname.startsWith('/dashboard') || pathname.startsWith('/chats')
   const isReviewRoute = pathname.startsWith('/review')
   const isOnboardingRoute = pathname.startsWith('/onboarding')
   const requiresAuth = isAccountRoute || isReviewRoute || isOnboardingRoute
