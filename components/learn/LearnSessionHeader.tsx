@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { CheckCircle2, Loader2, MessageSquare, Play, Radio, Sparkles } from 'lucide-react'
+import { ArrowLeft, CheckCircle2, Loader2, MessageSquare, Play, Radio, Sparkles } from 'lucide-react'
 import type { SessionUiSnapshot, SessionVisualState } from '@/lib/learn/session-ui-state'
 import { cn } from '@/lib/helpers'
 
@@ -27,6 +27,7 @@ export interface LearnSessionHeaderProps {
   continuationLabel?: string | null
   tutorActive?: boolean
   planSheet?: React.ReactNode
+  exitHref?: string
 }
 
 export default function LearnSessionHeader({
@@ -34,17 +35,25 @@ export default function LearnSessionHeader({
   continuationHref,
   continuationLabel,
   planSheet,
+  exitHref = '/',
 }: LearnSessionHeaderProps) {
   const showContinuationCta = snapshot.state === 'pre_session' && continuationHref && continuationLabel
 
   return (
     <header
-      className="sticky top-16 z-30 border-b border-(--border-primary) bg-(--bg-primary)/95 backdrop-blur supports-[backdrop-filter]:bg-(--bg-primary)/85"
+      className="sticky top-0 z-30 shrink-0 border-b border-(--border-primary) bg-(--bg-primary)/95 backdrop-blur supports-[backdrop-filter]:bg-(--bg-primary)/85"
       style={{ ['--learn-session-header-height' as string]: '3.75rem' }}
       aria-label="Current learning session"
     >
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
+      <div className="flex w-full flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
         <div className="flex min-w-0 items-start gap-3">
+          <Link
+            href={exitHref}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-2 py-1.5 text-xs font-bold text-(--text-secondary) no-underline transition-colors hover:bg-(--bg-tertiary) hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2"
+          >
+            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            Back to home
+          </Link>
           <span
             className={cn(
               'inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide',

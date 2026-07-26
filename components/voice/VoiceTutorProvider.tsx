@@ -175,7 +175,11 @@ interface VoiceTutorProviderProps {
 
 export default function VoiceTutorProvider({ children, initialActivityId }: VoiceTutorProviderProps) {
   if (!process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID) {
-    return <OpenAiRealtimeTutorProvider initialActivityId={initialActivityId} />
+    return (
+      <div className="h-full">
+        <OpenAiRealtimeTutorProvider initialActivityId={initialActivityId} />
+      </div>
+    )
   }
 
   return (
@@ -224,9 +228,11 @@ function ElevenLabsVoiceTutorProvider({ children, initialActivityId }: VoiceTuto
   }, [initialActivityId])
 
   return (
+    <div className="h-full">
     <ConversationProvider textOnly={mode === 'text'}>
       <TutorClientTools />
       {children ?? <TutorControls mode={mode} voiceAvailable={voiceAvailable} microphoneState={microphoneState} microphoneStream={microphoneStream} onModeChange={handleModeChange} onCheckMicrophone={checkMicrophone} onSessionStarted={handleSessionStarted} onSessionEnded={handleSessionEnded} />}
     </ConversationProvider>
+    </div>
   )
 }

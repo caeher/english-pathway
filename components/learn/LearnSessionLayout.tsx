@@ -100,7 +100,7 @@ export default function LearnSessionLayout({
   }, [onPlanUpdated])
 
   return (
-    <div className="learn-session-shell mx-auto w-full max-w-6xl">
+    <div className="learn-session-shell flex h-full min-h-0 w-full flex-col">
       <LearnSessionHeader
         snapshot={snapshot}
         continuationHref={continuation?.href}
@@ -109,9 +109,11 @@ export default function LearnSessionLayout({
         planSheet={tutorActive ? <SessionPlanSheet onPlanUpdated={handlePlanUpdated} /> : null}
       />
       {showEngagement && (
-        <EngagementSummary defaultExpanded={shouldExpandEngagementMetrics(snapshot.state)} />
+        <div className="shrink-0">
+          <EngagementSummary defaultExpanded={shouldExpandEngagementMetrics(snapshot.state)} />
+        </div>
       )}
-      <div className="flex min-h-[calc(100dvh-4rem-3.75rem)] flex-col divide-y divide-(--border-primary) lg:grid lg:min-h-[calc(100dvh-4rem-3.75rem)] lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+      <div className="flex min-h-0 flex-1 flex-col divide-y divide-(--border-primary) lg:grid lg:grid-cols-2 lg:divide-x lg:divide-y-0">
         <section className="min-h-[min(360px,calc(45dvh-env(safe-area-inset-bottom)))] max-h-[calc(45dvh-env(safe-area-inset-bottom))] overflow-y-auto bg-(--bg-secondary)/30 pb-[env(safe-area-inset-bottom)] lg:min-h-0 lg:max-h-none lg:pb-0">
           {tutorSlot}
         </section>
