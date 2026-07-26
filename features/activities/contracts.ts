@@ -1,5 +1,9 @@
 import { z } from 'zod'
 import {
+  activityAdvancePolicySchema,
+  DEFAULT_PASS_THRESHOLD,
+} from './advance-policy'
+import {
   audioPracticeModeSchema,
   contrastPairSchema,
   curatedAudioSchema,
@@ -231,7 +235,11 @@ const activityBase = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
   description: z.string(),
+  required: z.boolean().default(true).optional(),
+  policy: activityAdvancePolicySchema.optional(),
 })
+
+export { DEFAULT_PASS_THRESHOLD }
 
 export const chapterActivitySchema = z.discriminatedUnion('type', [
   activityBase.extend({ type: z.literal('quiz'), props: activityPropsSchemas.quiz }),

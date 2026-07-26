@@ -151,11 +151,17 @@ export type ActivityType =
   | 'minimal-pairs'
 
 // ── Chapter / Module ──
+export type ActivityAdvancePolicy =
+  | { mode: 'score'; passThreshold: number }
+  | { mode: 'completion' }
+
 export interface ChapterActivity {
   id: string
   type: ActivityType
   title: string
   description: string
+  required: boolean
+  policy: ActivityAdvancePolicy
   props: Record<string, unknown>
 }
 

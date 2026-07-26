@@ -1,4 +1,9 @@
 import { chapterActivitySchema } from './contracts'
+import {
+  parseChapterActivitiesFile,
+  resolveActivityAdvanceFields,
+  resolveActivityAdvancePolicy,
+} from './advance-policy'
 import { getDecisionNodeIds, isDecisionNode } from './branching-dialogue'
 import {
   findDuplicateContentAcrossChapter,
@@ -329,6 +334,122 @@ function validateEditorialMetadata(
   return issues
 }
 
+function validateAdvancePolicySemantics(
+  moduleId: string,
+  chapterId: string,
+  activityId: string,
+  activity: { required?: boolean; policy?: { mode?: string; passThreshold?: number } },
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+
+  if (activity.required === undefined) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'required',
+      message: 'required must be declared explicitly (true or false)',
+      severity: 'error',
+    })
+  }
+
+  if (!activity.policy) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'policy',
+      message: 'policy must be declared explicitly with mode (and passThreshold when mode is score)',
+      severity: 'error',
+    })
+    return issues
+  }
+
+  if (activity.policy.mode === 'completion' && activity.policy.passThreshold !== undefined) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'policy.passThreshold',
+      message: 'passThreshold is not allowed when policy.mode is completion',
+      severity: 'error',
+    })
+  }
+
+  if (activity.policy.mode === 'score' && activity.policy.passThreshold === undefined) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'policy.passThreshold',
+      message: 'passThreshold must be declared explicitly when policy.mode is score',
+      severity: 'error',
+    })
+  }
+
+  try {
+    resolveActivityAdvancePolicy({
+      mode: activity.policy.mode === 'completion' ? 'completion' : activity.policy.mode === 'score' ? 'score' : undefined,
+      passThreshold: activity.policy.passThreshold,
+    })
+  } catch {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId,
+      field: 'policy',
+      message: 'policy is invalid',
+      severity: 'error',
+    })
+  }
+
+  return issues
+}
+
+function validateChapterAdvancePolicy(
+  moduleId: string,
+  chapterId: string,
+  activities: Array<{ id: string; required?: boolean; policy?: { mode?: string; passThreshold?: number } }>,
+): ActivityValidationIssue[] {
+  const issues: ActivityValidationIssue[] = []
+  const ids = new Set<string>()
+
+  for (const activity of activities) {
+    if (ids.has(activity.id)) {
+      issues.push({
+        moduleId,
+        chapterId,
+        activityId: activity.id,
+        field: 'id',
+        message: `duplicate activity id "${activity.id}"`,
+        severity: 'error',
+      })
+    }
+    ids.add(activity.id)
+  }
+
+  const resolved = activities.map((activity) => resolveActivityAdvanceFields({
+    required: activity.required,
+    policy: activity.policy ? {
+      mode: activity.policy.mode === 'completion' ? 'completion' : activity.policy.mode === 'score' ? 'score' : undefined,
+      passThreshold: activity.policy.passThreshold,
+    } : undefined,
+  }))
+  const requiredCount = resolved.filter((activity) => activity.required).length
+  if (activities.length > 0 && requiredCount === 0) {
+    issues.push({
+      moduleId,
+      chapterId,
+      activityId: 'chapter',
+      field: 'activities',
+      message: 'chapter must declare at least one required activity',
+      severity: 'error',
+    })
+  }
+
+  return issues
+}
+
 function validateChapterEditorialRules(
   moduleId: string,
   chapterId: string,
@@ -419,18 +540,34 @@ export function validateActivityDocument(moduleId: string, chapterId: string, ac
     semanticIssues = validateMinimalPairsSemantics(moduleId, chapterId, activityId, parsed.data.props)
   }
 
-  return [...editorialIssues, ...semanticIssues]
+  const policyIssues = validateAdvancePolicySemantics(moduleId, chapterId, activityId, parsed.data)
+
+  return [...editorialIssues, ...semanticIssues, ...policyIssues]
 }
 
-export function validateActivityList(moduleId: string, chapterId: string, activities: unknown[]): ActivityValidationIssue[] {
+export function validateActivityList(moduleId: string, chapterId: string, raw: unknown): ActivityValidationIssue[] {
+  let activities: unknown[]
+  try {
+    activities = parseChapterActivitiesFile(raw).activities
+  } catch (error) {
+    return [{
+      moduleId,
+      chapterId,
+      activityId: 'chapter',
+      field: 'activities',
+      message: error instanceof Error ? error.message : 'invalid activities file',
+      severity: 'error',
+    }]
+  }
+
   const perActivity = activities.flatMap((activity, index) => validateActivityDocument(moduleId, chapterId, activity, index))
-  const chapterLevel = validateChapterEditorialRules(
-    moduleId,
-    chapterId,
-    activities.filter((activity): activity is { id: string; type: string; title: string; description: string; props: unknown } => (
-      Boolean(activity && typeof activity === 'object')
-    )),
-  )
+  const chapterActivities = activities.filter((activity): activity is { id: string; type: string; title: string; description: string; props: unknown; required?: boolean; policy?: { mode?: string; passThreshold?: number } } => (
+    Boolean(activity && typeof activity === 'object')
+  ))
+  const chapterLevel = [
+    ...validateChapterEditorialRules(moduleId, chapterId, chapterActivities),
+    ...validateChapterAdvancePolicy(moduleId, chapterId, chapterActivities),
+  ]
   return [...perActivity, ...chapterLevel]
 }
 
