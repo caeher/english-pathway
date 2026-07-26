@@ -2,10 +2,11 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type, Palette, Sun, Moon } from 'lucide-react'
+import { Database, Download, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type, Palette, Sun, Moon } from 'lucide-react'
 import { Button, InlineError, PageContainer, SuccessState, Surface } from '@/components/ui'
 import { Label } from '@/components/ui/label'
-import { signOutAction, updateSettingsAction, acceptUpdatedLegalDocumentsAction } from '@/lib/auth/actions'
+import { SignOutButton } from '@/components/auth/sign-out-button'
+import { updateSettingsAction, acceptUpdatedLegalDocumentsAction } from '@/lib/auth/actions'
 import type { MissingLegalConsent } from '@/lib/auth/required-consent'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 import type { Database as DatabaseTypes } from '@/lib/supabase/database.types'
@@ -272,7 +273,7 @@ export default function SettingsPage({
         <p className="text-sm text-(--text-secondary)">Use the provider-managed recovery flow to change your password.</p>
         <div className="flex flex-wrap gap-3">
           <Button asChild variant="outline"><Link href="/forgot-password">Reset password</Link></Button>
-          <form action={signOutAction}><Button type="submit" variant="outline"><LogOut className="h-4 w-4" aria-hidden="true" /> Sign out</Button></form>
+          <SignOutButton />
         </div>
       </Surface>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, GraduationCap, LayoutDashboard, LogOut, RotateCcw, Settings, User } from 'lucide-react'
+import { BookOpen, GraduationCap, LayoutDashboard, RotateCcw, Settings, User } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   DropdownMenu,
@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { SrsBadge } from '@/components/layouts/_parts/srs-badge'
 import { cn } from '@/lib/helpers'
-import { signOutAction } from '@/lib/auth/actions'
+import { SignOutButton } from '@/components/auth/sign-out-button'
 
 interface NavUserProps {
   email?: string | null
@@ -121,17 +121,7 @@ export function NavUser({ email, fullName, avatarUrl, collapsed, compact = false
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <form action={signOutAction}>
-            <button
-              type="submit"
-              className="flex w-full cursor-pointer items-center text-red-500 focus:text-red-500"
-            >
-              <LogOut className="mr-2 h-4 w-4 shrink-0" />
-              <span>Sign out</span>
-            </button>
-          </form>
-        </DropdownMenuItem>
+        <SignOutButton variant="menu-item" />
       </DropdownMenuContent>
     </DropdownMenu>
   )
