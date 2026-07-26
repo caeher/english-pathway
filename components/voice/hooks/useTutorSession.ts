@@ -14,7 +14,7 @@ interface UseTutorSessionOptions {
 }
 
 export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onSessionEnded }: UseTutorSessionOptions) {
-  const { startSession, endSession, status, isMuted, setMuted, sendUserMessage } = useConversation()
+  const { startSession, endSession, status, isMuted, setMuted, sendUserMessage, isSpeaking } = useConversation()
   const [error, setError] = useState<string | null>(null)
   const sessionStartedAt = useRef<number | null>(null)
   const active = status === 'connected'
@@ -74,6 +74,7 @@ export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onS
     clearError: () => setError(null),
     isMuted,
     setMuted,
+    isSpeaking,
     sendUserMessage,
     start,
     end,

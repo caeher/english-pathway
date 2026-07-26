@@ -26,6 +26,8 @@ describe('buildTutorInstructions', () => {
 
     expect(instructions).toContain('Learner name: Ana.')
     expect(instructions).toContain('Learner native language: Spanish.')
+    expect(instructions).toContain('pronunciation, say the English target naturally')
+    expect(instructions).toContain('explain sounds, mouth position, stress, and corrections in the learner\'s native language')
     expect(instructions).toContain('Recommended next chapter: m1-ch1.')
     expect(instructions).toContain('Recommended next activity: m1-ch1-flashcards.')
   })

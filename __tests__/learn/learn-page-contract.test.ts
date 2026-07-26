@@ -38,4 +38,14 @@ describe('tutor providers', () => {
     expect(openAiProvider).toContain('setVoiceSupported(Boolean(navigator.mediaDevices?.getUserMedia))')
     expect(openAiProvider).not.toContain("const voiceSupported = typeof navigator !== 'undefined'")
   })
+
+  it('starts the OpenAI tutor proactively and waits for its activity instruction before pausing', () => {
+    const openAiProvider = readFileSync(resolve(root, 'components/voice/OpenAiRealtimeTutorProvider.tsx'), 'utf8')
+    const elevenLabsProvider = readFileSync(resolve(root, 'components/voice/VoiceTutorProvider.tsx'), 'utf8')
+
+    expect(openAiProvider).toContain('Start the lesson now.')
+    expect(openAiProvider).toContain('setActivityPauseReady(true)')
+    expect(openAiProvider).not.toContain('window.setTimeout(() => { void end() }, 750)')
+    expect(elevenLabsProvider).toContain('activityPauseSawSpeechRef')
+  })
 })

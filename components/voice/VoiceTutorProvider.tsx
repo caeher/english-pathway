@@ -54,6 +54,7 @@ function TutorControls({
     clearError,
     isMuted,
     setMuted,
+    isSpeaking,
     sendUserMessage,
     start,
     end,
@@ -61,25 +62,62 @@ function TutorControls({
   const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
   const pausedForActivityRef = useRef(false)
+  const activityPauseSawSpeechRef = useRef(false)
+  const activityPauseTimerRef = useRef<number | null>(null)
+
+  const clearActivityPauseTimer = useCallback(() => {
+    if (activityPauseTimerRef.current !== null) {
+      window.clearTimeout(activityPauseTimerRef.current)
+      activityPauseTimerRef.current = null
+    }
+  }, [])
 
   useEffect(() => {
     if (mode !== 'voice') return
     const pauseForActivity = () => {
       if (!active || pausedForActivityRef.current) return
       pausedForActivityRef.current = true
-      window.setTimeout(() => end(), 750)
+      activityPauseSawSpeechRef.current = isSpeaking
+      if (!isSpeaking) {
+        clearActivityPauseTimer()
+        activityPauseTimerRef.current = window.setTimeout(() => {
+          activityPauseTimerRef.current = null
+          void end()
+        }, 15_000)
+      }
     }
     window.addEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
     return () => window.removeEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
-  }, [active, end, mode])
+  }, [active, clearActivityPauseTimer, end, isSpeaking, mode])
+
+  useEffect(() => {
+    if (mode !== 'voice' || !active || !pausedForActivityRef.current) return
+    if (isSpeaking) {
+      activityPauseSawSpeechRef.current = true
+      clearActivityPauseTimer()
+      return
+    }
+
+    const delay = activityPauseSawSpeechRef.current ? 1_000 : 15_000
+    activityPauseTimerRef.current = window.setTimeout(() => {
+      activityPauseTimerRef.current = null
+      void end()
+    }, delay)
+    return clearActivityPauseTimer
+  }, [active, clearActivityPauseTimer, end, isSpeaking, mode])
+
+  useEffect(() => clearActivityPauseTimer, [clearActivityPauseTimer])
 
   const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
     onActivityComplete(result)
     if (mode === 'voice' && pausedForActivityRef.current) {
+      const shouldReconnect = !active
+      clearActivityPauseTimer()
       pausedForActivityRef.current = false
-      window.setTimeout(() => { void start() }, 0)
+      activityPauseSawSpeechRef.current = false
+      if (shouldReconnect) window.setTimeout(() => { void start() }, 0)
     }
-  }, [mode, onActivityComplete, start])
+  }, [active, clearActivityPauseTimer, mode, onActivityComplete, start])
 
   useEffect(() => {
     if (!active) {

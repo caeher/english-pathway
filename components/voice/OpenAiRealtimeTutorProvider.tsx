@@ -50,7 +50,9 @@ export default function OpenAiRealtimeTutorProvider() {
   const endTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
   const processedCallIdsRef = useRef<Set<string>>(new Set())
-  const pausedForActivityRef = useRef(false)
+  const pauseAfterActivityInstructionRef = useRef(false)
+  const resumeAfterActivityRef = useRef(false)
+  const [activityPauseReady, setActivityPauseReady] = useState(false)
 
   useEffect(() => {
     sessionStorage.removeItem('ep-session-plan')
@@ -171,10 +173,15 @@ export default function OpenAiRealtimeTutorProvider() {
         }
 
         if (payload.type === 'response.done' && Array.isArray(payload.response?.output)) {
+          const hasFunctionCall = payload.response.output.some((item) => item.type === 'function_call')
           for (const item of payload.response.output) {
             if (item.type === 'function_call' && item.name && item.call_id) {
               void handleFunctionCall(item.name, item.call_id, item.arguments)
             }
+          }
+          if (pauseAfterActivityInstructionRef.current && !hasFunctionCall) {
+            pauseAfterActivityInstructionRef.current = false
+            setActivityPauseReady(true)
           }
         }
       }
@@ -204,6 +211,11 @@ export default function OpenAiRealtimeTutorProvider() {
       }, maxSeconds * 1_000)
       channel.onopen = () => {
         flushPendingMessages()
+        if (resumeAfterActivityRef.current) {
+          resumeAfterActivityRef.current = false
+        } else {
+          sendUserMessage('Start the lesson now. Greet the learner and lead with the next appropriate English lesson; do not wait for the learner to speak first.')
+        }
       }
     } catch (caughtError) {
       if (creditSessionIdRef.current) await end()
@@ -217,25 +229,33 @@ export default function OpenAiRealtimeTutorProvider() {
     } finally {
       setConnecting(false)
     }
-  }, [end, flushPendingMessages, handleFunctionCall, mode])
+  }, [end, flushPendingMessages, handleFunctionCall, mode, sendUserMessage])
 
   useEffect(() => {
     const pauseForActivity = () => {
-      if (!active || pausedForActivityRef.current) return
-      pausedForActivityRef.current = true
-      window.setTimeout(() => { void end() }, 750)
+      if (!active || pauseAfterActivityInstructionRef.current) return
+      pauseAfterActivityInstructionRef.current = true
+      resumeAfterActivityRef.current = true
     }
     window.addEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
     return () => window.removeEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
-  }, [active, end])
+  }, [active])
+
+  useEffect(() => {
+    if (!activityPauseReady || !active) return
+    const timer = window.setTimeout(() => {
+      setActivityPauseReady(false)
+      void end()
+    }, 1_000)
+    return () => window.clearTimeout(timer)
+  }, [active, activityPauseReady, end])
 
   const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
     onActivityComplete(result)
-    if (pausedForActivityRef.current) {
-      pausedForActivityRef.current = false
+    if (resumeAfterActivityRef.current && !active) {
       window.setTimeout(() => { void start() }, 0)
     }
-  }, [onActivityComplete, start])
+  }, [active, onActivityComplete, start])
 
   const toggleMuted = () => {
     stream?.getAudioTracks().forEach((track) => { track.enabled = muted })
