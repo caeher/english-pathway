@@ -1,3 +1,4 @@
+export { PageContainer, PAGE_CONTAINER_CLASS, type PageContainerProps } from './page-container'
 export { Button, buttonVariants, type ButtonProps } from './button'
 export { Badge, badgeVariants, type BadgeProps } from './badge'
 export { FeedbackCard } from './feedback-card'
