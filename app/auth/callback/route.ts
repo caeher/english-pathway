@@ -8,14 +8,15 @@ import {
   resolveOAuthCallbackPreExchange,
 } from '@/lib/auth/oauth-callback'
 import { getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
+import { buildPublicAppUrl } from '@/lib/auth/app-url'
 import { temporaryRedirect } from '@/lib/supabase/redirect-with-session'
 
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url)
+  const { searchParams } = new URL(request.url)
   const preExchangeFailure = resolveOAuthCallbackPreExchange(searchParams)
 
   if (preExchangeFailure) {
-    return temporaryRedirect(`${origin}${preExchangeFailure.redirectPath}`)
+    return temporaryRedirect(buildPublicAppUrl(preExchangeFailure.redirectPath))
   }
 
   const code = searchParams.get('code')!
@@ -45,14 +46,14 @@ export async function GET(request: Request) {
 
   if (error || !data.user) {
     const failure = mapOAuthExchangeError(error ?? { message: 'missing user' })
-    return temporaryRedirect(`${origin}${failure.redirectPath}`)
+    return temporaryRedirect(buildPublicAppUrl(failure.redirectPath))
   }
 
   if (requestedNext === '/reset-password') {
     const resetPath = resetRedirect
       ? `/reset-password?redirectTo=${encodeURIComponent(resetRedirect)}`
       : '/reset-password'
-    return temporaryRedirect(`${origin}${resetPath}`)
+    return temporaryRedirect(buildPublicAppUrl(resetPath))
   }
 
   const result = await handleOAuthCallbackUser(supabase, data.user, explicitNext)
@@ -66,8 +67,8 @@ export async function GET(request: Request) {
       await cleanupRejectedOAuthUser(result.userId)
     }
 
-    return temporaryRedirect(`${origin}${result.redirectPath}`)
+    return temporaryRedirect(buildPublicAppUrl(result.redirectPath))
   }
 
-  return temporaryRedirect(`${origin}${result.destination}`)
+  return temporaryRedirect(buildPublicAppUrl(result.destination))
 }

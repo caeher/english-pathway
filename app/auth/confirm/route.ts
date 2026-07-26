@@ -5,11 +5,12 @@ import {
   getExplicitRedirectParam,
   resolvePostAuthDestination,
 } from '@/lib/auth/resolve-redirect'
+import { buildPublicAppUrl } from '@/lib/auth/app-url'
 import { temporaryRedirect } from '@/lib/supabase/redirect-with-session'
 import { recordUserConsents } from '@/lib/auth/consent'
 
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url)
+  const { searchParams } = new URL(request.url)
   const token_hash = searchParams.get('token_hash')
   const type = searchParams.get('type')
   const explicitNext = getExplicitRedirectParam(searchParams.get('next'))
@@ -47,7 +48,7 @@ export async function GET(request: Request) {
         const resetPath = resetRedirect
           ? `/reset-password?redirectTo=${encodeURIComponent(resetRedirect)}`
           : '/reset-password'
-        return temporaryRedirect(`${origin}${resetPath}`)
+        return temporaryRedirect(buildPublicAppUrl(resetPath))
       }
 
       const { data: profile } = await supabase
@@ -59,9 +60,9 @@ export async function GET(request: Request) {
         explicitNext,
         Boolean(profile?.onboarding_completed_at),
       )
-      return temporaryRedirect(`${origin}${destination}`)
+      return temporaryRedirect(buildPublicAppUrl(destination))
     }
   }
 
-  return temporaryRedirect(`${origin}/login?error=confirmation_error`)
+  return temporaryRedirect(buildPublicAppUrl('/login?error=confirmation_error'))
 }

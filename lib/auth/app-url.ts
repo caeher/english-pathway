@@ -55,3 +55,12 @@ export function buildAuthCallbackUrl(next?: string | null): string {
   const suffix = explicitNext ? `?next=${encodeURIComponent(explicitNext)}` : ''
   return `${getAppUrl()}/auth/callback${suffix}`
 }
+
+/**
+ * Builds redirects from the configured public application URL instead of the
+ * incoming request host. Reverse proxies commonly expose an internal host
+ * such as 0.0.0.0:3000 to Next.js, which must never reach the browser.
+ */
+export function buildPublicAppUrl(path: string): string {
+  return new URL(path, getAppUrl()).toString()
+}

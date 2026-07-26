@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import {
   buildAuthCallbackUrl,
+  buildPublicAppUrl,
   getAppUrl,
   InvalidAppUrlError,
   parseAppUrl,
@@ -81,5 +82,13 @@ describe('app url', () => {
     expect(parseAppUrl('not-a-url')).toBeNull()
     expect(parseAppUrl('ftp://app.example')).toBeNull()
     expect(parseAppUrl('https://0.0.0.0:3000')).toBeNull()
+  })
+
+  it('builds callback completion redirects from the configured public origin', () => {
+    process.env.NEXT_PUBLIC_APP_URL = 'https://english-pathway.cubepath.caeher.com'
+
+    expect(buildPublicAppUrl('/dashboard')).toBe(
+      'https://english-pathway.cubepath.caeher.com/dashboard',
+    )
   })
 })
