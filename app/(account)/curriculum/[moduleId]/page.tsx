@@ -6,6 +6,7 @@ import { resolveModule } from '@/lib/content/resolve'
 import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
 import { getChapterProgress } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
+import { PageContainer } from '@/components/ui/page-container'
 import { createClient } from '@/lib/supabase/server'
 
 export default async function ModuleCurriculumPage({ params }: { params: Promise<{ moduleId: string }> }) {
@@ -24,7 +25,7 @@ export default async function ModuleCurriculumPage({ params }: { params: Promise
   const nextChapter = next ? curriculumModule.chapters.find((chapter) => chapter.id === next.chapterId) : null
 
   return (
-    <div className="mx-auto max-w-6xl">
+    <PageContainer>
       <Link href="/curriculum" className="text-sm font-bold text-(--accent) no-underline">← All modules</Link>
       <div className="mt-6 flex flex-wrap items-start justify-between gap-5">
         <div>
@@ -57,6 +58,6 @@ export default async function ModuleCurriculumPage({ params }: { params: Promise
           )
         })}
       </ol>
-    </div>
+    </PageContainer>
   )
 }

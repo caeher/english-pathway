@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Database, Download, LogOut, Settings, ShieldCheck, Sparkles, Trash2, Volume2, Type, Palette, Sun, Moon } from 'lucide-react'
-import { Button, InlineError, SuccessState, Surface } from '@/components/ui'
+import { Button, InlineError, PageContainer, SuccessState, Surface } from '@/components/ui'
 import { Label } from '@/components/ui/label'
 import { signOutAction, updateSettingsAction } from '@/lib/auth/actions'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
@@ -95,7 +95,7 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
   }
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8">
+    <PageContainer className="space-y-8">
       <div>
         <h1 className="flex items-center gap-2 font-display text-2xl font-black text-(--text-primary)"><Settings className="h-6 w-6" aria-hidden="true" /> Settings</h1>
         <p className="mt-1 text-(--text-secondary)">Manage your profile, learning preferences, appearance, and account controls.</p>
@@ -225,7 +225,7 @@ export default function SettingsPage({ profile, email }: SettingsPageProps) {
       </Surface>
 
       <Button onClick={handleSave} loading={pending} loadingLabel="Saving..." disabled={!dirty} className="font-display font-bold">Save changes</Button>
-    </div>
+    </PageContainer>
   )
 }
 

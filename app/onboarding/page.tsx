@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getSafeRedirectPath } from '@/lib/auth/safe-redirect'
 import { getCurrentUser } from '@/lib/auth/actions'
 import { getOnboardingProfile } from '@/lib/onboarding/actions'
+import { PageContainer } from '@/components/ui'
 import OnboardingWizard from '@/components/onboarding/OnboardingWizard'
 
 export const metadata = {
@@ -33,15 +34,17 @@ export default async function OnboardingPage({ searchParams }: OnboardingPagePro
   const initialPreferredMode = (profile.preferred_mode === 'text' || profile.preferred_mode === 'voice') ? profile.preferred_mode : null
 
   return (
-    <main className="min-h-screen bg-(--bg-primary) px-4 py-10 sm:px-6">
-      <OnboardingWizard
+    <main className="min-h-screen bg-(--bg-primary) py-10">
+      <PageContainer padding="page">
+        <OnboardingWizard
         initialLevel={initialLevel}
         initialDailyGoalMinutes={profile.daily_goal_minutes}
         initialPreferredMode={initialPreferredMode}
         initialStep={profile.onboarding_step ?? 0}
         destination={destination}
         reviewing={review}
-      />
+        />
+      </PageContainer>
     </main>
   )
 }

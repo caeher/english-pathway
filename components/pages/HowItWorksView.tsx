@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { BookOpen, GraduationCap, MessageCircle, Sparkles, ArrowRight } from 'lucide-react'
+import { PageContainer } from '@/components/ui/page-container'
 import { fadeInUp, staggerContainer } from '@/lib/motion/system'
 import { useReducedMotion } from '@/lib/motion/useReducedMotion'
 
@@ -17,7 +18,7 @@ export default function HowItWorksView() {
   const reducedMotion = useReducedMotion()
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <PageContainer padding="page" className="py-16">
       <motion.div
         initial={reducedMotion ? undefined : 'initial'}
         animate={reducedMotion ? undefined : 'animate'}
@@ -63,6 +64,6 @@ export default function HowItWorksView() {
           Start learning <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </motion.div>
-    </div>
+    </PageContainer>
   )
 }

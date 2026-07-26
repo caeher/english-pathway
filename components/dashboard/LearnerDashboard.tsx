@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, BookOpen, CheckCircle2, Flame, Info, RotateCcw, Sparkles, Trophy } from 'lucide-react'
 import { getLevelProgress } from '@/lib/engagement/xp'
 import { learnHref } from '@/lib/curriculum/href'
-import { Badge, SectionHeader, Surface } from '@/components/ui'
+import { Badge, PageContainer, SectionHeader, Surface } from '@/components/ui'
 import { getLearningContinuation } from '@/lib/learning/continuation'
 import { CurrentStreak } from './CurrentStreak'
 
@@ -38,7 +38,7 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
   const continuation = getLearningContinuation({ dueReviews: data.dueReviews, resume, completedChapters: data.completedChapters, totalChapters: data.totalChapters })
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6">
+    <PageContainer className="space-y-6">
       <SectionHeader
         eyebrow="Your learning hub"
         title={`Welcome back, ${firstName}`}
@@ -114,6 +114,6 @@ export default function LearnerDashboard({ data }: { data: DashboardData }) {
         <SectionHeader title="Recent activity" description="Your latest practice results." action={<Link href="/review" className="inline-flex items-center gap-1 text-sm font-bold text-(--accent) no-underline hover:underline">Review {data.dueReviews > 0 && `(${data.dueReviews})`} <ArrowRight className="h-4 w-4" /></Link>} />
         {data.recentActivities.length === 0 ? <p className="mt-6 text-sm text-(--text-muted)">Complete an activity to see your progress here.</p> : <div className="mt-5 divide-y divide-(--border-primary)">{data.recentActivities.map((activity) => <div key={activity.id} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0"><CheckCircle2 className="h-5 w-5 shrink-0 text-(--success)" /><div className="min-w-0 flex-1"><p className="truncate text-sm font-bold text-(--text-primary)">{activity.title}</p><p className="truncate text-xs text-(--text-muted)">{activity.chapterTitle}</p></div><span className="text-sm font-bold text-(--text-secondary)">{activity.score ?? 0}%</span></div>)}</div>}
       </Surface>
-    </div>
+    </PageContainer>
   )
 }

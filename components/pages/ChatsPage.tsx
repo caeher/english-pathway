@@ -3,7 +3,7 @@
 import { FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { MessageCircle } from 'lucide-react'
-import { InlineError } from '@/components/ui'
+import { InlineError, PageContainer } from '@/components/ui'
 import { ChatComposer } from '@/components/english-assistant/ChatComposer'
 import { ConversationHistory } from '@/components/english-assistant/ConversationHistory'
 import { NameConversationDialog } from '@/components/english-assistant/NameConversationDialog'
@@ -52,7 +52,7 @@ export default function ChatsPage() {
   }
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-6">
+    <PageContainer className="flex flex-col gap-6">
       <div>
         <h1 className="flex items-center gap-2 font-display text-2xl font-black text-(--text-primary)">
           <MessageCircle className="h-6 w-6" aria-hidden="true" /> Chats
@@ -98,6 +98,6 @@ export default function ChatsPage() {
         onCancel={cancelNaming}
         onConfirm={(title) => void confirmNaming(title)}
       />
-    </div>
+    </PageContainer>
   )
 }

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Check, ChevronRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import { Button, EmptyState, InlineError, LoadingState } from '@/components/ui'
+import { Button, EmptyState, InlineError, LoadingState, PageContainer } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import type { SrsQueueItem } from '@/lib/srs/types'
 
@@ -67,19 +67,27 @@ export default function ReviewSession() {
   }
 
   if (loading) {
-    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." className="mx-auto max-w-6xl" />
+    return <LoadingState title="Loading your review queue" description="Preparing the items that are due today." />
   }
 
   if (error && !item) {
-    return <InlineError message={error} onRetry={() => void loadQueue()} className="mx-auto max-w-6xl" />
+    return (
+      <PageContainer>
+        <InlineError message={error} onRetry={() => void loadQueue()} />
+      </PageContainer>
+    )
   }
 
   if (!item) {
-    return <EmptyState className="mx-auto max-w-6xl" icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
+    return (
+      <PageContainer>
+        <EmptyState icon={<Check className="h-6 w-6" />} title="All caught up" description="There are no review items due right now. Keep learning and return when you are ready." action={<Link href="/learn" className="font-bold text-(--accent) no-underline hover:underline">Return to Learn</Link>} />
+      </PageContainer>
+    )
   }
 
   return (
-    <section className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center">
+    <PageContainer as="section" className="flex flex-1 flex-col justify-center">
       <div className="mb-5 flex items-center justify-between text-sm text-(--text-muted)">
         <span className="font-display font-bold">Review {index + 1} of {items.length}</span>
         <span>{item.content.chapterTitle}</span>
@@ -113,6 +121,6 @@ export default function ReviewSession() {
       <p className="mt-5 flex items-center justify-center gap-2 text-center text-xs text-(--text-muted)">
         <Sparkles className="h-3.5 w-3.5" /> Your next review adapts to this answer.
       </p>
-    </section>
+    </PageContainer>
   )
 }

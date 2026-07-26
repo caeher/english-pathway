@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { cn } from '@/lib/helpers'
+import { PageContainer } from '@/components/ui/page-container'
 
 interface LegalNavItem {
   label: string
@@ -27,7 +28,7 @@ export function LegalLayout({
 }: LegalLayoutProps) {
   return (
     <div className={cn('min-h-screen bg-(--bg-primary)', className)}>
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <PageContainer padding="page" className="py-12">
         <div className="mb-8">
           <Link href="/" className="text-sm text-(--text-muted) hover:text-(--accent) no-underline">
             ← Back to home
@@ -54,7 +55,7 @@ export function LegalLayout({
             {children}
           </article>
         </div>
-      </div>
+      </PageContainer>
     </div>
   )
 }

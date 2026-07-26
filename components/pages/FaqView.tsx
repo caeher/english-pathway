@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { PageContainer } from '@/components/ui/page-container'
 import { fadeInUp, staggerContainer } from '@/lib/motion/system'
 import { useReducedMotion } from '@/lib/motion/useReducedMotion'
 
@@ -15,7 +16,7 @@ export default function FaqView() {
   const reducedMotion = useReducedMotion()
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <PageContainer padding="page" className="py-16">
       <motion.div
         initial={reducedMotion ? undefined : 'initial'}
         animate={reducedMotion ? undefined : 'animate'}
@@ -45,6 +46,6 @@ export default function FaqView() {
           </motion.details>
         ))}
       </motion.div>
-    </div>
+    </PageContainer>
   )
 }

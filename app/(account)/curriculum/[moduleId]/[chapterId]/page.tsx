@@ -9,6 +9,7 @@ import { extractMarkdownHeadings } from '@/lib/content/markdown'
 import { curriculumChapterHref, learnHref } from '@/lib/curriculum/href'
 import { getChapterProgress } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
+import { PageContainer } from '@/components/ui/page-container'
 import { createClient } from '@/lib/supabase/server'
 
 export default async function ChapterCurriculumPage({ params }: { params: Promise<{ moduleId: string; chapterId: string }> }) {
@@ -30,7 +31,7 @@ export default async function ChapterCurriculumPage({ params }: { params: Promis
   const practiceHref = learnHref({ moduleId: curriculumModule.id, chapterId: chapter.id, activityId: progress.nextActivityId ?? chapter.activities[0]?.id })
 
   return (
-    <div id="chapter-top" className="mx-auto max-w-6xl">
+    <PageContainer id="chapter-top">
       <Link href={`/curriculum/${curriculumModule.id}`} className="text-sm font-bold text-(--accent) no-underline">← {curriculumModule.title}</Link>
       <header className="mt-7 rounded-3xl border border-(--border-primary) bg-(--bg-card) p-7 sm:p-10">
         <div className="flex flex-wrap items-start justify-between gap-5">
@@ -56,6 +57,6 @@ export default async function ChapterCurriculumPage({ params }: { params: Promis
         {next ? <Link href={curriculumChapterHref(next.module.id, next.chapter.id)} className="inline-flex max-w-[45%] items-center gap-2 text-right text-sm font-bold text-(--accent) no-underline hover:underline"><span className="truncate">{next.chapter.title}</span><ArrowRight className="h-4 w-4 shrink-0" /></Link> : <span className="text-sm font-bold text-(--success)">Module complete</span>}
       </nav>
       <div className="mt-6 text-right"><a href="#chapter-top" className="text-sm font-bold text-(--accent) hover:underline">Back to top</a></div>
-    </div>
+    </PageContainer>
   )
 }
