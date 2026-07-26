@@ -475,6 +475,19 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
 }
 
+.chat-prompt-markdown {
+  line-height: 1.75;
+}
+.chat-prompt-markdown p {
+  margin: 0.75rem 0;
+}
+.chat-prompt-markdown p:first-child {
+  margin-top: 0;
+}
+.chat-prompt-markdown p:last-child {
+  margin-bottom: 0;
+}
+
 .legal-content h1 {
   font-family: var(--font-display);
   font-size: 1.75rem;
