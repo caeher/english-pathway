@@ -1,4 +1,4 @@
-import type { User } from '@supabase/supabase-js'
+import type { User, UserIdentity } from '@supabase/supabase-js'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 const recordUserConsents = vi.fn()
@@ -30,7 +30,7 @@ function buildUser(overrides: Partial<User> = {}): User {
     created_at: new Date().toISOString(),
     app_metadata: { provider: 'google' },
     user_metadata: {},
-    identities: [{ provider: 'google' } as User['identities'][number]],
+    identities: [{ provider: 'google' } as UserIdentity],
     ...overrides,
   } as User
 }

@@ -6,6 +6,7 @@ import {
   isOAuthProvider,
   isOAuthProviderEnabled,
 } from '@/lib/auth/oauth-providers'
+import { restoreTestEnv, setTestEnv, snapshotTestEnv } from '../helpers/env'
 
 const ENV_KEYS = [
   'NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED',
@@ -16,29 +17,14 @@ const ENV_KEYS = [
 
 let envBefore: Record<string, string | undefined>
 
-function restoreEnv(snapshot: Record<string, string | undefined>) {
-  for (const key of ENV_KEYS) {
-    const value = snapshot[key]
-    if (value === undefined) {
-      delete process.env[key]
-    } else {
-      process.env[key] = value
-    }
-  }
-}
-
-function snapshotEnv(): Record<string, string | undefined> {
-  return Object.fromEntries(ENV_KEYS.map((key) => [key, process.env[key]]))
-}
-
 describe('oauth providers', () => {
   beforeEach(() => {
-    envBefore = snapshotEnv()
-    process.env.NODE_ENV = 'test'
+    envBefore = snapshotTestEnv(ENV_KEYS)
+    setTestEnv('NODE_ENV', 'test')
   })
 
   afterEach(() => {
-    restoreEnv(envBefore)
+    restoreTestEnv(envBefore, ENV_KEYS)
   })
 
   it('returns no providers when feature flags are absent or false', () => {

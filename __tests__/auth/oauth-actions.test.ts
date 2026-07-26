@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { restoreTestEnv, setTestEnv, snapshotTestEnv } from '../helpers/env'
 
 const redirect = vi.fn((path: string) => {
   throw { type: 'redirect', path }
@@ -35,32 +36,17 @@ const ENV_KEYS = [
 
 let envBefore: Record<string, string | undefined>
 
-function restoreEnv(snapshot: Record<string, string | undefined>) {
-  for (const key of ENV_KEYS) {
-    const value = snapshot[key]
-    if (value === undefined) {
-      delete process.env[key]
-    } else {
-      process.env[key] = value
-    }
-  }
-}
-
-function snapshotEnv(): Record<string, string | undefined> {
-  return Object.fromEntries(ENV_KEYS.map((key) => [key, process.env[key]]))
-}
-
 describe('oauth actions', () => {
   beforeEach(() => {
-    envBefore = snapshotEnv()
-    process.env.NODE_ENV = 'test'
-    process.env.NEXT_PUBLIC_APP_URL = 'https://app.example'
+    envBefore = snapshotTestEnv(ENV_KEYS)
+    setTestEnv('NODE_ENV', 'test')
+    setTestEnv('NEXT_PUBLIC_APP_URL', 'https://app.example')
     redirect.mockClear()
     signInWithOAuth.mockReset()
   })
 
   afterEach(() => {
-    restoreEnv(envBefore)
+    restoreTestEnv(envBefore, ENV_KEYS)
   })
 
   it('rejects disabled providers before starting OAuth', async () => {
@@ -97,8 +83,8 @@ describe('oauth actions', () => {
   })
 
   it('redirects to oauth_start_error when app URL is misconfigured in production', async () => {
-    process.env.NODE_ENV = 'production'
-    delete process.env.NEXT_PUBLIC_APP_URL
+    setTestEnv('NODE_ENV', 'production')
+    setTestEnv('NEXT_PUBLIC_APP_URL', undefined)
     process.env.NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED = 'true'
 
     const { signInWithOAuthAction } = await import('@/lib/auth/actions')

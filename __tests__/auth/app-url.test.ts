@@ -5,34 +5,20 @@ import {
   InvalidAppUrlError,
   parseAppUrl,
 } from '@/lib/auth/app-url'
+import { restoreTestEnv, setTestEnv, snapshotTestEnv } from '../helpers/env'
 
 const ENV_KEYS = ['NEXT_PUBLIC_APP_URL', 'NODE_ENV'] as const
 
 let envBefore: Record<string, string | undefined>
 
-function restoreEnv(snapshot: Record<string, string | undefined>) {
-  for (const key of ENV_KEYS) {
-    const value = snapshot[key]
-    if (value === undefined) {
-      delete process.env[key]
-    } else {
-      process.env[key] = value
-    }
-  }
-}
-
-function snapshotEnv(): Record<string, string | undefined> {
-  return Object.fromEntries(ENV_KEYS.map((key) => [key, process.env[key]]))
-}
-
 describe('app url', () => {
   beforeEach(() => {
-    envBefore = snapshotEnv()
-    process.env.NODE_ENV = 'test'
+    envBefore = snapshotTestEnv(ENV_KEYS)
+    setTestEnv('NODE_ENV', 'test')
   })
 
   afterEach(() => {
-    restoreEnv(envBefore)
+    restoreTestEnv(envBefore, ENV_KEYS)
   })
 
   it('falls back to localhost in non-production when unset', () => {
@@ -48,29 +34,29 @@ describe('app url', () => {
   })
 
   it('throws in production when NEXT_PUBLIC_APP_URL is missing', () => {
-    process.env.NODE_ENV = 'production'
-    delete process.env.NEXT_PUBLIC_APP_URL
+    setTestEnv('NODE_ENV', 'production')
+    setTestEnv('NEXT_PUBLIC_APP_URL', undefined)
 
     expect(() => getAppUrl()).toThrow(InvalidAppUrlError)
   })
 
   it('throws in production for http URLs', () => {
-    process.env.NODE_ENV = 'production'
-    process.env.NEXT_PUBLIC_APP_URL = 'http://app.example'
+    setTestEnv('NODE_ENV', 'production')
+    setTestEnv('NEXT_PUBLIC_APP_URL', 'http://app.example')
 
     expect(() => getAppUrl()).toThrow(InvalidAppUrlError)
   })
 
   it('throws in production for localhost URLs', () => {
-    process.env.NODE_ENV = 'production'
-    process.env.NEXT_PUBLIC_APP_URL = 'https://localhost:3000'
+    setTestEnv('NODE_ENV', 'production')
+    setTestEnv('NEXT_PUBLIC_APP_URL', 'https://localhost:3000')
 
     expect(() => getAppUrl()).toThrow(InvalidAppUrlError)
   })
 
   it('accepts a valid https production URL', () => {
-    process.env.NODE_ENV = 'production'
-    process.env.NEXT_PUBLIC_APP_URL = 'https://app.example'
+    setTestEnv('NODE_ENV', 'production')
+    setTestEnv('NEXT_PUBLIC_APP_URL', 'https://app.example')
 
     expect(getAppUrl()).toBe('https://app.example')
   })
