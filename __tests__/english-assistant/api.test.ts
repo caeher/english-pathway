@@ -1,11 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { DomainError } from '@/lib/api/errors'
 import { createClient } from '@/lib/supabase/server'
 import { GET as listConversations, POST as createConversation } from '@/app/api/english-assistant/conversations/route'
 import { GET as getConversation, DELETE as deleteConversation } from '@/app/api/english-assistant/conversations/[id]/route'
 import { POST as sendAssistantMessage } from '@/app/api/english-assistant/route'
 import { getEnglishAssistantConversation } from '@/lib/dal/english-assistant-conversations'
 import { resolveEnglishAssistantMessagesForModel } from '@/features/english-assistant'
+import { resolveEnglishAssistantLearnerContext } from '@/lib/english-assistant/learner-context'
 import { streamEnglishAssistant } from '@/lib/english-assistant/openai'
+import { assistantRequestSchema } from '@/lib/english-assistant/schema'
 import { consumeAssistantCredit } from '@/lib/credits/usage'
 import { createAssistantStreamParser } from '@/lib/english-assistant/stream-events'
 
@@ -33,6 +36,9 @@ vi.mock('@/features/english-assistant', async (importOriginal) => {
 })
 vi.mock('@/lib/english-assistant/openai', () => ({
   streamEnglishAssistant: vi.fn(),
+}))
+vi.mock('@/lib/english-assistant/learner-context', () => ({
+  resolveEnglishAssistantLearnerContext: vi.fn(),
 }))
 vi.mock('@/lib/credits/usage', () => ({
   consumeAssistantCredit: vi.fn(),
@@ -142,6 +148,40 @@ describe('english assistant API routes', () => {
     })
   })
 
+  it('rejects assistant payloads with unsupported profile fields', async () => {
+    const parsed = assistantRequestSchema.safeParse({
+      conversationId,
+      message: 'Explain present simple.',
+      level: 'advanced',
+    })
+
+    expect(parsed.success).toBe(false)
+  })
+
+  it('does not resolve learner context when the conversation is not owned by the user', async () => {
+    mockAuthenticatedClient()
+    vi.mocked(consumeAssistantCredit).mockResolvedValue({
+      allowed: true,
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
+    })
+    vi.mocked(resolveEnglishAssistantMessagesForModel).mockRejectedValue(
+      new DomainError('NOT_FOUND', 'Conversation not found'),
+    )
+
+    const response = await sendAssistantMessage(new Request('http://localhost/api/english-assistant', {
+      method: 'POST',
+      body: JSON.stringify({
+        conversationId,
+        message: 'Explain present simple.',
+      }),
+      headers: { 'content-type': 'application/json' },
+    }))
+
+    expect(response.status).toBe(404)
+    expect(resolveEnglishAssistantLearnerContext).not.toHaveBeenCalled()
+    expect(streamEnglishAssistant).not.toHaveBeenCalled()
+  })
+
   it('streams assistant replies as SSE delta and done events', async () => {
     mockAuthenticatedClient()
     vi.mocked(consumeAssistantCredit).mockResolvedValue({
@@ -153,7 +193,9 @@ describe('english assistant API routes', () => {
       messages: [{ role: 'user', content: 'Explain present simple.' }],
       activityContext: null,
     })
-    vi.mocked(streamEnglishAssistant).mockImplementation(async (_messages, _context, onDelta) => {
+    vi.mocked(resolveEnglishAssistantLearnerContext).mockResolvedValue({ level: 'beginner' })
+    vi.mocked(streamEnglishAssistant).mockImplementation(async (_messages, _context, learnerContext, onDelta) => {
+      expect(learnerContext).toEqual({ level: 'beginner' })
       onDelta('Present simple', 'Present simple')
       return 'Present simple'
     })
@@ -174,5 +216,54 @@ describe('english assistant API routes', () => {
     const events = createAssistantStreamParser().push(body)
     expect(events.some((event) => event.event === 'delta' && event.data.text === 'Present simple')).toBe(true)
     expect(events.some((event) => event.event === 'done' && event.data.conversationId === conversationId)).toBe(true)
+    expect(events.some((event) => event.event === 'done' && 'level' in event.data)).toBe(false)
+  })
+
+  it('passes each authenticated user their own learner context without cross-account leakage', async () => {
+    mockAuthenticatedClient()
+    vi.mocked(consumeAssistantCredit).mockResolvedValue({
+      allowed: true,
+      credits: { assistantMessagesRemaining: 49, audioSecondsRemaining: 300 },
+    })
+    vi.mocked(resolveEnglishAssistantMessagesForModel).mockResolvedValue({
+      conversationId,
+      messages: [{ role: 'user', content: 'Explain present simple.' }],
+      activityContext: null,
+    })
+
+    vi.mocked(resolveEnglishAssistantLearnerContext).mockResolvedValueOnce({ level: 'beginner' })
+    vi.mocked(streamEnglishAssistant).mockImplementationOnce(async (_messages, _context, learnerContext) => {
+      expect(learnerContext).toEqual({ level: 'beginner' })
+      return 'Beginner reply'
+    })
+
+    await sendAssistantMessage(new Request('http://localhost/api/english-assistant', {
+      method: 'POST',
+      body: JSON.stringify({ conversationId, message: 'Explain present simple.' }),
+      headers: { 'content-type': 'application/json' },
+    }))
+
+    vi.mocked(createClient).mockResolvedValue({
+      auth: {
+        getUser: vi.fn().mockResolvedValue({
+          data: { user: { id: 'user-2' } },
+        }),
+      },
+      from: vi.fn(),
+    } as never)
+
+    vi.mocked(resolveEnglishAssistantLearnerContext).mockResolvedValueOnce({ level: 'advanced' })
+    vi.mocked(streamEnglishAssistant).mockImplementationOnce(async (_messages, _context, learnerContext) => {
+      expect(learnerContext).toEqual({ level: 'advanced' })
+      return 'Advanced reply'
+    })
+
+    await sendAssistantMessage(new Request('http://localhost/api/english-assistant', {
+      method: 'POST',
+      body: JSON.stringify({ conversationId, message: 'Explain subjunctive mood.' }),
+      headers: { 'content-type': 'application/json' },
+    }))
+
+    expect(resolveEnglishAssistantLearnerContext).toHaveBeenCalledTimes(2)
   })
 })

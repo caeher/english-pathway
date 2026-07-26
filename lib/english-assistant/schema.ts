@@ -8,6 +8,6 @@ export const assistantMessageSchema = z.object({
 export const assistantRequestSchema = z.object({
   conversationId: z.string().uuid().optional(),
   message: z.string().trim().min(1).max(2_000),
-})
+}).strict()
 
 export type AssistantMessage = z.infer<typeof assistantMessageSchema>

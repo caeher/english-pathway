@@ -1,6 +1,7 @@
 import { persistEnglishAssistantTurn, resolveEnglishAssistantMessagesForModel } from '@/features/english-assistant'
 import { recordSecurityInjectionSignal } from '@/lib/analytics/security-signal'
 import { assistantRequestSchema } from '@/lib/english-assistant/schema'
+import { resolveEnglishAssistantLearnerContext } from '@/lib/english-assistant/learner-context'
 import { streamEnglishAssistant } from '@/lib/english-assistant/openai'
 import { encodeAssistantStreamEvent } from '@/lib/english-assistant/stream-events'
 import { apiErrorResponse, DomainError } from '@/lib/api/errors'
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
       parsed.data.conversationId,
       parsed.data.message,
     )
+    const learnerContext = await resolveEnglishAssistantLearnerContext(context.supabase, context.userId)
     const userMessage = resolved.messages.at(-1)!
     const logId = await createEnglishAssistantPromptLog(context.userId, userMessage.content)
 
@@ -96,6 +98,7 @@ export async function POST(request: Request) {
           const answer = await streamEnglishAssistant(
             resolved.messages,
             resolved.activityContext,
+            learnerContext,
             (accumulatedText) => {
               if (timedOut) return
               enqueue(encodeAssistantStreamEvent({
