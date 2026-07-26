@@ -270,10 +270,15 @@ export default function OpenAiRealtimeTutorProvider() {
     tutorConnecting={connecting}
     showEngagement={false}
     tutorSlot={<div className="flex h-full min-h-0 flex-col">
-      <div className="shrink-0 border-b border-(--border-primary) p-4 lg:p-3"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
+      <div className="hidden shrink-0 border-b border-(--border-primary) p-3 lg:block"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
       <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
         {!active && <>
-          <Surface as="section" padding="md" className="sm:p-5">
+          <div className="flex flex-col gap-3 lg:hidden">
+            <MicrophoneVisualizer stream={stream} active={connecting} />
+            {error && <InlineError message={error} onRetry={() => void start()} />}
+            <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0)} className="w-full">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
+          </div>
+          <Surface as="section" padding="md" className="hidden sm:p-5 lg:block">
           <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">Start a voice lesson</h2>
           <div className="mt-4 rounded-xl border border-(--accent) bg-(--accent-soft) p-4"><span className="flex items-center gap-2 font-bold text-(--text-primary)"><Volume2 className="h-4 w-4 text-(--accent)" />Voice</span><span className="mt-1 block text-xs text-(--text-secondary)">Speak and listen with your tutor. The English helper remains available for text chat.</span></div>
           {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}

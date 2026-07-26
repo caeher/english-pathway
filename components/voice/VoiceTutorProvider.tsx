@@ -157,14 +157,23 @@ function TutorControls({
       showEngagement
       tutorSlot={
         <div className="flex h-full min-h-0 flex-col">
-          <div className="shrink-0 border-b border-(--border-primary) p-4 lg:p-3">
+          <div className="hidden shrink-0 border-b border-(--border-primary) p-3 lg:block">
             <h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1>
             <p className="mt-1 text-xs text-(--text-muted)">Choose how you want to practice today.</p>
           </div>
 
           <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
             {!active && <>
-              <Surface as="section" padding="md" className="sm:p-5" aria-labelledby="session-preflight-heading">
+              <div className="flex flex-col gap-3 lg:hidden">
+                <MicrophoneVisualizer stream={microphoneStream} active={mode === 'voice' && (microphoneState === 'ready' || connecting)} />
+                {error && <InlineError message={error} onRetry={() => void start()} />}
+                <Button type="button" onClick={() => void start()} disabled={connecting} className="w-full">
+                  {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
+                  {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
+                </Button>
+              </div>
+
+              <Surface as="section" padding="md" className="hidden sm:p-5 lg:block" aria-labelledby="session-preflight-heading">
               <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p>
               <h2 id="session-preflight-heading" className="mt-1 font-display text-xl font-black text-(--text-primary)">Choose your session mode</h2>
               <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">Voice mode lets you speak with the tutor. Text mode works without a microphone or audio permission.</p>
