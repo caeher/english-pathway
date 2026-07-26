@@ -27,7 +27,12 @@ function buildMatchedSet(leftIndices: number[], shuffledRight: { originalIdx: nu
 export default function WordMatch({ pairs, initialProgress, onProgressChange, onComplete }: WordMatchProps) {
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null)
   const [selectedRight, setSelectedRight] = useState<number | null>(null)
-  const shuffledRight = useMemo(() => shuffleArray(pairs.map((p, idx) => ({ text: p.right, originalIdx: idx }))), [pairs])
+  // Keep the shuffled column stable for the whole attempt. The panel can
+  // re-render while progress is saved; reshuffling then makes visible words
+  // jump and breaks the learner's selection.
+  const [shuffledRight] = useState(() => shuffleArray(
+    pairs.map((pair, originalIdx) => ({ text: pair.right, originalIdx })),
+  ))
   const [matched, setMatched] = useState<Set<string>>(() =>
     buildMatchedSet(initialProgress?.matchedLeftIndices ?? [], shuffledRight),
   )
