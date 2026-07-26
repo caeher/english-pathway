@@ -72,7 +72,7 @@ export async function saveOnboardingDraftAction(input: unknown): Promise<Onboard
 
   const updates: {
     onboarding_step: number
-    level?: 'beginner' | 'intermediate' | 'advanced'
+    level?: import('./schemas').OnboardingLevel
     daily_goal_minutes?: 5 | 10 | 20
     preferred_mode?: 'voice' | 'text'
     native_language?: string | null

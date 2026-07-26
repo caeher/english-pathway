@@ -1,5 +1,6 @@
 import type { AuthenticatedContext } from '@/lib/api/context'
 import { DomainError } from '@/lib/api/errors'
+import { toCefrLevel } from '@/lib/tutor/learner-profile'
 import {
   ASSESSMENT_VERSION,
   assessmentConfirmationSchema,
@@ -55,10 +56,11 @@ export async function confirmAssessmentUseCase(
   reviewing: boolean,
 ) {
   await assertAssessmentAccess(context, reviewing)
+  const cefrLevel = toCefrLevel(input.level)
   const { error } = await context.supabase
     .from('profiles')
     .update({
-      level: input.level,
+      level: cefrLevel,
       assessment_confirmed_level: input.level,
       assessment_source: input.source,
       assessment_version: input.rubricVersion ?? ASSESSMENT_VERSION,

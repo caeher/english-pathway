@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { optionalNativeLanguageSchema } from '@/lib/languages/schemas'
 
-export const onboardingLevelSchema = z.enum(['beginner', 'intermediate', 'advanced'])
+export const onboardingLevelSchema = z.enum(['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'beginner', 'intermediate', 'advanced'])
 export const dailyGoalMinutesSchema = z.union([z.literal(5), z.literal(10), z.literal(20)])
 export const preferredModeSchema = z.enum(['voice', 'text'])
 export const onboardingStepSchema = z.number().int().min(0).max(5)

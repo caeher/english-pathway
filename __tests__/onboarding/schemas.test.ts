@@ -10,7 +10,7 @@ const createClientMock = vi.mocked(createClient)
 
 describe('onboarding completion validation', () => {
   it('accepts every supported level and daily goal', () => {
-    for (const level of ['beginner', 'intermediate', 'advanced']) {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'beginner', 'intermediate', 'advanced']) {
       for (const dailyGoalMinutes of [5, 10, 20]) {
         expect(
           onboardingCompletionSchema.safeParse({ level, dailyGoalMinutes, skipped: false }).success

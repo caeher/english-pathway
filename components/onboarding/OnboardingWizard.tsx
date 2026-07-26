@@ -24,11 +24,15 @@ import {
 import type { DailyGoalMinutes, OnboardingLevel, PreferredMode } from '@/lib/onboarding/schemas'
 import { type NativeLanguageCode } from '@/lib/languages/native-languages'
 import { NativeLanguageField } from '@/components/profile/NativeLanguageSelect'
+import { toCefrLevel } from '@/lib/tutor/learner-profile'
 
 const LEVELS: Array<{ value: OnboardingLevel; title: string; description: string }> = [
-  { value: 'beginner', title: 'Beginner', description: 'I am starting from the basics.' },
-  { value: 'intermediate', title: 'Intermediate', description: 'I can handle everyday conversations.' },
-  { value: 'advanced', title: 'Advanced', description: 'I want to sharpen fluency and accuracy.' },
+  { value: 'A1', title: 'A1 — Beginner', description: 'I am starting from the basics.' },
+  { value: 'A2', title: 'A2 — Elementary', description: 'I can use simple everyday phrases.' },
+  { value: 'B1', title: 'B1 — Intermediate', description: 'I can handle everyday conversations.' },
+  { value: 'B2', title: 'B2 — Upper intermediate', description: 'I can discuss familiar topics with confidence.' },
+  { value: 'C1', title: 'C1 — Advanced', description: 'I want to sharpen fluency and accuracy.' },
+  { value: 'C2', title: 'C2 — Proficient', description: 'I want to master precise, flexible English.' },
 ]
 
 const GOALS: Array<{ value: DailyGoalMinutes; title: string; description: string }> = [
@@ -282,7 +286,10 @@ export default function OnboardingWizard({
                 />
               ))}
             </div>
-            <LevelAssessment reviewing={reviewing} onLevelConfirmed={setLevel} />
+            <LevelAssessment reviewing={reviewing} onLevelConfirmed={(assessmentLevel) => {
+              const cefrLevel = toCefrLevel(assessmentLevel)
+              if (cefrLevel) setLevel(cefrLevel as OnboardingLevel)
+            }} />
           </div>
         )}
 
