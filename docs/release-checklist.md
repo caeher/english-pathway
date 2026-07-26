@@ -19,12 +19,13 @@ Use this checklist for every production release. Link the CI run, deployed previ
 - [ ] Visitor → registration/confirmation → onboarding → Learn succeeds.
 - [ ] Login/logout and password reset succeed.
 - [ ] OAuth buttons appear only when `NEXT_PUBLIC_OAUTH_*_ENABLED=true` for configured providers.
+- [ ] Run `pnpm oauth:inspect` for the target environment and attach sanitized output to the PR (see `docs/operations/oauth-smoke-evidence.md`).
 - [ ] Google OAuth: sign-in returns via `/auth/callback` → onboarding or `/settings`.
 - [ ] GitHub OAuth: same flow as Google.
 - [ ] OAuth with `?redirectTo=/learn` lands on `/learn` after onboarding is complete.
 - [ ] Curriculum activity completion and resume survive a reload.
 - [ ] Text fallback works without ElevenLabs/RAG; voice permission denial is recoverable.
-- [ ] Legal pages, cookie choice, consent version, export, and deletion behave as expected.
+- [ ] Legal pages v1.2, cookie choice, consent version/re-consent, export, and deletion behave as expected.
 - [ ] Desktop and 390px mobile checks show no console errors, repeated failed requests, or active microphone tracks after session end.
 - [ ] Keyboard/focus/contrast review and performance budgets have linked evidence.
 

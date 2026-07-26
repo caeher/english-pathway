@@ -19,19 +19,39 @@ Three URL layers must stay aligned per environment:
 
 ## Environment matrix
 
-Replace placeholders with your team's real values. **Never commit Client Secrets or production credentials to the repository.**
+**Never commit Client Secrets or production credentials to the repository.** Record the effective configuration per environment in your ops log or PR evidence; the table below is the canonical reference for this repository.
 
 | Setting | Local | Staging | Production |
 | --- | --- | --- | --- |
-| Supabase project ref | `english-pathway` (CLI) | `<staging-ref>` | `<prod-ref>` |
-| `NEXT_PUBLIC_SUPABASE_URL` | `http://127.0.0.1:54321` | `https://<staging-ref>.supabase.co` | `https://<prod-ref>.supabase.co` |
-| `NEXT_PUBLIC_APP_URL` | `http://localhost:3000` | `https://<staging-domain>` | `https://<prod-domain>` |
+| Supabase project ref | `english-pathway` (CLI) | _not deployed yet_ | `ivwtieqsyekrhvxpvtqe` |
+| `NEXT_PUBLIC_SUPABASE_URL` | `http://127.0.0.1:54321` | _not deployed yet_ | `https://ivwtieqsyekrhvxpvtqe.supabase.co` |
+| `NEXT_PUBLIC_APP_URL` | `http://localhost:3000` | _not deployed yet_ | `https://english-pathway.cubepath.caeher.com` |
 | Supabase Site URL | same as `NEXT_PUBLIC_APP_URL` | same | same |
-| Supabase redirect allowlist | `http://localhost:3000/**` | `https://<staging-domain>/**` | `https://<prod-domain>/**` |
-| Provider callback (Google + GitHub) | `http://127.0.0.1:54321/auth/v1/callback` | `https://<staging-ref>.supabase.co/auth/v1/callback` | `https://<prod-ref>.supabase.co/auth/v1/callback` |
-| Google authorized JS origin | `http://localhost:3000` | `https://<staging-domain>` | `https://<prod-domain>` |
-| `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `true` when ready | `true` when ready | `true` when ready |
-| `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `true` when ready | `true` when ready | `true` when ready |
+| Supabase redirect allowlist | `http://localhost:3000/**` | `{APP_URL}/**` | `https://english-pathway.cubepath.caeher.com/**` |
+| Provider callback (Google + GitHub) | `http://127.0.0.1:54321/auth/v1/callback` | `https://<staging-ref>.supabase.co/auth/v1/callback` | `https://ivwtieqsyekrhvxpvtqe.supabase.co/auth/v1/callback` |
+| Google authorized JS origin | `http://localhost:3000` | `https://<staging-domain>` | `https://english-pathway.cubepath.caeher.com` |
+| Google in Supabase | enable after local credentials | enable when staging exists | **configured** (verify with `pnpm oauth:inspect`) |
+| GitHub in Supabase | disabled | disabled | **not configured** |
+| `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `false` until local smoke test | `false` until staging smoke test | `true` after production smoke test + rebuild |
+| `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `false` | `false` | `false` |
+
+### Inspection scripts
+
+```bash
+# Production (requires Supabase CLI login + SUPABASE_ACCESS_TOKEN for management checks)
+SUPABASE_PROJECT_REF=ivwtieqsyekrhvxpvtqe \
+NEXT_PUBLIC_APP_URL=https://english-pathway.cubepath.caeher.com \
+NEXT_PUBLIC_SUPABASE_URL=https://ivwtieqsyekrhvxpvtqe.supabase.co \
+pnpm oauth:inspect
+
+# Patch Site URL + allowlist when drift is detected (management API only)
+SUPABASE_ACCESS_TOKEN=... \
+SUPABASE_PROJECT_REF=ivwtieqsyekrhvxpvtqe \
+NEXT_PUBLIC_APP_URL=https://english-pathway.cubepath.caeher.com \
+pnpm oauth:configure
+```
+
+Optional `OAUTH_EXTRA_ALLOWLIST` accepts a comma-separated list of additional redirect patterns (for example local dev URLs on a cloud project).
 
 Use one Google OAuth client and one GitHub OAuth App **per environment**. Do not reuse production callbacks or secrets in local or staging.
 
