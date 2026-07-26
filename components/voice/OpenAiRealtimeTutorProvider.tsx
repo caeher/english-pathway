@@ -40,6 +40,7 @@ export default function OpenAiRealtimeTutorProvider() {
   const [error, setError] = useState<string | null>(null)
   const [stream, setStream] = useState<MediaStream | null>(null)
   const [credits, setCredits] = useState<Credits | null>(null)
+  const [voiceSupported, setVoiceSupported] = useState(false)
   const pcRef = useRef<RTCPeerConnection | null>(null)
   const channelRef = useRef<RTCDataChannel | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -53,6 +54,12 @@ export default function OpenAiRealtimeTutorProvider() {
 
   useEffect(() => {
     sessionStorage.removeItem('ep-session-plan')
+  }, [])
+
+  // The server render has no navigator. Resolve browser capability after
+  // hydration so a full /learn reload does not preserve a false SSR value.
+  useEffect(() => {
+    setVoiceSupported(Boolean(navigator.mediaDevices?.getUserMedia))
   }, [])
 
   const sendUserMessage = useCallback((text: string) => {
@@ -235,7 +242,6 @@ export default function OpenAiRealtimeTutorProvider() {
     setMuted((current) => !current)
   }
 
-  const voiceSupported = typeof navigator !== 'undefined' && Boolean(navigator.mediaDevices?.getUserMedia)
   const audioLabel = credits ? `${formatDuration(credits.audioSecondsRemaining)} voice remaining` : 'Voice credits loading…'
 
   return <LearnSessionLayout

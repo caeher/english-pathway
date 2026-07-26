@@ -30,4 +30,12 @@ describe('tutor providers', () => {
     expect(openAiProvider).not.toContain('initialActivityId')
     expect(openAiProvider).not.toContain('showActivity')
   })
+
+  it('detects OpenAI microphone support after hydration', () => {
+    const openAiProvider = readFileSync(resolve(root, 'components/voice/OpenAiRealtimeTutorProvider.tsx'), 'utf8')
+
+    expect(openAiProvider).toContain('const [voiceSupported, setVoiceSupported] = useState(false)')
+    expect(openAiProvider).toContain('setVoiceSupported(Boolean(navigator.mediaDevices?.getUserMedia))')
+    expect(openAiProvider).not.toContain("const voiceSupported = typeof navigator !== 'undefined'")
+  })
 })
