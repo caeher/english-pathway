@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { cn } from '@/lib/helpers'
 import {
   PANEL_CONTENT_COLUMN_CLASS,
   PANEL_MAIN_CLASS,
-  PANEL_MAIN_SCROLL_CLASS,
   PANEL_SHELL_STYLE,
 } from '@/lib/layout/panel-shell'
 import { getAccountPageTitle } from '@/lib/navigation-model'
@@ -74,9 +72,7 @@ export function DashboardLayout({
             }
           }}
         />
-        <main id="main-content" tabIndex={-1} className={cn(PANEL_MAIN_CLASS)}>
-          <div className={PANEL_MAIN_SCROLL_CLASS}>{children}</div>
-        </main>
+        <main id="main-content" tabIndex={-1} className={PANEL_MAIN_CLASS}>{children}</main>
       </div>
     </div>
   )

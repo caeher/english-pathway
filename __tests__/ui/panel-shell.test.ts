@@ -5,7 +5,6 @@ import {
   PANEL_CONTENT_COLUMN_CLASS,
   PANEL_FULL_BLEED_CLASS,
   PANEL_MAIN_CLASS,
-  PANEL_MAIN_SCROLL_CLASS,
   PANEL_PAGE_FILL_CLASS,
   PANEL_SHELL_CSS_VARS,
 } from '@/lib/layout/panel-shell'
@@ -21,14 +20,12 @@ describe('panel shell constants', () => {
     expect(PANEL_SHELL_CSS_VARS['--app-panel-pb-lg']).toBe('2.5rem')
   })
 
-  it('defines a constrained main shell and a dedicated scroll region', () => {
-    expect(PANEL_MAIN_CLASS).toContain('h-0')
+  it('makes main the constrained account content scroll owner', () => {
     expect(PANEL_MAIN_CLASS).toContain('min-h-0')
-    expect(PANEL_MAIN_CLASS).toContain('overflow-hidden')
-    expect(PANEL_MAIN_SCROLL_CLASS).toContain('overflow-y-auto')
-    expect(PANEL_MAIN_SCROLL_CLASS).toContain('overscroll-y-contain')
-    expect(PANEL_MAIN_SCROLL_CLASS).toContain('pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))]')
-    expect(PANEL_MAIN_SCROLL_CLASS).toContain('lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]')
+    expect(PANEL_MAIN_CLASS).toContain('overflow-y-auto')
+    expect(PANEL_MAIN_CLASS).toContain('overscroll-y-contain')
+    expect(PANEL_MAIN_CLASS).toContain('pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))]')
+    expect(PANEL_MAIN_CLASS).toContain('lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]')
   })
 
   it('defines full-bleed offsets that cancel shell gutters', () => {
@@ -84,7 +81,7 @@ describe('panel shell integration', () => {
     expect(dashboardLayout).toContain('PANEL_SHELL_STYLE')
     expect(dashboardLayout).toContain('PANEL_CONTENT_COLUMN_CLASS')
     expect(dashboardLayout).toContain('PANEL_MAIN_CLASS')
-    expect(dashboardLayout).toContain('PANEL_MAIN_SCROLL_CLASS')
+    expect(dashboardLayout).not.toContain('PANEL_MAIN_SCROLL_CLASS')
     expect(dashboardLayout).toContain('id="main-content"')
     expect(dashboardLayout).toContain('Skip to main content')
     expect(dashboardLayout).toContain('h-dvh')

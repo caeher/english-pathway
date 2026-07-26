@@ -19,15 +19,15 @@ export const PANEL_SHELL_STYLE = PANEL_SHELL_CSS_VARS as CSSProperties
 export const PANEL_CONTENT_COLUMN_CLASS =
   'flex min-h-0 flex-1 flex-col min-w-0 overflow-hidden'
 
-/** Constrains the panel main region to the remaining viewport height. */
+/**
+ * The account content viewport and its only vertical scroll owner.
+ * Keep this on <main>; putting overflow on a descendant lets route content
+ * expand the document and reintroduce browser/window scrolling.
+ */
 export const PANEL_MAIN_CLASS =
-  'flex h-0 min-h-0 flex-1 flex-col overflow-hidden outline-none'
-
-/** Single scroll owner for standard account pages inside the panel shell. */
-export const PANEL_MAIN_SCROLL_CLASS =
   'flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-y-contain ' +
   'px-[var(--app-panel-px)] pt-[var(--app-panel-pt)] pb-[max(var(--app-panel-pb),env(safe-area-inset-bottom))] ' +
-  'lg:px-[var(--app-panel-px-lg)] lg:pt-[var(--app-panel-pt-lg)] lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))]'
+  'lg:px-[var(--app-panel-px-lg)] lg:pt-[var(--app-panel-pt-lg)] lg:pb-[max(var(--app-panel-pb-lg),env(safe-area-inset-bottom))] outline-none'
 
 /** Fills the panel main area for routes that need constrained height + inner scroll. */
 export const PANEL_PAGE_FILL_CLASS =

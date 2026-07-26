@@ -27,7 +27,8 @@ describe('account scroll layout', () => {
     expect(panelShell).toContain('overflow-y-auto')
     expect(panelShell).toContain('overscroll-y-contain')
     expect(dashboardLayout).toContain('id="main-content"')
-    expect(dashboardLayout).toContain('PANEL_MAIN_SCROLL_CLASS')
+    expect(dashboardLayout).toContain('PANEL_MAIN_CLASS')
+    expect(dashboardLayout).not.toContain('PANEL_MAIN_SCROLL_CLASS')
     expect(dashboardLayout).toContain('panel-shell')
   })
 
