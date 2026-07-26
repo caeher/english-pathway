@@ -31,7 +31,8 @@ describe('authentication redirects', () => {
   })
 
   it('sends incomplete profiles to onboarding before any requested destination', () => {
-    expect(resolvePostAuthDestination('/learn', false)).toBe('/onboarding')
+    expect(resolvePostAuthDestination('/learn', false)).toBe('/onboarding?next=%2Flearn')
+    expect(resolvePostAuthDestination('/chats', false)).toBe('/onboarding?next=%2Fchats')
     expect(resolvePostAuthDestination('/onboarding', false)).toBe('/onboarding')
   })
 

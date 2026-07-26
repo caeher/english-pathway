@@ -5,7 +5,12 @@ export function resolvePostAuthDestination(
   onboardingCompleted = false,
 ): string {
   const explicit = redirectTo?.trim()
-  if (!onboardingCompleted) return '/onboarding'
+  if (!onboardingCompleted) {
+    if (explicit && isSafeRedirectPath(explicit) && explicit !== '/onboarding') {
+      return `/onboarding?next=${encodeURIComponent(explicit)}`
+    }
+    return '/onboarding'
+  }
   if (onboardingCompleted && explicit && isSafeRedirectPath(explicit)) {
     return explicit
   }

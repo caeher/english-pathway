@@ -107,7 +107,7 @@ describe('oauth callback handler', () => {
       '/learn',
     )
 
-    expect(result).toEqual({ kind: 'success', destination: '/onboarding' })
+    expect(result).toEqual({ kind: 'success', destination: '/onboarding?next=%2Flearn' })
     expect(recordUserConsents).toHaveBeenCalledWith('user-1')
     expect(clearOAuthRegistrationConsentCookie).toHaveBeenCalled()
   })
