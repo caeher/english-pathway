@@ -61,12 +61,10 @@ export async function resolveEnglishAssistantMessagesForModel(
   const latestUserMessage: AssistantMessage = { role: 'user', content: userMessage }
 
   if (!conversationId) {
-    const created = await createEnglishAssistantConversation(context.supabase, context.userId)
-    return {
-      conversationId: created.id,
-      messages: [latestUserMessage],
-      activityContext: null,
-    }
+    throw new DomainError(
+      'INVALID_INPUT',
+      'A conversation is required. Create one with a name before sending a message.',
+    )
   }
 
   const conversation = await getEnglishAssistantConversation(context.supabase, context.userId, conversationId)

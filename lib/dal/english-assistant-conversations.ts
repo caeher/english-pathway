@@ -128,7 +128,8 @@ export async function appendEnglishAssistantMessages(
   if (error) throw new Error(`Failed to append English assistant messages: ${error.message}`)
 
   const firstUserMessage = messages.find((message) => message.role === 'user')?.content
-  const shouldUpdateTitle = conversation.title === 'New conversation' && firstUserMessage
+  const hasUserChosenTitle = conversation.title !== 'New conversation'
+  const shouldUpdateTitle = !hasUserChosenTitle && firstUserMessage
 
   if (shouldUpdateTitle) {
     const { error: titleError } = await supabase
