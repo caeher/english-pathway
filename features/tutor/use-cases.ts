@@ -4,7 +4,7 @@ import { deletePrivateTutorData, deletePrivateTutorMemory, getPrivateTutorExport
 import { buildTutorContext } from '@/lib/tutor/context'
 import { resolveActivityByIdValidated } from '@/features/learn'
 import { resolveChapter, resolveModule } from '@/features/curriculum'
-import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
+import { getCurriculumProgressSnapshot } from '@/features/progress'
 import { loadAllModules } from '@/lib/knowledge/load-all'
 import { getLearningTarget } from '@/lib/curriculum/progress'
 import { getLearnerLanguageLabel, toCefrLevel } from '@/lib/tutor/learner-profile'

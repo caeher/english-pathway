@@ -8,7 +8,7 @@ import { hasActiveRealtimeSession } from '@/lib/security/realtime-concurrency'
 import { buildTutorInstructions } from '@/lib/tutor/instructions'
 import { TUTOR_REALTIME_TOOLS } from '@/lib/tutor/realtime-tools'
 import { getLearnerLanguageLabel, toCefrLevel } from '@/lib/tutor/learner-profile'
-import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
+import { getCurriculumProgressSnapshot } from '@/features/progress'
 import { loadAllModules } from '@/lib/knowledge/load-all'
 import { getLearningTarget } from '@/lib/curriculum/progress'
 
