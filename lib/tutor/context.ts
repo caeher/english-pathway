@@ -2,6 +2,9 @@ import type { SupabaseClient } from '@supabase/supabase-js'
 import { matchKnowledge, type KnowledgeMatch } from '@/lib/dal/knowledge'
 import { loadAllModules } from '@/lib/knowledge/load-all'
 import { getPrivateTutorMemory } from '@/lib/dal/tutor-memory'
+import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
+import { getLearningTarget } from '@/lib/curriculum/progress'
+import { getLearnerLanguageLabel, toCefrLevel } from '@/lib/tutor/learner-profile'
 import type { Database } from '@/lib/supabase/database.types'
 
 type Client = SupabaseClient<Database>
@@ -30,9 +33,13 @@ export interface TutorContextMatch {
 export interface TutorContext {
   learner: {
     level: string | null
+    nativeLanguage: string | null
+    nativeLanguageLabel: string | null
+    fullName: string | null
     dailyGoalMinutes: number | null
     preferredMode: string | null
   } | null
+  recommendation: { moduleId: string; chapterId: string; activityId: string | null } | null
   progress: {
     lastChapterId: string | null
     lastActivityId: string | null
@@ -100,13 +107,14 @@ export async function buildTutorContext(
   userId: string | null,
   request: TutorContextRequest,
 ): Promise<TutorContext> {
-  const [profile, progress, recentActivities] = userId && supabase
+  const [profile, progress, recentActivities, curriculumSnapshot] = userId && supabase
     ? await Promise.all([
-      supabase.from('profiles').select('level, daily_goal_minutes, preferred_mode').eq('id', userId).maybeSingle(),
+      supabase.from('profiles').select('full_name, level, native_language, daily_goal_minutes, preferred_mode').eq('id', userId).maybeSingle(),
       supabase.from('user_progress').select('last_chapter_id, last_activity_id').eq('user_id', userId).maybeSingle(),
       supabase.from('activity_completions').select('activity_id').eq('user_id', userId).order('updated_at', { ascending: false }).limit(5),
+      getCurriculumProgressSnapshot(supabase, userId),
     ])
-    : [{ data: null, error: null }, { data: null, error: null }, { data: [], error: null }]
+    : [{ data: null, error: null }, { data: null, error: null }, { data: [], error: null }, null]
 
   let matches: TutorContextMatch[] = []
   let source: TutorContext['retrieval']['source'] = 'none'
@@ -139,12 +147,20 @@ export async function buildTutorContext(
   else if (privateMatches.length > 0) source = 'personal'
 
   return {
-    learner: profile.data ? { level: profile.data.level, dailyGoalMinutes: profile.data.daily_goal_minutes, preferredMode: profile.data.preferred_mode } : null,
+    learner: profile.data ? {
+      level: toCefrLevel(profile.data.level),
+      nativeLanguage: profile.data.native_language,
+      nativeLanguageLabel: getLearnerLanguageLabel(profile.data.native_language),
+      fullName: profile.data.full_name,
+      dailyGoalMinutes: profile.data.daily_goal_minutes,
+      preferredMode: profile.data.preferred_mode,
+    } : null,
     progress: userId ? {
       lastChapterId: progress.data?.last_chapter_id ?? null,
       lastActivityId: progress.data?.last_activity_id ?? null,
       recentActivityIds: (recentActivities.data ?? []).map((item) => item.activity_id),
     } : null,
+    recommendation: curriculumSnapshot ? getLearningTarget(loadAllModules(), curriculumSnapshot) : null,
     retrieval: { source, fallbackUsed, matches: combinedMatches },
   }
 }

@@ -4,6 +4,10 @@ import { deletePrivateTutorData, deletePrivateTutorMemory, getPrivateTutorExport
 import { buildTutorContext } from '@/lib/tutor/context'
 import { resolveActivityByIdValidated } from '@/features/learn'
 import { resolveChapter, resolveModule } from '@/features/curriculum'
+import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
+import { loadAllModules } from '@/lib/knowledge/load-all'
+import { getLearningTarget } from '@/lib/curriculum/progress'
+import { getLearnerLanguageLabel, toCefrLevel } from '@/lib/tutor/learner-profile'
 import type { TutorContextRequest, TutorMemoryDeleteInput, TutorMemoryWriteInput } from './contracts'
 
 const allowedTools = ['showGrammar', 'showActivity', 'showQuestion', 'clearPanel', 'fetchCurriculumContext', 'listChapterActivities', 'getPanelState'] as const
@@ -58,19 +62,28 @@ export async function buildTutorContextUseCase(context: AuthenticatedContext | n
 }
 
 export async function getTutorSessionUseCase(context: AuthenticatedContext | null) {
-  const [profile, progress] = context
+  const [profile, progress, snapshot] = context
     ? await Promise.all([
-      context.supabase.from('profiles').select('level, daily_goal_minutes, preferred_mode').eq('id', context.userId).maybeSingle(),
+      context.supabase.from('profiles').select('full_name, level, native_language, daily_goal_minutes, preferred_mode').eq('id', context.userId).maybeSingle(),
       context.supabase.from('user_progress').select('last_chapter_id, last_activity_id').eq('user_id', context.userId).maybeSingle(),
+      getCurriculumProgressSnapshot(context.supabase, context.userId),
     ])
-    : [{ data: null }, { data: null }]
+    : [{ data: null }, { data: null }, null]
   const orchestration = {
     sessionId: crypto.randomUUID(),
     state: 'preparing' as const,
     allowedTools,
-    instruction: 'Use only validated curriculum activity IDs and wait for an explicit activity result before advancing.',
-    learner: profile.data ? { level: profile.data.level, dailyGoalMinutes: profile.data.daily_goal_minutes, preferredMode: profile.data.preferred_mode } : null,
+    instruction: 'Use only validated curriculum activity IDs. Explain in the learner native language when known, keep examples in English, and wait for an explicit activity result before advancing.',
+    learner: profile.data ? {
+      level: toCefrLevel(profile.data.level),
+      nativeLanguage: profile.data.native_language,
+      nativeLanguageLabel: getLearnerLanguageLabel(profile.data.native_language),
+      fullName: profile.data.full_name,
+      dailyGoalMinutes: profile.data.daily_goal_minutes,
+      preferredMode: profile.data.preferred_mode,
+    } : null,
     progress: progress.data ? { lastChapterId: progress.data.last_chapter_id, lastActivityId: progress.data.last_activity_id } : null,
+    recommendation: snapshot ? getLearningTarget(loadAllModules(), snapshot) : null,
   }
 
   const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID

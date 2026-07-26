@@ -7,12 +7,20 @@ export interface SessionOrchestration {
   instruction?: string
   learner?: {
     level: string | null
+    nativeLanguage: string | null
+    nativeLanguageLabel: string | null
+    fullName: string | null
     dailyGoalMinutes: number | null
     preferredMode: string | null
   } | null
   progress?: {
     lastChapterId: string | null
     lastActivityId: string | null
+  } | null
+  recommendation?: {
+    moduleId: string
+    chapterId: string
+    activityId: string | null
   } | null
 }
 

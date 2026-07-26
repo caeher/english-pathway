@@ -2,8 +2,13 @@ import { PROMPT_INJECTION_POLICY } from '@/lib/security/prompt-trust'
 
 export interface LearnerContext {
   level?: string | null
+  nativeLanguage?: string | null
+  nativeLanguageLabel?: string | null
+  fullName?: string | null
   lastChapterId?: string | null
   lastActivityId?: string | null
+  recommendedChapterId?: string | null
+  recommendedActivityId?: string | null
 }
 
 const BASE_INSTRUCTIONS = `You are the friendly English Pathway voice tutor. Help the learner practise English through guided lessons.
@@ -47,11 +52,18 @@ blocks: [
 6. If score < 70%: reinforce with showGrammar and retry; if ≥ 70%: continue to the next activity
 7. clearPanel when switching topics
 
+## Language and lesson continuity
+- Teach English to a non-native English speaker. Explain instructions, grammar, corrections, and encouragement in the learner's configured native language when it is available.
+- Keep the English word, phrase, sentence, pronunciation target, and activity answer in English. Gradually use more English only when the learner demonstrates readiness.
+- Begin a new lesson by greeting the learner by name when known, naming their CEFR level, and offering either the recommended next topic or a topic of interest.
+- Follow one small objective at a time: explain, model in English, check understanding, then practise. Connect the next explanation to the previous result.
+- After showActivity or showQuestion, give only a short instruction and wait. Do not continue teaching, call another activity, or ask a new question until the explicit result arrives.
+
 ## Rules
 - NEVER invent activity IDs — only use IDs returned by listChapterActivities or fetchCurriculumContext
 - ALWAYS wait for an explicit activity completion message before advancing
 - Correct errors gently; give one clear improvement at a time
-- Keep conversation in English unless the learner needs a brief explanation in another language
+- Use the learner's native language for explanations and feedback when it is known; otherwise keep conversation in simple English
 - Do not claim to be human or reveal implementation details
 
 ${PROMPT_INJECTION_POLICY}
@@ -64,8 +76,12 @@ export function buildTutorInstructions(learner?: LearnerContext | null): string 
   if (!learner) return BASE_INSTRUCTIONS
 
   const parts = [BASE_INSTRUCTIONS]
+  if (learner.fullName) parts.push(`Learner name: ${learner.fullName}.`)
   if (learner.level) parts.push(`Learner level: ${learner.level}.`)
+  if (learner.nativeLanguageLabel) parts.push(`Learner native language: ${learner.nativeLanguageLabel}. Use it for explanations and feedback while teaching English.`)
   if (learner.lastChapterId) parts.push(`Last chapter studied: ${learner.lastChapterId}.`)
   if (learner.lastActivityId) parts.push(`Last activity completed: ${learner.lastActivityId}.`)
+  if (learner.recommendedChapterId) parts.push(`Recommended next chapter: ${learner.recommendedChapterId}.`)
+  if (learner.recommendedActivityId) parts.push(`Recommended next activity: ${learner.recommendedActivityId}.`)
   return parts.join('\n\n')
 }

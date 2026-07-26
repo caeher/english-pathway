@@ -7,6 +7,10 @@ import { enforceRateLimit } from '@/lib/security/enforce-rate-limit'
 import { hasActiveRealtimeSession } from '@/lib/security/realtime-concurrency'
 import { buildTutorInstructions } from '@/lib/tutor/instructions'
 import { TUTOR_REALTIME_TOOLS } from '@/lib/tutor/realtime-tools'
+import { getLearnerLanguageLabel, toCefrLevel } from '@/lib/tutor/learner-profile'
+import { getCurriculumProgressSnapshot } from '@/lib/dal/learning-progress'
+import { loadAllModules } from '@/lib/knowledge/load-all'
+import { getLearningTarget } from '@/lib/curriculum/progress'
 
 export const runtime = 'nodejs'
 
@@ -40,15 +44,22 @@ export async function POST(request: Request) {
     return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', credit.reason === 'active_session' ? 'A voice session is already active.' : `Your ${AUDIO_CREDIT_SECONDS / 60} minutes of voice credits have been used.`, 429), 'Voice credits exhausted')
   }
 
-  const [profile, progress] = await Promise.all([
-    context.supabase.from('profiles').select('level').eq('id', context.userId).maybeSingle(),
+  const [profile, progress, snapshot] = await Promise.all([
+    context.supabase.from('profiles').select('full_name, level, native_language').eq('id', context.userId).maybeSingle(),
     context.supabase.from('user_progress').select('last_chapter_id, last_activity_id').eq('user_id', context.userId).maybeSingle(),
+    getCurriculumProgressSnapshot(context.supabase, context.userId),
   ])
 
+  const recommendation = getLearningTarget(loadAllModules(), snapshot)
   const instructions = buildTutorInstructions({
-    level: profile.data?.level ?? null,
+    level: toCefrLevel(profile.data?.level),
+    fullName: profile.data?.full_name ?? null,
+    nativeLanguage: profile.data?.native_language ?? null,
+    nativeLanguageLabel: getLearnerLanguageLabel(profile.data?.native_language),
     lastChapterId: progress.data?.last_chapter_id ?? null,
     lastActivityId: progress.data?.last_activity_id ?? null,
+    recommendedChapterId: recommendation?.chapterId ?? null,
+    recommendedActivityId: recommendation?.activityId ?? null,
   })
 
   const form = new FormData()

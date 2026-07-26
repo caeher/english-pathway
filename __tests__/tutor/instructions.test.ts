@@ -14,4 +14,19 @@ describe('buildTutorInstructions', () => {
     expect(instructions).toContain('Last activity completed: act-1.')
     expect(instructions).not.toContain('## Session plan')
   })
+
+  it('sets the native language and recommended continuation as teaching context', () => {
+    const instructions = buildTutorInstructions({
+      fullName: 'Ana',
+      level: 'A1',
+      nativeLanguageLabel: 'Spanish',
+      recommendedChapterId: 'm1-ch1',
+      recommendedActivityId: 'm1-ch1-flashcards',
+    })
+
+    expect(instructions).toContain('Learner name: Ana.')
+    expect(instructions).toContain('Learner native language: Spanish.')
+    expect(instructions).toContain('Recommended next chapter: m1-ch1.')
+    expect(instructions).toContain('Recommended next activity: m1-ch1-flashcards.')
+  })
 })
