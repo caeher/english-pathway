@@ -47,10 +47,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, loading = false, loadingLabel = 'Loading', children, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
     const content = loading ? (
-      <span className="inline-flex items-center gap-2">
-        <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-        <span>{loadingLabel}</span>
-      </span>
+      size === 'icon' ? (
+        <>
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+          <span className="sr-only">{loadingLabel}</span>
+        </>
+      ) : (
+        <span className="inline-flex items-center gap-2">
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+          <span>{loadingLabel}</span>
+        </span>
+      )
     ) : children
     return (
       <Comp
