@@ -5,6 +5,9 @@ import { resolve } from 'node:path'
 describe('chats page accessibility contract', () => {
   const chatsPage = readFileSync(resolve(process.cwd(), 'components/pages/ChatsPage.tsx'), 'utf8')
   const conversationPage = readFileSync(resolve(process.cwd(), 'components/pages/ChatConversationPage.tsx'), 'utf8')
+  const conversationLayout = readFileSync(resolve(process.cwd(), 'app/(account)/chats/[id]/layout.tsx'), 'utf8')
+  const conversationShell = readFileSync(resolve(process.cwd(), 'components/english-assistant/ChatConversationShell.tsx'), 'utf8')
+  const conversationHeader = readFileSync(resolve(process.cwd(), 'components/english-assistant/ChatConversationHeader.tsx'), 'utf8')
   const composer = readFileSync(resolve(process.cwd(), 'components/english-assistant/ChatComposer.tsx'), 'utf8')
   const thread = readFileSync(resolve(process.cwd(), 'components/english-assistant/ChatMessageThread.tsx'), 'utf8')
   const history = readFileSync(resolve(process.cwd(), 'components/english-assistant/ConversationHistory.tsx'), 'utf8')
@@ -25,13 +28,27 @@ describe('chats page accessibility contract', () => {
   it('routes conversation detail to dedicated page with thread and composer', () => {
     expect(conversationPage).toContain('ChatMessageThread')
     expect(conversationPage).toContain('ChatComposer')
-    expect(conversationPage).toContain('Back to chats')
+    expect(conversationPage).toContain('ChatConversationHeader')
+    expect(conversationPage).toContain('ChatConversationShell')
+    expect(conversationPage).toContain('layout="prompt"')
+    expect(conversationPage).toContain('variant="prompt"')
+    expect(conversationPage).not.toContain('Surface')
     expect(conversationPage).toContain('latestAssistantReply')
     expect(conversationPage).toContain('sendingStatus')
     expect(conversationPage).toContain('aria-live="polite"')
     expect(conversationPage).toContain('conversationTitle')
     expect(conversationPage).toContain('conversationNotFound')
     expect(conversationPage).toContain('isStreaming')
+  })
+
+  it('uses full-height conversation route layout without nested cards', () => {
+    expect(conversationLayout).toContain('-mx-4')
+    expect(conversationLayout).toContain('min-h-[calc(100dvh-var(--app-header-h)-2rem)]')
+    expect(conversationShell).toContain('overflow-y-auto')
+    expect(conversationShell).toContain('sticky bottom-0')
+    expect(conversationHeader).toContain('sticky top-0')
+    expect(conversationHeader).toContain('Delete conversation')
+    expect(conversationHeader).toContain('DropdownMenu')
   })
 
   it('uses accessible composer with loading state, alert errors and touch targets', () => {
@@ -43,6 +60,8 @@ describe('chats page accessibility contract', () => {
     expect(composer).toContain('isSending')
     expect(composer).toContain('loading={isSending}')
     expect(composer).toContain('loadingLabel="Sending…"')
+    expect(composer).toContain("variant?: 'default' | 'prompt'")
+    expect(composer).toContain('rounded-3xl')
   })
 
   it('labels conversation history for screen readers and keyboard navigation', () => {
@@ -64,6 +83,8 @@ describe('chats page accessibility contract', () => {
     expect(thread).toContain('Assistant reply')
     expect(thread).toContain('isAnimating')
     expect(thread).toContain('mode={isStreamingMessage ? \'streaming\' : \'static\'}')
+    expect(thread).toContain("layout?: 'bubble' | 'prompt'")
+    expect(thread).toContain('chat-prompt-markdown')
   })
 
   it('implements naming dialog for first prompt', () => {
