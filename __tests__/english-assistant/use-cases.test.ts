@@ -46,26 +46,15 @@ describe('english assistant use cases', () => {
     } satisfies Partial<DomainError>)
   })
 
-  it('creates a conversation when resolving messages without a conversation id', async () => {
-    vi.mocked(createEnglishAssistantConversation).mockResolvedValue({
-      id: conversationId,
-      title: 'New conversation',
-      updatedAt: '2026-07-24T00:00:00.000Z',
-      hasContext: false,
-    })
+  it('throws INVALID_INPUT when resolving messages without a conversation id', async () => {
+    await expect(
+      resolveEnglishAssistantMessagesForModel(mockContext, undefined, 'Explain present simple.'),
+    ).rejects.toMatchObject({
+      code: 'INVALID_INPUT',
+      message: 'A conversation is required. Create one with a name before sending a message.',
+    } satisfies Partial<DomainError>)
 
-    const resolved = await resolveEnglishAssistantMessagesForModel(
-      mockContext,
-      undefined,
-      'Explain present simple.',
-    )
-
-    expect(createEnglishAssistantConversation).toHaveBeenCalledWith(mockContext.supabase, mockContext.userId)
-    expect(resolved).toEqual({
-      conversationId,
-      messages: [{ role: 'user', content: 'Explain present simple.' }],
-      activityContext: null,
-    })
+    expect(createEnglishAssistantConversation).not.toHaveBeenCalled()
   })
 
   it('throws NOT_FOUND when resolving messages for another users conversation', async () => {

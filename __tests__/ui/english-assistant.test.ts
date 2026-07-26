@@ -58,4 +58,17 @@ describe('english assistant accessibility contract', () => {
     expect(assistant).toContain('Activity context attached')
     expect(assistant).toContain('Start new conversation')
   })
+
+  it('requires naming before creating a new conversation from the sheet', () => {
+    expect(assistant).toContain('NameConversationDialog')
+    expect(assistant).toContain('useConversationNaming')
+    expect(assistant).toContain('handleStartNewConversation')
+    expect(assistant).not.toMatch(/onClick=\{[^}]*createConversation/)
+    expect(assistant).toContain("openNaming(request.message, 'Activity help')")
+  })
+
+  it('streams assistant replies through the shared chat hook', () => {
+    expect(assistant).toContain('isStreaming')
+    expect(assistant).toContain('isStreaming={isStreaming || isStarting}')
+  })
 })

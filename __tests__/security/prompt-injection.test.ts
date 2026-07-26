@@ -48,15 +48,12 @@ describe('prompt injection security', () => {
     }
   })
 
-  it('canonicalizes new conversations to a single trusted user turn', async () => {
-    const resolved = await resolveEnglishAssistantMessagesForModel(
-      mockContext,
-      undefined,
-      'Explain present simple.',
-    )
-
-    expect(resolved.messages).toEqual([{ role: 'user', content: 'Explain present simple.' }])
-    expect(resolved.messages.some((message) => message.role === 'assistant')).toBe(false)
+  it('rejects assistant requests without a conversation id', async () => {
+    await expect(
+      resolveEnglishAssistantMessagesForModel(mockContext, undefined, 'Explain present simple.'),
+    ).rejects.toMatchObject({
+      code: 'INVALID_INPUT',
+    })
   })
 
   it('loads persisted assistant history from the server for existing conversations', async () => {
