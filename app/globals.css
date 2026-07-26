@@ -441,6 +441,39 @@ h1, h2, h3, h4, h5, h6,
   padding: 0.1rem 0.25rem;
   font-size: 0.9em;
 }
+.english-assistant-markdown pre,
+.english-assistant-markdown [data-streamdown="code-block"] {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  max-width: 100%;
+  border-radius: 0.75rem;
+  background: var(--bg-card);
+  padding: 0.75rem;
+}
+.english-assistant-markdown pre code,
+.english-assistant-markdown [data-streamdown="code-block"] code {
+  padding: 0;
+  background: transparent;
+  white-space: pre;
+}
+.english-assistant-markdown table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.english-assistant-markdown th,
+.english-assistant-markdown td {
+  border: 1px solid var(--border-primary);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.english-assistant-markdown th {
+  background: var(--bg-card);
+  font-weight: 700;
+}
 
 .legal-content h1 {
   font-family: var(--font-display);

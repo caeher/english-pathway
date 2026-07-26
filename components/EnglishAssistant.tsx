@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Bot, History, MessageCircle, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -15,6 +15,8 @@ import {
 import { ChatComposer } from '@/components/english-assistant/ChatComposer'
 import { ChatMessageThread } from '@/components/english-assistant/ChatMessageThread'
 import { ConversationHistory } from '@/components/english-assistant/ConversationHistory'
+import { NameConversationDialog } from '@/components/english-assistant/NameConversationDialog'
+import { useConversationNaming } from '@/hooks/useConversationNaming'
 import { useEnglishAssistantChat } from '@/hooks/useEnglishAssistantChat'
 import { WELCOME_MESSAGE } from '@/lib/english-assistant/constants'
 import { buildActivityContextFromPanel, buildHintActivityContextFromPanel } from '@/lib/english-assistant/context'
@@ -37,6 +39,7 @@ export default function EnglishAssistant() {
   const [open, setOpen] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
   const viewportHeight = useVisualViewportHeight()
+  const pendingHintContextRef = useRef<unknown>(null)
 
   const {
     draft,
@@ -46,7 +49,9 @@ export default function EnglishAssistant() {
     conversations,
     activeConversationId,
     activityContextAttached,
+    setActivityContextAttached,
     isSending,
+    isStreaming,
     isLoadingConversation,
     isAttachingContext,
     error,
@@ -58,12 +63,34 @@ export default function EnglishAssistant() {
     sendingStatus,
     loadConversation,
     initializeConversations,
-    createConversation,
     deleteConversation,
     sendMessage,
-    sendMessageWithContent,
     attachActivityContext,
+    persistActiveConversationId,
+    createAndSendConversation,
   } = useEnglishAssistantChat({ persistActiveId: true })
+
+  const {
+    pendingPrompt,
+    pendingTitle,
+    namingError,
+    isStarting,
+    isNamingOpen,
+    openNaming,
+    cancelNaming,
+    confirmNaming,
+    handlePromptSubmit,
+  } = useConversationNaming({
+    draft,
+    setDraft,
+    createAndSendConversation,
+    onSuccess: async () => {
+      if (pendingHintContextRef.current) {
+        await attachActivityContext(pendingHintContextRef.current)
+        pendingHintContextRef.current = null
+      }
+    },
+  })
 
   const availableActivityContext = useMemo(
     () => buildActivityContextFromPanel(panel, lastActivityResult),
@@ -76,70 +103,45 @@ export default function EnglishAssistant() {
     void initializeConversations()
   }, [open, initializeConversations])
 
-  const sendHintFallback = useCallback(async (message: string, conversationId: string) => {
-    try {
-      await sendMessageWithContent(message, conversationId)
-    } catch {
-      // Error state handled by hook
-    }
-  }, [sendMessageWithContent])
-
   useEffect(() => {
     if (!hintFallbackRequest || pathname !== '/learn') return
 
     const request = hintFallbackRequest
-    let cancelled = false
+    setOpen(true)
+    setError(null)
 
-    async function processHintFallback() {
-      setOpen(true)
-      setError(null)
-
-      let conversationId = activeConversationId
-      if (!conversationId) {
-        const payload = await createConversation('Activity help')
-        if (!payload?.id) {
-          if (!cancelled) setError('Unable to start a help conversation.')
-          return
-        }
-        conversationId = payload.id
-        if (!cancelled) {
-          setMessages([WELCOME_MESSAGE])
-        }
-      }
-
-      const hintContext = buildHintActivityContextFromPanel(panel, lastActivityResult, request.context)
-      if (hintContext && conversationId) {
-        await attachActivityContext(hintContext)
-      }
-
-      if (!cancelled) {
-        setHintFallbackRequest(null)
-        await sendHintFallback(request.message, conversationId)
-      }
-    }
-
-    void processHintFallback()
-
-    return () => {
-      cancelled = true
-    }
+    pendingHintContextRef.current = buildHintActivityContextFromPanel(
+      panel,
+      lastActivityResult,
+      request.context,
+    )
+    openNaming(request.message, 'Activity help')
+    setHintFallbackRequest(null)
   }, [
-    activeConversationId,
-    attachActivityContext,
-    createConversation,
     hintFallbackRequest,
     lastActivityResult,
+    openNaming,
     panel,
     pathname,
-    sendHintFallback,
     setError,
     setHintFallbackRequest,
-    setMessages,
   ])
 
-  async function handleCreateConversation() {
-    await createConversation()
+  function handleStartNewConversation() {
+    persistActiveConversationId(null)
+    setMessages([WELCOME_MESSAGE])
+    setActivityContextAttached(false)
     setShowHistory(false)
+    setDraft('')
+  }
+
+  async function handleSendMessage(event?: FormEvent<HTMLFormElement>) {
+    if (!activeConversationId) {
+      if (isSending || isLoadingConversation || isStarting) return
+      handlePromptSubmit(event)
+      return
+    }
+    await sendMessage(event)
   }
 
   function handleInputFocus() {
@@ -150,6 +152,10 @@ export default function EnglishAssistant() {
   }
 
   const sheetMaxHeight = viewportHeight ? `${Math.max(viewportHeight - 16, 280)}px` : undefined
+
+  if (pathname.startsWith('/chats')) {
+    return null
+  }
 
   return (
     <div className="fixed bottom-5 right-5 z-60 sm:bottom-6 sm:right-6">
@@ -196,8 +202,8 @@ export default function EnglishAssistant() {
                   variant="ghost"
                   aria-label="Start new conversation"
                   className="min-h-11 min-w-11"
-                  onClick={() => void handleCreateConversation()}
-                  disabled={isLoadingConversation || isSending}
+                  onClick={handleStartNewConversation}
+                  disabled={isLoadingConversation || isSending || isStarting}
                 >
                   <Plus className="size-4" aria-hidden="true" />
                 </Button>
@@ -254,7 +260,7 @@ export default function EnglishAssistant() {
           <ChatMessageThread
             messages={messages}
             isLoading={isLoadingConversation}
-            isSending={isSending}
+            isStreaming={isStreaming || isStarting}
             endRef={endOfMessagesRef}
             className="px-4 py-4"
           />
@@ -262,8 +268,9 @@ export default function EnglishAssistant() {
           <ChatComposer
             draft={draft}
             onDraftChange={setDraft}
-            onSubmit={sendMessage}
-            disabled={isSending || isLoadingConversation}
+            onSubmit={handleSendMessage}
+            disabled={isSending || isLoadingConversation || isStarting}
+            isSending={isSending || isStarting}
             sendDisabled={credits?.assistantMessagesRemaining === 0}
             error={error}
             inputRef={inputRef}
@@ -272,6 +279,16 @@ export default function EnglishAssistant() {
           />
         </SheetContent>
       </Sheet>
+
+      <NameConversationDialog
+        open={isNamingOpen}
+        pendingPrompt={pendingPrompt ?? ''}
+        initialTitle={pendingTitle}
+        isSubmitting={isStarting}
+        error={namingError}
+        onCancel={cancelNaming}
+        onConfirm={(title) => void confirmNaming(title)}
+      />
     </div>
   )
 }
