@@ -9,7 +9,10 @@ import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import type { SessionMode } from './session-types'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
-import { TUTOR_ACTIVITY_PRESENTED_EVENT } from '@/lib/learn/activity-voice-pause'
+import {
+  ACTIVITY_VOICE_WRAP_UP_DELAY_MS,
+  TUTOR_ACTIVITY_PRESENTED_EVENT,
+} from '@/lib/learn/activity-voice-pause'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -246,7 +249,7 @@ export default function OpenAiRealtimeTutorProvider() {
     const timer = window.setTimeout(() => {
       setActivityPauseReady(false)
       void end()
-    }, 1_000)
+    }, ACTIVITY_VOICE_WRAP_UP_DELAY_MS)
     return () => window.clearTimeout(timer)
   }, [active, activityPauseReady, end])
 

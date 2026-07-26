@@ -15,7 +15,10 @@ import { trackEvent } from '@/lib/analytics/events'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
-import { TUTOR_ACTIVITY_PRESENTED_EVENT } from '@/lib/learn/activity-voice-pause'
+import {
+  ACTIVITY_VOICE_WRAP_UP_DELAY_MS,
+  TUTOR_ACTIVITY_PRESENTED_EVENT,
+} from '@/lib/learn/activity-voice-pause'
 
 interface TutorControlsProps {
   mode: SessionMode
@@ -98,7 +101,9 @@ function TutorControls({
       return
     }
 
-    const delay = activityPauseSawSpeechRef.current ? 1_000 : 15_000
+    const delay = activityPauseSawSpeechRef.current
+      ? ACTIVITY_VOICE_WRAP_UP_DELAY_MS
+      : 15_000
     activityPauseTimerRef.current = window.setTimeout(() => {
       activityPauseTimerRef.current = null
       void end()
