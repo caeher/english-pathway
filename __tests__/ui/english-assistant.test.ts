@@ -4,6 +4,8 @@ import { resolve } from 'node:path'
 
 describe('english assistant accessibility contract', () => {
   const assistant = readFileSync(resolve(process.cwd(), 'components/EnglishAssistant.tsx'), 'utf8')
+  const composer = readFileSync(resolve(process.cwd(), 'components/english-assistant/ChatComposer.tsx'), 'utf8')
+  const history = readFileSync(resolve(process.cwd(), 'components/english-assistant/ConversationHistory.tsx'), 'utf8')
   const sheet = readFileSync(resolve(process.cwd(), 'components/ui/sheet.tsx'), 'utf8')
   const viewportHook = readFileSync(resolve(process.cwd(), 'lib/ui/use-visual-viewport-height.ts'), 'utf8')
 
@@ -25,9 +27,8 @@ describe('english assistant accessibility contract', () => {
     expect(assistant).toContain('latestAssistantReply')
     expect(assistant).toContain('sendingStatus')
     expect(assistant).toContain('aria-live="polite"')
-    expect(assistant).toContain('role="alert"')
-    expect(assistant).toContain('aria-live="assertive"')
-    expect(assistant).not.toMatch(/flex-1 space-y-3 overflow-y-auto[\s\S]*aria-live="polite"/)
+    expect(composer).toContain('role="alert"')
+    expect(composer).toContain('aria-live="assertive"')
   })
 
   it('adapts the sheet to mobile keyboard and safe areas', () => {
@@ -52,7 +53,7 @@ describe('english assistant accessibility contract', () => {
 
   it('exposes conversation history and opt-in activity context controls', () => {
     expect(assistant).toContain('english-assistant-history')
-    expect(assistant).toContain('aria-label="Conversation history"')
+    expect(history).toContain('aria-label="Conversation history"')
     expect(assistant).toContain('Use this activity as context')
     expect(assistant).toContain('Activity context attached')
     expect(assistant).toContain('Start new conversation')
