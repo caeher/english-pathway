@@ -31,7 +31,7 @@ export function ChatConversationHeader({
   return (
     <header
       className={cn(
-        'sticky top-0 z-10 flex h-14 shrink-0 items-center gap-2 border-b border-(--border-primary) bg-(--bg-primary)/95 px-3 backdrop-blur supports-[backdrop-filter]:bg-(--bg-primary)/85 sm:px-4',
+        'sticky top-0 z-10 flex h-14 shrink-0 items-center gap-2 bg-(--bg-primary)/95 px-3 backdrop-blur supports-[backdrop-filter]:bg-(--bg-primary)/85 sm:px-4',
         className,
       )}
     >

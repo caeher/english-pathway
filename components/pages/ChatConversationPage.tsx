@@ -74,6 +74,7 @@ export default function ChatConversationPage({ conversationId }: ChatConversatio
             await deleteConversation(conversationId)
             router.push('/chats')
           }}
+          className="mx-auto w-full max-w-3xl"
         />
       )}
       footer={(
