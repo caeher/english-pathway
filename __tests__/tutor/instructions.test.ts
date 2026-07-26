@@ -1,45 +1,17 @@
 import { describe, expect, it } from 'vitest'
-import { DomainError } from '@/lib/api/errors'
-import { parseSessionPlanQuery } from '@/features/tutor/use-cases'
 import { buildTutorInstructions } from '@/lib/tutor/instructions'
-import { validateSessionPlan } from '@/lib/learn/session-plan'
-
-describe('parseSessionPlanQuery', () => {
-  it('parses and normalizes mode from query params', () => {
-    const plan = parseSessionPlanQuery(JSON.stringify({
-      goal: 'continue',
-      skill: 'mixed',
-      durationMinutes: 15,
-      mode: 'text',
-    }), 'voice')
-
-    expect(plan).toEqual(validateSessionPlan({
-      goal: 'continue',
-      skill: 'mixed',
-      durationMinutes: 15,
-      mode: 'voice',
-    }))
-  })
-
-  it('rejects malformed plan payloads', () => {
-    expect(() => parseSessionPlanQuery('{bad json}', 'text')).toThrow(DomainError)
-  })
-})
 
 describe('buildTutorInstructions', () => {
-  it('includes validated session plan details', () => {
+  it('includes learner context when provided', () => {
     const instructions = buildTutorInstructions({
       level: 'intermediate',
-      plan: validateSessionPlan({
-        goal: 'review',
-        skill: 'mixed',
-        durationMinutes: 10,
-        mode: 'voice',
-      }),
+      lastChapterId: 'ch-1',
+      lastActivityId: 'act-1',
     })
 
     expect(instructions).toContain('Learner level: intermediate.')
-    expect(instructions).toContain('## Session plan')
-    expect(instructions).toContain('goal=review')
+    expect(instructions).toContain('Last chapter studied: ch-1.')
+    expect(instructions).toContain('Last activity completed: act-1.')
+    expect(instructions).not.toContain('## Session plan')
   })
 })

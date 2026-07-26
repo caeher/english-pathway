@@ -1,8 +1,5 @@
-import { buildCompletionSummary, correctnessFromPercent } from '@/lib/learn/activity-completion'
-import { formatSessionPlanLabel, formatSessionPlanNextStep, type SessionPlan } from '@/lib/learn/session-plan'
-import { getTutorStateLabel } from '@/lib/learn/tutor-state-label'
-import type { TutorSessionState } from '@/lib/tutor/state'
 import type { LearnPanelState } from '@/stores/useLearnSessionStore'
+import type { TutorSessionState } from '@/lib/tutor/state'
 
 export type SessionVisualState =
   | 'pre_session'
@@ -12,8 +9,6 @@ export type SessionVisualState =
   | 'completed'
 
 export type ActivityUiPhase = 'playing' | 'completed' | 'resume-prompt' | 'checking'
-
-export type SessionModeLabel = 'Voice' | 'Text' | 'Not started'
 
 export type ContinuationKind = 'review' | 'resume' | 'start' | 'completed'
 
@@ -33,26 +28,7 @@ export interface SessionUiContext {
   panel: LearnPanelState
   activityPhase?: ActivityUiPhase | null
   questionAnswered?: boolean
-  continuation?: ContinuationInfo | null
   completionScorePercent?: number | null
-  sessionPlan?: SessionPlan | null
-}
-
-export interface SessionUiSnapshot {
-  state: SessionVisualState
-  modeLabel: SessionModeLabel
-  objectiveLabel: string
-  nextActionLabel: string
-  statusDetail?: string
-  stateBadgeLabel: string
-}
-
-const STATE_BADGE_LABELS: Record<SessionVisualState, string> = {
-  pre_session: 'Ready',
-  connecting: 'Connecting',
-  active_practice: 'Practice',
-  feedback: 'Feedback',
-  completed: 'Complete',
 }
 
 export function shouldExpandEngagementMetrics(state: SessionVisualState): boolean {
@@ -79,107 +55,4 @@ export function resolveSessionVisualState(context: SessionUiContext): SessionVis
   if (context.tutorActive) return 'active_practice'
   if (context.tutorConnecting) return 'connecting'
   return 'pre_session'
-}
-
-function resolveModeLabel(context: SessionUiContext): SessionModeLabel {
-  if (!context.tutorActive && !context.tutorConnecting) return 'Not started'
-  if (context.sessionMode === 'voice') return 'Voice'
-  if (context.sessionMode === 'text') return 'Text'
-  return 'Not started'
-}
-
-function resolveObjectiveLabel(context: SessionUiContext, state: SessionVisualState): string {
-  const { panel, continuation, sessionPlan } = context
-
-  if (panel.kind === 'activity') return panel.activity.title
-  if (panel.kind === 'explanation') return panel.title ?? 'Lesson'
-  if (panel.kind === 'question') return 'Quick check'
-
-  if (sessionPlan && (state === 'pre_session' || state === 'connecting' || state === 'active_practice')) {
-    return formatSessionPlanLabel(sessionPlan)
-  }
-
-  if (state === 'pre_session' && continuation) return continuation.title
-  if (state === 'completed') return 'Activity finished'
-
-  return 'English practice session'
-}
-
-function resolveNextActionLabel(context: SessionUiContext, state: SessionVisualState): string {
-  const { panel, continuation, completionScorePercent, tutorState, sessionPlan } = context
-
-  if (state === 'completed') {
-    const scorePercent = completionScorePercent ?? 0
-    const summary = buildCompletionSummary({
-      score: scorePercent,
-      total: 100,
-      scorePercent,
-      correctness: correctnessFromPercent(scorePercent),
-      nextAction: scorePercent >= 70 ? 'continue' : 'retry',
-      weakItemIndexes: [],
-      metrics: {},
-    })
-    if (summary.primaryAction === 'continue') return 'Continue to the next activity'
-    if (summary.primaryAction === 'review') return 'Review weak items'
-    return 'Try again'
-  }
-
-  if (state === 'feedback') {
-    const tutorLabel = getTutorStateLabel(tutorState)
-    if (tutorLabel) return `Follow tutor guidance: ${tutorLabel}`
-    if (context.questionAnswered) return 'Review the answer feedback'
-    return 'Review your response'
-  }
-
-  if (state === 'connecting') {
-    if (sessionPlan) return `${formatSessionPlanNextStep(sessionPlan)} · ${sessionPlan.durationMinutes} min`
-    return 'Wait while your tutor connects'
-  }
-
-  if (state === 'pre_session' && sessionPlan) {
-    return `${formatSessionPlanNextStep(sessionPlan)} · ${sessionPlan.durationMinutes} min`
-  }
-
-  if (state === 'active_practice') {
-    if (context.activityPhase === 'resume-prompt') return 'Resume or restart the activity'
-    if (panel.kind === 'activity') return 'Complete the activity'
-    if (panel.kind === 'explanation') return 'Read the lesson and practise'
-    if (panel.kind === 'question') return 'Answer the quick check'
-    return 'Follow your tutor and practise'
-  }
-
-  if (continuation) return continuation.label
-  return 'Start your session'
-}
-
-function resolveStatusDetail(context: SessionUiContext, state: SessionVisualState): string | undefined {
-  if (state === 'completed' && context.completionScorePercent != null) {
-    return `Score: ${context.completionScorePercent}%`
-  }
-  const planDetail = sessionPlanDetail(context, state)
-  if (planDetail) return planDetail
-  if (state === 'pre_session' && context.continuation) return context.continuation.description
-  if (state === 'active_practice' && context.panel.kind === 'activity' && context.panel.activity.description) {
-    return context.panel.activity.description
-  }
-  return undefined
-}
-
-function sessionPlanDetail(context: SessionUiContext, state: SessionVisualState): string | undefined {
-  if (!context.sessionPlan) return undefined
-  if (state !== 'pre_session' && state !== 'connecting' && state !== 'active_practice') return undefined
-  return `${context.sessionPlan.durationMinutes}-minute ${context.sessionPlan.goal} session`
-}
-
-export function resolveSessionUiState(context: SessionUiContext): SessionUiSnapshot {
-  const state = resolveSessionVisualState(context)
-
-  return {
-    state,
-    modeLabel: resolveModeLabel(context),
-    objectiveLabel: resolveObjectiveLabel(context, state),
-    nextActionLabel: resolveNextActionLabel(context, state),
-    statusDetail: resolveStatusDetail(context, state),
-    stateBadgeLabel: STATE_BADGE_LABELS[state],
-  }
 }

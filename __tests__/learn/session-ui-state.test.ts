@@ -1,11 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import {
-  resolveSessionUiState,
   resolveSessionVisualState,
   shouldExpandEngagementMetrics,
   type SessionUiContext,
 } from '@/lib/learn/session-ui-state'
-import type { SessionPlan } from '@/lib/learn/session-plan'
 import type { LearnPanelState } from '@/stores/useLearnSessionStore'
 
 const emptyPanel: LearnPanelState = { kind: 'empty' }
@@ -32,7 +30,6 @@ function baseContext(overrides: Partial<SessionUiContext> = {}): SessionUiContex
     panel: emptyPanel,
     activityPhase: null,
     questionAnswered: false,
-    continuation: null,
     completionScorePercent: null,
     ...overrides,
   }
@@ -90,86 +87,6 @@ describe('resolveSessionVisualState', () => {
       tutorState: 'evaluating',
       questionAnswered: true,
     }))).toBe('completed')
-  })
-})
-
-describe('resolveSessionUiState', () => {
-  it('builds labels for all five visual states', () => {
-    const states = [
-      resolveSessionUiState(baseContext()),
-      resolveSessionUiState(baseContext({ tutorConnecting: true })),
-      resolveSessionUiState(baseContext({
-        tutorActive: true,
-        panel: activityPanel,
-        activityPhase: 'playing',
-      })),
-      resolveSessionUiState(baseContext({ tutorState: 'evaluating' })),
-      resolveSessionUiState(baseContext({
-        panel: activityPanel,
-        activityPhase: 'completed',
-        completionScorePercent: 88,
-      })),
-    ]
-
-    expect(states.map((snapshot) => snapshot.state)).toEqual([
-      'pre_session',
-      'connecting',
-      'active_practice',
-      'feedback',
-      'completed',
-    ])
-    expect(states.every((snapshot) => snapshot.objectiveLabel.length > 0)).toBe(true)
-    expect(states.every((snapshot) => snapshot.nextActionLabel.length > 0)).toBe(true)
-  })
-
-  it('uses continuation data in pre_session', () => {
-    const snapshot = resolveSessionUiState(baseContext({
-      continuation: {
-        kind: 'resume',
-        title: 'Module 1 · Greetings',
-        description: 'Pick up where you left off.',
-        label: 'Resume',
-        href: '/learn?activityId=act-1',
-      },
-    }))
-
-    expect(snapshot.objectiveLabel).toBe('Module 1 · Greetings')
-    expect(snapshot.nextActionLabel).toBe('Resume')
-    expect(snapshot.statusDetail).toBe('Pick up where you left off.')
-  })
-
-  it('prioritizes session plan labels before continuation in pre_session', () => {
-    const sessionPlan: SessionPlan = {
-      goal: 'practice',
-      skill: 'grammar',
-      durationMinutes: 10,
-      mode: 'text',
-      suggestedStep: { kind: 'chapter', id: 'ch-1', label: 'Articles chapter' },
-    }
-
-    const snapshot = resolveSessionUiState(baseContext({
-      sessionPlan,
-      continuation: {
-        kind: 'resume',
-        title: 'Module 1 · Greetings',
-        description: 'Pick up where you left off.',
-        label: 'Resume',
-        href: '/learn?activityId=act-1',
-      },
-    }))
-
-    expect(snapshot.objectiveLabel).toBe('Practice a skill: Grammar')
-    expect(snapshot.nextActionLabel).toBe('Articles chapter · 10 min')
-    expect(snapshot.statusDetail).toBe('10-minute practice session')
-  })
-
-  it('shows voice mode when tutor session is active', () => {
-    const snapshot = resolveSessionUiState(baseContext({
-      sessionMode: 'voice',
-      tutorActive: true,
-    }))
-
-    expect(snapshot.modeLabel).toBe('Voice')
   })
 })
 

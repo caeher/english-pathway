@@ -23,7 +23,7 @@ describe('mobile learning layout', () => {
   it('mounts session header and collapsible engagement metrics above the learn grid', () => {
     expect(layout).toContain('LearnSessionHeader')
     expect(layout).toContain('EngagementSummary')
-    expect(layout).toContain('resolveSessionUiState')
+    expect(layout).toContain('resolveSessionVisualState')
     expect(header).toContain('sticky top-0')
     expect(engagement).toContain('Accordion')
     expect(engagement).toContain('defaultExpanded')

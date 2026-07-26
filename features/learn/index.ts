@@ -2,15 +2,6 @@
 export * from './contracts'
 export { resolveActivityByIdValidated } from '@/lib/learn/resolve-activity'
 export {
-  buildSessionPlanSuggestions,
-  buildSessionPlanInstruction,
-  buildSessionPlanUpdateMessage,
-  formatSessionPlanLabel,
-  formatSessionPlanNextStep,
-  validateSessionPlan,
-  sessionPlanSchema,
-} from '@/lib/learn/session-plan'
-export {
   clearPanel,
   fetchActivityById,
   fetchCurriculumContext,

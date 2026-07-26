@@ -4,15 +4,12 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Loader2, Mic, MicOff, Phone, PhoneOff, Volume2 } from 'lucide-react'
 import MicrophoneVisualizer from './MicrophoneVisualizer'
 import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
-import SessionPlanPreflight from '@/components/learn/SessionPlanPreflight'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
-import { buildSessionPlanInstruction, serializeSessionPlanHeader } from '@/lib/learn/session-plan'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import type { SessionMode } from './session-types'
 import { showActivity } from '@/lib/learn/client-tools'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
-import { selectSessionPlan, useSessionPlanStore } from '@/stores/useSessionPlanStore'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -52,7 +49,10 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
   const endTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
   const processedCallIdsRef = useRef<Set<string>>(new Set())
-  const sessionPlan = useSessionPlanStore(selectSessionPlan)
+
+  useEffect(() => {
+    sessionStorage.removeItem('ep-session-plan')
+  }, [])
 
   const sendUserMessage = useCallback((text: string) => {
     const channel = channelRef.current
@@ -128,24 +128,13 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     }
     if (seconds) {
       trackEvent('learn_session_end', { mode, duration_seconds: seconds, provider: 'openai' })
-      if (sessionPlan) {
-        trackEvent('session_plan_complete', {
-          goal: sessionPlan.goal,
-          duration_minutes: sessionPlan.durationMinutes,
-          activities_completed: 0,
-        })
-      }
     }
     endingRef.current = false
-  }, [mode, sessionPlan])
+  }, [mode])
 
   useEffect(() => () => { void end() }, [end])
 
   const start = useCallback(async () => {
-    if (!sessionPlan) {
-      setError('Choose a session plan before starting.')
-      return
-    }
     setError(null)
     setConnecting(true)
     processedCallIdsRef.current.clear()
@@ -190,10 +179,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
       await pc.setLocalDescription(offer)
       const response = await fetch('/api/tutor/realtime', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/sdp',
-          'X-Session-Plan': serializeSessionPlanHeader({ ...sessionPlan, mode }),
-        },
+        headers: { 'Content-Type': 'application/sdp' },
         body: offer.sdp,
       })
       if (!response.ok) {
@@ -208,14 +194,13 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
       await pc.setRemoteDescription({ type: 'answer', sdp: await response.text() })
       startedAtRef.current = Date.now()
       setActive(true)
-      trackEvent('learn_session_start', { mode, provider: 'openai', has_plan: true })
+      trackEvent('learn_session_start', { mode, provider: 'openai' })
       endTimerRef.current = window.setTimeout(() => {
         setError('Your voice credits are finished for this account.')
         void end()
       }, maxSeconds * 1_000)
       channel.onopen = () => {
         flushPendingMessages()
-        sendUserMessage(buildSessionPlanInstruction({ ...sessionPlan, mode }))
       }
     } catch (caughtError) {
       if (creditSessionIdRef.current) await end()
@@ -229,7 +214,7 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     } finally {
       setConnecting(false)
     }
-  }, [end, flushPendingMessages, handleFunctionCall, mode, sendUserMessage, sessionPlan])
+  }, [end, flushPendingMessages, handleFunctionCall, mode])
 
   const toggleMuted = () => {
     stream?.getAudioTracks().forEach((track) => { track.enabled = muted })
@@ -244,17 +229,15 @@ export default function OpenAiRealtimeTutorProvider({ initialActivityId }: { ini
     tutorActive={active}
     tutorConnecting={connecting}
     showEngagement={false}
-    onPlanUpdated={sendUserMessage}
     tutorSlot={<div className="flex h-full min-h-[360px] flex-col">
       <div className="border-b border-(--border-primary) p-4"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
       <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
         {!active && <>
-          <SessionPlanPreflight mode={mode} disabled={connecting} />
           <Surface as="section" padding="md" className="sm:p-5">
           <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">Start a voice lesson</h2>
           <div className="mt-4 rounded-xl border border-(--accent) bg-(--accent-soft) p-4"><span className="flex items-center gap-2 font-bold text-(--text-primary)"><Volume2 className="h-4 w-4 text-(--accent)" />Voice</span><span className="mt-1 block text-xs text-(--text-secondary)">Speak and listen with your tutor. The English helper remains available for text chat.</span></div>
           {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}
-          <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0) || !sessionPlan} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
+          <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0)} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
         </Surface>
         </>}
         {active && <section className="space-y-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2><p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p></div><Button variant="outline" onClick={() => void end()}><PhoneOff className="h-4 w-4" /> End</Button></div>

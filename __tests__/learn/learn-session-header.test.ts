@@ -5,44 +5,24 @@ import { describe, expect, it } from 'vitest'
 const root = resolve(process.cwd())
 
 describe('LearnSessionHeader', () => {
-  it('exposes sticky session chrome with state badge and live next-action region', () => {
+  it('exposes sticky session chrome with a single back control', () => {
     const header = readFileSync(resolve(root, 'components/learn/LearnSessionHeader.tsx'), 'utf8')
 
     expect(header).toContain('LearnSessionHeader')
     expect(header).toContain('sticky top-0')
     expect(header).toContain('aria-label="Current learning session"')
-    expect(header).toContain('stateBadgeLabel')
-    expect(header).toContain('objectiveLabel')
-    expect(header).toContain('nextActionLabel')
-    expect(header).toContain('aria-live="polite"')
     expect(header).toContain('--learn-session-header-height')
+    expect(header).not.toContain('stateBadgeLabel')
+    expect(header).not.toContain('continuationHref')
+    expect(header).not.toContain('planSheet')
   })
 
-  it('renders an accessible back link to the public home route', () => {
+  it('renders an accessible back link to the dashboard', () => {
     const header = readFileSync(resolve(root, 'components/learn/LearnSessionHeader.tsx'), 'utf8')
 
-    expect(header).toContain('Back to home')
+    expect(header).toContain('aria-label="Back to dashboard"')
     expect(header).toContain('ArrowLeft')
-    expect(header).toContain('exitHref = \'/\'')
-  })
-
-  it('renders continuation CTA only during pre_session', () => {
-    const header = readFileSync(resolve(root, 'components/learn/LearnSessionHeader.tsx'), 'utf8')
-
-    expect(header).toContain("snapshot.state === 'pre_session'")
-    expect(header).toContain('continuationHref')
-    expect(header).toContain('continuationLabel')
-  })
-})
-
-describe('LearnSessionHeader state badges', () => {
-  it('covers all five session visual states', () => {
-    const header = readFileSync(resolve(root, 'components/learn/LearnSessionHeader.tsx'), 'utf8')
-
-    expect(header).toContain('pre_session')
-    expect(header).toContain('connecting')
-    expect(header).toContain('active_practice')
-    expect(header).toContain('feedback')
-    expect(header).toContain('completed')
+    expect(header).toContain("exitHref = '/dashboard'")
+    expect(header).not.toContain('Back to home')
   })
 })
