@@ -8,6 +8,8 @@ import { buildRateLimitKey } from '@/lib/security/rate-limit-keys'
 import { getRateLimitStore } from '@/lib/security/rate-limit-store'
 import { rateLimitResponse } from '@/lib/security/enforce-rate-limit'
 
+import { isMaintenanceModeActive } from '@/lib/maintenance/config'
+
 async function getApiUserId(request: NextRequest): Promise<string | null> {
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -28,6 +30,18 @@ async function getApiUserId(request: NextRequest): Promise<string | null> {
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
+
+  if (isMaintenanceModeActive()) {
+    if (!pathname.startsWith('/maintenance')) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/maintenance'
+      return NextResponse.redirect(url)
+    }
+  } else if (pathname.startsWith('/maintenance')) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/'
+    return NextResponse.redirect(url)
+  }
 
   if (pathname.startsWith('/admin') || pathname.startsWith('/teacher')) {
     const url = request.nextUrl.clone()
