@@ -30,21 +30,30 @@ export default function MaintenanceView() {
 
       <div className="relative z-10 w-full max-w-3xl mx-auto flex flex-col items-center text-center space-y-8">
         
-        {/* Cubepath Logo Header */}
+        {/* App Brand Title & CubePath Sponsor Logo */}
         <div className="flex flex-col items-center space-y-3 pt-4">
-          <div className="relative group p-4 rounded-2xl bg-background/80 backdrop-blur-md border border-amber-500/20 shadow-xl shadow-amber-500/5">
-            <Image
-              src="/logo-light.png"
-              alt="CubePath Logo"
-              width={200}
-              height={40}
-              priority
-              className="h-10 w-auto object-contain"
-            />
+          <h2 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight font-outfit">
+            English Pathway
+          </h2>
+          <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-2xl bg-background/80 backdrop-blur-md border border-amber-500/20 shadow-md shadow-amber-500/5">
+            <span className="text-xs text-muted-foreground font-medium">Alojado & Patrocinado por</span>
+            <a
+              href="https://my.cubepath.com/register?ref=HEAC.CRE4389"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center transition-opacity hover:opacity-80"
+              aria-label="CubePath Sponsor"
+            >
+              <Image
+                src="/logo-light.png"
+                alt="CubePath Logo"
+                width={120}
+                height={24}
+                priority
+                className="h-6 w-auto object-contain"
+              />
+            </a>
           </div>
-          <span className="text-xs uppercase tracking-widest font-semibold text-muted-foreground">
-            Plataforma de Aprendizaje
-          </span>
         </div>
 
         {/* Maintenance Main Card */}
@@ -62,7 +71,7 @@ export default function MaintenanceView() {
           {/* Heading & Subtitle */}
           <div className="space-y-3">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground font-outfit">
-              Estamos mejorando la plataforma para ti
+              Estamos mejorando English Pathway para ti
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
               El sistema se encuentra temporalmente fuera de línea por mantenimiento programado y actualización de servidores. Volveremos pronto con una experiencia de aprendizaje optimizada.
@@ -118,7 +127,7 @@ export default function MaintenanceView() {
 
         {/* Footer Note */}
         <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} CubePath. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} English Pathway &bull; Patrocinado por CubePath. Todos los derechos reservados.
         </p>
 
       </div>
