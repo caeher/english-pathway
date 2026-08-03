@@ -36,13 +36,13 @@ export default function MaintenanceView() {
             English Pathway
           </h2>
           <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-2xl bg-background/80 backdrop-blur-md border border-amber-500/20 shadow-md shadow-amber-500/5">
-            <span className="text-xs text-muted-foreground font-medium">Alojado & Patrocinado por</span>
+            <span className="text-xs text-muted-foreground font-medium">Alojado en</span>
             <a
               href="https://my.cubepath.com/register?ref=HEAC.CRE4389"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center transition-opacity hover:opacity-80"
-              aria-label="CubePath Sponsor"
+              aria-label="CubePath"
             >
               <Image
                 src="/logo-light.png"
@@ -127,7 +127,7 @@ export default function MaintenanceView() {
 
         {/* Footer Note */}
         <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} English Pathway &bull; Patrocinado por CubePath. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} English Pathway &bull; Alojado en CubePath. Todos los derechos reservados.
         </p>
 
       </div>
