@@ -13,7 +13,7 @@ interface SettingsRoutePageProps {
 
 export default async function SettingsRoutePage({ searchParams }: SettingsRoutePageProps) {
   const profile = await getCurrentProfile()
-  if (!profile) redirect('/login')
+  if (!profile) redirect('/sign-in')
 
   const user = await getCurrentUser()
   const params = await searchParams

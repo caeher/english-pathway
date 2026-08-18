@@ -5,7 +5,7 @@ import { getCurrentProfile, getCurrentUser } from '@/lib/auth/actions'
 
 export default async function AccountLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser()
-  if (!user) redirect('/login')
+  if (!user) redirect('/sign-in')
 
   const [profile, navigation] = await Promise.all([getCurrentProfile(), getNavigationContext()])
 

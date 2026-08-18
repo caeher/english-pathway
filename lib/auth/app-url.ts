@@ -36,7 +36,9 @@ export function parseAppUrl(
 
 export function getAppUrl(): string {
   const env = process.env.NEXT_PUBLIC_APP_URL
-  const isProduction = process.env.NODE_ENV === 'production'
+  const isProduction =
+    process.env.NODE_ENV === 'production' &&
+    process.env.NEXT_PHASE !== 'phase-production-build'
 
   if (isProduction) {
     const parsed = parseAppUrl(env, { requireProduction: true })

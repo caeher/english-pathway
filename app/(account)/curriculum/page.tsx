@@ -5,7 +5,7 @@ import { resolveAllModules } from '@/lib/content/resolve'
 import { curriculumModuleHref } from '@/lib/curriculum/href'
 import { getModuleProgress, getLearningTarget } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { getDueCount } from '@/lib/dal/srs'
 import { PageContainer } from '@/components/ui/page-container'
 import { getLearningContinuation } from '@/lib/learning/continuation'
@@ -20,7 +20,7 @@ export default async function CurriculumPage() {
   if (!user) return null
 
   const modules = await resolveAllModules()
-  const supabase = await createClient()
+  const supabase = createAdminClient()
   const snapshot = await getCurriculumProgressSnapshot(supabase, user.id)
   const progress = modules.map((curriculumModule) => getModuleProgress(curriculumModule, snapshot))
   const chapterCount = modules.reduce((count, curriculumModule) => count + curriculumModule.chapters.length, 0)

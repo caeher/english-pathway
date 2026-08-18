@@ -1,5 +1,5 @@
 import Landing from '@/components/pages/Landing'
-import { createClient } from '@/lib/supabase/server'
+import { auth } from '@clerk/nextjs/server'
 
 export const metadata = {
   title: 'Learn English with guided practice',
@@ -14,8 +14,7 @@ export const metadata = {
 }
 
 export default async function HomePage() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const { userId } = await auth()
 
-  return <Landing isAuthenticated={Boolean(user)} />
+  return <Landing isAuthenticated={Boolean(userId)} />
 }

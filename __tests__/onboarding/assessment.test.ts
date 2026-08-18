@@ -1,9 +1,18 @@
 import { describe, expect, it, vi } from 'vitest'
 import { evaluateAssessment, ASSESSMENT_QUESTIONS, ASSESSMENT_VERSION } from '@/lib/onboarding/assessment'
-import { createClient } from '@/lib/supabase/server'
 import { POST } from '@/app/api/onboarding/assessment/route'
 
-vi.mock('@/lib/supabase/server', () => ({ createClient: vi.fn() }))
+const mockAuth = vi.fn()
+vi.mock('@clerk/nextjs/server', () => ({
+  auth: () => mockAuth(),
+  currentUser: vi.fn(async () => null),
+}))
+
+vi.mock('@/lib/supabase/admin', () => ({
+  createAdminClient: vi.fn(() => ({
+    from: vi.fn(),
+  })),
+}))
 
 describe('level assessment', () => {
   it('uses a versioned rubric and returns an explainable recommendation', () => {
@@ -18,9 +27,7 @@ describe('level assessment', () => {
   })
 
   it('rejects unauthenticated assessment requests', async () => {
-    vi.mocked(createClient).mockResolvedValue({
-      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: null } }) },
-    } as never)
+    mockAuth.mockResolvedValue({ userId: null })
 
     const response = await POST(new Request('http://localhost/api/onboarding/assessment', {
       method: 'POST',

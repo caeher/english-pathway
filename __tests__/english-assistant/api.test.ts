@@ -12,6 +12,16 @@ import { assistantRequestSchema } from '@/lib/english-assistant/schema'
 import { consumeAssistantCredit } from '@/lib/credits/usage'
 import { createAssistantStreamParser } from '@/lib/english-assistant/stream-events'
 
+const mockAuth = vi.fn()
+vi.mock('@clerk/nextjs/server', () => ({
+  auth: () => mockAuth(),
+  currentUser: vi.fn(async () => null),
+}))
+vi.mock('@/lib/supabase/admin', () => ({
+  createAdminClient: vi.fn(() => ({
+    from: vi.fn(),
+  })),
+}))
 vi.mock('@/lib/supabase/server', () => ({ createClient: vi.fn() }))
 vi.mock('@/lib/dal/english-assistant-conversations', () => ({
   listEnglishAssistantConversations: vi.fn(async () => []),
@@ -59,20 +69,11 @@ const conversationId = '11111111-1111-4111-8111-111111111111'
 const routeContext = { params: Promise.resolve({ id: conversationId }) }
 
 function mockUnauthenticatedClient() {
-  vi.mocked(createClient).mockResolvedValue({
-    auth: { getUser: vi.fn().mockResolvedValue({ data: { user: null } }) },
-  } as never)
+  mockAuth.mockResolvedValue({ userId: null })
 }
 
 function mockAuthenticatedClient() {
-  vi.mocked(createClient).mockResolvedValue({
-    auth: {
-      getUser: vi.fn().mockResolvedValue({
-        data: { user: { id: 'user-1' } },
-      }),
-    },
-    from: vi.fn(),
-  } as never)
+  mockAuth.mockResolvedValue({ userId: 'user-1' })
 }
 
 describe('english assistant API routes', () => {

@@ -1,14 +1,15 @@
-import { Suspense } from 'react'
-import { LoginForm } from '../_components/login-form'
+import { redirect } from 'next/navigation'
 
 export const metadata = {
   title: 'Sign in — English Pathway',
 }
 
-export default function LoginPage() {
-  return (
-    <Suspense fallback={<div className="text-(--text-muted)">Loading...</div>}>
-      <LoginForm />
-    </Suspense>
-  )
+interface LoginPageProps {
+  searchParams?: Promise<{ redirectTo?: string }>
+}
+
+export default async function LoginPage({ searchParams }: LoginPageProps) {
+  const params = await searchParams
+  const query = params?.redirectTo ? `?redirectTo=${encodeURIComponent(params.redirectTo)}` : ''
+  redirect(`/sign-in${query}`)
 }

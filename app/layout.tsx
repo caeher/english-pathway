@@ -1,7 +1,8 @@
+import { ClerkProvider } from '@clerk/nextjs'
+import { auth } from '@clerk/nextjs/server'
 import type { Metadata, Viewport } from 'next'
 import { Outfit, Nunito } from 'next/font/google'
 import ClientProviders from '@/components/ClientProviders'
-import { createClient } from '@/lib/supabase/server'
 import { getAppUrl } from '@/lib/auth/app-url'
 import { themeInitScript } from '@/lib/theme/theme-script'
 import './globals.css'
@@ -60,10 +61,7 @@ export const viewport: Viewport = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { userId } = await auth()
 
   return (
     <html lang="en" className={`${outfit.variable} ${nunito.variable}`} suppressHydrationWarning>
@@ -71,7 +69,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
-        <ClientProviders isAuthenticated={Boolean(user)}>{children}</ClientProviders>
+        <ClerkProvider dynamic>
+          <ClientProviders isAuthenticated={Boolean(userId)}>{children}</ClientProviders>
+        </ClerkProvider>
       </body>
     </html>
   )

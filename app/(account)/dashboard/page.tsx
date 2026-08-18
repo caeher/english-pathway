@@ -1,5 +1,5 @@
 import { getCurrentUser } from '@/lib/auth/actions'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { getDashboardData } from '@/lib/dal/dashboard'
 import LearnerDashboard from '@/components/dashboard/LearnerDashboard'
 
@@ -12,6 +12,7 @@ export default async function DashboardPage() {
   const user = await getCurrentUser()
   if (!user) return null
 
-  const data = await getDashboardData(await createClient(), user.id)
+  const data = await getDashboardData(createAdminClient(), user.id)
   return <LearnerDashboard data={data} />
 }
+

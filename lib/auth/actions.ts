@@ -2,28 +2,14 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
-import { InvalidAppUrlError, buildAuthCallbackUrl, getAppUrl } from '@/lib/auth/app-url'
-import {
-  assertOAuthProviderAllowed,
-  type OAuthProvider,
-} from '@/lib/auth/oauth-providers'
-import {
-  getExplicitRedirectParam,
-  resolvePostAuthDestination,
-} from '@/lib/auth/resolve-redirect'
+import { auth, currentUser } from '@clerk/nextjs/server'
+import { createAdminClient } from '@/lib/supabase/admin'
+import { ensureUserProfile } from '@/lib/auth/clerk-sync'
 import { recordUserConsents } from '@/lib/auth/consent'
-import { getOAuthErrorRedirectPath } from '@/lib/auth/oauth-errors'
-import { setOAuthRegistrationConsentCookie } from '@/lib/auth/oauth-registration-consent'
-import {
-  loginSchema,
-  registerSchema,
-  forgotPasswordSchema,
-  resetPasswordSchema,
-  settingsSchema,
-} from '@/lib/auth/schemas'
+import { settingsSchema } from '@/lib/auth/schemas'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 import { savePrivateTutorMemory } from '@/lib/dal/tutor-memory'
+import type { OAuthProvider } from '@/lib/auth/oauth-providers'
 
 export type AuthActionState = {
   status?: 'error' | 'success' | 'needs_email_confirmation'
@@ -31,283 +17,52 @@ export type AuthActionState = {
   success?: string
 }
 
-const GENERIC_AUTH_ERROR = 'Authentication could not be completed. Please try again.'
-
-function getSafeAuthError(fallback = GENERIC_AUTH_ERROR): string {
-  return fallback
+export interface AppUser {
+  id: string
+  email: string | null
+  firstName?: string | null
+  lastName?: string | null
+  imageUrl?: string | null
+  username?: string | null
 }
 
-async function hasCompletedOnboarding(
-  supabase: Awaited<ReturnType<typeof createClient>>,
-  userId: string,
-): Promise<boolean> {
-  const { data } = await supabase
-    .from('profiles')
-    .select('onboarding_completed_at')
-    .eq('id', userId)
-    .maybeSingle()
+export async function getCurrentUser(): Promise<AppUser | null> {
+  const { userId } = await auth()
+  if (!userId) return null
 
-  return Boolean(data?.onboarding_completed_at)
-}
-
-async function getDestination(
-  supabase: Awaited<ReturnType<typeof createClient>>,
-  userId: string,
-  redirectTo: string | null,
-): Promise<string> {
-  return resolvePostAuthDestination(
-    redirectTo,
-    await hasCompletedOnboarding(supabase, userId),
-  )
-}
-
-export async function signInAction(
-  _prevState: AuthActionState,
-  formData: FormData
-): Promise<AuthActionState> {
-  const parsed = loginSchema.safeParse({
-    email: formData.get('email'),
-    password: formData.get('password'),
-  })
-  if (!parsed.success) {
-    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
-  }
-
-  const { email, password } = parsed.data
-  const explicitRedirectTo = getExplicitRedirectParam(
-    formData.get('redirectTo') as string | null
-  )
-
-  const supabase = await createClient()
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password })
-
-  if (error) {
-    return { status: 'error', error: 'Invalid credentials. Check your email and password.' }
-  }
-
-  revalidatePath('/', 'layout')
-  redirect(await getDestination(supabase, data.user.id, explicitRedirectTo))
-}
-
-export async function signUpAction(
-  _prevState: AuthActionState,
-  formData: FormData
-): Promise<AuthActionState> {
-  const parsed = registerSchema.safeParse({
-    fullName: formData.get('fullName'),
-    email: formData.get('email'),
-    password: formData.get('password'),
-    confirmPassword: formData.get('confirmPassword'),
-    acceptTerms: formData.get('acceptTerms') === 'on',
-  })
-  if (!parsed.success) {
-    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
-  }
-
-  const { email, password, fullName } = parsed.data
-  const explicitRedirectTo = getExplicitRedirectParam(
-    formData.get('redirectTo') as string | null
-  )
-  let emailRedirectTo: string
+  let user = null
   try {
-    emailRedirectTo = buildAuthCallbackUrl(explicitRedirectTo)
-  } catch (error) {
-    if (error instanceof InvalidAppUrlError) {
-      console.error('[auth] sign up redirect URL misconfigured')
-      return { status: 'error', error: getSafeAuthError() }
+    user = await currentUser()
+  } catch (err) {
+    console.warn('[auth] Unable to fetch currentUser:', err)
+  }
+
+  if (!user) {
+    return {
+      id: userId,
+      email: null,
+      firstName: null,
+      lastName: null,
+      imageUrl: null,
+      username: null,
     }
-    throw error
   }
 
-  const supabase = await createClient()
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: { full_name: fullName, accepted_terms: true },
-      emailRedirectTo,
-    },
-  })
-
-  if (error) {
-    console.error('[auth] sign up failed', error)
-    return { status: 'error', error: getSafeAuthError('Could not create your account. Please try again.') }
-  }
-
-  if (data.user && data.session) {
-    await recordUserConsents(data.user.id)
-
-    revalidatePath('/', 'layout')
-    redirect(await getDestination(supabase, data.user.id, explicitRedirectTo))
-  }
-
+  const email = user.emailAddresses[0]?.emailAddress ?? null
   return {
-    status: 'needs_email_confirmation',
-    success: 'Account created. Check your email to confirm your account.',
+    id: user.id,
+    email,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    imageUrl: user.imageUrl,
+    username: user.username,
   }
-}
-
-export async function signOutAction() {
-  const supabase = await createClient()
-  const { error } = await supabase.auth.signOut()
-
-  if (error) {
-    console.error('[auth] sign out failed', error)
-    throw new Error('Could not sign out. Please try again.')
-  }
-
-  revalidatePath('/', 'layout')
-  redirect('/login')
-}
-
-export async function forgotPasswordAction(
-  _prevState: AuthActionState,
-  formData: FormData
-): Promise<AuthActionState> {
-  const parsed = forgotPasswordSchema.safeParse({ email: formData.get('email') })
-  if (!parsed.success) {
-    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
-  }
-
-  const explicitRedirectTo = getExplicitRedirectParam(
-    formData.get('redirectTo') as string | null
-  )
-  const callbackParams = new URLSearchParams({ next: '/reset-password' })
-  if (explicitRedirectTo) callbackParams.set('redirectTo', explicitRedirectTo)
-
-  let resetRedirectTo: string
-  try {
-    resetRedirectTo = `${getAppUrl()}/auth/callback?${callbackParams.toString()}`
-  } catch (error) {
-    if (error instanceof InvalidAppUrlError) {
-      console.error('[auth] password reset redirect URL misconfigured')
-      return { status: 'error', error: getSafeAuthError() }
-    }
-    throw error
-  }
-
-  const supabase = await createClient()
-  const { error } = await supabase.auth.resetPasswordForEmail(parsed.data.email, {
-    redirectTo: resetRedirectTo,
-  })
-
-  if (error) {
-    console.error('[auth] password reset request failed', error)
-    return { status: 'error', error: getSafeAuthError('Could not send the reset link. Please try again.') }
-  }
-
-  return { status: 'success', success: 'If an account matches that email, we sent a password reset link.' }
-}
-
-export async function resetPasswordAction(
-  _prevState: AuthActionState,
-  formData: FormData
-): Promise<AuthActionState> {
-  const parsed = resetPasswordSchema.safeParse({
-    password: formData.get('password'),
-    confirmPassword: formData.get('confirmPassword'),
-  })
-  if (!parsed.success) {
-    return { status: 'error', error: parsed.error.issues[0]?.message ?? 'Invalid data' }
-  }
-
-  const explicitRedirectTo = getExplicitRedirectParam(
-    formData.get('redirectTo') as string | null
-  )
-
-  const supabase = await createClient()
-  const { data: { user }, error } = await supabase.auth.updateUser({ password: parsed.data.password })
-
-  if (error) {
-    console.error('[auth] password update failed', error)
-    return { status: 'error', error: getSafeAuthError('Could not save your password. Please request a new link.') }
-  }
-
-  revalidatePath('/', 'layout')
-  redirect(user ? await getDestination(supabase, user.id, explicitRedirectTo) : '/login')
-}
-
-export async function signInWithOAuthAction(
-  provider: OAuthProvider,
-  redirectTo?: string | null
-) {
-  try {
-    assertOAuthProviderAllowed(provider)
-  } catch {
-    redirect(getOAuthErrorRedirectPath('oauth_provider_disabled'))
-  }
-
-  let oauthRedirectTo: string
-  try {
-    oauthRedirectTo = buildAuthCallbackUrl(redirectTo)
-  } catch (error) {
-    if (error instanceof InvalidAppUrlError) {
-      console.error('[auth] OAuth redirect URL misconfigured')
-      redirect(getOAuthErrorRedirectPath('oauth_start_error'))
-    }
-    throw error
-  }
-
-  const supabase = await createClient()
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider,
-    options: {
-      redirectTo: oauthRedirectTo,
-    },
-  })
-
-  if (error) {
-    console.error('[auth] OAuth start failed', error)
-    redirect(getOAuthErrorRedirectPath('oauth_start_error'))
-  }
-
-  if (data.url) {
-    redirect(data.url)
-  }
-}
-
-export async function signUpWithOAuthAction(
-  provider: OAuthProvider,
-  redirectTo: string | null | undefined,
-  acceptTerms: boolean,
-) {
-  if (!acceptTerms) {
-    redirect(getOAuthErrorRedirectPath('oauth_terms_required'))
-  }
-
-  try {
-    assertOAuthProviderAllowed(provider)
-  } catch {
-    redirect(getOAuthErrorRedirectPath('oauth_provider_disabled'))
-  }
-
-  await setOAuthRegistrationConsentCookie(provider, redirectTo)
-  await signInWithOAuthAction(provider, redirectTo)
-}
-
-export async function getCurrentUser() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  return user
 }
 
 export async function getCurrentProfile() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
-  if (!user) return null
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user.id)
-    .single()
-
-  return profile
+  const { userId } = await auth()
+  if (!userId) return null
+  return ensureUserProfile(userId)
 }
 
 export type SettingsActionState = {
@@ -323,13 +78,10 @@ export async function updateSettingsAction(
     return { error: parsed.error.issues[0]?.message ?? 'Invalid data' }
   }
 
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { userId } = await auth()
+  if (!userId) return { error: 'You must be signed in.' }
 
-  if (!user) return { error: 'You must be signed in.' }
-
+  const supabase = createAdminClient()
   const { error } = await supabase
     .from('profiles')
     .update({
@@ -337,13 +89,14 @@ export async function updateSettingsAction(
       daily_goal_minutes: parsed.data.dailyGoalMinutes,
       preferred_mode: parsed.data.preferredMode,
       native_language: parsed.data.nativeLanguage ?? null,
+      updated_at: new Date().toISOString(),
     })
-    .eq('id', user.id)
+    .eq('id', userId)
 
   if (error) return { error: 'Could not save settings.' }
 
   try {
-    await savePrivateTutorMemory(supabase, user.id, {
+    await savePrivateTutorMemory(supabase, userId, {
       type: 'learner_memory',
       memoryKey: 'preference:mode',
       content: `Preferred tutor mode is ${parsed.data.preferredMode}. Daily practice goal is ${parsed.data.dailyGoalMinutes} minutes.`,
@@ -364,15 +117,58 @@ export type LegalReconsentActionState = {
 }
 
 export async function acceptUpdatedLegalDocumentsAction(): Promise<LegalReconsentActionState> {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { userId } = await auth()
+  if (!userId) return { error: 'You must be signed in.' }
 
-  if (!user) return { error: 'You must be signed in.' }
-
-  await recordUserConsents(user.id, 'explicit_reconsent')
+  await recordUserConsents(userId, 'explicit_reconsent')
   revalidatePath('/settings')
   revalidatePath('/', 'layout')
   return { success: true }
+}
+
+export async function signOutAction() {
+  redirect('/sign-in')
+}
+
+export async function signInAction(
+  _prevState: AuthActionState,
+  _formData: FormData
+): Promise<AuthActionState> {
+  redirect('/sign-in')
+}
+
+export async function signUpAction(
+  _prevState: AuthActionState,
+  _formData: FormData
+): Promise<AuthActionState> {
+  redirect('/sign-up')
+}
+
+export async function forgotPasswordAction(
+  _prevState: AuthActionState,
+  _formData: FormData
+): Promise<AuthActionState> {
+  redirect('/sign-in')
+}
+
+export async function resetPasswordAction(
+  _prevState: AuthActionState,
+  _formData: FormData
+): Promise<AuthActionState> {
+  redirect('/sign-in')
+}
+
+export async function signInWithOAuthAction(
+  _provider: OAuthProvider,
+  _redirectTo?: string | null
+) {
+  redirect('/sign-in')
+}
+
+export async function signUpWithOAuthAction(
+  _provider: OAuthProvider,
+  _redirectTo: string | null | undefined,
+  _acceptTerms: boolean,
+) {
+  redirect('/sign-up')
 }

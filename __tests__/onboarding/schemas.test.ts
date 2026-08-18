@@ -1,12 +1,28 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { onboardingCompletionSchema, parseOnboardingLevel } from '@/lib/onboarding/schemas'
-import { createClient } from '@/lib/supabase/server'
 import { completeOnboardingAction, saveOnboardingDraftAction } from '@/lib/onboarding/actions'
 
-vi.mock('@/lib/supabase/server', () => ({ createClient: vi.fn() }))
-vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }))
+const mockAuth = vi.fn()
+vi.mock('@clerk/nextjs/server', () => ({
+  auth: () => mockAuth(),
+  currentUser: vi.fn(async () => null),
+}))
 
-const createClientMock = vi.mocked(createClient)
+const mockUpsert = vi.fn()
+const mockSelect = vi.fn()
+const mockMaybeSingle = vi.fn()
+const mockEq = vi.fn()
+
+vi.mock('@/lib/supabase/admin', () => ({
+  createAdminClient: vi.fn(() => ({
+    from: vi.fn(() => ({
+      select: mockSelect,
+      upsert: mockUpsert,
+    })),
+  })),
+}))
+
+vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }))
 
 describe('onboarding completion validation', () => {
   it('parses CEFR and legacy onboarding levels', () => {
@@ -72,17 +88,14 @@ describe('onboarding completion validation', () => {
 describe('onboarding completion persistence', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    mockMaybeSingle.mockResolvedValue({ data: null })
+    mockEq.mockReturnValue({ maybeSingle: mockMaybeSingle })
+    mockSelect.mockReturnValue({ eq: mockEq })
+    mockUpsert.mockResolvedValue({ error: null })
   })
 
   it('persists preferences and a completion timestamp for a completed wizard', async () => {
-    const eq = vi.fn().mockResolvedValue({ error: null })
-    const update = vi.fn().mockReturnValue({ eq })
-    const maybeSingle = vi.fn().mockResolvedValue({ data: null })
-    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
-    createClientMock.mockResolvedValue({
-      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-1' } } }) },
-      from: vi.fn().mockReturnValue({ select, update }),
-    } as never)
+    mockAuth.mockResolvedValue({ userId: 'user-1' })
 
     const result = await completeOnboardingAction({
       level: 'intermediate',
@@ -91,27 +104,21 @@ describe('onboarding completion persistence', () => {
     })
 
     expect(result).toEqual({ success: true })
-    expect(update).toHaveBeenCalledWith(
+    expect(mockUpsert).toHaveBeenCalledWith(
       expect.objectContaining({
+        id: 'user-1',
         level: 'intermediate',
         daily_goal_minutes: 10,
         onboarding_completed_at: expect.any(String),
         onboarding_status: 'completed',
         onboarding_step: 5,
-      })
+      }),
+      { onConflict: 'id' }
     )
-    expect(eq).toHaveBeenCalledWith('id', 'user-1')
   })
 
   it('persists native language when completing onboarding', async () => {
-    const eq = vi.fn().mockResolvedValue({ error: null })
-    const update = vi.fn().mockReturnValue({ eq })
-    const maybeSingle = vi.fn().mockResolvedValue({ data: null })
-    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
-    createClientMock.mockResolvedValue({
-      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-3' } } }) },
-      from: vi.fn().mockReturnValue({ select, update }),
-    } as never)
+    mockAuth.mockResolvedValue({ userId: 'user-3' })
 
     const result = await completeOnboardingAction({
       level: 'beginner',
@@ -121,21 +128,18 @@ describe('onboarding completion persistence', () => {
     })
 
     expect(result).toEqual({ success: true })
-    expect(update).toHaveBeenCalledWith(
+    expect(mockUpsert).toHaveBeenCalledWith(
       expect.objectContaining({
+        id: 'user-3',
         native_language: 'es',
         onboarding_step: 5,
-      })
+      }),
+      { onConflict: 'id' }
     )
   })
 
   it('persists native language in onboarding drafts', async () => {
-    const eq = vi.fn().mockResolvedValue({ error: null })
-    const update = vi.fn().mockReturnValue({ eq })
-    createClientMock.mockResolvedValue({
-      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-4' } } }) },
-      from: vi.fn().mockReturnValue({ update }),
-    } as never)
+    mockAuth.mockResolvedValue({ userId: 'user-4' })
 
     const result = await saveOnboardingDraftAction({
       step: 4,
@@ -143,17 +147,19 @@ describe('onboarding completion persistence', () => {
     })
 
     expect(result).toEqual({ success: true })
-    expect(update).toHaveBeenCalledWith({
-      onboarding_step: 4,
-      native_language: 'pt',
-    })
-    expect(eq).toHaveBeenCalledWith('id', 'user-4')
+    expect(mockUpsert).toHaveBeenCalledWith(
+      expect.objectContaining({
+        id: 'user-4',
+        onboarding_step: 4,
+        native_language: 'pt',
+      }),
+      { onConflict: 'id' }
+    )
   })
 
   it('completes using persisted profile level when the client omits it', async () => {
-    const eq = vi.fn().mockResolvedValue({ error: null })
-    const update = vi.fn().mockReturnValue({ eq })
-    const maybeSingle = vi.fn().mockResolvedValue({
+    mockAuth.mockResolvedValue({ userId: 'user-5' })
+    mockMaybeSingle.mockResolvedValue({
       data: {
         level: 'B1',
         daily_goal_minutes: 10,
@@ -164,11 +170,6 @@ describe('onboarding completion persistence', () => {
         onboarding_step: 4,
       },
     })
-    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
-    createClientMock.mockResolvedValue({
-      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-5' } } }) },
-      from: vi.fn().mockReturnValue({ select, update }),
-    } as never)
 
     const result = await completeOnboardingAction({
       dailyGoalMinutes: 10,
@@ -177,29 +178,32 @@ describe('onboarding completion persistence', () => {
     })
 
     expect(result).toEqual({ success: true })
-    expect(update).toHaveBeenCalledWith(
+    expect(mockUpsert).toHaveBeenCalledWith(
       expect.objectContaining({
+        id: 'user-5',
         level: 'B1',
         daily_goal_minutes: 10,
         native_language: 'es',
         onboarding_step: 5,
-      })
+      }),
+      { onConflict: 'id' }
     )
   })
 
   it('persists completion when the user skips', async () => {
-    const eq = vi.fn().mockResolvedValue({ error: null })
-    const update = vi.fn().mockReturnValue({ eq })
-    const maybeSingle = vi.fn().mockResolvedValue({ data: null })
-    const select = vi.fn().mockReturnValue({ eq: vi.fn().mockReturnValue({ maybeSingle }) })
-    createClientMock.mockResolvedValue({
-      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user-2' } } }) },
-      from: vi.fn().mockReturnValue({ select, update }),
-    } as never)
+    mockAuth.mockResolvedValue({ userId: 'user-2' })
 
     const result = await completeOnboardingAction({ skipped: true })
 
     expect(result).toEqual({ success: true })
-    expect(update).toHaveBeenCalledWith({ onboarding_completed_at: null, onboarding_status: 'skipped', onboarding_step: 0 })
+    expect(mockUpsert).toHaveBeenCalledWith(
+      expect.objectContaining({
+        id: 'user-2',
+        onboarding_completed_at: null,
+        onboarding_status: 'skipped',
+        onboarding_step: 0,
+      }),
+      { onConflict: 'id' }
+    )
   })
 })

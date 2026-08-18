@@ -1,8 +1,9 @@
 'use client'
 
 import { useTransition } from 'react'
+import { useRouter } from 'next/navigation'
+import { useClerk } from '@clerk/nextjs'
 import { LogOut } from 'lucide-react'
-import { signOutAction } from '@/lib/auth/actions'
 import { Button } from '@/components/ui/button'
 import { DropdownMenuItem } from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/helpers'
@@ -14,17 +15,20 @@ type SignOutButtonProps = {
 
 export function SignOutButton({ variant = 'button', className }: SignOutButtonProps) {
   const [pending, startTransition] = useTransition()
+  const { signOut } = useClerk()
+  const router = useRouter()
 
   const handleSignOut = () => {
-    startTransition(() => {
-      void signOutAction()
+    startTransition(async () => {
+      await signOut({ redirectUrl: '/' })
+      router.refresh()
     })
   }
 
   if (variant === 'menu-item') {
     return (
       <DropdownMenuItem
-        className={cn('text-red-500 focus:text-red-500', className)}
+        className={cn('text-red-500 focus:text-red-500 cursor-pointer', className)}
         disabled={pending}
         onSelect={(event) => {
           event.preventDefault()

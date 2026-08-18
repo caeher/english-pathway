@@ -1,7 +1,8 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { createClient } from '@/lib/supabase/server'
+import { auth } from '@clerk/nextjs/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import {
   dailyGoalMinutesSchema,
   onboardingCompletionSchema,
@@ -19,19 +20,17 @@ export type OnboardingActionState = {
 export async function completeOnboardingAction(
   input: unknown
 ): Promise<OnboardingActionState> {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { userId } = await auth()
+  if (!userId) return { error: 'You must be signed in to complete onboarding.' }
 
-  if (!user) return { error: 'You must be signed in to complete onboarding.' }
+  const supabase = createAdminClient()
 
   const { data: currentProfile } = await supabase
     .from('profiles')
     .select(
       'onboarding_completed_at, onboarding_status, onboarding_step, level, daily_goal_minutes, preferred_mode, native_language'
     )
-    .eq('id', user.id)
+    .eq('id', userId)
     .maybeSingle()
 
   const rawInput =
@@ -70,8 +69,6 @@ export async function completeOnboardingAction(
     onboarding_step: parsed.data.skipped ? (parsed.data.step ?? currentProfile?.onboarding_step ?? 0) : 5,
   }
 
-  // Leaving these fields untouched when they are omitted lets a user skip a
-  // review without losing preferences they already saved.
   if (parsed.data.level !== undefined) updates.level = parsed.data.level
   if (parsed.data.dailyGoalMinutes !== undefined) {
     updates.daily_goal_minutes = parsed.data.dailyGoalMinutes
@@ -79,7 +76,12 @@ export async function completeOnboardingAction(
   if (parsed.data.preferredMode != null) updates.preferred_mode = parsed.data.preferredMode
   if (parsed.data.nativeLanguage !== undefined) updates.native_language = parsed.data.nativeLanguage ?? null
 
-  const { error } = await supabase.from('profiles').update(updates).eq('id', user.id)
+  const { error } = await supabase.from('profiles').upsert({
+    id: userId,
+    ...updates,
+    updated_at: new Date().toISOString(),
+  }, { onConflict: 'id' })
+
   if (error) return { error: 'Could not save your onboarding preferences.' }
 
   revalidatePath('/learn')
@@ -92,9 +94,10 @@ export async function saveOnboardingDraftAction(input: unknown): Promise<Onboard
   const parsed = onboardingDraftSchema.safeParse(input)
   if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? 'Invalid onboarding draft.' }
 
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { error: 'You must be signed in to save onboarding progress.' }
+  const { userId } = await auth()
+  if (!userId) return { error: 'You must be signed in to save onboarding progress.' }
+
+  const supabase = createAdminClient()
 
   const updates: {
     onboarding_step: number
@@ -108,7 +111,12 @@ export async function saveOnboardingDraftAction(input: unknown): Promise<Onboard
   if (parsed.data.preferredMode != null) updates.preferred_mode = parsed.data.preferredMode
   if (parsed.data.nativeLanguage !== undefined) updates.native_language = parsed.data.nativeLanguage ?? null
 
-  const { error } = await supabase.from('profiles').update(updates).eq('id', user.id)
+  const { error } = await supabase.from('profiles').upsert({
+    id: userId,
+    ...updates,
+    updated_at: new Date().toISOString(),
+  }, { onConflict: 'id' })
+
   if (error) return { error: 'Could not save your onboarding progress.' }
 
   revalidatePath('/onboarding')
@@ -117,17 +125,14 @@ export async function saveOnboardingDraftAction(input: unknown): Promise<Onboard
 }
 
 export async function getOnboardingProfile() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { userId } = await auth()
+  if (!userId) return null
 
-  if (!user) return null
-
+  const supabase = createAdminClient()
   const { data } = await supabase
     .from('profiles')
     .select('onboarding_completed_at, onboarding_status, onboarding_step, daily_goal_minutes, level, preferred_mode, native_language')
-    .eq('id', user.id)
+    .eq('id', userId)
     .maybeSingle()
 
   return data

@@ -11,6 +11,8 @@ describe('Maintenance Mode System', () => {
       ...originalEnv,
       NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://example.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'example-anon-key',
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || 'pk_test_bW92aW5nLXRlcnJpZXItMjA1Ni5jbGVyay5hY2NvdW50cy5kZXYk',
+      CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY || 'sk_test_FYtiFyySKq2Bhicz2OW5IVqCvKqWkCLEr7dQdEWlEa',
     }
   })
 

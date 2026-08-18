@@ -1,5 +1,6 @@
 import type { NavItem } from '@/components/layouts'
-import { createClient } from '@/lib/supabase/server'
+import { auth, currentUser } from '@clerk/nextjs/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 export interface NavigationContext {
   isAuthenticated: boolean
@@ -10,25 +11,36 @@ export interface NavigationContext {
 }
 
 export async function getNavigationContext(): Promise<NavigationContext> {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const { userId } = await auth()
 
-  if (!user) {
+  if (!userId) {
     return { isAuthenticated: false, onboardingCompleted: false, email: null, fullName: null, avatarUrl: null }
   }
 
+  let user = null
+  try {
+    user = await currentUser()
+  } catch (err) {
+    console.warn('[navigation] unable to get currentUser:', err)
+  }
+
+  const supabase = createAdminClient()
   const { data: profile } = await supabase
     .from('profiles')
     .select('full_name, avatar_url, onboarding_completed_at')
-    .eq('id', user.id)
+    .eq('id', userId)
     .maybeSingle()
+
+  const email = user?.emailAddresses[0]?.emailAddress ?? null
+  const fullName = profile?.full_name ?? (user ? [user.firstName, user.lastName].filter(Boolean).join(' ') || user.username : null)
+  const avatarUrl = profile?.avatar_url ?? user?.imageUrl ?? null
 
   return {
     isAuthenticated: true,
     onboardingCompleted: Boolean(profile?.onboarding_completed_at),
-    email: user.email ?? null,
-    fullName: profile?.full_name ?? null,
-    avatarUrl: profile?.avatar_url ?? null,
+    email,
+    fullName,
+    avatarUrl,
   }
 }
 

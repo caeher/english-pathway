@@ -18,13 +18,13 @@ interface OnboardingPageProps {
 
 export default async function OnboardingPage({ searchParams }: OnboardingPageProps) {
   const user = await getCurrentUser()
-  if (!user) redirect('/login?redirectTo=%2Fonboarding')
+  if (!user) redirect('/sign-in?redirectTo=%2Fonboarding')
 
   const profile = await getOnboardingProfile()
   const params = await searchParams
   const review = params.review === '1'
 
-  if (!profile) redirect('/login?redirectTo=%2Fonboarding')
+  if (!profile) redirect('/sign-in?redirectTo=%2Fonboarding')
   if (profile.onboarding_completed_at && !review) redirect('/settings')
 
   const requestedDestination = getSafeRedirectPath(params.next ?? null, '/learn')

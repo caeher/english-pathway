@@ -1,9 +1,9 @@
-import { ForgotPasswordForm } from '../_components/forgot-password-form'
+import { redirect } from 'next/navigation'
 
 export const metadata = {
   title: 'Reset password — English Pathway',
 }
 
-export default function ForgotPasswordPage() {
-  return <ForgotPasswordForm />
+export default async function ForgotPasswordPage() {
+  redirect('/sign-in')
 }

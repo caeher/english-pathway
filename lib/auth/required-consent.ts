@@ -1,5 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import type { Database } from '@/lib/supabase/database.types'
 
 export type MissingLegalConsent = {
@@ -48,7 +48,7 @@ export async function getMissingLegalConsentsForClient(
 }
 
 export async function getMissingLegalConsents(userId: string): Promise<MissingLegalConsent[]> {
-  const supabase = await createClient()
+  const supabase = createAdminClient()
   return getMissingLegalConsentsForClient(supabase, userId)
 }
 

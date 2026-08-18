@@ -10,7 +10,7 @@ import { curriculumChapterHref } from '@/lib/curriculum/href'
 import { getChapterProgress } from '@/lib/curriculum/progress'
 import { getCurriculumProgressSnapshot } from '@/features/progress/server'
 import { PageContainer } from '@/components/ui/page-container'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 export default async function ChapterCurriculumPage({ params }: { params: Promise<{ moduleId: string; chapterId: string }> }) {
   const user = await getCurrentUser()
@@ -21,7 +21,7 @@ export default async function ChapterCurriculumPage({ params }: { params: Promis
   const chapter = curriculumModule?.chapters.find((candidate) => candidate.id === chapterId)
   if (!curriculumModule || !chapter) notFound()
 
-  const supabase = await createClient()
+  const supabase = createAdminClient()
   const snapshot = await getCurriculumProgressSnapshot(supabase, user.id)
   const progress = getChapterProgress(chapter, snapshot)
   const headings = extractMarkdownHeadings(chapter.content).filter((heading) => heading.level >= 2)
