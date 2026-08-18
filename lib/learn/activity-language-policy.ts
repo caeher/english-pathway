@@ -1,5 +1,5 @@
 import { toCefrLevel } from '@/lib/tutor/learner-profile'
-import type { ActivityCapability } from '@/features/activities/contracts'
+import type { ActivityCapability } from '@/features/activities/runtime-contract'
 import type { GraduatedHintLevel } from '@/features/activities/hints'
 
 export function getActivityInstructionalLanguagePolicy(

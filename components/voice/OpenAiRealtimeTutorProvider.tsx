@@ -10,6 +10,12 @@ import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import { learnSessionActions } from '@/stores/useLearnSessionStore'
+import type { SessionMode, SessionOrchestration } from './session-types'
+import {
+  calculateConsumedAudioSeconds,
+  calculateRemainingAudioSeconds,
+  formatVoiceRemainingLabel,
+} from '@/lib/credits/audio-countdown'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -28,10 +34,6 @@ type RealtimeEvent = {
   }
 }
 
-function formatDuration(seconds: number) {
-  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
-}
-
 export default function OpenAiRealtimeTutorProvider() {
   const mode: SessionMode = 'voice'
   const [active, setActive] = useState(false)
@@ -40,6 +42,8 @@ export default function OpenAiRealtimeTutorProvider() {
   const [error, setError] = useState<string | null>(null)
   const [stream, setStream] = useState<MediaStream | null>(null)
   const [credits, setCredits] = useState<Credits | null>(null)
+  const [creditsError, setCreditsError] = useState(false)
+  const [liveRemainingSeconds, setLiveRemainingSeconds] = useState<number | null>(null)
   const [voiceSupported, setVoiceSupported] = useState(false)
   const pcRef = useRef<RTCPeerConnection | null>(null)
   const channelRef = useRef<RTCDataChannel | null>(null)
@@ -48,6 +52,7 @@ export default function OpenAiRealtimeTutorProvider() {
   const startedAtRef = useRef<number | null>(null)
   const maxSecondsRef = useRef(0)
   const endTimerRef = useRef<number | null>(null)
+  const countdownIntervalRef = useRef<number | null>(null)
   const heartbeatTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
   const isExplicitEndRef = useRef(false)
@@ -63,13 +68,49 @@ export default function OpenAiRealtimeTutorProvider() {
     setVoiceSupported(Boolean(navigator.mediaDevices?.getUserMedia))
   }, [])
 
+  const updateCountdown = useCallback(() => {
+    const startedAt = startedAtRef.current
+    const maxSec = maxSecondsRef.current
+    if (startedAt !== null && maxSec > 0) {
+      setLiveRemainingSeconds(calculateRemainingAudioSeconds(startedAt, maxSec, Date.now()))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!active) {
+      if (countdownIntervalRef.current !== null) {
+        window.clearInterval(countdownIntervalRef.current)
+        countdownIntervalRef.current = null
+      }
+      return
+    }
+
+    updateCountdown()
+    const interval = window.setInterval(updateCountdown, 250)
+    countdownIntervalRef.current = interval
+
+    const handleSync = () => {
+      updateCountdown()
+    }
+
+    document.addEventListener('visibilitychange', handleSync)
+    window.addEventListener('focus', handleSync)
+
+    return () => {
+      window.clearInterval(interval)
+      countdownIntervalRef.current = null
+      document.removeEventListener('visibilitychange', handleSync)
+      window.removeEventListener('focus', handleSync)
+    }
+  }, [active, updateCountdown])
+
   // Page lifecycle listeners: reliable finish beacon on pagehide/unload, and heartbeat flush on visibility change.
   useEffect(() => {
     const sendCleanupBeacon = () => {
       const sessionId = creditSessionIdRef.current
       const startedAt = startedAtRef.current
       if (!sessionId || startedAt === null) return
-      const seconds = Math.min(maxSecondsRef.current, Math.max(0, Math.ceil((Date.now() - startedAt) / 1000)))
+      const seconds = calculateConsumedAudioSeconds(startedAt, maxSecondsRef.current, Date.now())
       const payload = JSON.stringify({ sessionId, seconds })
       if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
         navigator.sendBeacon('/api/tutor/realtime/finish', payload)
@@ -153,9 +194,19 @@ export default function OpenAiRealtimeTutorProvider() {
   }, [onActivityComplete])
 
   const loadCredits = useCallback(async () => {
-    const response = await fetch('/api/credits')
-    if (!response.ok) return
-    setCredits(await response.json() as Credits)
+    try {
+      const response = await fetch('/api/credits')
+      if (!response.ok) {
+        setCreditsError(true)
+        return
+      }
+      const data = await response.json() as Credits
+      setCredits(data)
+      setCreditsError(false)
+      setLiveRemainingSeconds(null)
+    } catch {
+      setCreditsError(true)
+    }
   }, [])
 
   useEffect(() => { void loadCredits() }, [loadCredits])
@@ -171,8 +222,12 @@ export default function OpenAiRealtimeTutorProvider() {
       window.clearInterval(heartbeatTimerRef.current)
       heartbeatTimerRef.current = null
     }
+    if (countdownIntervalRef.current !== null) {
+      window.clearInterval(countdownIntervalRef.current)
+      countdownIntervalRef.current = null
+    }
     const startedAt = startedAtRef.current
-    const seconds = startedAt ? Math.min(maxSecondsRef.current, Math.max(0, Math.ceil((Date.now() - startedAt) / 1000))) : 0
+    const seconds = startedAt !== null ? calculateConsumedAudioSeconds(startedAt, maxSecondsRef.current, Date.now()) : 0
     const creditSessionId = creditSessionIdRef.current
     pcRef.current?.close()
     pcRef.current = null
@@ -186,6 +241,8 @@ export default function OpenAiRealtimeTutorProvider() {
     setMuted(false)
     startedAtRef.current = null
     creditSessionIdRef.current = null
+    setLiveRemainingSeconds(null)
+
     if (creditSessionId) {
       try {
         const response = await fetch('/api/tutor/realtime/finish', {
@@ -194,16 +251,24 @@ export default function OpenAiRealtimeTutorProvider() {
           body: JSON.stringify({ sessionId: creditSessionId, seconds }),
           keepalive: true,
         })
-        if (response.ok) setCredits(await response.json() as Credits)
+        if (response.ok) {
+          const reconciled = await response.json() as Credits
+          setCredits(reconciled)
+          setCreditsError(false)
+        } else {
+          await loadCredits()
+        }
       } catch {
-        // Fallback handled by server lease expiration
+        await loadCredits().catch(() => {})
       }
+    } else {
+      await loadCredits().catch(() => {})
     }
     if (seconds) {
       trackEvent('learn_session_end', { mode, duration_seconds: seconds, provider: 'openai' })
     }
     endingRef.current = false
-  }, [mode])
+  }, [loadCredits, mode])
 
   useEffect(() => () => { void end() }, [end])
 
@@ -292,7 +357,9 @@ export default function OpenAiRealtimeTutorProvider() {
       const bootstrapMessage = buildOrchestrationMessage(orchestration) ?? 'Start the lesson now. Greet the learner and lead with the next appropriate English lesson; do not wait for the learner to speak first.'
 
       await pc.setRemoteDescription({ type: 'answer', sdp: await response.text() })
-      startedAtRef.current = Date.now()
+      const startNow = Date.now()
+      startedAtRef.current = startNow
+      setLiveRemainingSeconds(maxSeconds)
       setActive(true)
       trackEvent('learn_session_start', { mode, provider: 'openai' })
       if (heartbeatTimerRef.current !== null) window.clearInterval(heartbeatTimerRef.current)
@@ -333,7 +400,14 @@ export default function OpenAiRealtimeTutorProvider() {
     setMuted((current) => !current)
   }
 
-  const audioLabel = credits ? `${formatDuration(credits.audioSecondsRemaining)} voice remaining` : 'Voice credits loading…'
+  const audioLabel = formatVoiceRemainingLabel({
+    active,
+    liveRemainingSeconds,
+    credits,
+    creditsError,
+  })
+
+  const isStartDisabled = connecting || !voiceSupported || creditsError || credits === null || (credits.audioSecondsRemaining <= 0)
 
   return <LearnSessionLayout
     sessionMode={mode}
@@ -341,23 +415,36 @@ export default function OpenAiRealtimeTutorProvider() {
     tutorConnecting={connecting}
     showEngagement={false}
     tutorSlot={<div className="flex h-full min-h-0 flex-col">
-      <div className="hidden shrink-0 border-b border-(--border-primary) p-3 lg:block"><h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1><p className="mt-1 text-xs text-(--text-muted)">OpenAI realtime voice tutor · {audioLabel}</p></div>
+      <div className="hidden shrink-0 border-b border-(--border-primary) p-3 lg:block">
+        <h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1>
+        <p className="mt-1 text-xs text-(--text-muted)">{audioLabel}</p>
+      </div>
       <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
         {!active && <>
           <div className="flex flex-col gap-3 lg:hidden">
             <MicrophoneVisualizer stream={stream} active={connecting} />
             {error && <InlineError message={error} onRetry={() => void start()} />}
-            <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0)} className="w-full">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
+            {creditsError && !error && <InlineError message="Voice credits could not be loaded. Please check your connection." onRetry={() => void loadCredits()} />}
+            <Button type="button" onClick={() => void start()} disabled={isStartDisabled} className="w-full">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
           </div>
           <Surface as="section" padding="md" className="hidden sm:p-5 lg:block">
-          <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">Start a voice lesson</h2>
-          <div className="mt-4 rounded-xl border border-(--accent) bg-(--accent-soft) p-4"><span className="flex items-center gap-2 font-bold text-(--text-primary)"><Volume2 className="h-4 w-4 text-(--accent)" />Voice</span><span className="mt-1 block text-xs text-(--text-secondary)">Speak and listen with your tutor. The English helper remains available for text chat.</span></div>
-          {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}
-          <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0)} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
-        </Surface>
+            <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">Start a voice lesson</h2>
+            <div className="mt-4 rounded-xl border border-(--accent) bg-(--accent-soft) p-4"><span className="flex items-center gap-2 font-bold text-(--text-primary)"><Volume2 className="h-4 w-4 text-(--accent)" />Voice</span><span className="mt-1 block text-xs text-(--text-secondary)">Speak and listen with your tutor. The English helper remains available for text chat.</span></div>
+            {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}
+            {creditsError && !error && <InlineError message="Voice credits could not be loaded. Please check your connection." onRetry={() => void loadCredits()} className="mt-4" />}
+            <Button type="button" onClick={() => void start()} disabled={isStartDisabled} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
+          </Surface>
         </>}
-        {active && <section className="space-y-3 sm:space-y-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2><p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p></div><Button variant="outline" onClick={() => { isExplicitEndRef.current = true; void end() }}><PhoneOff className="h-4 w-4" /> End</Button></div>
-          <MicrophoneVisualizer stream={stream} active /><Button variant="outline" onClick={toggleMuted}>{muted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{muted ? 'Unmute' : 'Mute'}</Button>
+        {active && <section className="space-y-3 sm:space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2>
+              <p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p>
+            </div>
+            <Button variant="outline" onClick={() => { isExplicitEndRef.current = true; void end() }}><PhoneOff className="h-4 w-4" /> End</Button>
+          </div>
+          <MicrophoneVisualizer stream={stream} active />
+          <Button variant="outline" onClick={toggleMuted}>{muted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{muted ? 'Unmute' : 'Mute'}</Button>
         </section>}
       </div>
     </div>}
