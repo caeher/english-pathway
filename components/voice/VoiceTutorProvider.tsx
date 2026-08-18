@@ -120,9 +120,8 @@ function TutorControls({
           <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
             {!active && <>
               <div className="flex flex-col gap-3 lg:hidden">
-                <MicrophoneVisualizer stream={microphoneStream} active={mode === 'voice' && (microphoneState === 'ready' || connecting)} />
                 {error && <InlineError message={error} onRetry={() => void start()} />}
-                <Button type="button" onClick={() => void start()} disabled={connecting} className="w-full">
+                <Button type="button" onClick={() => void start()} disabled={connecting} className="w-full min-h-[44px]">
                   {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
                   {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
                 </Button>

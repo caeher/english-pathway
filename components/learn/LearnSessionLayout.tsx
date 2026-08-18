@@ -99,10 +99,10 @@ export default function LearnSessionLayout({
         </div>
       )}
       <div className="flex min-h-0 min-w-0 flex-1 flex-col divide-y divide-(--border-primary) lg:grid lg:grid-cols-2 lg:divide-x lg:divide-y-0 lg:overflow-hidden">
-        <section className="min-h-[min(220px,calc(32dvh-env(safe-area-inset-bottom)))] max-h-[calc(32dvh-env(safe-area-inset-bottom))] overflow-y-auto bg-(--bg-secondary)/30 pb-[env(safe-area-inset-bottom)] lg:min-h-0 lg:max-h-none lg:overflow-hidden lg:pb-0">
+        <section className="shrink-0 bg-(--bg-secondary)/30 lg:h-full lg:min-h-0 lg:max-h-none lg:overflow-hidden">
           {tutorSlot}
         </section>
-        <section className="min-h-[calc(55dvh-env(safe-area-inset-bottom))] flex-1 bg-(--bg-primary) pb-16 lg:h-full lg:min-h-0 lg:overflow-hidden lg:pb-0">
+        <section className="flex min-h-0 flex-1 flex-col bg-(--bg-primary) pb-16 lg:h-full lg:min-h-0 lg:overflow-hidden lg:pb-0">
           <DynamicContentPanel
             onActivityComplete={handleActivityComplete}
             onActivityOutcome={onActivityOutcome}

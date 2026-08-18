@@ -423,10 +423,9 @@ export default function OpenAiRealtimeTutorProvider() {
       <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
         {!active && <>
           <div className="flex flex-col gap-3 lg:hidden">
-            <MicrophoneVisualizer stream={stream} active={connecting} />
             {error && <InlineError message={error} onRetry={() => void start()} />}
             {creditsError && !error && <InlineError message="Voice credits could not be loaded. Please check your connection." onRetry={() => void loadCredits()} />}
-            <Button type="button" onClick={() => void start()} disabled={isStartDisabled} className="w-full">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
+            <Button type="button" onClick={() => void start()} disabled={isStartDisabled} className="w-full min-h-[44px]">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
           </div>
           <Surface as="section" padding="md" className="hidden sm:p-5 lg:block">
             <p className="text-xs font-bold uppercase tracking-wide text-(--accent)">Before you begin</p><h2 className="mt-1 font-display text-xl font-black text-(--text-primary)">Start a voice lesson</h2>
