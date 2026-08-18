@@ -37,6 +37,13 @@ export interface HintFallbackRequest {
   context: TutorHintContext
 }
 
+export interface LearnerProfileState {
+  level: string | null
+  nativeLanguage: string | null
+  nativeLanguageLabel: string | null
+  fullName?: string | null
+}
+
 export interface LearnSessionStore {
   panel: LearnPanelState
   panelNotice: string | null
@@ -45,6 +52,8 @@ export interface LearnSessionStore {
   lastActivityResult: ActivitySessionResult | null
   lastActivityOutcome: ActivityOutcome | null
   hintFallbackRequest: HintFallbackRequest | null
+  learnerProfile: LearnerProfileState | null
+  setLearnerProfile: (profile: LearnerProfileState | null) => void
   setExplanation: (blocks: PanelBlock[], title?: string) => void
   setPanelNotice: (notice: string | null) => void
   setActivity: (
@@ -90,6 +99,7 @@ export const initialLearnSessionState: Pick<
   | 'lastActivityResult'
   | 'lastActivityOutcome'
   | 'hintFallbackRequest'
+  | 'learnerProfile'
 > = {
   panel: { kind: 'empty' },
   panelNotice: null,
@@ -98,6 +108,7 @@ export const initialLearnSessionState: Pick<
   lastActivityResult: null,
   lastActivityOutcome: null,
   hintFallbackRequest: null,
+  learnerProfile: null,
 }
 
 export function migrateLearnSessionState(
@@ -120,6 +131,7 @@ export const selectLastActivityId = (state: LearnSessionStore) => state.lastActi
 export const selectLastActivityResult = (state: LearnSessionStore) => state.lastActivityResult
 export const selectLastActivityOutcome = (state: LearnSessionStore) => state.lastActivityOutcome
 export const selectTutorState = (state: LearnSessionStore) => state.tutorState
+export const selectLearnerProfile = (state: LearnSessionStore) => state.learnerProfile
 export const selectSetExplanation = (state: LearnSessionStore) => state.setExplanation
 export const selectSetActivity = (state: LearnSessionStore) => state.setActivity
 export const selectSetQuestion = (state: LearnSessionStore) => state.setQuestion
@@ -135,6 +147,7 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
   persist(
     (set) => ({
       ...initialLearnSessionState,
+      setLearnerProfile: (profile) => set({ learnerProfile: profile }),
       setExplanation: (blocks, title) =>
         set((state) => {
           if (state.tutorState === 'activity_presented') return state
@@ -218,6 +231,8 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
 )
 
 export const learnSessionActions = {
+  setLearnerProfile: (profile: LearnerProfileState | null) =>
+    useLearnSessionStore.getState().setLearnerProfile(profile),
   setExplanation: (blocks: PanelBlock[], title?: string) =>
     useLearnSessionStore.getState().setExplanation(blocks, title),
   setPanelNotice: (notice: string | null) => useLearnSessionStore.getState().setPanelNotice(notice),

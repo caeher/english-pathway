@@ -81,3 +81,5 @@ export function getInstructionalLanguagePolicy(
   return 'Instructional language policy: Use clear, accessible English for explanations, examples, and practice.'
 }
 
+export { getActivityInstructionalLanguagePolicy } from '@/lib/learn/activity-language-policy'
+

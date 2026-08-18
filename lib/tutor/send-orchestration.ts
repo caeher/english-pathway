@@ -1,5 +1,5 @@
 import type { SessionOrchestration } from '@/components/voice/session-types'
-import { getInstructionalLanguagePolicy, toCefrLevel } from '@/lib/tutor/learner-profile'
+import { getActivityInstructionalLanguagePolicy, getInstructionalLanguagePolicy, toCefrLevel } from '@/lib/tutor/learner-profile'
 
 function buildGreetingAndStartDirective(orchestration: SessionOrchestration): string {
   const level = toCefrLevel(orchestration.learner?.level)
@@ -64,6 +64,7 @@ export function buildOrchestrationMessage(orchestration?: SessionOrchestration):
   
   if (orchestration.learner) {
     parts.push(getInstructionalLanguagePolicy(orchestration.learner.level, orchestration.learner.nativeLanguageLabel))
+    parts.push(getActivityInstructionalLanguagePolicy(orchestration.learner.level, orchestration.learner.nativeLanguageLabel))
   }
 
   if (orchestration.progress?.lastChapterId) parts.push(`Last chapter studied: ${orchestration.progress.lastChapterId}.`)

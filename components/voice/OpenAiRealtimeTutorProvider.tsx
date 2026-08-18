@@ -7,9 +7,9 @@ import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
-import type { SessionMode, SessionOrchestration } from './session-types'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
+import { learnSessionActions } from '@/stores/useLearnSessionStore'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -277,6 +277,14 @@ export default function OpenAiRealtimeTutorProvider() {
       if (orchestrationHeader) {
         try {
           orchestration = JSON.parse(decodeURIComponent(orchestrationHeader)) as SessionOrchestration
+          if (orchestration?.learner) {
+            learnSessionActions.setLearnerProfile({
+              level: orchestration.learner.level ?? null,
+              nativeLanguage: orchestration.learner.nativeLanguage ?? null,
+              nativeLanguageLabel: orchestration.learner.nativeLanguageLabel ?? null,
+              fullName: orchestration.learner.fullName ?? null,
+            })
+          }
         } catch {
           // Fall back to default start directive if header decoding fails
         }

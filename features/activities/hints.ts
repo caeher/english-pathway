@@ -1,4 +1,5 @@
 import type { ActivityTypeKey } from './contracts'
+import { getActivityHintLabel } from '@/lib/learn/activity-language-policy'
 
 export type GraduatedHintLevel = 1 | 2 | 3
 
@@ -19,6 +20,8 @@ export interface TutorHintContext {
   itemIndex: number
   level: GraduatedHintLevel
   maxLevel: GraduatedHintLevel
+  learnerLevel?: string | null
+  nativeLanguage?: string | null
 }
 
 export const MAX_GRADUATED_HINT_LEVEL = 3 as const
@@ -216,13 +219,21 @@ export function resolveEditorialHint(
 
 export function buildTutorHintRequest(context: TutorHintContext): string {
   const itemLabel = context.itemIndex >= 0 ? `item ${context.itemIndex + 1}` : 'the current item'
-  return [
+  const parts = [
     `I need a graduated hint (level ${context.level} of ${context.maxLevel}) for ${itemLabel} in activity "${context.activityTitle}" (${context.activityType}, id ${context.activityId}).`,
     'Give a useful hint without revealing the full answer unless this is the final explanation level.',
     'Keep the response short and encouraging.',
-  ].join(' ')
+  ]
+  if (context.learnerLevel || context.nativeLanguage) {
+    parts.push('Deliver the hint following the CEFR instructional language policy.')
+  }
+  return parts.join(' ')
 }
 
-export function getHintLabel(level: GraduatedHintLevel): string {
-  return HINT_LABELS[level]
+export function getHintLabel(
+  level: GraduatedHintLevel,
+  learnerLevel?: string | null,
+  nativeLanguage?: string | null,
+): string {
+  return getActivityHintLabel(level, learnerLevel, nativeLanguage)
 }

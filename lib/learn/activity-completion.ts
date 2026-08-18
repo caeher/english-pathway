@@ -1,5 +1,6 @@
 import type { ActivityCorrectness, NormalizedActivityResult } from '@/lib/games/result'
 import type { FollowUpDecision } from '@/lib/learn/follow-up-planner'
+import { shouldApplyNativeActivityUi } from '@/lib/learn/activity-language-policy'
 
 export type CompletionVariant = 'complete' | 'partial' | 'needs-practice'
 
@@ -23,19 +24,21 @@ export interface BuildCompletionSummaryInput extends Omit<NormalizedActivityResu
   explanations?: string[]
   hasReviewRefs?: boolean
   followUp?: FollowUpDecision | null
+  learnerLevel?: string | null
+  nativeLanguage?: string | null
 }
 
-function followUpPrimaryLabel(followUp: FollowUpDecision): string {
+function followUpPrimaryLabel(followUp: FollowUpDecision, isSpanish = false): string {
   switch (followUp.action) {
     case 'retry':
-      return 'Try again'
+      return isSpanish ? 'Intentar de nuevo' : 'Try again'
     case 'reinforce':
     case 'variant':
-      return 'Practice recommended'
+      return isSpanish ? 'Práctica recomendada' : 'Practice recommended'
     case 'advance':
-      return 'Continue'
+      return isSpanish ? 'Continuar' : 'Continue'
     case 'chapter-complete':
-      return 'Finish chapter'
+      return isSpanish ? 'Terminar capítulo' : 'Finish chapter'
   }
 }
 
@@ -54,19 +57,26 @@ export function buildCompletionSummary(input: BuildCompletionSummaryInput): Comp
     explanations = [],
     hasReviewRefs = false,
     followUp = null,
+    learnerLevel,
+    nativeLanguage,
   } = input
   const weakCount = input.weakItemIndexes.length
+  const isSpanish = shouldApplyNativeActivityUi(learnerLevel, nativeLanguage)
 
   if (followUp) {
     const variant: CompletionVariant = correctness
     const title = correctness === 'complete'
-      ? (scorePercent >= 90 ? 'Excellent!' : 'Well done!')
+      ? (scorePercent >= 90 ? (isSpanish ? '¡Excelente!' : 'Excellent!') : (isSpanish ? '¡Bien hecho!' : 'Well done!'))
       : correctness === 'partial'
-        ? 'Good progress!'
-        : 'Keep practicing!'
+        ? (isSpanish ? '¡Buen progreso!' : 'Good progress!')
+        : (isSpanish ? '¡Sigue practicando!' : 'Keep practicing!')
     const subtitle = correctness === 'partial' && weakCount > 0
-      ? `You scored ${scorePercent}%. ${weakCount} item${weakCount === 1 ? '' : 's'} need more practice.`
-      : `You scored ${scorePercent}% on this activity.`
+      ? (isSpanish
+          ? `Obtuviste un ${scorePercent}%. ${weakCount} ${weakCount === 1 ? 'elemento necesita' : 'elementos necesitan'} más práctica.`
+          : `You scored ${scorePercent}%. ${weakCount} item${weakCount === 1 ? '' : 's'} need more practice.`)
+      : (isSpanish
+          ? `Obtuviste un ${scorePercent}% en esta actividad.`
+          : `You scored ${scorePercent}% on this activity.`)
 
     return {
       variant,
@@ -74,7 +84,7 @@ export function buildCompletionSummary(input: BuildCompletionSummaryInput): Comp
       subtitle,
       recommendation: followUp.reason,
       primaryAction: followUpPrimaryAction(followUp),
-      primaryLabel: followUpPrimaryLabel(followUp),
+      primaryLabel: followUpPrimaryLabel(followUp, isSpanish),
       showRetry: correctness !== 'complete',
       showReview: hasReviewRefs,
       showContinue: followUp.action !== 'advance' && followUp.action !== 'chapter-complete',
@@ -86,11 +96,11 @@ export function buildCompletionSummary(input: BuildCompletionSummaryInput): Comp
   if (correctness === 'complete') {
     return {
       variant: 'complete',
-      title: scorePercent >= 90 ? 'Excellent!' : 'Well done!',
-      subtitle: `You scored ${scorePercent}% on this activity.`,
-      recommendation: 'Continue to the next activity.',
+      title: scorePercent >= 90 ? (isSpanish ? '¡Excelente!' : 'Excellent!') : (isSpanish ? '¡Bien hecho!' : 'Well done!'),
+      subtitle: isSpanish ? `Obtuviste un ${scorePercent}% en esta actividad.` : `You scored ${scorePercent}% on this activity.`,
+      recommendation: isSpanish ? 'Continúa con la siguiente actividad.' : 'Continue to the next activity.',
       primaryAction: 'continue',
-      primaryLabel: 'Continue',
+      primaryLabel: isSpanish ? 'Continuar' : 'Continue',
       showRetry: false,
       showReview: hasReviewRefs,
       showContinue: true,
@@ -101,17 +111,19 @@ export function buildCompletionSummary(input: BuildCompletionSummaryInput): Comp
 
   if (correctness === 'partial') {
     const weakNote = weakCount > 0
-      ? `${weakCount} item${weakCount === 1 ? '' : 's'} need more practice.`
-      : 'Some answers could be stronger.'
+      ? (isSpanish
+          ? `${weakCount} ${weakCount === 1 ? 'elemento necesita' : 'elementos necesitan'} más práctica.`
+          : `${weakCount} item${weakCount === 1 ? '' : 's'} need more practice.`)
+      : (isSpanish ? 'Algunas respuestas pueden mejorar.' : 'Some answers could be stronger.')
     return {
       variant: 'partial',
-      title: 'Good progress!',
-      subtitle: `You scored ${scorePercent}%. ${weakNote}`,
+      title: isSpanish ? '¡Buen progreso!' : 'Good progress!',
+      subtitle: isSpanish ? `Obtuviste un ${scorePercent}%. ${weakNote}` : `You scored ${scorePercent}%. ${weakNote}`,
       recommendation: explanations.length > 0
-        ? 'Review the corrections below, then revisit weak items.'
-        : 'Review weak items before moving on.',
+        ? (isSpanish ? 'Revisa las correcciones a continuación y practica los elementos difíciles.' : 'Review the corrections below, then revisit weak items.')
+        : (isSpanish ? 'Revisa los elementos difíciles antes de continuar.' : 'Review weak items before moving on.'),
       primaryAction: 'review',
-      primaryLabel: 'Review weak items',
+      primaryLabel: isSpanish ? 'Repasar elementos difíciles' : 'Review weak items',
       showRetry: true,
       showReview: hasReviewRefs || nextAction === 'review',
       showContinue: true,
@@ -122,11 +134,13 @@ export function buildCompletionSummary(input: BuildCompletionSummaryInput): Comp
 
   return {
     variant: 'needs-practice',
-    title: 'Keep practicing!',
-    subtitle: `You scored ${scorePercent}%. Focus on the missed concepts below.`,
-    recommendation: 'Try again to strengthen this skill.',
+    title: isSpanish ? '¡Sigue practicando!' : 'Keep practicing!',
+    subtitle: isSpanish
+      ? `Obtuviste un ${scorePercent}%. Concéntrate en los conceptos a continuación.`
+      : `You scored ${scorePercent}%. Focus on the missed concepts below.`,
+    recommendation: isSpanish ? 'Inténtalo de nuevo para reforzar este tema.' : 'Try again to strengthen this skill.',
     primaryAction: 'retry',
-    primaryLabel: 'Try again',
+    primaryLabel: isSpanish ? 'Intentar de nuevo' : 'Try again',
     showRetry: true,
     showReview: hasReviewRefs,
     showContinue: false,

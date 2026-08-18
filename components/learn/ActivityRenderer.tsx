@@ -31,7 +31,7 @@ import {
   type FollowUpDecision,
 } from '@/lib/learn/follow-up-planner'
 import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
-import { learnSessionActions } from '@/stores/useLearnSessionStore'
+import { learnSessionActions, selectLearnerProfile, useLearnSessionStore, type LearnerProfileState } from '@/stores/useLearnSessionStore'
 import {
   loadSnapshot,
   purgeExpiredSnapshots,
@@ -121,6 +121,7 @@ interface ActivityRendererProps {
   variant?: 'learn' | 'curriculum'
   passThreshold?: number
   approvalMode?: 'score' | 'completion'
+  learnerProfile?: LearnerProfileState | null
   onCurriculumContinue?: () => void
   onComplete?: (result: ActivityCompleteResult) => void
   onOutcome?: (outcome: ActivityOutcome) => void
@@ -257,6 +258,7 @@ export default function ActivityRenderer({
   variant = 'learn',
   passThreshold,
   approvalMode,
+  learnerProfile,
   onCurriculumContinue,
   onComplete,
   onOutcome,
@@ -266,6 +268,10 @@ export default function ActivityRenderer({
   onPhaseChange,
   onRuntimeEvent,
 }: ActivityRendererProps) {
+  const storeLearnerProfile = useLearnSessionStore(selectLearnerProfile)
+  const resolvedLearnerProfile = learnerProfile ?? storeLearnerProfile
+  const learnerLevel = resolvedLearnerProfile?.level
+  const nativeLanguage = resolvedLearnerProfile?.nativeLanguage
   const isCurriculum = variant === 'curriculum'
   const resolvedPassThreshold = passThreshold ?? (activity.policy?.mode === 'score' ? activity.policy.passThreshold : 70)
   const resolvedApprovalMode = approvalMode ?? activity.policy?.mode ?? 'score'
@@ -598,11 +604,13 @@ export default function ActivityRenderer({
       itemIndex,
       level,
       maxLevel: maxHintLevel,
+      learnerLevel,
+      nativeLanguage,
     }
     if (!isCurriculum) learnSessionActions.requestHelp()
     onHelp?.(activity.id, context)
     emitHintRequested(level, itemIndex, 'tutor')
-  }, [activity.id, activity.title, emitHintRequested, isCurriculum, maxHintLevel, onHelp, type])
+  }, [activity.id, activity.title, emitHintRequested, isCurriculum, learnerLevel, maxHintLevel, nativeLanguage, onHelp, type])
 
   const applyResolvedHint = useCallback((level: number, itemIndex: number, hint: ResolvedHint) => {
     setHintCount(level)
@@ -767,6 +775,8 @@ export default function ActivityRenderer({
           activityTitle={activity.title}
           activityType={activity.type}
           accessibilityCapabilities={accessibilityCapabilities}
+          learnerLevel={learnerLevel}
+          nativeLanguage={nativeLanguage}
           onHelp={canRequestHelp ? handleHelpDuringPlay : undefined}
           onReset={handleReset}
           onSkip={handleSkip}
@@ -777,6 +787,8 @@ export default function ActivityRenderer({
         <ActivityHintTray
           hint={visibleHint}
           maxLevel={maxHintLevel}
+          learnerLevel={learnerLevel}
+          nativeLanguage={nativeLanguage}
           onMoreHelp={canRequestHelp ? requestNextHint : undefined}
         />
       )}
@@ -786,13 +798,21 @@ export default function ActivityRenderer({
         </div>
       )}
       {resumeState === 'prompt' && savedSummary && phase === 'playing' && (
-        <ActivityResumePrompt summary={savedSummary} onResume={handleResume} onStartOver={handleStartOver} />
+        <ActivityResumePrompt
+          summary={savedSummary}
+          learnerLevel={learnerLevel}
+          nativeLanguage={nativeLanguage}
+          onResume={handleResume}
+          onStartOver={handleStartOver}
+        />
       )}
       {phase === 'completed' && completedResult && (
         <ActivityCompletionCard
           result={completedResult}
           followUp={isCurriculum ? null : followUpDecision}
           explanations={completedResult.explanations}
+          learnerLevel={learnerLevel}
+          nativeLanguage={nativeLanguage}
           onAcceptFollowUp={isCurriculum ? onCurriculumContinue : (chapterId || followUpDecision ? handleAcceptFollowUp : undefined)}
           onDeclineFollowUp={isCurriculum ? undefined : (chapterId ? handleDeclineFollowUp : undefined)}
           onRetry={handleRetry}

@@ -12,11 +12,14 @@ import { cn } from '@/lib/helpers'
 import { useReducedMotion } from '@/lib/games/useReducedMotion'
 import { resultTransition } from '@/lib/motion/system'
 import { passesThreshold, starsFromPercent } from '@/lib/games/scoring'
+import { shouldApplyNativeActivityUi } from '@/lib/learn/activity-language-policy'
 
 export interface ActivityCompletionCardProps {
   result: ActivityCompleteResult
   followUp?: FollowUpDecision | null
   explanations?: string[]
+  learnerLevel?: string | null
+  nativeLanguage?: string | null
   onAcceptFollowUp?: () => void
   onDeclineFollowUp?: () => void
   onRetry?: () => void
@@ -30,6 +33,8 @@ export default function ActivityCompletionCard({
   result,
   followUp = null,
   explanations = [],
+  learnerLevel,
+  nativeLanguage,
   onAcceptFollowUp,
   onDeclineFollowUp,
   onRetry,
@@ -40,6 +45,7 @@ export default function ActivityCompletionCard({
 }: ActivityCompletionCardProps) {
   const reducedMotion = useReducedMotion()
   const primaryRef = useRef<HTMLButtonElement>(null)
+  const isSpanish = shouldApplyNativeActivityUi(learnerLevel, nativeLanguage)
   const scorePercent = result.scorePercent ?? Math.round((result.score / result.total) * 100)
   const passed = approvalMode === 'completion' ? true : passesThreshold(scorePercent, passThreshold)
   const stars = starsFromPercent(scorePercent)
@@ -56,6 +62,8 @@ export default function ActivityCompletionCard({
     weakItemIndexes: result.weakItemIndexes ?? [],
     hasReviewRefs,
     followUp,
+    learnerLevel,
+    nativeLanguage,
   })
 
   const shouldConfetti = summary.variant === 'complete' && stars >= 2 && !reducedMotion
@@ -163,7 +171,7 @@ export default function ActivityCompletionCard({
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-5 py-2.5 text-sm font-display font-bold text-(--text-primary) transition-colors hover:bg-(--bg-tertiary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
             >
               <RotateCcw className="h-4 w-4" />
-              Try again
+              {isSpanish ? 'Intentar de nuevo' : 'Try again'}
             </button>
           )}
 
@@ -172,7 +180,7 @@ export default function ActivityCompletionCard({
               href="/review"
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--accent)/40 bg-(--accent-soft) px-5 py-2.5 text-sm font-display font-bold text-(--accent) no-underline transition-colors hover:bg-(--accent)/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
             >
-              Open review
+              {isSpanish ? 'Abrir repaso' : 'Open review'}
             </Link>
           )}
 
@@ -184,7 +192,7 @@ export default function ActivityCompletionCard({
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-5 py-2.5 text-sm font-display font-bold text-(--text-primary) transition-colors hover:bg-(--bg-tertiary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) disabled:opacity-60"
             >
               <ArrowRight className="h-4 w-4" />
-              Try something else
+              {isSpanish ? 'Probar otra actividad' : 'Try something else'}
             </button>
           )}
 
@@ -195,7 +203,7 @@ export default function ActivityCompletionCard({
               disabled={continueLoading}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-5 py-2.5 text-sm font-display font-bold text-(--text-secondary) transition-colors hover:bg-(--bg-tertiary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) disabled:opacity-60"
             >
-              Continue anyway
+              {isSpanish ? 'Continuar de todos modos' : 'Continue anyway'}
             </button>
           )}
 
@@ -206,13 +214,15 @@ export default function ActivityCompletionCard({
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-(--border-primary) bg-(--bg-card) px-5 py-2.5 text-sm font-display font-bold text-(--text-secondary) transition-colors hover:bg-(--bg-tertiary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
             >
               <HelpCircle className="h-4 w-4" />
-              Ask for explanation
+              {isSpanish ? 'Pedir explicación' : 'Ask for explanation'}
             </button>
           )}
         </div>
 
         <p className="mt-4 text-xs text-(--text-muted)">
-          Your progress is saved. Due reviews are scheduled separately to help you remember what needs more work.
+          {isSpanish
+            ? 'Tu progreso está guardado. Los repasos pendientes se programan por separado para ayudarte a recordar.'
+            : 'Your progress is saved. Due reviews are scheduled separately to help you remember what needs more work.'}
         </p>
       </motion.div>
     </div>

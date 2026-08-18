@@ -15,6 +15,7 @@ import { trackEvent } from '@/lib/analytics/events'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
+import { learnSessionActions, type LearnerProfileState } from '@/stores/useLearnSessionStore'
 
 interface TutorControlsProps {
   mode: SessionMode
@@ -43,6 +44,14 @@ function TutorControls({
   const handleSessionStarted = useCallback((sessionId: string, orchestration?: SessionOrchestration) => {
     orchestrationRef.current = orchestration
     bootstrapSentRef.current = false
+    if (orchestration?.learner) {
+      learnSessionActions.setLearnerProfile({
+        level: orchestration.learner.level ?? null,
+        nativeLanguage: orchestration.learner.nativeLanguage ?? null,
+        nativeLanguageLabel: orchestration.learner.nativeLanguageLabel ?? null,
+        fullName: orchestration.learner.fullName ?? null,
+      })
+    }
     onSessionStarted(sessionId, orchestration)
   }, [onSessionStarted])
 
@@ -176,12 +185,19 @@ function TutorControls({
 
 interface VoiceTutorProviderProps {
   children?: React.ReactNode
+  initialLearnerProfile?: LearnerProfileState | null
 }
 
-export default function VoiceTutorProvider({ children }: VoiceTutorProviderProps) {
+export default function VoiceTutorProvider({ children, initialLearnerProfile }: VoiceTutorProviderProps) {
   useEffect(() => {
     sessionStorage.removeItem('ep-session-plan')
   }, [])
+
+  useEffect(() => {
+    if (initialLearnerProfile) {
+      learnSessionActions.setLearnerProfile(initialLearnerProfile)
+    }
+  }, [initialLearnerProfile])
 
   if (!process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID) {
     return (

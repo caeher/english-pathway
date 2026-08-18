@@ -73,4 +73,34 @@ describe('buildCompletionSummary', () => {
     expect(summary.showRetry).toBe(true)
     expect(summary.showContinue).toBe(false)
   })
+
+  describe('Spanish A1/A2 localization', () => {
+    it('produces Spanish title, recommendation, and primary label for complete outcome', () => {
+      const normalized = normalizeActivityResult({ score: 4, total: 4 })
+      const summary = buildCompletionSummary({
+        ...normalized,
+        hasReviewRefs: false,
+        learnerLevel: 'A1',
+        nativeLanguage: 'es',
+      })
+
+      expect(summary.title).toBe('¡Excelente!')
+      expect(summary.primaryLabel).toBe('Continuar')
+      expect(summary.recommendation).toBe('Continúa con la siguiente actividad.')
+    })
+
+    it('produces Spanish copy for needs-practice outcome', () => {
+      const normalized = normalizeActivityResult({ score: 1, total: 4, weakItemIndexes: [0, 1] })
+      const summary = buildCompletionSummary({
+        ...normalized,
+        hasReviewRefs: false,
+        learnerLevel: 'A1',
+        nativeLanguage: 'es',
+      })
+
+      expect(summary.title).toBe('¡Sigue practicando!')
+      expect(summary.primaryLabel).toBe('Intentar de nuevo')
+      expect(summary.recommendation).toContain('reforzar este tema')
+    })
+  })
 })

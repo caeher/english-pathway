@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle, XCircle } from 'lucide-react'
-import { selectClearPanel, selectPanel, selectPanelNotice, useLearnSessionStore } from '@/stores/useLearnSessionStore'
+import { selectClearPanel, selectLearnerProfile, selectPanel, selectPanelNotice, useLearnSessionStore } from '@/stores/useLearnSessionStore'
 import { StructuredPanelContent } from '@/components/learn/StructuredPanelContent'
 import ActivityRenderer, { type ActivityCompleteResult } from './ActivityRenderer'
 import { Button } from '@/components/ui/button'
@@ -33,6 +33,7 @@ export default function DynamicContentPanel({
   const panel = useLearnSessionStore(selectPanel)
   const panelNotice = useLearnSessionStore(selectPanelNotice)
   const clearPanel = useLearnSessionStore(selectClearPanel)
+  const learnerProfile = useLearnSessionStore(selectLearnerProfile)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const reducedMotion = useReducedMotion()
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
@@ -139,6 +140,7 @@ export default function DynamicContentPanel({
               activity={panel.activity}
               chapterId={panel.chapterId}
               moduleId={panel.moduleId}
+              learnerProfile={learnerProfile}
               onHelp={onActivityDifficult}
               onOutcome={onActivityOutcome}
               onSkip={clearPanel}

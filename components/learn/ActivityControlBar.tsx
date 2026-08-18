@@ -5,44 +5,35 @@ import { CircleHelp, RotateCcw, SkipForward, X } from 'lucide-react'
 import type { ActivityCapability } from '@/features/activities'
 import { Button } from '@/components/ui/button'
 
+import { buildActivityInstructionText } from '@/lib/learn/activity-language-policy'
+
 interface ActivityControlBarProps {
   activityTitle: string
   activityType: string
   accessibilityCapabilities?: readonly ActivityCapability[]
+  learnerLevel?: string | null
+  nativeLanguage?: string | null
   onHelp?: () => void
   onReset: () => void
   onSkip?: () => void
   onExit: () => void
 }
 
-function buildInstructionText(
+export function buildInstructionText(
   activityType: string,
   accessibilityCapabilities: readonly ActivityCapability[],
+  learnerLevel?: string | null,
+  nativeLanguage?: string | null,
 ): string {
-  const parts = [`Complete the ${activityType} activity at your pace.`]
-
-  if (accessibilityCapabilities.includes('keyboard')) {
-    parts.push('Use its labelled controls and keyboard shortcuts;')
-  } else {
-    parts.push('Use its labelled controls;')
-  }
-
-  if (accessibilityCapabilities.includes('audio')) {
-    parts.push('listen to audio prompts where available;')
-  }
-
-  if (accessibilityCapabilities.includes('microphone')) {
-    parts.push('allow microphone access for speaking practice;')
-  }
-
-  parts.push('restart clears only this attempt, while Skip and Exit keep the activity available to resume later.')
-  return parts.join(' ')
+  return buildActivityInstructionText(activityType, accessibilityCapabilities, learnerLevel, nativeLanguage)
 }
 
 export function ActivityControlBar({
   activityTitle,
   activityType,
   accessibilityCapabilities = ['keyboard'],
+  learnerLevel,
+  nativeLanguage,
   onHelp,
   onReset,
   onSkip,
@@ -73,7 +64,7 @@ export function ActivityControlBar({
       </div>
       {showInstructions && (
         <p id="activity-instructions" className="mt-2 text-sm text-(--text-secondary)">
-          {buildInstructionText(activityType, accessibilityCapabilities)}
+          {buildInstructionText(activityType, accessibilityCapabilities, learnerLevel, nativeLanguage)}
         </p>
       )}
     </section>
