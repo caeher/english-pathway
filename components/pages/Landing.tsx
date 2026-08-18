@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
@@ -18,7 +17,6 @@ import {
   Volume2,
   CheckCircle2,
   Award,
-  Github,
 } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics/events'
 import { Badge, Surface } from '@/components/ui'
@@ -31,8 +29,6 @@ import {
 } from '@/lib/motion/system'
 import { useReducedMotion } from '@/lib/motion/useReducedMotion'
 
-const CUBEPATH_REFERRAL_URL = 'https://my.cubepath.com/register?ref=HEAC.CRE4389'
-const REPOSITORY_URL = 'https://github.com/caeher/english-pathway'
 
 const METHOD = [
   {
@@ -414,48 +410,6 @@ export default function Landing({ isAuthenticated = false }: LandingProps) {
           </div>
         </motion.div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-(--border-primary)" aria-label="Footer">
-        <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="flex items-center gap-2.5 font-display font-bold text-(--text-primary) no-underline">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-(--accent) text-[10px] font-black text-white">ie</span>
-            English Pathway
-          </Link>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-(--text-muted)" aria-label="Footer navigation">
-            <Link href="/how-it-works" className="hover:text-(--accent)">How it works</Link>
-            <Link href="/curriculum" className="hover:text-(--accent)">Curriculum</Link>
-            <Link href="/faq" className="hover:text-(--accent)">FAQ</Link>
-            <Link href="/legal/terms" className="hover:text-(--accent)">Terms</Link>
-            <Link href="/legal/privacy" className="hover:text-(--accent)">Privacy</Link>
-            <Link href="/legal/cookies" className="hover:text-(--accent)">Cookies</Link>
-          </nav>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-(--text-muted)">
-            <a
-              href={REPOSITORY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-(--border-primary) px-3 py-1.5 font-medium no-underline transition-colors hover:border-(--accent) hover:text-(--accent)"
-            >
-              <Github className="h-4 w-4" aria-hidden="true" />
-              Public repository
-            </a>
-            <a
-              href={CUBEPATH_REFERRAL_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 font-medium no-underline transition-opacity hover:opacity-80"
-              aria-label="Hosted on CubePath (opens in a new tab)"
-            >
-              <span className="rounded-md bg-white px-2 py-1 shadow-sm">
-                <Image src="/logo-light.png" alt="CubePath" width={120} height={24} className="h-5 w-auto" />
-              </span>
-              Hosted on CubePath
-            </a>
-          </div>
-          <p className="text-sm text-(--text-muted)">© {new Date().getFullYear()} English Pathway</p>
-        </div>
-      </footer>
     </>
   )
 }
