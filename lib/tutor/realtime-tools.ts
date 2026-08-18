@@ -33,10 +33,14 @@ export const TUTOR_REALTIME_TOOLS = [
   {
     type: 'function',
     name: 'showActivity',
-    description: 'Show a curriculum activity by its validated ID. Use listChapterActivities or fetchCurriculumContext to find valid IDs.',
+    description: 'Show a curriculum activity by its validated ID. Explain its learning purpose and expected action before calling this tool. Use listChapterActivities or fetchCurriculumContext to find valid IDs.',
     parameters: {
       type: 'object',
-      properties: { activityId: { type: 'string', maxLength: 160 } },
+      properties: {
+        activityId: { type: 'string', maxLength: 160 },
+        context: { type: 'string', maxLength: 300, description: 'Brief learning purpose of this activity in the learner native language.' },
+        expectedAction: { type: 'string', maxLength: 200, description: 'Short direction on how the learner should complete it.' },
+      },
       required: ['activityId'],
       additionalProperties: false,
     },

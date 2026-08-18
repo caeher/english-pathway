@@ -6,6 +6,8 @@ import type { TutorHintContext } from '@/features/activities/hints'
 import type { PanelBlock } from '@/lib/tutor/panel-content'
 import { transitionTutorState, type TutorSessionState } from '@/lib/tutor/state'
 
+import type { ActivityOutcome } from '@/lib/learn/activity-outcome'
+
 export interface ActivitySessionResult {
   activityId: string
   scorePercent: number
@@ -15,7 +17,14 @@ export interface ActivitySessionResult {
 export type LearnPanelState =
   | { kind: 'empty' }
   | { kind: 'explanation'; title?: string; blocks: PanelBlock[] }
-  | { kind: 'activity'; activity: ChapterActivity; chapterId: string; moduleId: string }
+  | {
+      kind: 'activity'
+      activity: ChapterActivity
+      chapterId: string
+      moduleId: string
+      context?: string
+      expectedAction?: string
+    }
   | {
       kind: 'question'
       prompt: string
@@ -34,13 +43,20 @@ export interface LearnSessionStore {
   lastActivityId: string | null
   tutorState: TutorSessionState
   lastActivityResult: ActivitySessionResult | null
+  lastActivityOutcome: ActivityOutcome | null
   hintFallbackRequest: HintFallbackRequest | null
   setExplanation: (blocks: PanelBlock[], title?: string) => void
   setPanelNotice: (notice: string | null) => void
-  setActivity: (activity: ChapterActivity, chapterId: string, moduleId: string) => void
+  setActivity: (
+    activity: ChapterActivity,
+    chapterId: string,
+    moduleId: string,
+    options?: { context?: string; expectedAction?: string },
+  ) => void
   setQuestion: (prompt: string, options?: string[], correctIndex?: number) => void
   clearPanel: () => void
   recordActivityResult: (result: ActivitySessionResult) => void
+  recordActivityOutcome: (outcome: ActivityOutcome) => void
   acknowledgeCompletion: () => void
   requestHelp: () => void
   setHintFallbackRequest: (request: HintFallbackRequest | null) => void
@@ -67,13 +83,20 @@ const persistedLearnSessionSchema = z.object({
 
 export const initialLearnSessionState: Pick<
   LearnSessionStore,
-  'panel' | 'panelNotice' | 'lastActivityId' | 'tutorState' | 'lastActivityResult' | 'hintFallbackRequest'
+  | 'panel'
+  | 'panelNotice'
+  | 'lastActivityId'
+  | 'tutorState'
+  | 'lastActivityResult'
+  | 'lastActivityOutcome'
+  | 'hintFallbackRequest'
 > = {
   panel: { kind: 'empty' },
   panelNotice: null,
   lastActivityId: null,
   tutorState: 'preparing',
   lastActivityResult: null,
+  lastActivityOutcome: null,
   hintFallbackRequest: null,
 }
 
@@ -95,12 +118,14 @@ export const selectPanel = (state: LearnSessionStore) => state.panel
 export const selectPanelNotice = (state: LearnSessionStore) => state.panelNotice
 export const selectLastActivityId = (state: LearnSessionStore) => state.lastActivityId
 export const selectLastActivityResult = (state: LearnSessionStore) => state.lastActivityResult
+export const selectLastActivityOutcome = (state: LearnSessionStore) => state.lastActivityOutcome
 export const selectTutorState = (state: LearnSessionStore) => state.tutorState
 export const selectSetExplanation = (state: LearnSessionStore) => state.setExplanation
 export const selectSetActivity = (state: LearnSessionStore) => state.setActivity
 export const selectSetQuestion = (state: LearnSessionStore) => state.setQuestion
 export const selectClearPanel = (state: LearnSessionStore) => state.clearPanel
 export const selectRecordActivityResult = (state: LearnSessionStore) => state.recordActivityResult
+export const selectRecordActivityOutcome = (state: LearnSessionStore) => state.recordActivityOutcome
 export const selectRequestHelp = (state: LearnSessionStore) => state.requestHelp
 export const selectHintFallbackRequest = (state: LearnSessionStore) => state.hintFallbackRequest
 export const selectSetHintFallbackRequest = (state: LearnSessionStore) => state.setHintFallbackRequest
@@ -117,9 +142,16 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
           tutorState: transitionTutorState(state.tutorState, { type: 'explanation_shown' }),
         })),
       setPanelNotice: (notice) => set({ panelNotice: notice }),
-      setActivity: (activity, chapterId, moduleId) =>
+      setActivity: (activity, chapterId, moduleId, options) =>
         set((state) => ({
-          panel: { kind: 'activity', activity, chapterId, moduleId },
+          panel: {
+            kind: 'activity',
+            activity,
+            chapterId,
+            moduleId,
+            context: options?.context,
+            expectedAction: options?.expectedAction,
+          },
           panelNotice: null,
           lastActivityId: activity.id,
           tutorState: transitionTutorState(state.tutorState, { type: 'activity_presented' }),
@@ -140,6 +172,18 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
         set((state) => ({
           tutorState: transitionTutorState(state.tutorState, { type: 'activity_result', scorePercent: result.scorePercent }),
           lastActivityResult: result,
+        })),
+      recordActivityOutcome: (outcome) =>
+        set((state) => ({
+          tutorState: transitionTutorState(state.tutorState, {
+            type: 'activity_outcome',
+            status: outcome.status,
+            scorePercent: outcome.scorePercent,
+          }),
+          lastActivityOutcome: outcome,
+          lastActivityResult: outcome.status === 'completed' && typeof outcome.scorePercent === 'number'
+            ? { activityId: outcome.activityId, scorePercent: outcome.scorePercent, completedAt: new Date().toISOString() }
+            : state.lastActivityResult,
         })),
       acknowledgeCompletion: () =>
         set((state) => ({
@@ -168,12 +212,18 @@ export const learnSessionActions = {
   setExplanation: (blocks: PanelBlock[], title?: string) =>
     useLearnSessionStore.getState().setExplanation(blocks, title),
   setPanelNotice: (notice: string | null) => useLearnSessionStore.getState().setPanelNotice(notice),
-  setActivity: (activity: ChapterActivity, chapterId: string, moduleId: string) =>
-    useLearnSessionStore.getState().setActivity(activity, chapterId, moduleId),
+  setActivity: (
+    activity: ChapterActivity,
+    chapterId: string,
+    moduleId: string,
+    options?: { context?: string; expectedAction?: string },
+  ) =>
+    useLearnSessionStore.getState().setActivity(activity, chapterId, moduleId, options),
   setQuestion: (prompt: string, options?: string[], correctIndex?: number) =>
     useLearnSessionStore.getState().setQuestion(prompt, options, correctIndex),
   clearPanel: () => useLearnSessionStore.getState().clearPanel(),
   recordActivityResult: (result: ActivitySessionResult) => useLearnSessionStore.getState().recordActivityResult(result),
+  recordActivityOutcome: (outcome: ActivityOutcome) => useLearnSessionStore.getState().recordActivityOutcome(outcome),
   acknowledgeCompletion: () => useLearnSessionStore.getState().acknowledgeCompletion(),
   requestHelp: () => useLearnSessionStore.getState().requestHelp(),
   setHintFallbackRequest: (request: HintFallbackRequest | null) =>

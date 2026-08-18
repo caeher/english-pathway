@@ -16,6 +16,8 @@ const safePanelTextField = (maxLength: number) =>
 
 export const showActivityActionSchema = z.object({
   activityId: safeIdentifier,
+  context: safePanelTextField(300).optional(),
+  expectedAction: safePanelTextField(200).optional(),
 })
 
 export const showGrammarActionSchema = z.object({

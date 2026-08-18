@@ -19,6 +19,9 @@ export type TutorSessionEvent =
   | { type: 'activity_presented' }
   | { type: 'answer_requested' }
   | { type: 'activity_result'; scorePercent: number }
+  | { type: 'activity_outcome'; status: 'completed' | 'skipped' | 'closed' | 'abandoned'; scorePercent?: number }
+  | { type: 'activity_skipped' }
+  | { type: 'activity_closed' }
   | { type: 'help_requested' }
   | { type: 'panel_cleared' }
   | { type: 'continue' }
@@ -32,6 +35,14 @@ export function transitionTutorState(state: TutorSessionState, event: TutorSessi
   if (event.type === 'activity_presented') return 'activity_presented'
   if (event.type === 'answer_requested') return 'waiting_response'
   if (event.type === 'activity_result') return 'evaluating'
+  if (event.type === 'activity_skipped') return 'next_step'
+  if (event.type === 'activity_closed') return 'next_step'
+  if (event.type === 'activity_outcome') {
+    if (event.status === 'completed') return 'evaluating'
+    if (event.status === 'skipped') return 'next_step'
+    if (event.status === 'closed' || event.status === 'abandoned') return 'next_step'
+    return state
+  }
   if (event.type === 'help_requested') return 'help'
   if (event.type === 'panel_cleared') return 'next_step'
   if (event.type === 'continue') {

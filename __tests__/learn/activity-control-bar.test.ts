@@ -14,9 +14,11 @@ describe('activity control bar', () => {
     expect(renderer).toContain('setAttempt')
     expect(renderer).toContain('<div key={attempt}>')
   })
-  it('connects help and safe exit at the shared activity shell', () => {
+  it('connects help, skip, outcome and safe exit at the shared activity shell', () => {
     const panel = readFileSync(resolve(process.cwd(), 'components/learn/DynamicContentPanel.tsx'), 'utf8')
     expect(panel).toContain('onHelp={onActivityDifficult}')
+    expect(panel).toContain('onOutcome={onActivityOutcome}')
+    expect(panel).toContain('onSkip={clearPanel}')
     expect(panel).toContain('onExit={clearPanel}')
     expect(panel).toContain("panel.kind !== 'activity'")
   })

@@ -89,6 +89,13 @@ const Pronunciation = dynamicActivity(() => import('@/components/games/Pronuncia
 const BranchingDialogue = dynamicActivity(() => import('@/components/games/BranchingDialogue'))
 const MinimalPairs = dynamicActivity(() => import('@/components/games/MinimalPairs'))
 
+import {
+  type ActivityOutcome,
+  createClosedActivityOutcome,
+  createSkippedActivityOutcome,
+  toActivityOutcomeFromCompleteResult,
+} from '@/lib/learn/activity-outcome'
+
 export interface ActivityCompleteResult {
   activityId: string
   activityType: string
@@ -116,7 +123,9 @@ interface ActivityRendererProps {
   approvalMode?: 'score' | 'completion'
   onCurriculumContinue?: () => void
   onComplete?: (result: ActivityCompleteResult) => void
+  onOutcome?: (outcome: ActivityOutcome) => void
   onHelp?: (activityId: string, context?: TutorHintContext) => void
+  onSkip?: () => void
   onExit?: () => void
   onPhaseChange?: (phase: ActivityUiPhase) => void
   onRuntimeEvent?: (event: ActivityRuntimeEvent) => void
@@ -250,7 +259,9 @@ export default function ActivityRenderer({
   approvalMode,
   onCurriculumContinue,
   onComplete,
+  onOutcome,
   onHelp,
+  onSkip,
   onExit,
   onPhaseChange,
   onRuntimeEvent,
@@ -435,6 +446,27 @@ export default function ActivityRenderer({
     setCompletedResult(null)
   }, [clearSnapshot])
 
+  const handleSkip = useCallback(() => {
+    emitRuntimeEvent({
+      type: 'abandoned',
+      activityId: activity.id,
+      activityType: type,
+      reason: 'skip',
+    })
+    clearSnapshot()
+    const outcome = createSkippedActivityOutcome({
+      activityId: activity.id,
+      activityType: type,
+      attempts: attempt + 1,
+      hintsUsed: hintCount,
+      chapterId,
+      moduleId,
+    })
+    onOutcome?.(outcome)
+    if (onSkip) onSkip()
+    else onExit?.()
+  }, [activity.id, attempt, chapterId, clearSnapshot, emitRuntimeEvent, hintCount, moduleId, onExit, onOutcome, onSkip, type])
+
   const handleExit = useCallback(() => {
     emitRuntimeEvent({
       type: 'abandoned',
@@ -443,8 +475,17 @@ export default function ActivityRenderer({
       reason: 'exit',
     })
     clearSnapshot()
+    const outcome = createClosedActivityOutcome({
+      activityId: activity.id,
+      activityType: type,
+      attempts: attempt + 1,
+      hintsUsed: hintCount,
+      chapterId,
+      moduleId,
+    })
+    onOutcome?.(outcome)
     onExit?.()
-  }, [activity.id, clearSnapshot, emitRuntimeEvent, onExit, type])
+  }, [activity.id, attempt, chapterId, clearSnapshot, emitRuntimeEvent, hintCount, moduleId, onExit, onOutcome, type])
 
   const handleRetry = useCallback(() => {
     trackActivityRetry({ chapterId, moduleId }, activity.id, type)
@@ -689,6 +730,12 @@ export default function ActivityRenderer({
       result: toActivityCompleteSummary(enriched),
     })
 
+    const outcome = toActivityOutcomeFromCompleteResult(enriched, {
+      attempts: attempt + 1,
+      hintsUsed: hintCount,
+    })
+    onOutcome?.(outcome)
+
     setCompletedResult(enriched)
     setPhase('completed')
     if (!isCurriculum) learnSessionActions.acknowledgeCompletion()
@@ -704,6 +751,7 @@ export default function ActivityRenderer({
           accessibilityCapabilities={accessibilityCapabilities}
           onHelp={canRequestHelp ? handleHelpDuringPlay : undefined}
           onReset={handleReset}
+          onSkip={handleSkip}
           onExit={handleExit}
         />
       )}

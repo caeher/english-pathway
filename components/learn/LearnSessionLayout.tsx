@@ -9,6 +9,7 @@ import { selectPanel, selectTutorState, useLearnSessionStore } from '@/stores/us
 import DynamicContentPanel from './DynamicContentPanel'
 import LearnSessionHeader from './LearnSessionHeader'
 import type { ActivityCompleteResult } from './ActivityRenderer'
+import type { ActivityOutcome } from '@/lib/learn/activity-outcome'
 
 interface LearnSessionLayoutProps {
   tutorSlot: React.ReactNode
@@ -17,6 +18,7 @@ interface LearnSessionLayoutProps {
   tutorConnecting?: boolean
   showEngagement?: boolean
   onActivityComplete?: (result: ActivityCompleteResult) => void
+  onActivityOutcome?: (outcome: ActivityOutcome) => void
   onActivityDifficult?: (activityId: string, context?: import('@/features/activities/hints').TutorHintContext) => void
   onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
 }
@@ -28,6 +30,7 @@ export default function LearnSessionLayout({
   tutorConnecting = false,
   showEngagement = true,
   onActivityComplete,
+  onActivityOutcome,
   onActivityDifficult,
   onQuestionAnswered,
 }: LearnSessionLayoutProps) {
@@ -102,6 +105,7 @@ export default function LearnSessionLayout({
         <section className="min-h-[calc(55dvh-env(safe-area-inset-bottom))] flex-1 bg-(--bg-primary) pb-16 lg:h-full lg:min-h-0 lg:overflow-hidden lg:pb-0">
           <DynamicContentPanel
             onActivityComplete={handleActivityComplete}
+            onActivityOutcome={onActivityOutcome}
             onActivityDifficult={onActivityDifficult}
             onQuestionAnswered={handleQuestionAnswered}
             onActivityPhaseChange={handleActivityPhaseChange}

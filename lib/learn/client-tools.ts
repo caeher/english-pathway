@@ -38,13 +38,18 @@ export function showGrammar(blocks: PanelBlock[], title?: string) {
   learnSessionActions.setExplanation(blocks, title)
 }
 
-export async function showActivity(activityId: string) {
+export async function showActivity(
+  activityId: string,
+  options?: { context?: string; expectedAction?: string },
+) {
   const data = await fetchActivityById(activityId)
-  learnSessionActions.setActivity(data.activity, data.chapterId, data.moduleId)
+  learnSessionActions.setActivity(data.activity, data.chapterId, data.moduleId, options)
   return {
     success: true,
     title: data.activity.title,
     curriculumUrl: curriculumChapterHref(data.moduleId, data.chapterId),
+    context: options?.context,
+    expectedAction: options?.expectedAction,
   }
 }
 
@@ -77,11 +82,14 @@ export function getPanelState() {
     activityId: panel.kind === 'activity' ? panel.activity.id : undefined,
     activityType: panel.kind === 'activity' ? panel.activity.type : undefined,
     activityTitle: panel.kind === 'activity' ? panel.activity.title : undefined,
+    activityContext: panel.kind === 'activity' ? panel.context : undefined,
+    expectedAction: panel.kind === 'activity' ? panel.expectedAction : undefined,
     explanationTitle: panel.kind === 'explanation' ? panel.title : undefined,
     blockCount: panel.kind === 'explanation' ? panel.blocks.length : undefined,
     questionPrompt: panel.kind === 'question' ? panel.prompt : undefined,
     panelNotice: state.panelNotice,
     lastActivityResult: state.lastActivityResult,
+    lastActivityOutcome: state.lastActivityOutcome,
     tutorState: state.tutorState,
   }
 }

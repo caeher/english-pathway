@@ -13,8 +13,11 @@ import type { ActivityUiPhase } from '@/lib/learn/session-ui-state'
 import { cn } from '@/lib/helpers'
 import { createActivityRuntimeAnalyticsHandler } from '@/lib/analytics/activity-runtime'
 
+import type { ActivityOutcome } from '@/lib/learn/activity-outcome'
+
 interface DynamicContentPanelProps {
   onActivityComplete?: (result: ActivityCompleteResult) => void
+  onActivityOutcome?: (outcome: ActivityOutcome) => void
   onActivityDifficult?: (activityId: string, context?: import('@/features/activities/hints').TutorHintContext) => void
   onQuestionAnswered?: (optionIndex: number, correct: boolean) => void
   onActivityPhaseChange?: (phase: ActivityUiPhase) => void
@@ -22,6 +25,7 @@ interface DynamicContentPanelProps {
 
 export default function DynamicContentPanel({
   onActivityComplete,
+  onActivityOutcome,
   onActivityDifficult,
   onQuestionAnswered,
   onActivityPhaseChange,
@@ -111,6 +115,23 @@ export default function DynamicContentPanel({
 
         {panel.kind === 'activity' && (
           <div>
+            {(panel.context || panel.expectedAction) && (
+              <aside
+                aria-label="Activity objective"
+                className="mb-4 rounded-xl border border-(--border-primary) bg-(--bg-card) p-3 text-sm"
+              >
+                {panel.context && (
+                  <p className="font-semibold text-(--text-primary)">
+                    {panel.context}
+                  </p>
+                )}
+                {panel.expectedAction && (
+                  <p className="mt-1 text-xs text-(--text-secondary)">
+                    {panel.expectedAction}
+                  </p>
+                )}
+              </aside>
+            )}
             {panel.activity.description && (
               <p className="text-sm text-(--text-secondary) mb-4">{panel.activity.description}</p>
             )}
@@ -119,6 +140,8 @@ export default function DynamicContentPanel({
               chapterId={panel.chapterId}
               moduleId={panel.moduleId}
               onHelp={onActivityDifficult}
+              onOutcome={onActivityOutcome}
+              onSkip={clearPanel}
               onExit={clearPanel}
               onPhaseChange={onActivityPhaseChange}
               onRuntimeEvent={handleRuntimeEvent}

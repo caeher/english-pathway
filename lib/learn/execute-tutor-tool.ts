@@ -18,7 +18,6 @@ import {
   showQuestion,
 } from './client-tools'
 import { formatCurriculumMatches } from './format-curriculum-match'
-import { notifyTutorActivityPresented } from './activity-voice-pause'
 
 function stringifyToolOutput(output: unknown): string {
   return typeof output === 'string' ? output : JSON.stringify(output)
@@ -42,9 +41,12 @@ export async function executeTutorTool(name: string, rawArguments: unknown): Pro
       if (!parsed.success) {
         result = 'Activity request was rejected because its ID was invalid.'
       } else {
-        const activity = await showActivity(parsed.data.activityId)
-        notifyTutorActivityPresented(parsed.data.activityId)
-        result = `Activity "${activity.title}" is now visible in the learning panel. Give one short completion instruction, then wait for its explicit result before continuing.`
+        const activity = await showActivity(parsed.data.activityId, {
+          context: parsed.data.context,
+          expectedAction: parsed.data.expectedAction,
+        })
+        const contextStr = parsed.data.context ? ` with purpose: "${parsed.data.context}"` : ''
+        result = `Activity "${activity.title}" is now visible in the learning panel${contextStr}. Give one short completion instruction, then stay in waiting state for its explicit outcome message before continuing.`
       }
     } else if (name === 'showQuestion') {
       const parsed = showQuestionActionSchema.safeParse(rawArguments)

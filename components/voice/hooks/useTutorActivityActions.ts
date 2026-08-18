@@ -2,6 +2,13 @@
 
 import { useCallback, useRef } from 'react'
 import type { ActivityCompleteResult } from '@/components/learn/ActivityRenderer'
+import {
+  type ActivityOutcome,
+  createClosedActivityOutcome,
+  createSkippedActivityOutcome,
+  formatActivityOutcomeMessage,
+  toActivityOutcomeFromCompleteResult,
+} from '@/lib/learn/activity-outcome'
 import { fetchActivityById } from '@/lib/learn/client-tools'
 import { getReviewContentRefs } from '@/lib/srs/refs'
 import { enqueueSrsItems } from '@/lib/srs/client'
@@ -9,6 +16,7 @@ import { recordActivityCompletionEffects } from '@/lib/learning/activity-complet
 import { learnSessionActions } from '@/stores/useLearnSessionStore'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildTutorHintRequest, type TutorHintContext } from '@/features/activities/hints'
+import { trackEvent } from '@/lib/analytics/events'
 
 export function useTutorActivityActions(sendMessage?: (message: string) => boolean | void) {
   const pendingMessagesRef = useRef<string[]>([])
@@ -25,14 +33,83 @@ export function useTutorActivityActions(sendMessage?: (message: string) => boole
     for (const message of queue) sendMessage?.(message)
   }, [sendMessage])
 
+  const onActivityOutcome = useCallback((outcome: ActivityOutcome) => {
+    learnSessionActions.recordActivityOutcome(outcome)
+
+    if (outcome.status === 'completed') {
+      const pct = outcome.scorePercent ?? (typeof outcome.score === 'number' && typeof outcome.total === 'number' && outcome.total > 0 ? Math.round((outcome.score / outcome.total) * 100) : 100)
+      learnSessionActions.recordActivityResult({
+        activityId: outcome.activityId,
+        scorePercent: pct,
+        completedAt: new Date().toISOString(),
+      })
+    } else if (outcome.status === 'skipped') {
+      const message = formatActivityOutcomeMessage(outcome)
+      deliverMessage(message)
+      trackEvent('activity_abandon', {
+        activity_id: outcome.activityId,
+        activity_type: outcome.activityType,
+        attempts: outcome.attempts,
+        hints_used: outcome.hintsUsed,
+        reason: 'skipped',
+      })
+      void saveTutorMemory({
+        type: 'learner_memory',
+        memoryKey: `activity_skip:${outcome.activityId}`,
+        content: `Learner skipped activity ${outcome.activityId} (${outcome.activityType}) on attempt ${outcome.attempts}.`,
+        source: 'activity_result',
+      })
+    } else if (outcome.status === 'closed' || outcome.status === 'abandoned') {
+      const message = formatActivityOutcomeMessage(outcome)
+      deliverMessage(message)
+      trackEvent('activity_abandon', {
+        activity_id: outcome.activityId,
+        activity_type: outcome.activityType,
+        attempts: outcome.attempts,
+        reason: 'closed',
+      })
+      void saveTutorMemory({
+        type: 'learner_memory',
+        memoryKey: `activity_close:${outcome.activityId}`,
+        content: `Learner closed activity ${outcome.activityId} (${outcome.activityType}) before completion.`,
+        source: 'activity_result',
+      })
+    }
+  }, [deliverMessage])
+
   const onActivityComplete = useCallback((result: ActivityCompleteResult) => {
-    const pct = result.scorePercent ?? Math.round((result.score / result.total) * 100)
-    learnSessionActions.recordActivityResult({ activityId: result.activityId, scorePercent: pct, completedAt: new Date().toISOString() })
+    const outcome = toActivityOutcomeFromCompleteResult(result)
+    onActivityOutcome(outcome)
     void recordActivityCompletionEffects(result, {
       source: 'learn',
       notifyTutor: deliverMessage,
     })
-  }, [deliverMessage])
+  }, [deliverMessage, onActivityOutcome])
+
+  const onActivitySkip = useCallback((params: {
+    activityId: string
+    activityType: string
+    attempts?: number
+    hintsUsed?: number
+    chapterId?: string
+    moduleId?: string
+    reason?: string
+  }) => {
+    const outcome = createSkippedActivityOutcome(params)
+    onActivityOutcome(outcome)
+  }, [onActivityOutcome])
+
+  const onActivityClose = useCallback((params: {
+    activityId: string
+    activityType: string
+    attempts?: number
+    hintsUsed?: number
+    chapterId?: string
+    moduleId?: string
+  }) => {
+    const outcome = createClosedActivityOutcome(params)
+    onActivityOutcome(outcome)
+  }, [onActivityOutcome])
 
   const onActivityDifficult = useCallback(async (activityId: string, hintContext?: TutorHintContext) => {
     try {
@@ -61,5 +138,13 @@ export function useTutorActivityActions(sendMessage?: (message: string) => boole
     deliverMessage(`I answered option ${letter} for the quick check. Correct: ${correct ? 'yes' : 'no'}.`)
   }, [deliverMessage])
 
-  return { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages }
+  return {
+    onActivityOutcome,
+    onActivityComplete,
+    onActivitySkip,
+    onActivityClose,
+    onActivityDifficult,
+    onQuestionAnswered,
+    flushPendingMessages,
+  }
 }
