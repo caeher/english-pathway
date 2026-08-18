@@ -20,6 +20,8 @@ vi.mock('@/lib/learn/client-tools', async (importOriginal) => {
           type: 'quiz',
           title: `Activity ${activityId}`,
           description: 'Practice activity',
+          required: true,
+          policy: { mode: 'score', passThreshold: 70 },
           props: { questions: [] },
         },
         'm1-ch1',
@@ -203,7 +205,15 @@ describe('Explanation & Activity Gating', () => {
     expect(getPanelConflictReason('showActivity')).toBeNull()
 
     learnSessionActions.setActivity(
-      { id: 'act-1', type: 'quiz', title: 'Quiz', description: '', props: {} },
+      {
+        id: 'act-1',
+        type: 'quiz',
+        title: 'Quiz',
+        description: '',
+        required: true,
+        policy: { mode: 'score', passThreshold: 70 },
+        props: {},
+      },
       'ch-1',
       'mod-1',
     )

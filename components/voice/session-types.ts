@@ -10,8 +10,8 @@ export interface SessionOrchestration {
     nativeLanguage: string | null
     nativeLanguageLabel: string | null
     fullName: string | null
-    dailyGoalMinutes: number | null
-    preferredMode: string | null
+    dailyGoalMinutes?: number | null
+    preferredMode?: string | null
   } | null
   progress?: {
     lastChapterId: string | null

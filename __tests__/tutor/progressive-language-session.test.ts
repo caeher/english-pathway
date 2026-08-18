@@ -7,7 +7,6 @@ import type { AuthenticatedContext } from '@/lib/api/context'
 function createMockContext(profile: { full_name: string; level: string; native_language: string | null }): AuthenticatedContext {
   return {
     userId: 'test-user-id',
-    userEmail: 'learner@example.com',
     supabase: {
       from: vi.fn((table: string) => {
         if (table === 'profiles') {
