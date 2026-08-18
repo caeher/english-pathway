@@ -20,7 +20,12 @@ export function calculateConsumedAudioSeconds(startedAt: number, maxSeconds: num
 export interface VoiceRemainingLabelOptions {
   active: boolean
   liveRemainingSeconds: number | null
-  credits: { audioSecondsRemaining: number } | null
+  credits: {
+    audioSecondsRemaining: number
+    voiceQuota?: {
+      isUnlimited?: boolean
+    }
+  } | null
   creditsError?: boolean
 }
 
@@ -39,6 +44,9 @@ export function formatVoiceRemainingLabel({
   }
 
   if (credits !== null && credits !== undefined) {
+    if (credits.voiceQuota?.isUnlimited) {
+      return 'Unlimited voice'
+    }
     return `${formatDuration(credits.audioSecondsRemaining)} voice remaining`
   }
 

@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto'
 import { apiErrorResponse, DomainError } from '@/lib/api/errors'
 import { withApiTimeout } from '@/lib/api/timeout'
 import { getAuthenticatedContext } from '@/lib/api/context'
-import { finishAudioCreditSession, startAudioCreditSession, AUDIO_CREDIT_SECONDS } from '@/lib/credits/usage'
+import { finishAudioCreditSession, startAudioCreditSession } from '@/lib/credits/usage'
 import { enforceRateLimit } from '@/lib/security/enforce-rate-limit'
 import { hasActiveRealtimeSession } from '@/lib/security/realtime-concurrency'
 import { buildTutorInstructions } from '@/lib/tutor/instructions'
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
   const credit = await startAudioCreditSession(context.supabase, context.userId)
   if (!credit.allowed || !credit.sessionId || !credit.maxSeconds) {
-    return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', credit.reason === 'active_session' ? 'A voice session is already active.' : `Your ${AUDIO_CREDIT_SECONDS / 60} minutes of voice credits have been used.`, 429), 'Voice credits exhausted')
+    return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', credit.reason === 'active_session' ? 'A voice session is already active.' : 'Your voice lesson credits have been used.', 429), 'Voice credits exhausted')
   }
 
   const [profile, progress, snapshot] = await Promise.all([

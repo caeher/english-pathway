@@ -196,6 +196,7 @@ export type Database = {
           id: string
           last_heartbeat_at: string | null
           max_seconds: number
+          quota_period_id: string | null
           started_at: string
           status: string
           user_id: string
@@ -207,6 +208,7 @@ export type Database = {
           id?: string
           last_heartbeat_at?: string | null
           max_seconds: number
+          quota_period_id?: string | null
           started_at?: string
           status?: string
           user_id: string
@@ -218,11 +220,19 @@ export type Database = {
           id?: string
           last_heartbeat_at?: string | null
           max_seconds?: number
+          quota_period_id?: string | null
           started_at?: string
           status?: string
           user_id?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "audio_credit_sessions_quota_period_id_fkey"
+            columns: ["quota_period_id"]
+            isOneToOne: false
+            referencedRelation: "voice_usage_periods"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "audio_credit_sessions_user_id_fkey"
             columns: ["user_id"]
@@ -1041,6 +1051,141 @@ export type Database = {
           },
         ]
       }
+      user_voice_entitlements: {
+        Row: {
+          created_at: string
+          expires_at: string | null
+          override_allowance_seconds: number | null
+          override_is_unlimited: boolean | null
+          plan_key: string
+          started_at: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string | null
+          override_allowance_seconds?: number | null
+          override_is_unlimited?: boolean | null
+          plan_key: string
+          started_at?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string | null
+          override_allowance_seconds?: number | null
+          override_is_unlimited?: boolean | null
+          plan_key?: string
+          started_at?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_voice_entitlements_plan_key_fkey"
+            columns: ["plan_key"]
+            isOneToOne: false
+            referencedRelation: "voice_quota_plans"
+            referencedColumns: ["plan_key"]
+          },
+          {
+            foreignKeyName: "user_voice_entitlements_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      voice_quota_plans: {
+        Row: {
+          allowance_seconds: number | null
+          created_at: string
+          is_unlimited: boolean
+          max_session_seconds: number
+          name: string
+          plan_key: string
+          renewal_policy: string
+        }
+        Insert: {
+          allowance_seconds?: number | null
+          created_at?: string
+          is_unlimited?: boolean
+          max_session_seconds?: number
+          name: string
+          plan_key: string
+          renewal_policy: string
+        }
+        Update: {
+          allowance_seconds?: number | null
+          created_at?: string
+          is_unlimited?: boolean
+          max_session_seconds?: number
+          name?: string
+          plan_key?: string
+          renewal_policy?: string
+        }
+        Relationships: []
+      }
+      voice_usage_periods: {
+        Row: {
+          allocated_seconds: number | null
+          consumed_seconds: number
+          created_at: string
+          id: string
+          is_unlimited: boolean
+          period_end: string | null
+          period_start: string
+          plan_key: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          allocated_seconds?: number | null
+          consumed_seconds?: number
+          created_at?: string
+          id?: string
+          is_unlimited?: boolean
+          period_end?: string | null
+          period_start: string
+          plan_key: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          allocated_seconds?: number | null
+          consumed_seconds?: number
+          created_at?: string
+          id?: string
+          is_unlimited?: boolean
+          period_end?: string | null
+          period_start?: string
+          plan_key?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "voice_usage_periods_plan_key_fkey"
+            columns: ["plan_key"]
+            isOneToOne: false
+            referencedRelation: "voice_quota_plans"
+            referencedColumns: ["plan_key"]
+          },
+          {
+            foreignKeyName: "voice_usage_periods_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       word_search_puzzles: {
         Row: {
           cols: number
@@ -1138,6 +1283,24 @@ export type Database = {
             }
             Returns: Json
           }
+      resolve_or_create_voice_period: {
+        Args: {
+          p_for_update?: boolean
+          p_user_id: string
+        }
+        Returns: {
+          allocated_seconds: number | null
+          consumed_seconds: number
+          is_unlimited: boolean
+          max_session_seconds: number
+          period_end: string | null
+          period_id: string
+          period_start: string
+          plan_key: string
+          plan_name: string
+          renewal_policy: string
+        }[]
+      }
       start_audio_credit_session:
         | { Args: never; Returns: Json }
         | { Args: { p_user_id?: string }; Returns: Json }

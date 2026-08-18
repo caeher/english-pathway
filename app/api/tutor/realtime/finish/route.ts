@@ -1,10 +1,10 @@
 import { z } from 'zod'
 import { apiErrorResponse, DomainError, respondWithApiErrors } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
-import { finishAudioCreditSession, AUDIO_CREDIT_SECONDS } from '@/lib/credits/usage'
+import { finishAudioCreditSession } from '@/lib/credits/usage'
 import { enforceRateLimit } from '@/lib/security/enforce-rate-limit'
 
-const finishSchema = z.object({ sessionId: z.string().uuid(), seconds: z.number().int().min(0).max(AUDIO_CREDIT_SECONDS) })
+const finishSchema = z.object({ sessionId: z.string().uuid(), seconds: z.number().int().min(0).max(86400) })
 const REALTIME_FINISH_ROUTE = '/api/tutor/realtime/finish'
 
 async function parseRequestBody(request: Request): Promise<unknown> {
