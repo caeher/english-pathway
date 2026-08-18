@@ -9,7 +9,6 @@ import { recordUserConsents } from '@/lib/auth/consent'
 import { settingsSchema } from '@/lib/auth/schemas'
 import type { SettingsFormValues } from '@/lib/auth/schemas'
 import { savePrivateTutorMemory } from '@/lib/dal/tutor-memory'
-import type { OAuthProvider } from '@/lib/auth/oauth-providers'
 
 export type AuthActionState = {
   status?: 'error' | 'success' | 'needs_email_confirmation'
@@ -156,19 +155,4 @@ export async function resetPasswordAction(
   _formData: FormData
 ): Promise<AuthActionState> {
   redirect('/sign-in')
-}
-
-export async function signInWithOAuthAction(
-  _provider: OAuthProvider,
-  _redirectTo?: string | null
-) {
-  redirect('/sign-in')
-}
-
-export async function signUpWithOAuthAction(
-  _provider: OAuthProvider,
-  _redirectTo: string | null | undefined,
-  _acceptTerms: boolean,
-) {
-  redirect('/sign-up')
 }

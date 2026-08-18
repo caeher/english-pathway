@@ -1,7 +1,8 @@
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto'
 import { cookies } from 'next/headers'
-import type { OAuthProvider } from '@/lib/auth/oauth-providers'
 import { getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
+
+export type OAuthProvider = 'google' | 'github'
 
 export const OAUTH_REGISTRATION_CONSENT_COOKIE = 'ep_oauth_reg_consent'
 const CONSENT_TTL_MS = 10 * 60 * 1000

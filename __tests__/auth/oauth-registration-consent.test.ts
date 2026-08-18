@@ -1,6 +1,6 @@
 import { createHmac, randomBytes } from 'node:crypto'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { OAuthProvider } from '@/lib/auth/oauth-providers'
+import type { OAuthProvider } from '@/lib/auth/oauth-registration-consent'
 
 const TEST_SECRET = 'test-auth-cookie-secret-with-32-characters-minimum'
 

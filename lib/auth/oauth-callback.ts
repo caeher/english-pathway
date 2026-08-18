@@ -12,8 +12,8 @@ import {
   clearOAuthRegistrationConsentCookie,
   readOAuthRegistrationConsentCookie,
   verifyOAuthRegistrationConsent,
+  type OAuthProvider,
 } from '@/lib/auth/oauth-registration-consent'
-import type { OAuthProvider } from '@/lib/auth/oauth-providers'
 import { resolvePostAuthDestination } from '@/lib/auth/resolve-redirect'
 import { createAdminClient } from '@/lib/supabase/admin'
 

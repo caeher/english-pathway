@@ -9,7 +9,6 @@ import { registerSchema } from '@/lib/auth/schemas'
 import { signUpAction, type AuthActionState } from '@/lib/auth/actions'
 import { appendRedirectTo, getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
 import { getOAuthErrorMessage } from '@/lib/auth/oauth-errors'
-import { OAuthButtons } from './oauth-buttons'
 import { useSearchParams } from 'next/navigation'
 
 const initialState: AuthActionState = {}
@@ -144,8 +143,6 @@ export function RegisterForm() {
           {pending ? 'Creating account...' : state.status === 'needs_email_confirmation' ? 'Check your email' : 'Create account'}
         </Button>
       </form>
-
-      <OAuthButtons mode="register" redirectTo={explicitRedirectTo} acceptTerms={values.acceptTerms} />
     </div>
   )
 }

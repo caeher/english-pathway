@@ -14,7 +14,7 @@ export async function ensureUserProfile(userId: string): Promise<ProfileRow | nu
     .maybeSingle()
 
   if (fetchError) {
-    console.error('[clerk-sync] Error querying profile:', fetchError)
+    console.error('[clerk-sync] Error querying profile:', fetchError.message || fetchError)
   }
 
   if (existing) {
@@ -52,7 +52,7 @@ export async function ensureUserProfile(userId: string): Promise<ProfileRow | nu
     .single()
 
   if (insertError) {
-    console.error('[clerk-sync] Failed to insert initial profile:', insertError)
+    console.error('[clerk-sync] Failed to insert initial profile:', insertError.message || insertError)
     return null
   }
 

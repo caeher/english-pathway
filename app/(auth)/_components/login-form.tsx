@@ -9,7 +9,6 @@ import { loginSchema } from '@/lib/auth/schemas'
 import { signInAction, type AuthActionState } from '@/lib/auth/actions'
 import { appendRedirectTo, getExplicitRedirectParam } from '@/lib/auth/resolve-redirect'
 import { getOAuthErrorMessage } from '@/lib/auth/oauth-errors'
-import { OAuthButtons } from './oauth-buttons'
 import { useSearchParams } from 'next/navigation'
 
 const initialState: AuthActionState = {}
@@ -88,8 +87,6 @@ export function LoginForm() {
           {pending ? 'Signing in...' : 'Sign in'}
         </Button>
       </form>
-
-      <OAuthButtons mode="login" redirectTo={explicitRedirectTo} />
     </div>
   )
 }

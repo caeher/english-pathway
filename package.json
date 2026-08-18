@@ -30,8 +30,6 @@
     "db:reset": "node scripts/db-reset.mjs",
     "db:types": "supabase gen types typescript --local > lib/supabase/database.types.ts",
     "db:seed": "tsx scripts/seed.ts",
-    "oauth:inspect": "node scripts/inspect-supabase-oauth.mjs",
-    "oauth:configure": "node scripts/configure-supabase-oauth.mjs",
     "kb:embed": "pnpm knowledge:validate && tsx scripts/embed-knowledge.ts",
     "video:preview": "cd videos && npm run dev",
     "video:check": "cd videos && npm run check",
