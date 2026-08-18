@@ -94,7 +94,7 @@ export async function proxy(request: NextRequest, event?: any) {
     return NextResponse.redirect(url)
   }
 
-  return clerkHandler(request, event)
+  return (await clerkHandler(request, event)) ?? NextResponse.next()
 }
 
 export default proxy
