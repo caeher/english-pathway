@@ -19,6 +19,13 @@ describe('Tutor session lifecycle and non-terminal waiting states', () => {
     state = transitionTutorState(state, { type: 'explanation_shown' })
     expect(state).toBe('explaining')
 
+    // Direct activity presentation during explanation is rejected (state stays explaining)
+    expect(transitionTutorState(state, { type: 'activity_presented' })).toBe('explaining')
+
+    // Explanation is concluded / panel cleared
+    state = transitionTutorState(state, { type: 'panel_cleared' })
+    expect(state).toBe('next_step')
+
     // Tutor presents an interactive activity
     state = transitionTutorState(state, { type: 'activity_presented' })
     expect(state).toBe('activity_presented')

@@ -54,7 +54,44 @@ export async function fetchActivityById(
   return res.json()
 }
 
+export function getPanelConflictReason(
+  action: 'showActivity' | 'showGrammar' | 'showQuestion' | 'clearPanel',
+): string | null {
+  const { tutorState } = useLearnSessionStore.getState()
+  if (action === 'showActivity') {
+    if (tutorState === 'explaining') {
+      return 'An instructional explanation is currently active in the panel. Complete your spoken explanation, invite learner questions or check readiness, and call clearPanel before presenting an activity.'
+    }
+    if (tutorState === 'activity_presented') {
+      return 'An activity is already active in the learning panel. Wait for the learner to complete, skip, or close it.'
+    }
+  }
+  if (action === 'showGrammar') {
+    if (tutorState === 'activity_presented') {
+      return 'Grammar explanation cannot be shown while an interactive activity is active. Wait for the learner to complete, skip, or close the activity first.'
+    }
+  }
+  if (action === 'showQuestion') {
+    if (tutorState === 'activity_presented') {
+      return 'Quick check question cannot be shown while an interactive activity is active. Wait for the learner to complete, skip, or close the activity first.'
+    }
+  }
+  if (action === 'clearPanel') {
+    if (tutorState === 'evaluating') {
+      return 'Panel cannot be cleared while evaluating an activity result. Provide feedback first.'
+    }
+    if (tutorState === 'activity_presented') {
+      return 'Panel cannot be cleared while an activity is in progress. The learner must complete, skip, or close the activity.'
+    }
+  }
+  return null
+}
+
 export function showGrammar(blocks: PanelBlock[], title?: string) {
+  const conflict = getPanelConflictReason('showGrammar')
+  if (conflict) {
+    throw new Error(conflict)
+  }
   learnSessionActions.setExplanation(blocks, title)
 }
 
@@ -62,6 +99,10 @@ export async function showActivity(
   activityId: string,
   options?: ShowActivityOptions,
 ) {
+  const conflict = getPanelConflictReason('showActivity')
+  if (conflict) {
+    throw new Error(conflict)
+  }
   const data = await fetchActivityById(activityId, options)
   learnSessionActions.setActivity(data.activity, data.chapterId, data.moduleId, options)
   return {
@@ -75,10 +116,18 @@ export async function showActivity(
 }
 
 export function showQuestion(prompt: string, options?: string[], correctIndex?: number) {
+  const conflict = getPanelConflictReason('showQuestion')
+  if (conflict) {
+    throw new Error(conflict)
+  }
   learnSessionActions.setQuestion(prompt, options, correctIndex)
 }
 
 export function clearPanel() {
+  const conflict = getPanelConflictReason('clearPanel')
+  if (conflict) {
+    throw new Error(conflict)
+  }
   learnSessionActions.clearPanel()
 }
 

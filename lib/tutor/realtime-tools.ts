@@ -14,7 +14,7 @@ export const TUTOR_REALTIME_TOOLS = [
   {
     type: 'function',
     name: 'showGrammar',
-    description: 'Show a concise grammar explanation in the learning panel using structured content blocks (heading, paragraph, example, list, emphasis). Do not use markdown or HTML.',
+    description: 'Show a concise grammar explanation in the learning panel using structured content blocks (heading, paragraph, example, list, emphasis). Do not use markdown or HTML. Do not call while an activity is active.',
     parameters: {
       type: 'object',
       properties: {
@@ -33,7 +33,7 @@ export const TUTOR_REALTIME_TOOLS = [
   {
     type: 'function',
     name: 'showActivity',
-    description: 'Show a curriculum activity by its validated ID. Explain its learning purpose and expected action before calling this tool. Use listChapterActivities or fetchCurriculumContext to find valid IDs.',
+    description: 'Show a curriculum activity by its validated ID. Explain its learning purpose and expected action before calling this tool. IMPORTANT: Complete your explanation and call clearPanel before calling this tool; calling it during an active explanation will be rejected. Use listChapterActivities or fetchCurriculumContext to find valid IDs.',
     parameters: {
       type: 'object',
       properties: {
@@ -48,7 +48,7 @@ export const TUTOR_REALTIME_TOOLS = [
   {
     type: 'function',
     name: 'showQuestion',
-    description: 'Show a multiple-choice question in the learning panel.',
+    description: 'Show a multiple-choice question in the learning panel. Do not call while an interactive activity is active.',
     parameters: {
       type: 'object',
       properties: {
@@ -63,7 +63,7 @@ export const TUTOR_REALTIME_TOOLS = [
   {
     type: 'function',
     name: 'clearPanel',
-    description: 'Clear the learning panel when changing topics.',
+    description: 'Clear the learning panel when changing topics or closing an explanation before starting an activity.',
     parameters: { type: 'object', properties: {}, additionalProperties: false },
   },
   {

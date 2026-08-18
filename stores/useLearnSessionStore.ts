@@ -136,32 +136,41 @@ export const useLearnSessionStore = create<LearnSessionStore>()(
     (set) => ({
       ...initialLearnSessionState,
       setExplanation: (blocks, title) =>
-        set((state) => ({
-          panel: { kind: 'explanation', blocks, title },
-          panelNotice: null,
-          tutorState: transitionTutorState(state.tutorState, { type: 'explanation_shown' }),
-        })),
+        set((state) => {
+          if (state.tutorState === 'activity_presented') return state
+          return {
+            panel: { kind: 'explanation', blocks, title },
+            panelNotice: null,
+            tutorState: transitionTutorState(state.tutorState, { type: 'explanation_shown' }),
+          }
+        }),
       setPanelNotice: (notice) => set({ panelNotice: notice }),
       setActivity: (activity, chapterId, moduleId, options) =>
-        set((state) => ({
-          panel: {
-            kind: 'activity',
-            activity,
-            chapterId,
-            moduleId,
-            context: options?.context,
-            expectedAction: options?.expectedAction,
-          },
-          panelNotice: null,
-          lastActivityId: activity.id,
-          tutorState: transitionTutorState(state.tutorState, { type: 'activity_presented' }),
-        })),
+        set((state) => {
+          if (state.tutorState === 'explaining') return state
+          return {
+            panel: {
+              kind: 'activity',
+              activity,
+              chapterId,
+              moduleId,
+              context: options?.context,
+              expectedAction: options?.expectedAction,
+            },
+            panelNotice: null,
+            lastActivityId: activity.id,
+            tutorState: transitionTutorState(state.tutorState, { type: 'activity_presented' }),
+          }
+        }),
       setQuestion: (prompt, options, correctIndex) =>
-        set((state) => ({
-          panel: { kind: 'question', prompt, options, correctIndex },
-          panelNotice: null,
-          tutorState: transitionTutorState(state.tutorState, { type: 'answer_requested' }),
-        })),
+        set((state) => {
+          if (state.tutorState === 'activity_presented') return state
+          return {
+            panel: { kind: 'question', prompt, options, correctIndex },
+            panelNotice: null,
+            tutorState: transitionTutorState(state.tutorState, { type: 'answer_requested' }),
+          }
+        }),
       clearPanel: () =>
         set((state) => ({
           panel: { kind: 'empty' },

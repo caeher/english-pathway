@@ -31,8 +31,14 @@ export type TutorSessionEvent =
 export function transitionTutorState(state: TutorSessionState, event: TutorSessionEvent): TutorSessionState {
   if (event.type === 'abandon' || event.type === 'close') return 'closed'
   if (event.type === 'context_ready') return 'context'
-  if (event.type === 'explanation_shown') return 'explaining'
-  if (event.type === 'activity_presented') return 'activity_presented'
+  if (event.type === 'explanation_shown') {
+    if (state === 'activity_presented') return state
+    return 'explaining'
+  }
+  if (event.type === 'activity_presented') {
+    if (state === 'explaining') return state
+    return 'activity_presented'
+  }
   if (event.type === 'answer_requested') return 'waiting_response'
   if (event.type === 'activity_result') return 'evaluating'
   if (event.type === 'activity_skipped') return 'next_step'

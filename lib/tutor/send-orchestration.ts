@@ -7,51 +7,51 @@ function buildGreetingAndStartDirective(orchestration: SessionOrchestration): st
 
   if (level === 'A1') {
     if (nativeLanguage) {
-      return `Start speaking now; do not wait for me to speak first. Greet me warmly in my native language (${nativeLanguage}), state my level (A1), and introduce the recommended topic or ask for my interest in ${nativeLanguage}. Deliver explanations, instructions, and corrections primarily in ${nativeLanguage}; keep pronunciation targets, vocabulary words, and short model examples in English. Do not show an activity until I choose or confirm the topic.`
+      return `Start speaking now; do not wait for me to speak first. Greet me warmly in my native language (${nativeLanguage}), state my level (A1), and introduce the recommended topic or ask for my interest in ${nativeLanguage}. Deliver explanations, instructions, and corrections primarily in ${nativeLanguage}; keep pronunciation targets, vocabulary words, and short model examples in English. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
     }
-    return 'Start speaking now; do not wait for me to speak first. Greet me in simple English, state my level (A1), and offer the recommended topic or ask for an interest in simple, clear words. Do not show an activity until I choose or confirm the topic.'
+    return 'Start speaking now; do not wait for me to speak first. Greet me in simple English, state my level (A1), and offer the recommended topic or ask for an interest in simple, clear words. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
   }
 
   if (level === 'A2') {
     if (nativeLanguage) {
-      return `Start speaking now; do not wait for me to speak first. Greet me in my native language (${nativeLanguage}), state my level (A2), and introduce the topic in ${nativeLanguage} with simple guided English phrases. Deliver explanations mostly in ${nativeLanguage} with guided English practice. Do not show an activity until I choose or confirm the topic.`
+      return `Start speaking now; do not wait for me to speak first. Greet me in my native language (${nativeLanguage}), state my level (A2), and introduce the topic in ${nativeLanguage} with simple guided English phrases. Deliver explanations mostly in ${nativeLanguage} with guided English practice. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
     }
-    return 'Start speaking now; do not wait for me to speak first. Greet me in clear, simple English, state my level (A2), and offer the recommended topic or ask for an interest with step-by-step guidance. Do not show an activity until I choose or confirm the topic.'
+    return 'Start speaking now; do not wait for me to speak first. Greet me in clear, simple English, state my level (A2), and offer the recommended topic or ask for an interest with step-by-step guidance. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
   }
 
   if (level === 'B1') {
     if (nativeLanguage) {
-      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B1), and offer the recommended topic or ask for an interest in English. Conduct the lesson English-first as the main practice language; use ${nativeLanguage} only for targeted clarification if needed. Do not show an activity until I choose or confirm the topic.`
+      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B1), and offer the recommended topic or ask for an interest in English. Conduct the lesson English-first as the main practice language; use ${nativeLanguage} only for targeted clarification if needed. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
     }
-    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B1), and offer the recommended topic or ask for an interest in clear, natural English. Do not show an activity until I choose or confirm the topic.'
+    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B1), and offer the recommended topic or ask for an interest in clear, natural English. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
   }
 
   if (level === 'B2') {
     if (nativeLanguage) {
-      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B2), and offer the recommended topic or ask for an interest in English. Teach predominantly in English; use ${nativeLanguage} only for limited scaffolding when strictly necessary. Do not show an activity until I choose or confirm the topic.`
+      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B2), and offer the recommended topic or ask for an interest in English. Teach predominantly in English; use ${nativeLanguage} only for limited scaffolding when strictly necessary. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
     }
-    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B2), and offer the recommended topic or ask for an interest in natural, practical English. Do not show an activity until I choose or confirm the topic.'
+    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (B2), and offer the recommended topic or ask for an interest in natural, practical English. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
   }
 
   if (level === 'C1') {
     if (nativeLanguage) {
-      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C1), and offer the recommended topic or ask for an interest in English. Conduct nearly all explanations, examples, and conversation in English; use ${nativeLanguage} only if I explicitly ask for clarification. Do not show an activity until I choose or confirm the topic.`
+      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C1), and offer the recommended topic or ask for an interest in English. Conduct nearly all explanations, examples, and conversation in English; use ${nativeLanguage} only if I explicitly ask for clarification. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
     }
-    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C1), and offer the recommended topic or ask for an interest in fluent, nuanced English. Do not show an activity until I choose or confirm the topic.'
+    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C1), and offer the recommended topic or ask for an interest in fluent, nuanced English. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
   }
 
   if (level === 'C2') {
     if (nativeLanguage) {
-      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C2), and offer the recommended topic or ask for an interest in English. Maintain full English immersion throughout the lesson unless I explicitly ask for clarification in ${nativeLanguage}. Do not show an activity until I choose or confirm the topic.`
+      return `Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C2), and offer the recommended topic or ask for an interest in English. Maintain full English immersion throughout the lesson unless I explicitly ask for clarification in ${nativeLanguage}. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
     }
-    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C2), and offer the recommended topic or ask for an interest in advanced, fluent English immersion. Do not show an activity until I choose or confirm the topic.'
+    return 'Start speaking now; do not wait for me to speak first. Greet me in English, state my level (C2), and offer the recommended topic or ask for an interest in advanced, fluent English immersion. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
   }
 
   if (nativeLanguage) {
-    return `Start speaking now; do not wait for me to speak first. Greet me warmly, state the level if known, and offer the recommended topic. Teach in English, offering brief support in ${nativeLanguage} if needed. Do not show an activity until I choose or confirm the topic.`
+    return `Start speaking now; do not wait for me to speak first. Greet me warmly, state the level if known, and offer the recommended topic. Teach in English, offering brief support in ${nativeLanguage} if needed. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.`
   }
 
-  return 'Start speaking now; do not wait for me to speak first. Greet me in English, state the level if known, and offer the recommended topic or ask for an interest. Do not show an activity until I choose or confirm the topic.'
+  return 'Start speaking now; do not wait for me to speak first. Greet me in English, state the level if known, and offer the recommended topic or ask for an interest. Deliver a full concept explanation and invite questions before starting an activity. Never call showGrammar and showActivity in the same turn; clear the explanation before presenting an activity. Do not show an activity until I choose or confirm the topic.'
 }
 
 export function buildOrchestrationMessage(orchestration?: SessionOrchestration): string | null {
