@@ -18,6 +18,7 @@ export async function recordEngagementSessionUseCase(context: AuthenticatedConte
     minutes: input.durationMinutes,
     localDate: getLocalDateString(input.timezone),
     score: input.scorePercent,
+    userId: context.userId,
   })
   const achievements = await getAchievements(context.supabase, context.userId)
   return { ...state, newAchievements: achievements.filter((achievement) => state.newAchievementIds.includes(achievement.id)) }

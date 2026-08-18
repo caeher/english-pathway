@@ -5,5 +5,5 @@ import { getUsageCredits } from '@/lib/credits/usage'
 export async function GET() {
   const context = await getAuthenticatedContext()
   if (!context) return apiErrorResponse(new DomainError('AUTHENTICATION_REQUIRED', 'Please sign in to view your credits.'), 'Authentication required')
-  return respondWithApiErrors(() => getUsageCredits(context.supabase), 'Unable to load your credits.')
+  return respondWithApiErrors(() => getUsageCredits(context.supabase, context.userId), 'Unable to load your credits.')
 }

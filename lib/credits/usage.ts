@@ -16,21 +16,21 @@ function toCredits(value: unknown): UsageCredits {
   }
 }
 
-export async function getUsageCredits(supabase: AppSupabaseClient): Promise<UsageCredits> {
-  const { data, error } = await supabase.rpc('get_usage_credits')
+export async function getUsageCredits(supabase: AppSupabaseClient, userId?: string): Promise<UsageCredits> {
+  const { data, error } = await supabase.rpc('get_usage_credits', { p_user_id: userId })
   if (error) throw new Error(`Failed to load usage credits: ${error.message}`)
   return toCredits(data)
 }
 
-export async function consumeAssistantCredit(supabase: AppSupabaseClient) {
-  const { data, error } = await supabase.rpc('consume_assistant_credit')
+export async function consumeAssistantCredit(supabase: AppSupabaseClient, userId?: string) {
+  const { data, error } = await supabase.rpc('consume_assistant_credit', { p_user_id: userId })
   if (error) throw new Error(`Failed to consume assistant credit: ${error.message}`)
   const result = data as { allowed?: boolean } | null
   return { allowed: result?.allowed === true, credits: toCredits(data) }
 }
 
-export async function startAudioCreditSession(supabase: AppSupabaseClient) {
-  const { data, error } = await supabase.rpc('start_audio_credit_session')
+export async function startAudioCreditSession(supabase: AppSupabaseClient, userId?: string) {
+  const { data, error } = await supabase.rpc('start_audio_credit_session', { p_user_id: userId })
   if (error) throw new Error(`Failed to start audio credit session: ${error.message}`)
   const result = data as { allowed?: boolean; sessionId?: string; maxSeconds?: number; reason?: string } | null
   return {
@@ -41,8 +41,12 @@ export async function startAudioCreditSession(supabase: AppSupabaseClient) {
   }
 }
 
-export async function finishAudioCreditSession(supabase: AppSupabaseClient, sessionId: string, seconds: number): Promise<UsageCredits> {
-  const { data, error } = await supabase.rpc('finish_audio_credit_session', { p_session_id: sessionId, p_seconds: seconds })
+export async function finishAudioCreditSession(supabase: AppSupabaseClient, sessionId: string, seconds: number, userId?: string): Promise<UsageCredits> {
+  const { data, error } = await supabase.rpc('finish_audio_credit_session', {
+    p_session_id: sessionId,
+    p_seconds: seconds,
+    ...(userId ? { p_user_id: userId } : {})
+  })
   if (error) throw new Error(`Failed to finish audio credit session: ${error.message}`)
   return toCredits(data)
 }

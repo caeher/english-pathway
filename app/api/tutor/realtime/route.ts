@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', 'A voice session is already active.', 429), 'Voice credits exhausted')
   }
 
-  const credit = await startAudioCreditSession(context.supabase)
+  const credit = await startAudioCreditSession(context.supabase, context.userId)
   if (!credit.allowed || !credit.sessionId || !credit.maxSeconds) {
     return apiErrorResponse(new DomainError('CREDITS_EXHAUSTED', credit.reason === 'active_session' ? 'A voice session is already active.' : `Your ${AUDIO_CREDIT_SECONDS / 60} minutes of voice credits have been used.`, 429), 'Voice credits exhausted')
   }
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
     }), 10_000)
     const answerSdp = await response.text()
     if (!response.ok || !answerSdp) {
-      await finishAudioCreditSession(context.supabase, credit.sessionId, 0).catch(() => {})
+      await finishAudioCreditSession(context.supabase, credit.sessionId, 0, context.userId).catch(() => {})
       return apiErrorResponse(new DomainError('DEPENDENCY_FAILURE', 'OpenAI voice could not start.'), 'Voice unavailable')
     }
     return new Response(answerSdp, {
@@ -94,7 +94,7 @@ export async function POST(request: Request) {
       },
     })
   } catch (error) {
-    await finishAudioCreditSession(context.supabase, credit.sessionId, 0).catch(() => {})
+    await finishAudioCreditSession(context.supabase, credit.sessionId, 0, context.userId).catch(() => {})
     if (error instanceof DomainError && error.code === 'TIMEOUT') {
       return apiErrorResponse(error, 'Voice unavailable')
     }

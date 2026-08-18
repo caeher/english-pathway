@@ -17,7 +17,7 @@ export interface EngagementState {
 
 export async function recordEngagementSession(
   supabase: Client,
-  input: { activityId: string; xp: number; minutes: number; localDate: string; score: number }
+  input: { activityId: string; xp: number; minutes: number; localDate: string; score: number; userId?: string }
 ): Promise<EngagementState> {
   const { data, error } = await supabase.rpc('record_engagement_session', {
     p_activity_id: input.activityId,
@@ -25,6 +25,7 @@ export async function recordEngagementSession(
     p_minutes: input.minutes,
     p_local_date: input.localDate,
     p_score: input.score,
+    ...(input.userId ? { p_user_id: input.userId } : {}),
   })
   if (error) throw new Error(`Failed to record engagement session: ${error.message}`)
   return parseEngagementState(data)

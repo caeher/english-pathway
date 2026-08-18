@@ -44,7 +44,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const credit = await consumeAssistantCredit(context.supabase)
+    const credit = await consumeAssistantCredit(context.supabase, context.userId)
     if (!credit.allowed) {
       return apiErrorResponse(
         new DomainError('CREDITS_EXHAUSTED', 'Your 50 English assistant messages have been used.'),
