@@ -44,6 +44,9 @@ self.addEventListener('fetch', (event) => {
   // Ignore non-http/https schemes (e.g., chrome-extension://, moz-extension://) unsupported by Cache API
   if (!url.protocol.startsWith('http')) return;
 
+  // Only handle same-origin requests (never intercept cross-origin scripts or third-party APIs like Clerk)
+  if (url.origin !== self.location.origin) return;
+
   // Do not cache authenticated/mutating API responses or development server chunks
   if (
     url.hostname === 'localhost' ||
