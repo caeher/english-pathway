@@ -154,7 +154,7 @@ function TutorControls({
             </Surface>
             </>}
 
-            {active && <section className="space-y-4" aria-labelledby="active-session-heading">
+            {active && <section className="space-y-3 sm:space-y-4" aria-labelledby="active-session-heading">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div><h2 id="active-session-heading" className="font-display text-xl font-black text-(--text-primary)">{mode === 'voice' ? 'Speak naturally' : 'Write naturally'}</h2><p className="mt-1 text-sm text-(--text-secondary)">{mode === 'voice' ? 'Your tutor is listening. Take your time.' : 'Your tutor will respond in the conversation.'}</p></div>
                 <Button variant="outline" onClick={end} className="gap-2"><PhoneOff className="h-4 w-4" /> End</Button>

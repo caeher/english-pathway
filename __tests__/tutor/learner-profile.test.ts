@@ -76,33 +76,73 @@ describe('learner-profile', () => {
   })
 
   describe('getInstructionalLanguagePolicy', () => {
-    it('generates native-scaffolded policy for A1-A2 with a native language', () => {
+    it('generates native-scaffolded policy for A1 Beginner with a native language', () => {
       const policy = getInstructionalLanguagePolicy('A1', 'Spanish')
-      expect(policy).toContain('A1–A2 Beginner')
-      expect(policy).toContain('primarily in Spanish')
-      expect(policy).toContain('vocabulary words, model sentences, and interactive practice in English')
+      expect(policy).toContain('A1 Beginner')
+      expect(policy).toContain('Speak primarily in Spanish for greetings, lesson opening, new grammar explanations, directions, instructions, and error corrections')
+      expect(policy).toContain('vocabulary words, short model sentences, and brief guided practice')
       expect(policy).toContain('explain sounds, mouth position, stress, and corrections in Spanish')
     })
 
-    it('generates simple English policy for A1-A2 without a native language', () => {
-      const policy = getInstructionalLanguagePolicy('A2', null)
-      expect(policy).toContain('A1–A2 Beginner')
-      expect(policy).toContain('simple, clear English with basic vocabulary')
+    it('generates simple English policy for A1 Beginner without a native language', () => {
+      const policy = getInstructionalLanguagePolicy('A1', null)
+      expect(policy).toContain('A1 Beginner')
+      expect(policy).toContain('very simple, clear English with basic vocabulary')
     })
 
-    it('generates English-first policy with scaffolding for B1-B2 with a native language', () => {
-      const policy = getInstructionalLanguagePolicy('B2', 'Portuguese')
-      expect(policy).toContain('B1–B2 Intermediate')
-      expect(policy).toContain('English-first instruction')
-      expect(policy).toContain('Use Portuguese only for concise, purposeful scaffolding')
+    it('generates mostly-native with guided English policy for A2 Elementary with a native language', () => {
+      const policy = getInstructionalLanguagePolicy('A2', 'Spanish')
+      expect(policy).toContain('A2 Elementary')
+      expect(policy).toContain('Speak mostly in Spanish for explanations, instructions, and error corrections, accompanied by a larger amount of guided English phrases and vocabulary')
+      expect(policy).toContain('Gradually introduce simple English directions while maintaining supportive scaffolding in Spanish')
+    })
+
+    it('generates simple English policy for A2 Elementary without a native language', () => {
+      const policy = getInstructionalLanguagePolicy('A2', null)
+      expect(policy).toContain('A2 Elementary')
+      expect(policy).toContain('simple, clear English with basic vocabulary, guided practice')
+    })
+
+    it('generates balanced transition policy for B1 Intermediate with a native language', () => {
+      const policy = getInstructionalLanguagePolicy('B1', 'Portuguese')
+      expect(policy).toContain('B1 Intermediate')
+      expect(policy).toContain('Balanced transition with English as the main practice and conversational language')
+      expect(policy).toContain('Use Portuguese only for targeted clarification')
       expect(policy).toContain('Resume English immediately once clarified')
     })
 
-    it('generates English-only immersion policy for C1-C2', () => {
+    it('generates clear English policy for B1 Intermediate without a native language', () => {
+      const policy = getInstructionalLanguagePolicy('B1', null)
+      expect(policy).toContain('B1 Intermediate')
+      expect(policy).toContain('clear, accessible English with natural conversational pacing')
+    })
+
+    it('generates predominantly English policy for B2 Upper Intermediate with a native language', () => {
+      const policy = getInstructionalLanguagePolicy('B2', 'Portuguese')
+      expect(policy).toContain('B2 Upper Intermediate')
+      expect(policy).toContain('Predominantly English instruction')
+      expect(policy).toContain('Provide limited Portuguese scaffolding only when strictly necessary')
+      expect(policy).toContain('Resume English immediately once clarified')
+    })
+
+    it('generates natural English policy for B2 Upper Intermediate without a native language', () => {
+      const policy = getInstructionalLanguagePolicy('B2', null)
+      expect(policy).toContain('B2 Upper Intermediate')
+      expect(policy).toContain('natural, practical English with varied vocabulary')
+    })
+
+    it('generates nearly-all English policy for C1 Advanced with a native language', () => {
       const policy = getInstructionalLanguagePolicy('C1', 'French')
-      expect(policy).toContain('C1–C2 Advanced')
-      expect(policy).toContain('Full English immersion')
+      expect(policy).toContain('C1 Advanced')
+      expect(policy).toContain('Conduct nearly all explanation, examples, feedback, and conversation in English')
       expect(policy).toContain('Do not use French unless the learner explicitly asks')
+    })
+
+    it('generates full immersion policy for C2 Mastery with a native language', () => {
+      const policy = getInstructionalLanguagePolicy('C2', 'French')
+      expect(policy).toContain('C2 Mastery')
+      expect(policy).toContain('Full English immersion throughout the entire lesson')
+      expect(policy).toContain('Use French only if the learner explicitly asks for clarification in French')
     })
 
     it('generates generic fallback policy when level is not specified', () => {

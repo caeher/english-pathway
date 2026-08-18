@@ -7,8 +7,9 @@ import LearnSessionLayout from '@/components/learn/LearnSessionLayout'
 import { Button, InlineError, Surface } from '@/components/ui'
 import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
-import type { SessionMode } from './session-types'
+import type { SessionMode, SessionOrchestration } from './session-types'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
+import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -204,6 +205,18 @@ export default function OpenAiRealtimeTutorProvider() {
       if (!creditSessionId || !Number.isFinite(maxSeconds) || maxSeconds < 1) throw new Error('Voice credit session was not created.')
       creditSessionIdRef.current = creditSessionId
       maxSecondsRef.current = maxSeconds
+
+      const orchestrationHeader = response.headers.get('X-Tutor-Orchestration')
+      let orchestration: SessionOrchestration | undefined = undefined
+      if (orchestrationHeader) {
+        try {
+          orchestration = JSON.parse(decodeURIComponent(orchestrationHeader)) as SessionOrchestration
+        } catch {
+          // Fall back to default start directive if header decoding fails
+        }
+      }
+      const bootstrapMessage = buildOrchestrationMessage(orchestration) ?? 'Start the lesson now. Greet the learner and lead with the next appropriate English lesson; do not wait for the learner to speak first.'
+
       await pc.setRemoteDescription({ type: 'answer', sdp: await response.text() })
       startedAtRef.current = Date.now()
       setActive(true)
@@ -214,7 +227,7 @@ export default function OpenAiRealtimeTutorProvider() {
       }, maxSeconds * 1_000)
       channel.onopen = () => {
         flushPendingMessages()
-        sendUserMessage('Start the lesson now. Greet the learner and lead with the next appropriate English lesson; do not wait for the learner to speak first.')
+        sendUserMessage(bootstrapMessage)
       }
     } catch (caughtError) {
       if (creditSessionIdRef.current) await end()
@@ -258,7 +271,7 @@ export default function OpenAiRealtimeTutorProvider() {
           <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0)} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
         </Surface>
         </>}
-        {active && <section className="space-y-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2><p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p></div><Button variant="outline" onClick={() => { isExplicitEndRef.current = true; void end() }}><PhoneOff className="h-4 w-4" /> End</Button></div>
+        {active && <section className="space-y-3 sm:space-y-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2><p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p></div><Button variant="outline" onClick={() => { isExplicitEndRef.current = true; void end() }}><PhoneOff className="h-4 w-4" /> End</Button></div>
           <MicrophoneVisualizer stream={stream} active /><Button variant="outline" onClick={toggleMuted}>{muted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{muted ? 'Unmute' : 'Mute'}</Button>
         </section>}
       </div>

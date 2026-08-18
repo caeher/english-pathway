@@ -7,11 +7,12 @@ import { useReducedMotion } from '@/lib/motion/useReducedMotion'
 interface MicrophoneVisualizerProps {
   stream: MediaStream | null
   active: boolean
+  className?: string
 }
 
 const BAR_COUNT = 28
 
-export default function MicrophoneVisualizer({ stream, active }: MicrophoneVisualizerProps) {
+export default function MicrophoneVisualizer({ stream, active, className = '' }: MicrophoneVisualizerProps) {
   const [bars, setBars] = useState<number[]>(() => Array(BAR_COUNT).fill(0.15))
   const [audioLevel, setAudioLevel] = useState(0)
   const reducedMotion = useReducedMotion()
@@ -109,22 +110,25 @@ export default function MicrophoneVisualizer({ stream, active }: MicrophoneVisua
   const isLive = active && audioLevel > 0.15
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-(--border-primary) bg-gradient-to-b from-(--bg-card) to-(--bg-secondary)/60 p-5 shadow-sm" aria-label="Voice audio bar visualizer">
-      <div className="mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className={`inline-block h-2.5 w-2.5 rounded-full transition-colors duration-300 ${active ? (isLive ? 'bg-emerald-500 animate-pulse' : 'bg-(--accent)') : 'bg-(--text-muted)'}`} />
-          <span className="font-display text-xs font-bold uppercase tracking-wider text-(--text-secondary)">
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-(--border-primary) bg-gradient-to-b from-(--bg-card) to-(--bg-secondary)/60 p-3 sm:p-5 shadow-sm ${className}`}
+      aria-label="Voice audio bar visualizer"
+    >
+      <div className="mb-2 sm:mb-3 flex items-center justify-between">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className={`inline-block h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-colors duration-300 ${active ? (isLive ? 'bg-emerald-500 animate-pulse' : 'bg-(--accent)') : 'bg-(--text-muted)'}`} />
+          <span className="font-display text-[11px] sm:text-xs font-bold uppercase tracking-wider text-(--text-secondary)">
             {active ? (isLive ? 'Audio Detected' : 'Voice Visualizer Active') : 'Microphone Standby'}
           </span>
         </div>
         {active && (
-          <span className="text-[10px] font-semibold text-(--accent) bg-(--accent-soft) px-2 py-0.5 rounded-full">
+          <span className="text-[9px] sm:text-[10px] font-semibold text-(--accent) bg-(--accent-soft) px-1.5 sm:px-2 py-0.5 rounded-full">
             Live Spectrum
           </span>
         )}
       </div>
 
-      <div className="flex h-20 items-end justify-center gap-1 sm:gap-1.5 px-2" aria-hidden="true">
+      <div className="flex h-10 sm:h-16 lg:h-20 items-end justify-center gap-1 sm:gap-1.5 px-1 sm:px-2" aria-hidden="true">
         {bars.map((height, index) => {
           const isHigh = height > 0.5
           return (
@@ -145,7 +149,7 @@ export default function MicrophoneVisualizer({ stream, active }: MicrophoneVisua
         })}
       </div>
 
-      <p className="mt-3 text-center text-xs text-(--text-muted)">
+      <p className="mt-2 sm:mt-3 text-center text-[11px] sm:text-xs text-(--text-muted) leading-snug sm:leading-normal">
         {reducedMotion
           ? 'Microphone is active. Visual motion simplified for accessibility.'
           : active

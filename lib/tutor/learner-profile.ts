@@ -30,27 +30,48 @@ export function getInstructionalLanguagePolicy(
   level: string | null | undefined,
   nativeLanguageLabel?: string | null,
 ): string {
-  const band = toCefrBand(level)
+  const normalizedLevel = toCefrLevel(level)
 
-  if (band === 'A1-A2') {
+  if (normalizedLevel === 'A1') {
     if (nativeLanguageLabel) {
-      return `Instructional language policy (A1–A2 Beginner): Explain new grammar, directions, instructions, and error corrections primarily in ${nativeLanguageLabel}. Keep pronunciation targets, vocabulary words, model sentences, and interactive practice in English. Pronounce English targets naturally, then explain sounds, mouth position, stress, and corrections in ${nativeLanguageLabel}. If the learner struggles or asks for help, provide clear scaffolding in ${nativeLanguageLabel}.`
+      return `Instructional language policy (A1 Beginner): Speak primarily in ${nativeLanguageLabel} for greetings, lesson opening, new grammar explanations, directions, instructions, and error corrections. Use English for pronunciation targets, vocabulary words, short model sentences, and brief guided practice. Pronounce English targets naturally, then explain sounds, mouth position, stress, and corrections in ${nativeLanguageLabel}. If the learner struggles or asks for help, provide clear scaffolding in ${nativeLanguageLabel}.`
     }
-    return 'Instructional language policy (A1–A2 Beginner): Use simple, clear English with basic vocabulary, short sentences, and step-by-step scaffolding for all explanations, directions, and feedback.'
+    return 'Instructional language policy (A1 Beginner): Use very simple, clear English with basic vocabulary, short sentences, and step-by-step scaffolding for all explanations, directions, and feedback.'
   }
 
-  if (band === 'B1-B2') {
+  if (normalizedLevel === 'A2') {
     if (nativeLanguageLabel) {
-      return `Instructional language policy (B1–B2 Intermediate): English-first instruction. Deliver most explanations, examples, follow-up questions, activity directions, and feedback in English. Use ${nativeLanguageLabel} only for concise, purposeful scaffolding when a concept blocks progress or when the learner explicitly asks for clarification. Resume English immediately once clarified.`
+      return `Instructional language policy (A2 Elementary): Speak mostly in ${nativeLanguageLabel} for explanations, instructions, and error corrections, accompanied by a larger amount of guided English phrases and vocabulary. Gradually introduce simple English directions while maintaining supportive scaffolding in ${nativeLanguageLabel}. Keep pronunciation targets, model sentences, and interactive practice in English.`
     }
-    return 'Instructional language policy (B1–B2 Intermediate): Deliver all explanations, practice, questions, and feedback in clear, natural English. Keep explanations concise and practical.'
+    return 'Instructional language policy (A2 Elementary): Use simple, clear English with basic vocabulary, guided practice, and step-by-step scaffolding for all explanations, directions, and feedback.'
   }
 
-  if (band === 'C1-C2') {
+  if (normalizedLevel === 'B1') {
     if (nativeLanguageLabel) {
-      return `Instructional language policy (C1–C2 Advanced): Full English immersion. Conduct explanations, examples, corrections, practice, and conversation entirely in English. Do not use ${nativeLanguageLabel} unless the learner explicitly asks for translation or clarification; return to English immediately once clarified.`
+      return `Instructional language policy (B1 Intermediate): Balanced transition with English as the main practice and conversational language. Deliver most explanations, directions, and feedback in English. Use ${nativeLanguageLabel} only for targeted clarification when a concept blocks progress or when the learner explicitly asks for clarification. Resume English immediately once clarified.`
     }
-    return 'Instructional language policy (C1–C2 Advanced): Full English immersion. Conduct all explanations, examples, corrections, practice, and conversation entirely in English with natural, nuanced phrasing.'
+    return 'Instructional language policy (B1 Intermediate): Deliver all explanations, practice, questions, and feedback in clear, accessible English with natural conversational pacing.'
+  }
+
+  if (normalizedLevel === 'B2') {
+    if (nativeLanguageLabel) {
+      return `Instructional language policy (B2 Upper Intermediate): Predominantly English instruction. Deliver all explanations, exercises, follow-up questions, directions, and feedback in English. Provide limited ${nativeLanguageLabel} scaffolding only when strictly necessary or requested. Resume English immediately once clarified.`
+    }
+    return 'Instructional language policy (B2 Upper Intermediate): Deliver all explanations, practice, questions, and feedback in natural, practical English with varied vocabulary and concise explanations.'
+  }
+
+  if (normalizedLevel === 'C1') {
+    if (nativeLanguageLabel) {
+      return `Instructional language policy (C1 Advanced): Conduct nearly all explanation, examples, feedback, and conversation in English. Do not use ${nativeLanguageLabel} unless the learner explicitly asks for clarification or translation; resume English immediately once clarified.`
+    }
+    return 'Instructional language policy (C1 Advanced): Full English immersion. Conduct all explanations, examples, corrections, practice, and conversation entirely in English with natural, nuanced phrasing.'
+  }
+
+  if (normalizedLevel === 'C2') {
+    if (nativeLanguageLabel) {
+      return `Instructional language policy (C2 Mastery): Full English immersion throughout the entire lesson for all explanations, feedback, and conversation. Use ${nativeLanguageLabel} only if the learner explicitly asks for clarification in ${nativeLanguageLabel}; resume English immediately once clarified.`
+    }
+    return 'Instructional language policy (C2 Mastery): Full English immersion throughout the entire lesson. Conduct all explanations, examples, corrections, practice, and conversation entirely in English with advanced, fluent phrasing.'
   }
 
   if (nativeLanguageLabel) {
@@ -59,3 +80,4 @@ export function getInstructionalLanguagePolicy(
 
   return 'Instructional language policy: Use clear, accessible English for explanations, examples, and practice.'
 }
+

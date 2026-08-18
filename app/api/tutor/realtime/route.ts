@@ -72,6 +72,28 @@ export async function POST(request: Request) {
     tools: TUTOR_REALTIME_TOOLS,
   }))
 
+  const orchestration = {
+    sessionId: credit.sessionId,
+    state: 'preparing' as const,
+    allowedTools: TUTOR_REALTIME_TOOLS.map((tool) => tool.name),
+    instruction: 'Use only validated curriculum activity IDs. Follow the CEFR instructional language policy for explanations, directions, and feedback, and wait for an explicit activity result before advancing.',
+    learner: profile.data ? {
+      level: toCefrLevel(profile.data.level),
+      nativeLanguage: profile.data.native_language,
+      nativeLanguageLabel: getLearnerLanguageLabel(profile.data.native_language),
+      fullName: profile.data.full_name,
+    } : null,
+    progress: progress.data ? {
+      lastChapterId: progress.data.last_chapter_id,
+      lastActivityId: progress.data.last_activity_id,
+    } : null,
+    recommendation: recommendation ? {
+      chapterId: recommendation.chapterId,
+      activityId: recommendation.activityId,
+      moduleId: recommendation.moduleId,
+    } : null,
+  }
+
   try {
     const response = await withApiTimeout(fetch('https://api.openai.com/v1/realtime/calls', {
       method: 'POST',
@@ -91,6 +113,7 @@ export async function POST(request: Request) {
         'Content-Type': 'application/sdp',
         'X-Audio-Credit-Session': credit.sessionId,
         'X-Audio-Credit-Max-Seconds': String(credit.maxSeconds),
+        'X-Tutor-Orchestration': encodeURIComponent(JSON.stringify(orchestration)),
       },
     })
   } catch (error) {
