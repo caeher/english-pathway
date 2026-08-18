@@ -23,8 +23,8 @@ Technical audit backing issue **#161**. Each row is verified against the current
 | Supabase | Auth, PostgreSQL, RLS, optional file storage | `lib/supabase/*`, migrations |
 | OpenAI | Embeddings, Realtime voice fallback, English Assistant | `lib/rag/embeddings.ts`, `app/api/tutor/realtime/route.ts`, `app/api/english-assistant/route.ts` |
 | ElevenLabs | Primary voice tutor when `NEXT_PUBLIC_ELEVENLABS_AGENT_ID` is set | `components/voice/VoiceTutorProvider.tsx` |
-| Google OAuth | Social sign-in when `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED=true` and configured in Supabase | `lib/auth/oauth-providers.ts` |
-| GitHub OAuth | Social sign-in when enabled and configured | Same; currently disabled in production |
+| Clerk | Authentication and user session management | `@clerk/nextjs`, `lib/auth/clerk-sync.ts` |
+| Google / GitHub OAuth | Social sign-in managed via Clerk Social Connections | Clerk Dashboard / `@clerk/nextjs` |
 
 ## Consent mechanisms
 
@@ -49,5 +49,4 @@ Technical audit backing issue **#161**. Each row is verified against the current
 ## Outstanding operator actions
 
 - Confirm legal entity name, privacy/support emails, and governing jurisdiction via [`operator-config.md`](./operator-config.md).
-- Sign [`legal-review-checklist.md`](../legal-review-checklist.md) before production launch.
-- Run production OAuth smoke tests and set `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED=true` after verification (issue **#160**).
+- Verify active social connections in Clerk Dashboard before production launch.

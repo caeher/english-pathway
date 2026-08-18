@@ -1,6 +1,7 @@
-# OAuth smoke evidence
+# OAuth smoke evidence (Archived / Historical Reference)
 
-Copy this section into the PR that closes issue **#160**. Replace check items after manual testing in each environment. Automated inspection output can be attached from `pnpm oauth:inspect`.
+> [!NOTE]
+> Authentication has been migrated to Clerk (`@clerk/nextjs`). This evidence log records the previous Supabase OAuth verification tests and is kept for historical context.
 
 **Tester:** Engineering  
 **Date:** 2026-07-26

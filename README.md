@@ -100,13 +100,94 @@ Abre [http://localhost:3000](http://localhost:3000).
 ### Curriculum vs Learn
 
 | Route | Purpose |
+
+- **Node.js 22+**
+- **pnpm 10+**
+- **Docker Desktop** en ejecución (WSL2 recomendado en Windows)
+- **Supabase CLI** (incluida como devDependency del proyecto)
+
+Verifica que Docker y la CLI funcionan:
+
+```bash
+docker info
+pnpm exec supabase --version
+```
+
+## Desarrollo local
+
+Flujo recomendado para reproducir el proyecto en tu máquina con Supabase local (Docker vía Supabase CLI).
+
+### 1. Instalar dependencias
+
+```bash
+pnpm install
+```
+
+### 2. Levantar Supabase local
+
+La primera ejecución descarga las imágenes Docker. Las migraciones en `supabase/migrations/` se aplican automáticamente.
+
+```bash
+pnpm db:start
+```
+
+### 3. Configurar variables de entorno
+
+Genera `.env.local` con las claves del stack local:
+
+```bash
+pnpm db:env
+```
+
+Alternativa manual: copia `.env.example` a `.env.local` y rellena las claves con `pnpm exec supabase status`.
+
+### 4. Poblar la base de datos
+
+```bash
+pnpm db:seed
+```
+
+Importa documentos legales. El currículo vive en `knowledge/` — para RAG:
+
+```bash
+pnpm kb:embed
+```
+
+(Requiere `OPENAI_API_KEY` en `.env.local`.)
+
+### 5. Arrancar Next.js
+
+```bash
+pnpm dev
+```
+
+Abre [http://localhost:3000](http://localhost:3000).
+
+### URLs locales de referencia
+
+| Servicio | URL |
+|----------|-----|
+| App Next.js | http://localhost:3000 |
+| Supabase API | http://127.0.0.1:54321 |
+| Supabase Studio | http://127.0.0.1:54323 |
+| Mailpit (emails) | http://127.0.0.1:54324 |
+| Postgres directo | `postgresql://postgres:postgres@127.0.0.1:54322/postgres` |
+
+### Primer usuario
+
+1. Regístrate en `/register`.
+2. Abre [Mailpit](http://127.0.0.1:54324) y confirma el correo de verificación.
+3. Inicia sesión en `/login` → serás redirigido a `/settings`.
+4. Explora el currículo en `/curriculum` (lectura y ejercicios) o abre `/learn` para practicar con el tutor IA (voz o texto).
+
+### Curriculum vs Learn
+
+| Route | Purpose |
 |-------|---------|
 | `/curriculum` | Structured pathway: chapter reading, required exercises, derived progress |
 | `/learn` | Agentic tutor session — always starts empty; the agent shows content via tools |
 
 Never link from Curriculum to `/learn` with `moduleId`, `chapterId`, or `activityId`. Resume or continue the pathway with `/curriculum/...`; open `/learn` only for a free tutor session.
-
-> **Confirmación de email en local:** los correos no salen a internet; se capturan en Mailpit.
 
 ## Variables de entorno
 
@@ -114,12 +195,13 @@ Copia `.env.example` a `.env.local`:
 
 | Variable | Descripción |
 |----------|-------------|
-| `NEXT_PUBLIC_SUPABASE_URL` | URL del proyecto Supabase |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clave anónima pública |
-| `SUPABASE_SERVICE_ROLE_KEY` | Clave de servicio (solo servidor/seeds) |
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Publishable key de Clerk |
+| `CLERK_SECRET_KEY` | Secret key de Clerk |
+| `CLERK_WEBHOOK_SIGNING_SECRET` | Secret para webhooks de Clerk |
+| `NEXT_PUBLIC_SUPABASE_URL` | URL del proyecto Supabase (Base de datos y Storage) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clave anónima pública de Supabase |
+| `SUPABASE_SERVICE_ROLE_KEY` | Clave de servicio de Supabase (solo servidor/seeds) |
 | `NEXT_PUBLIC_APP_URL` | URL de la app (p.ej. `http://localhost:3000`) |
-| `NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED` | `true` para mostrar botón Google (solo cuando el proveedor esté configurado en Supabase) |
-| `NEXT_PUBLIC_OAUTH_GITHUB_ENABLED` | `true` para mostrar botón GitHub (solo cuando el proveedor esté configurado en Supabase) |
 | `OPENAI_API_KEY` | Embeddings para RAG, asistente de chat y fallback de voz OpenAI |
 | `ELEVENLABS_API_KEY` | API key ElevenLabs (opcional) |
 | `NEXT_PUBLIC_ELEVENLABS_AGENT_ID` | ID del agente de conversación |
@@ -190,12 +272,10 @@ Para usar la app en Docker con Supabase local en el host:
 ```
 app/
 ├── (public)/        # Landing, FAQ, how-it-works
-├── (learn)/         # Tutor IA y panel de actividades
-├── (auth)/          # Login, registro, recuperación
-├── (account)/       # Settings
-├── (legal)/         # Términos, privacidad, cookies
-├── api/tutor/       # Contexto RAG, actividades, sesión
-└── auth/            # Callbacks OAuth
+├── (learn)/         # Sesión con el tutor de IA
+├── (auth)/          # Login, registro, recuperación (redireccionan a Clerk /sign-in y /sign-up)
+├── (account)/       # Settings y perfil
+└── (legal)/         # Términos, privacidad, cookies
 
 knowledge/           # Base de conocimiento (markdown + JSON)
 features/            # APIs públicas y ownership de cada feature
@@ -206,20 +286,7 @@ lib/knowledge/       # Carga y chunking del currículo
 
 ## Autenticación
 
-- Email y contraseña vía Supabase Auth
-- OAuth dinámico (Google, GitHub) — botones visibles solo con `NEXT_PUBLIC_OAUTH_*_ENABLED=true`
-- `/settings` requiere sesión; `/learn` es público
-
-### OAuth (Google y GitHub)
-
-Los Client Secrets viven en Supabase o en un gestor de secretos — **nunca** en el repositorio.
-
-| Entorno | `NEXT_PUBLIC_APP_URL` | Callback en Google/GitHub |
-|---------|----------------------|---------------------------|
-| Local | `http://localhost:3000` | `http://127.0.0.1:54321/auth/v1/callback` |
-| Staging | `https://<staging-domain>` | `https://<staging-ref>.supabase.co/auth/v1/callback` |
-| Producción | `https://<prod-domain>` | `https://<prod-ref>.supabase.co/auth/v1/callback` |
-
-En Supabase, allowlist `{NEXT_PUBLIC_APP_URL}/**` como Redirect URL. Activa cada flag OAuth solo cuando el proveedor correspondiente esté configurado en ese entorno.
-
-Guía completa (matriz, rotación, verificación): [docs/operations/oauth-setup.md](docs/operations/oauth-setup.md).
+- Autenticación gestionada vía **Clerk** (`@clerk/nextjs`)
+- Proveedores sociales (Google, GitHub, etc.) configurados directamente desde el Dashboard de Clerk
+- Rutas de inicio y registro en `/sign-in` y `/sign-up`
+- `/settings` requiere sesión; `/learn` es accesible para práctica guiada
