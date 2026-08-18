@@ -16,8 +16,9 @@ import {
   calculateRemainingAudioSeconds,
   formatVoiceRemainingLabel,
 } from '@/lib/credits/audio-countdown'
+import type { UsageCredits } from '@/lib/credits/usage'
 
-type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
+type Credits = UsageCredits
 
 type RealtimeEvent = {
   type?: string
@@ -374,7 +375,7 @@ export default function OpenAiRealtimeTutorProvider() {
         }).catch(() => {})
       }, 30_000)
       endTimerRef.current = window.setTimeout(() => {
-        setError('Your voice credits are finished for this account.')
+        setError('Your voice session has reached its time limit.')
         void end()
       }, maxSeconds * 1_000)
       channel.onopen = () => {
@@ -407,7 +408,7 @@ export default function OpenAiRealtimeTutorProvider() {
     creditsError,
   })
 
-  const isStartDisabled = connecting || !voiceSupported || creditsError || credits === null || (credits.audioSecondsRemaining <= 0)
+  const isStartDisabled = connecting || !voiceSupported || creditsError || credits === null || (!credits.voiceQuota?.isUnlimited && credits.audioSecondsRemaining <= 0)
 
   return <LearnSessionLayout
     sessionMode={mode}
@@ -435,16 +436,40 @@ export default function OpenAiRealtimeTutorProvider() {
             <Button type="button" onClick={() => void start()} disabled={isStartDisabled} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
           </Surface>
         </>}
-        {active && <section className="space-y-3 sm:space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2>
-              <p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p>
-            </div>
-            <Button variant="outline" onClick={() => { isExplicitEndRef.current = true; void end() }}><PhoneOff className="h-4 w-4" /> End</Button>
+        {active && <section className="space-y-2.5 sm:space-y-3">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="font-display text-base sm:text-lg font-black text-(--text-primary)">Speak naturally</h2>
+            <p className="text-xs text-(--text-secondary) truncate">{audioLabel}</p>
           </div>
-          <MicrophoneVisualizer stream={stream} active />
-          <Button variant="outline" onClick={toggleMuted}>{muted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{muted ? 'Unmute' : 'Mute'}</Button>
+          <div className="flex items-center gap-2 sm:gap-3 w-full">
+            <Button
+              variant="outline"
+              onClick={toggleMuted}
+              aria-label={muted ? 'Unmute microphone' : 'Mute microphone'}
+              title={muted ? 'Unmute' : 'Mute'}
+              className={`min-h-[44px] min-w-[44px] h-11 px-3 sm:px-4 shrink-0 transition-colors ${
+                muted ? 'border-amber-400/60 bg-amber-500/10 text-amber-600 dark:text-amber-400 hover:bg-amber-500/20' : ''
+              }`}
+            >
+              {muted ? <MicOff className="h-5 w-5" aria-hidden="true" /> : <Mic className="h-5 w-5" aria-hidden="true" />}
+              <span className="hidden sm:inline">{muted ? 'Unmute' : 'Mute'}</span>
+            </Button>
+
+            <div className="flex-1 min-w-0">
+              <MicrophoneVisualizer stream={stream} active muted={muted} compact />
+            </div>
+
+            <Button
+              variant="outline"
+              onClick={() => { isExplicitEndRef.current = true; void end() }}
+              aria-label="End voice session"
+              title="End session"
+              className="min-h-[44px] min-w-[44px] h-11 px-3 sm:px-4 shrink-0 border-red-300/40 text-red-600 hover:bg-red-500/10 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors"
+            >
+              <PhoneOff className="h-5 w-5" aria-hidden="true" />
+              <span className="hidden sm:inline">End</span>
+            </Button>
+          </div>
         </section>}
       </div>
     </div>}

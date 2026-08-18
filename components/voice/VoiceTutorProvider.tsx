@@ -163,14 +163,78 @@ function TutorControls({
             </Surface>
             </>}
 
-            {active && <section className="space-y-3 sm:space-y-4" aria-labelledby="active-session-heading">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div><h2 id="active-session-heading" className="font-display text-xl font-black text-(--text-primary)">{mode === 'voice' ? 'Speak naturally' : 'Write naturally'}</h2><p className="mt-1 text-sm text-(--text-secondary)">{mode === 'voice' ? 'Your tutor is listening. Take your time.' : 'Your tutor will respond in the conversation.'}</p></div>
-                <Button variant="outline" onClick={end} className="gap-2"><PhoneOff className="h-4 w-4" /> End</Button>
+            {active && <section className="space-y-2.5 sm:space-y-3" aria-labelledby="active-session-heading">
+              <div className="flex items-center justify-between gap-2">
+                <h2 id="active-session-heading" className="font-display text-base sm:text-lg font-black text-(--text-primary)">
+                  {mode === 'voice' ? 'Speak naturally' : 'Write naturally'}
+                </h2>
+                <p className="text-xs text-(--text-secondary) truncate">
+                  {mode === 'voice' ? (isMuted ? 'Microphone muted' : 'Your tutor is listening') : 'Your tutor will respond in the conversation'}
+                </p>
               </div>
-              {mode === 'voice' && <MicrophoneVisualizer stream={microphoneStream} active />}
-              {mode === 'voice' && <Button variant="outline" onClick={() => setMuted(!isMuted)} className="gap-2">{isMuted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{isMuted ? 'Unmute' : 'Mute'}</Button>}
-              {mode === 'text' && <form onSubmit={(event) => { event.preventDefault(); if (message.trim()) { sendUserMessage(message.trim()); setMessage('') } }} className="mt-auto flex gap-2"><input value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Type a message..." aria-label="Message to tutor" className="min-w-0 flex-1 rounded-xl border border-(--border-primary) bg-(--bg-card) px-3 py-2 text-sm text-(--text-primary)" /><Button type="submit" size="sm">Send</Button></form>}
+
+              {mode === 'voice' && (
+                <div className="flex items-center gap-2 sm:gap-3 w-full">
+                  <Button
+                    variant="outline"
+                    onClick={() => setMuted(!isMuted)}
+                    aria-label={isMuted ? 'Unmute microphone' : 'Mute microphone'}
+                    title={isMuted ? 'Unmute' : 'Mute'}
+                    className={`min-h-[44px] min-w-[44px] h-11 px-3 sm:px-4 shrink-0 transition-colors ${
+                      isMuted ? 'border-amber-400/60 bg-amber-500/10 text-amber-600 dark:text-amber-400 hover:bg-amber-500/20' : ''
+                    }`}
+                  >
+                    {isMuted ? <MicOff className="h-5 w-5" aria-hidden="true" /> : <Mic className="h-5 w-5" aria-hidden="true" />}
+                    <span className="hidden sm:inline">{isMuted ? 'Unmute' : 'Mute'}</span>
+                  </Button>
+
+                  <div className="flex-1 min-w-0">
+                    <MicrophoneVisualizer stream={microphoneStream} active muted={isMuted} compact />
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    onClick={end}
+                    aria-label="End voice session"
+                    title="End session"
+                    className="min-h-[44px] min-w-[44px] h-11 px-3 sm:px-4 shrink-0 border-red-300/40 text-red-600 hover:bg-red-500/10 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors"
+                  >
+                    <PhoneOff className="h-5 w-5" aria-hidden="true" />
+                    <span className="hidden sm:inline">End</span>
+                  </Button>
+                </div>
+              )}
+
+              {mode === 'text' && (
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-end">
+                    <Button variant="outline" size="sm" onClick={end} className="gap-2 text-xs">
+                      <PhoneOff className="h-3.5 w-3.5" /> End session
+                    </Button>
+                  </div>
+                  <form
+                    onSubmit={(event) => {
+                      event.preventDefault()
+                      if (message.trim()) {
+                        sendUserMessage(message.trim())
+                        setMessage('')
+                      }
+                    }}
+                    className="flex gap-2"
+                  >
+                    <input
+                      value={message}
+                      onChange={(event) => setMessage(event.target.value)}
+                      placeholder="Type a message..."
+                      aria-label="Message to tutor"
+                      className="min-w-0 flex-1 rounded-xl border border-(--border-primary) bg-(--bg-card) px-3 py-2 text-sm text-(--text-primary)"
+                    />
+                    <Button type="submit" size="sm">
+                      Send
+                    </Button>
+                  </form>
+                </div>
+              )}
             </section>}
           </div>
         </div>
