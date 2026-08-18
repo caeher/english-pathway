@@ -19,8 +19,13 @@ describe('authentication redirects', () => {
     expect(isSafeRedirectPath('/chats/abc-123')).toBe(true)
     expect(isSafeRedirectPath('https://example.com')).toBe(false)
     expect(isSafeRedirectPath('//example.com')).toBe(false)
+    expect(isSafeRedirectPath('/sign-in')).toBe(false)
+    expect(isSafeRedirectPath('/sign-up')).toBe(false)
     expect(isSafeRedirectPath('/login')).toBe(false)
+    expect(isSafeRedirectPath('/register')).toBe(false)
     expect(getExplicitRedirectParam('/register')).toBeNull()
+    expect(getExplicitRedirectParam('/sign-up')).toBeNull()
+    expect(getExplicitRedirectParam('/sign-in')).toBeNull()
   })
 
   it('uses one active-route rule for exact, nested, and query-string links', () => {
@@ -45,8 +50,9 @@ describe('authentication redirects', () => {
   })
 
   it('only appends safe redirect parameters to auth links', () => {
-    expect(appendRedirectTo('/login', '/learn')).toBe('/login?redirectTo=%2Flearn')
-    expect(appendRedirectTo('/login', 'https://example.com')).toBe('/login')
+    expect(appendRedirectTo('/sign-in', '/learn')).toBe('/sign-in?redirectTo=%2Flearn')
+    expect(appendRedirectTo('/sign-in', 'https://example.com')).toBe('/sign-in')
+    expect(appendRedirectTo('/sign-up', '/review')).toBe('/sign-up?redirectTo=%2Freview')
   })
 
   it('shows contextual navigation for guest, setup, and ready sessions', () => {

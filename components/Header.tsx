@@ -103,14 +103,14 @@ export default function Header({ navigation, isAuthenticated = false }: HeaderPr
             <NavUser email={context.email} fullName={context.fullName} avatarUrl={context.avatarUrl} compact showDashboard={context.onboardingCompleted} variant={isHomePage ? 'hero' : 'default'} />
           ) : (
             <>
-              <Link href="/login" className={
+              <Link href="/sign-in" className={
                 isHomePage
                   ? 'inline-flex text-sm font-bold text-white/90 no-underline transition-colors hover:text-white'
                   : 'inline-flex text-sm font-medium text-(--text-secondary) no-underline transition-colors hover:text-(--accent)'
               }>
                 <span className="hidden sm:inline">Sign In</span><span className="sm:hidden">Login</span>
               </Link>
-              <Link href="/register?redirectTo=%2Fonboarding" className={
+              <Link href="/sign-up?redirectTo=%2Fonboarding" className={
                 isHomePage
                   ? 'inline-flex rounded-xl bg-white px-4 py-2 text-sm font-bold text-(--text-primary) no-underline transition-all hover:-translate-y-0.5 hover:bg-white/95 shadow-md'
                   : 'inline-flex rounded-xl bg-(--accent) px-4 py-2 text-sm font-bold text-white no-underline transition-colors hover:bg-(--accent-hover)'

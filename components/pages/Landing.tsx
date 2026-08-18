@@ -66,7 +66,7 @@ interface LandingProps {
 
 export default function Landing({ isAuthenticated = false }: LandingProps) {
   const reducedMotion = useReducedMotion()
-  const destination = isAuthenticated ? '/learn' : '/register?redirectTo=%2Fonboarding'
+  const destination = isAuthenticated ? '/learn' : '/sign-up?redirectTo=%2Fonboarding'
   const primaryLabel = isAuthenticated ? 'Continue learning' : 'Create your free account'
 
   function onCtaClick(cta: string, ctaDestination: string) {

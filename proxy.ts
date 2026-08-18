@@ -94,6 +94,12 @@ export async function proxy(request: NextRequest, event?: any) {
     return NextResponse.redirect(url)
   }
 
+  if (pathname === '/forgot-password' || pathname === '/reset-password') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/sign-in'
+    return NextResponse.redirect(url)
+  }
+
   return (await clerkHandler(request, event)) ?? NextResponse.next()
 }
 

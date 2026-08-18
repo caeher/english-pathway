@@ -6,8 +6,8 @@ const root = resolve(process.cwd())
 
 describe('Learn page contract', () => {
   it('protects /learn in middleware auth guard', () => {
-    const middleware = readFileSync(resolve(root, 'lib/supabase/middleware.ts'), 'utf8')
-    expect(middleware).toContain("pathname.startsWith('/learn')")
+    const middleware = readFileSync(resolve(root, 'proxy.ts'), 'utf8')
+    expect(middleware).toContain("'/learn(.*)'")
   })
 
   it('redirects legacy curriculum query params to the canonical Learn path', () => {

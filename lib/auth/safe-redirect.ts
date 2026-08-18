@@ -1,4 +1,4 @@
-const GUEST_AUTH_PREFIXES = ['/login', '/register', '/forgot-password', '/reset-password', '/auth']
+const GUEST_AUTH_PREFIXES = ['/sign-in', '/sign-up', '/login', '/register', '/forgot-password', '/reset-password', '/auth']
 
 export function getRedirectPathname(path: string): string {
   return path.split('?')[0] ?? path

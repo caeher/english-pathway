@@ -6,8 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     '',
-    '/login',
-    '/register',
+    '/sign-in',
+    '/sign-up',
     '/how-it-works',
     '/faq',
     '/legal/terms',

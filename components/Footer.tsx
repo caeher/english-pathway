@@ -104,12 +104,12 @@ export default function Footer({ className = '' }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/register?redirectTo=%2Fonboarding" className="transition-colors hover:text-(--accent) no-underline">
+                <Link href="/sign-up?redirectTo=%2Fonboarding" className="transition-colors hover:text-(--accent) no-underline">
                   Get Started
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="transition-colors hover:text-(--accent) no-underline">
+                <Link href="/sign-in" className="transition-colors hover:text-(--accent) no-underline">
                   Sign In
                 </Link>
               </li>

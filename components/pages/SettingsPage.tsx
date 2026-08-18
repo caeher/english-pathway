@@ -270,9 +270,8 @@ export default function SettingsPage({
 
       <Surface as="section" padding="lg" className="space-y-4" aria-labelledby="security-heading">
         <h2 id="security-heading" className="flex items-center gap-2 font-display font-bold text-(--text-primary)"><ShieldCheck className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Security</h2>
-        <p className="text-sm text-(--text-secondary)">Use the provider-managed recovery flow to change your password.</p>
+        <p className="text-sm text-(--text-secondary)">Manage your account session or sign out.</p>
         <div className="flex flex-wrap gap-3">
-          <Button asChild variant="outline"><Link href="/forgot-password">Reset password</Link></Button>
           <SignOutButton />
         </div>
       </Surface>

@@ -45,7 +45,7 @@ export default function FriendlyError({
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         {isUnauthorized ? (
           <Button asChild className="w-full sm:w-auto">
-            <Link href="/login">Sign in</Link>
+            <Link href="/sign-in">Sign in</Link>
           </Button>
         ) : (
           <>

@@ -87,12 +87,12 @@ flowchart TB
 | Group | Routes | Auth |
 |-------|--------|------|
 | `(public)` | `/`, `/how-it-works`, `/faq` | None |
-| `(learn)` | `/learn` | None |
-| `(auth)` | `/login`, `/register`, `/forgot-password`, `/reset-password` | Guest only |
-| `(account)` | `/settings` | Required |
+| `(learn)` | `/learn` | Protected |
+| `(account)` | `/settings`, `/dashboard`, `/chats`, `/curriculum`, `/review`, `/onboarding` | Protected |
 | `(legal)` | `/legal/*` | None |
+| Auth | `/sign-in`, `/sign-up` | Guest / Clerk |
 
-Post-login redirect: `/settings`. `/games/*` redirects to `/learn`. Legacy `/dashboard`, `/admin`, `/teacher` redirect to `/`.
+Post-login redirect: `/settings` or requested destination. Legacy `/login`, `/register`, `/forgot-password`, `/reset-password` redirect to Clerk routes. Legacy `/admin`, `/teacher` redirect to `/`.
 
 ### Content resolution
 
@@ -139,12 +139,12 @@ english-pathway/
 ---
 
 ## 5. Auth flow
-
-1. Forms in `app/(auth)/` → server actions in [`lib/auth/actions.ts`](lib/auth/actions.ts)
-2. OAuth/email → callbacks in `app/auth/callback/` and `app/auth/confirm/`
-3. Middleware in [`lib/supabase/middleware.ts`](lib/supabase/middleware.ts):
-   - `/settings` requires auth
-   - Auth routes redirect logged-in users to `/settings`
+ 
+1. Authentication is powered by **Clerk** at `/sign-in` and `/sign-up`.
+2. Edge middleware in [`proxy.ts`](proxy.ts) uses `clerkMiddleware`:
+   - Protected routes (`/settings`, `/dashboard`, `/chats`, `/curriculum`, `/review`, `/onboarding`, `/learn`) require authentication via `auth.protect()`
+   - Legacy routes (`/login`, `/register`, `/forgot-password`, `/reset-password`) automatically redirect to `/sign-in` or `/sign-up`
+   - Safe redirects preserve target destinations after authentication without open redirect risks.
 
 ---
 

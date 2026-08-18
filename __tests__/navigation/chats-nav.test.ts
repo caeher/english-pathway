@@ -32,7 +32,7 @@ describe('chats navigation', () => {
   })
 
   it('protects /chats in middleware auth guard', () => {
-    const middleware = readFileSync(resolve(process.cwd(), 'lib/supabase/middleware.ts'), 'utf8')
-    expect(middleware).toContain("pathname.startsWith('/chats')")
+    const middleware = readFileSync(resolve(process.cwd(), 'proxy.ts'), 'utf8')
+    expect(middleware).toContain("'/chats(.*)'")
   })
 })
