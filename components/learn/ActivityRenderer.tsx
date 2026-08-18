@@ -501,8 +501,11 @@ export default function ActivityRenderer({
     setResumeState('playing')
   }, [activity.id, chapterId, clearSnapshot, moduleId, type])
 
-  const navigateToActivity = useCallback(async (activityId: string) => {
-    await showActivity(activityId)
+  const navigateToActivity = useCallback(async (
+    activityId: string,
+    options?: { roundIndex?: number; prioritizeItemIndexes?: number[] },
+  ) => {
+    await showActivity(activityId, options)
     setPhase('playing')
     setCompletedResult(null)
     setFollowUpDecision(null)
@@ -538,6 +541,18 @@ export default function ActivityRenderer({
       return
     }
     if (!followUpDecision) return
+
+    if (followUpDecision.tutorPayload.nextRoundIndex !== undefined && followUpDecision.activityId) {
+      setContinueLoading(true)
+      try {
+        await navigateToActivity(followUpDecision.activityId, {
+          roundIndex: followUpDecision.tutorPayload.nextRoundIndex,
+        })
+      } finally {
+        setContinueLoading(false)
+      }
+      return
+    }
 
     if (followUpDecision.action === 'retry' && followUpDecision.activityId === activity.id) {
       handleRetry()
@@ -686,6 +701,7 @@ export default function ActivityRenderer({
         const completedActivityIds = new Set(
           completionEntries.filter(([, done]) => done).map(([id]) => id),
         )
+        const activityMeta = (activity as { roundMeta?: import('@/features/activities').ActivityRoundMetadata }).roundMeta
         decision = planFollowUpPractice({
           currentActivityId: activity.id,
           currentActivityType: activity.type,
@@ -696,6 +712,8 @@ export default function ActivityRenderer({
           hintCount,
           chapterActivities: chapter.activities,
           completedActivityIds,
+          roundIndex: activityMeta?.currentRound,
+          totalRounds: activityMeta?.totalRounds,
         })
         setFollowUpDecision(decision)
       } catch {

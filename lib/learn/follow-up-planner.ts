@@ -16,6 +16,9 @@ export interface FollowUpTutorPayload {
   attempt: number
   weakItemCount: number
   hintCount: number
+  roundIndex?: number
+  nextRoundIndex?: number
+  weakItemIndexes?: readonly number[]
 }
 
 export interface FollowUpDecision {
@@ -36,6 +39,8 @@ export interface PlanFollowUpInput {
   hintCount: number
   chapterActivities: readonly ChapterActivityRef[]
   completedActivityIds: ReadonlySet<string>
+  roundIndex?: number
+  totalRounds?: number
 }
 
 const REINFORCEMENT_TYPES: Record<string, readonly string[]> = {
@@ -134,6 +139,7 @@ function buildDecision(
   action: FollowUpAction,
   activityId: string | null,
   reason: string,
+  extraPayload?: Partial<FollowUpTutorPayload>,
 ): FollowUpDecision {
   const activity = findActivity(input.chapterActivities, activityId)
   return {
@@ -148,6 +154,9 @@ function buildDecision(
       attempt: input.attempt,
       weakItemCount: input.weakItemIndexes.length,
       hintCount: input.hintCount,
+      roundIndex: input.roundIndex,
+      weakItemIndexes: input.weakItemIndexes.length > 0 ? input.weakItemIndexes : undefined,
+      ...extraPayload,
     },
   }
 }
@@ -162,9 +171,28 @@ export function planFollowUpPractice(input: PlanFollowUpInput): FollowUpDecision
     hintCount,
     chapterActivities,
     completedActivityIds,
+    roundIndex = 0,
+    totalRounds = 1,
   } = input
 
+  // If the current round was mastered and more rounds of fresh items exist
+  const hasMoreRounds = totalRounds > 1 && roundIndex + 1 < totalRounds
+
   if (correctness === 'complete') {
+    if (hasMoreRounds) {
+      const nextRound = roundIndex + 1
+      const currentActivity = findActivity(chapterActivities, currentActivityId)
+      return buildDecision(
+        input,
+        'advance',
+        currentActivityId,
+        currentActivity
+          ? `Great job! Continue with round ${nextRound + 1} of "${currentActivity.title}" for fresh examples.`
+          : `Continue to round ${nextRound + 1} for fresh examples.`,
+        { nextRoundIndex: nextRound },
+      )
+    }
+
     const nextId = pickNextActivityId(
       chapterActivities,
       currentActivityId,
@@ -231,6 +259,7 @@ export function planFollowUpPractice(input: PlanFollowUpInput): FollowUpDecision
       reinforceActivity
         ? `${weakNote} Practice with "${reinforceActivity.title}" to reinforce this skill.`
         : `${weakNote} Try a related practice activity to reinforce this skill.`,
+      { weakItemIndexes },
     )
   }
 
@@ -256,13 +285,17 @@ export function planFollowUpPractice(input: PlanFollowUpInput): FollowUpDecision
 
   if (attempt < 3) {
     const currentActivity = findActivity(chapterActivities, currentActivityId)
+    const targetedNote = weakItemIndexes.length > 0
+      ? ` Focusing on the ${weakItemIndexes.length} item${weakItemIndexes.length === 1 ? '' : 's'} to improve.`
+      : ''
     return buildDecision(
       input,
       'retry',
       currentActivityId,
       currentActivity
-        ? `Try "${currentActivity.title}" again to strengthen this skill.`
-        : 'Try this activity again to strengthen this skill.',
+        ? `Try "${currentActivity.title}" again to strengthen this skill.${targetedNote}`
+        : `Try this activity again to strengthen this skill.${targetedNote}`,
+      { weakItemIndexes },
     )
   }
 
@@ -293,14 +326,23 @@ export function planFollowUpPractice(input: PlanFollowUpInput): FollowUpDecision
 export function formatFollowUpTutorMessage(decision: FollowUpDecision): string {
   const { tutorPayload, activityId, activityTitle } = decision
   const target = activityTitle ?? activityId ?? 'none'
-  return [
+  const roundInfo = tutorPayload.nextRoundIndex !== undefined
+    ? `round ${tutorPayload.nextRoundIndex + 1}`
+    : tutorPayload.roundIndex !== undefined
+    ? `round ${tutorPayload.roundIndex + 1}`
+    : null
+
+  const parts = [
     'Follow-up decision:',
     tutorPayload.action,
     `activity ${target}`,
+    roundInfo,
     `score ${tutorPayload.scorePercent}%`,
     `attempt ${tutorPayload.attempt}`,
     `weak items ${tutorPayload.weakItemCount}`,
     `hints used ${tutorPayload.hintCount}`,
     `reason: ${decision.reason}`,
-  ].join(' | ')
+  ].filter(Boolean)
+
+  return parts.join(' | ')
 }

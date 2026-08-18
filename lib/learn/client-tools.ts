@@ -2,6 +2,14 @@ import { learnSessionActions, useLearnSessionStore } from '@/stores/useLearnSess
 import { curriculumChapterHref } from '@/lib/curriculum/href'
 import type { PanelBlock } from '@/lib/tutor/panel-content'
 import type { ChapterActivity } from '@/types'
+import type { ActivityRoundMetadata, SliceRoundOptions } from '@/features/activities/sizing'
+
+export interface FetchActivityOptions extends SliceRoundOptions {}
+
+export interface ShowActivityOptions extends SliceRoundOptions {
+  context?: string
+  expectedAction?: string
+}
 
 export async function fetchCurriculumContext(params: {
   query: string
@@ -22,12 +30,24 @@ export async function fetchCurriculumContext(params: {
   return data.matches
 }
 
-export async function fetchActivityById(activityId: string): Promise<{
+export async function fetchActivityById(
+  activityId: string,
+  options?: FetchActivityOptions,
+): Promise<{
   activity: ChapterActivity
   chapterId: string
   moduleId: string
+  roundMeta?: ActivityRoundMetadata
 }> {
-  const res = await fetch(`/api/tutor/activity/${encodeURIComponent(activityId)}`)
+  const url = new URL(`/api/tutor/activity/${encodeURIComponent(activityId)}`, window.location.origin)
+  if (options?.roundIndex !== undefined) url.searchParams.set('round', String(options.roundIndex))
+  if (options?.offset !== undefined) url.searchParams.set('offset', String(options.offset))
+  if (options?.limit !== undefined) url.searchParams.set('limit', String(options.limit))
+  if (options?.prioritizeItemIndexes && options.prioritizeItemIndexes.length > 0) {
+    url.searchParams.set('weakItems', options.prioritizeItemIndexes.join(','))
+  }
+
+  const res = await fetch(url.toString())
   if (!res.ok) {
     throw new Error('Activity not found')
   }
@@ -40,9 +60,9 @@ export function showGrammar(blocks: PanelBlock[], title?: string) {
 
 export async function showActivity(
   activityId: string,
-  options?: { context?: string; expectedAction?: string },
+  options?: ShowActivityOptions,
 ) {
-  const data = await fetchActivityById(activityId)
+  const data = await fetchActivityById(activityId, options)
   learnSessionActions.setActivity(data.activity, data.chapterId, data.moduleId, options)
   return {
     success: true,
@@ -50,6 +70,7 @@ export async function showActivity(
     curriculumUrl: curriculumChapterHref(data.moduleId, data.chapterId),
     context: options?.context,
     expectedAction: options?.expectedAction,
+    roundMeta: data.roundMeta,
   }
 }
 

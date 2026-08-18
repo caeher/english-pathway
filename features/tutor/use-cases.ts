@@ -12,10 +12,18 @@ import type { TutorContextRequest, TutorMemoryDeleteInput, TutorMemoryWriteInput
 
 const allowedTools = ['showGrammar', 'showActivity', 'showQuestion', 'clearPanel', 'fetchCurriculumContext', 'listChapterActivities', 'getPanelState'] as const
 
-export async function getTutorActivityUseCase(activityId: string) {
-  const resolved = resolveActivityByIdValidated(activityId)
+export async function getTutorActivityUseCase(
+  activityId: string,
+  options?: import('@/lib/learn/resolve-activity').ResolveActivityOptions,
+) {
+  const resolved = resolveActivityByIdValidated(activityId, options)
   if (!resolved) throw new DomainError('NOT_FOUND', 'Activity not found')
-  return { activity: resolved.activity, chapterId: resolved.chapter.id, moduleId: resolved.module.id }
+  return {
+    activity: resolved.activity,
+    chapterId: resolved.chapter.id,
+    moduleId: resolved.module.id,
+    roundMeta: resolved.roundMeta,
+  }
 }
 
 export async function getTutorChapterActivitiesUseCase(chapterId: string) {

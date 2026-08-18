@@ -18,6 +18,7 @@ export const showActivityActionSchema = z.object({
   activityId: safeIdentifier,
   context: safePanelTextField(300).optional(),
   expectedAction: safePanelTextField(200).optional(),
+  roundIndex: z.number().int().min(0).max(50).optional(),
 })
 
 export const showGrammarActionSchema = z.object({

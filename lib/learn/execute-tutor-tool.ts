@@ -44,9 +44,13 @@ export async function executeTutorTool(name: string, rawArguments: unknown): Pro
         const activity = await showActivity(parsed.data.activityId, {
           context: parsed.data.context,
           expectedAction: parsed.data.expectedAction,
+          roundIndex: parsed.data.roundIndex,
         })
         const contextStr = parsed.data.context ? ` with purpose: "${parsed.data.context}"` : ''
-        result = `Activity "${activity.title}" is now visible in the learning panel${contextStr}. Give one short completion instruction, then stay in waiting state for its explicit outcome message before continuing.`
+        const roundStr = activity.roundMeta && activity.roundMeta.totalRounds > 1
+          ? ` (round ${activity.roundMeta.currentRound + 1} of ${activity.roundMeta.totalRounds})`
+          : ''
+        result = `Activity "${activity.title}"${roundStr} is now visible in the learning panel${contextStr}. Give one short completion instruction, then stay in waiting state for its explicit outcome message before continuing.`
       }
     } else if (name === 'showQuestion') {
       const parsed = showQuestionActionSchema.safeParse(rawArguments)
