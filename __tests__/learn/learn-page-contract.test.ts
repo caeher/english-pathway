@@ -39,17 +39,15 @@ describe('tutor providers', () => {
     expect(openAiProvider).not.toContain("const voiceSupported = typeof navigator !== 'undefined'")
   })
 
-  it('starts the OpenAI tutor proactively and waits for its activity instruction before pausing', () => {
+  it('maintains active non-terminal sessions without disconnect timers during waiting states', () => {
     const openAiProvider = readFileSync(resolve(root, 'components/voice/OpenAiRealtimeTutorProvider.tsx'), 'utf8')
     const elevenLabsProvider = readFileSync(resolve(root, 'components/voice/VoiceTutorProvider.tsx'), 'utf8')
-    const activityVoicePause = readFileSync(resolve(root, 'lib/learn/activity-voice-pause.ts'), 'utf8')
 
     expect(openAiProvider).toContain('Start the lesson now.')
-    expect(openAiProvider).toContain('setActivityPauseReady(true)')
-    expect(openAiProvider).not.toContain('window.setTimeout(() => { void end() }, 750)')
-    expect(elevenLabsProvider).toContain('activityPauseSawSpeechRef')
-    expect(openAiProvider).toContain('ACTIVITY_VOICE_WRAP_UP_DELAY_MS')
-    expect(elevenLabsProvider).toContain('ACTIVITY_VOICE_WRAP_UP_DELAY_MS')
-    expect(activityVoicePause).toContain('ACTIVITY_VOICE_WRAP_UP_DELAY_MS = 6_000')
+    expect(openAiProvider).not.toContain('setActivityPauseReady')
+    expect(openAiProvider).not.toContain('ACTIVITY_VOICE_WRAP_UP_DELAY_MS')
+    expect(elevenLabsProvider).not.toContain('activityPauseSawSpeechRef')
+    expect(elevenLabsProvider).not.toContain('ACTIVITY_VOICE_WRAP_UP_DELAY_MS')
+    expect(elevenLabsProvider).not.toContain('pausedForActivityRef')
   })
 })

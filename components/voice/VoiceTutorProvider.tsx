@@ -15,10 +15,6 @@ import { trackEvent } from '@/lib/analytics/events'
 import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
-import {
-  ACTIVITY_VOICE_WRAP_UP_DELAY_MS,
-  TUTOR_ACTIVITY_PRESENTED_EVENT,
-} from '@/lib/learn/activity-voice-pause'
 
 interface TutorControlsProps {
   mode: SessionMode
@@ -62,67 +58,12 @@ function TutorControls({
     start,
     end,
   } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted: handleSessionStarted, onSessionEnded })
-  const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
+  const { onActivityOutcome, onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
-  const pausedForActivityRef = useRef(false)
-  const activityPauseSawSpeechRef = useRef(false)
-  const activityPauseTimerRef = useRef<number | null>(null)
-
-  const clearActivityPauseTimer = useCallback(() => {
-    if (activityPauseTimerRef.current !== null) {
-      window.clearTimeout(activityPauseTimerRef.current)
-      activityPauseTimerRef.current = null
-    }
-  }, [])
-
-  useEffect(() => {
-    if (mode !== 'voice') return
-    const pauseForActivity = () => {
-      if (!active || pausedForActivityRef.current) return
-      pausedForActivityRef.current = true
-      activityPauseSawSpeechRef.current = isSpeaking
-      if (!isSpeaking) {
-        clearActivityPauseTimer()
-        activityPauseTimerRef.current = window.setTimeout(() => {
-          activityPauseTimerRef.current = null
-          void end()
-        }, 15_000)
-      }
-    }
-    window.addEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
-    return () => window.removeEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
-  }, [active, clearActivityPauseTimer, end, isSpeaking, mode])
-
-  useEffect(() => {
-    if (mode !== 'voice' || !active || !pausedForActivityRef.current) return
-    if (isSpeaking) {
-      activityPauseSawSpeechRef.current = true
-      clearActivityPauseTimer()
-      return
-    }
-
-    const delay = activityPauseSawSpeechRef.current
-      ? ACTIVITY_VOICE_WRAP_UP_DELAY_MS
-      : 15_000
-    activityPauseTimerRef.current = window.setTimeout(() => {
-      activityPauseTimerRef.current = null
-      void end()
-    }, delay)
-    return clearActivityPauseTimer
-  }, [active, clearActivityPauseTimer, end, isSpeaking, mode])
-
-  useEffect(() => clearActivityPauseTimer, [clearActivityPauseTimer])
 
   const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
     onActivityComplete(result)
-    if (mode === 'voice' && pausedForActivityRef.current) {
-      const shouldReconnect = !active
-      clearActivityPauseTimer()
-      pausedForActivityRef.current = false
-      activityPauseSawSpeechRef.current = false
-      if (shouldReconnect) window.setTimeout(() => { void start() }, 0)
-    }
-  }, [active, clearActivityPauseTimer, mode, onActivityComplete, start])
+  }, [onActivityComplete])
 
   useEffect(() => {
     if (!active) {
@@ -226,6 +167,7 @@ function TutorControls({
         </div>
       }
       onActivityComplete={handleActivityComplete}
+      onActivityOutcome={onActivityOutcome}
       onActivityDifficult={onActivityDifficult}
       onQuestionAnswered={onQuestionAnswered}
     />

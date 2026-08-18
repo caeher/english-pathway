@@ -14,9 +14,32 @@ interface UseTutorSessionOptions {
 }
 
 export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onSessionEnded }: UseTutorSessionOptions) {
-  const { startSession, endSession, status, isMuted, setMuted, sendUserMessage, isSpeaking } = useConversation()
-  const [error, setError] = useState<string | null>(null)
+  const isExplicitEndRef = useRef(false)
   const sessionStartedAt = useRef<number | null>(null)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleConversationError = useCallback((err: unknown) => {
+    const message = typeof err === 'string'
+      ? err
+      : err instanceof Error
+        ? err.message
+        : 'The tutor connection encountered an error. You can restart the lesson.'
+    setError(message)
+    trackEvent('learn_session_error', { mode, reason: 'provider_error' })
+  }, [mode])
+
+  const handleConversationDisconnect = useCallback(() => {
+    if (!isExplicitEndRef.current && sessionStartedAt.current !== null) {
+      setError('The tutor disconnected unexpectedly. You can reconnect to continue.')
+      trackEvent('learn_session_error', { mode, reason: 'unexpected_disconnect' })
+    }
+  }, [mode])
+
+  const { startSession, endSession, status, isMuted, setMuted, sendUserMessage, isSpeaking } = useConversation({
+    onError: handleConversationError,
+    onDisconnect: handleConversationDisconnect,
+  })
+
   const active = status === 'connected'
   const connecting = status === 'connecting'
 
@@ -35,6 +58,7 @@ export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onS
 
   const start = useCallback(async () => {
     setError(null)
+    isExplicitEndRef.current = false
     if (mode === 'voice' && !(await onCheckMicrophone())) return false
 
     try {
@@ -64,7 +88,10 @@ export function useTutorSession({ mode, onCheckMicrophone, onSessionStarted, onS
     }
   }, [mode, onCheckMicrophone, onSessionStarted, startSession])
 
-  const end = useCallback(() => endSession(), [endSession])
+  const end = useCallback(() => {
+    isExplicitEndRef.current = true
+    endSession()
+  }, [endSession])
 
   return {
     active,

@@ -9,10 +9,6 @@ import { trackEvent } from '@/lib/analytics/events'
 import { useTutorActivityActions } from './hooks/useTutorActivityActions'
 import type { SessionMode } from './session-types'
 import { executeTutorTool } from '@/lib/learn/execute-tutor-tool'
-import {
-  ACTIVITY_VOICE_WRAP_UP_DELAY_MS,
-  TUTOR_ACTIVITY_PRESENTED_EVENT,
-} from '@/lib/learn/activity-voice-pause'
 
 type Credits = { audioSecondsRemaining: number; assistantMessagesRemaining: number }
 
@@ -52,10 +48,8 @@ export default function OpenAiRealtimeTutorProvider() {
   const maxSecondsRef = useRef(0)
   const endTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
+  const isExplicitEndRef = useRef(false)
   const processedCallIdsRef = useRef<Set<string>>(new Set())
-  const pauseAfterActivityInstructionRef = useRef(false)
-  const resumeAfterActivityRef = useRef(false)
-  const [activityPauseReady, setActivityPauseReady] = useState(false)
 
   useEffect(() => {
     sessionStorage.removeItem('ep-session-plan')
@@ -99,7 +93,11 @@ export default function OpenAiRealtimeTutorProvider() {
     channel.send(JSON.stringify({ type: 'response.create' }))
   }, [])
 
-  const { onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
+  const { onActivityOutcome, onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
+
+  const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
+    onActivityComplete(result)
+  }, [onActivityComplete])
 
   const loadCredits = useCallback(async () => {
     const response = await fetch('/api/credits')
@@ -144,6 +142,7 @@ export default function OpenAiRealtimeTutorProvider() {
 
   const start = useCallback(async () => {
     setError(null)
+    isExplicitEndRef.current = false
     setConnecting(true)
     processedCallIdsRef.current.clear()
     try {
@@ -154,7 +153,13 @@ export default function OpenAiRealtimeTutorProvider() {
       audioRef.current = audio
       pc.ontrack = (event) => { audio.srcObject = event.streams[0] }
       pc.onconnectionstatechange = () => {
-        if (pc.connectionState === 'failed' || pc.connectionState === 'disconnected') void end()
+        if (pc.connectionState === 'failed' || pc.connectionState === 'disconnected') {
+          if (!isExplicitEndRef.current && startedAtRef.current !== null) {
+            setError('The voice connection was lost. Please restart the lesson.')
+            trackEvent('learn_session_error', { mode, provider: 'openai', reason: 'connection_lost' })
+          }
+          void end()
+        }
       }
 
       if (mode === 'voice') {
@@ -176,15 +181,10 @@ export default function OpenAiRealtimeTutorProvider() {
         }
 
         if (payload.type === 'response.done' && Array.isArray(payload.response?.output)) {
-          const hasFunctionCall = payload.response.output.some((item) => item.type === 'function_call')
           for (const item of payload.response.output) {
             if (item.type === 'function_call' && item.name && item.call_id) {
               void handleFunctionCall(item.name, item.call_id, item.arguments)
             }
-          }
-          if (pauseAfterActivityInstructionRef.current && !hasFunctionCall) {
-            pauseAfterActivityInstructionRef.current = false
-            setActivityPauseReady(true)
           }
         }
       }
@@ -214,11 +214,7 @@ export default function OpenAiRealtimeTutorProvider() {
       }, maxSeconds * 1_000)
       channel.onopen = () => {
         flushPendingMessages()
-        if (resumeAfterActivityRef.current) {
-          resumeAfterActivityRef.current = false
-        } else {
-          sendUserMessage('Start the lesson now. Greet the learner and lead with the next appropriate English lesson; do not wait for the learner to speak first.')
-        }
+        sendUserMessage('Start the lesson now. Greet the learner and lead with the next appropriate English lesson; do not wait for the learner to speak first.')
       }
     } catch (caughtError) {
       if (creditSessionIdRef.current) await end()
@@ -233,32 +229,6 @@ export default function OpenAiRealtimeTutorProvider() {
       setConnecting(false)
     }
   }, [end, flushPendingMessages, handleFunctionCall, mode, sendUserMessage])
-
-  useEffect(() => {
-    const pauseForActivity = () => {
-      if (!active || pauseAfterActivityInstructionRef.current) return
-      pauseAfterActivityInstructionRef.current = true
-      resumeAfterActivityRef.current = true
-    }
-    window.addEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
-    return () => window.removeEventListener(TUTOR_ACTIVITY_PRESENTED_EVENT, pauseForActivity)
-  }, [active])
-
-  useEffect(() => {
-    if (!activityPauseReady || !active) return
-    const timer = window.setTimeout(() => {
-      setActivityPauseReady(false)
-      void end()
-    }, ACTIVITY_VOICE_WRAP_UP_DELAY_MS)
-    return () => window.clearTimeout(timer)
-  }, [active, activityPauseReady, end])
-
-  const handleActivityComplete = useCallback((result: Parameters<typeof onActivityComplete>[0]) => {
-    onActivityComplete(result)
-    if (resumeAfterActivityRef.current && !active) {
-      window.setTimeout(() => { void start() }, 0)
-    }
-  }, [active, onActivityComplete, start])
 
   const toggleMuted = () => {
     stream?.getAudioTracks().forEach((track) => { track.enabled = muted })
@@ -288,12 +258,13 @@ export default function OpenAiRealtimeTutorProvider() {
           <Button type="button" onClick={() => void start()} disabled={connecting || !voiceSupported || (credits?.audioSecondsRemaining === 0)} className="mt-5 w-full sm:w-auto">{connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}{connecting ? 'Connecting…' : 'Start voice lesson'}</Button>
         </Surface>
         </>}
-        {active && <section className="space-y-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2><p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p></div><Button variant="outline" onClick={() => void end()}><PhoneOff className="h-4 w-4" /> End</Button></div>
+        {active && <section className="space-y-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-black text-(--text-primary)">Speak naturally</h2><p className="mt-1 text-sm text-(--text-secondary)">{audioLabel}</p></div><Button variant="outline" onClick={() => { isExplicitEndRef.current = true; void end() }}><PhoneOff className="h-4 w-4" /> End</Button></div>
           <MicrophoneVisualizer stream={stream} active /><Button variant="outline" onClick={toggleMuted}>{muted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}{muted ? 'Unmute' : 'Mute'}</Button>
         </section>}
       </div>
     </div>}
     onActivityComplete={handleActivityComplete}
+    onActivityOutcome={onActivityOutcome}
     onActivityDifficult={onActivityDifficult}
     onQuestionAnswered={onQuestionAnswered}
   />
