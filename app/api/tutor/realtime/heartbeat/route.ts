@@ -1,11 +1,11 @@
 import { z } from 'zod'
 import { apiErrorResponse, DomainError, respondWithApiErrors } from '@/lib/api/errors'
 import { getAuthenticatedContext } from '@/lib/api/context'
-import { finishAudioCreditSession, AUDIO_CREDIT_SECONDS } from '@/lib/credits/usage'
+import { heartbeatAudioCreditSession } from '@/lib/credits/usage'
 import { enforceRateLimit } from '@/lib/security/enforce-rate-limit'
 
-const finishSchema = z.object({ sessionId: z.string().uuid(), seconds: z.number().int().min(0).max(AUDIO_CREDIT_SECONDS) })
-const REALTIME_FINISH_ROUTE = '/api/tutor/realtime/finish'
+const heartbeatSchema = z.object({ sessionId: z.string().uuid() })
+const REALTIME_HEARTBEAT_ROUTE = '/api/tutor/realtime/heartbeat'
 
 async function parseRequestBody(request: Request): Promise<unknown> {
   try {
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
   const limited = await enforceRateLimit({
     request,
-    route: REALTIME_FINISH_ROUTE,
+    route: REALTIME_HEARTBEAT_ROUTE,
     userId: context.userId,
     supabase: context.supabase,
     surface: 'realtime',
@@ -31,10 +31,11 @@ export async function POST(request: Request) {
   if (limited) return limited
 
   const body = await parseRequestBody(request)
-  const parsed = finishSchema.safeParse(body)
-  if (!parsed.success) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid voice session completion.'), 'Invalid voice session completion')
+  const parsed = heartbeatSchema.safeParse(body)
+  if (!parsed.success) return apiErrorResponse(new DomainError('INVALID_INPUT', 'Invalid heartbeat payload.'), 'Invalid heartbeat payload')
+
   return respondWithApiErrors(
-    () => finishAudioCreditSession(context.supabase, parsed.data.sessionId, parsed.data.seconds),
-    'Unable to update voice credits.',
+    () => heartbeatAudioCreditSession(context.supabase, parsed.data.sessionId, context.userId),
+    'Unable to update session heartbeat.',
   )
 }

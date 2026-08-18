@@ -48,6 +48,7 @@ export default function OpenAiRealtimeTutorProvider() {
   const startedAtRef = useRef<number | null>(null)
   const maxSecondsRef = useRef(0)
   const endTimerRef = useRef<number | null>(null)
+  const heartbeatTimerRef = useRef<number | null>(null)
   const endingRef = useRef(false)
   const isExplicitEndRef = useRef(false)
   const processedCallIdsRef = useRef<Set<string>>(new Set())
@@ -60,6 +61,57 @@ export default function OpenAiRealtimeTutorProvider() {
   // hydration so a full /learn reload does not preserve a false SSR value.
   useEffect(() => {
     setVoiceSupported(Boolean(navigator.mediaDevices?.getUserMedia))
+  }, [])
+
+  // Page lifecycle listeners: reliable finish beacon on pagehide/unload, and heartbeat flush on visibility change.
+  useEffect(() => {
+    const sendCleanupBeacon = () => {
+      const sessionId = creditSessionIdRef.current
+      const startedAt = startedAtRef.current
+      if (!sessionId || startedAt === null) return
+      const seconds = Math.min(maxSecondsRef.current, Math.max(0, Math.ceil((Date.now() - startedAt) / 1000)))
+      const payload = JSON.stringify({ sessionId, seconds })
+      if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+        navigator.sendBeacon('/api/tutor/realtime/finish', payload)
+      } else {
+        fetch('/api/tutor/realtime/finish', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+          keepalive: true,
+        }).catch(() => {})
+      }
+    }
+
+    const handlePageHide = () => {
+      sendCleanupBeacon()
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden' && creditSessionIdRef.current) {
+        const sessionId = creditSessionIdRef.current
+        const payload = JSON.stringify({ sessionId })
+        if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+          navigator.sendBeacon('/api/tutor/realtime/heartbeat', payload)
+        } else {
+          fetch('/api/tutor/realtime/heartbeat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload,
+            keepalive: true,
+          }).catch(() => {})
+        }
+      }
+    }
+
+    window.addEventListener('pagehide', handlePageHide)
+    window.addEventListener('beforeunload', handlePageHide)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => {
+      window.removeEventListener('pagehide', handlePageHide)
+      window.removeEventListener('beforeunload', handlePageHide)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
   }, [])
 
   const sendUserMessage = useCallback((text: string) => {
@@ -111,7 +163,14 @@ export default function OpenAiRealtimeTutorProvider() {
   const end = useCallback(async () => {
     if (endingRef.current) return
     endingRef.current = true
-    if (endTimerRef.current !== null) window.clearTimeout(endTimerRef.current)
+    if (endTimerRef.current !== null) {
+      window.clearTimeout(endTimerRef.current)
+      endTimerRef.current = null
+    }
+    if (heartbeatTimerRef.current !== null) {
+      window.clearInterval(heartbeatTimerRef.current)
+      heartbeatTimerRef.current = null
+    }
     const startedAt = startedAtRef.current
     const seconds = startedAt ? Math.min(maxSecondsRef.current, Math.max(0, Math.ceil((Date.now() - startedAt) / 1000))) : 0
     const creditSessionId = creditSessionIdRef.current
@@ -128,10 +187,17 @@ export default function OpenAiRealtimeTutorProvider() {
     startedAtRef.current = null
     creditSessionIdRef.current = null
     if (creditSessionId) {
-      const response = await fetch('/api/tutor/realtime/finish', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sessionId: creditSessionId, seconds }),
-      })
-      if (response.ok) setCredits(await response.json() as Credits)
+      try {
+        const response = await fetch('/api/tutor/realtime/finish', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: creditSessionId, seconds }),
+          keepalive: true,
+        })
+        if (response.ok) setCredits(await response.json() as Credits)
+      } catch {
+        // Fallback handled by server lease expiration
+      }
     }
     if (seconds) {
       trackEvent('learn_session_end', { mode, duration_seconds: seconds, provider: 'openai' })
@@ -221,6 +287,17 @@ export default function OpenAiRealtimeTutorProvider() {
       startedAtRef.current = Date.now()
       setActive(true)
       trackEvent('learn_session_start', { mode, provider: 'openai' })
+      if (heartbeatTimerRef.current !== null) window.clearInterval(heartbeatTimerRef.current)
+      heartbeatTimerRef.current = window.setInterval(() => {
+        const sessionId = creditSessionIdRef.current
+        if (!sessionId) return
+        fetch('/api/tutor/realtime/heartbeat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId }),
+          keepalive: true,
+        }).catch(() => {})
+      }, 30_000)
       endTimerRef.current = window.setTimeout(() => {
         setError('Your voice credits are finished for this account.')
         void end()

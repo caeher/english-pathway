@@ -6,6 +6,8 @@ export const ASSISTANT_MESSAGE_CREDITS = 50
 export type UsageCredits = {
   audioSecondsRemaining: number
   assistantMessagesRemaining: number
+  hasActiveSession?: boolean
+  activeSessionElapsed?: number
 }
 
 function toCredits(value: unknown): UsageCredits {
@@ -13,6 +15,8 @@ function toCredits(value: unknown): UsageCredits {
   return {
     audioSecondsRemaining: Math.max(0, Math.min(AUDIO_CREDIT_SECONDS, Number(data?.audioSecondsRemaining ?? AUDIO_CREDIT_SECONDS))),
     assistantMessagesRemaining: Math.max(0, Math.min(ASSISTANT_MESSAGE_CREDITS, Number(data?.assistantMessagesRemaining ?? ASSISTANT_MESSAGE_CREDITS))),
+    ...(data?.hasActiveSession !== undefined ? { hasActiveSession: Boolean(data.hasActiveSession) } : {}),
+    ...(data?.activeSessionElapsed !== undefined ? { activeSessionElapsed: Number(data.activeSessionElapsed) } : {}),
   }
 }
 
@@ -39,6 +43,15 @@ export async function startAudioCreditSession(supabase: AppSupabaseClient, userI
     maxSeconds: result?.maxSeconds,
     reason: result?.reason,
   }
+}
+
+export async function heartbeatAudioCreditSession(supabase: AppSupabaseClient, sessionId: string, userId?: string) {
+  const { data, error } = await supabase.rpc('heartbeat_audio_credit_session', {
+    p_session_id: sessionId,
+    ...(userId ? { p_user_id: userId } : {})
+  })
+  if (error) throw new Error(`Failed to update audio credit session heartbeat: ${error.message}`)
+  return data as { sessionId?: string; elapsed?: number; remaining?: number; error?: string } | null
 }
 
 export async function finishAudioCreditSession(supabase: AppSupabaseClient, sessionId: string, seconds: number, userId?: string): Promise<UsageCredits> {

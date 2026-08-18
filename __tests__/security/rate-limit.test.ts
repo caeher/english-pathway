@@ -76,6 +76,7 @@ describe('durable rate limiting', () => {
     expect(getRateLimitPolicy('/api/english-assistant')).toEqual({ limit: 12, windowMs: 60_000 })
     expect(getRateLimitPolicy('/api/tutor/realtime')).toEqual({ limit: 6, windowMs: 60_000 })
     expect(getRateLimitPolicy('/api/tutor/realtime/finish')).toEqual({ limit: 20, windowMs: 60_000 })
+    expect(getRateLimitPolicy('/api/tutor/realtime/heartbeat')).toEqual({ limit: 30, windowMs: 60_000 })
   })
 
   it('returns a consistent 429 response with Retry-After', async () => {

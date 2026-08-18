@@ -194,6 +194,7 @@ export type Database = {
           consumed_seconds: number | null
           expires_at: string
           id: string
+          last_heartbeat_at: string | null
           max_seconds: number
           started_at: string
           status: string
@@ -204,6 +205,7 @@ export type Database = {
           consumed_seconds?: number | null
           expires_at: string
           id?: string
+          last_heartbeat_at?: string | null
           max_seconds: number
           started_at?: string
           status?: string
@@ -214,6 +216,7 @@ export type Database = {
           consumed_seconds?: number | null
           expires_at?: string
           id?: string
+          last_heartbeat_at?: string | null
           max_seconds?: number
           started_at?: string
           status?: string
@@ -1093,6 +1096,13 @@ export type Database = {
       get_usage_credits:
         | { Args: never; Returns: Json }
         | { Args: { p_user_id?: string }; Returns: Json }
+      heartbeat_audio_credit_session: {
+        Args: {
+          p_session_id: string
+          p_user_id?: string
+        }
+        Returns: Json
+      }
       match_knowledge: {
         Args: { filter?: Json; match_count?: number; query_embedding: string }
         Returns: {
