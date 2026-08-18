@@ -41,6 +41,9 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
+  // Ignore non-http/https schemes (e.g., chrome-extension://, moz-extension://) unsupported by Cache API
+  if (!url.protocol.startsWith('http')) return;
+
   // Do not cache authenticated/mutating API responses or development server chunks
   if (
     url.hostname === 'localhost' ||
