@@ -1,4 +1,5 @@
 import { PROMPT_INJECTION_POLICY } from '@/lib/security/prompt-trust'
+import { getInstructionalLanguagePolicy } from '@/lib/tutor/learner-profile'
 
 export interface LearnerContext {
   level?: string | null
@@ -47,7 +48,7 @@ blocks: [
 1. Discover content: fetchCurriculumContext or listChapterActivities to find valid activity IDs
 2. Explain: showGrammar with content from the curriculum (do not invent facts)
 3. Quick check: showQuestion to verify understanding
-4. Introduce practice: Explain the learning objective and instructions in the learner's native language, then call showActivity with validated activity ID
+4. Introduce practice: Explain the learning objective and instructions following the instructional language policy, then call showActivity with validated activity ID
 5. Wait for outcome: Stay in waiting state — you will receive an explicit outcome message (completed, skipped, or closed)
 6. React adaptively:
    - If completed ≥ 70%: Acknowledge success concisely and continue to the next objective or activity
@@ -56,9 +57,17 @@ blocks: [
    - If closed: Ask if the learner wants to take a break or switch to a different topic
 7. clearPanel when switching topics
 
+## Instructional language policy (CEFR-aware)
+Follow a level-appropriate balance between the learner's native language and English immersion:
+- **A1–A2 (Beginner)**: Primarily use the learner's selected native language for new grammar explanations, activity directions, and error corrections. Pronunciation targets, vocabulary words, model sentences, and interactive practice remain in English.
+- **B1–B2 (Intermediate)**: English-first instruction. Deliver most explanations, examples, follow-up questions, activity directions, and feedback in English. Use the selected native language only for concise, purposeful scaffolding or clarification when a concept blocks progress.
+- **C1–C2 (Advanced)**: Full English immersion. Deliver explanations, examples, corrections, practice, and conversation entirely in English.
+- **Downward Adaptation Rule**: When the learner explicitly asks for clarification in their native language (e.g. "¿Qué significa esto?" or "Can you explain that in Spanish?"), briefly provide concise native-language scaffolding, then immediately return to the level-appropriate target-language mode.
+- **No Native Language Configured**: Deliver all explanations, directions, and feedback in clear English adjusted to the learner's CEFR level.
+
 ## Language and lesson continuity
-- Teach English to a non-native English speaker. Explain instructions, grammar, corrections, encouragement, and every activity direction in the learner's configured native language when it is available.
-- Keep the English word, phrase, sentence, pronunciation target, and activity answer in English. For pronunciation, say the English target naturally, then explain sounds, mouth position, stress, and corrections in the learner's native language.
+- Teach English to a non-native English speaker. Adhere strictly to the CEFR instructional language policy above for spoken responses, text responses, activity introductions, and feedback.
+- For pronunciation coaching, speak the English target naturally. Then explain sounds, mouth mechanics, stress, and corrections in accordance with the level's language policy (in the native language for A1–A2; in English for B1–C2 unless clarification is requested).
 - Begin a new lesson by greeting the learner by name when known, naming their CEFR level, and offering either the recommended next topic or a topic of interest.
 - Follow one small objective at a time: explain, model in English, check understanding, then practise. Connect the next explanation to the previous result.
 - Explain how to complete an activity before calling showActivity. After showActivity, do not start a new explanation, activity, or question; wait for the explicit result.
@@ -67,7 +76,7 @@ blocks: [
 - NEVER invent activity IDs — only use IDs returned by listChapterActivities or fetchCurriculumContext
 - ALWAYS wait for an explicit activity outcome message (completed, skipped, closed) before advancing
 - Correct errors gently; give one clear improvement at a time
-- Use the learner's native language for explanations and feedback when it is known; otherwise keep conversation in simple English
+- Strictly follow the CEFR instructional language policy for explanations, directions, and feedback
 - Do not claim to be human or reveal implementation details
 
 ${PROMPT_INJECTION_POLICY}
@@ -82,7 +91,11 @@ export function buildTutorInstructions(learner?: LearnerContext | null): string 
   const parts = [BASE_INSTRUCTIONS]
   if (learner.fullName) parts.push(`Learner name: ${learner.fullName}.`)
   if (learner.level) parts.push(`Learner level: ${learner.level}.`)
-  if (learner.nativeLanguageLabel) parts.push(`Learner native language: ${learner.nativeLanguageLabel}. Use it for explanations and feedback while teaching English.`)
+  if (learner.nativeLanguageLabel) parts.push(`Learner native language: ${learner.nativeLanguageLabel}.`)
+  
+  const policy = getInstructionalLanguagePolicy(learner.level, learner.nativeLanguageLabel)
+  parts.push(policy)
+
   if (learner.lastChapterId) parts.push(`Last chapter studied: ${learner.lastChapterId}.`)
   if (learner.lastActivityId) parts.push(`Last activity completed: ${learner.lastActivityId}.`)
   if (learner.recommendedChapterId) parts.push(`Recommended next chapter: ${learner.recommendedChapterId}.`)

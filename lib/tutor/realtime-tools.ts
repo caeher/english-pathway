@@ -38,8 +38,8 @@ export const TUTOR_REALTIME_TOOLS = [
       type: 'object',
       properties: {
         activityId: { type: 'string', maxLength: 160 },
-        context: { type: 'string', maxLength: 300, description: 'Brief learning purpose of this activity in the learner native language.' },
-        expectedAction: { type: 'string', maxLength: 200, description: 'Short direction on how the learner should complete it.' },
+        context: { type: 'string', maxLength: 300, description: 'Brief learning purpose of this activity following the CEFR language policy.' },
+        expectedAction: { type: 'string', maxLength: 200, description: 'Short direction on how the learner should complete it following the CEFR language policy.' },
       },
       required: ['activityId'],
       additionalProperties: false,

@@ -73,7 +73,7 @@ export async function getTutorSessionUseCase(context: AuthenticatedContext | nul
     sessionId: crypto.randomUUID(),
     state: 'preparing' as const,
     allowedTools,
-    instruction: 'Use only validated curriculum activity IDs. Explain in the learner native language when known, keep examples in English, and wait for an explicit activity result before advancing.',
+    instruction: 'Use only validated curriculum activity IDs. Follow the CEFR instructional language policy for explanations, directions, and feedback, and wait for an explicit activity result before advancing.',
     learner: profile.data ? {
       level: toCefrLevel(profile.data.level),
       nativeLanguage: profile.data.native_language,
