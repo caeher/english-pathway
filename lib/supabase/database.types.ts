@@ -7,6 +7,11 @@ export type Json =
   | Json[]
 
 export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
+  __InternalSupabase: {
+    PostgrestVersion: "14.5"
+  }
   graphql_public: {
     Tables: {
       [_ in never]: never
@@ -104,15 +109,7 @@ export type Database = {
           type?: Database["public"]["Enums"]["activity_type"]
           updated_at?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "activities_chapter_id_fkey"
-            columns: ["chapter_id"]
-            isOneToOne: false
-            referencedRelation: "chapters"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       activity_completions: {
         Row: {
@@ -154,7 +151,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "activity_completions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       analytics_events: {
         Row: {
@@ -181,15 +186,7 @@ export type Database = {
           session_id?: string | null
           user_id?: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "analytics_events_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       audio_credit_sessions: {
         Row: {
@@ -222,7 +219,15 @@ export type Database = {
           status?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "audio_credit_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       chapter_completions: {
         Row: {
@@ -240,7 +245,15 @@ export type Database = {
           completed_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "chapter_completions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       chapter_objectives: {
         Row: {
@@ -264,15 +277,7 @@ export type Database = {
           position?: number
           text?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "chapter_objectives_chapter_id_fkey"
-            columns: ["chapter_id"]
-            isOneToOne: false
-            referencedRelation: "chapters"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       chapters: {
         Row: {
@@ -323,15 +328,7 @@ export type Database = {
           updated_at?: string
           xp_reward?: number
         }
-        Relationships: [
-          {
-            foreignKeyName: "chapters_module_id_fkey"
-            columns: ["module_id"]
-            isOneToOne: false
-            referencedRelation: "modules"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       daily_sessions: {
         Row: {
@@ -361,7 +358,15 @@ export type Database = {
           user_id?: string
           xp_earned?: number
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "daily_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       engagement_activity_awards: {
         Row: {
@@ -382,7 +387,15 @@ export type Database = {
           user_id?: string
           xp_awarded?: number
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "engagement_activity_awards_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       engagement_activity_sessions: {
         Row: {
@@ -403,7 +416,15 @@ export type Database = {
           session_date?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "engagement_activity_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       english_assistant_conversations: {
         Row: {
@@ -430,7 +451,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "english_assistant_conversations_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       english_assistant_messages: {
         Row: {
@@ -495,7 +524,15 @@ export type Database = {
           status?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "english_assistant_prompt_logs_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       knowledge_embeddings: {
         Row: {
@@ -558,7 +595,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "learner_memory_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       legal_documents: {
         Row: {
@@ -809,7 +854,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "tutor_session_summaries_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_achievements: {
         Row: {
@@ -833,6 +886,13 @@ export type Database = {
             columns: ["achievement_id"]
             isOneToOne: false
             referencedRelation: "achievements"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_achievements_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -907,7 +967,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "user_engagement_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_progress: {
         Row: {
@@ -931,7 +999,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "user_progress_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_usage_credits: {
         Row: {
@@ -952,7 +1028,15 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "user_usage_credits_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       word_search_puzzles: {
         Row: {
@@ -989,16 +1073,26 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      consume_assistant_credit: { Args: never; Returns: Json }
+      consume_assistant_credit:
+        | { Args: never; Returns: Json }
+        | { Args: { p_user_id?: string }; Returns: Json }
       consume_rate_limit: {
         Args: { p_bucket_key: string; p_limit: number; p_window_ms: number }
         Returns: Json
       }
-      finish_audio_credit_session: {
-        Args: { p_seconds: number; p_session_id: string }
-        Returns: Json
-      }
-      get_usage_credits: { Args: never; Returns: Json }
+      finish_audio_credit_session:
+        | { Args: { p_seconds: number; p_session_id: string }; Returns: Json }
+        | {
+            Args: {
+              p_seconds: number
+              p_session_id: string
+              p_user_id?: string
+            }
+            Returns: Json
+          }
+      get_usage_credits:
+        | { Args: never; Returns: Json }
+        | { Args: { p_user_id?: string }; Returns: Json }
       match_knowledge: {
         Args: { filter?: Json; match_count?: number; query_embedding: string }
         Returns: {
@@ -1008,17 +1102,35 @@ export type Database = {
           similarity: number
         }[]
       }
-      record_engagement_session: {
-        Args: {
-          p_activity_id: string
-          p_local_date: string
-          p_minutes: number
-          p_score: number
-          p_xp: number
-        }
-        Returns: Json
+      purge_old_analytics_events: {
+        Args: { retention_days?: number }
+        Returns: number
       }
-      start_audio_credit_session: { Args: never; Returns: Json }
+      record_engagement_session:
+        | {
+            Args: {
+              p_activity_id: string
+              p_local_date: string
+              p_minutes: number
+              p_score: number
+              p_xp: number
+            }
+            Returns: Json
+          }
+        | {
+            Args: {
+              p_activity_id: string
+              p_local_date: string
+              p_minutes: number
+              p_score: number
+              p_user_id?: string
+              p_xp: number
+            }
+            Returns: Json
+          }
+      start_audio_credit_session:
+        | { Args: never; Returns: Json }
+        | { Args: { p_user_id?: string }; Returns: Json }
     }
     Enums: {
       activity_type:
@@ -1179,4 +1291,3 @@ export const Constants = {
     },
   },
 } as const
-
