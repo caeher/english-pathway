@@ -6,10 +6,6 @@ const entries = {
     process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'https://ci-placeholder.supabase.co',
   NEXT_PUBLIC_SUPABASE_ANON_KEY:
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? 'ci-placeholder-anon-key',
-  NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED:
-    process.env.NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED ?? 'false',
-  NEXT_PUBLIC_OAUTH_GITHUB_ENABLED:
-    process.env.NEXT_PUBLIC_OAUTH_GITHUB_ENABLED ?? 'false',
   NEXT_PUBLIC_APP_URL:
     process.env.NEXT_PUBLIC_APP_URL ?? 'https://ci.english-pathway.example',
 }

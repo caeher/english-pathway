@@ -12,14 +12,6 @@ const lines = [
   `NEXT_PUBLIC_SUPABASE_ANON_KEY=${status.ANON_KEY}`,
   `SUPABASE_SERVICE_ROLE_KEY=${status.SERVICE_ROLE_KEY}`,
   'NEXT_PUBLIC_APP_URL=http://localhost:3000',
-  'NEXT_PUBLIC_OAUTH_GOOGLE_ENABLED=false',
-  'NEXT_PUBLIC_OAUTH_GITHUB_ENABLED=false',
-  '',
-  '# Optional local OAuth (see docs/operations/oauth-setup.md)',
-  '# GOOGLE_CLIENT_ID=',
-  '# GOOGLE_CLIENT_SECRET=',
-  '# GITHUB_CLIENT_ID=',
-  '# GITHUB_CLIENT_SECRET=',
   '',
 ]
 
