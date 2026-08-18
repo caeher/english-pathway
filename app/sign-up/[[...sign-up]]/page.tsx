@@ -10,6 +10,9 @@ export default function SignUpPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-(--bg-page) px-4 py-12">
       <div className="w-full max-w-md">
         <SignUp
+          fallbackRedirectUrl="/onboarding"
+          forceRedirectUrl="/onboarding"
+          signInFallbackRedirectUrl="/learn"
           appearance={{
             elements: {
               rootBox: 'mx-auto w-full',

@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
             full_name: fullName,
             avatar_url: image_url ?? null,
             username: username ?? null,
-            onboarding_status: 'not_started',
+            onboarding_status: 'pending',
             onboarding_step: 0,
             daily_goal_minutes: 10,
             preferred_mode: 'voice',

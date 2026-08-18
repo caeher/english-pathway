@@ -1,6 +1,7 @@
 import type { AuthenticatedContext } from '@/lib/api/context'
 import { DomainError } from '@/lib/api/errors'
 import { toCefrLevel } from '@/lib/tutor/learner-profile'
+import { ensureUserProfile } from '@/lib/auth/clerk-sync'
 import {
   ASSESSMENT_VERSION,
   assessmentConfirmationSchema,
@@ -13,12 +14,8 @@ import {
 type AssessmentProfile = { onboarding_status: string; onboarding_completed_at: string | null }
 
 async function getAssessmentProfile(context: AuthenticatedContext): Promise<AssessmentProfile | null> {
-  const { data } = await context.supabase
-    .from('profiles')
-    .select('onboarding_status, onboarding_completed_at')
-    .eq('id', context.userId)
-    .maybeSingle()
-  return data
+  const profile = await ensureUserProfile(context.userId)
+  return profile ? { onboarding_status: profile.onboarding_status, onboarding_completed_at: profile.onboarding_completed_at } : null
 }
 
 function isAssessmentActive(profile: AssessmentProfile | null) {

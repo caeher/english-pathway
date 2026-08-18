@@ -11,6 +11,7 @@ import {
   preferredModeSchema,
 } from './schemas'
 import { isNativeLanguageCode } from '@/lib/languages/native-languages'
+import { ensureUserProfile } from '@/lib/auth/clerk-sync'
 
 export type OnboardingActionState = {
   error?: string
@@ -99,13 +100,14 @@ export async function saveOnboardingDraftAction(input: unknown): Promise<Onboard
 
   const supabase = createAdminClient()
 
+  const stepNumber = Math.max(0, Math.min(4, parsed.data.step))
   const updates: {
     onboarding_step: number
     level?: import('./schemas').OnboardingLevel
     daily_goal_minutes?: 5 | 10 | 20
     preferred_mode?: 'voice' | 'text'
     native_language?: string | null
-  } = { onboarding_step: parsed.data.step }
+  } = { onboarding_step: stepNumber }
   if (parsed.data.level != null) updates.level = parsed.data.level
   if (parsed.data.dailyGoalMinutes != null) updates.daily_goal_minutes = parsed.data.dailyGoalMinutes
   if (parsed.data.preferredMode != null) updates.preferred_mode = parsed.data.preferredMode
@@ -128,12 +130,5 @@ export async function getOnboardingProfile() {
   const { userId } = await auth()
   if (!userId) return null
 
-  const supabase = createAdminClient()
-  const { data } = await supabase
-    .from('profiles')
-    .select('onboarding_completed_at, onboarding_status, onboarding_step, daily_goal_minutes, level, preferred_mode, native_language')
-    .eq('id', userId)
-    .maybeSingle()
-
-  return data
+  return ensureUserProfile(userId)
 }

@@ -40,7 +40,7 @@ export async function ensureUserProfile(userId: string): Promise<ProfileRow | nu
         id: userId,
         full_name: fullName,
         avatar_url: avatarUrl,
-        onboarding_status: 'not_started',
+        onboarding_status: 'pending',
         onboarding_step: 0,
         daily_goal_minutes: 10,
         preferred_mode: 'voice',
