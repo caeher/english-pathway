@@ -24,6 +24,7 @@ export const expensiveRoutePolicies: Record<string, RateLimitPolicy> = {
   '/api/tutor/realtime': { limit: 6, windowMs: 60_000 },
   '/api/tutor/realtime/finish': { limit: 20, windowMs: 60_000 },
   '/api/tutor/realtime/heartbeat': { limit: 30, windowMs: 60_000 },
+  '/api/tutor/credits/start': { limit: 6, windowMs: 60_000 },
   '/api/audio/transcribe': { limit: 12, windowMs: 60_000 },
 }
 

@@ -16,6 +16,7 @@ import { saveTutorMemory } from '@/lib/tutor/client'
 import { buildOrchestrationMessage } from '@/lib/tutor/send-orchestration'
 import OpenAiRealtimeTutorProvider from './OpenAiRealtimeTutorProvider'
 import { learnSessionActions, type LearnerProfileState } from '@/stores/useLearnSessionStore'
+import { formatVoiceRemainingLabel } from '@/lib/credits/audio-countdown'
 
 interface TutorControlsProps {
   mode: SessionMode
@@ -66,6 +67,7 @@ function TutorControls({
     sendUserMessage,
     start,
     end,
+    voiceCredits,
   } = useTutorSession({ mode, onCheckMicrophone, onSessionStarted: handleSessionStarted, onSessionEnded })
   const { onActivityOutcome, onActivityComplete, onActivityDifficult, onQuestionAnswered, flushPendingMessages } = useTutorActivityActions(sendUserMessage)
   const [message, setMessage] = useState('')
@@ -104,6 +106,18 @@ function TutorControls({
             ? 'We could not access a microphone. Check your device or use text mode.'
             : 'Test your microphone before starting a voice session.'
 
+  const audioLabel = mode === 'voice' && voiceCredits
+    ? formatVoiceRemainingLabel({
+        active,
+        liveRemainingSeconds: voiceCredits.liveRemainingSeconds,
+        credits: voiceCredits.credits,
+        creditsError: voiceCredits.creditsError,
+      })
+    : null
+
+  const isVoiceStartDisabled = connecting
+    || (mode === 'voice' && voiceCredits?.isStartDisabled === true)
+
   return (
     <LearnSessionLayout
       sessionMode={mode}
@@ -114,14 +128,16 @@ function TutorControls({
         <div className="flex h-full min-h-0 flex-col">
           <div className="hidden shrink-0 border-b border-(--border-primary) p-3 lg:block">
             <h1 className="font-display text-lg font-black text-(--text-primary)">AI English Tutor</h1>
-            <p className="mt-1 text-xs text-(--text-muted)">Choose how you want to practice today.</p>
+            <p className="mt-1 text-xs text-(--text-muted)">
+              {audioLabel ?? 'Choose how you want to practice today.'}
+            </p>
           </div>
 
           <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6 lg:gap-3 lg:overflow-hidden lg:p-4">
             {!active && <>
               <div className="flex flex-col gap-3 lg:hidden">
                 {error && <InlineError message={error} onRetry={() => void start()} />}
-                <Button type="button" onClick={() => void start()} disabled={connecting} className="w-full min-h-[44px]">
+                <Button type="button" onClick={() => void start()} disabled={isVoiceStartDisabled} className="w-full min-h-[44px]">
                   {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
                   {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
                 </Button>
@@ -133,9 +149,9 @@ function TutorControls({
               <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">Voice mode lets you speak with the tutor. Text mode works without a microphone or audio permission.</p>
               <fieldset className="mt-4 grid gap-3 sm:grid-cols-2">
                 <legend className="sr-only">Session mode</legend>
-                <button type="button" aria-pressed={mode === 'voice'} disabled={!voiceAvailable} onClick={() => handleModeChange('voice')} className={`rounded-xl border p-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) ${mode === 'voice' ? 'border-(--accent) bg-(--accent-soft)' : 'border-(--border-primary) bg-(--bg-primary)'}`}>
+                <button type="button" aria-pressed={mode === 'voice'} disabled={!voiceAvailable || voiceCredits?.isStartDisabled === true} onClick={() => handleModeChange('voice')} className={`rounded-xl border p-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) ${mode === 'voice' ? 'border-(--accent) bg-(--accent-soft)' : 'border-(--border-primary) bg-(--bg-primary)'}`}>
                   <span className="flex items-center gap-2 font-bold text-(--text-primary)"><Volume2 className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Voice</span>
-                  <span className="mt-1 block text-xs text-(--text-secondary)">{voiceAvailable ? 'Speak and listen with your tutor.' : 'Unavailable in this browser or configuration.'}</span>
+                  <span className="mt-1 block text-xs text-(--text-secondary)">{voiceAvailable ? (voiceCredits?.isStartDisabled ? 'Voice credits used. Try text mode or return next month.' : 'Speak and listen with your tutor.') : 'Unavailable in this browser or configuration.'}</span>
                 </button>
                 <button type="button" aria-pressed={mode === 'text'} onClick={() => handleModeChange('text')} className={`rounded-xl border p-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) ${mode === 'text' ? 'border-(--accent) bg-(--accent-soft)' : 'border-(--border-primary) bg-(--bg-primary)'}`}>
                   <span className="flex items-center gap-2 font-bold text-(--text-primary)"><Type className="h-4 w-4 text-(--accent)" aria-hidden="true" /> Text</span>
@@ -155,7 +171,14 @@ function TutorControls({
               </div>}
 
               {error && <InlineError message={error} onRetry={() => void start()} className="mt-4" />}
-              <Button type="button" onClick={() => void start()} disabled={connecting} className="mt-5 w-full sm:w-auto">
+              {mode === 'voice' && voiceCredits?.creditsError && !error && (
+                <InlineError
+                  message="Voice credits could not be loaded. Please check your connection."
+                  onRetry={() => void voiceCredits.loadCredits()}
+                  className="mt-4"
+                />
+              )}
+              <Button type="button" onClick={() => void start()} disabled={isVoiceStartDisabled} className="mt-5 w-full sm:w-auto">
                 {connecting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Phone className="h-4 w-4" />}
                 {connecting ? 'Connecting...' : mode === 'voice' ? 'Start voice lesson' : 'Start text lesson'}
               </Button>
@@ -168,7 +191,9 @@ function TutorControls({
                   {mode === 'voice' ? 'Speak naturally' : 'Write naturally'}
                 </h2>
                 <p className="text-xs text-(--text-secondary) truncate">
-                  {mode === 'voice' ? (isMuted ? 'Microphone muted' : 'Your tutor is listening') : 'Your tutor will respond in the conversation'}
+                  {mode === 'voice'
+                    ? (audioLabel ?? (isMuted ? 'Microphone muted' : 'Your tutor is listening'))
+                    : 'Your tutor will respond in the conversation'}
                 </p>
               </div>
 

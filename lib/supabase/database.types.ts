@@ -1132,6 +1132,47 @@ export type Database = {
         }
         Relationships: []
       }
+      voice_promo_grants: {
+        Row: {
+          consumed_seconds: number
+          created_at: string
+          granted_seconds: number
+          id: string
+          promo_key: string
+          user_id: string
+          valid_from: string
+          valid_until: string
+        }
+        Insert: {
+          consumed_seconds?: number
+          created_at?: string
+          granted_seconds: number
+          id?: string
+          promo_key: string
+          user_id: string
+          valid_from?: string
+          valid_until: string
+        }
+        Update: {
+          consumed_seconds?: number
+          created_at?: string
+          granted_seconds?: number
+          id?: string
+          promo_key?: string
+          user_id?: string
+          valid_from?: string
+          valid_until?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "voice_promo_grants_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       voice_usage_periods: {
         Row: {
           allocated_seconds: number | null
@@ -1241,6 +1282,19 @@ export type Database = {
       get_usage_credits:
         | { Args: never; Returns: Json }
         | { Args: { p_user_id?: string }; Returns: Json }
+      grant_active_registered_promos: {
+        Args: { p_user_id: string }
+        Returns: undefined
+      }
+      grant_voice_promo: {
+        Args: {
+          p_promo_key: string
+          p_seconds: number
+          p_user_id: string
+          p_valid_until: string
+        }
+        Returns: boolean
+      }
       heartbeat_audio_credit_session: {
         Args: {
           p_session_id: string

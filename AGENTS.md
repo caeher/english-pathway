@@ -160,6 +160,7 @@ english-pathway/
 Never link from Curriculum to `/learn` with `moduleId`, `chapterId`, or `activityId` query params. Legacy URLs with those params redirect to canonical `/learn` without auto-launching content. Use `curriculumChapterHref` for resume/continue CTAs and `LEARN_PATH` from [`features/learn`](features/learn/index.ts) for tutor entry.
 
 - Voice provider: [`components/voice/VoiceTutorProvider.tsx`](components/voice/VoiceTutorProvider.tsx)
+- **Voice credits:** ElevenLabs and OpenAI Realtime both meter voice mode via `audio_credit_sessions` (`start`/`heartbeat`/`finish`). ElevenLabs uses [`/api/tutor/credits/start`](app/api/tutor/credits/start/route.ts); OpenAI bundles start in [`/api/tutor/realtime`](app/api/tutor/realtime/route.ts). Shared client hook: [`useVoiceCreditSession`](components/voice/hooks/useVoiceCreditSession.ts). Text mode is not metered. Promo grants live in `voice_promo_grants` (see [`docs/architecture/voice-quotas-and-entitlements.md`](docs/architecture/voice-quotas-and-entitlements.md)).
 - Client tools: [`lib/learn/client-tools.ts`](lib/learn/client-tools.ts) — `showGrammar`, `showActivity`, `showQuestion`, `clearPanel`, `fetchCurriculumContext`
 - Activity components: [`components/games/`](components/games/) — Quiz, Flashcard, WordMatch, etc. (9 types)
 - Panel state: [`stores/useLearnSessionStore.ts`](stores/useLearnSessionStore.ts)

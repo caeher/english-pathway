@@ -100,6 +100,24 @@ erDiagram
 
 ---
 
+## 2.5 Promotional grants
+
+Time-limited bonus voice seconds are stored in `voice_promo_grants` and stack on top of plan allowances.
+
+| Field | Purpose |
+| :--- | :--- |
+| `promo_key` | Stable identifier (e.g. `registered_sep_2026`) |
+| `granted_seconds` / `consumed_seconds` | Promo balance ledger |
+| `valid_from` / `valid_until` | Promo window |
+
+**Consumption order:** active promo grants (soonest `valid_until` first), then `voice_usage_periods`.
+
+**Provisioning:** `grant_active_registered_promos(p_user_id)` is called lazily from `get_usage_credits`, on Clerk `user.created`, and via migration backfill. The Sep 2026 launch promo grants **7,200s (2 h)** until `2026-10-01T00:00:00Z`.
+
+**Voice metering:** both ElevenLabs (`/api/tutor/credits/start` + heartbeat/finish) and OpenAI Realtime must use the same `audio_credit_sessions` flow. Text mode on `/learn` is not metered.
+
+---
+
 ## 2. Seeded Plans
 
 | Plan Key | Name | Allowance | Renewal | Max Realtime Session | Description |
@@ -143,6 +161,8 @@ Returns the unified quota contract:
     "allowanceSeconds": 1200,
     "consumedSeconds": 50,
     "remainingSeconds": 1150,
+    "promoRemainingSeconds": 7200,
+    "promoExpiresAt": "2026-10-01T00:00:00.000Z",
     "periodStart": "2026-08-01T00:00:00Z",
     "periodEnd": null,
     "maxSessionSeconds": 1200

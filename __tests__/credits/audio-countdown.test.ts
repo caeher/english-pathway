@@ -16,6 +16,7 @@ describe('audio countdown and duration formatting', () => {
       expect(formatDuration(600)).toBe('10:00')
       expect(formatDuration(1182)).toBe('19:42')
       expect(formatDuration(1200)).toBe('20:00')
+      expect(formatDuration(7200)).toBe('2:00:00')
     })
 
     it('safely clamps negative values and rounds down decimals', () => {

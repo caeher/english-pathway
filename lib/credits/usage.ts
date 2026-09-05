@@ -13,6 +13,8 @@ export type VoiceQuotaInfo = {
   allowanceSeconds: number | null
   consumedSeconds: number
   remainingSeconds: number | null
+  promoRemainingSeconds?: number
+  promoExpiresAt?: string | null
   periodStart: string
   periodEnd: string | null
   maxSessionSeconds: number
@@ -45,6 +47,8 @@ function parseVoiceQuota(value: unknown): VoiceQuotaInfo | undefined {
     allowanceSeconds: data.allowanceSeconds !== null && data.allowanceSeconds !== undefined ? Number(data.allowanceSeconds) : null,
     consumedSeconds: Math.max(0, Number(data.consumedSeconds ?? 0)),
     remainingSeconds: data.remainingSeconds !== null && data.remainingSeconds !== undefined ? Math.max(0, Number(data.remainingSeconds)) : null,
+    promoRemainingSeconds: data.promoRemainingSeconds !== undefined ? Math.max(0, Number(data.promoRemainingSeconds)) : undefined,
+    promoExpiresAt: data.promoExpiresAt ? String(data.promoExpiresAt) : data.promoExpiresAt === null ? null : undefined,
     periodStart: String(data.periodStart ?? new Date().toISOString()),
     periodEnd: data.periodEnd ? String(data.periodEnd) : null,
     maxSessionSeconds: Math.max(1, Number(data.maxSessionSeconds ?? DEFAULT_MAX_SESSION_SECONDS)),
@@ -104,6 +108,11 @@ export async function heartbeatAudioCreditSession(supabase: AppSupabaseClient, s
   })
   if (error) throw new Error(`Failed to update audio credit session heartbeat: ${error.message}`)
   return data as { sessionId?: string; elapsed?: number; remaining?: number; error?: string } | null
+}
+
+export async function grantActiveRegisteredPromos(supabase: AppSupabaseClient, userId: string) {
+  const { error } = await supabase.rpc('grant_active_registered_promos', { p_user_id: userId })
+  if (error) throw new Error(`Failed to grant registered promos: ${error.message}`)
 }
 
 export async function finishAudioCreditSession(supabase: AppSupabaseClient, sessionId: string, seconds: number, userId?: string): Promise<UsageCredits> {

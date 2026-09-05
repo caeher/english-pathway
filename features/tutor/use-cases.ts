@@ -1,5 +1,6 @@
 import type { AuthenticatedContext } from '@/lib/api/context'
 import { DomainError } from '@/lib/api/errors'
+import { getUsageCredits } from '@/lib/credits/usage'
 import { deletePrivateTutorData, deletePrivateTutorMemory, getPrivateTutorExport, savePrivateTutorMemory } from '@/lib/dal/tutor-memory'
 import { buildTutorContext } from '@/lib/tutor/context'
 import { resolveActivityByIdValidated } from '@/features/learn'
@@ -69,7 +70,17 @@ export async function buildTutorContextUseCase(context: AuthenticatedContext | n
   return { matches, context: tutorContext }
 }
 
-export async function getTutorSessionUseCase(context: AuthenticatedContext | null) {
+export async function getTutorSessionUseCase(
+  context: AuthenticatedContext | null,
+  options?: { mode?: 'voice' | 'text' },
+) {
+  if (context && options?.mode === 'voice') {
+    const credits = await getUsageCredits(context.supabase, context.userId)
+    if (!credits.voiceQuota?.isUnlimited && credits.audioSecondsRemaining <= 0) {
+      throw new DomainError('CREDITS_EXHAUSTED', 'Your voice lesson credits have been used.', 429)
+    }
+  }
+
   const [profile, progress, snapshot] = context
     ? await Promise.all([
       context.supabase.from('profiles').select('full_name, level, native_language, daily_goal_minutes, preferred_mode').eq('id', context.userId).maybeSingle(),

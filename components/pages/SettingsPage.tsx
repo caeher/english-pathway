@@ -14,6 +14,7 @@ import { clearCookieConsent } from '@/lib/consent/client'
 import useThemeStore, { selectDark, selectToggleTheme } from '@/stores/useThemeStore'
 import { isNativeLanguageCode, type NativeLanguageCode } from '@/lib/languages/native-languages'
 import { NativeLanguageField } from '@/components/profile/NativeLanguageSelect'
+import VoiceQuotaSummary from '@/components/settings/VoiceQuotaSummary'
 
 type Profile = DatabaseTypes['public']['Tables']['profiles']['Row']
 
@@ -247,6 +248,8 @@ export default function SettingsPage({
           onChange={setNativeLanguage}
         />
       </Surface>
+
+      <VoiceQuotaSummary />
 
       <Surface as="section" padding="lg" className="space-y-5" aria-labelledby="voice-heading">
         <div>

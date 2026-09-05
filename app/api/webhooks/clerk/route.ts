@@ -1,6 +1,7 @@
 import { verifyWebhook } from '@clerk/nextjs/webhooks'
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { grantActiveRegisteredPromos } from '@/lib/credits/usage'
 
 export async function POST(req: NextRequest) {
   let evt
@@ -37,6 +38,12 @@ export async function POST(req: NextRequest) {
         if (error) {
           console.error('[clerk-webhook] Failed to create profile on user.created:', error)
           return new NextResponse('Database error', { status: 500 })
+        }
+
+        try {
+          await grantActiveRegisteredPromos(supabase, id)
+        } catch (promoError) {
+          console.error('[clerk-webhook] Failed to grant voice promo on user.created:', promoError)
         }
         break
       }
